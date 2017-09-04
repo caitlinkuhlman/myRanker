@@ -31,6 +31,7 @@ Install [npm](https://www.npmjs.com/), [Node.js](http://nodejs.org/), [Yeoman](h
 ## Installation
 
 - Clone this repository and cd into the myRanker directory
+- The **run.sh** script will install all dependencies and run the workspace. Or do this manually: 
 - Create workspace: `yo phovea:workspace` with the following inputs:
   * Virtual Environment: none
   * Additional Plugins: none (just press Enter)
@@ -41,5 +42,5 @@ Install [npm](https://www.npmjs.com/), [Node.js](http://nodejs.org/), [Yeoman](h
 
 ## Run Workspace
 
-- Run `npm run start:lineup_demos_source`
+- `npm run start:lineup_demos_source`
 - Open web browser with the URL (e.g. localhost:8080) printed in the console output
