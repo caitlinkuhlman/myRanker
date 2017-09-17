@@ -7,6 +7,4 @@
 //register all extensions in the registry following the given pattern
 module.exports = function(registry) {
   //registry.push('extension-type', 'extension-id', function() { return System.import('./src/extension_impl'); }, {});
-
 };
-

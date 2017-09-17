@@ -6,7 +6,7 @@
 
 const webpack = require('./webpack.config.js');
 
-module.exports = (config) => {
+module.exports = config => {
   config.set({
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter

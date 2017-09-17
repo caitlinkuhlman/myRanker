@@ -6,14 +6,20 @@ LineUp is a Phovea application based on [LineUp.js](http://github.com/Caleydo/li
 
 ![screenshot](media/screenshot.png?raw=true "Screenshot")
 
-Installation
-------------
+Installation Dependencies
+-------------------------
 
 ```
-git clone https://github.com/Caleydo/lineup.git
-cd lineup
 npm install
 ```
+
+Starting 
+--------
+
+```
+npm start
+```
+Checkout out localhost:8080
 
 Testing
 -------
@@ -29,7 +35,14 @@ Building
 npm run build
 ```
 
+Contributing
+------------
+Please run
 
+```
+npm run lint
+```
+before every git commit
 
 ***
 

@@ -3,7 +3,7 @@
  */
 
 import LineUp from 'lineupjs/src/lineup';
-import {json} from 'd3';
+import { json } from 'd3';
 
 export function load(gistid: string) {
   return new Promise((resolve, reject) => {
@@ -15,15 +15,22 @@ export function load(gistid: string) {
         const firstFile = gistdesc.files[Object.keys(gistdesc.files)[0]];
         json(firstFile.raw_url, (error, content) => {
           if (error) {
-            console.error('cannot load gist content at: ' + firstFile.raw_url, error);
+            console.error(
+              'cannot load gist content at: ' + firstFile.raw_url,
+              error
+            );
             reject('not found');
           } else if (content) {
-            resolve({name: gistdesc.description, desc: content, data: content.data});
+            resolve({
+              name: gistdesc.description,
+              desc: content,
+              data: content.data
+            });
           }
         });
       } else {
-		reject('not found');
-	  }
+        reject('not found');
+      }
     });
   });
 }
@@ -42,21 +49,28 @@ export function save(lineup: LineUp, name: string) {
   //stringify with pretty print
   const str = dumpLayout(lineup);
   const args = {
-    'description': name,
-    'public': true,
-    'files': {
+    description: name,
+    public: true,
+    files: {
       'lineup.json': {
-        'content': str
+        content: str
       }
     }
   };
-  json('https://api.github.com/gists').post(JSON.stringify(args), (error, data) => {
-    if (error) {
-      console.log('cant store to gist', error);
-    } else {
-      const id = data.id;
-      document.title = 'LineUp - ' + (args.description || 'Custom');
-      history.pushState({id: 'gist:' + id}, 'LineUp - ' + (args.description || 'Custom'), '#gist:' + id);
+  json('https://api.github.com/gists').post(
+    JSON.stringify(args),
+    (error, data) => {
+      if (error) {
+        console.log('cant store to gist', error);
+      } else {
+        const id = data.id;
+        document.title = 'LineUp - ' + (args.description || 'Custom');
+        history.pushState(
+          { id: 'gist:' + id },
+          'LineUp - ' + (args.description || 'Custom'),
+          '#gist:' + id
+        );
+      }
     }
-  });
+  );
 }

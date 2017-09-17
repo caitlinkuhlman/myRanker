@@ -2,16 +2,15 @@
  * Created by sam on 04.11.2016.
  */
 
-import {selectFileLogic} from 'phovea_importer/src/index';
-import {generateDialog} from 'phovea_ui/src/dialogs';
-import {parseCSV} from 'phovea_importer/src//parser';
+import { selectFileLogic } from 'phovea_importer/src/index';
+import { generateDialog } from 'phovea_ui/src/dialogs';
+import { parseCSV } from 'phovea_importer/src//parser';
 import * as d3 from 'd3';
-import {createValueTypeEditors} from 'phovea_importer/src//valuetypes';
-import {importTable} from 'phovea_importer/src//importtable';
-
+import { createValueTypeEditors } from 'phovea_importer/src//valuetypes';
+import { importTable } from 'phovea_importer/src//importtable';
 
 function deriveColumns(columns: any[]) {
-  return columns.map((col) => {
+  return columns.map(col => {
     const r: any = {
       column: col.column,
       label: col.name
@@ -24,7 +23,7 @@ function deriveColumns(columns: any[]) {
 
     //use magic word to find extra attributes
     if (col.lineup) {
-      Object.keys(col.lineup).forEach((k) => {
+      Object.keys(col.lineup).forEach(k => {
         r[k] = col.lineup[k];
       });
     }
@@ -50,34 +49,40 @@ function deriveColumns(columns: any[]) {
   });
 }
 
-
 function convertLoaded(r) {
   if (r == null || r.desc.type !== 'table') {
     return;
   }
   const columns = deriveColumns((<any>r.desc).columns);
   if ((<any>r.desc).idcolumn !== '_index') {
-    columns.unshift({type: 'string', label: 'Row', column: (<any>r.desc).idcolumn});
+    columns.unshift({
+      type: 'string',
+      label: 'Row',
+      column: (<any>r.desc).idcolumn
+    });
   }
   const name = r.desc.name;
-  const desc = {columns};
+  const desc = { columns };
   //(r.desc, r.data, (<any>r.desc).idcolumn);
-  return {name, desc, data: r.data};
+  return { name, desc, data: r.data };
 }
 
 function loadJSON(file: File, name: string) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     const f = new FileReader();
-    f.addEventListener('load', (event) => {
-      const desc = JSON.parse((<any>(event.target)).result);
-      resolve({name, desc, data: desc.data});
+    f.addEventListener('load', event => {
+      const desc = JSON.parse((<any>event.target).result);
+      resolve({ name, desc, data: desc.data });
     });
     f.readAsText(file, 'utf-8');
   });
 }
 
 function createImporter(parent: Element) {
-  const $parent = d3.select(parent).append('div').classed('caleydo-importer', true);
+  const $parent = d3
+    .select(parent)
+    .append('div')
+    .classed('caleydo-importer', true);
 
   let buildCSV = null;
   let jsonDesc = null;
@@ -87,18 +92,21 @@ function createImporter(parent: Element) {
     name = name.substring(0, name.lastIndexOf('.')); //remove .csv
 
     if (extension === 'json') {
-      loadJSON(file, name).then((r) => {
+      loadJSON(file, name).then(r => {
         jsonDesc = r;
         $parent.html('Loaded!');
       });
-    } else { // assume some kind of csv
-      Promise.all([<any>parseCSV(file), createValueTypeEditors()]).then((results) => {
-        const editors = results[1];
-        const data = results[0].data;
-        const header = data.shift();
+    } else {
+      // assume some kind of csv
+      Promise.all([<any>parseCSV(file), createValueTypeEditors()])
+        .then(results => {
+          const editors = results[1];
+          const data = results[0].data;
+          const header = data.shift();
 
-        return importTable(editors, $parent, header, data, name);
-      }).then((r) => buildCSV = r);
+          return importTable(editors, $parent, header, data, name);
+        })
+        .then(r => (buildCSV = r));
     }
   };
 
@@ -108,10 +116,14 @@ function createImporter(parent: Element) {
       </div>
     `);
 
-  selectFileLogic($parent.select('div.drop-zone'), $parent.select('input[type=file]'), selectedFile);
+  selectFileLogic(
+    $parent.select('div.drop-zone'),
+    $parent.select('input[type=file]'),
+    selectedFile
+  );
 
   return {
-    getResult: () => buildCSV ? convertLoaded(buildCSV()) : jsonDesc
+    getResult: () => (buildCSV ? convertLoaded(buildCSV()) : jsonDesc)
   };
 }
 
