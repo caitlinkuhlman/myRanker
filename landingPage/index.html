@@ -1,57 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="input">
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title>RankSmith</title>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-
-    <!-- add styles -->
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-
-    <!-- add javascripts -->
-    <script src="js/jquery-2.0.3.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-</head>
+	<meta charset="utf-8"/>
+	<title>RankSmith</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/people.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" media="screen" href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" />
+	<link rel="stylesheet" media="all" href="https://d2sxfzw9cql5wy.cloudfront.net/assets/v2-prospect-f62c3e8107723d8291b7d8bef73ccc6122ea918e640399c78de2ddc3340abdf5.css" />
+	<link rel="stylesheet" media="print" href="https://d39afr5wio5j08.cloudfront.net/assets/print-5a29a9c455566fcb04f2d8332508e186e7022c91b0d2775f86018f0404780d01.css" />
+    </head>
 <body>
-    <header>
-        <div class="wrap">
-            <!-- logo -->
-            <a href="#!"><img class="logo" src="images/logo.png" /></a>
+	<header class= tm-header>
+		<div class="tm-container">
+			<a href="index.html">
+			<a href="https://www.wpi.edu">
+			<img src="Images/WPI_logo.png" alt="WPI logo" class="wpi-logo">
+			<nav class ="tm-nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="AboutPage.html">About</a></li>
+					<li><a href="TeamPage.html">Contact Our Team</a></li>
+					<li><a href="modal_register.html">Sign Up</a></li>
+					<li><a href="modal_log_in.html">Login</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 
-            <!-- navigation menu -->
-            <nav>
-                <ul>
-                    <li><a id="workBtn" href="#!/" ng-class="{activeSmall:part == 'projects'}" >Home</a></li>
-                    <li><a id="aboutBtn" href="#!/about" ng-class="{activeSmall:part == 'about'}">About</a></li>
-                    <li><a id="contactBtn" href="#!/contact" ng-class="{activeSmall:part == 'contact'}">Contact Us</a></li>
-                    <li style="margin-right:0px"><a id="contactBtn" class="active" href="javascript: void(0)" ng-click="showForm()">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- contact us form -->
-    <div class="paddRow contactRow">
-        <div class="wrap">
-            <div class="head">Login</div>
-            <img class="close" src="images/close.png" ng-click="closeForm()" />
-            <form ng-submit="save()" class="contactForm" name="form" ng-hide="loaded">
-                <input class="input" required="required" type="text" name="name" placeholder="Your Email" ng-model="message.name" /><br />
-                <input class="input email" required="required" type="email" name="email" value="" placeholder="Your Password" ng-model="message.email" /> <br />
-                <br />
-                <button class="btn green">Login</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- main content -->
-    <div style="position:relative">
-        <div style="width:100%" ng-view ng-animate="{enter: 'view-enter', leave: 'view-leave'}"></div>
-    </div>
 
 </body>
 </html>
