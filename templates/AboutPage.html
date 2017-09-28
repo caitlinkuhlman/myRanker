@@ -19,8 +19,8 @@
 	<meta name="description" content="Blueprint: On-Scroll Animated Header" />
 	<meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll" />
 	<meta name="author" content="Codrops" />
-	<link rel="stylesheet" type="text/css" href="css/default.css" />
-	<link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/default.css') }}" />
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}"/>
 	<script src="js/modernizr.custom.js"></script>
 
 	<style>
@@ -349,7 +349,7 @@ display: block;
 
             <!-- Container (The Band Section) -->
             <div id="band" class="container text-center">
-              <h2 class="text-xxl m-b-xl"><a href="index.html"><img src="Images/RankingImage.jpg" alt="logo" width="120"></a>About Us</h2>
+              <h2 class="text-xxl m-b-xl"><a href="index.html"></a>About Us</h2>
               <p>Rankings are a fundamental tool used to help people understand the relative merit of objects or choices. They are employed
                 to simplify decision making when the number of factors impacting choice is large.
                 Our mission is to provide a user-driven ranking system to allow non-expert users to better understand the explanatory

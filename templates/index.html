@@ -10,8 +10,8 @@
 	<meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll" />
 	<meta name="author" content="Codrops" />
 	<link rel="shortcut icon" href="../favicon.ico">
-	<link rel="stylesheet" type="text/css" href="css/default.css" />
-	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/default.css') }}" />
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}" />
 	<script src="js/modernizr.custom.js"></script>
 
 	<style>
@@ -79,7 +79,7 @@
 					<!-- <video width="100%" height="100%" autoplay="true" muted loop id="bgvid"> -->
 						<!-- If just one animation -->
 						<video width="100%" height="100%" autoplay="true">
-						<source src="Video/weblogo.webm" type="video/webm">
+						<source src="{{ url_for('static',filename='Video/weblogo.webm') }}" type="video/webm">
 					</video>
 					<div class="inner">
 						<div class="content">
@@ -117,8 +117,8 @@
 				</div>
 				<div>
 					<div class="row dataset_container">
-						<button class="dataset buttonHover" style="width: 100%;">
-									<a href="http://localhost:8080">
+						<button onclick="window.location='http://localhost:8080';" class="dataset buttonHover" style="width: 100%;">
+									<a >
 										<span>Visualize</span>
 									</a>
 								</button>

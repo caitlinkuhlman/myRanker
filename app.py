@@ -18,7 +18,6 @@ def landingPageRef(ref):
 def startupLineUp():
     print("Starting Lineup...")
     directory = cwd + '/Lineup' #running through terminal
-    #directory = '/Users/Toki/Desktop/myRanker' #running through PyCharm (for me :P)
     call('npm run start:lineup_demos_source', cwd=directory, shell=True)
 
 
