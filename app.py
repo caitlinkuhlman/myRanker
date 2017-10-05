@@ -10,6 +10,12 @@ cwd = os.getcwd()
 def index():
     return render_template('index.html')
 
+@app.route('/favicon.ico/')
+def linedupDaependency(): #TODO clean up code
+   try:
+       return url_for('static', filename='lineup/favicon.ico')
+   except Exception as e:
+       return str(e)
 
 @app.route('/<ref>')
 def landingPageRef(ref):
@@ -18,7 +24,7 @@ def landingPageRef(ref):
 def startupLineUp():
     print("Starting Lineup...")
     directory = cwd + '/Lineup' #running through terminal
-    call('npm run start:lineup_demos_source', cwd=directory, shell=True)
+    # call('npm run start:lineup_demos_source', cwd=directory, shell=True)
 
 
 def startupServer():
@@ -36,4 +42,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

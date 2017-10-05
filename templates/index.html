@@ -12,7 +12,7 @@
 	<link rel="shortcut icon" href="../favicon.ico">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/default.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}" />
-	<script src="js/modernizr.custom.js"></script>
+	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/modernizr.custom.js') }}" ></script>
 
 	<style>
 		.barHover:hover {
@@ -68,16 +68,13 @@
 			</div>
 		</div>
 
-		<header class="clearfix">
+		<!-- <header class="clearfix">
 			<h1>Visualize Build Explore</h1>
-		</header>
+		</header> -->
 
 		<div class="main">
 
 				<section class="intro">
-					<!-- If you want the video to loop -->
-					<!-- <video width="100%" height="100%" autoplay="true" muted loop id="bgvid"> -->
-						<!-- If just one animation -->
 						<video width="100%" height="100%" autoplay="true">
 						<source src="{{ url_for('static',filename='Video/weblogo.webm') }}" type="video/webm">
 					</video>
@@ -87,53 +84,71 @@
 					</div>
 
 			</section>
-			<section>
-				<div>
-					<p>Datasets</p>
-				</div>
-				<div>
-					<div class="row dataset_container">
-						<button class="dataset buttonHover">
-									<a href="#">
-										<span>Legatum Prosperity Index</span>
-									</a>
-								</button>
-						<button class="dataset buttonHover">
-									<a href="#">
-										<span>University Rankings</span>
-									</a>
-								</button>
-						<button class="dataset buttonHover">
-									<a href="#">
-										<span>SP500 2015-06-26</span>
-									</a>
-								</button>
-					</div>
-				</div>
-			</section>
-			<section>
-				<div>
-					<p>Tools</p>
-				</div>
-				<div>
-					<div class="row dataset_container">
-						<button onclick="window.location='http://localhost:8080';" class="dataset buttonHover" style="width: 100%;">
-									<a >
-										<span>Visualize</span>
-									</a>
-								</button>
-						<button class="dataset buttonHover" style="width: 100%;">
-									<a href="#">
-										<span>Build</span>
-									</a>
-								</button>
-					</div>
-				</div>
-			</section>
-		</div>
+
+			<!-- Top Navigation -->
+			<header class="clearfix">
+				<h1>Datasets</h1>
+			</header>
+
+
+			<ul class="grid cs-style-4">
+				<li>
+					<figure>
+						<div>
+							<img src="{{ url_for('static',filename='images/54.PNG') }}">
+							<!-- <img src="images/54.png" alt="img05"> -->
+							<!-- {{ url_for('static',filename='Video/weblogo.webm') }} -->
+						</div>
+						<figcaption>
+							<h3>Tools</h3>
+							<span>Select a tool!</span>
+							<!-- Explore is Lineup -->
+							<a href="#" onclick="window.location='http://localhost:8080';" class = "lineup">Explore</a>
+							<!-- Build is myRanker -->
+							<a href="#">Build</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<div class="image">
+							<!-- <img src="images/63.png" alt=""/> -->
+							<img src="{{ url_for('static',filename='images/63.PNG') }}">
+
+						</div>
+						<figcaption>
+							<h3>Tools</h3>
+							<span>Select a tool!</span>
+							<!-- Explore is Lineup -->
+							<a href="#" onclick="window.location='http://localhost:8080';" class = "lineup">Explore</a>
+							<!-- Build is myRanker -->
+							<a href="#">Build</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<div>
+							<!-- <img src="images/23.png" alt="img02"> -->
+							<img src="{{ url_for('static',filename='images/23.PNG') }}">
+						</div>
+						<figcaption>
+							<h3>Tools</h3>
+							<span>Select a tool!</span>
+							<!-- Explore is Lineup -->
+							<a href="#" onclick="window.location='http://localhost:8080';" class = "lineup">Explore</a>
+							<!-- Build is myRanker -->
+							<a href="#">Build</a>
+						</figcaption>
+					</figure>
+				</li>
+			</ul>
+
 	</div>
-	<script src="js/classie.js"></script>
-	<script src="js/cbpAnimatedHeader.min.js"></script>
+
+	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/classie.js') }}" ></script>
+	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}" ></script>
+	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/toucheffects.js') }}" ></script>
 </body>
 
 </html>
