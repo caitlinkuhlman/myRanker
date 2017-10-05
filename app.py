@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from subprocess import call
 import threading
 import os
@@ -9,6 +9,17 @@ cwd = os.getcwd()
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/dataset')
+def processDataset():
+    dataset_name = request.args.lists()
+
+    # dataset_name.get('dataset_name', default=-1, type="")
+    dataset_name = list(dataset_name)
+    # dataset_name = dataset_name.get('dataset_name', default=-1, type="")
+
+    print("Dataset : %s  " % dataset_name)
+    return 'ok'
 
 @app.route('/favicon.ico/')
 def linedupDaependency(): #TODO clean up code
