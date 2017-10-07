@@ -4,7 +4,7 @@ RANKit empowers users to manipulate rankings through personalized data visualiza
 
 To allow for unbiased extrapolation of data, RANKit is composed of two tools: Explore and Visualize.
 
-To learn more about each tool, read our guide. 
+To learn more about each tool, read our [guide](https://github.com/RankerToolWebsite/myRanker/wiki). 
 
 ## Tool: Explore
 
