@@ -1,33 +1,39 @@
-# myRanker
+# RANKit
 
-New ranking analysis tool based on [Caleydo lineup](https://github.com/Caleydo/lineupjs).
+RANKit empowers users to manipulate rankings through personalized data visualization and rank building. When considering the interpretation of multi-attribute datasets, a slight shift of importance from one attribute to another can heavily impact end ranking results. Yet, the concealment of algorithms used to compute the ranking leave consumers limited in knowledge about the derivation of rankings, resulting in possible exploitation of data to imply a conclusion that is not necessarily true. 
 
-To get started with development: 
+To allow for unbiased extrapolation of data, RANKit is composed of two tools: Explore and Visualize.
 
-## Prerequisites
+To learn more about each tool, read our guide. 
 
-Install [npm](https://www.npmjs.com/), [Node.js](http://nodejs.org/), [Yeoman](http://yeoman.io/) and the [Phovea Generator](https://github.com/phovea/generator-phovea).
+## Tool: Explore
 
-As an example to do this on Ubuntu 14.04 I did the following:
+Based on [Caleydo LineUp](https://github.com/Caleydo/lineupjs), Explore is an interactive tool that allows you to viualzie your desired ranking:
 
-`sudo apt-get install npm`
+- Combine multiple attributes into a single, combined column to create a ranking
+- Immediate responsive visual change of the rank with the modification of:
+	- Weights of specified attribute 
+	- Values of specified attribute
 
-`curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -`
+## Tool: Build 
 
-`sudo apt-get install -y nodejs`
+A machine learning tool that is trained on user specified preferences of rank object instances. The user supplies a pairwise comparisons for a sample of the objects from a dataset to the Build tool, which in consuming the information, applies regression analysis to determine concrete results to formulate a ranking for all objects within a dataset. 
 
-`npm install -g yo`
+## Getting Started
 
-`npm install -g github:phovea/generator-phovea`
-    
-**Ubuntu has an operating system specific issue when installing nodejs (you may not need):**
-    
-#create a symlink for "node" command
+### Prerequisites:
 
-`sudo ln -s `which nodejs` /usr/local/bin/node`
+- [npm](https://www.npmjs.com/)
+	- `$ sudo apt-get install npm`
+- [Node.js](http://nodejs.org/)
+	- `$ sudo apt-get install -y nodejs`
+- [Yeoman](http://yeoman.io/)
+	- `$ npm install -g yo`
+- [Phovea Generator](https://github.com/phovea/generator-phovea)
+	- `$ npm install -g github:phovea/generator-phovea`
+- [Python 3](https://www.python.org)
 
 
+### Run: *CURRENTLY IN DEVELOPMENT*
 
-## Installation
-
-To try out demo, check out [how to run the demo project](./lineup_demos_source/README.md)
+To startup the server: `$ python3 app.py`
