@@ -1,6 +1,6 @@
 # RANKit
 
-RANKit empowers users to manipulate rankings through personalized data visualization and rank building. When considering the interpretation of multi-attribute datasets, a slight shift of importance from one attribute to another can heavily impact end ranking results. Yet, the concealment of algorithms used to compute the ranking leave consumers limited in knowledge about the derivation of rankings, resulting in possible exploitation of data to imply a conclusion that is not necessarily true. 
+RANKit allows users to manipulate rankings through personalized data visualization and rank building. When interpreting multi-attribute datasets, a slight change of weight between attributes can heavily impact ranking results. Most publically available rankings do not expose the functions that were used to compute the weights of each attribute. This lack of disclosure results in possible exploitation of data because rankings can imply a conclusion that is not necessarily true. 
 
 To allow for unbiased extrapolation of data, RANKit is composed of two tools: Explore and Visualize.
 
@@ -8,7 +8,7 @@ To learn more about each tool, read our [guide](https://github.com/RankerToolWeb
 
 ## Tool: Explore
 
-Based on [Caleydo LineUp](https://github.com/Caleydo/lineupjs), Explore is an interactive tool that allows you to viualzie your desired ranking:
+Based on [Caleydo LineUp](https://github.com/Caleydo/lineupjs), Explore is an interactive tool that allows you to visualize your desired ranking:
 
 - Combine multiple attributes into a single, combined column to create a ranking
 - Immediate responsive visual change of the rank with the modification of:
@@ -17,7 +17,7 @@ Based on [Caleydo LineUp](https://github.com/Caleydo/lineupjs), Explore is an in
 
 ## Tool: Build 
 
-A machine learning tool that is trained on user specified preferences of rank object instances. The user supplies a pairwise comparisons for a sample of the objects from a dataset to the Build tool, which in consuming the information, applies regression analysis to determine concrete results to formulate a ranking for all objects within a dataset. 
+Build is a machine learning tool that is trained through user selected preferences of rank object instances. The Build tool collects data from pairwise comparisons of sample objects completed by the user. The tool applies a regression analysis to this data and determines a pattern that it applies to all objects within a dataset. 
 
 ## Getting Started
 
