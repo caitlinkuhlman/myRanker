@@ -21,7 +21,7 @@
 	<meta name="author" content="Codrops" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/default.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}"/>
-	<script src="js/modernizr.custom.js"></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/modernizr.custom.js') }}" ></script>
 
 	<style>
 		.barHover:hover {
@@ -58,7 +58,12 @@
 			background-color: beige;
 		}
 
-	</style>
+    body {
+    color: #FFFFFF;
+    background-color: #4CAF50;
+    }
+
+  </style>
 
   <!-- /*<style>
   body {
@@ -458,8 +463,8 @@ display: block;
 </body>
 
 </div>
-<script src="js/classie.js"></script>
-<script src="js/cbpAnimatedHeader.min.js"></script>
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/classie.js') }}" ></script>
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}" ></script>
 
 </body>
 </html>
