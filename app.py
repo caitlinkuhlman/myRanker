@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from subprocess import call
 import threading
 import os
+import logging, sys
 
 app = Flask(__name__)
 cwd = os.getcwd()
@@ -9,6 +10,18 @@ cwd = os.getcwd()
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/team')
+def team():
+    return render_template('team.html')
+
+@app.route('/login')
+def login():
+    return render_template('modal_log_in.html')
 
 @app.route('/dataset')
 def processDataset():
@@ -28,21 +41,18 @@ def linedupDaependency(): #TODO clean up code
    except Exception as e:
        return str(e)
 
-@app.route('/<ref>')
-def landingPageRef(ref):
-    return render_template(ref)
-
 def startupLineUp():
-    print("Starting Lineup...")
+    logging.info("Starting Lineup...")
     directory = cwd + '/Lineup' #running through terminal
     # call('npm run start:lineup_demos_source', cwd=directory, shell=True)
 
 
 def startupServer():
-    print("Starting server...")
+    logging.info("Starting server...")
     app.run(port=5000, threaded=True)
 
 def main():
+    logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
     lineupThread = threading.Thread(target=startupLineUp)
     lineupThread.start()

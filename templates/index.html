@@ -10,9 +10,6 @@
 	<meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll" />
 	<meta name="author" content="Codrops" />
 	<link rel="shortcut icon" href="../favicon.ico">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/default.css') }}" />
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}" />
-	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/modernizr.custom.js') }}" ></script>
 
 	<style>
 		.barHover:hover {
@@ -53,30 +50,15 @@
 
 </head>
 
-<body>
+
+{% extends 'base.html' %}
+{% block content %}
 	<div class="container">
-
-		<div class="cbp-af-header">
-			<div class="cbp-af-inner">
-				<h1>RanKit</h1>
-				<nav>
-					<a href="index.html">Home</a>
-					<a href="AboutPage.html">About</a>
-					<a href="TeamPage.html">Contact Our Team</a>
-					<a href="modal_log_in.html">Login</a>
-				</nav>
-			</div>
-		</div>
-
-		<!-- <header class="clearfix">
-			<h1>Visualize Build Explore</h1>
-		</header> -->
-
 		<div class="main">
 
 				<section class="intro">
 						<video width="100%" height="100%" autoplay="true">
-						<source src="{{ url_for('static',filename='Video/weblogo.mp4') }}" type="video/mp4">
+						<source src="{{ url_for('static',filename='video/weblogo.mp4') }}" type="video/mp4">
 					</video>
 					<div class="inner">
 						<div class="content">
@@ -97,7 +79,7 @@
 						<div>
 							<img src="{{ url_for('static',filename='images/54.PNG') }}">
 							<!-- <img src="images/54.png" alt="img05"> -->
-							<!-- {{ url_for('static',filename='Video/weblogo.webm') }} -->
+							<!-- {{ url_for('static',filename='video/weblogo.webm') }} -->
 						</div>
 						<figcaption>
 							<h3>Tools</h3>
@@ -145,11 +127,14 @@
 			</ul>
 
 	</div>
-
 	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/classie.js') }}" ></script>
 	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}" ></script>
 	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/toucheffects.js') }}" ></script>
-</body>
+
+    </div>
+
+{% endblock %}
+
 
 <script>
 	function sendDatasetToLineup(dataset_name) {
