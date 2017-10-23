@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/default.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}"/>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="cbp-af-header">
+        <div class="cbp-af-inner">
+            <h1>RanKit</h1>
+            <nav>
+                <a href={{ url_for('home.index') }}>Home</a>
+                <a href={{ url_for('home.about') }}>About</a>
+                <a href={{ url_for('home.team') }}>Contact Our Team</a>
+                <a href={{ url_for('home.login') }}>Login</a>
+            </nav>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+</div>
+
+
+</body>
+</html>
