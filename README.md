@@ -1,6 +1,6 @@
 # RANKit
 
-RANKit allows users to manipulate rankings through personalized data visualization and rank building. When interpreting multi-attribute datasets, a slight change of weight between attributes can heavily impact ranking results. Most publically available rankings do not expose the functions that were used to compute the weights of each attribute. This lack of disclosure results in possible exploitation of data because rankings can imply a conclusion that is not necessarily true. 
+RANKit allows users to manipulate rankings through personalized data visualization and rank building. When interpreting multi-attribute datasets, a slight change of weight between attributes can heavily impact ranking results. Most publically available rankings do not expose the attributes used to compose the ranking. This lack of disclosure results in possible exploitation of data because rankings can imply a conclusion that is not necessarily true. 
 
 To allow for unbiased extrapolation of data, RANKit is composed of two tools: Explore and Visualize.
 
@@ -17,7 +17,7 @@ Based on [Caleydo LineUp](https://github.com/Caleydo/lineupjs), Explore is an in
 
 ## Tool: Build 
 
-Build is a machine learning tool that is trained through user selected preferences of rank object instances. The Build tool collects data from pairwise comparisons of sample objects completed by the user. The tool applies a regression analysis to this data and determines a pattern that it applies to all objects within a dataset. 
+Build is a machine learning tool that is trained through user selected preferences of rank object instances. The Build tool collects data from pairwise comparisons of sample objects completed by the user. The tool applies a regression analysis to this data and determines a pattern and ranks all object within a dataset according to that pattern. 
 
 ## Getting Started
 
