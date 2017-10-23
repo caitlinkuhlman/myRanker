@@ -19,3 +19,4 @@ withinEnv
 withinEnv.cmd
 .yo-rc-workspace.json
 *~
+*.pyc
