@@ -1,6 +1,4 @@
 from flask import Blueprint, request, url_for
-import pandas as pd
-import  rankit.build.rank_script.build_rank as build_rank
 
 build_blueprint = Blueprint(
     'build', __name__,
@@ -8,10 +6,9 @@ build_blueprint = Blueprint(
 )
 
 
-@build_blueprint.route('/build', methods=["POST"])
+@build_blueprint.route('/build/submit', methods=["POST"])
 def build():
+    request.form
     print("ranking...")
     #rank = build_rank.build(dataset=dataset, pairsfile=pairsfile)
-
-
 
