@@ -11,3 +11,4 @@ from rankit.home.views import home_blueprint
 from rankit.build.views import build_blueprint
 app.register_blueprint(home_blueprint)
 app.register_blueprint(build_blueprint)
+

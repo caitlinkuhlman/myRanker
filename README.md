@@ -36,4 +36,4 @@ Build is a machine learning tool that is trained through user selected preferenc
 
 ### Run: *CURRENTLY IN DEVELOPMENT*
 
-To startup the server: `$ python3 app.py`
+To startup the server: `$ python3 run.py`
