@@ -14,9 +14,9 @@ forEach.cmd
 node_modules
 .DS_Store
 requirements_dev.txt
-requirements.txt
 withinEnv
 withinEnv.cmd
 .yo-rc-workspace.json
 *~
 *.pyc
+venv/*
