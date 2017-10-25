@@ -14,9 +14,4 @@ def build():
     #rank = build_rank.build(dataset=dataset, pairsfile=pairsfile)
 
 
-    pairsfile = request.form
-    pairsfile = "sample_pairs.csv"
-    dataset = pd.read_csv("matters_indices_2014.csv")
-    rank = build_rank.build(dataset=dataset, pairsfile=pairsfile)
-    return  url_for(rank)
 
