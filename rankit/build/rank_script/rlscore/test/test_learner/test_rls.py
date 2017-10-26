@@ -5,10 +5,10 @@ from numpy.testing import assert_allclose
 import numpy.linalg as la
 from scipy.sparse import csc_matrix
 
-from rlscore.learner import RLS
-from rlscore.kernel import LinearKernel
-from rlscore.kernel import GaussianKernel
-from rlscore.kernel import PolynomialKernel
+from rankit.build.rank_script.rlscore.learner import RLS
+from rankit.build.rank_script.rlscore.kernel import LinearKernel
+from rankit.build.rank_script.rlscore.kernel import GaussianKernel
+from rankit.build.rank_script.rlscore.kernel import PolynomialKernel
 
 class Test(unittest.TestCase):
     

@@ -4,8 +4,8 @@ import unittest
 import numpy as np
 from scipy.sparse import coo_matrix
 
-from rlscore.learner.rankrls_with_pairwise_preferences import PPRankRLS
-from rlscore.kernel import GaussianKernel
+from rankit.build.rank_script.rlscore.learner.rankrls_with_pairwise_preferences import PPRankRLS
+from rankit.build.rank_script.rlscore.kernel import GaussianKernel
 
 
 

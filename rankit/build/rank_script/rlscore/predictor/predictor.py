@@ -26,7 +26,7 @@
 from scipy import sparse as sp
 import numpy as np
 
-from rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.utilities import array_tools
 
 class PredictorInterface(object):
     """Predictor interface

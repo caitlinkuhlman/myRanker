@@ -25,8 +25,8 @@
 
 from numpy import array
 import numpy as np
-from rlscore.measure.measure_utilities import UndefinedPerformance
-from rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.utilities import array_tools
 
 def cindex_singletask(Y, P):
     correct = Y.astype(np.float64)
@@ -74,7 +74,7 @@ def cindex_singletask_SLOW(Y, P):
     return 1. - disagreement
 
 try:
-    from rlscore.utilities import swapped
+    from rankit.build.rank_script.rlscore.utilities import swapped
 except Exception as e:
     print(e)
     print('Warning: could not import the fast cython implementation of the concordance index measure. Using a slow python-based one instead.')

@@ -25,9 +25,9 @@
 
 import random
 import numpy as np
-from rlscore.utilities import array_tools
-from rlscore.utilities import adapter
-from rlscore.predictor import PredictorInterface
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.utilities import adapter
+from rankit.build.rank_script.rlscore.predictor import PredictorInterface
 
 
 class MMC(PredictorInterface):
@@ -48,7 +48,7 @@ class MMC(PredictorInterface):
         number of clusters (default = 2)
         
     kernel : {'LinearKernel', 'GaussianKernel', 'PolynomialKernel', 'PrecomputedKernel', ...}
-        kernel function name, imported dynamically from rlscore.kernel
+        kernel function name, imported dynamically from rankit.build.rank_script.rlscore.kernel
         
     basis_vectors : {array-like, sparse matrix}, shape = [n_bvectors, n_features], optional
         basis vectors (typically a randomly chosen subset of the training data)

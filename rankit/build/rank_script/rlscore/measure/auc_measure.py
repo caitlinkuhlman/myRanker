@@ -25,9 +25,9 @@
 
 import numpy as np
 
-from rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
 from .measure_utilities import multitask
-from rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.utilities import array_tools
 
 def auc_singletask(Y, P):
     #the implementation has n(log(n)) time complexity

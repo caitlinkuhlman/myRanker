@@ -32,13 +32,13 @@ from scipy.sparse.linalg import LinearOperator
 from scipy.sparse.linalg import cg
 import scipy.sparse as sp
 
-from rlscore import predictor
-from rlscore.utilities import array_tools
-from rlscore.measure import sqmprank
-from rlscore.measure.measure_utilities import UndefinedPerformance
-from rlscore.predictor import PredictorInterface
-from rlscore.learner.query_rankrls import map_qids
-from rlscore.measure.measure_utilities import qids_to_splits
+from rankit.build.rank_script.rlscore import predictor
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.measure import sqmprank
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.predictor import PredictorInterface
+from rankit.build.rank_script.rlscore.learner.query_rankrls import map_qids
+from rankit.build.rank_script.rlscore.measure.measure_utilities import qids_to_splits
 
 class CGRankRLS(PredictorInterface):
     """Conjugate gradient RankRLS.

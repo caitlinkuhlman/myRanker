@@ -24,8 +24,8 @@
 # THE SOFTWARE.
 
 import numpy as np
-from rlscore.utilities import array_tools
-from rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
 
 def accuracy_singletask(Y, P):
     assert Y.shape[0] == P.shape[0]

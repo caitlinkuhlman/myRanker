@@ -3,11 +3,11 @@ import random as pyrandom
 pyrandom.seed(100)
 
 import numpy as np
-from rlscore.kernel import LinearKernel
-from rlscore.learner.cg_kron_rls import CGKronRLS
-from rlscore.predictor import LinearPairwisePredictor
-from rlscore.predictor import KernelPairwisePredictor
-from rlscore.learner.rls import RLS
+from rankit.build.rank_script.rlscore.kernel import LinearKernel
+from rankit.build.rank_script.rlscore.learner.cg_kron_rls import CGKronRLS
+from rankit.build.rank_script.rlscore.predictor import LinearPairwisePredictor
+from rankit.build.rank_script.rlscore.predictor import KernelPairwisePredictor
+from rankit.build.rank_script.rlscore.learner.rls import RLS
 
 
 class Test(unittest.TestCase):

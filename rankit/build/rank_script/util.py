@@ -21,8 +21,8 @@ from sklearn import metrics
 from learning2rank.rank import RankNet
 import pyximport
 pyximport.install()
-from rlscore.learner import PPRankRLS
-from rlscore.measure import cindex
+from rankit.build.rank_script.rlscore.learner import PPRankRLS
+from rankit.build.rank_script.rlscore.measure import cindex
 
 
 # In[2]:

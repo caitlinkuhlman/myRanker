@@ -4,8 +4,8 @@ from numpy import *
 import numpy.linalg as la
 import numpy as np
 
-from rlscore.learner import RLS
-from rlscore.kernel import GaussianKernel
+from rankit.build.rank_script.rlscore.learner import RLS
+from rankit.build.rank_script.rlscore.kernel import GaussianKernel
 
 
 class Test(unittest.TestCase):

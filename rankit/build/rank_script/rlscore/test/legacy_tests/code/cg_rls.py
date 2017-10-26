@@ -1,7 +1,7 @@
 import numpy as np
-from rlscore.learner.cg_rls import CGRLS
-from rlscore.utilities.reader import read_sparse
-from rlscore.measure import auc
+from rankit.build.rank_script.rlscore.learner.cg_rls import CGRLS
+from rankit.build.rank_script.rlscore.utilities.reader import read_sparse
+from rankit.build.rank_script.rlscore.measure import auc
 train_labels = np.loadtxt("./legacy_tests/data/class_train.labels")
 test_labels = np.loadtxt("./legacy_tests/data/class_test.labels")
 train_features = read_sparse("./legacy_tests/data/class_train.features")

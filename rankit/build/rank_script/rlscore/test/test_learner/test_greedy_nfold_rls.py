@@ -2,7 +2,7 @@ from numpy import *
 import numpy.linalg as la
 import unittest
 
-from rlscore.learner.greedy_nfold_rls import GreedyNFoldRLS
+from rankit.build.rank_script.rlscore.learner.greedy_nfold_rls import GreedyNFoldRLS
 
 class Test(unittest.TestCase):
     

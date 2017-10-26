@@ -3,8 +3,8 @@ import numpy.linalg as la
 from numpy.testing import assert_allclose
 import unittest
 
-from rlscore.learner import QueryRankRLS
-from rlscore.kernel import GaussianKernel, PolynomialKernel
+from rankit.build.rank_script.rlscore.learner import QueryRankRLS
+from rankit.build.rank_script.rlscore.kernel import GaussianKernel, PolynomialKernel
 
 
 def mapQids(qids):

@@ -25,13 +25,13 @@ def testMeasures():
 
 
 def testModels():
-    from rlscore.test.test_model import Test
+    from rankit.build.rank_script.rlscore.test.test_model import Test
     suite = unittest.TestLoader().loadTestsFromTestCase(Test)
     return suite
 
 
 def testUtilities():
-    from rlscore.test.test_utility.test_sampled_kronecker_products import Test
+    from rankit.build.rank_script.rlscore.test.test_utility.test_sampled_kronecker_products import Test
     suite = unittest.TestLoader().loadTestsFromTestCase(Test)
     return suite
         

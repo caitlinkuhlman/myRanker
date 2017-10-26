@@ -1,9 +1,9 @@
 import numpy as np
-from rlscore.learner.cg_rankrls import CGRankRLS
-from rlscore.learner.cg_rankrls import EarlyStopCB
-from rlscore.utilities.reader import read_sparse
-from rlscore.measure import cindex
-from rlscore.utilities.reader import read_qids
+from rankit.build.rank_script.rlscore.learner.cg_rankrls import CGRankRLS
+from rankit.build.rank_script.rlscore.learner.cg_rankrls import EarlyStopCB
+from rankit.build.rank_script.rlscore.utilities.reader import read_sparse
+from rankit.build.rank_script.rlscore.measure import cindex
+from rankit.build.rank_script.rlscore.utilities.reader import read_qids
 train_labels = np.loadtxt("./legacy_tests/data/rank_train.labels")
 test_labels = np.loadtxt("./legacy_tests/data/rank_test.labels")
 train_features = read_sparse("./legacy_tests/data/rank_train.features")
@@ -19,8 +19,8 @@ kwargs["callbackfun"] = EarlyStopCB(test_features, test_labels, test_qids, measu
 learner = CGRankRLS(**kwargs)
 P = learner.predict(test_features)
 test_perf = cindex(test_labels, P)
-from rlscore.measure.measure_utilities import UndefinedPerformance
-from rlscore.measure.measure_utilities import qids_to_splits
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.measure.measure_utilities import qids_to_splits
 test_qids = qids_to_splits(test_qids)
 perfs = []
 for query in test_qids:

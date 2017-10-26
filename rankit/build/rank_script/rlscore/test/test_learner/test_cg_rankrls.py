@@ -4,9 +4,9 @@ import unittest
 import numpy as np
 from scipy.sparse import coo_matrix
 
-from rlscore.learner import CGRankRLS
-from rlscore.learner.cg_rankrls import PCGRankRLS
-from rlscore.learner import QueryRankRLS
+from rankit.build.rank_script.rlscore.learner import CGRankRLS
+from rankit.build.rank_script.rlscore.learner.cg_rankrls import PCGRankRLS
+from rankit.build.rank_script.rlscore.learner import QueryRankRLS
 
 
 class Test(unittest.TestCase):

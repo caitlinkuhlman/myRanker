@@ -28,8 +28,8 @@ import numpy as np
 import numpy.linalg as la
 import scipy.sparse as sp
 
-from rlscore.utilities import array_tools
-from rlscore import predictor
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore import predictor
 
 class SpaceEfficientGreedyRLS(object):
     
