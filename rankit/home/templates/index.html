@@ -87,7 +87,7 @@
 							<!-- Explore is Lineup -->
 							<a href="#" onclick="sendDatasetToLineup('legatum')" class = "lineup">Explore</a>
 							<!-- Build is myRanker -->
-							<a href="#">Build</a>
+							<a href={{ url_for('build.buildListComp') }}>Build</a>
 						</figcaption>
 					</figure>
 				</li>
@@ -104,7 +104,7 @@
 							<!-- Explore is Lineup -->
 							<a href="#" onclick="window.location='http://localhost:8080';" class = "lineup">Explore</a>
 							<!-- Build is myRanker -->
-							<a href="#">Build</a>
+							<a href={{ url_for('build.buildListComp') }}>Build</a>
 						</figcaption>
 					</figure>
 				</li>
@@ -120,7 +120,7 @@
 							<!-- Explore is Lineup -->
 							<a href="#" onclick="window.location='http://localhost:8080';" class = "lineup">Explore</a>
 							<!-- Build is myRanker -->
-							<a href="#">Build</a>
+							<a href={{ url_for('build.buildListComp') }}>Build</a>
 						</figcaption>
 					</figure>
 				</li>
@@ -153,7 +153,7 @@
         }
         req.send()
     }
-	
+
 </script>
 
 </html>

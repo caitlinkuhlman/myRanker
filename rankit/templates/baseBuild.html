@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/default.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/people.css') }}"/>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
+</head>
+
+
+
+
+
+<body>
+
+<div class="container">
+    <div class="cbp-af-header">
+        <div class="cbp-af-inner">
+          <a href={{ url_for('home.index') }}><h1>RanKit</h1></a>
+            <nav>
+                <a href={{ url_for('home.index') }}>Dataset</a>
+                <!-- <div class="dropdown">
+                  <button onclick="myFunction()" class="dropbtn">Build</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href={{ url_for('build.buildListComp') }}>List</a>
+                    <a href={{ url_for('build.buildListComp') }}>High medium low</a>
+                    <a href={{ url_for('build.buildListComp') }}>Pairwise Comparison</a>
+                  </div>
+                </div> -->
+                <a href={{ url_for('build.buildListComp') }}>Build</a>
+                <a href={{ url_for('home.index') }}>Explore</a>
+            </nav>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+</div>
+
+
+</body>
+</html>
