@@ -1,8 +1,8 @@
 import unittest
 import numpy as np
 
-from rlscore.measure.accuracy_measure import accuracy
-from rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.measure.accuracy_measure import accuracy
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
 
 def simple_accuracy(Y, P):
     correct = 0.

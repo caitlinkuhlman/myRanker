@@ -4,7 +4,7 @@ import unittest
 
 import numpy as np
 
-from rlscore.learner.interactive_rls_classifier import InteractiveRlsClassifier
+from rankit.build.rank_script.rlscore.learner.interactive_rls_classifier import InteractiveRlsClassifier
 
 
 

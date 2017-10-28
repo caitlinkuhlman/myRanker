@@ -26,8 +26,8 @@
 from scipy.stats import spearmanr
 import numpy as np
 from .measure_utilities import multitask
-from rlscore.utilities import array_tools
-from rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
 
 def spearman_singletask(Y, P):
     return spearmanr(Y, P)[0]

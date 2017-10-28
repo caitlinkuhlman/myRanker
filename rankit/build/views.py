@@ -1,5 +1,9 @@
+
 from flask import Blueprint, request, url_for, make_response, jsonify
 import os, json
+
+import  rankit.build.rank_script.build_rank as build_rank
+import  pandas as pd
 
 build_blueprint = Blueprint(
     'build', __name__,
@@ -26,6 +30,7 @@ def processDataset():
 
 @build_blueprint.route('/build/submit', methods=["POST"])
 def build():
+
     # dataset_name = request.form.get('dataset_name')
     # pairs_json = request.form.get('pairs')
     # pairsfile = dataset_name+"_pairsfile.json"
@@ -35,4 +40,13 @@ def build():
 
     print("ranking...")
     # rank = build_rank.build(dataset=dataset_name, pairsfile=pairsfile)
-    # return rank
+
+    # dataset = pd.read_csv("matters_indices_2014.csv")
+    # pairsfile = "sample_pairs.csv"
+    # pairs = pd.read_csv(pairsfile, header=None)
+
+    #rank = build_rank.build(dataset=dataset, pairs=pairs)
+    #return rank.to_json()
+
+
+

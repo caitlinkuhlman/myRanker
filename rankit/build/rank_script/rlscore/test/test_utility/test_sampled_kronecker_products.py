@@ -5,7 +5,7 @@ import numpy as np
 
 from scipy.sparse import lil_matrix
 
-from rlscore.utilities import sampled_kronecker_products
+from rankit.build.rank_script.rlscore.utilities import sampled_kronecker_products
 
 class Test(unittest.TestCase):
     

@@ -25,16 +25,16 @@
 
 from numpy import identity, multiply, mat, sum
 import numpy.linalg as la
-from rlscore.utilities import array_tools 
-from rlscore.utilities import adapter
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.utilities import adapter
 from . import _rls
 
-from rlscore.measure.measure_utilities import UndefinedPerformance
-from rlscore.measure import sqerror
-from rlscore.measure import cindex
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.measure import sqerror
+from rankit.build.rank_script.rlscore.measure import cindex
 import numpy as np
-from rlscore.predictor import PredictorInterface
-from rlscore.utilities.cross_validation import grid_search
+from rankit.build.rank_script.rlscore.predictor import PredictorInterface
+from rankit.build.rank_script.rlscore.utilities.cross_validation import grid_search
 
 class RLS(PredictorInterface):
     """Regularized least-squares regression/classification
@@ -51,7 +51,7 @@ class RLS(PredictorInterface):
         regularization parameter, regparam > 0 (default=1.0)
         
     kernel : {'LinearKernel', 'GaussianKernel', 'PolynomialKernel', 'PrecomputedKernel', ...}
-        kernel function name, imported dynamically from rlscore.kernel
+        kernel function name, imported dynamically from rankit.build.rank_script.rlscore.kernel
         
     basis_vectors : {array-like, sparse matrix}, shape = [n_bvectors, n_features], optional
         basis vectors (typically a randomly chosen subset of the training data)
@@ -367,13 +367,13 @@ class LeaveOneOutRLS(PredictorInterface):
     Y : {array-like}, shape = [n_samples] or [n_samples, n_labels]
         Training set labels
     kernel : {'LinearKernel', 'GaussianKernel', 'PolynomialKernel', 'PrecomputedKernel', ...}
-        kernel function name, imported dynamically from rlscore.kernel
+        kernel function name, imported dynamically from rankit.build.rank_script.rlscore.kernel
     basis_vectors : {array-like, sparse matrix}, shape = [n_bvectors, n_features], optional
         basis vectors (typically a randomly chosen subset of the training data)
     regparams : {array-like}, shape = [grid_size] (optional)
         regularization parameter values to be tested, default = [2^-15,...,2^15]
     measure : function(Y, P) (optional)
-        a performance measure from rlscore.measure used for model selection,
+        a performance measure from rankit.build.rank_script.rlscore.measure used for model selection,
         default sqerror (mean squared error)
 
         
@@ -452,13 +452,13 @@ class KfoldRLS(PredictorInterface):
         Each list within the folds list contains the indices of samples in one fold, indices
         must be from range [0,n_samples-1]
     kernel : {'LinearKernel', 'GaussianKernel', 'PolynomialKernel', 'PrecomputedKernel', ...}
-        kernel function name, imported dynamically from rlscore.kernel
+        kernel function name, imported dynamically from rankit.build.rank_script.rlscore.kernel
     basis_vectors : {array-like, sparse matrix}, shape = [n_bvectors, n_features], optional
         basis vectors (typically a randomly chosen subset of the training data)
     regparams : {array-like}, shape = [grid_size] (optional)
         regularization parameter values to be tested, default = [2^-15,...,2^15]
     measure : function(Y, P) (optional)
-        a performance measure from rlscore.measure used for model selection,
+        a performance measure from rankit.build.rank_script.rlscore.measure used for model selection,
         default sqerror (squared error)
 
         
@@ -548,13 +548,13 @@ class LeavePairOutRLS(PredictorInterface):
     Y : {array-like}, shape = [n_samples] or [n_samples, n_labels]
         Training set labels
     kernel : {'LinearKernel', 'GaussianKernel', 'PolynomialKernel', 'PrecomputedKernel', ...}
-        kernel function name, imported dynamically from rlscore.kernel
+        kernel function name, imported dynamically from rankit.build.rank_script.rlscore.kernel
     basis_vectors : {array-like, sparse matrix}, shape = [n_bvectors, n_features], optional
         basis vectors (typically a randomly chosen subset of the training data)
     regparams : {array-like}, shape = [grid_size] (optional)
         regularization parameter values to be tested, default = [2^-15,...,2^15]
     measure : function(Y, P) (optional)
-        a performance measure from rlscore.measure used for model selection,
+        a performance measure from rankit.build.rank_script.rlscore.measure used for model selection,
         default sqerror (squared error)
 
         

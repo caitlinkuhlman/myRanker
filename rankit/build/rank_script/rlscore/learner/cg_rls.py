@@ -32,10 +32,10 @@ from scipy.sparse.linalg import cg
 from scipy import sparse
 from numpy import ones
 
-from rlscore.utilities import array_tools
-from rlscore import predictor
-from rlscore.measure import sqerror
-from rlscore.predictor import PredictorInterface
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore import predictor
+from rankit.build.rank_script.rlscore.measure import sqerror
+from rankit.build.rank_script.rlscore.predictor import PredictorInterface
 
 class CGRLS(PredictorInterface):
     """Conjugate gradient RLS.

@@ -26,12 +26,12 @@
 import numpy as np
 import numpy.linalg as la
 
-from rlscore.utilities import array_tools
-from rlscore.utilities import linalg
-from rlscore.utilities import sampled_kronecker_products
-from rlscore.predictor import LinearPairwisePredictor
-from rlscore.predictor import KernelPairwisePredictor
-from rlscore.predictor import PairwisePredictorInterface
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.utilities import linalg
+from rankit.build.rank_script.rlscore.utilities import sampled_kronecker_products
+from rankit.build.rank_script.rlscore.predictor import LinearPairwisePredictor
+from rankit.build.rank_script.rlscore.predictor import KernelPairwisePredictor
+from rankit.build.rank_script.rlscore.predictor import PairwisePredictorInterface
 
 class KronRLS(PairwisePredictorInterface):
     

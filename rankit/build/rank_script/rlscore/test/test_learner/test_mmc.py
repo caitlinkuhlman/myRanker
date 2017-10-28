@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-from rlscore.learner.steepest_descent_mmc import SteepestDescentMMC as MMC
-#from rlscore.learner.steepest_descent_mmc_alt import SteepestDescentMMC as MMC
-#from rlscore.learner.mmc import MMC as MMC
+from rankit.build.rank_script.rlscore.learner.steepest_descent_mmc import SteepestDescentMMC as MMC
+#from rankit.build.rank_script.rlscore.learner.steepest_descent_mmc_alt import SteepestDescentMMC as MMC
+#from rankit.build.rank_script.rlscore.learner.mmc import MMC as MMC
 
 
 class TestCallback(object):

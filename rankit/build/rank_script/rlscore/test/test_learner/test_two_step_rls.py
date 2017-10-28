@@ -3,9 +3,9 @@ import unittest
 import numpy as np
 import numpy.linalg as la
 
-from rlscore.kernel import LinearKernel
-from rlscore.learner.two_step_rls import TwoStepRLS
-from rlscore.learner.rls import RLS
+from rankit.build.rank_script.rlscore.kernel import LinearKernel
+from rankit.build.rank_script.rlscore.learner.two_step_rls import TwoStepRLS
+from rankit.build.rank_script.rlscore.learner.rls import RLS
 
 
 class Test(unittest.TestCase):

@@ -25,10 +25,10 @@
 
 from scipy import sparse as sp
 import numpy as np
-from rlscore import predictor
-from rlscore.utilities import array_tools
-from rlscore.learner import _greedy_rls
-from rlscore.predictor import PredictorInterface
+from rankit.build.rank_script.rlscore import predictor
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.learner import _greedy_rls
+from rankit.build.rank_script.rlscore.predictor import PredictorInterface
 
 SELECTED_FEATURES = 'selected_features'
 GREEDYRLS_LOO_PERFORMANCES = 'GreedyRLS_LOO_performances'
@@ -469,7 +469,7 @@ class DefaultCallback(object):
             if 'test_measure' in kwargs:
                 self.test_measure = kwargs['test_measure']
                 if isinstance(self.test_measure, str):
-                    exec("from rlscore.measure import " + self.test_measure)
+                    exec("from rankit.build.rank_script.rlscore.measure import " + self.test_measure)
                     exec("self.test_measure = " + self.test_measure)
             else:
                 self.test_measure = None

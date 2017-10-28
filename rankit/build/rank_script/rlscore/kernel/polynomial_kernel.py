@@ -24,7 +24,7 @@
 # THE SOFTWARE.
 
 from scipy import sparse as sp
-from rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.utilities import array_tools
 
 
 class PolynomialKernel(object):

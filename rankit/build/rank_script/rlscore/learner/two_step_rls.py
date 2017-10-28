@@ -24,16 +24,16 @@
 # THE SOFTWARE.
 
 import numpy as np
-from rlscore.learner.rls import RLS
-from rlscore.utilities import array_tools
-from rlscore.utilities import linalg
+from rankit.build.rank_script.rlscore.learner.rls import RLS
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.utilities import linalg
 
 
 from . import _two_step_rls
 
-from rlscore.predictor import PairwisePredictorInterface
-from rlscore.predictor import LinearPairwisePredictor
-from rlscore.predictor import KernelPairwisePredictor
+from rankit.build.rank_script.rlscore.predictor import PairwisePredictorInterface
+from rankit.build.rank_script.rlscore.predictor import LinearPairwisePredictor
+from rankit.build.rank_script.rlscore.predictor import KernelPairwisePredictor
 
 class TwoStepRLS(PairwisePredictorInterface):
 

@@ -27,7 +27,7 @@ import numpy as np
 from numpy import mat
 from numpy import float64
 from scipy import sparse as sp
-from rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.utilities import array_tools
 
 
 class GaussianKernel(object):

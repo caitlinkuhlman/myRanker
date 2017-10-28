@@ -20,3 +20,4 @@ withinEnv.cmd
 *~
 *.pyc
 venv/*
+rankit/explore/Lineup/requirements.txt

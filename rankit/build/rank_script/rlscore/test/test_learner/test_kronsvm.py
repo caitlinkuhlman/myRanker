@@ -4,9 +4,9 @@ import random as pyrandom
 
 import numpy as np
 from numpy import random as numpyrandom
-from rlscore.learner.kron_svm import KronSVM
+from rankit.build.rank_script.rlscore.learner.kron_svm import KronSVM
 
-from rlscore.utilities import sampled_kronecker_products
+from rankit.build.rank_script.rlscore.utilities import sampled_kronecker_products
 
 def dual_svm_objective(a, K1, K2, Y, rowind, colind, lamb):
     #dual form of the objective function for support vector machine

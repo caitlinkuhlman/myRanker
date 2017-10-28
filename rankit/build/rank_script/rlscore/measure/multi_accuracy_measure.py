@@ -24,7 +24,7 @@
 # THE SOFTWARE.
 
 import numpy as np
-from rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
 
 def ova_accuracy(Y, P):
     """One-vs-all classification accuracy for multi-class problems.

@@ -28,9 +28,9 @@ from scipy.sparse import csc_matrix
 from scipy.sparse import coo_matrix
 
 
-from rlscore.utilities import adapter
-from rlscore.utilities import linalg
-from rlscore.predictor import PredictorInterface
+from rankit.build.rank_script.rlscore.utilities import adapter
+from rankit.build.rank_script.rlscore.utilities import linalg
+from rankit.build.rank_script.rlscore.predictor import PredictorInterface
 
 class PPRankRLS(PredictorInterface):
     """Regularized least-squares ranking (RankRLS) with pairwise preferences
@@ -50,7 +50,7 @@ class PPRankRLS(PredictorInterface):
         regularization parameter, regparam > 0 (default=1.0)
         
     kernel : {'LinearKernel', 'GaussianKernel', 'PolynomialKernel', 'PrecomputedKernel', ...}
-        kernel function name, imported dynamically from rlscore.kernel
+        kernel function name, imported dynamically from rankit.build.rank_script.rlscore.kernel
         
     basis_vectors : {array-like, sparse matrix}, shape = [n_bvectors, n_features], optional
         basis vectors (typically a randomly chosen subset of the training data)

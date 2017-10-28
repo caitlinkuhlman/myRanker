@@ -28,10 +28,10 @@ import numpy as np
 from scipy.sparse.linalg import LinearOperator
 from scipy.sparse.linalg import qmr
 
-from rlscore.utilities import sampled_kronecker_products
-from rlscore.predictor import KernelPairwisePredictor
-from rlscore.predictor import LinearPairwisePredictor
-from rlscore.predictor import PairwisePredictorInterface
+from rankit.build.rank_script.rlscore.utilities import sampled_kronecker_products
+from rankit.build.rank_script.rlscore.predictor import KernelPairwisePredictor
+from rankit.build.rank_script.rlscore.predictor import LinearPairwisePredictor
+from rankit.build.rank_script.rlscore.predictor import PairwisePredictorInterface
 
 
 TRAIN_LABELS = 'Y'

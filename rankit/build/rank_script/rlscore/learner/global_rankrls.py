@@ -27,13 +27,13 @@ import numpy as np
 from numpy import array, eye, float64, multiply, mat, ones, sqrt, zeros
 import numpy.linalg as la
 
-from rlscore.utilities import array_tools
-from rlscore.utilities import adapter
-from rlscore.predictor import PredictorInterface
-from rlscore.utilities.cross_validation import grid_search
-from rlscore.measure import cindex
-from rlscore.learner.rls import NfoldCV
-from rlscore.learner.rls import LPOCV
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.utilities import adapter
+from rankit.build.rank_script.rlscore.predictor import PredictorInterface
+from rankit.build.rank_script.rlscore.utilities.cross_validation import grid_search
+from rankit.build.rank_script.rlscore.measure import cindex
+from rankit.build.rank_script.rlscore.learner.rls import NfoldCV
+from rankit.build.rank_script.rlscore.learner.rls import LPOCV
 
 from . import _global_rankrls
 
@@ -50,7 +50,7 @@ class GlobalRankRLS(PredictorInterface):
     regparam : float, optional
         regularization parameter, regparam > 0 (default=1.0)
     kernel : {'LinearKernel', 'GaussianKernel', 'PolynomialKernel', 'PrecomputedKernel', ...}
-        kernel function name, imported dynamically from rlscore.kernel
+        kernel function name, imported dynamically from rankit.build.rank_script.rlscore.kernel
     basis_vectors : {array-like, sparse matrix}, shape = [n_bvectors, n_features], optional
         basis vectors (typically a randomly chosen subset of the training data)
         
@@ -636,7 +636,7 @@ class LeavePairOutRankRLS(PredictorInterface):
     Y : {array-like}, shape = [n_samples] or [n_samples, n_labels]
         Training set labels
     kernel : {'LinearKernel', 'GaussianKernel', 'PolynomialKernel', 'PrecomputedKernel', ...}
-        kernel function name, imported dynamically from rlscore.kernel
+        kernel function name, imported dynamically from rankit.build.rank_script.rlscore.kernel
     basis_vectors : {array-like, sparse matrix}, shape = [n_bvectors, n_features], optional
         basis vectors (typically a randomly chosen subset of the training data)
     regparams : {array-like}, shape = [grid_size] (optional)
@@ -713,7 +713,7 @@ class KfoldRankRLS(PredictorInterface):
     Y : {array-like}, shape = [n_samples] or [n_samples, n_labels]
         Training set labels
     kernel : {'LinearKernel', 'GaussianKernel', 'PolynomialKernel', 'PrecomputedKernel', ...}
-        kernel function name, imported dynamically from rlscore.kernel
+        kernel function name, imported dynamically from rankit.build.rank_script.rlscore.kernel
     basis_vectors : {array-like, sparse matrix}, shape = [n_bvectors, n_features], optional
         basis vectors (typically a randomly chosen subset of the training data)
     regparams : {array-like}, shape = [grid_size] (optional)

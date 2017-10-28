@@ -1,8 +1,8 @@
 import numpy as np
 import unittest
 
-from rlscore.measure.multi_accuracy_measure import ova_accuracy
-from rlscore.utilities import multiclass
+from rankit.build.rank_script.rlscore.measure.multi_accuracy_measure import ova_accuracy
+from rankit.build.rank_script.rlscore.utilities import multiclass
 
 class Test(unittest.TestCase):
     

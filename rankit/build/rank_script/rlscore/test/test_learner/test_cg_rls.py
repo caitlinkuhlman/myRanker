@@ -2,8 +2,8 @@ import unittest
 
 import numpy as np
 
-from rlscore.learner import CGRLS
-from rlscore.learner import RLS
+from rankit.build.rank_script.rlscore.learner import CGRLS
+from rankit.build.rank_script.rlscore.learner import RLS
 
 
 
