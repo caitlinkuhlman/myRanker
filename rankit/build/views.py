@@ -1,25 +1,38 @@
-from flask import Blueprint, request, url_for
+from flask import Blueprint, request, url_for, make_response, jsonify
+import os, json
 
 build_blueprint = Blueprint(
     'build', __name__,
     template_folder='templates'
 )
 
-@build_blueprint.route('build/dataset', methods=["GET"])
+@build_blueprint.route('/build/dataset', methods=["GET"])
 def processDataset():
-    dataset_name = request.args.lists()
+    # get the arguments from get request
+    dataset_name = request.args.get("dataset_name", "alternative")
 
-    # dataset_name.get('dataset_name', default=-1, type="")
-    dataset_name = list(dataset_name)
-    # dataset_name = dataset_name.get('dataset_name', default=-1, type="")
+    # get the absolute path of the dataset
+    datasets_dir = os.path.dirname("/Users/Malikusha/myRanker/rankit/datasets/")
+    abs_file_path = os.path.join(datasets_dir, dataset_name)
 
-    print("Dataset : %s  " % dataset_name)
-    return dataset_name
+    # load the json file contents into json object
+    with open(abs_file_path, 'r') as data_file:
+        datastore = json.load(data_file)
+
+    print("Dataset : %s " % dataset_name)
+
+    # send json object containing all the data from selected dataset to client
+    return jsonify(datastore)
 
 @build_blueprint.route('/build/submit', methods=["POST"])
 def build():
+    # dataset_name = request.form.get('dataset_name')
+    # pairs_json = request.form.get('pairs')
+    # pairsfile = dataset_name+"_pairsfile.json"
+    #
+    # with open(pairsfile, 'w') as f:
+    #     json.dump(pairs_json, f)
+
     print("ranking...")
     # rank = build_rank.build(dataset=dataset_name, pairsfile=pairsfile)
     # return rank
-
-

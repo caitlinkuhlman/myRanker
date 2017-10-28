@@ -85,7 +85,7 @@
 							<h3>Tools</h3>
 							<span>Select a tool!</span>
 							<!-- Explore is Lineup -->
-							<a href="#" onclick="sendDatasetToLineup('legatum')" class = "lineup">Explore</a>
+							<a href="#" onclick= "call('matters_data.json')" class = "lineup">Explore</a>
 							<!-- Build is myRanker -->
 							<a href="#">Build</a>
 						</figcaption>
@@ -131,29 +131,29 @@
 	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}" ></script>
 	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/toucheffects.js') }}" ></script>
 
-    </div>
-
-{% endblock %}
-
-
-<script>
-	function sendDatasetToLineup(dataset_name) {
+    <script>
+	function call(dataset_name) {
         var req = new XMLHttpRequest();
         var param = dataset_name;
         //console.log(param)
 
         req.responseType = 'json'
-        req.open('GET', "/dataset"+"?"+"dataset_name="+param)
+        req.open('GET', "/build/dataset"+"?"+"dataset_name="+param)
 
         req.onload = function() {
-            const status = this.response.status
-            if (status == 'ok') {
-                console.log("Worked!")
-            }
+{#            The json object is returned, process it #}
+            const datasets = this.response
+            console.log(datasets)
+
         }
         req.send()
     }
-	
-</script>
+    </script>
+
+    </div>
+
+{% endblock %}
+
+
 
 </html>
