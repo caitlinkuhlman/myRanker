@@ -1,181 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>RANKit Build</title>
-    
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
+  <title>RANKit Build</title>
 
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
 
+</head>
 
-<style>
+<body>
 
-ul.source, ul.target {
-  min-height: 50px;
-  margin: 0px 25px 10px 0px;
-  padding: 2px;
-  border-width: 1px;
-  border-style: solid;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  list-style-type: none;
-  list-style-position: inside;
-}
-ul.source {
-  border-color: #f8e0b1;
-}
-ul.target {
-  border-color: #add38d;
-}
-.source li, .target li {
-  margin: 5px;
-  padding: 5px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-}
-.source li {
-  background-color: #fcf8e3;
-  border: 1px solid #fbeed5;
-  color: #c09853;
-}
-.target li {
-  background-color: #ebf5e6;
-  border: 1px solid #d6e9c6;
-  color: #468847;
-}
-.sortable-dragging {
-  border-color: #ccc !important;
-  background-color: #fafafa !important;
-  color: #bbb !important;
-}
-.sortable-placeholder {
-  height: 40px;
-}
-.source .sortable-placeholder {
-  border: 2px dashed #f8e0b1 !important;
-  background-color: #fefcf5 !important;
-}
-.target .sortable-placeholder {
-  border: 2px dashed #add38d !important;
-  background-color: #f6fbf4 !important;
-}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
 
-</style>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button> <a class="navbar-brand" href={{ url_for('home.index') }}>RANKIT</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="#">Dataset</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#">High Medium Low</a>
+                  </li>
+                  <li class="divider">
+                  </li>
+                  <li>
+                    <a href="#">List Comparison</a>
+                  </li>
+                  <li class="divider">
+                  </li>
+                  <li>
+                    <a href="#">Pairwise Comparison</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Explore</a>
+              </li>
+            </ul>
 
 
-  </head>
+          </div>
 
-  <body>
+        </nav>
 
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<nav class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
+        <div class="page-header">
+          <h1>
+            RANKIT Build: List Comparison
+          </h1>
 
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href={{ url_for('home.index') }}>RANKIT</a>
-				</div>
-
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="#">Dataset</a>
-						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									<a href="#">High Medium Low</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">List Comparison</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Pairwise Comparison</a>
-								</li>
-							</ul>
-						</li>
-            <li>
-              <a href="#">Explore</a>
-            </li>
-					</ul>
-
-
-				</div>
-
-			</nav>
-
-      <div class="page-header">
-				<h1>
-					RANKIT Build: List Comparison
-				</h1>
-
-			</div>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control">
         </div>
-        <button type="submit" class="btn btn-default">
-          Submit
-        </button>
-      </form>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-default">
+            Submit
+          </button>
+        </form>
 
-</br>
-</br>
-</br>
-</br>
-
-      <div class="sideBySide">
-  <div class="left">
-    <ul class="source connected">
-      <li>Alfa Romeo</li>
-      <li>Audi</li>
-      <li>BMW</li>
-      <li>Ford</li>
-      <li>Jaguar</li>
-      <li>Mercedes</li>
-      <li>Porsche</li>
-      <li>Tesla</li>
-      <li>Volkswagen</li>
-      <li>Volvo</li>
-    </ul>
+      </div>
+    </div>
   </div>
-  <div class="right">
-    <ul class="target connected">
-    </ul>
-  </div>
-</div>
-
-		</div>
-	</div>
-</div>
-
-<script type="text/javascript">
-  $(function () {
-    $(".source, .target").sortable({
-      connectWith: ".connected"
-    });
-  });
-</script>
-
-    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
-    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>
-    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
-    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
 
 
-  </body>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+
+
+</body>
 </html>
