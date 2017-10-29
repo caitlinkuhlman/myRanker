@@ -32,8 +32,20 @@ Build is a machine learning tool that is trained through user selected preferenc
 - [Phovea Generator](https://github.com/phovea/generator-phovea)
 	- `$ npm install -g github:phovea/generator-phovea`
 - [Python 3](https://www.python.org)
+- [Pip](https://pypi.python.org/pypi/pip)
 
 
 ### Run: *CURRENTLY IN DEVELOPMENT*
 
-To startup the server: `$ python3 run.py`
+To download dependiencies: 
+	`$ pip install virtualenv`
+	in myRanker directory: 
+		`$ virtualenv venv`
+		`$ source venv/bin/activate`
+		`$ pip install -r requirements.txt`
+		`$ deactivate`
+	
+To startup the server: 
+	activate virtual environment: `$ source venv/bin/activate`
+	run project: `$ python3 run.py`
+	exit virual environemnt: `$ deactivate` 
