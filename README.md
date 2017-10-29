@@ -37,15 +37,24 @@ Build is a machine learning tool that is trained through user selected preferenc
 
 ### Run: *CURRENTLY IN DEVELOPMENT*
 
-To download dependiencies: 
-	`$ pip install virtualenv`
-	in myRanker directory: 
-		`$ virtualenv venv`
-		`$ source venv/bin/activate`
-		`$ pip install -r requirements.txt`
-		`$ deactivate`
+#### To download dependiencies: 
+
+`$ pip install virtualenv`
 	
-To startup the server: 
-	activate virtual environment: `$ source venv/bin/activate`
-	run project: `$ python3 run.py`
-	exit virual environemnt: `$ deactivate` 
+*in myRanker directory:*
+	
+`$ virtualenv venv`
+		
+`$ source venv/bin/activate`
+		
+`$ pip install -r requirements.txt`
+		
+`$ deactivate`
+	
+#### To startup the server: 
+
+*activate virtual environment:* `$ source venv/bin/activate`
+	
+*run project:* `$ python3 run.py`
+	
+*exit virual environemnt:* `$ deactivate` 
