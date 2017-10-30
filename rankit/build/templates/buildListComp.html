@@ -107,22 +107,8 @@
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
-  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
-
   <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
-  <script>
-    const pool = document.querySelector('#top')
-    const bot = document.querySelector('#bot')
-    const containers = [
-      pool,
-      bot,
-    ]
-    dragula(containers, {
-      copy: (el, source) => source === pool,
-      accepts: (el, target) => target !== pool,
-      removeOnSpill: true,
-    })
-  </script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
 
 </body>
 </html>
