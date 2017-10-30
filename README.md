@@ -48,8 +48,11 @@ Build is a machine learning tool that is trained through user selected preferenc
 `$ source venv/bin/activate`
 		
 `$ pip install -r requirements.txt`
+
+`$ export CFLAGS=-I$VIRTUAL_ENV/include`
 		
 `$ deactivate`
+
 	
 #### To startup the server: 
 
