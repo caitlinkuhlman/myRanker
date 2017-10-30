@@ -1,5 +1,5 @@
 
-from flask import Blueprint, request, url_for, make_response, jsonify
+from flask import Blueprint, request, url_for, make_response, jsonify, render_template
 import os, json
 
 import  rankit.build.rank_script.build_rank as build_rank
@@ -26,7 +26,7 @@ def processDataset():
     print("Dataset : %s " % dataset_name)
 
     # send json object containing all the data from selected dataset to client
-    return jsonify(datastore)
+    return render_template("buildListComp.html", dataset_json=jsonify(datastore))
 
 @build_blueprint.route('/build/submit', methods=["POST"])
 def build():

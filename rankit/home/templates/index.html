@@ -141,7 +141,7 @@
         req.open('GET', "/build/dataset"+"?"+"dataset_name="+param)
 
         req.onload = function() {
-{#            The json object is returned, process it #}
+            //The json object is returned, process it
             const datasets = this.response
             console.log(datasets)
 
