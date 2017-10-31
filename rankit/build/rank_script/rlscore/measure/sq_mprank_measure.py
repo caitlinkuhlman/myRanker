@@ -25,8 +25,8 @@
 
 import numpy as np
 
-from rlscore.utilities import array_tools
-from rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
 
 def sqmprank_singletask(Y, P):
     correct = Y

@@ -32,11 +32,11 @@ import numpy as np
 import numpy.linalg as la
 from numpy.linalg.linalg import LinAlgError
 
-from rlscore.utilities import linalg
-from rlscore import predictor
-from rlscore.utilities import array_tools
-from rlscore.kernel import createKernelByModuleName
-from rlscore.kernel import LinearKernel
+from rankit.build.rank_script.rlscore.utilities import linalg
+from rankit.build.rank_script.rlscore import predictor
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.kernel import createKernelByModuleName
+from rankit.build.rank_script.rlscore.kernel import LinearKernel
 
 def createSVDAdapter(X, kernel="LinearKernel", **kwargs):
         kwargs["kernel"] = kernel

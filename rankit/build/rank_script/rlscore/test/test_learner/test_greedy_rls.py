@@ -3,8 +3,8 @@ random.seed(100)
 import numpy.linalg as la
 import unittest
 from numpy.testing import assert_allclose, assert_array_equal
-from rlscore.learner import GreedyRLS
-from rlscore.learner import RLS
+from rankit.build.rank_script.rlscore.learner import GreedyRLS
+from rankit.build.rank_script.rlscore.learner import RLS
 import numpy as np
 
     

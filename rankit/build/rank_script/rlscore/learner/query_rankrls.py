@@ -26,14 +26,14 @@
 import numpy as np
 import scipy.sparse
 
-from rlscore.utilities import linalg
-from rlscore.utilities import array_tools
-from rlscore.utilities import adapter
-from rlscore.measure.measure_utilities import UndefinedPerformance
-from rlscore.predictor import PredictorInterface
-from rlscore.measure import cindex
-from rlscore.utilities.cross_validation import grid_search
-from rlscore.measure.measure_utilities import qids_to_splits
+from rankit.build.rank_script.rlscore.utilities import linalg
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.utilities import adapter
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.predictor import PredictorInterface
+from rankit.build.rank_script.rlscore.measure import cindex
+from rankit.build.rank_script.rlscore.utilities.cross_validation import grid_search
+from rankit.build.rank_script.rlscore.measure.measure_utilities import qids_to_splits
 
 class QueryRankRLS(PredictorInterface):
     """RankRLS algorithm for learning to rank
@@ -52,7 +52,7 @@ class QueryRankRLS(PredictorInterface):
     regparam : float, optional
         regularization parameter, regparam > 0 (default=1.0)
     kernel : {'LinearKernel', 'GaussianKernel', 'PolynomialKernel', 'PrecomputedKernel', ...}
-        kernel function name, imported dynamically from rlscore.kernel
+        kernel function name, imported dynamically from rankit.build.rank_script.rlscore.kernel
     basis_vectors : {array-like, sparse matrix}, shape = [n_bvectors, n_features], optional
         basis vectors (typically a randomly chosen subset of the training data)
 
@@ -266,7 +266,7 @@ class LeaveQueryOutRankRLS(PredictorInterface):
     regparam : float, optional
         regularization parameter, regparam > 0 (default=1.0)
     kernel : {'LinearKernel', 'GaussianKernel', 'PolynomialKernel', 'PrecomputedKernel', ...}
-        kernel function name, imported dynamically from rlscore.kernel
+        kernel function name, imported dynamically from rankit.build.rank_script.rlscore.kernel
     basis_vectors : {array-like, sparse matrix}, shape = [n_bvectors, n_features], optional
         basis vectors (typically a randomly chosen subset of the training data)
 

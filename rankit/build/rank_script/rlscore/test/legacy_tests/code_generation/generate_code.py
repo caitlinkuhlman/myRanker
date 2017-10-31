@@ -11,9 +11,9 @@ def generate(learner, lpath, lparams, lfparams, files, measure=None, selection=F
     code.append("from %s import %s" %(lpath, learner))
     for key in files:
         if key in readers:
-            code.append("from rlscore.utilities.reader import %s" %readers[key])
+            code.append("from rankit.build.rank_script.rlscore.utilities.reader import %s" %readers[key])
     if measure is not None:
-        code.append("from rlscore.measure import %s" %measure)
+        code.append("from rankit.build.rank_script.rlscore.measure import %s" %measure)
     for key in files:
         if key in readers:
             code.append('%s = %s("%s")' %(key, readers[key], files[key]))
@@ -45,8 +45,8 @@ def generate(learner, lpath, lparams, lfparams, files, measure=None, selection=F
         code.append("P = learner.predict(test_features)")
         if measure is not None and "test_labels" in files.keys():
             if "test_qids" in files.keys():
-                code.append("from rlscore.measure.measure_utilities import UndefinedPerformance")
-                code.append("from rlscore.measure.measure_utilities import qids_to_splits")
+                code.append("from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance")
+                code.append("from rankit.build.rank_script.rlscore.measure.measure_utilities import qids_to_splits")
                 code.append("test_qids = qids_to_splits(test_qids)") 
                 code.append("perfs = []")
                 code.append("for query in test_qids:")

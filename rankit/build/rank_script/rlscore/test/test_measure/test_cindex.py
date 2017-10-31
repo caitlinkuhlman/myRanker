@@ -1,8 +1,8 @@
 import numpy as np
 import unittest
 
-from rlscore.measure.cindex_measure import cindex
-from rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.measure.cindex_measure import cindex
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
 
 def slow_cindex(Y, P):
     correct = Y

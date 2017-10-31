@@ -28,7 +28,7 @@ from . import _interactive_rls_classifier
 import random as pyrandom
 pyrandom.seed(200)
 import numpy as np
-from rlscore.utilities import adapter
+from rankit.build.rank_script.rlscore.utilities import adapter
 
 class InteractiveRlsClassifier(object):
     

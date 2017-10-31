@@ -3,8 +3,8 @@ from numpy.testing import assert_allclose
 import numpy as np
 import numpy.linalg as la
 
-from rlscore.learner import GlobalRankRLS
-from rlscore.kernel import GaussianKernel, PolynomialKernel
+from rankit.build.rank_script.rlscore.learner import GlobalRankRLS
+from rankit.build.rank_script.rlscore.kernel import GaussianKernel, PolynomialKernel
 
 class Test(unittest.TestCase):
     

@@ -2,7 +2,7 @@ import numpy as np
 import unittest
 from scipy import sparse as sp
 
-from rlscore.kernel import GaussianKernel
+from rankit.build.rank_script.rlscore.kernel import GaussianKernel
 
 
 class Test(unittest.TestCase):

@@ -26,8 +26,8 @@
 from numpy import multiply, mean
 import numpy as np
 
-from rlscore.utilities import array_tools
-from rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.utilities import array_tools
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
 
 def sqerror_singletask(correct, predictions):
     correct = np.mat(correct)

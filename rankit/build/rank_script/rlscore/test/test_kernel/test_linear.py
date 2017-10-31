@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 from scipy import sparse as sp
 
-from rlscore.kernel import LinearKernel
+from rankit.build.rank_script.rlscore.kernel import LinearKernel
 
 
 class Test(unittest.TestCase):

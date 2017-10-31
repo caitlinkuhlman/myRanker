@@ -1,10 +1,10 @@
 import unittest
 
 import numpy as np
-from rlscore.kernel import LinearKernel
-from rlscore.learner.kron_rls import KronRLS
-from rlscore.learner.rls import RLS
-from rlscore.learner.query_rankrls import QueryRankRLS
+from rankit.build.rank_script.rlscore.kernel import LinearKernel
+from rankit.build.rank_script.rlscore.learner.kron_rls import KronRLS
+from rankit.build.rank_script.rlscore.learner.rls import RLS
+from rankit.build.rank_script.rlscore.learner.query_rankrls import QueryRankRLS
 
 
 class Test(unittest.TestCase):

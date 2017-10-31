@@ -1,8 +1,8 @@
 import numpy as np
 import unittest
 
-from rlscore.measure.auc_measure import auc
-from rlscore.measure.measure_utilities import UndefinedPerformance
+from rankit.build.rank_script.rlscore.measure.auc_measure import auc
+from rankit.build.rank_script.rlscore.measure.measure_utilities import UndefinedPerformance
 
 def slowAUC(y, p):
     #quadratic time AUC computation

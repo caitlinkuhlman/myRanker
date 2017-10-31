@@ -1,7 +1,7 @@
 import numpy as np
-from rlscore.learner.rls import LeaveOneOutRLS
-from rlscore.utilities.reader import read_sparse
-from rlscore.measure import sqerror
+from rankit.build.rank_script.rlscore.learner.rls import LeaveOneOutRLS
+from rankit.build.rank_script.rlscore.utilities.reader import read_sparse
+from rankit.build.rank_script.rlscore.measure import sqerror
 train_labels = np.loadtxt("./legacy_tests/data/reg_train.labels")
 test_labels = np.loadtxt("./legacy_tests/data/reg_test.labels")
 train_features = read_sparse("./legacy_tests/data/reg_train.features")

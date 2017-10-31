@@ -1,8 +1,8 @@
 import numpy as np
-from rlscore.learner.global_rankrls import KfoldRankRLS
-from rlscore.utilities.reader import read_folds
-from rlscore.utilities.reader import read_sparse
-from rlscore.measure import cindex
+from rankit.build.rank_script.rlscore.learner.global_rankrls import KfoldRankRLS
+from rankit.build.rank_script.rlscore.utilities.reader import read_folds
+from rankit.build.rank_script.rlscore.utilities.reader import read_sparse
+from rankit.build.rank_script.rlscore.measure import cindex
 train_labels = np.loadtxt("./legacy_tests/data/rank_train.labels")
 test_labels = np.loadtxt("./legacy_tests/data/rank_test.labels")
 folds = read_folds("./legacy_tests/data/folds.txt")

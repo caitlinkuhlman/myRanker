@@ -1,7 +1,7 @@
 import numpy as np
 import unittest
 
-from rlscore.measure.sqerror_measure import sqerror
+from rankit.build.rank_script.rlscore.measure.sqerror_measure import sqerror
 
 def simple_sqerror(Y, P):
     e = 0.

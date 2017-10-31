@@ -24,7 +24,7 @@
 # THE SOFTWARE.
 
 import numpy as np
-from rlscore.utilities import sampled_kronecker_products
+from rankit.build.rank_script.rlscore.utilities import sampled_kronecker_products
 
 class PairwisePredictorInterface(object):
     

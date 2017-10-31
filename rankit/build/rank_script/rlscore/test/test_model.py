@@ -3,8 +3,8 @@ import unittest
 import numpy as np
 from scipy import sparse
 
-from rlscore.learner.rls import RLS
-from rlscore import predictor as mod
+from rankit.build.rank_script.rlscore.learner.rls import RLS
+from rankit.build.rank_script.rlscore import predictor as mod
 
 
 class Test(unittest.TestCase):
