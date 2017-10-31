@@ -141,9 +141,12 @@
         req.open('GET', "/build/dataset"+"?"+"dataset_name="+param)
 
         req.onload = function() {
-            //The json object is returned, process it
+            //The json array with all the field is returned
             const datasets = this.response
-            console.log(datasets)
+            //Convert this array specifying only names of the objects
+            //The States field is hard-coded
+            var obj_array = datasets.map(function(a) {return a.States;});
+            console.log(obj_array)
 
         }
         req.send()
