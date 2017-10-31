@@ -18,7 +18,8 @@
   }
 
   #bot {
-    padding: 16px;
+    padding: 32px;
+    border: 2px solid #f0f0f0;
   }
 
   .object {
