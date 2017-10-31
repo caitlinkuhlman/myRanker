@@ -77,16 +77,7 @@
         
         <div class="wrapper">
           <div id="top" class="pool">
-            <div id="1" class="object noSelect">Worcester Polytechnic Institute</div>
-            <div id="2" class="object noSelect">MIT</div>
-            <div id="3" class="object noSelect">Harvard</div>
-            <div id="4" class="object noSelect">Yale</div>
-            <div id="5" class="object noSelect">Columbia</div>
-            <div id="6" class="object noSelect">Cornell</div>
-            <div id="7" class="object noSelect">NYU</div>
-            <div id="8" class="object noSelect">Clark</div>
-            <div id="9" class="object noSelect">Boston University</div>
-            <div id="10" class="object noSelect">Stanford</div>
+            <!-- objects from dataset inserted here -->
           </div>
 
           <div class="list-wrapper">
@@ -109,6 +100,11 @@
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
   <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+  <script>
+    const dataset = [1, 2, 3, 4, 5, 6]
+    const html = dataset.map(x => `<div id="${x}" class="object noSelect">${x}</div>`)
+    document.querySelector('#top').innerHTML = html.join('\n')
+  </script>
 
 </body>
 </html>
