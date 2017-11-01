@@ -1,8 +1,8 @@
 from flask import Blueprint, request, url_for, make_response, jsonify, render_template, send_from_directory
 import os, json
 
-import  rankit.build.rank_script.build_rank as build_rank
-import  pandas as pd
+# import  rankit.build.rank_script.build_rank as build_rank
+# import  pandas as pd
 
 build_blueprint = Blueprint(
     'build', __name__,
@@ -20,7 +20,9 @@ def processDataset(dataset_name):
     # dataset_name = request.args.get("dataset_name")
 
     # get the absolute path of the dataset
-    datasets_dir = os.path.dirname("/Users/Toki/Desktop/myRanker/rankit/datasets/")
+    # datasets_dir = os.path.dirname(os.path.dirname(os.getcwd() + "/rankit/datasets/"))
+    datasets_dir = os.path.dirname(os.path.abspath(os.path.dirname(__name__)) + "/rankit/datasets/")
+    print(datasets_dir)
     abs_file_path = os.path.join(datasets_dir, dataset_name)
 
     # load the json file contents into json object
