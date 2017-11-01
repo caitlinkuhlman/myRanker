@@ -10,8 +10,12 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dragula.min.css') }}"/>
+
+
+
 </head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
 
 <body>
 
@@ -79,15 +83,18 @@
         <div class="wrapper">
           <div id="top" class="pool">
             <!-- objects from dataset inserted here -->
+              {% for x in  dataset %}
+                <div id="{{x}}" class="object noSelect">{{x}}</div>
+            {% endfor %}
           </div>
 
           <div class="list-wrapper">
 
             <div id="bot" class="list">
-              <!-- <div id="1" class="object noSelect">Cal Tech</div> -->
             </div>
 
           </div>
+
 
         </div>
 
@@ -104,7 +111,7 @@
   <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
   <script>
-    const dataset = [
+    const dataset2 = [
   {
     "States": "Michigan",
     "MATTERS Talent Index": -8.9,
@@ -456,12 +463,20 @@
     "MATTERS Cost of Doing Business Index": -57.27
   }
 ]
+
 dataset.sl
     const html = dataset
       .slice(0, 15)
       .map(x => `<div id="${x.States}" class="object noSelect">${x.States}</div>`)
     document.querySelector('#top').innerHTML = html.join('\n')
   </script>
+
+{#dataset2.sl#}
+{#    const html = dataset2#}
+{#      .slice(0, 15)#}
+{#      .map(x => `<div id="${x.States}" class="object noSelect">${x.States}</div>`)#}
+{#    document.querySelector('#top').innerHTML = html.join('\n')#}
+{#  </script>#}
 
 
 </body>
