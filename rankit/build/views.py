@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, url_for
 
-from flask import Blueprint, request, url_for, make_response, jsonify, render_template
+from flask import Blueprint, request, url_for, make_response, jsonify, render_template, send_from_directory
 import os, json
 
 import  rankit.build.rank_script.build_rank as build_rank
@@ -16,10 +16,10 @@ def buildListComp():
     return render_template('buildListComp.html')
 
 
-@build_blueprint.route('/build/dataset', methods=["GET"])
-def processDataset():
+@build_blueprint.route('/buildListComp/<dataset_name>')
+def processDataset(dataset_name):
     # get the arguments from get request
-    dataset_name = request.args.get("dataset_name", "alternative")
+    # dataset_name = request.args.get("dataset_name")
 
     # get the absolute path of the dataset
     datasets_dir = os.path.dirname("/Users/Malikusha/myRanker/rankit/datasets/")
@@ -32,8 +32,13 @@ def processDataset():
     print("Dataset : %s " % dataset_name)
 
     # send json object containing all the data from selected dataset to client
-    # return render_template("buildListComp.html", dataset_json=jsonify(datastore))
-    return jsonify(datastore)
+    return render_template('buildListComp.html', dataset=jsonify(datastore))
+    # return jsonify(datastore)
+
+# @build_blueprint.route('/build/loadDataset/<dataset_json>')
+# def loadDataset(dataset_json):
+#     return
+
 
 @build_blueprint.route('/build/submit', methods=["POST"])
 def build():

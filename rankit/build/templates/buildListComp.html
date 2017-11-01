@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dragula.min.css') }}"/>
 </head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
 <body>
 
@@ -87,6 +88,7 @@
             </div>
 
           </div>
+            <a href=''>{{ dataset }}</a>
         </div>
 
 
@@ -95,8 +97,9 @@
   </div>
 
 
+
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
-  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>
+{#  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>#}
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
   <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
@@ -459,6 +462,18 @@ dataset.sl
       .map(x => `<div id="${x.States}" class="object noSelect">${x.States}</div>`)
     document.querySelector('#top').innerHTML = html.join('\n')
   </script>
+ <script>
+	function calli() {
+            //The json array with all the field is returned
+            const datasets = this.response
+            //Convert this array specifying only names of the objects
+            //The States field is hard-coded
+            var obj_array = datasets.map(function(a) {return a.States;});
+            console.log(obj_array)
+    }
+
+
+    </script>
 
 </body>
 </html>
