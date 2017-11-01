@@ -32,8 +32,8 @@ def processDataset(dataset_name):
     print("Dataset : %s " % dataset_name)
 
     # send json object containing all the data from selected dataset to client
-    return render_template('buildListComp.html', dataset=jsonify(datastore))
-    # return jsonify(datastore)
+    # return render_template('buildListComp.html', dataset=jsonify(datastore))
+    return render_template('buildListComp.html', dataset=json.dumps(datastore, sort_keys = False, indent = 2))
 
 # @build_blueprint.route('/build/loadDataset/<dataset_json>')
 # def loadDataset(dataset_json):
