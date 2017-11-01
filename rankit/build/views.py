@@ -1,5 +1,3 @@
-from flask import Blueprint, render_template, request, url_for
-
 from flask import Blueprint, request, url_for, make_response, jsonify, render_template, send_from_directory
 import os, json
 
@@ -22,22 +20,18 @@ def processDataset(dataset_name):
     # dataset_name = request.args.get("dataset_name")
 
     # get the absolute path of the dataset
-    datasets_dir = os.path.dirname("/Users/Malikusha/myRanker/rankit/datasets/")
+    datasets_dir = os.path.dirname("/Users/Toki/Desktop/myRanker/rankit/datasets/")
     abs_file_path = os.path.join(datasets_dir, dataset_name)
 
     # load the json file contents into json object
     with open(abs_file_path, 'r') as data_file:
         datastore = json.load(data_file)
 
-    print("Dataset : %s " % dataset_name)
+    #filter only object names
+    datastore_ids = list(map(lambda data: data["States"], datastore))
+    datastore_ids.sort()
 
-    # send json object containing all the data from selected dataset to client
-    return render_template('buildListComp.html', dataset=jsonify(datastore))
-    # return jsonify(datastore)
-
-# @build_blueprint.route('/build/loadDataset/<dataset_json>')
-# def loadDataset(dataset_json):
-#     return
+    return render_template('buildListComp.html', dataset=datastore_ids)
 
 
 @build_blueprint.route('/build/submit', methods=["POST"])
