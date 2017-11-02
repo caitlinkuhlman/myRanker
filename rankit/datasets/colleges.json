@@ -1,95 +1,113 @@
-{
-  "file": "wur2013.txt",
-  "separator" : "\t",
-  "primaryKey": "schoolname",
-  "columns": [
+[
     {
-      "column": "schoolname",
-      "label": "School name",
-      "type": "string",
-      "color": "gray",
-      "bg_color": "lightgray",
-      "numberFormat": ".1f"
+      "primaryKey": "Princeton"
     },
     {
-      "column": "academic",
-      "label": "Academic reputation",
-      "type": "number",
-      "domain": [0, 100],
-      "numberFormat": ".1f"
+      "primaryKey": "Harvard"
     },
     {
-      "column": "employer",
-      "label": "Employer reputation",
-      "type": "number",
-      "domain": [0, 100],
-      "numberFormat": ".1f"
+      "primaryKey": "Swarthmore College"
     },
     {
-      "column": "faculty",
-      "label": "Faculty student ratio",
-      "type": "number",
-      "domain": [0, 100],
-      "numberFormat": ".1f"
+      "primaryKey": "MIT"
     },
     {
-      "column": "citations",
-      "label": "Citations",
-      "type": "number",
-      "domain": [0, 100],
-      "numberFormat": ".1f"
+      "primaryKey": "Williams College"
     },
     {
-      "column": "international",
-      "label": "Internat. faculty ratio",
-      "type": "number",
-      "domain": [0, 100],
-      "numberFormat": ".1f"
+      "primaryKey": "Amherst College"
     },
     {
-      "column": "internationalstudents",
-      "label": "Internat. student ratio",
-      "type": "number",
-      "domain": [0, 100],
-      "numberFormat": ".1f"
+      "primaryKey": "Stanford University"
+    },
+    {
+      "primaryKey": "CalTech"
+    },
+    {
+      "primaryKey": "Yale University"
+    },
+    {
+      "primaryKey": "University of Pennsylvania"
+    },
+    {
+      "primaryKey": "Duke University"
+    },
+    {
+      "primaryKey": "Vanderbilt University"
+    },
+    {
+      "primaryKey": "Vanderbilt University"
+    },
+    {
+      "primaryKey": "Duke University"
+    },
+    {
+      "primaryKey": "Colgate University"
+    },
+    {
+      "primaryKey": "Rice University"
+    },
+    {
+      "primaryKey": "Brown University"
+    },
+    {
+      "primaryKey": "Pomona College"
+    },
+    {
+      "primaryKey": "Cooper Union"
+    },
+    {
+      "primaryKey": "Davidson College"
+    },
+    {
+      "primaryKey": "Georgia Institute of Technology"
+    },
+    {
+      "primaryKey": "Cornell University"
+    },
+    {
+      "primaryKey": "Harvey Mudd College"
+    },
+    {
+      "primaryKey": "Carleton College"
+    },
+    {
+      "primaryKey": "Bucknell University"
+    },
+    {
+      "primaryKey": "University of Washington"
+    },
+    {
+      "primaryKey": "Purdue University"
+    },
+    {
+      "primaryKey": "University of Chicago"
+    },
+    {
+      "primaryKey": "Bowdoin College"
+    }, 
+    {
+      "primaryKey": "Wellesley College"
+    }, 
+    {
+      "primaryKey": "Northwestern University"
+    },  
+    {
+      "primaryKey": "Northeastern University"
+    },
+    {
+      "primaryKey": "Columbia University"
+    },
+    {
+      "primaryKey": "WPI"
+    },
+    {
+      "primaryKey": "Georgetown University"
+    },
+    {
+      "primaryKey": "Emory University"
+    },
+    {
+      "primaryKey": "Middlebury College"
     }
-  ],
-  "layout": {
-    "primary": [
-      {
-        "column": "schoolname",
-        "width": 200
-      },
-      {
-        "type": "stacked",
-        "label": "Combined",
-        "children": [
-          {
-            "column": "academic",
-            "width": 100
-          },
-          {
-            "column": "employer",
-            "width": 100
-          },
-          {
-            "column": "faculty",
-            "width": 120
-          },
-          {
-            "column": "citations",
-            "width": 130
-          },
-          {
-            "column": "international",
-            "width": 200
-          },
-          {
-            "column": "internationalstudents",
-            "width": 150
-          }
-        ]
-      }
-    ]
-  }
-}
+  ]

@@ -16,9 +16,6 @@ def buildListComp():
 
 @build_blueprint.route('/buildListComp/<dataset_name>')
 def processDataset(dataset_name):
-    # get the arguments from get request
-    # dataset_name = request.args.get("dataset_name")
-
     # get the absolute path of the dataset
     # datasets_dir = os.path.dirname(os.path.dirname(os.getcwd() + "/rankit/datasets/"))
     datasets_dir = os.path.dirname(os.path.abspath(os.path.dirname(__name__)) + "/rankit/datasets/")
@@ -29,7 +26,7 @@ def processDataset(dataset_name):
     with open(abs_file_path, 'r') as data_file:
         datastore = json.load(data_file)
 
-    #filter only object names
+    # filter only object names
     datastore_ids = list(map(lambda data: data["States"], datastore))
     datastore_ids.sort()
 
