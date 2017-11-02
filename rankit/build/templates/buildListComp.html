@@ -11,7 +11,13 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dragula.min.css') }}"/>
 
-
+  <style>
+  .scrollingDragInner {
+    max-height: 400px;
+    overflow-y: auto;
+    border-style: solid;
+  }
+  </style>
 
 </head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -69,7 +75,7 @@
           </h1>
 
         </div>
-<!--         
+<!--
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
             <input type="text" class="form-control">
@@ -79,15 +85,16 @@
           </button>
         </form>
          -->
-        
+
         <div class="wrapper">
+          <div class="scrollingDragInner">
           <div id="top" class="pool">
             <!-- objects from dataset inserted here -->
               {% for x in  dataset %}
                 <div id="{{x}}" class="object noSelect">{{x}}</div>
             {% endfor %}
           </div>
-
+        </div>
           <div class="list-wrapper">
 
             <div id="bot" class="list">
@@ -103,6 +110,7 @@
     </div>
   </div>
 
+  <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
 
 
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
