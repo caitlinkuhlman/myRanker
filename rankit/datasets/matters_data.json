@@ -1,6 +1,7 @@
 [
   {
     "primarykey": "Michigan",
+    "id": "1",
     "MATTERS Talent Index": -8.9,
     "MATTERS Tax/Financial Climate Index": 23.31,
     "MATTERS Quality of Life Index": 0.74,
@@ -8,6 +9,7 @@
   },
   {
     "primarykey": "Pennsylvania",
+    "id": "2",
     "MATTERS Talent Index": 25.94,
     "MATTERS Tax/Financial Climate Index": -35.04,
     "MATTERS Quality of Life Index": -27.87,
@@ -15,6 +17,7 @@
   },
   {
     "primarykey": "Georgia",
+    "id": "3",
     "MATTERS Talent Index": 15.93,
     "MATTERS Tax/Financial Climate Index": -0.29,
     "MATTERS Quality of Life Index": -59.23,
@@ -22,6 +25,7 @@
   },
   {
     "primarykey": "Tennessee",
+    "id": "4",
     "MATTERS Talent Index": -61.04,
     "MATTERS Tax/Financial Climate Index": -3.75,
     "MATTERS Quality of Life Index": -24.99,
@@ -29,6 +33,7 @@
   },
   {
     "primarykey": "Alabama",
+    "id": "5",
     "MATTERS Talent Index": -50.32,
     "MATTERS Tax/Financial Climate Index": 5.02,
     "MATTERS Quality of Life Index": -41.54,
@@ -36,6 +41,7 @@
   },
   {
     "primarykey": "Indiana",
+    "id": "6",
     "MATTERS Talent Index": -56.11,
     "MATTERS Tax/Financial Climate Index": 36.94,
     "MATTERS Quality of Life Index": -6,
@@ -43,6 +49,7 @@
   },
   {
     "primarykey": "Colorado",
+    "id": "7",
     "MATTERS Talent Index": 160.8,
     "MATTERS Tax/Financial Climate Index": 43.2,
     "MATTERS Quality of Life Index": 59.63,
@@ -50,6 +57,7 @@
   },
   {
     "primarykey": "Wisconsin",
+    "id": "8",
     "MATTERS Talent Index": -28.54,
     "MATTERS Tax/Financial Climate Index": -74.74,
     "MATTERS Quality of Life Index": 58.26,
@@ -57,6 +65,7 @@
   },
   {
     "primarykey": "United primarykey",
+    "id": "9",
     "MATTERS Talent Index": -134.77,
     "MATTERS Tax/Financial Climate Index": 207.31,
     "MATTERS Quality of Life Index": 129.68,
@@ -64,6 +73,7 @@
   },
   {
     "primarykey": "Washington",
+    "id": "10",
     "MATTERS Talent Index": 93.41,
     "MATTERS Tax/Financial Climate Index": 97.04,
     "MATTERS Quality of Life Index": -17.96,
@@ -71,6 +81,7 @@
   },
   {
     "primarykey": "Idaho",
+    "id": "11",
     "MATTERS Talent Index": -14.33,
     "MATTERS Tax/Financial Climate Index": 23.56,
     "MATTERS Quality of Life Index": -12.08,
@@ -78,6 +89,7 @@
   },
   {
     "primarykey": "Virginia",
+    "id": "12",
     "MATTERS Talent Index": 159.27,
     "MATTERS Tax/Financial Climate Index": -8.06,
     "MATTERS Quality of Life Index": 1.61,
@@ -85,6 +97,7 @@
   },
   {
     "primarykey": "New Hampshire",
+    "id": "13",
     "MATTERS Talent Index": 58.69,
     "MATTERS Tax/Financial Climate Index": -4.88,
     "MATTERS Quality of Life Index": 9.63,
@@ -92,6 +105,7 @@
   },
   {
     "primarykey": "Nebraska",
+    "id": "14",
     "MATTERS Talent Index": -51.81,
     "MATTERS Tax/Financial Climate Index": -61.69,
     "MATTERS Quality of Life Index": 83.27,
@@ -99,6 +113,7 @@
   },
   {
     "primarykey": "South Carolina",
+    "id": "15",
     "MATTERS Talent Index": -13.45,
     "MATTERS Tax/Financial Climate Index": -18.37,
     "MATTERS Quality of Life Index": -68.49,
@@ -106,6 +121,7 @@
   },
   {
     "primarykey": "Wyoming",
+    "id": "16",
     "MATTERS Talent Index": -42.4,
     "MATTERS Tax/Financial Climate Index": 68.32,
     "MATTERS Quality of Life Index": 67.45,
@@ -113,6 +129,7 @@
   },
   {
     "primarykey": "Missouri",
+    "id": "17",
     "MATTERS Talent Index": -22.95,
     "MATTERS Tax/Financial Climate Index": 13.06,
     "MATTERS Quality of Life Index": 8.89,
@@ -120,6 +137,7 @@
   },
   {
     "primarykey": "New Jersey",
+    "id": "18",
     "MATTERS Talent Index": 80.69,
     "MATTERS Tax/Financial Climate Index": -100.11,
     "MATTERS Quality of Life Index": -22.85,
@@ -127,6 +145,7 @@
   },
   {
     "primarykey": "Minnesota",
+    "id": "19",
     "MATTERS Talent Index": 35.19,
     "MATTERS Tax/Financial Climate Index": -68.52,
     "MATTERS Quality of Life Index": 76.38,
@@ -134,6 +153,7 @@
   },
   {
     "primarykey": "Florida",
+    "id": "20",
     "MATTERS Talent Index": -46.26,
     "MATTERS Tax/Financial Climate Index": 93.71,
     "MATTERS Quality of Life Index": -57.93,
@@ -141,6 +161,7 @@
   },
   {
     "primarykey": "Illinois",
+    "id": "21",
     "MATTERS Talent Index": 34.71,
     "MATTERS Tax/Financial Climate Index": -49.34,
     "MATTERS Quality of Life Index": 5.44,
@@ -148,6 +169,7 @@
   },
   {
     "primarykey": "Arkansas",
+    "id": "22",
     "MATTERS Talent Index": -97.52,
     "MATTERS Tax/Financial Climate Index": -31.4,
     "MATTERS Quality of Life Index": 4.36,
@@ -155,6 +177,7 @@
   },
   {
     "primarykey": "Mississippi",
+    "id": "23",
     "MATTERS Talent Index": -124.58,
     "MATTERS Tax/Financial Climate Index": 17.93,
     "MATTERS Quality of Life Index": -59.13,
@@ -162,6 +185,7 @@
   },
   {
     "primarykey": "Montana",
+    "id": "24",
     "MATTERS Talent Index": -42.33,
     "MATTERS Tax/Financial Climate Index": 30.76,
     "MATTERS Quality of Life Index": 37.71,
@@ -169,6 +193,7 @@
   },
   {
     "primarykey": "New Mexico",
+    "id": "25",
     "MATTERS Talent Index": -20.08,
     "MATTERS Tax/Financial Climate Index": 20.51,
     "MATTERS Quality of Life Index": -35.24,
@@ -176,6 +201,7 @@
   },
   {
     "primarykey": "North Dakota",
+    "id": "26",
     "MATTERS Talent Index": -17.84,
     "MATTERS Tax/Financial Climate Index": 16.75,
     "MATTERS Quality of Life Index": 133.67,
@@ -183,6 +209,7 @@
   },
   {
     "primarykey": "Nevada",
+    "id": "27",
     "MATTERS Talent Index": -106.51,
     "MATTERS Tax/Financial Climate Index": 131.34,
     "MATTERS Quality of Life Index": -71.64,
@@ -190,6 +217,7 @@
   },
   {
     "primarykey": "West Virginia",
+    "id": "28",
     "MATTERS Talent Index": -113.61,
     "MATTERS Tax/Financial Climate Index": -24.45,
     "MATTERS Quality of Life Index": -47.29,
@@ -197,6 +225,7 @@
   },
   {
     "primarykey": "Arizona",
+    "id": "29",
     "MATTERS Talent Index": 26.92,
     "MATTERS Tax/Financial Climate Index": 66.3,
     "MATTERS Quality of Life Index": -43.53,
@@ -204,6 +233,7 @@
   },
   {
     "primarykey": "Delaware",
+    "id": "30",
     "MATTERS Talent Index": 36.22,
     "MATTERS Tax/Financial Climate Index": -19.17,
     "MATTERS Quality of Life Index": -61.61,
@@ -211,6 +241,7 @@
   },
   {
     "primarykey": "North Carolina",
+    "id": "31",
     "MATTERS Talent Index": 10.09,
     "MATTERS Tax/Financial Climate Index": -17.95,
     "MATTERS Quality of Life Index": -20.31,
@@ -218,6 +249,7 @@
   },
   {
     "primarykey": "Connecticut",
+    "id": "32",
     "MATTERS Talent Index": 85.37,
     "MATTERS Tax/Financial Climate Index": -96.88,
     "MATTERS Quality of Life Index": 24.85,
@@ -225,6 +257,7 @@
   },
   {
     "primarykey": "South Dakota",
+    "id": "33",
     "MATTERS Talent Index": -60.95,
     "MATTERS Tax/Financial Climate Index": 110.24,
     "MATTERS Quality of Life Index": 74.62,
@@ -232,6 +265,7 @@
   },
   {
     "primarykey": "Alaska",
+    "id": "34",
     "MATTERS Talent Index": 20.69,
     "MATTERS Tax/Financial Climate Index": 53.6,
     "MATTERS Quality of Life Index": -16.99,
@@ -239,6 +273,7 @@
   },
   {
     "primarykey": "Kansas",
+    "id": "35",
     "MATTERS Talent Index": 16.94,
     "MATTERS Tax/Financial Climate Index": -21.1,
     "MATTERS Quality of Life Index": 58.92,
@@ -246,6 +281,7 @@
   },
   {
     "primarykey": "Maryland",
+    "id": "36",
     "MATTERS Talent Index": 172.47,
     "MATTERS Tax/Financial Climate Index": -73.65,
     "MATTERS Quality of Life Index": -31,
@@ -253,6 +289,7 @@
   },
   {
     "primarykey": "Iowa",
+    "id": "37",
     "MATTERS Talent Index": -51.69,
     "MATTERS Tax/Financial Climate Index": -110.85,
     "MATTERS Quality of Life Index": 81.34,
@@ -260,6 +297,7 @@
   },
   {
     "primarykey": "Oregon",
+    "id": "38",
     "MATTERS Talent Index": 36.25,
     "MATTERS Tax/Financial Climate Index": 1.25,
     "MATTERS Quality of Life Index": -18.33,
@@ -267,6 +305,7 @@
   },
   {
     "primarykey": "Massachusetts",
+    "id": "39",
     "MATTERS Talent Index": 191.65,
     "MATTERS Tax/Financial Climate Index": -41.73,
     "MATTERS Quality of Life Index": 27.79,
@@ -274,6 +313,7 @@
   },
   {
     "primarykey": "Utah",
+    "id": "40",
     "MATTERS Talent Index": 34.96,
     "MATTERS Tax/Financial Climate Index": 81.62,
     "MATTERS Quality of Life Index": 61.23,
@@ -281,6 +321,7 @@
   },
   {
     "primarykey": "Ohio",
+    "id": "41",
     "MATTERS Talent Index": -40.11,
     "MATTERS Tax/Financial Climate Index": 26.07,
     "MATTERS Quality of Life Index": 1.23,
@@ -288,6 +329,7 @@
   },
   {
     "primarykey": "Hawaii",
+    "id": "42",
     "MATTERS Talent Index": -9.54,
     "MATTERS Tax/Financial Climate Index": -30.84,
     "MATTERS Quality of Life Index": -43.09,
@@ -295,6 +337,7 @@
   },
   {
     "primarykey": "Maine",
+    "id": "43",
     "MATTERS Talent Index": -60.14,
     "MATTERS Tax/Financial Climate Index": -60.25,
     "MATTERS Quality of Life Index": -8.88,
@@ -302,6 +345,7 @@
   },
   {
     "primarykey": "California",
+    "id": "44",
     "MATTERS Talent Index": 26,
     "MATTERS Tax/Financial Climate Index": -47.06,
     "MATTERS Quality of Life Index": -66.85,
@@ -309,6 +353,7 @@
   },
   {
     "primarykey": "Oklahoma",
+    "id": "45",
     "MATTERS Talent Index": -57.35,
     "MATTERS Tax/Financial Climate Index": -5.53,
     "MATTERS Quality of Life Index": -9.85,
@@ -316,6 +361,7 @@
   },
   {
     "primarykey": "Kentucky",
+    "id": "46",
     "MATTERS Talent Index": -95.49,
     "MATTERS Tax/Financial Climate Index": -9.66,
     "MATTERS Quality of Life Index": 17.54,
@@ -323,6 +369,7 @@
   },
   {
     "primarykey": "New York",
+    "id": "47",
     "MATTERS Talent Index": 47.43,
     "MATTERS Tax/Financial Climate Index": -81.67,
     "MATTERS Quality of Life Index": -66.51,
@@ -330,6 +377,7 @@
   },
   {
     "primarykey": "Louisiana",
+    "id": "48",
     "MATTERS Talent Index": -82.1,
     "MATTERS Tax/Financial Climate Index": -21.28,
     "MATTERS Quality of Life Index": -54.27,
@@ -337,6 +385,7 @@
   },
   {
     "primarykey": "Texas",
+    "id": "49",
     "MATTERS Talent Index": -7.79,
     "MATTERS Tax/Financial Climate Index": 105.4,
     "MATTERS Quality of Life Index": -29.69,
@@ -344,6 +393,7 @@
   },
   {
     "primarykey": "Vermont",
+    "id": "50",
     "MATTERS Talent Index": 70.91,
     "MATTERS Tax/Financial Climate Index": -89.47,
     "MATTERS Quality of Life Index": 39.04,
