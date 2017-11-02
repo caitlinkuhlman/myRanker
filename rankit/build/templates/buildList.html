@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RANKit Build</title>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dragula.min.css') }}"/>
+
+
+
+</head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        {% extends 'baseBuild.html' %}
+        {% block content %}
+
+        <div class="page-header">
+          <h1>
+            RANKIT Build: List Comparison
+          </h1>
+
+        </div>
+
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" id="search-criteria" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-default" id="search" value="search">
+            Submit
+          </button>
+        </form>
+      </br>
+    </br>
+  </br>
+</br>
+
+
+        <div class="wrapper">
+          <!-- <div id="leftScroll" class="scrollingDragInner"> -->
+          <div class="scrollingDragInner">
+          <div id="top" class="pool">
+            <!-- objects from dataset inserted here -->
+              {% for x in  dataset %}
+                <div id="{{x}}" class="object noSelect">{{x}}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+          <div class="list-wrapper">
+
+            <div id="bot" class="list">
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+    <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
+  </div>
+
+
+
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
+{#  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>#}
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+  <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
+
+
+  <!-- <script>
+    const pool = document.querySelector('#top')
+    const bot = document.querySelector('#bot')
+    const containers = [
+      pool,
+      bot,
+    ]
+    dragula(containers, {
+      copy: (el, source) => source === pool,
+      accepts: (el, target) => target !== pool,
+      removeOnSpill: true,
+    })
+  </script>
+
+  <script>
+  $('#search').click(function(){
+      $('.noSelect').hide();
+     var txt = $('#search-criteria').val();
+     $('.noSelect:contains("'+txt+'")').show();
+  });
+
+  </script> -->
+</body>
+{% endblock %}
+
+</html>

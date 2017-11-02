@@ -13,7 +13,6 @@ build_blueprint = Blueprint(
 def buildListComp():
     return render_template('buildListComp.html')
 
-
 @build_blueprint.route('/buildListComp/<dataset_name>')
 def processDataset(dataset_name):
     # get the arguments from get request
@@ -34,6 +33,18 @@ def processDataset(dataset_name):
     datastore_ids.sort()
 
     return render_template('buildListComp.html', dataset=datastore_ids)
+
+@build_blueprint.route('/buildList')
+def buildList():
+    return render_template('buildList.html')
+
+@build_blueprint.route('/buildPairWise')
+def buildPairWise():
+    return render_template('buildPairWise.html')
+
+@build_blueprint.route('/buildHiMeLo')
+def buildHiMeLo():
+    return render_template('buildHiMeLo.html')
 
 
 @build_blueprint.route('/build/submit', methods=["POST"])
@@ -56,6 +67,3 @@ def build():
 
     #rank = build_rank.build(dataset=dataset, pairs=pairs)
     #return rank.to_json()
-
-
-

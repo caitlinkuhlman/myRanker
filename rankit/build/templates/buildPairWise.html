@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RANKit Build</title>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dragula.min.css') }}"/>
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        {% extends 'baseBuild.html' %}
+        {% block content %}
+
+        <div class="page-header">
+          <h1>
+            RANKIT Build: Pairwise Comparison
+          </h1>
+
+        </div>
+
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-default">
+            Submit
+          </button>
+        </form>
+      </br>
+  </br>
+</br>
+</br>
+
+        <div class="wrapper">
+          <div class="scrollingDragInner">
+          <div id="top" class="pool">
+            <div id="1" class="object noSelect">Worcester Polytechnic Institute</div>
+            <div id="2" class="object noSelect">MIT</div>
+            <div id="3" class="object noSelect">Harvard</div>
+            <div id="4" class="object noSelect">Yale</div>
+            <div id="5" class="object noSelect">Columbia</div>
+            <div id="6" class="object noSelect">Cornell</div>
+            <div id="7" class="object noSelect">NYU</div>
+            <div id="8" class="object noSelect">Clark</div>
+            <div id="9" class="object noSelect">Boston University</div>
+            <div id="10" class="object noSelect">Stanford</div>
+          </div>
+        </div>
+
+          <div class="list-wrapper">
+
+            <div id="bot" class="list">
+              <div id="1" class="object noSelect">Enter Object Here</div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
+  </div>
+
+
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+
+  <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
+  <script>
+    const pool = document.querySelector('#top')
+    const bot = document.querySelector('#bot')
+    const containers = [
+      pool,
+      bot,
+    ]
+    dragula(containers, {
+      copy: (el, source) => source === pool,
+      accepts: (el, target) => target !== pool,
+      removeOnSpill: true,
+    })
+  </script>
+  {% endblock %}
+
+</body>
+</html>
