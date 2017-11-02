@@ -33,6 +33,7 @@ Build is a machine learning tool that is trained through user selected preferenc
 	- `$ npm install -g github:phovea/generator-phovea`
 - [Python 3](https://www.python.org)
 - [Pip](https://pypi.python.org/pypi/pip)
+-[Flask](http://flask.pocoo.org/)
 
 
 ### Run: *CURRENTLY IN DEVELOPMENT*
