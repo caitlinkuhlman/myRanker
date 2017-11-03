@@ -9,6 +9,7 @@ build_blueprint = Blueprint(
     template_folder='templates'
 )
 
+
 def getDataset(dataset_name):
     datasets_dir = os.path.dirname(os.path.abspath(os.path.dirname(__name__)) + "/rankit/datasets/")
     print(datasets_dir)
@@ -65,12 +66,12 @@ def build():
     #     json.dump(pairs_json, f)
 
     print("ranking...")
-    #rank = build_rank.build(dataset=dataset, pairsfile=pairsfile)
-    # rank = build_rank.build(dataset=dataset_name, pairsfile=pairsfile)
 
-    # dataset = pd.read_csv("matters_indices_2014.csv")
-    # pairsfile = "sample_pairs.csv"
-    # pairs = pd.read_csv(pairsfile, header=None)
+    # pairsfile = "sample_pairs.json"
+    # dataset = pd.read_json("matters_data.json")
+    # pairs = pd.read_json(pairsfile)
+    #
+    # rank = build_rank.build(dataset=dataset, pairs=pairs)
+    # return rank.to_json()
 
-    #rank = build_rank.build(dataset=dataset, pairs=pairs)
-    #return rank.to_json()
+
