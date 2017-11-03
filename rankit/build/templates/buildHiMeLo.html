@@ -13,6 +13,9 @@
 
 </head>
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
 <body>
 
   <div class="container-fluid">
@@ -42,6 +45,12 @@
 </br>
         <div class="wrapper">
           <div class="scrollingDragInner">
+
+            <!-- <div id="top" class="pool">
+                {% for x in  dataset %}
+                  <div id="{{x}}" class="object noSelect">{{x}}</div>
+              {% endfor %}
+            </div> -->
           <div id="top" class="pool">
             <div id="1" class="object noSelect">Worcester Polytechnic Institute</div>
             <div id="2" class="object noSelect">MIT</div>
@@ -101,16 +110,17 @@
     </div>
     <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
   </div>
+  {% endblock %}
 
 
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
-  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>
+  {#  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>#}
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
 
   <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
 
-  <script>
+  <!-- <script>
     const pool = document.querySelector('#top')
     const bot = document.querySelector('#bot')
     const containers = [
@@ -122,8 +132,7 @@
       accepts: (el, target) => target !== pool,
       removeOnSpill: true,
     })
-  </script>
-  {% endblock %}
+  </script> -->
 
 </body>
 </html>
