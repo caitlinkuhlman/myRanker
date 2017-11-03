@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RANKit DataSet</title>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dragula.min.css') }}"/>
+
+  <style>
+  .scrollingDragInner {
+    max-height: 400px;
+    overflow-y: auto;
+    border-style: solid;
+  }
+  </style>
+
+</head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button> <a class="navbar-brand" href={{ url_for('home.index') }}>RANKIT</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="#">Dataset</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href={{ url_for('build.buildHiMeLo') }}>High Medium Low</a>
+                  </li>
+                  <li class="divider">
+                  </li>
+                  <li>
+                    <a href={{ url_for('build.buildList') }}>List Comparison</a>
+                  </li>
+                  <li class="divider">
+                  </li>
+                  <li>
+                    <a href={{ url_for('build.buildPairWise') }}>Pairwise Comparison</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Explore</a>
+              </li>
+            </ul>
+
+
+          </div>
+
+        </nav>
+
+        <div class="page-header">
+          <h1>
+            RANKIT Build: List Comparison
+          </h1>
+
+        </div>
+<!--
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-default">
+            Submit
+          </button>
+        </form>
+         -->
+
+        <div class="wrapper">
+          <div class="scrollingDragInner">
+          <div id="top" class="pool">
+            <!-- objects from dataset inserted here -->
+              {% for x in  dataset %}
+                <div id="{{x}}" class="object noSelect">{{x}}</div>
+            {% endfor %}
+          </div>
+        </div>
+          <div class="list-wrapper">
+
+            <div id="bot" class="list">
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
+
+
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
+{#  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>#}
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
+  <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+</body>
+</html>

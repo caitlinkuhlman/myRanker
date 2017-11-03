@@ -1,0 +1,37 @@
+.pool {
+    display: grid;
+    /* grid-area: pool; */
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 4px;
+    margin: 24px;
+  }
+
+  .list-wrapper {
+    /* grid-area: list; */
+    display: grid;
+    grid-template-areas: "_ list";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .list {
+    grid-area: list;
+  }
+
+  #bot {
+    padding: 32px;
+    border: 2px solid #f0f0f0;
+  }
+
+  .object {
+    background-color: #f0f0f0;
+    padding: 16px;
+    margin: 8px;
+  }
+
+  .noSelect {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  }

@@ -1,46 +1,64 @@
-# myRanker
+# RANKit
 
-New ranking analysis tool based on [Caleydo lineup](https://github.com/Caleydo/lineupjs).
+RANKit allows users to manipulate rankings through personalized data visualization and rank building. When interpreting multi-attribute datasets, a slight change of weight between attributes can heavily impact ranking results. Most publically available rankings do not expose the attributes used to compose the ranking. This lack of disclosure results in possible exploitation of data because rankings can imply a conclusion that is not necessarily true. 
 
-To get started with development: 
+To allow for unbiased extrapolation of data, RANKit is composed of two tools: Explore and Visualize.
 
-## Prerequisites
+To learn more about each tool, read our [guide](https://github.com/RankerToolWebsite/myRanker/wiki). 
 
-Install [npm](https://www.npmjs.com/), [Node.js](http://nodejs.org/), [Yeoman](http://yeoman.io/) and the [Phovea Generator](https://github.com/phovea/generator-phovea).
+## Tool: Explore
 
- As an example to do this on Ubuntu 14.04 I did the following:
-  
-`sudo apt-get install npm`
+Based on [Caleydo LineUp](https://github.com/Caleydo/lineupjs), Explore is an interactive tool that allows you to visualize your desired ranking:
 
-`curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -`
+- Combine multiple attributes into a single, combined column to create a ranking
+- Immediate responsive visual change of the rank with the modification of:
+	- Weights of specified attribute 
+	- Values of specified attribute
 
-`sudo apt-get install -y nodejs`
+## Tool: Build 
 
-`npm install -g yo`
+Build is a machine learning tool that is trained through user selected preferences of rank object instances. The Build tool collects data from pairwise comparisons of sample objects completed by the user. The tool applies a regression analysis to this data and determines a pattern and ranks all object within a dataset according to that pattern. 
 
-`npm install -g github:phovea/generator-phovea`
-    
-**Ubuntu has an operating system specific issue when installing nodejs (you may not need):**
-    
-#create a symlink for "node" command
+## Getting Started
 
-`sudo ln -s `which nodejs` /usr/local/bin/node`
+### Prerequisites:
+
+- [npm](https://www.npmjs.com/)
+	- `$ sudo apt-get install npm`
+- [Node.js](http://nodejs.org/)
+	- `$ sudo apt-get install -y nodejs`
+- [Yeoman](http://yeoman.io/)
+	- `$ npm install -g yo`
+- [Phovea Generator](https://github.com/phovea/generator-phovea)
+	- `$ npm install -g github:phovea/generator-phovea`
+- [Python 3](https://www.python.org)
+- [Pip](https://pypi.python.org/pypi/pip)
+-[Flask](http://flask.pocoo.org/)
 
 
+### Run: *CURRENTLY IN DEVELOPMENT*
 
-## Installation
+#### To download dependiencies: 
 
-- Clone this repository and cd into the myRanker directory
-- The **run.sh** script will install all dependencies and run the workspace. Or do this manually: 
-- Create workspace: `yo phovea:workspace` with the following inputs:
-  * Virtual Environment: none
-  * Additional Plugins: none (just press Enter)
-- Install dependencies: `npm install`
-- Creating a symbolic link for the LineUp library
-  * `rm -r node_modules/lineupjs/*` 
-  * `ln -s "lineup.js" "node_modules/lineupjs"`
+`$ pip install virtualenv`
+	
+*in myRanker directory:*
+	
+`$ virtualenv venv`
+		
+`$ source venv/bin/activate`
+		
+`$ pip install -r requirements.txt`
 
-## Run Workspace
+`$ export CFLAGS=-I$VIRTUAL_ENV/include`
+		
+`$ deactivate`
 
-- `npm run start:lineup_demos_source`
-- Open web browser with the URL (e.g. localhost:8080) printed in the console output
+	
+#### To startup the server: 
+
+*activate virtual environment:* `$ source venv/bin/activate`
+	
+*run project:* `$ python3 run.py`
+	
+*exit virual environemnt:* `$ deactivate` 
