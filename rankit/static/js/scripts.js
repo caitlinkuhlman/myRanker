@@ -1,9 +1,13 @@
 // Empty JS for your own code to be here
 const pool = document.querySelector('#top')
-const bot = document.querySelector('#bot')
+const center = document.querySelector('#center')
+const left = document.querySelector('#left')
+const right = document.querySelector('#right')
 const containers = [
   pool,
-  bot,
+  center,
+  left,
+  right,
 ]
 dragula(containers, {
   copy: (el, source) => source === pool,
