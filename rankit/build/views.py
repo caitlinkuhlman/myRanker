@@ -33,7 +33,7 @@ def processDataset(dataset_name):
     return render_template('buildListComp.html', dataset=datastore_ids)
 
 
-@build_blueprint.route('/build/submit', methods=["POST"])
+@build_blueprint.route('/build/submit/<>', methods=["POST"])
 def build():
 
     # dataset_name = request.form.get('dataset_name')
