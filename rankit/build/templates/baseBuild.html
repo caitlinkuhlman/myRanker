@@ -14,7 +14,7 @@
 
     <style>
     .scrollingDragInner {
-      max-height: 200px;
+      max-height: 300px;
       overflow-y: auto;
       border-style: solid;
     }
@@ -35,7 +35,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li>
-                <a href="#">Dataset</a>
+                <a href={{ url_for('build.processDataset', dataset_name='matters_data.json') }} >Dataset</a>
               </li>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
