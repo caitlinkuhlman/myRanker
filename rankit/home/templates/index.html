@@ -84,11 +84,9 @@
 						</div>
 						<figcaption>
 							<h3>Tools</h3>
-							<span>Select a tool!</span>
-							<!-- Explore is Lineup -->
-							<a href="#">Explore</a>
+							<span>Select Dataset!</span>
 							<!-- Build is myRanker -->
-							<a href={{ url_for('build.processDataset', dataset_name='matters_data.json') }} >Build</a>
+							<a href={{ url_for('build.listComparison', dataset_name='matters_data.json') }} >Build</a>
 						</figcaption>
 					</figure>
 				</li>
@@ -101,11 +99,9 @@
 						</div>
 						<figcaption>
 							<h3>Tools</h3>
-							<span>Select a tool!</span>
-							<!-- Explore is Lineup -->
-							<a href="#" onclick="window.location='http://localhost:8080';" class = "lineup">Explore</a>
+							<span>Select Dataset!</span>
 							<!-- Build is myRanker -->
-							<a href={{ url_for('build.buildListComp') }}>Build</a>
+							<a href={{ url_for('build.listComparison', dataset_name='matters_data.json') }}>Build</a>
 						</figcaption>
 					</figure>
 				</li>
@@ -117,11 +113,9 @@
 						</div>
 						<figcaption>
 							<h3>Tools</h3>
-							<span>Select a tool!</span>
-							<!-- Explore is Lineup -->
-							<a href="#" onclick="window.location='http://localhost:8080';" class = "lineup">Explore</a>
+							<span>Select Dataset!</span>
 							<!-- Build is myRanker -->
-							<a href={{ url_for('build.buildListComp') }}>Build</a>
+							<a href={{ url_for('build.listComparison', dataset_name='matters_data.json') }}>Build</a>
 						</figcaption>
 					</figure>
 				</li>
