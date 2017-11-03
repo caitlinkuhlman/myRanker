@@ -20,14 +20,3 @@ def team():
 @home_blueprint.route('/login')
 def login():
     return render_template('modal_log_in.html')
-
-@home_blueprint.route('/dataset')
-def processDataset():
-    dataset_name = request.args.lists()
-
-    # dataset_name.get('dataset_name', default=-1, type="")
-    dataset_name = list(dataset_name)
-    # dataset_name = dataset_name.get('dataset_name', default=-1, type="")
-
-    print("Dataset : %s  " % dataset_name)
-    return 'ok'
