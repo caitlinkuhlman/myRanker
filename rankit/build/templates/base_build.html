@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/default.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}"/>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script> -->
+    <title>RANKit Build</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dragula.min.css') }}"/>
 
-  <title>RANKit DataSet</title>
-
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dragula.min.css') }}"/>
-
-  <style>
-  .scrollingDragInner {
-    max-height: 400px;
-    overflow-y: auto;
-    border-style: solid;
-  }
-  </style>
+    <style>
+    .scrollingDragInner {
+      max-height: 300px;
+      overflow-y: auto;
+      border-style: solid;
+    }
+    </style>
 
 </head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
-
 <body>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
+
         <nav class="navbar navbar-default" role="navigation">
           <div class="navbar-header">
 
@@ -38,24 +36,24 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active">
-                <a href="#">Dataset</a>
+              <li>
+                <a href={{ url_for('build.listComparison', dataset_name='matters_data.json') }} >Dataset</a>
               </li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
+                <a class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a href={{ url_for('build.buildHiMeLo') }}>High Medium Low</a>
+                    <a href={{ url_for('build.categorical', dataset_name= dataset_name) }}>Categories Comparison</a>
                   </li>
                   <li class="divider">
                   </li>
                   <li>
-                    <a href={{ url_for('build.buildList') }}>List Comparison</a>
+                    <a href={{ url_for('build.listComparison', dataset_name= dataset_name) }}>List Comparison</a>
                   </li>
                   <li class="divider">
                   </li>
                   <li>
-                    <a href={{ url_for('build.buildPairWise') }}>Pairwise Comparison</a>
+                    <a href={{ url_for('build.pairwise', dataset_name= dataset_name) }}>Pairwise Comparison</a>
                   </li>
                 </ul>
               </li>
@@ -71,20 +69,10 @@
 
         <div class="page-header">
           <h1>
-            RANKIT Build: List Comparison
+            RANKIT Build: {{ view_name }}
           </h1>
 
         </div>
-<!--
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control">
-          </div>
-          <button type="submit" class="btn btn-default">
-            Submit
-          </button>
-        </form>
-         -->
 
         <div class="wrapper">
           <div class="scrollingDragInner">
@@ -95,26 +83,14 @@
             {% endfor %}
           </div>
         </div>
-          <div class="list-wrapper">
-
-            <div id="bot" class="list">
-            </div>
-
-          </div>
-
-
         </div>
 
+    {% block content %}
+    {% endblock %}
 
-      </div>
-    </div>
-  </div>
-
-  <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
-
+    <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
 
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
-{#  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>#}
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
   <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>

@@ -9,17 +9,7 @@ build_blueprint = Blueprint(
     template_folder='templates'
 )
 
-@build_blueprint.route('/buildListComp')
-def buildListComp():
-    return render_template('buildListComp.html')
-
-@build_blueprint.route('/buildListComp/<dataset_name>')
-def processDataset(dataset_name):
-    # get the arguments from get request
-    # dataset_name = request.args.get("dataset_name")
-
-    # get the absolute path of the dataset
-    # datasets_dir = os.path.dirname(os.path.dirname(os.getcwd() + "/rankit/datasets/"))
+def getDataset(dataset_name):
     datasets_dir = os.path.dirname(os.path.abspath(os.path.dirname(__name__)) + "/rankit/datasets/")
     print(datasets_dir)
     abs_file_path = os.path.join(datasets_dir, dataset_name)
@@ -27,24 +17,41 @@ def processDataset(dataset_name):
     # load the json file contents into json object
     with open(abs_file_path, 'r') as data_file:
         datastore = json.load(data_file)
+    return datastore
 
+def filterByPrimaryKey(datastore):
     #filter only object names
     datastore_ids = list(map(lambda data: data["States"], datastore))
     datastore_ids.sort()
 
-    return render_template('buildListComp.html', dataset=datastore_ids)
+    return datastore_ids
 
-@build_blueprint.route('/buildList')
+@build_blueprint.route('/build/list/<dataset_name>')
+def listComparison(dataset_name):
+
+    # retrieve dataset
+    datastore_ids = filterByPrimaryKey(getDataset(dataset_name))
+
+    return render_template('list_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "List Comparison")
+
+@build_blueprint.route('/build/x')
 def buildList():
-    return render_template('buildList.html')
+    return render_template('full_datasets.html')
 
-@build_blueprint.route('/buildPairWise')
-def buildPairWise():
-    return render_template('buildPairWise.html')
+@build_blueprint.route('/build/pairwise/<dataset_name>')
+def pairwise(dataset_name):
+    # retrieve dataset
+    datastore_ids = filterByPrimaryKey(getDataset(dataset_name))
 
-@build_blueprint.route('/buildHiMeLo')
-def buildHiMeLo():
-    return render_template('buildHiMeLo.html')
+    return render_template('pairwise_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "Pairwise Comparison")
+
+@build_blueprint.route('/build/categorical/<dataset_name>')
+def categorical(dataset_name):
+
+    # retrieve dataset
+    datastore_ids = filterByPrimaryKey(getDataset(dataset_name))
+
+    return render_template('categorical_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "Categorical Comparison")
 
 
 @build_blueprint.route('/build/submit', methods=["POST"])
