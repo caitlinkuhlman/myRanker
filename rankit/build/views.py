@@ -9,8 +9,11 @@ build_blueprint = Blueprint(
     template_folder='templates'
 )
 
-
+@build_blueprint.route('/buildListComp/<dataset_name>')
 def getDataset(dataset_name):
+    # get the absolute path of the dataset
+    # datasets_dir = os.path.dirname(os.path.dirname(os.getcwd() + "/rankit/datasets/"))
+
     datasets_dir = os.path.dirname(os.path.abspath(os.path.dirname(__name__)) + "/rankit/datasets/")
     print(datasets_dir)
     abs_file_path = os.path.join(datasets_dir, dataset_name)
@@ -55,7 +58,7 @@ def categorical(dataset_name):
     return render_template('categorical_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "Categorical Comparison")
 
 
-@build_blueprint.route('/build/submit', methods=["POST"])
+@build_blueprint.route('/build/submit/<>', methods=["POST"])
 def build():
 
     # dataset_name = request.form.get('dataset_name')
