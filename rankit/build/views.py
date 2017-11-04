@@ -25,7 +25,7 @@ def getDataset(dataset_name):
 
 def filterByPrimaryKey(datastore):
     #filter only object names
-    datastore_ids = list(map(lambda data: data["States"], datastore))
+    datastore_ids = list(map(lambda data: data["primaryKey"], datastore))
     datastore_ids.sort()
 
     return datastore_ids
