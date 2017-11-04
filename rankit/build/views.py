@@ -57,23 +57,51 @@ def categorical(dataset_name):
     return render_template('categorical_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "Categorical Comparison")
 
 
-@build_blueprint.route('/build/submit/', methods=["POST", "GET"])
+@build_blueprint.route('/build/submit/', methods=["POST"])
 def build():
+    # get the pairs from client in json format
+    primaryKeyPairs = request.get_json().get("pairs")
+    print(primaryKeyPairs)
 
-    # dataset_name = request.form.get('dataset_name')
-    # pairs_json = request.form.get('pairs')
-    # pairsfile = dataset_name+"_pairsfile.json"
-    #
-    # with open(pairsfile, 'w') as f:
-    #     json.dump(pairs_json, f)
+    # get the dataset from json file in list format
+    dataset_list = getDataset(request.get_json().get("dataset_name"))
 
-    print("ranking...")
+    # convert each primary key into index in pairs sent from client
+    primaryKeyToIndex(dataset_list, primaryKeyPairs)
+    print(primaryKeyPairs)
+
+    pairs_json = json.dumps(primaryKeyPairs)
+    # pairs = pd.read_json(pairs_json)
+    # print(pairs)
+    # dataset = pd.read_json(dataset_name)
 
     # pairsfile = "sample_pairs.json"
-    # dataset = pd.read_json("matters_data.json")
+    # dataset = pd.read_json(json.dumps(dataset_list))
+    # print(dataset)
     # pairs = pd.read_json(pairsfile)
-    #
+
     # rank = build_rank.build(dataset=dataset, pairs=pairs)
     # return rank.to_json()
+    return "1"
+
+
+def primaryKeyToIndex(dataset_list, primaryKeyPairs):
+    for obj in primaryKeyPairs:
+        for key in obj:
+            # obj[high], obj[low]
+            primKey = obj[key]
+            index = findIndex(primKey, dataset_list)
+            obj[key] = index
+
+
+def findIndex(primKey, dataset_list):
+    index = 0
+    for list_entry in dataset_list:
+        if list_entry["primaryKey"] == primKey:
+            print(index)
+            return index
+        else:
+            index = index + 1
+
 
 
