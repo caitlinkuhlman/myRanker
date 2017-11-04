@@ -15,7 +15,7 @@ def getDataset(dataset_name):
 
     datasets_dir = os.path.dirname(os.path.abspath(os.path.dirname(__name__)) + "/rankit/datasets/")
     print(datasets_dir)
-    abs_file_path = os.path.join(datasets_dir, dataset_name)
+    abs_file_path = os.path.join(datasets_dir, dataset_name+".json")
 
     # load the json file contents into json object
     with open(abs_file_path, 'r') as data_file:

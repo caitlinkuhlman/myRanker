@@ -112,7 +112,7 @@
     "city": "Evanston",
     "state": "IL",
     "rank": 11,
-    "in_state_tuition": "$52,678,
+    "in_state_tuition": "$52,678",
     "out_state_tuition": "$52,678",
     "enrollment": 8353
   },
@@ -2790,7 +2790,7 @@
     "enrollment": 12504
   },
   {
-    "primaryKey": "Idaho State University 1",
+    "primaryKey": "Idaho State University",
     "city": "Pocatello",
     "state": "ID",
     "rank": "Unranked",
