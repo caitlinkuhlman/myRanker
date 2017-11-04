@@ -58,7 +58,7 @@ def categorical(dataset_name):
     return render_template('categorical_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "Categorical Comparison")
 
 
-@build_blueprint.route('/build/submit/<>', methods=["POST"])
+@build_blueprint.route('/build/submit/', methods=["POST"])
 def build():
 
     # dataset_name = request.form.get('dataset_name')
