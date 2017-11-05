@@ -1,8 +1,8 @@
-from flask import Blueprint, request, url_for, make_response, jsonify, render_template, send_from_directory
+from flask import Blueprint, request, url_for, make_response, jsonify, render_template, send_from_directory, redirect
 import os, json
 
-# import  rankit.build.rank_script.build_rank as build_rank
-# import  pandas as pd
+import  rankit.build.rank_script.build_rank as build_rank
+import  pandas as pd
 
 build_blueprint = Blueprint(
     'build', __name__,
@@ -59,30 +59,26 @@ def categorical(dataset_name):
 
 @build_blueprint.route('/build/submit/', methods=["POST"])
 def build():
+    # get the dataset name from the request
+    dataset_name = request.get_json().get("dataset_name")
+
     # get the pairs from client in json format
     primaryKeyPairs = request.get_json().get("pairs")
-    print(primaryKeyPairs)
 
     # get the dataset from json file in list format
-    dataset_list = getDataset(request.get_json().get("dataset_name"))
+    dataset_list = getDataset(dataset_name)
 
     # convert each primary key into index in pairs sent from client
     primaryKeyToIndex(dataset_list, primaryKeyPairs)
-    print(primaryKeyPairs)
 
     pairs_json = json.dumps(primaryKeyPairs)
-    # pairs = pd.read_json(pairs_json)
-    # print(pairs)
-    # dataset = pd.read_json(dataset_name)
+    pairs = pd.read_json(pairs_json)
 
-    # pairsfile = "sample_pairs.json"
-    # dataset = pd.read_json(json.dumps(dataset_list))
-    # print(dataset)
-    # pairs = pd.read_json(pairsfile)
+    dataset = pd.read_json(json.dumps(dataset_list))
 
-    # rank = build_rank.build(dataset=dataset, pairs=pairs)
-    # return rank.to_json()
-    return "1"
+    rank = build_rank.build(dataset=dataset, pairs=pairs)
+
+    return rank.to_json()
 
 
 def primaryKeyToIndex(dataset_list, primaryKeyPairs):
