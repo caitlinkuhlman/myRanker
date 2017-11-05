@@ -45,6 +45,9 @@
             dataset_name: dataset_name,
             pairs: pwl
         }))
+        xhr.onload = function() {
+            document.write(this.response)
+        }
     }
     document.querySelector('#submit').addEventListener('click', handleSubmit)
 </script>
