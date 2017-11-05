@@ -6,7 +6,54 @@
 
 {% set name = 'it worked' %}
 <div class="list-wrapper">
-    <div id="center" class="list"></div>
+    <div id="center" class="list">
+        <div id="Washington" class="object noSelect">Washington</div>
+        <div id="Texas" class="object noSelect">Texas</div>
+        <div id="Idaho" class="object noSelect">Idaho</div>
+        <div id="Michigan" class="object noSelect">Michigan</div>
+    </div>
 </div>
+<div>
+    <button id="submit">Submit</button>
+</div>
+<script>
+    function handleSubmit() {
+        const pwl = generateListComparison()
+        sendPostRequest(pwl)
+    }
+    function generateListComparison() {
+        const list = Array.from(document.querySelectorAll('.list .object'))
+        const ids = list.map(x => x.id)
+        // pairwise list to send back to server
+        let pwl = []
+        for (let i = 0; i < ids.length - 1; i++) {
+            for (let j = i + 1; j < ids.length; j++) {
+                pwl.push({ 'high': ids[i], 'low': ids[j] })
+            }
+        }
+        console.log(pwl)
+        return pwl
+    }
+    function sendPostRequest(pwl) {
+        const dataset_name = '{{dataset_name}}'
+        const url = '/build/submit/'
+        const xhr = new XMLHttpRequest()
+        xhr.open('POST', url, true)
+        xhr.setRequestHeader('Content-type', 'application/json')
+        // xhr.onload()
+        xhr.send(JSON.stringify({
+            dataset_name: dataset_name,
+            pairs: pwl
+        }))
+        xhr.onload = function() {
+            document.write(this.response)
+        }
+    }
+    document.querySelector('#submit').addEventListener('click', handleSubmit)
+</script>
 {% endblock %}
 
+{
+    dataset_name,
+    pairs,
+}
