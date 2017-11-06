@@ -18,10 +18,10 @@
 </div>
 <script>
     function handleSubmit() {
-        const pwl = generateListComparison()
+        const pwl = generatePairwise()
         sendPostRequest(pwl)
     }
-    function generateListComparison() {
+    function generatePairwise() {
         const list = Array.from(document.querySelectorAll('.list .object'))
         const ids = list.map(x => x.id)
         // pairwise list to send back to server
@@ -52,8 +52,3 @@
     document.querySelector('#submit').addEventListener('click', handleSubmit)
 </script>
 {% endblock %}
-
-{
-    dataset_name,
-    pairs,
-}
