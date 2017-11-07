@@ -28,8 +28,8 @@ def build(dataset, pairs) :
     pair_indices = pairs["high"].append(pairs["low"]).drop_duplicates().values
     data_train = dataset.iloc[pair_indices]
 
-    data = np.nan_to_num(dataset.drop('States', axis=1))
-    X = np.nan_to_num(data_train.drop('States', axis=1))
+    data = np.nan_to_num(dataset.drop('primaryKey', axis=1))
+    X = np.nan_to_num(data_train.drop('primaryKey', axis=1))
     # print X
     pairs_start = []
     pairs_end = []
@@ -46,7 +46,7 @@ def build(dataset, pairs) :
     y_pred = learner.predict(data)
     weights = learner.predictor.W
     res = pd.DataFrame()
-    res['State'] = dataset['States']
+    res['State'] = dataset['primaryKey']
     res['Prediction'] = y_pred
     res.set_index('State', inplace=True)
     res = res.rank()
