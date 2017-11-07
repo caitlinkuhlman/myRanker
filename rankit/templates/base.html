@@ -7,18 +7,32 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}"/>
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
 
+<style>
+  .footer {
+    background:#181818;
+    text-align: center;
+    color:#E3F2F4;
+  }
+
+
+</style>
+
+
 </head>
+
+
 <body>
 
 <div class="container">
     <div class="cbp-af-header">
         <div class="cbp-af-inner">
             <h1>RanKit</h1>
-            <nav>
-                <a href={{ url_for('home.index') }}>Home</a>
-                <a href={{ url_for('home.about') }}>About</a>
-                <a href={{ url_for('home.team') }}>Contact Our Team</a>
-                <a href={{ url_for('home.login') }}>Login</a>
+            <nav id="main-menu">
+                <a href="#home">Home</a>
+                <a href="#comp">Components</a>
+                <a href="#dataset">Datasets</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact Our Team</a>
             </nav>
         </div>
     </div>
@@ -28,4 +42,21 @@
 
 <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
 </body>
+
+<script type="text/javascript">
+$(function() {
+  $('#main-menu a').bind('click',function(event){
+    var $anchor = $(this);
+
+    $('html, body').stop().animate({
+      scrollTop: $($anchor.attr('href')).offset().top
+    }, 1500,'easeInOutExpo');
+
+    event.preventDefault();
+  });
+});
+
+
+</script>
+
 </html>

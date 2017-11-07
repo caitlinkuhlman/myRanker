@@ -70,7 +70,8 @@
     <div class="inner1">
     <form class="navbar-form navbar-left" role="search" style="display: inline;">
       <div class="form-group">
-        <input type="text" id="search-criteria" class="form-control">
+        <!-- <input type="text" id="search-criteria" class="form-control" onkeyup="myFunction()" placeholder="Search for names.."> -->
+        <input type="text" id="search-criteria" class="form-control" placeholder="Search for names..">
       </div>
       <button type="submit" class="btn btn-default" id="search" value="search">
         Submit
@@ -94,6 +95,47 @@
   {% endblock %}
 
   <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
+
+  <script>
+
+  // my own funcion from scratch
+
+  // function myFunction() {
+  //     var input, filter, div, divs, td;
+  //     input = document.getElementById("search-criteria");
+  //     filter = input.value.toUpperCase();
+  //     div = document.getElementById("top");
+  //     divs = div.getElementsByTagName("div");
+  //
+  //     for (i = 0; i < divs.length; i++) {
+  //       td = div[i].getElementsByTagName("div")[0];
+  //       if (td) {
+  //         if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+  //           div[i].style.display = "";
+  //         } else {
+  //           div[i].style.display = "none";
+  //         }
+  //       }
+  //     }
+  //   }
+
+
+  // jquery method
+
+  // function hide_divs(search) {
+  //     $("#top > div").hide(); // hide all divs
+  // 	$('#top > div[id*="'+search+'"]').show(); // show the ones that match
+  // }
+  //
+  // $(document).ready(function() {
+  // 	$("#search-criteria").keyup(function() {
+  // 		var search = $.trim(this.value);
+  // 		hide_divs(search);
+  // 	});
+  // });
+
+  </script>
+
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>

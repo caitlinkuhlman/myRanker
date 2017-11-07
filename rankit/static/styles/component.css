@@ -6,6 +6,8 @@
 	/*background: #3A760E;*/
 	/*background: #FFFFFF;*/
 	background: #FFFFF0;
+	/*background: #181818;*/
+
 	z-index: 10000;
 	height: 230px;
 	overflow: hidden;
@@ -19,6 +21,7 @@
 	max-width: 69em;
 	margin: 0 auto;
 	padding: 0 1.875em;
+
 }
 
 .cbp-af-header h1,
@@ -35,7 +38,6 @@
 
 .cbp-af-header h1 {
 	text-transform: uppercase;
-	/*color: #FFFFFF;*/
 	color: #4CAF50;
 	letter-spacing: 4px;
 	font-size: 4em;
