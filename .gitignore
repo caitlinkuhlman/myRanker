@@ -21,3 +21,4 @@ withinEnv.cmd
 *.pyc
 venv/*
 rankit/explore/Lineup/requirements.txt
+rankit/static/images/wood_pattern.png
