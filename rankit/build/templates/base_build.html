@@ -76,6 +76,12 @@
       <button type="submit" class="btn btn-default" id="search" value="search">
         Submit
       </button>
+      <button type="button" class="btn btn-default" id="sort" onclick="sortDataset()">
+        Sort
+      </button>
+      <button type="button" class="btn btn-default" id="shuffle" onclick="shuffleDataset()">
+        Shuffle
+      </button>
     </form>
   </div>
 
@@ -97,43 +103,30 @@
   <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
 
   <script>
+    function getDataset() {
+      return Array.from(document.querySelectorAll('.pool .object')).map(x => x.innerText)
+    }
+    
+    function sortDataset() {
+      const dataset = getDataset()
+      dataset.sort()
+      render(dataset)
+    }
 
-  // my own funcion from scratch
-
-  // function myFunction() {
-  //     var input, filter, div, divs, td;
-  //     input = document.getElementById("search-criteria");
-  //     filter = input.value.toUpperCase();
-  //     div = document.getElementById("top");
-  //     divs = div.getElementsByTagName("div");
-  //
-  //     for (i = 0; i < divs.length; i++) {
-  //       td = div[i].getElementsByTagName("div")[0];
-  //       if (td) {
-  //         if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-  //           div[i].style.display = "";
-  //         } else {
-  //           div[i].style.display = "none";
-  //         }
-  //       }
-  //     }
-  //   }
-
-
-  // jquery method
-
-  // function hide_divs(search) {
-  //     $("#top > div").hide(); // hide all divs
-  // 	$('#top > div[id*="'+search+'"]').show(); // show the ones that match
-  // }
-  //
-  // $(document).ready(function() {
-  // 	$("#search-criteria").keyup(function() {
-  // 		var search = $.trim(this.value);
-  // 		hide_divs(search);
-  // 	});
-  // });
-
+    function shuffleDataset() {
+      const dataset = getDataset()
+      for (let i = dataset.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [dataset[i], dataset[j]] = [dataset[j], dataset[i]];
+      }
+      render(dataset)
+    }
+    
+    function render(dataset) {
+      const pool = document.querySelector('#top')
+      const html = dataset.map(x => `<div id="${x}" class="object noSelect">${x}</div>`).join('\n')
+      pool.innerHTML = html
+    }
   </script>
 
 
