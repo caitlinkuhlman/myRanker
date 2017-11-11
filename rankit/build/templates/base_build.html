@@ -13,7 +13,27 @@
     .inner1 {
         display: inline-block;
     }
+
+    .footer {
+      background:#181818;
+      text-align: center;
+      font-size: 120%;
+      color:#E3F2F4;
+    }
+
+    .navbar-center {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    }
+
+    #submit {
+      float: right;
+    }
+
     </style>
+
 
 </head>
 
@@ -68,14 +88,14 @@
   <div class="wrapper">
 
     <div class="inner1">
-    <form class="navbar-form navbar-left" role="search" style="display: inline;">
+    <form class="navbar-form navbar-center" role="search" style="display: inline;">
       <div class="form-group">
         <!-- <input type="text" id="search-criteria" class="form-control" onkeyup="myFunction()" placeholder="Search for names.."> -->
         <input type="text" id="search-criteria" class="form-control" placeholder="Search for names..">
       </div>
-      <button type="submit" class="btn btn-default" id="search" value="search">
+      <!-- <button type="submit" class="btn btn-default" id="search" value="search">
         Submit
-      </button>
+      </button> -->
       <button type="button" class="btn btn-default" id="sort" onclick="sortDataset()">
         Sort
       </button>
@@ -106,7 +126,7 @@
     function getDataset() {
       return Array.from(document.querySelectorAll('.pool .object')).map(x => x.innerText)
     }
-    
+
     function sortDataset() {
       const dataset = getDataset()
       dataset.sort()
@@ -121,7 +141,7 @@
       }
       render(dataset)
     }
-    
+
     function render(dataset) {
       const pool = document.querySelector('#top')
       const html = dataset.map(x => `<div id="${x}" class="object noSelect">${x}</div>`).join('\n')

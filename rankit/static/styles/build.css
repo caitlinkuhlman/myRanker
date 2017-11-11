@@ -53,6 +53,16 @@
 
   .scrollingDragInner {
     max-height: 300px;
+    font-size: 120%;
     overflow-y: auto;
-    border-style: solid;
+    margin-top: 80px;
+    margin-right: 50px;
+    margin-left: 50px;
+    background-color: #666;
+    text-align: center;
+	  color: #3c3030;
+	  font-weight: bold;
+	  padding: 10px;
+	  -moz-border-radius: 5px;
+	  -webkit-border-radius: 5px;
   }
