@@ -72,7 +72,7 @@ class LinearKernel(object):
         else:
             test_X = array_tools.as_dense_matrix(test_X)
         train_X = self.train_X
-        K = train_X * test_X.T
+        K = (train_X * test_X.T).astype(float)
         K = array_tools.as_array(K)
         if self.bias != 0:
             K += self.bias

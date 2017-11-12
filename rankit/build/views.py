@@ -37,10 +37,6 @@ def listComparison(dataset_name):
 
     return render_template('list_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "List Comparison")
 
-@build_blueprint.route('/build/x')
-def buildList():
-    return render_template('full_datasets.html')
-
 @build_blueprint.route('/build/pairwise/<dataset_name>')
 def pairwise(dataset_name):
     # retrieve dataset
@@ -94,7 +90,6 @@ def findIndex(primKey, dataset_list):
     index = 0
     for list_entry in dataset_list:
         if list_entry["primaryKey"] == primKey:
-            print(index)
             return index
         else:
             index = index + 1
