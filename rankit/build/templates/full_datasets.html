@@ -104,8 +104,8 @@ body {
                 <!-- {{ url_for('static',filename='video/weblogo.webm') }} -->
               </div>
               <figcaption>
-                <h3>Tools</h3>
-                <span>Select Dataset!</span>
+                <h3>States</h3>
+                <span>Dataset for States</span>
                 <!-- Build is myRanker -->
                 <a href={{ url_for('build.listComparison', dataset_name='states') }} >Build</a>
               </figcaption>
@@ -119,8 +119,8 @@ body {
 
               </div>
               <figcaption>
-                <h3>Tools</h3>
-                <span>Select Dataset!</span>
+                <h3>Colleges</h3>
+                <span>Dataset for Colleges!</span>
                 <!-- Build is myRanker -->
                 <a href={{ url_for('build.listComparison', dataset_name='colleges') }}>Build</a>
               </figcaption>
@@ -133,8 +133,8 @@ body {
                 <img src="{{ url_for('static',filename='images/movies.png') }}">
               </div>
               <figcaption>
-                <h3>Tools</h3>
-                <span>Select Dataset!</span>
+                <h3>Movies</h3>
+                <span>Dataset for Movies</span>
                 <!-- Build is myRanker -->
                 <a href={{ url_for('build.listComparison', dataset_name='movies') }}>Build</a>
               </figcaption>
@@ -144,13 +144,13 @@ body {
             <figure>
               <div>
                 <!-- <img src="images/23.png" alt="img02"> -->
-                <img src="{{ url_for('static',filename='images/movies.png') }}">
+                <img src="{{ url_for('static',filename='images/img.png') }}">
               </div>
               <figcaption>
-                <h3>Tools</h3>
-                <span>Select Dataset!</span>
+                <h3>FIFA</h3>
+                <span>Dataset for FIFA!</span>
                 <!-- Build is myRanker -->
-                <a href={{ url_for('build.listComparison', dataset_name='movies') }}>Build</a>
+                <a href={{ url_for('build.listComparison', dataset_name='fifa') }}>Build</a>
               </figcaption>
             </figure>
           </li>
@@ -158,13 +158,13 @@ body {
             <figure>
               <div>
                 <!-- <img src="images/23.png" alt="img02"> -->
-                <img src="{{ url_for('static',filename='images/movies.png') }}">
+                <img src="{{ url_for('static',filename='images/img.png') }}">
               </div>
               <figcaption>
-                <h3>Tools</h3>
-                <span>Select Dataset!</span>
+                <h3>Board Games</h3>
+                <span>Dataset for Board Games</span>
                 <!-- Build is myRanker -->
-                <a href={{ url_for('build.listComparison', dataset_name='movies') }}>Build</a>
+                <a href={{ url_for('build.listComparison', dataset_name='board_games') }}>Build</a>
               </figcaption>
             </figure>
           </li>
@@ -172,16 +172,31 @@ body {
             <figure>
               <div>
                 <!-- <img src="images/23.png" alt="img02"> -->
-                <img src="{{ url_for('static',filename='images/movies.png') }}">
+                <img src="{{ url_for('static',filename='images/img.png') }}">
               </div>
               <figcaption>
-                <h3>Tools</h3>
-                <span>Select Dataset!</span>
+                <h3>Sample Pair</h3>
+                <span>Dataset for Sample Pairs</span>
                 <!-- Build is myRanker -->
-                <a href={{ url_for('build.listComparison', dataset_name='movies') }}>Build</a>
+                <a href={{ url_for('build.listComparison', dataset_name='sample_pairs') }}>Build</a>
               </figcaption>
             </figure>
           </li>
+          <li>
+            <figure>
+              <div>
+                <!-- <img src="images/23.png" alt="img02"> -->
+                <img src="{{ url_for('static',filename='images/img.png') }}">
+              </div>
+              <figcaption>
+                <h3>Video Games</h3>
+                <span>Dataset for video Games</span>
+                <!-- Build is myRanker -->
+                <a href={{ url_for('build.listComparison', dataset_name='video_games') }}>Build</a>
+              </figcaption>
+            </figure>
+          </li>
+
         </ul>
   </div>
 
