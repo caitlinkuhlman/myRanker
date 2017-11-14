@@ -31,7 +31,15 @@
     }
 
     #submit {
-      float: right;
+        background-color: #23527c;
+        color: #ffffff;
+        margin: 24px;
+        vertical-align:baseline;
+        padding:20px 200px 20px 200px;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 120%;
+
     }
 
     .middle {
@@ -40,19 +48,22 @@
 
     h2 {
       text-align: center;
-      color: #FFFFFF;
+      color: #333;
       font-size: 50px;
+      background-color: #d9d3d3;
     }
 
     body {
-      background-color: #3f435f;
+      /*background-color: #3f435f;*/
+      background-color: #f9f9f9;
     }
 
 
     .page-header h1 {
       text-align: center;
-      color: #FFFFFF;
+      color: #333;
       font-size: 80px;
+
     }
 
     </style>
@@ -72,7 +83,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
-          <a href={{ url_for('build.listComparison', dataset_name= dataset_name) }} >Dataset</a>
+          <a href={{ url_for('build.buildList')}}> Dataset</a>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
@@ -107,6 +118,7 @@
       {{ view_name }}
     </b></h1>
   </div>
+
 
   <div class="wrapper">
 

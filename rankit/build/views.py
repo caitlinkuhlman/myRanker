@@ -37,7 +37,7 @@ def listComparison(dataset_name):
 
     return render_template('list_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "List Comparison")
 
-@build_blueprint.route('/build/x')
+@build_blueprint.route('/dataset')
 def buildList():
     return render_template('full_datasets.html')
 
@@ -98,6 +98,3 @@ def findIndex(primKey, dataset_list):
             return index
         else:
             index = index + 1
-
-
-

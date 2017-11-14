@@ -34,19 +34,21 @@
 
   #bot {
     padding: 32px;
-    border: 10px solid #C05640;
+    border: 10px solid #6E7376;
     border-style: solid double solid double;
 
   }
 
   .object {
-    background-color: #f58780;
+    /*background-color: #f58780;*/
+    background-color: #4ABDAC;
     padding: 16px;
     margin: 8px;
     color: #ffffff;
     text-align: center;
     font-size: 120%;
     font-weight: bold;
+    font-family:serif;
   }
 
   .noSelect {
@@ -65,7 +67,10 @@
     margin-bottom: 80px;
     margin-right: 50px;
     margin-left: 50px;
-    background-color: #696f9b;
+    /*background-color: #696f9b;*/
+    background-color: #99CED4;
+    font-family: sans-serif;
+
     text-align: center;
 	  color: #ffffff;
 	  font-weight: bold;
@@ -73,6 +78,6 @@
 	  -moz-border-radius: 5px;
 	  -webkit-border-radius: 5px;
     border-width: 6px;
-    border-color: #C05640;
+    border-color: #6E7376;
     border-style: solid;
   }
