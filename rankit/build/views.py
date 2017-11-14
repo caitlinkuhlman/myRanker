@@ -94,7 +94,6 @@ def findIndex(primKey, dataset_list):
     index = 0
     for list_entry in dataset_list:
         if list_entry["primaryKey"] == primKey:
-            print(index)
             return index
         else:
             index = index + 1
