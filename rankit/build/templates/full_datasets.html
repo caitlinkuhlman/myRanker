@@ -187,21 +187,6 @@ body {
                 <img src="{{ url_for('static',filename='images/img.png') }}">
               </div>
               <figcaption>
-                <h3>Sample Pair</h3>
-                <span>Dataset for Sample Pairs</span>
-                <a class ="one" href={{ url_for('build.listComparison', dataset_name='sample_pairs') }}>List Comparison</a>
-  							<a class ="two" href={{ url_for('build.categorical', dataset_name='sample_pairs') }}>Categorical</a>
-  							<a href={{ url_for('build.pairwise', dataset_name='sample_pairs') }}>Pairwise</a>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <div>
-                <!-- <img src="images/23.png" alt="img02"> -->
-                <img src="{{ url_for('static',filename='images/img.png') }}">
-              </div>
-              <figcaption>
                 <h3>Video Games</h3>
                 <span>Dataset for video Games</span>
                 <a class ="one" href={{ url_for('build.listComparison', dataset_name='video_games') }}>List Comparison</a>
