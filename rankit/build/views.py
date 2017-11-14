@@ -1,7 +1,7 @@
 from flask import Blueprint, request, url_for, make_response, jsonify, render_template, send_from_directory, redirect
 import os, json
 
-import  rankit.build.rank_script.build_rank as build_rank
+# import  rankit.build.rank_script.build_rank as build_rank
 import  pandas as pd
 
 build_blueprint = Blueprint(
@@ -36,6 +36,10 @@ def listComparison(dataset_name):
     datastore_ids = filterByPrimaryKey(getDataset(dataset_name))
 
     return render_template('list_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "List Comparison")
+
+@build_blueprint.route('/dataset')
+def buildList():
+    return render_template('full_datasets.html')
 
 @build_blueprint.route('/build/pairwise/<dataset_name>')
 def pairwise(dataset_name):
@@ -93,6 +97,3 @@ def findIndex(primKey, dataset_list):
             return index
         else:
             index = index + 1
-
-
-

@@ -7,13 +7,67 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dragula.min.css') }}"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
+
     <title>RANKit Build</title>
 
     <style>
     .inner1 {
         display: inline-block;
     }
+
+    .footer {
+      background:#181818;
+      text-align: center;
+      font-size: 120%;
+      color:#E3F2F4;
+    }
+
+    .navbar-center {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    }
+
+    #submit {
+        background-color: #23527c;
+        color: #ffffff;
+        margin: 24px;
+        vertical-align:baseline;
+        padding:20px 200px 20px 200px;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 120%;
+
+    }
+
+    .middle {
+      grid-area: center;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      font-size: 50px;
+      background-color: #d9d3d3;
+    }
+
+    body {
+      /*background-color: #3f435f;*/
+      background-color: #f9f9f9;
+    }
+
+
+    .page-header h1 {
+      text-align: center;
+      color: #333;
+      font-size: 80px;
+
+    }
+
     </style>
+
 
 </head>
 
@@ -29,7 +83,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
-          <a href={{ url_for('build.listComparison', dataset_name= dataset_name) }} >Dataset</a>
+          <a href={{ url_for('build.buildList')}}> Dataset</a>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
@@ -60,15 +114,16 @@
   </nav>
 
   <div class="page-header">
-    <h1>
-      RANKIT Build: {{ view_name }}
-    </h1>
+    <h1> <b>
+      {{ view_name }}
+    </b></h1>
   </div>
+
 
   <div class="wrapper">
 
     <div class="inner1">
-    <form class="navbar-form navbar-left" role="search" style="display: inline;">
+    <form class="navbar-form navbar-center" role="search" style="display: inline;">
       <input
         type="search"
         id="search-criteria"
@@ -106,7 +161,7 @@
     function getDataset() {
       return Array.from(document.querySelectorAll('.pool .object')).map(x => x.innerText)
     }
-    
+
     function sortDataset() {
       const dataset = getDataset()
       dataset.sort()
@@ -129,7 +184,7 @@
       const newDataset = dataset.filter(x => re.test(x))
       render(newDataset)
     }
-    
+
     function render(dataset) {
       const pool = document.querySelector('#top')
       const html = dataset.map(x => `<div id="${x}" class="object noSelect">${x}</div>`).join('\n')

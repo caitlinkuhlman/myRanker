@@ -12,8 +12,11 @@
 	<link rel="shortcut icon" href="../favicon.ico">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
-	<style>
+	<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/> -->
 
+
+	<style>
 
 
 	/* Background pattern from Subtle Patterns */
@@ -169,7 +172,20 @@
 			text-align: center;
 		}
 
+		#submit {
+        background-color: #23527c;
+        color: #ffffff;
+        margin: 24px;
+        vertical-align:baseline;
+        padding:20px 200px 20px 200px;
+        font-family: sans-serif;
 
+    }
+
+		.margin {
+
+			padding:20px 200px 20px 200px;
+		}
 
 
 	</style>
@@ -253,7 +269,9 @@
 							<h3>Tools</h3>
 							<span>Select Dataset!</span>
 							<!-- Build is myRanker -->
-							<a href={{ url_for('build.listComparison', dataset_name='states') }} >Build</a>
+							<a class ="one" href={{ url_for('build.listComparison', dataset_name='states') }}>List Comparison</a>
+							<a class ="two" href={{ url_for('build.categorical', dataset_name='states') }}>Categorical</a>
+							<a href={{ url_for('build.pairwise', dataset_name='states') }}>Pairwise</a>
 						</figcaption>
 					</figure>
 				</li>
@@ -268,7 +286,10 @@
 							<h3>Tools</h3>
 							<span>Select Dataset!</span>
 							<!-- Build is myRanker -->
-							<a href={{ url_for('build.listComparison', dataset_name='colleges') }}>Build</a>
+							<a class ="one" href={{ url_for('build.listComparison', dataset_name='colleges') }}>List Comparison</a>
+							<a class ="two" href={{ url_for('build.categorical', dataset_name='colleges') }}>Categorical</a>
+							<a href={{ url_for('build.pairwise', dataset_name='colleges') }}>Pairwise</a>
+
 						</figcaption>
 					</figure>
 				</li>
@@ -282,13 +303,31 @@
 							<h3>Tools</h3>
 							<span>Select Dataset!</span>
 							<!-- Build is myRanker -->
-							<a href={{ url_for('build.listComparison', dataset_name='movies') }}>Build</a>
+							<a class ="one" href={{ url_for('build.listComparison', dataset_name='movies') }}>List Comparison</a>
+							<a class ="two" href={{ url_for('build.categorical', dataset_name='movies') }}>Categorical</a>
+							<a href={{ url_for('build.pairwise', dataset_name='movies') }}>Pairwise</a>
 						</figcaption>
 					</figure>
 				</li>
 			</ul>
 
+			<!-- <div class="list middle">
+			<button id="submit" class="cd-btn cd-modal-trigger list middle">
+				<a href={{ url_for('build.buildList')}}>
+				See More!
+				</a>
+			</button>
+		</div> -->
+		<div class="bootstrap-iso margin">
+		<a href={{ url_for('build.buildList')}} class="btn btn-primary btn-lg btn-block" role="button">See More</a>
+	</div>
+
+
+
 </div>
+
+
+
 
 
 
@@ -327,7 +366,8 @@
 	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/classie.js') }}" ></script>
 	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}" ></script>
 	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/toucheffects.js') }}" ></script>
-
+	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/modernizr.js') }}" ></script>
+	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/main.js') }}" ></script>
 
     </div>
 
