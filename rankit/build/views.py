@@ -1,7 +1,7 @@
 from flask import Blueprint, request, url_for, make_response, jsonify, render_template, send_from_directory, redirect
 import os, json
 
-# import  rankit.build.rank_script.build_rank as build_rank
+import  rankit.build.rank_script.build_rank as build_rank
 import  pandas as pd
 
 build_blueprint = Blueprint(
