@@ -1,0 +1,2801 @@
+[
+  {
+    "primaryKey": "Princeton University",
+    "city": "Princeton",
+    "state": "NJ",
+    "rank": 1,
+    "in_state_tuition": "$47,140",
+    "out_state_tuition": "$47,140",
+    "enrollment": 5400
+  },
+  {
+    "primaryKey": "Harvard University",
+    "city": "Cambridge",
+    "state": "MA",
+    "rank": 2,
+    "in_state_tuition": "$48,949",
+    "out_state_tuition": "$48,949",
+    "enrollment": 6710
+  },
+  {
+    "primaryKey": "University of Chicago",
+    "city": "Chicago",
+    "state": "IL",
+    "rank": 3,
+    "in_state_tuition": "$54,825",
+    "out_state_tuition": "$54,825",
+    "enrollment": 5941
+  },
+  {
+    "primaryKey": "Yale University",
+    "city": "New Haven",
+    "state": "CT",
+    "rank": 3,
+    "in_state_tuition": "$51,400",
+    "out_state_tuition": "$51,400",
+    "enrollment": 5472
+  },
+  {
+    "primaryKey": "Columbia University",
+    "city": "New York",
+    "state": "NY",
+    "rank": 5,
+    "in_state_tuition": "$57,208",
+    "out_state_tuition": "$57,208",
+    "enrollment": 6113
+  },
+  {
+    "primaryKey": "Massachusetts Institute of Technology",
+    "city": "Cambridge",
+    "state": "MA",
+    "rank": 5,
+    "in_state_tuition": "$49,892",
+    "out_state_tuition": "$49,892",
+    "enrollment": 4524
+  },
+  {
+    "primaryKey": "Stanford University",
+    "city": "Stanford",
+    "state": "CA",
+    "rank": 5,
+    "in_state_tuition": "$49,617",
+    "out_state_tuition": "$49,617",
+    "enrollment": 7034
+  },
+  {
+    "primaryKey": "University of Pennsylvania",
+    "city": "Philadelphia",
+    "state": "PA",
+    "rank": 8,
+    "in_state_tuition": "$53,534",
+    "out_state_tuition": "$53,534",
+    "enrollment": 10019
+  },
+  {
+    "primaryKey": "Duke University",
+    "city": "Durham",
+    "state": "NC",
+    "rank": 9,
+    "in_state_tuition": "$53,744",
+    "out_state_tuition": "$53,744",
+    "enrollment": 6609
+  },
+  {
+    "primaryKey": "California Institute of Technology",
+    "city": "Pasadena",
+    "state": "CA",
+    "rank": 10,
+    "in_state_tuition": "$49,908",
+    "out_state_tuition": "$49,908",
+    "enrollment": 979
+  },
+  {
+    "primaryKey": "Dartmouth College",
+    "city": "Hanover",
+    "state": "NH",
+    "rank": 11,
+    "in_state_tuition": "$52,950",
+    "out_state_tuition": "$52,950",
+    "enrollment": 4310
+  },
+  {
+    "primaryKey": "Johns Hopkins University",
+    "city": "Baltimore",
+    "state": "MD",
+    "rank": 11,
+    "in_state_tuition": "$52,170",
+    "out_state_tuition": "$52,170",
+    "enrollment": 6117
+  },
+  {
+    "primaryKey": "Northwestern University",
+    "city": "Evanston",
+    "state": "IL",
+    "rank": 11,
+    "in_state_tuition": "$52,678",
+    "out_state_tuition": "$52,678",
+    "enrollment": 8353
+  },
+  {
+    "primaryKey": "Brown University",
+    "city": "Providence",
+    "state": "RI",
+    "rank": 14,
+    "in_state_tuition": "$53,419",
+    "out_state_tuition": "$53,419",
+    "enrollment": 6926
+  },
+  {
+    "primaryKey": "Cornell University",
+    "city": "Ithaca",
+    "state": "NY",
+    "rank": 14,
+    "in_state_tuition": "$52,853",
+    "out_state_tuition": "$52,853",
+    "enrollment": 14566
+  },
+  {
+    "primaryKey": "Rice University",
+    "city": "Houston",
+    "state": "TX",
+    "rank": 14,
+    "in_state_tuition": "$45,608",
+    "out_state_tuition": "$45,608",
+    "enrollment": 3893
+  },
+  {
+    "primaryKey": "Vanderbilt University",
+    "city": "Nashville",
+    "state": "TN",
+    "rank": 14,
+    "in_state_tuition": "$47,664",
+    "out_state_tuition": "$47,664",
+    "enrollment": 6871
+  },
+  {
+    "primaryKey": "University of Notre Dame",
+    "city": "Notre Dame",
+    "state": "IN",
+    "rank": 18,
+    "in_state_tuition": "$51,505",
+    "out_state_tuition": "$51,505",
+    "enrollment": 8530
+  },
+  {
+    "primaryKey": "Washington University in St. Louis",
+    "city": "St. Louis",
+    "state": "MO",
+    "rank": 18,
+    "in_state_tuition": "$51,533",
+    "out_state_tuition": "$51,533",
+    "enrollment": 7540
+  },
+  {
+    "primaryKey": "Georgetown University",
+    "city": "Washington",
+    "state": "DC",
+    "rank": 20,
+    "in_state_tuition": "$52,300",
+    "out_state_tuition": "$52,300",
+    "enrollment": 7453
+  },
+  {
+    "primaryKey": "Emory University",
+    "city": "Atlanta",
+    "state": "GA",
+    "rank": 21,
+    "in_state_tuition": "$49,392",
+    "out_state_tuition": "$49,392",
+    "enrollment": 6861
+  },
+  {
+    "primaryKey": "University of Southern California",
+    "city": "Los Angeles",
+    "state": "CA",
+    "rank": 21,
+    "in_state_tuition": "$54,259",
+    "out_state_tuition": "$54,259",
+    "enrollment": 18794
+  },
+  {
+    "primaryKey": "Carnegie Mellon University",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "rank": 25,
+    "in_state_tuition": "$53,910",
+    "out_state_tuition": "$53,910",
+    "enrollment": 6673
+  },
+  {
+    "primaryKey": "Wake Forest University",
+    "city": "Winston-Salem",
+    "state": "NC",
+    "rank": 27,
+    "in_state_tuition": "$51,400",
+    "out_state_tuition": "$51,400",
+    "enrollment": 4955
+  },
+  {
+    "primaryKey": "Tufts University",
+    "city": "Medford",
+    "state": "MA",
+    "rank": 29,
+    "in_state_tuition": "$54,318",
+    "out_state_tuition": "$54,318",
+    "enrollment": 5508
+  },
+  {
+    "primaryKey": "New York University",
+    "city": "New York",
+    "state": "NY",
+    "rank": 30,
+    "in_state_tuition": "$50,464",
+    "out_state_tuition": "$50,464",
+    "enrollment": 26135
+  },
+  {
+    "primaryKey": "Boston College",
+    "city": "Chestnut Hill",
+    "state": "MA",
+    "rank": 32,
+    "in_state_tuition": "$53,346",
+    "out_state_tuition": "$53,346",
+    "enrollment": 9309
+  },
+  {
+    "primaryKey": "Brandeis University",
+    "city": "Waltham",
+    "state": "MA",
+    "rank": 34,
+    "in_state_tuition": "$53,582",
+    "out_state_tuition": "$53,582",
+    "enrollment": 3608
+  },
+  {
+    "primaryKey": "University of Rochester",
+    "city": "Rochester",
+    "state": "NY",
+    "rank": 34,
+    "in_state_tuition": "$52,020",
+    "out_state_tuition": "$52,020",
+    "enrollment": 6386
+  },
+  {
+    "primaryKey": "Boston University",
+    "city": "Boston",
+    "state": "MA",
+    "rank": 37,
+    "in_state_tuition": "$52,082",
+    "out_state_tuition": "$52,082",
+    "enrollment": 17944
+  },
+  {
+    "primaryKey": "Case Western Reserve University",
+    "city": "Cleveland",
+    "state": "OH",
+    "rank": 37,
+    "in_state_tuition": "$47,500",
+    "out_state_tuition": "$47,500",
+    "enrollment": 5152
+  },
+  {
+    "primaryKey": "Northeastern University",
+    "city": "Boston",
+    "state": "MA",
+    "rank": 40,
+    "in_state_tuition": "$49,497",
+    "out_state_tuition": "$49,497",
+    "enrollment": 13473
+  },
+  {
+    "primaryKey": "Tulane University",
+    "city": "New Orleans",
+    "state": "LA",
+    "rank": 40,
+    "in_state_tuition": "$52,960",
+    "out_state_tuition": "$52,960",
+    "enrollment": 6377
+  },
+  {
+    "primaryKey": "Rensselaer Polytechnic Institute",
+    "city": "Troy",
+    "state": "NY",
+    "rank": 42,
+    "in_state_tuition": "$52,305",
+    "out_state_tuition": "$52,305",
+    "enrollment": 6265
+  },
+  {
+    "primaryKey": "Lehigh University",
+    "city": "Bethlehem",
+    "state": "PA",
+    "rank": 46,
+    "in_state_tuition": "$50,740",
+    "out_state_tuition": "$50,740",
+    "enrollment": 5080
+  },
+  {
+    "primaryKey": "Pepperdine University",
+    "city": "Malibu",
+    "state": "CA",
+    "rank": 46,
+    "in_state_tuition": "$51,992",
+    "out_state_tuition": "$51,992",
+    "enrollment": 3542
+  },
+  {
+    "primaryKey": "University of Miami",
+    "city": "Coral Gables",
+    "state": "FL",
+    "rank": 46,
+    "in_state_tuition": "$48,484",
+    "out_state_tuition": "$48,484",
+    "enrollment": 10849
+  },
+  {
+    "primaryKey": "Villanova University",
+    "city": "Villanova",
+    "state": "PA",
+    "rank": 46,
+    "in_state_tuition": "$51,434",
+    "out_state_tuition": "$51,434",
+    "enrollment": 6999
+  },
+  {
+    "primaryKey": "George Washington University",
+    "city": "Washington",
+    "state": "DC",
+    "rank": 56,
+    "in_state_tuition": "$53,518",
+    "out_state_tuition": "$53,518",
+    "enrollment": 11504
+  },
+  {
+    "primaryKey": "Brigham Young University--Provo",
+    "city": "Provo",
+    "state": "UT",
+    "rank": 61,
+    "in_state_tuition": "$5,460",
+    "out_state_tuition": "$5,460",
+    "enrollment": 30979
+  },
+  {
+    "primaryKey": "Fordham University",
+    "city": "New York",
+    "state": "NY",
+    "rank": 61,
+    "in_state_tuition": "$50,601",
+    "out_state_tuition": "$50,601",
+    "enrollment": 9258
+  },
+  {
+    "primaryKey": "Southern Methodist University",
+    "city": "Dallas",
+    "state": "TX",
+    "rank": 61,
+    "in_state_tuition": "$52,498",
+    "out_state_tuition": "$52,498",
+    "enrollment": 6521
+  },
+  {
+    "primaryKey": "Syracuse University",
+    "city": "Syracuse",
+    "state": "NY",
+    "rank": 61,
+    "in_state_tuition": "$46,755",
+    "out_state_tuition": "$46,755",
+    "enrollment": 15218
+  },
+  {
+    "primaryKey": "Worcester Polytechnic Institute",
+    "city": "Worcester",
+    "state": "MA",
+    "rank": 61,
+    "in_state_tuition": "$48,628",
+    "out_state_tuition": "$48,628",
+    "enrollment": 4432
+  },
+  {
+    "primaryKey": "American University",
+    "city": "Washington",
+    "state": "DC",
+    "rank": 69,
+    "in_state_tuition": "$46,615",
+    "out_state_tuition": "$46,615",
+    "enrollment": 7901
+  },
+  {
+    "primaryKey": "Stevens Institute of Technology",
+    "city": "Hoboken",
+    "state": "NJ",
+    "rank": 69,
+    "in_state_tuition": "$50,554",
+    "out_state_tuition": "$50,554",
+    "enrollment": 3021
+  },
+  {
+    "primaryKey": "Baylor University",
+    "city": "Waco",
+    "state": "TX",
+    "rank": 75,
+    "in_state_tuition": "$43,790",
+    "out_state_tuition": "$43,790",
+    "enrollment": 14348
+  },
+  {
+    "primaryKey": "Texas Christian University",
+    "city": "Fort Worth",
+    "state": "TX",
+    "rank": 78,
+    "in_state_tuition": "$44,760",
+    "out_state_tuition": "$44,760",
+    "enrollment": 8891
+  },
+  {
+    "primaryKey": "Clark University",
+    "city": "Worcester",
+    "state": "MA",
+    "rank": 81,
+    "in_state_tuition": "$44,400",
+    "out_state_tuition": "$44,400",
+    "enrollment": 2289
+  },
+  {
+    "primaryKey": "University of Denver",
+    "city": "Denver",
+    "state": "CO",
+    "rank": 87,
+    "in_state_tuition": "$48,669",
+    "out_state_tuition": "$48,669",
+    "enrollment": 5754
+  },
+  {
+    "primaryKey": "University of Tulsa",
+    "city": "Tulsa",
+    "state": "OK",
+    "rank": 87,
+    "in_state_tuition": "$39,502",
+    "out_state_tuition": "$39,502",
+    "enrollment": 3406
+  },
+  {
+    "primaryKey": "Marquette University",
+    "city": "Milwaukee",
+    "state": "WI",
+    "rank": 90,
+    "in_state_tuition": "$39,900",
+    "out_state_tuition": "$39,900",
+    "enrollment": 8238
+  },
+  {
+    "primaryKey": "University of San Diego",
+    "city": "San Diego",
+    "state": "CA",
+    "rank": 90,
+    "in_state_tuition": "$47,708",
+    "out_state_tuition": "$47,708",
+    "enrollment": 5711
+  },
+  {
+    "primaryKey": "Drexel University",
+    "city": "Philadelphia",
+    "state": "PA",
+    "rank": 94,
+    "in_state_tuition": "$52,002",
+    "out_state_tuition": "$52,002",
+    "enrollment": 13251
+  },
+  {
+    "primaryKey": "Saint Louis University",
+    "city": "St. Louis",
+    "state": "MO",
+    "rank": 94,
+    "in_state_tuition": "$42,166",
+    "out_state_tuition": "$42,166",
+    "enrollment": 7454
+  },
+  {
+    "primaryKey": "Yeshiva University",
+    "city": "New York",
+    "state": "NY",
+    "rank": 94,
+    "in_state_tuition": "$42,000",
+    "out_state_tuition": "$42,000",
+    "enrollment": 2714
+  },
+  {
+    "primaryKey": "Rochester Institute of Technology",
+    "city": "Rochester",
+    "state": "NY",
+    "rank": 97,
+    "in_state_tuition": "$40,068",
+    "out_state_tuition": "$40,068",
+    "enrollment": 12410
+  },
+  {
+    "primaryKey": "Illinois Institute of Technology",
+    "city": "Chicago",
+    "state": "IL",
+    "rank": 103,
+    "in_state_tuition": "$45,864",
+    "out_state_tuition": "$45,864",
+    "enrollment": 2944
+  },
+  {
+    "primaryKey": "Loyola University Chicago",
+    "city": "Chicago",
+    "state": "IL",
+    "rank": 103,
+    "in_state_tuition": "$42,828",
+    "out_state_tuition": "$42,828",
+    "enrollment": 11129
+  },
+  {
+    "primaryKey": "Howard University",
+    "city": "Washington",
+    "state": "DC",
+    "rank": 110,
+    "in_state_tuition": "$25,697",
+    "out_state_tuition": "$25,697",
+    "enrollment": 5899
+  },
+  {
+    "primaryKey": "University of San Francisco",
+    "city": "San Francisco",
+    "state": "CA",
+    "rank": 110,
+    "in_state_tuition": "$46,250",
+    "out_state_tuition": "$46,250",
+    "enrollment": 6745
+  },
+  {
+    "primaryKey": "University of the Pacific",
+    "city": "Stockton",
+    "state": "CA",
+    "rank": 110,
+    "in_state_tuition": "$46,346",
+    "out_state_tuition": "$46,346",
+    "enrollment": 3483
+  },
+  {
+    "primaryKey": "University of St. Thomas",
+    "city": "St. Paul",
+    "state": "MN",
+    "rank": 115,
+    "in_state_tuition": "$41,133",
+    "out_state_tuition": "$41,133",
+    "enrollment": 6111
+  },
+  {
+    "primaryKey": "The Catholic University of America",
+    "city": "Washington",
+    "state": "DC",
+    "rank": 120,
+    "in_state_tuition": "$44,060",
+    "out_state_tuition": "$44,060",
+    "enrollment": 3241
+  },
+  {
+    "primaryKey": "DePaul University",
+    "city": "Chicago",
+    "state": "IL",
+    "rank": 120,
+    "in_state_tuition": "$39,010",
+    "out_state_tuition": "$39,010",
+    "enrollment": 15407
+  },
+  {
+    "primaryKey": "Duquesne University",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "rank": 120,
+    "in_state_tuition": "$36,394",
+    "out_state_tuition": "$36,394",
+    "enrollment": 6039
+  },
+  {
+    "primaryKey": "Clarkson University",
+    "city": "Potsdam",
+    "state": "NY",
+    "rank": 124,
+    "in_state_tuition": "$47,950",
+    "out_state_tuition": "$47,950",
+    "enrollment": 3268
+  },
+  {
+    "primaryKey": "Seton Hall University",
+    "city": "South Orange",
+    "state": "NJ",
+    "rank": 124,
+    "in_state_tuition": "$40,588",
+    "out_state_tuition": "$40,588",
+    "enrollment": 5956
+  },
+  {
+    "primaryKey": "University of Dayton",
+    "city": "Dayton",
+    "state": "OH",
+    "rank": 124,
+    "in_state_tuition": "$41,750",
+    "out_state_tuition": "$41,750",
+    "enrollment": 8330
+  },
+  {
+    "primaryKey": "Hofstra University",
+    "city": "Hempstead",
+    "state": "NY",
+    "rank": 132,
+    "in_state_tuition": "$43,960",
+    "out_state_tuition": "$43,960",
+    "enrollment": 6899
+  },
+  {
+    "primaryKey": "Mercer University",
+    "city": "Macon",
+    "state": "GA",
+    "rank": 133,
+    "in_state_tuition": "$36,000",
+    "out_state_tuition": "$36,000",
+    "enrollment": 4706
+  },
+  {
+    "primaryKey": "The New School",
+    "city": "New York",
+    "state": "NY",
+    "rank": 133,
+    "in_state_tuition": "$47,330",
+    "out_state_tuition": "$47,330",
+    "enrollment": 7014
+  },
+  {
+    "primaryKey": "St. John Fisher College",
+    "city": "Rochester",
+    "state": "NY",
+    "rank": 145,
+    "in_state_tuition": "$33,120",
+    "out_state_tuition": "$33,120",
+    "enrollment": 2786
+  },
+  {
+    "primaryKey": "Adelphi University",
+    "city": "Garden City",
+    "state": "NY",
+    "rank": 151,
+    "in_state_tuition": "$37,170",
+    "out_state_tuition": "$37,170",
+    "enrollment": 5205
+  },
+  {
+    "primaryKey": "Florida Institute of Technology",
+    "city": "Melbourne",
+    "state": "FL",
+    "rank": 151,
+    "in_state_tuition": "$41,240",
+    "out_state_tuition": "$41,240",
+    "enrollment": 3629
+  },
+  {
+    "primaryKey": "Seattle Pacific University",
+    "city": "Seattle",
+    "state": "WA",
+    "rank": 151,
+    "in_state_tuition": "$40,893",
+    "out_state_tuition": "$40,893",
+    "enrollment": 3095
+  },
+  {
+    "primaryKey": "Biola University",
+    "city": "La Mirada",
+    "state": "CA",
+    "rank": 159,
+    "in_state_tuition": "$38,448",
+    "out_state_tuition": "$38,448",
+    "enrollment": 4091
+  },
+  {
+    "primaryKey": "University of La Verne",
+    "city": "La Verne",
+    "state": "CA",
+    "rank": 159,
+    "in_state_tuition": "$41,450",
+    "out_state_tuition": "$41,450",
+    "enrollment": 2809
+  },
+  {
+    "primaryKey": "Immaculata University",
+    "city": "Immaculata",
+    "state": "PA",
+    "rank": 165,
+    "in_state_tuition": "$27,350",
+    "out_state_tuition": "$27,350",
+    "enrollment": 1555
+  },
+  {
+    "primaryKey": "Maryville University of St. Louis",
+    "city": "St Louis",
+    "state": "MO",
+    "rank": 165,
+    "in_state_tuition": "$28,470",
+    "out_state_tuition": "$28,470",
+    "enrollment": 2967
+  },
+  {
+    "primaryKey": "St. John's University",
+    "city": "Queens",
+    "state": "NY",
+    "rank": 165,
+    "in_state_tuition": "$40,790",
+    "out_state_tuition": "$40,790",
+    "enrollment": 16440
+  },
+  {
+    "primaryKey": "Robert Morris University",
+    "city": "Moon Township",
+    "state": "PA",
+    "rank": 176,
+    "in_state_tuition": "$29,420",
+    "out_state_tuition": "$29,420",
+    "enrollment": 4384
+  },
+  {
+    "primaryKey": "Union University",
+    "city": "Jackson",
+    "state": "TN",
+    "rank": 176,
+    "in_state_tuition": "$31,580",
+    "out_state_tuition": "$31,580",
+    "enrollment": 2214
+  },
+  {
+    "primaryKey": "University of Hartford",
+    "city": "West Hartford",
+    "state": "CT",
+    "rank": 176,
+    "in_state_tuition": "$38,910",
+    "out_state_tuition": "$38,910",
+    "enrollment": 5150
+  },
+  {
+    "primaryKey": "Edgewood College",
+    "city": "Madison",
+    "state": "WI",
+    "rank": 181,
+    "in_state_tuition": "$28,500",
+    "out_state_tuition": "$28,500",
+    "enrollment": 1661
+  },
+  {
+    "primaryKey": "Lesley University",
+    "city": "Cambridge",
+    "state": "MA",
+    "rank": 181,
+    "in_state_tuition": "$26,550",
+    "out_state_tuition": "$26,550",
+    "enrollment": 1929
+  },
+  {
+    "primaryKey": "Lipscomb University",
+    "city": "Nashville",
+    "state": "TN",
+    "rank": 181,
+    "in_state_tuition": "$30,932",
+    "out_state_tuition": "$30,932",
+    "enrollment": 2986
+  },
+  {
+    "primaryKey": "Suffolk University",
+    "city": "Boston",
+    "state": "MA",
+    "rank": 181,
+    "in_state_tuition": "$37,270",
+    "out_state_tuition": "$37,270",
+    "enrollment": 5290
+  },
+  {
+    "primaryKey": "Azusa Pacific University",
+    "city": "Azusa",
+    "state": "CA",
+    "rank": 187,
+    "in_state_tuition": "$36,120",
+    "out_state_tuition": "$36,120",
+    "enrollment": 5770
+  },
+  {
+    "primaryKey": "Pace University",
+    "city": "New York",
+    "state": "NY",
+    "rank": 187,
+    "in_state_tuition": "$44,036",
+    "out_state_tuition": "$44,036",
+    "enrollment": 8914
+  },
+  {
+    "primaryKey": "Andrews University",
+    "city": "Berrien Springs",
+    "state": "MI",
+    "rank": 192,
+    "in_state_tuition": "$28,436",
+    "out_state_tuition": "$28,436",
+    "enrollment": 1688
+  },
+  {
+    "primaryKey": "Widener University",
+    "city": "Chester",
+    "state": "PA",
+    "rank": 192,
+    "in_state_tuition": "$44,166",
+    "out_state_tuition": "$44,166",
+    "enrollment": 3591
+  },
+  {
+    "primaryKey": "Nova Southeastern University",
+    "city": "Ft. Lauderdale",
+    "state": "FL",
+    "rank": 198,
+    "in_state_tuition": "$29,940",
+    "out_state_tuition": "$29,940",
+    "enrollment": 4295
+  },
+  {
+    "primaryKey": "Dallas Baptist University",
+    "city": "Dallas",
+    "state": "TX",
+    "rank": 202,
+    "in_state_tuition": "$27,480",
+    "out_state_tuition": "$27,480",
+    "enrollment": 3223
+  },
+  {
+    "primaryKey": "Ashland University",
+    "city": "Ashland",
+    "state": "OH",
+    "rank": 223,
+    "in_state_tuition": "$20,700",
+    "out_state_tuition": "$20,700",
+    "enrollment": 4536
+  },
+  {
+    "primaryKey": "Benedictine University",
+    "city": "Lisle",
+    "state": "IL",
+    "rank": 223,
+    "in_state_tuition": "$33,900",
+    "out_state_tuition": "$33,900",
+    "enrollment": 3171
+  },
+  {
+    "primaryKey": "Gardner-Webb University",
+    "city": "Boiling Springs",
+    "state": "NC",
+    "rank": 223,
+    "in_state_tuition": "$30,740",
+    "out_state_tuition": "$30,740",
+    "enrollment": 2362
+  },
+  {
+    "primaryKey": "Shenandoah University",
+    "city": "Winchester",
+    "state": "VA",
+    "rank": 223,
+    "in_state_tuition": "$31,920",
+    "out_state_tuition": "$31,920",
+    "enrollment": 2099
+  },
+  {
+    "primaryKey": "American International College",
+    "city": "Springfield",
+    "state": "MA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$33,140",
+    "out_state_tuition": "$33,140",
+    "enrollment": 1424
+  },
+  {
+    "primaryKey": "Barry University",
+    "city": "Miami Shores",
+    "state": "FL",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$29,700",
+    "out_state_tuition": "$29,700",
+    "enrollment": 3541
+  },
+  {
+    "primaryKey": "Cardinal Stritch University",
+    "city": "Milwaukee",
+    "state": "WI",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$28,844",
+    "out_state_tuition": "$28,844",
+    "enrollment": 1534
+  },
+  {
+    "primaryKey": "Clark Atlanta University",
+    "city": "Atlanta",
+    "state": "GA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$23,082",
+    "out_state_tuition": "$23,082",
+    "enrollment": 3093
+  },
+  {
+    "primaryKey": "Grand Canyon University 1",
+    "city": "Phoenix",
+    "state": "AZ",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$17,050",
+    "out_state_tuition": "$17,050",
+    "enrollment": "N/A"
+  },
+  {
+    "primaryKey": "Liberty University",
+    "city": "Lynchburg",
+    "state": "VA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$24,304",
+    "out_state_tuition": "$24,304",
+    "enrollment": 47050
+  },
+  {
+    "primaryKey": "Lindenwood University",
+    "city": "St. Charles",
+    "state": "MO",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$16,960",
+    "out_state_tuition": "$16,960",
+    "enrollment": 7549
+  },
+  {
+    "primaryKey": "National Louis University 1",
+    "city": "Chicago",
+    "state": "IL",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$10,380",
+    "out_state_tuition": "$10,380",
+    "enrollment": "N/A"
+  },
+  {
+    "primaryKey": "Regent University",
+    "city": "Virginia Beach",
+    "state": "VA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$17,450",
+    "out_state_tuition": "$17,450",
+    "enrollment": 3806
+  },
+  {
+    "primaryKey": "Spalding University 1",
+    "city": "Louisville",
+    "state": "KY",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$24,388",
+    "out_state_tuition": "$24,388",
+    "enrollment": "N/A"
+  },
+  {
+    "primaryKey": "Trevecca Nazarene University",
+    "city": "Nashville",
+    "state": "TN",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$25,100",
+    "out_state_tuition": "$25,100",
+    "enrollment": 2092
+  },
+  {
+    "primaryKey": "Trinity International University",
+    "city": "Deerfield",
+    "state": "IL",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$30,750",
+    "out_state_tuition": "$30,750",
+    "enrollment": 1076
+  },
+  {
+    "primaryKey": "University of the Cumberlands",
+    "city": "Williamsburg",
+    "state": "KY",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$23,000",
+    "out_state_tuition": "$23,000",
+    "enrollment": 3082
+  },
+  {
+    "primaryKey": "Alliant International University",
+    "city": "San Diego",
+    "state": "CA",
+    "rank": "Unranked",
+    "in_state_tuition": "$17,510",
+    "out_state_tuition": "$17,510",
+    "enrollment": 1264
+  },
+  {
+    "primaryKey": "Argosy University 1",
+    "city": "Orange",
+    "state": "CA",
+    "rank": "Unranked",
+    "in_state_tuition": "$13,152",
+    "out_state_tuition": "$13,152",
+    "enrollment": "N/A"
+  },
+  {
+    "primaryKey": "California Institute of Integral Studies 1",
+    "city": "San Francisco",
+    "state": "CA",
+    "rank": "Unranked",
+    "in_state_tuition": "$28,467",
+    "out_state_tuition": "$28,467",
+    "enrollment": "N/A"
+  },
+  {
+    "primaryKey": "Capella University 1",
+    "city": "Minneapolis",
+    "state": "MN",
+    "rank": "Unranked",
+    "in_state_tuition": "$13,998",
+    "out_state_tuition": "$13,998",
+    "enrollment": "N/A"
+  },
+  {
+    "primaryKey": "Northcentral University",
+    "city": "San Diego",
+    "state": "AZ",
+    "rank": "Unranked",
+    "in_state_tuition": "$10,368",
+    "out_state_tuition": "$10,368",
+    "enrollment": 133
+  },
+  {
+    "primaryKey": "Trident University International 1",
+    "city": "Cypress",
+    "state": "CA",
+    "rank": "Unranked",
+    "in_state_tuition": "$9,000",
+    "out_state_tuition": "$9,000",
+    "enrollment": "N/A"
+  },
+  {
+    "primaryKey": "Union Institute and University 1",
+    "city": "Cincinnati",
+    "state": "OH",
+    "rank": "Unranked",
+    "in_state_tuition": "$12,416",
+    "out_state_tuition": "$12,416",
+    "enrollment": "N/A"
+  },
+  {
+    "primaryKey": "University of Phoenix 1",
+    "city": "Phoenix",
+    "state": "AZ",
+    "rank": "Unranked",
+    "in_state_tuition": "$9,690",
+    "out_state_tuition": "$9,690",
+    "enrollment": "N/A"
+  },
+  {
+    "primaryKey": "Walden University 1",
+    "city": "Minneapolis",
+    "state": "MN",
+    "rank": "Unranked",
+    "in_state_tuition": "$12,075",
+    "out_state_tuition": "$12,075",
+    "enrollment": "N/A"
+  },
+  {
+    "primaryKey": "Wilmington University",
+    "city": "New Castle",
+    "state": "DE",
+    "rank": "Unranked",
+    "in_state_tuition": "$10,940",
+    "out_state_tuition": "$10,940",
+    "enrollment": 8873
+  },
+  {
+    "primaryKey": "University of California--Berkeley",
+    "city": "Berkeley",
+    "state": "CA",
+    "rank": 21,
+    "in_state_tuition": "$42,112",
+    "out_state_tuition": "$14,098",
+    "enrollment": 29311
+  },
+  {
+    "primaryKey": "University of California--Los Angeles",
+    "city": "Los Angeles",
+    "state": "CA",
+    "rank": 21,
+    "in_state_tuition": "$41,270",
+    "out_state_tuition": "$13,256",
+    "enrollment": 30873
+  },
+  {
+    "primaryKey": "University of Virginia",
+    "city": "Charlottesville",
+    "state": "VA",
+    "rank": 25,
+    "in_state_tuition": "$46,975",
+    "out_state_tuition": "$16,146",
+    "enrollment": 16331
+  },
+  {
+    "primaryKey": "University of Michigan--Ann Arbor",
+    "city": "Ann Arbor",
+    "state": "MI",
+    "rank": 28,
+    "in_state_tuition": "$47,476",
+    "out_state_tuition": "$14,826",
+    "enrollment": 28983
+  },
+  {
+    "primaryKey": "University of North Carolina--Chapel Hill",
+    "city": "Chapel Hill",
+    "state": "NC",
+    "rank": 30,
+    "in_state_tuition": "$34,588",
+    "out_state_tuition": "$9,005",
+    "enrollment": 18523
+  },
+  {
+    "primaryKey": "College of William & Mary",
+    "city": "Williamsburg",
+    "state": "VA",
+    "rank": 32,
+    "in_state_tuition": "$43,099",
+    "out_state_tuition": "$20,287",
+    "enrollment": 6276
+  },
+  {
+    "primaryKey": "Georgia Institute of Technology",
+    "city": "Atlanta",
+    "state": "GA",
+    "rank": 34,
+    "in_state_tuition": "$33,014",
+    "out_state_tuition": "$12,418",
+    "enrollment": 15489
+  },
+  {
+    "primaryKey": "University of California--Santa Barbara",
+    "city": "Santa Barbara",
+    "state": "CA",
+    "rank": 37,
+    "in_state_tuition": "$42,423",
+    "out_state_tuition": "$14,409",
+    "enrollment": 21574
+  },
+  {
+    "primaryKey": "University of California--Irvine",
+    "city": "Irvine",
+    "state": "CA",
+    "rank": 42,
+    "in_state_tuition": "$43,530",
+    "out_state_tuition": "$15,516",
+    "enrollment": 27331
+  },
+  {
+    "primaryKey": "University of California--San Diego",
+    "city": "La Jolla",
+    "state": "CA",
+    "rank": 42,
+    "in_state_tuition": "$44,197",
+    "out_state_tuition": "$16,183",
+    "enrollment": 28127
+  },
+  {
+    "primaryKey": "University of Florida",
+    "city": "Gainesville",
+    "state": "FL",
+    "rank": 42,
+    "in_state_tuition": "$28,658",
+    "out_state_tuition": "$6,381",
+    "enrollment": 34554
+  },
+  {
+    "primaryKey": "University of California--Davis",
+    "city": "Davis",
+    "state": "CA",
+    "rank": 46,
+    "in_state_tuition": "$42,396",
+    "out_state_tuition": "$14,382",
+    "enrollment": 29546
+  },
+  {
+    "primaryKey": "University of Wisconsin--Madison",
+    "city": "Madison",
+    "state": "WI",
+    "rank": 46,
+    "in_state_tuition": "$34,782",
+    "out_state_tuition": "$10,533",
+    "enrollment": 31710
+  },
+  {
+    "primaryKey": "Pennsylvania State University--University Park",
+    "city": "University Park",
+    "state": "PA",
+    "rank": 52,
+    "in_state_tuition": "$33,664",
+    "out_state_tuition": "$18,436",
+    "enrollment": 41359
+  },
+  {
+    "primaryKey": "University of Illinois--Urbana-Champaign",
+    "city": "Champaign",
+    "state": "IL",
+    "rank": 52,
+    "in_state_tuition": "$31,988",
+    "out_state_tuition": "$15,868",
+    "enrollment": 33932
+  },
+  {
+    "primaryKey": "Ohio State University--Columbus",
+    "city": "Columbus",
+    "state": "OH",
+    "rank": 54,
+    "in_state_tuition": "$29,659",
+    "out_state_tuition": "$10,591",
+    "enrollment": 45831
+  },
+  {
+    "primaryKey": "University of Georgia",
+    "city": "Athens",
+    "state": "GA",
+    "rank": 54,
+    "in_state_tuition": "$30,392",
+    "out_state_tuition": "$11,818",
+    "enrollment": 27951
+  },
+  {
+    "primaryKey": "Purdue University--West Lafayette",
+    "city": "West Lafayette",
+    "state": "IN",
+    "rank": 56,
+    "in_state_tuition": "$28,804",
+    "out_state_tuition": "$10,002",
+    "enrollment": 30043
+  },
+  {
+    "primaryKey": "University of Connecticut",
+    "city": "Storrs",
+    "state": "CT",
+    "rank": 56,
+    "in_state_tuition": "$36,948",
+    "out_state_tuition": "$14,880",
+    "enrollment": 19324
+  },
+  {
+    "primaryKey": "University of Texas--Austin",
+    "city": "Austin",
+    "state": "TX",
+    "rank": 56,
+    "in_state_tuition": "$35,766",
+    "out_state_tuition": "$10,136",
+    "enrollment": 40168
+  },
+  {
+    "primaryKey": "University of Washington",
+    "city": "Seattle",
+    "state": "WA",
+    "rank": 56,
+    "in_state_tuition": "$35,538",
+    "out_state_tuition": "$10,974",
+    "enrollment": 30933
+  },
+  {
+    "primaryKey": "University of Maryland--College Park",
+    "city": "College Park",
+    "state": "MD",
+    "rank": 61,
+    "in_state_tuition": "$33,606",
+    "out_state_tuition": "$10,399",
+    "enrollment": 28472
+  },
+  {
+    "primaryKey": "Clemson University",
+    "city": "Clemson",
+    "state": "SC",
+    "rank": 67,
+    "in_state_tuition": "$35,654",
+    "out_state_tuition": "$14,712",
+    "enrollment": 18599
+  },
+  {
+    "primaryKey": "University of Pittsburgh",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "rank": 68,
+    "in_state_tuition": "$30,642",
+    "out_state_tuition": "$19,080",
+    "enrollment": 19123
+  },
+  {
+    "primaryKey": "Rutgers University--New Brunswick",
+    "city": "Piscataway",
+    "state": "NJ",
+    "rank": 69,
+    "in_state_tuition": "$30,023",
+    "out_state_tuition": "$14,372",
+    "enrollment": 36168
+  },
+  {
+    "primaryKey": "Texas A&M University--College Station",
+    "city": "College Station",
+    "state": "TX",
+    "rank": 69,
+    "in_state_tuition": "$30,208",
+    "out_state_tuition": "$10,030",
+    "enrollment": 50735
+  },
+  {
+    "primaryKey": "University of Minnesota--Twin Cities",
+    "city": "Minneapolis",
+    "state": "MN",
+    "rank": 69,
+    "in_state_tuition": "$26,603",
+    "out_state_tuition": "$14,417",
+    "enrollment": 34871
+  },
+  {
+    "primaryKey": "Virginia Tech",
+    "city": "Blacksburg",
+    "state": "VA",
+    "rank": 69,
+    "in_state_tuition": "$29,371",
+    "out_state_tuition": "$12,852",
+    "enrollment": 25791
+  },
+  {
+    "primaryKey": "Colorado School of Mines",
+    "city": "Golden",
+    "state": "CO",
+    "rank": 75,
+    "in_state_tuition": "$37,436",
+    "out_state_tuition": "$18,386",
+    "enrollment": 4612
+  },
+  {
+    "primaryKey": "University of Massachusetts--Amherst",
+    "city": "Amherst",
+    "state": "MA",
+    "rank": 75,
+    "in_state_tuition": "$33,662",
+    "out_state_tuition": "$15,596",
+    "enrollment": 23373
+  },
+  {
+    "primaryKey": "Miami University--Oxford",
+    "city": "Oxford",
+    "state": "OH",
+    "rank": 78,
+    "in_state_tuition": "$32,768",
+    "out_state_tuition": "$14,578",
+    "enrollment": 16981
+  },
+  {
+    "primaryKey": "University of Iowa",
+    "city": "Iowa City",
+    "state": "IA",
+    "rank": 78,
+    "in_state_tuition": "$28,813",
+    "out_state_tuition": "$8,575",
+    "enrollment": 24476
+  },
+  {
+    "primaryKey": "Florida State University",
+    "city": "Tallahassee",
+    "state": "FL",
+    "rank": 81,
+    "in_state_tuition": "$21,673",
+    "out_state_tuition": "$6,507",
+    "enrollment": 32929
+  },
+  {
+    "primaryKey": "Michigan State University",
+    "city": "East Lansing",
+    "state": "MI",
+    "rank": 81,
+    "in_state_tuition": "$39,405",
+    "out_state_tuition": "$14,460",
+    "enrollment": 39090
+  },
+  {
+    "primaryKey": "North Carolina State University--Raleigh",
+    "city": "Raleigh",
+    "state": "NC",
+    "rank": 81,
+    "in_state_tuition": "$27,406",
+    "out_state_tuition": "$9,058",
+    "enrollment": 23847
+  },
+  {
+    "primaryKey": "University of California--Santa Cruz",
+    "city": "Santa Cruz",
+    "state": "CA",
+    "rank": 81,
+    "in_state_tuition": "$42,042",
+    "out_state_tuition": "$14,028",
+    "enrollment": 16962
+  },
+  {
+    "primaryKey": "University of Delaware",
+    "city": "Newark",
+    "state": "DE",
+    "rank": 81,
+    "in_state_tuition": "$32,250",
+    "out_state_tuition": "$12,830",
+    "enrollment": 18374
+  },
+  {
+    "primaryKey": "Binghamton University--SUNY",
+    "city": "Binghamton",
+    "state": "NY",
+    "rank": 87,
+    "in_state_tuition": "$24,403",
+    "out_state_tuition": "$9,523",
+    "enrollment": 13632
+  },
+  {
+    "primaryKey": "Indiana University--Bloomington",
+    "city": "Bloomington",
+    "state": "IN",
+    "rank": 90,
+    "in_state_tuition": "$34,845",
+    "out_state_tuition": "$10,533",
+    "enrollment": 39184
+  },
+  {
+    "primaryKey": "University of Colorado--Boulder",
+    "city": "Boulder",
+    "state": "CO",
+    "rank": 90,
+    "in_state_tuition": "$35,079",
+    "out_state_tuition": "$11,531",
+    "enrollment": 27846
+  },
+  {
+    "primaryKey": "Stony Brook University--SUNY",
+    "city": "Stony Brook",
+    "state": "NY",
+    "rank": 97,
+    "in_state_tuition": "$26,297",
+    "out_state_tuition": "$9,257",
+    "enrollment": 17026
+  },
+  {
+    "primaryKey": "SUNY College of Environmental Science and Forestry",
+    "city": "Syracuse",
+    "state": "NY",
+    "rank": 97,
+    "in_state_tuition": "$18,090",
+    "out_state_tuition": "$8,240",
+    "enrollment": 1755
+  },
+  {
+    "primaryKey": "University at Buffalo--SUNY",
+    "city": "Buffalo",
+    "state": "NY",
+    "rank": 97,
+    "in_state_tuition": "$26,270",
+    "out_state_tuition": "$9,770",
+    "enrollment": 20411
+  },
+  {
+    "primaryKey": "University of Oklahoma",
+    "city": "Norman",
+    "state": "OK",
+    "rank": 97,
+    "in_state_tuition": "$24,443",
+    "out_state_tuition": "$9,062",
+    "enrollment": 22436
+  },
+  {
+    "primaryKey": "University of Vermont",
+    "city": "Burlington",
+    "state": "VT",
+    "rank": 97,
+    "in_state_tuition": "$41,356",
+    "out_state_tuition": "$17,740",
+    "enrollment": 11159
+  },
+  {
+    "primaryKey": "Auburn University",
+    "city": "Auburn",
+    "state": "AL",
+    "rank": 103,
+    "in_state_tuition": "$29,640",
+    "out_state_tuition": "$10,968",
+    "enrollment": 22658
+  },
+  {
+    "primaryKey": "University of New Hampshire",
+    "city": "Durham",
+    "state": "NH",
+    "rank": 103,
+    "in_state_tuition": "$32,637",
+    "out_state_tuition": "$18,067",
+    "enrollment": 12871
+  },
+  {
+    "primaryKey": "University of Oregon",
+    "city": "Eugene",
+    "state": "OR",
+    "rank": 103,
+    "in_state_tuition": "$34,611",
+    "out_state_tuition": "$11,571",
+    "enrollment": 20049
+  },
+  {
+    "primaryKey": "University of South Carolina",
+    "city": "Columbia",
+    "state": "SC",
+    "rank": 103,
+    "in_state_tuition": "$32,362",
+    "out_state_tuition": "$12,262",
+    "enrollment": 25556
+  },
+  {
+    "primaryKey": "University of Tennessee",
+    "city": "Knoxville",
+    "state": "TN",
+    "rank": 103,
+    "in_state_tuition": "$31,160",
+    "out_state_tuition": "$12,970",
+    "enrollment": 22139
+  },
+  {
+    "primaryKey": "University of Alabama",
+    "city": "Tuscaloosa",
+    "state": "AL",
+    "rank": 110,
+    "in_state_tuition": "$28,100",
+    "out_state_tuition": "$10,780",
+    "enrollment": 32563
+  },
+  {
+    "primaryKey": "University of Utah",
+    "city": "Salt Lake City",
+    "state": "UT",
+    "rank": 110,
+    "in_state_tuition": "$26,408",
+    "out_state_tuition": "$9,166",
+    "enrollment": 23789
+  },
+  {
+    "primaryKey": "Arizona State University--Tempe",
+    "city": "Tempe",
+    "state": "AZ",
+    "rank": 115,
+    "in_state_tuition": "$27,372",
+    "out_state_tuition": "$10,792",
+    "enrollment": 42477
+  },
+  {
+    "primaryKey": "Iowa State University",
+    "city": "Ames",
+    "state": "IA",
+    "rank": 115,
+    "in_state_tuition": "$22,256",
+    "out_state_tuition": "$8,420",
+    "enrollment": 30671
+  },
+  {
+    "primaryKey": "Temple University",
+    "city": "Philadelphia",
+    "state": "PA",
+    "rank": 115,
+    "in_state_tuition": "$27,266",
+    "out_state_tuition": "$16,274",
+    "enrollment": 29275
+  },
+  {
+    "primaryKey": "University of Kansas",
+    "city": "Lawrence",
+    "state": "KS",
+    "rank": 115,
+    "in_state_tuition": "$26,592",
+    "out_state_tuition": "$10,824",
+    "enrollment": 19262
+  },
+  {
+    "primaryKey": "University of Missouri",
+    "city": "Columbia",
+    "state": "MO",
+    "rank": 120,
+    "in_state_tuition": "$26,506",
+    "out_state_tuition": "$9,817",
+    "enrollment": 25898
+  },
+  {
+    "primaryKey": "Colorado State University",
+    "city": "Fort Collins",
+    "state": "CO",
+    "rank": 124,
+    "in_state_tuition": "$29,140",
+    "out_state_tuition": "$11,632",
+    "enrollment": 25177
+  },
+  {
+    "primaryKey": "Michigan Technological University",
+    "city": "Houghton",
+    "state": "MI",
+    "rank": 124,
+    "in_state_tuition": "$32,318",
+    "out_state_tuition": "$15,074",
+    "enrollment": 5829
+  },
+  {
+    "primaryKey": "University of Arizona",
+    "city": "Tucson",
+    "state": "AZ",
+    "rank": 124,
+    "in_state_tuition": "$32,449",
+    "out_state_tuition": "$11,644",
+    "enrollment": 34072
+  },
+  {
+    "primaryKey": "University of California--Riverside",
+    "city": "Riverside",
+    "state": "CA",
+    "rank": 124,
+    "in_state_tuition": "$41,931",
+    "out_state_tuition": "$13,917",
+    "enrollment": 19799
+  },
+  {
+    "primaryKey": "University of Nebraska--Lincoln",
+    "city": "Lincoln",
+    "state": "NE",
+    "rank": 124,
+    "in_state_tuition": "$23,256",
+    "out_state_tuition": "$8,690",
+    "enrollment": 20833
+  },
+  {
+    "primaryKey": "Louisiana State University--Baton Rouge",
+    "city": "Baton Rouge",
+    "state": "LA",
+    "rank": 133,
+    "in_state_tuition": "$28,051",
+    "out_state_tuition": "$11,374",
+    "enrollment": 26118
+  },
+  {
+    "primaryKey": "Rutgers University--Newark",
+    "city": "Newark",
+    "state": "NJ",
+    "rank": 133,
+    "in_state_tuition": "$29,480",
+    "out_state_tuition": "$13,829",
+    "enrollment": 8170
+  },
+  {
+    "primaryKey": "University of Arkansas",
+    "city": "Fayetteville",
+    "state": "AR",
+    "rank": 133,
+    "in_state_tuition": "$24,308",
+    "out_state_tuition": "$9,062",
+    "enrollment": 22548
+  },
+  {
+    "primaryKey": "University of Cincinnati",
+    "city": "Cincinnati",
+    "state": "OH",
+    "rank": 133,
+    "in_state_tuition": "$26,334",
+    "out_state_tuition": "$11,000",
+    "enrollment": 25860
+  },
+  {
+    "primaryKey": "University of Kentucky",
+    "city": "Lexington",
+    "state": "KY",
+    "rank": 133,
+    "in_state_tuition": "$28,046",
+    "out_state_tuition": "$11,922",
+    "enrollment": 22621
+  },
+  {
+    "primaryKey": "George Mason University",
+    "city": "Fairfax",
+    "state": "VA",
+    "rank": 140,
+    "in_state_tuition": "$34,370",
+    "out_state_tuition": "$11,924",
+    "enrollment": 23812
+  },
+  {
+    "primaryKey": "New Jersey Institute of Technology",
+    "city": "Newark",
+    "state": "NJ",
+    "rank": 140,
+    "in_state_tuition": "$31,034",
+    "out_state_tuition": "$16,430",
+    "enrollment": 8211
+  },
+  {
+    "primaryKey": "San Diego State University",
+    "city": "San Diego",
+    "state": "CA",
+    "rank": 140,
+    "in_state_tuition": "$19,340",
+    "out_state_tuition": "$7,460",
+    "enrollment": 29853
+  },
+  {
+    "primaryKey": "University of South Florida",
+    "city": "Tampa",
+    "state": "FL",
+    "rank": 140,
+    "in_state_tuition": "$17,324",
+    "out_state_tuition": "$6,410",
+    "enrollment": 31461
+  },
+  {
+    "primaryKey": "Washington State University",
+    "city": "Pullman",
+    "state": "WA",
+    "rank": 140,
+    "in_state_tuition": "$25,817",
+    "out_state_tuition": "$11,391",
+    "enrollment": 24904
+  },
+  {
+    "primaryKey": "Kansas State University",
+    "city": "Manhattan",
+    "state": "KS",
+    "rank": 145,
+    "in_state_tuition": "$24,775",
+    "out_state_tuition": "$9,874",
+    "enrollment": 19472
+  },
+  {
+    "primaryKey": "Oregon State University",
+    "city": "Corvallis",
+    "state": "OR",
+    "rank": 145,
+    "in_state_tuition": "$29,457",
+    "out_state_tuition": "$10,797",
+    "enrollment": 25327
+  },
+  {
+    "primaryKey": "University of Illinois--Chicago",
+    "city": "Chicago",
+    "state": "IL",
+    "rank": 145,
+    "in_state_tuition": "$27,672",
+    "out_state_tuition": "$14,816",
+    "enrollment": 17959
+  },
+  {
+    "primaryKey": "University of Mississippi",
+    "city": "University",
+    "state": "MS",
+    "rank": 145,
+    "in_state_tuition": "$23,554",
+    "out_state_tuition": "$8,290",
+    "enrollment": 19213
+  },
+  {
+    "primaryKey": "University of Texas--Dallas",
+    "city": "Richardson",
+    "state": "TX",
+    "rank": 145,
+    "in_state_tuition": "$33,654",
+    "out_state_tuition": "$12,162",
+    "enrollment": 17350
+  },
+  {
+    "primaryKey": "Ohio University",
+    "city": "Athens",
+    "state": "OH",
+    "rank": 151,
+    "in_state_tuition": "$21,360",
+    "out_state_tuition": "$11,896",
+    "enrollment": 23788
+  },
+  {
+    "primaryKey": "University at Albany--SUNY",
+    "city": "Albany",
+    "state": "NY",
+    "rank": 151,
+    "in_state_tuition": "$24,358",
+    "out_state_tuition": "$9,278",
+    "enrollment": 13139
+  },
+  {
+    "primaryKey": "Oklahoma State University",
+    "city": "Stillwater",
+    "state": "OK",
+    "rank": 156,
+    "in_state_tuition": "$23,776",
+    "out_state_tuition": "$8,738",
+    "enrollment": 21093
+  },
+  {
+    "primaryKey": "University of Massachusetts--Lowell",
+    "city": "Lowell",
+    "state": "MA",
+    "rank": 156,
+    "in_state_tuition": "$31,865",
+    "out_state_tuition": "$14,800",
+    "enrollment": 13639
+  },
+  {
+    "primaryKey": "University of Rhode Island",
+    "city": "Kingston",
+    "state": "RI",
+    "rank": 156,
+    "in_state_tuition": "$28,874",
+    "out_state_tuition": "$12,884",
+    "enrollment": 14801
+  },
+  {
+    "primaryKey": "Illinois State University",
+    "city": "Normal",
+    "state": "IL",
+    "rank": 159,
+    "in_state_tuition": "$25,168",
+    "out_state_tuition": "$14,061",
+    "enrollment": 18643
+  },
+  {
+    "primaryKey": "University of Alabama--Birmingham",
+    "city": "Birmingham",
+    "state": "AL",
+    "rank": 159,
+    "in_state_tuition": "$23,790",
+    "out_state_tuition": "$10,410",
+    "enrollment": 12369
+  },
+  {
+    "primaryKey": "University of Hawaii--Manoa",
+    "city": "Honolulu",
+    "state": "HI",
+    "rank": 159,
+    "in_state_tuition": "$33,764",
+    "out_state_tuition": "$11,732",
+    "enrollment": 13132
+  },
+  {
+    "primaryKey": "University of Maryland--Baltimore County",
+    "city": "Baltimore",
+    "state": "MD",
+    "rank": 159,
+    "in_state_tuition": "$25,654",
+    "out_state_tuition": "$11,518",
+    "enrollment": 11142
+  },
+  {
+    "primaryKey": "Missouri University of Science & Technology",
+    "city": "Rolla",
+    "state": "MO",
+    "rank": 165,
+    "in_state_tuition": "$27,701",
+    "out_state_tuition": "$9,628",
+    "enrollment": 6909
+  },
+  {
+    "primaryKey": "University of California--Merced",
+    "city": "Merced",
+    "state": "CA",
+    "rank": 165,
+    "in_state_tuition": "$41,612",
+    "out_state_tuition": "$13,598",
+    "enrollment": 6815
+  },
+  {
+    "primaryKey": "University of Louisville",
+    "city": "Louisville",
+    "state": "KY",
+    "rank": 165,
+    "in_state_tuition": "$26,286",
+    "out_state_tuition": "$11,264",
+    "enrollment": 15827
+  },
+  {
+    "primaryKey": "Mississippi State University",
+    "city": "Mississippi State",
+    "state": "MS",
+    "rank": 171,
+    "in_state_tuition": "$22,358",
+    "out_state_tuition": "$8,138",
+    "enrollment": 18090
+  },
+  {
+    "primaryKey": "Rowan University",
+    "city": "Glassboro",
+    "state": "NJ",
+    "rank": 171,
+    "in_state_tuition": "$21,378",
+    "out_state_tuition": "$13,108",
+    "enrollment": 14344
+  },
+  {
+    "primaryKey": "University of Central Florida",
+    "city": "Orlando",
+    "state": "FL",
+    "rank": 171,
+    "in_state_tuition": "$22,467",
+    "out_state_tuition": "$6,368",
+    "enrollment": 55776
+  },
+  {
+    "primaryKey": "University of Idaho",
+    "city": "Moscow",
+    "state": "ID",
+    "rank": 171,
+    "in_state_tuition": "$23,812",
+    "out_state_tuition": "$7,488",
+    "enrollment": 9586
+  },
+  {
+    "primaryKey": "Virginia Commonwealth University",
+    "city": "Richmond",
+    "state": "VA",
+    "rank": 171,
+    "in_state_tuition": "$32,942",
+    "out_state_tuition": "$13,570",
+    "enrollment": 24212
+  },
+  {
+    "primaryKey": "Kent State University",
+    "city": "Kent",
+    "state": "OH",
+    "rank": 176,
+    "in_state_tuition": "$18,376",
+    "out_state_tuition": "$10,012",
+    "enrollment": 23684
+  },
+  {
+    "primaryKey": "Texas Tech University",
+    "city": "Lubbock",
+    "state": "TX",
+    "rank": 176,
+    "in_state_tuition": "$23,011",
+    "out_state_tuition": "$10,771",
+    "enrollment": 29963
+  },
+  {
+    "primaryKey": "University of Maine",
+    "city": "Orono",
+    "state": "ME",
+    "rank": 181,
+    "in_state_tuition": "$30,282",
+    "out_state_tuition": "$10,902",
+    "enrollment": 9323
+  },
+  {
+    "primaryKey": "University of Wyoming",
+    "city": "Laramie",
+    "state": "WY",
+    "rank": 181,
+    "in_state_tuition": "$16,827",
+    "out_state_tuition": "$5,217",
+    "enrollment": 9788
+  },
+  {
+    "primaryKey": "Ball State University",
+    "city": "Muncie",
+    "state": "IN",
+    "rank": 187,
+    "in_state_tuition": "$25,938",
+    "out_state_tuition": "$9,848",
+    "enrollment": 17011
+  },
+  {
+    "primaryKey": "Montclair State University",
+    "city": "Montclair",
+    "state": "NJ",
+    "rank": 187,
+    "in_state_tuition": "$20,566",
+    "out_state_tuition": "$12,454",
+    "enrollment": 16810
+  },
+  {
+    "primaryKey": "West Virginia University",
+    "city": "Morgantown",
+    "state": "WV",
+    "rank": 187,
+    "in_state_tuition": "$23,616",
+    "out_state_tuition": "$8,376",
+    "enrollment": 22350
+  },
+  {
+    "primaryKey": "Indiana University-Purdue University--Indianapolis",
+    "city": "Indianapolis",
+    "state": "IN",
+    "rank": 192,
+    "in_state_tuition": "$29,806",
+    "out_state_tuition": "$9,334",
+    "enrollment": 21748
+  },
+  {
+    "primaryKey": "University of Houston",
+    "city": "Houston",
+    "state": "TX",
+    "rank": 192,
+    "in_state_tuition": "$27,337",
+    "out_state_tuition": "$11,887",
+    "enrollment": 35871
+  },
+  {
+    "primaryKey": "University of New Mexico",
+    "city": "Albuquerque",
+    "state": "NM",
+    "rank": 192,
+    "in_state_tuition": "$22,412",
+    "out_state_tuition": "$7,150",
+    "enrollment": 20215
+  },
+  {
+    "primaryKey": "University of North Dakota",
+    "city": "Grand Forks",
+    "state": "ND",
+    "rank": 192,
+    "in_state_tuition": "$21,462",
+    "out_state_tuition": "$9,862",
+    "enrollment": 11255
+  },
+  {
+    "primaryKey": "New Mexico State University",
+    "city": "Las Cruces",
+    "state": "NM",
+    "rank": 198,
+    "in_state_tuition": "$22,701",
+    "out_state_tuition": "$7,122",
+    "enrollment": 12027
+  },
+  {
+    "primaryKey": "North Dakota State University",
+    "city": "Fargo",
+    "state": "ND",
+    "rank": 198,
+    "in_state_tuition": "$20,571",
+    "out_state_tuition": "$9,409",
+    "enrollment": 12010
+  },
+  {
+    "primaryKey": "University of North Carolina--Charlotte",
+    "city": "Charlotte",
+    "state": "NC",
+    "rank": 198,
+    "in_state_tuition": "$20,268",
+    "out_state_tuition": "$6,834",
+    "enrollment": 23404
+  },
+  {
+    "primaryKey": "Bowling Green State University",
+    "city": "Bowling Green",
+    "state": "OH",
+    "rank": 202,
+    "in_state_tuition": "$18,593",
+    "out_state_tuition": "$11,057",
+    "enrollment": 14852
+  },
+  {
+    "primaryKey": "California State University--Fullerton",
+    "city": "Fullerton",
+    "state": "CA",
+    "rank": 202,
+    "in_state_tuition": "$17,460",
+    "out_state_tuition": "$6,850",
+    "enrollment": 34576
+  },
+  {
+    "primaryKey": "University of Massachusetts--Boston",
+    "city": "Boston",
+    "state": "MA",
+    "rank": 202,
+    "in_state_tuition": "$32,985",
+    "out_state_tuition": "$13,828",
+    "enrollment": 12847
+  },
+  {
+    "primaryKey": "University of Nevada--Reno",
+    "city": "Reno",
+    "state": "NV",
+    "rank": 202,
+    "in_state_tuition": "$21,787",
+    "out_state_tuition": "$7,599",
+    "enrollment": 18191
+  },
+  {
+    "primaryKey": "Central Michigan University",
+    "city": "Mount Pleasant",
+    "state": "MI",
+    "rank": 207,
+    "in_state_tuition": "$23,670",
+    "out_state_tuition": "$12,510",
+    "enrollment": 19923
+  },
+  {
+    "primaryKey": "East Carolina University",
+    "city": "Greenville",
+    "state": "NC",
+    "rank": 207,
+    "in_state_tuition": "$23,420",
+    "out_state_tuition": "$7,143",
+    "enrollment": 22969
+  },
+  {
+    "primaryKey": "Florida A&M University",
+    "city": "Tallahassee",
+    "state": "FL",
+    "rank": 207,
+    "in_state_tuition": "$17,725",
+    "out_state_tuition": "$5,785",
+    "enrollment": 7769
+  },
+  {
+    "primaryKey": "Montana State University",
+    "city": "Bozeman",
+    "state": "MT",
+    "rank": 207,
+    "in_state_tuition": "$23,042",
+    "out_state_tuition": "$7,031",
+    "enrollment": 14400
+  },
+  {
+    "primaryKey": "University of Alaska--Fairbanks",
+    "city": "Fairbanks",
+    "state": "AK",
+    "rank": 207,
+    "in_state_tuition": "$23,534",
+    "out_state_tuition": "$8,144",
+    "enrollment": 7239
+  },
+  {
+    "primaryKey": "University of Colorado--Denver",
+    "city": "Denver",
+    "state": "CO",
+    "rank": 207,
+    "in_state_tuition": "$31,209",
+    "out_state_tuition": "$11,019",
+    "enrollment": 14622
+  },
+  {
+    "primaryKey": "University of Massachusetts--Dartmouth",
+    "city": "North Dartmouth",
+    "state": "MA",
+    "rank": 207,
+    "in_state_tuition": "$28,285",
+    "out_state_tuition": "$13,571",
+    "enrollment": 6999
+  },
+  {
+    "primaryKey": "University of Montana",
+    "city": "Missoula",
+    "state": "MT",
+    "rank": 207,
+    "in_state_tuition": "$24,943",
+    "out_state_tuition": "$7,063",
+    "enrollment": 10077
+  },
+  {
+    "primaryKey": "Western Michigan University",
+    "city": "Kalamazoo",
+    "state": "MI",
+    "rank": 207,
+    "in_state_tuition": "$14,699",
+    "out_state_tuition": "$11,943",
+    "enrollment": 18313
+  },
+  {
+    "primaryKey": "Florida International University",
+    "city": "Miami",
+    "state": "FL",
+    "rank": 216,
+    "in_state_tuition": "$18,956",
+    "out_state_tuition": "$6,558",
+    "enrollment": 45813
+  },
+  {
+    "primaryKey": "Louisiana Tech University",
+    "city": "Ruston",
+    "state": "LA",
+    "rank": 216,
+    "in_state_tuition": "$18,438",
+    "out_state_tuition": "$9,525",
+    "enrollment": 11281
+  },
+  {
+    "primaryKey": "South Dakota State University",
+    "city": "Brookings",
+    "state": "SD",
+    "rank": 216,
+    "in_state_tuition": "$11,403",
+    "out_state_tuition": "$8,172",
+    "enrollment": 10959
+  },
+  {
+    "primaryKey": "Southern Illinois University--Carbondale",
+    "city": "Carbondale",
+    "state": "IL",
+    "rank": 216,
+    "in_state_tuition": "$13,936",
+    "out_state_tuition": "$13,936",
+    "enrollment": 12182
+  },
+  {
+    "primaryKey": "University of Alabama--Huntsville",
+    "city": "Huntsville",
+    "state": "AL",
+    "rank": 216,
+    "in_state_tuition": "$21,480",
+    "out_state_tuition": "$10,280",
+    "enrollment": 6507
+  },
+  {
+    "primaryKey": "University of Missouri--Kansas City",
+    "city": "Kansas City",
+    "state": "MO",
+    "rank": 216,
+    "in_state_tuition": "$25,999",
+    "out_state_tuition": "$9,734",
+    "enrollment": 11708
+  },
+  {
+    "primaryKey": "Utah State University",
+    "city": "Logan",
+    "state": "UT",
+    "rank": 216,
+    "in_state_tuition": "$20,726",
+    "out_state_tuition": "$7,174",
+    "enrollment": 24838
+  },
+  {
+    "primaryKey": "California State University--Fresno",
+    "city": "Fresno",
+    "state": "CA",
+    "rank": 223,
+    "in_state_tuition": "$17,929",
+    "out_state_tuition": "$6,583",
+    "enrollment": 21528
+  },
+  {
+    "primaryKey": "Georgia State University",
+    "city": "Atlanta",
+    "state": "GA",
+    "rank": 223,
+    "in_state_tuition": "$29,432",
+    "out_state_tuition": "$10,858",
+    "enrollment": 25455
+  },
+  {
+    "primaryKey": "University of South Dakota",
+    "city": "Vermillion",
+    "state": "SD",
+    "rank": 223,
+    "in_state_tuition": "$11,688",
+    "out_state_tuition": "$8,457",
+    "enrollment": 7500
+  },
+  {
+    "primaryKey": "Wayne State University",
+    "city": "Detroit",
+    "state": "MI",
+    "rank": 223,
+    "in_state_tuition": "$28,590",
+    "out_state_tuition": "$13,278",
+    "enrollment": 17280
+  },
+  {
+    "primaryKey": "Augusta University",
+    "city": "Augusta",
+    "state": "GA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$23,606",
+    "out_state_tuition": "$8,634",
+    "enrollment": 5133
+  },
+  {
+    "primaryKey": "Boise State University",
+    "city": "Boise",
+    "state": "ID",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$22,642",
+    "out_state_tuition": "$7,326",
+    "enrollment": 20209
+  },
+  {
+    "primaryKey": "Cleveland State University",
+    "city": "Cleveland",
+    "state": "OH",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$13,848",
+    "out_state_tuition": "$9,796",
+    "enrollment": 12433
+  },
+  {
+    "primaryKey": "Eastern Michigan University",
+    "city": "Ypsilanti",
+    "state": "MI",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$11,530",
+    "out_state_tuition": "$11,530",
+    "enrollment": 17541
+  },
+  {
+    "primaryKey": "East Tennessee State University",
+    "city": "Johnson City",
+    "state": "TN",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$26,463",
+    "out_state_tuition": "$8,679",
+    "enrollment": 11065
+  },
+  {
+    "primaryKey": "Florida Atlantic University",
+    "city": "Boca Raton",
+    "state": "FL",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$21,595",
+    "out_state_tuition": "$6,039",
+    "enrollment": 25402
+  },
+  {
+    "primaryKey": "Georgia Southern University",
+    "city": "Statesboro",
+    "state": "GA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$18,692",
+    "out_state_tuition": "$6,796",
+    "enrollment": 18005
+  },
+  {
+    "primaryKey": "Indiana State University",
+    "city": "Terre Haute",
+    "state": "IN",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$19,454",
+    "out_state_tuition": "$8,916",
+    "enrollment": 11202
+  },
+  {
+    "primaryKey": "Indiana University of Pennsylvania",
+    "city": "Indiana",
+    "state": "PA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$15,882",
+    "out_state_tuition": "$12,146",
+    "enrollment": 10618
+  },
+  {
+    "primaryKey": "Jackson State University",
+    "city": "Jackson",
+    "state": "MS",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$17,614",
+    "out_state_tuition": "$7,261",
+    "enrollment": 7492
+  },
+  {
+    "primaryKey": "Kennesaw State University",
+    "city": "Kennesaw",
+    "state": "GA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$21,158",
+    "out_state_tuition": "$7,432",
+    "enrollment": 32166
+  },
+  {
+    "primaryKey": "Lamar University",
+    "city": "Beaumont",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$22,561",
+    "out_state_tuition": "$10,111",
+    "enrollment": 9326
+  },
+  {
+    "primaryKey": "Middle Tennessee State University",
+    "city": "Murfreesboro",
+    "state": "TN",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$27,578",
+    "out_state_tuition": "$8,948",
+    "enrollment": 19693
+  },
+  {
+    "primaryKey": "Morgan State University",
+    "city": "Baltimore",
+    "state": "MD",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$17,833",
+    "out_state_tuition": "$7,767",
+    "enrollment": 6362
+  },
+  {
+    "primaryKey": "North Carolina A&T State University",
+    "city": "Greensboro",
+    "state": "NC",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$19,416",
+    "out_state_tuition": "$6,526",
+    "enrollment": 9668
+  },
+  {
+    "primaryKey": "Northern Arizona University",
+    "city": "Flagstaff",
+    "state": "AZ",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$24,841",
+    "out_state_tuition": "$11,059",
+    "enrollment": 26506
+  },
+  {
+    "primaryKey": "Northern Illinois University",
+    "city": "DeKalb",
+    "state": "IL",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$23,817",
+    "out_state_tuition": "$14,352",
+    "enrollment": 14079
+  },
+  {
+    "primaryKey": "Oakland University",
+    "city": "Rochester",
+    "state": "MI",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$24,735",
+    "out_state_tuition": "$13,406",
+    "enrollment": 16568
+  },
+  {
+    "primaryKey": "Old Dominion University",
+    "city": "Norfolk",
+    "state": "VA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$28,200",
+    "out_state_tuition": "$10,350",
+    "enrollment": 19793
+  },
+  {
+    "primaryKey": "Portland State University",
+    "city": "Portland",
+    "state": "OR",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$21,180",
+    "out_state_tuition": "$7,302",
+    "enrollment": 21633
+  },
+  {
+    "primaryKey": "Prairie View A&M University",
+    "city": "Prairie View",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$10,059",
+    "out_state_tuition": "$10,059",
+    "enrollment": 7455
+  },
+  {
+    "primaryKey": "Sam Houston State University",
+    "city": "Huntsville",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$22,340",
+    "out_state_tuition": "$9,890",
+    "enrollment": 17902
+  },
+  {
+    "primaryKey": "San Francisco State University",
+    "city": "San Francisco",
+    "state": "CA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$19,134",
+    "out_state_tuition": "$7,254",
+    "enrollment": 25945
+  },
+  {
+    "primaryKey": "Tennessee State University",
+    "city": "Nashville",
+    "state": "TN",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$20,178",
+    "out_state_tuition": "$7,458",
+    "enrollment": 7007
+  },
+  {
+    "primaryKey": "Tennessee Technological University",
+    "city": "Cookeville",
+    "state": "TN",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$26,190",
+    "out_state_tuition": "N/A 9",
+    "enrollment": 437
+  },
+  {
+    "primaryKey": "Texas A&M University--Commerce",
+    "city": "Commerce",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$20,884",
+    "out_state_tuition": "$8,434",
+    "enrollment": 7605
+  },
+  {
+    "primaryKey": "Texas A&M University--Corpus Christi",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$26,061",
+    "out_state_tuition": "$12,944",
+    "enrollment": 10212
+  },
+  {
+    "primaryKey": "Texas A&M University--Kingsville",
+    "city": "Kingsville",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$20,912",
+    "out_state_tuition": "$8,462",
+    "enrollment": 6811
+  },
+  {
+    "primaryKey": "Texas Southern University",
+    "city": "Houston",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$21,240",
+    "out_state_tuition": "$9,000",
+    "enrollment": 6562
+  },
+  {
+    "primaryKey": "Texas State University",
+    "city": "San Marcos",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$23,071",
+    "out_state_tuition": "$10,621",
+    "enrollment": 34244
+  },
+  {
+    "primaryKey": "Texas Woman's University",
+    "city": "Denton",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$21,816",
+    "out_state_tuition": "$9,366",
+    "enrollment": 10408
+  },
+  {
+    "primaryKey": "University of Akron",
+    "city": "Akron",
+    "state": "OH",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$21,863",
+    "out_state_tuition": "$13,332",
+    "enrollment": 17416
+  },
+  {
+    "primaryKey": "University of Arkansas--Little Rock",
+    "city": "Little Rock",
+    "state": "AR",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$19,797",
+    "out_state_tuition": "$8,401",
+    "enrollment": 9374
+  },
+  {
+    "primaryKey": "University of Louisiana--Lafayette",
+    "city": "Lafayette",
+    "state": "LA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$23,074",
+    "out_state_tuition": "$9,346",
+    "enrollment": 15998
+  },
+  {
+    "primaryKey": "University of Louisiana--Monroe",
+    "city": "Monroe",
+    "state": "LA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$20,381",
+    "out_state_tuition": "$8,281",
+    "enrollment": 7778
+  },
+  {
+    "primaryKey": "University of Maryland--Eastern Shore",
+    "city": "Princess Anne",
+    "state": "MD",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$18,048",
+    "out_state_tuition": "$8,042",
+    "enrollment": 3278
+  },
+  {
+    "primaryKey": "University of Memphis",
+    "city": "Memphis",
+    "state": "TN",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$21,413",
+    "out_state_tuition": "$9,701",
+    "enrollment": 17176
+  },
+  {
+    "primaryKey": "University of Missouri--St. Louis",
+    "city": "St. Louis",
+    "state": "MO",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$27,327",
+    "out_state_tuition": "$10,275",
+    "enrollment": 13923
+  },
+  {
+    "primaryKey": "University of Nebraska--Omaha",
+    "city": "Omaha",
+    "state": "NE",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$22,035",
+    "out_state_tuition": "$8,205",
+    "enrollment": 12536
+  },
+  {
+    "primaryKey": "University of Nevada--Las Vegas",
+    "city": "Las Vegas",
+    "state": "NV",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$21,498",
+    "out_state_tuition": "$7,310",
+    "enrollment": 24714
+  },
+  {
+    "primaryKey": "University of New Orleans",
+    "city": "New Orleans",
+    "state": "LA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$13,530",
+    "out_state_tuition": "$8,694",
+    "enrollment": 6442
+  },
+  {
+    "primaryKey": "University of North Carolina--Greensboro",
+    "city": "Greensboro",
+    "state": "NC",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$22,410",
+    "out_state_tuition": "$7,164",
+    "enrollment": 16281
+  },
+  {
+    "primaryKey": "University of Northern Colorado",
+    "city": "Greeley",
+    "state": "CO",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$20,474",
+    "out_state_tuition": "$8,888",
+    "enrollment": 9503
+  },
+  {
+    "primaryKey": "University of North Texas",
+    "city": "Denton",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$23,716",
+    "out_state_tuition": "$10,906",
+    "enrollment": 31209
+  },
+  {
+    "primaryKey": "University of South Alabama",
+    "city": "Mobile",
+    "state": "AL",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$19,586",
+    "out_state_tuition": "$10,005",
+    "enrollment": 11761
+  },
+  {
+    "primaryKey": "University of Southern Mississippi",
+    "city": "Hattiesburg",
+    "state": "MS",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$9,854",
+    "out_state_tuition": "$7,854",
+    "enrollment": 11779
+  },
+  {
+    "primaryKey": "University of Texas--Arlington",
+    "city": "Arlington",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$25,152",
+    "out_state_tuition": "$9,952",
+    "enrollment": 32775
+  },
+  {
+    "primaryKey": "University of Texas--El Paso",
+    "city": "El Paso",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$21,396",
+    "out_state_tuition": "$7,651",
+    "enrollment": 20521
+  },
+  {
+    "primaryKey": "University of Texas--Rio Grande Valley",
+    "city": "Edinburg",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$17,230",
+    "out_state_tuition": "$7,438",
+    "enrollment": 24433
+  },
+  {
+    "primaryKey": "University of Texas--San Antonio",
+    "city": "San Antonio",
+    "state": "TX",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$23,379",
+    "out_state_tuition": "$9,380",
+    "enrollment": 24724
+  },
+  {
+    "primaryKey": "University of Toledo",
+    "city": "Toledo",
+    "state": "OH",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$18,578",
+    "out_state_tuition": "$9,240",
+    "enrollment": 16247
+  },
+  {
+    "primaryKey": "University of West Florida",
+    "city": "Pensacola",
+    "state": "FL",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$18,628",
+    "out_state_tuition": "$6,360",
+    "enrollment": 10082
+  },
+  {
+    "primaryKey": "University of West Georgia",
+    "city": "Carrollton",
+    "state": "GA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$20,406",
+    "out_state_tuition": "$7,188",
+    "enrollment": 11155
+  },
+  {
+    "primaryKey": "University of Wisconsin--Milwaukee",
+    "city": "Milwaukee",
+    "state": "WI",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$19,851",
+    "out_state_tuition": "$9,493",
+    "enrollment": 21375
+  },
+  {
+    "primaryKey": "Valdosta State University",
+    "city": "Valdosta",
+    "state": "GA",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$17,196",
+    "out_state_tuition": "$6,410",
+    "enrollment": 8780
+  },
+  {
+    "primaryKey": "Wichita State University",
+    "city": "Wichita",
+    "state": "KS",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$17,270",
+    "out_state_tuition": "$8,312",
+    "enrollment": 11823
+  },
+  {
+    "primaryKey": "Wright State University",
+    "city": "Dayton",
+    "state": "OH",
+    "rank": "Rank Not Published",
+    "in_state_tuition": "$17,350",
+    "out_state_tuition": "$8,730",
+    "enrollment": 12504
+  },
+  {
+    "primaryKey": "Idaho State University",
+    "city": "Pocatello",
+    "state": "ID",
+    "rank": "Unranked",
+    "in_state_tuition": "$21,023",
+    "out_state_tuition": "$6,956",
+    "enrollment": "N/A"
+  }
+]

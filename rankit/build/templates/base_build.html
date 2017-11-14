@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dragula.min.css') }}"/>
+    <title>RANKit Build</title>
+
+    <style>
+    .inner1 {
+        display: inline-block;
+    }
+    </style>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button> <a class="navbar-brand" href={{ url_for('home.index') }}>RANKIT</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href={{ url_for('build.listComparison', dataset_name= dataset_name) }} >Dataset</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href={{ url_for('build.categorical', dataset_name= dataset_name) }}>Categories Comparison</a>
+            </li>
+            <li class="divider">
+            </li>
+            <li>
+              <a href={{ url_for('build.listComparison', dataset_name= dataset_name) }}>List Comparison</a>
+            </li>
+            <li class="divider">
+            </li>
+            <li>
+              <a href={{ url_for('build.pairwise', dataset_name= dataset_name) }}>Pairwise Comparison</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Explore</a>
+        </li>
+      </ul>
+
+
+    </div>
+
+  </nav>
+
+  <div class="page-header">
+    <h1>
+      RANKIT Build: {{ view_name }}
+    </h1>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="inner1">
+    <form class="navbar-form navbar-left" role="search" style="display: inline;">
+      <input
+        type="search"
+        id="search-criteria"
+        class="form-control"
+        placeholder="Search by names..."
+        onkeyup="searchDataset(event)"
+      >
+      <button type="button" class="btn btn-default" id="sort" onclick="sortDataset()">
+        Sort
+      </button>
+      <button type="button" class="btn btn-default" id="shuffle" onclick="shuffleDataset()">
+        Shuffle
+      </button>
+    </form>
+  </div>
+
+    <div class="scrollingDragInner">
+      <div id="top" class="pool">
+        <!-- objects from dataset inserted here -->
+        {% for x in dataset %}
+        <div id="{{x}}" class="object noSelect">{{x}}</div>
+        {% endfor %}
+      </div>
+    </div>
+
+
+  </div>
+
+  {% block content %}
+  {% endblock %}
+
+  <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
+
+  <script>
+    function getDataset() {
+      return Array.from(document.querySelectorAll('.pool .object')).map(x => x.innerText)
+    }
+    
+    function sortDataset() {
+      const dataset = getDataset()
+      dataset.sort()
+      render(dataset)
+    }
+
+    function shuffleDataset() {
+      const dataset = getDataset()
+      for (let i = dataset.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [dataset[i], dataset[j]] = [dataset[j], dataset[i]];
+      }
+      render(dataset)
+    }
+
+    const dataset = getDataset()
+    function searchDataset(e) {
+      const value = e.target.value
+      const re = new RegExp(value, 'i')
+      const newDataset = dataset.filter(x => re.test(x))
+      render(newDataset)
+    }
+    
+    function render(dataset) {
+      const pool = document.querySelector('#top')
+      const html = dataset.map(x => `<div id="${x}" class="object noSelect">${x}</div>`).join('\n')
+      pool.innerHTML = html
+    }
+  </script>
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
+  <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+</body>
+</html>
