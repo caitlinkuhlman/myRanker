@@ -269,7 +269,9 @@
 							<h3>Tools</h3>
 							<span>Select Dataset!</span>
 							<!-- Build is myRanker -->
-							<a href={{ url_for('build.listComparison', dataset_name='states') }} >Build</a>
+							<a class ="one" href={{ url_for('build.listComparison', dataset_name='states') }}>List Comparison</a>
+							<a class ="two" href={{ url_for('build.categorical', dataset_name='states') }}>Categorical</a>
+							<a href={{ url_for('build.pairwise', dataset_name='states') }}>Pairwise</a>
 						</figcaption>
 					</figure>
 				</li>
@@ -284,7 +286,10 @@
 							<h3>Tools</h3>
 							<span>Select Dataset!</span>
 							<!-- Build is myRanker -->
-							<a href={{ url_for('build.listComparison', dataset_name='colleges') }}>Build</a>
+							<a class ="one" href={{ url_for('build.listComparison', dataset_name='colleges') }}>List Comparison</a>
+							<a class ="two" href={{ url_for('build.categorical', dataset_name='colleges') }}>Categorical</a>
+							<a href={{ url_for('build.pairwise', dataset_name='colleges') }}>Pairwise</a>
+
 						</figcaption>
 					</figure>
 				</li>
@@ -298,7 +303,9 @@
 							<h3>Tools</h3>
 							<span>Select Dataset!</span>
 							<!-- Build is myRanker -->
-							<a href={{ url_for('build.listComparison', dataset_name='movies') }}>Build</a>
+							<a class ="one" href={{ url_for('build.listComparison', dataset_name='movies') }}>List Comparison</a>
+							<a class ="two" href={{ url_for('build.categorical', dataset_name='movies') }}>Categorical</a>
+							<a href={{ url_for('build.pairwise', dataset_name='movies') }}>Pairwise</a>
 						</figcaption>
 					</figure>
 				</li>

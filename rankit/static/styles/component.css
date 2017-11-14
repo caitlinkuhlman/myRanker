@@ -376,6 +376,18 @@
 		right: 20px;
 	}
 
+	.cs-style-4 figcaption a.one {
+		position: absolute;
+		bottom: 100px;
+		right: 20px;
+	}
+
+	.cs-style-4 figcaption a.two {
+		position: absolute;
+		bottom: 60px;
+		right: 20px;
+	}
+
 	.cs-style-4 figcaption a.lineup {
 		position: absolute;
 		bottom: 60px;
