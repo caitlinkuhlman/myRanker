@@ -61,8 +61,11 @@
 
   .scrollingDragInner {
     max-height: 400px;
-    font-size: 120%;
     overflow-y: auto;
+  }
+
+  .viewBackround {
+    font-size: 120%;
     margin-top: 80px;
     margin-bottom: 20px;
     margin-right: 50px;
