@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
+
+</head>
+<body>
+	<div class="cd-nugget-info">
+		<button id="cd-tour-trigger" class="cd-btn">Need Help</button>
+	</div>
+
+	<ul class="cd-tour-wrapper">
+		<li class="cd-single-step">
+			<span>Step 1</span>
+
+			<div class="cd-more-info bottom">
+				<h2>Step Number 1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi alias animi molestias in, aperiam.</p>
+				<img src="{{ url_for('static',filename='images/img.png') }}">
+			</div>
+		</li> <!-- .cd-single-step -->
+
+		<li class="cd-single-step">
+			<span>Step 2</span>
+
+			<div class="cd-more-info top">
+				<h2>Step Number 2</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia quasi in quisquam.</p>
+				<img src="{{ url_for('static',filename='images/img.png') }}">
+			</div>
+		</li> <!-- .cd-single-step -->
+
+		<li class="cd-single-step">
+			<span>Step 3</span>
+
+			<div class="cd-more-info right">
+				<h2>Step Number 3</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio illo non enim ut necessitatibus perspiciatis, dignissimos.</p>
+				<img src="img/step-3.png" alt="step 3">
+				<img src="{{ url_for('static',filename='images/img.png') }}">
+			</div>
+		</li> <!-- .cd-single-step -->
+	</ul> <!-- .cd-tour-wrapper -->
+
+
+	<div class="cd-cover-layer"></div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}" ></script>
+	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/main.js') }}" ></script>
+	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/modernizr.custom.js') }}" ></script>
+</body>
+</html>

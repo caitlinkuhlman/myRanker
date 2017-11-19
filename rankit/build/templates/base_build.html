@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dragula.min.css') }}"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}"/>
+  	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
 
     <title>RANKit Build</title>
 
@@ -51,7 +53,7 @@
       text-align: center;
       color: #333;
       font-size: 50px;
-      background-color: #d9d3d3;
+      /*background-color: #d9d3d3;*/
     }
 
     body {
@@ -64,8 +66,9 @@
       text-align: center;
       color: #333;
       font-size: 80px;
-
     }
+
+
 
     </style>
 
@@ -109,7 +112,6 @@
         </li>
       </ul>
 
-
     </div>
 
   </nav>
@@ -138,6 +140,45 @@
       <button type="button" class="btn btn-default" id="shuffle" onclick="shuffleDataset()">
         Shuffle
       </button>
+      <button type="button" id="cd-tour-trigger" class="btn btn-default">
+        Intructions
+      </button>
+
+    	<ul class="cd-tour-wrapper">
+    		<li class="cd-single-step">
+    			<span>Step 1</span>
+
+    			<div class="cd-more-info bottom">
+    				<h2>Step Number 1</h2>
+    				<p>Enter the name of an object in the search bar to find that object in the dataset.</p>
+    				<img src="{{ url_for('static',filename='images/img.png') }}">
+    			</div>
+    		</li> <!-- .cd-single-step -->
+
+    		<li class="cd-single-step">
+    			<span>Step 2</span>
+
+    			<div class="cd-more-info top">
+    				<h2>Step Number 2</h2>
+    				<p>Use Sort to organize the objects in Alphabetical order</p>
+    				<img src="{{ url_for('static',filename='images/img.png') }}">
+    			</div>
+    		</li> <!-- .cd-single-step -->
+
+    		<li class="cd-single-step">
+    			<span>Step 3</span>
+
+    			<div class="cd-more-info right">
+    				<h2>Step Number 3</h2>
+    				<p>Use Shuffle to Randomize the order positioning of the objects.</p>
+    				<img src="{{ url_for('static',filename='images/img.png') }}">
+    			</div>
+    		</li> <!-- .cd-single-step -->
+    	</ul> <!-- .cd-tour-wrapper -->
+
+
+    	<div class="cd-cover-layer"></div>
+
     </form>
   </div>
 
@@ -199,5 +240,9 @@
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
   <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/main.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/modernizr.custom.js') }}" ></script>
+
 </body>
 </html>
