@@ -13,7 +13,7 @@
     <div id="bot" class="list">
       <div id="center" class="list"></div>
     </div>
-    <button id="submit" class="btn btn-primary btn-lg btn-block list middle">RANK!</button>
+    <button id="submit" class="btn btn-primary btn-lg btn-block list middle" disabled="disabled">RANK!</button>
 
   </div>
 
@@ -26,7 +26,45 @@
 </div>
 
 
+
 <script>
+    function getRankedObjects(){
+        var left = Array.from(document.querySelector('#left').children).map(x => x.innerText)
+        var center = Array.from(document.querySelector('#center').children).map(x => x.innerText)
+        var right = Array.from(document.querySelector('#right').children).map(x => x.innerText)
+        return left.concat(center).concat(right)
+    }
+
+    var min_num_of_non_empty_lists = 2
+
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            var num_of_non_empty_list = document.querySelector('#center').children.length > 0 ? 1 : 0
+            num_of_non_empty_list += document.querySelector('#left').children.length > 0 ? 1 : 0
+            num_of_non_empty_list += document.querySelector('#right').children.length > 0 ? 1 : 0
+
+            if (num_of_non_empty_list < min_num_of_non_empty_lists){
+                $('#submit').attr('disabled', 'disabled');
+            }
+            else {
+                $('#submit').removeAttr('disabled');
+            }
+        });
+    });
+
+    // Node, config
+    var observerConfig = {
+        childList: true,
+    };
+
+    var center_node = document.getElementById('center');
+    var left_node = document.getElementById('left');
+    var right_node = document.getElementById('right');
+
+    observer.observe(center_node, observerConfig);
+    observer.observe(left_node, observerConfig);
+    observer.observe(right_node, observerConfig);
+
 function handleSubmit() {
   const pwl = generatePairwise()
   sendPostRequest(pwl)
