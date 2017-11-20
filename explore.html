@@ -67,6 +67,10 @@
         salary: "$86,000"
       },
     ]
+    renderTable(data)
+  })
+  
+  function renderTable(data) {
     const html = data.map(x => {
       const props = Object.keys(x)
         .map(k => x[k])
@@ -77,6 +81,6 @@
     .join('\n')
     document.querySelector('#data').innerHTML = html
     $('#example').DataTable()
-  })
+  }
 </script>
 </html>
