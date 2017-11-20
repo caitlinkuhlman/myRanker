@@ -143,44 +143,9 @@
       <button type="button" id="cd-tour-trigger" class="btn btn-default">
         Intructions
       </button>
-
-    	<ul class="cd-tour-wrapper">
-    		<li class="cd-single-step">
-    			<span>Step 1</span>
-
-    			<div class="cd-more-info bottom">
-    				<h2>Step Number 1</h2>
-    				<p>Enter the name of an object in the search bar to find that object in the dataset.</p>
-    				<img src="{{ url_for('static',filename='images/img.png') }}">
-    			</div>
-    		</li> <!-- .cd-single-step -->
-
-    		<li class="cd-single-step">
-    			<span>Step 2</span>
-
-    			<div class="cd-more-info top">
-    				<h2>Step Number 2</h2>
-    				<p>Use Sort to organize the objects in Alphabetical order</p>
-    				<img src="{{ url_for('static',filename='images/img.png') }}">
-    			</div>
-    		</li> <!-- .cd-single-step -->
-
-    		<li class="cd-single-step">
-    			<span>Step 3</span>
-
-    			<div class="cd-more-info right">
-    				<h2>Step Number 3</h2>
-    				<p>Use Shuffle to Randomize the order positioning of the objects.</p>
-    				<img src="{{ url_for('static',filename='images/img.png') }}">
-    			</div>
-    		</li> <!-- .cd-single-step -->
-    	</ul> <!-- .cd-tour-wrapper -->
-
-
-    	<div class="cd-cover-layer"></div>
-
     </form>
   </div>
+
 
     <div class="scrollingDragInner viewBackround">
       <div id="top" class="pool">
@@ -193,6 +158,41 @@
 
 
   </div>
+
+
+  <ul class="cd-tour-wrapper">
+    <li class="cd-single-step">
+      <span>Step 1</span>
+
+      <div class="cd-more-info bottom">
+        <h2>Step Number 1</h2>
+        <p>Select an object from the dataset.</p>
+        <img src="{{ url_for('static',filename='images/img.png') }}">
+      </div>
+    </li> <!-- .cd-single-step -->
+
+    <li class="cd-single-step">
+      <span>Step 2</span>
+
+      <div class="cd-more-info top">
+        <h2>Step Number 2</h2>
+        <p>Drag the object to the desired ranking order or panel and select Rank!</p>
+        <img src="{{ url_for('static',filename='images/img.png') }}">
+      </div>
+    </li> <!-- .cd-single-step -->
+
+    <li class="cd-single-step">
+      <span>Step 3</span>
+
+      <div class="cd-more-info right">
+        <h2>Step Number 3</h2>
+        <p>One your finished with the ranking, click the Rank button to see your results!</p>
+        <img src="{{ url_for('static',filename='images/img.png') }}">
+      </div>
+    </li>
+  </ul>
+  <div class="cd-cover-layer"></div>
+
 
   {% block content %}
   {% endblock %}

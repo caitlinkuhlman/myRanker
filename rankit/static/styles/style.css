@@ -294,7 +294,7 @@ Main Components
     right: 49%;
   }
   .cd-single-step:nth-of-type(3) {
-    top: 28%;
+    top: 100%;
     right: 45%;
   }
   .cd-single-step > span, .cd-single-step::after {
