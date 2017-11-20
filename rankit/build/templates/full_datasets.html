@@ -15,208 +15,192 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
-<style>
+  <style>
 
-.middle {
-  grid-area: center;
-}
+  .middle {
+    grid-area: center;
+  }
 
-h2 {
-  text-align: center;
-  color: #333;
-  font-size: 50px;
-}
+  h2 {
+    text-align: center;
+    color: #333;
+    font-size: 50px;
+  }
 
-body {
-  /*background-color: #3f435f;*/
-  background-color: #f9f9f9;
-}
+  body {
+    /*background-color: #3f435f;*/
+    background-color: #f9f9f9;
+  }
 
 
-.page-header h1 {
-  text-align: center;
-  color: #333;
-  font-size: 80px;
+  .page-header h1 {
+    text-align: center;
+    color: #333;
+    font-size: 80px;
+  }
 
-}
+  .dataset-container {
+    padding: 12px;
+  }
 
-.dataset-container {
-  padding: 12px;
-}
+  .dataset {
+    background: white;
+    border: 1px solid #4CAF50;
+    margin: 12px;
+    padding: 12px;
+    text-align: center;
+    font-size: 20px;
+    width: 30%;
+    height: 200px;
+  }
 
-.dataset {
-  background: white;
-  border: 1px solid #4CAF50;
-  margin: 12px;
-  padding: 12px;
-  text-align: center;
-  font-size: 20px;
-  width: 30%;
-  height: 200px;
-}
 
-.dataset a {
-  text-decoration: none;
-}
 
-.footer {
-  background:#181818;
-  text-align: center;
-  font-size: 120%;
-  color:#E3F2F4;
-}
+  .dataset a {
+    text-decoration: none;
+  }
 
+  .footer {
+    background:#181818;
+    text-align: center;
+    font-size: 120%;
+    color:#E3F2F4;
+  }
 
 </style>
+
+
+<!-- Photos used for datasets are all open source under the Creative Commons Zero liscense -->
 
 </head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
 
 <body>
-
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-
-
         <div class="bootstrap-iso">
+
           <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
-
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
               </button> <a class="navbar-brand" href={{ url_for('home.index') }}>RANKIT</a>
             </div>
-
           </nav>
 
 
-        <div class="page-header">
-          <h1> <b>
-            RANKIT Datasets
-          </b></h1>
+          <div class="page-header">
+            <h1>
+              <b>RANKIT Datasets</b>
+            </h1>
+          </div>
 
+            <!-- <a href=# class="btn btn-primary btn-sx middle" role="button">Import Dataset</a> -->
+
+
+          <div id="dataset">
+            <ul class="grid cs-style-4">
+              <li>
+                <figure>
+                  <div>
+                    <img src="{{ url_for('static',filename='images/states.jpg') }}">
+                  </div>
+                  <figcaption>
+                    <h3>States</h3>
+                    <span>Dataset for States</span>
+                    <a class ="one" href={{ url_for('build.listComparison', dataset_name='states') }}>List Comparison</a>
+                    <a class ="two" href={{ url_for('build.categorical', dataset_name='states') }}>Categorical</a>
+                    <a href={{ url_for('build.pairwise', dataset_name='states') }}>Pairwise</a>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <div class="image">
+                    <img src="{{ url_for('static',filename='images/colleges.jpg') }}">
+                  </div>
+                  <figcaption>
+                    <h3>Colleges</h3>
+                    <span>Dataset for Colleges!</span>
+                    <!-- Build is myRanker -->
+                    <a class ="one" href={{ url_for('build.listComparison', dataset_name='colleges') }}>List Comparison</a>
+                    <a class ="two" href={{ url_for('build.categorical', dataset_name='colleges') }}>Categorical</a>
+                    <a href={{ url_for('build.pairwise', dataset_name='colleges') }}>Pairwise</a>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <div>
+                    <img src="{{ url_for('static',filename='images/movies.jpg') }}">
+                  </div>
+                  <figcaption>
+                    <h3>Movies</h3>
+                    <span>Dataset for Movies</span>
+                    <a class ="one" href={{ url_for('build.listComparison', dataset_name='movies') }}>List Comparison</a>
+                    <a class ="two" href={{ url_for('build.categorical', dataset_name='movies') }}>Categorical</a>
+                    <a href={{ url_for('build.pairwise', dataset_name='movies') }}>Pairwise</a>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <div>
+                    <img src="{{ url_for('static',filename='images/fifa.jpg') }}">
+                  </div>
+                  <figcaption>
+                    <h3>FIFA</h3>
+                    <span>Dataset for FIFA!</span>
+                    <a class ="one" href={{ url_for('build.listComparison', dataset_name='fifa') }}>List Comparison</a>
+                    <a class ="two" href={{ url_for('build.categorical', dataset_name='fifa') }}>Categorical</a>
+                    <a href={{ url_for('build.pairwise', dataset_name='fifa') }}>Pairwise</a>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <div>
+                    <img src="{{ url_for('static',filename='images/board_games.jpg') }}">
+                  </div>
+                  <figcaption>
+                    <h3>Board Games</h3>
+                    <span>Dataset for Board Games</span>
+                    <a class ="one" href={{ url_for('build.listComparison', dataset_name='board_games') }}>List Comparison</a>
+                    <a class ="two" href={{ url_for('build.categorical', dataset_name='board_games') }}>Categorical</a>
+                    <a href={{ url_for('build.pairwise', dataset_name='board_games') }}>Pairwise</a>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <div>
+                    <img src="{{ url_for('static',filename='images/video_games.jpg') }}">
+                  </div>
+                  <figcaption>
+                    <h3>Video Games</h3>
+                    <span>Dataset for video Games</span>
+                    <a class ="one" href={{ url_for('build.listComparison', dataset_name='video_games') }}>List Comparison</a>
+                    <a class ="two" href={{ url_for('build.categorical', dataset_name='video_games') }}>Categorical</a>
+                    <a href={{ url_for('build.pairwise', dataset_name='video_games') }}>Pairwise</a>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
         </div>
-
-
-
-        <div id="dataset">
-        <ul class="grid cs-style-4">
-          <li>
-            <figure>
-              <div>
-                <img src="{{ url_for('static',filename='images/img.png') }}">
-                <!-- <img src="images/54.png" alt="img05"> -->
-                <!-- {{ url_for('static',filename='video/weblogo.webm') }} -->
-              </div>
-              <figcaption>
-                <h3>States</h3>
-                <span>Dataset for States</span>
-                <a class ="one" href={{ url_for('build.listComparison', dataset_name='states') }}>List Comparison</a>
-                <a class ="two" href={{ url_for('build.categorical', dataset_name='states') }}>Categorical</a>
-                <a href={{ url_for('build.pairwise', dataset_name='states') }}>Pairwise</a>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <div class="image">
-                <img src="{{ url_for('static',filename='images/img.png') }}">
-
-              </div>
-              <figcaption>
-                <h3>Colleges</h3>
-                <span>Dataset for Colleges!</span>
-                <!-- Build is myRanker -->
-                <a class ="one" href={{ url_for('build.listComparison', dataset_name='colleges') }}>List Comparison</a>
-  							<a class ="two" href={{ url_for('build.categorical', dataset_name='colleges') }}>Categorical</a>
-  							<a href={{ url_for('build.pairwise', dataset_name='colleges') }}>Pairwise</a>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <div>
-                <!-- <img src="images/23.png" alt="img02"> -->
-                <img src="{{ url_for('static',filename='images/img.png') }}">
-              </div>
-              <figcaption>
-                <h3>Movies</h3>
-                <span>Dataset for Movies</span>
-                <a class ="one" href={{ url_for('build.listComparison', dataset_name='movies') }}>List Comparison</a>
-  							<a class ="two" href={{ url_for('build.categorical', dataset_name='movies') }}>Categorical</a>
-  							<a href={{ url_for('build.pairwise', dataset_name='movies') }}>Pairwise</a>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <div>
-                <!-- <img src="images/23.png" alt="img02"> -->
-                <img src="{{ url_for('static',filename='images/img.png') }}">
-              </div>
-              <figcaption>
-                <h3>FIFA</h3>
-                <span>Dataset for FIFA!</span>
-                <a class ="one" href={{ url_for('build.listComparison', dataset_name='fifa') }}>List Comparison</a>
-  							<a class ="two" href={{ url_for('build.categorical', dataset_name='fifa') }}>Categorical</a>
-  							<a href={{ url_for('build.pairwise', dataset_name='fifa') }}>Pairwise</a>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <div>
-                <!-- <img src="images/23.png" alt="img02"> -->
-                <img src="{{ url_for('static',filename='images/img.png') }}">
-              </div>
-              <figcaption>
-                <h3>Board Games</h3>
-                <span>Dataset for Board Games</span>
-                <a class ="one" href={{ url_for('build.listComparison', dataset_name='board_games') }}>List Comparison</a>
-  							<a class ="two" href={{ url_for('build.categorical', dataset_name='board_games') }}>Categorical</a>
-  							<a href={{ url_for('build.pairwise', dataset_name='board_games') }}>Pairwise</a>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <div>
-                <!-- <img src="images/23.png" alt="img02"> -->
-                <img src="{{ url_for('static',filename='images/img.png') }}">
-              </div>
-              <figcaption>
-                <h3>Video Games</h3>
-                <span>Dataset for video Games</span>
-                <a class ="one" href={{ url_for('build.listComparison', dataset_name='video_games') }}>List Comparison</a>
-  							<a class ="two" href={{ url_for('build.categorical', dataset_name='video_games') }}>Categorical</a>
-  							<a href={{ url_for('build.pairwise', dataset_name='video_games') }}>Pairwise</a>
-              </figcaption>
-            </figure>
-          </li>
-
-        </ul>
-  </div>
-
-
-
-
       </div>
+      <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
     </div>
-    <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
-  </div>
 
 
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/classie.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/toucheffects.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
 
-  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/classie.js') }}" ></script>
-	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}" ></script>
-  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/toucheffects.js') }}" ></script>
-  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
-  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
-  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
-
-
-</body>
-
-</html>
+  </body>
+  </html>
