@@ -25,23 +25,50 @@
       color:#E3F2F4;
     }
 
-    .navbar-center {
+    /*.navbar-center {
     position: absolute;
     width: 100%;
     text-align: center;
     margin: auto;
+    }*/
+
+    .navbar-right {
+      padding: 0px 100px 0px;
     }
 
     #submit {
-        background-color: #23527c;
+        /*background-color: #23527c;
         color: #ffffff;
         margin: 24px;
         vertical-align:baseline;
         padding:20px 200px 20px 200px;
         font-family: sans-serif;
         font-weight: bold;
-        font-size: 100%;
+        font-size: 100%;*/
+        /*margin: 0px 60px;*/
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        border: none;
+        border-radius: 50em;
+        background: #ff962c;
+        padding: 1em 10em;
+        color: #fefffb;
+        font-weight: bold;
+        font-size: 1.4rem;
+        cursor: pointer;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        /*float: right;*/
+        text-align: center;
+        display: inline-block;
 
+        /*margin-right: 100px
+        display: inline-block;
+        float: right;
+        */
+        /*float: right;*/
     }
 
 
@@ -53,7 +80,6 @@
       text-align: center;
       color: #333;
       font-size: 30px;
-      /*background-color: #d9d3d3;*/
     }
 
     body {
@@ -63,9 +89,11 @@
 
 
     .page-header h1 {
-      text-align: center;
+      padding: 0px 60px 0px;
       color: #333;
-      font-size: 60px;
+      font-size: 40px;
+      margin: 0;
+      display: inline-block;
     }
 
     </style>
@@ -118,12 +146,7 @@
     <h1> <b>
       {{ view_name }}
     </b></h1>
-  </div>
 
-
-  <div class="wrapper">
-
-    <div class="inner1">
     <form class="navbar-form navbar-center" role="search" style="display: inline;">
       <input
         type="search"
@@ -141,10 +164,39 @@
       <button type="button" id="cd-tour-trigger" class="btn btn-default">
         Intructions
       </button>
-      
+
     </form>
+
+    <button id="submit" class="cd-btn cd-modal-trigger list">RANK!</button>
+
   </div>
 
+
+  <div class="wrapper">
+
+    <!-- <div class="inner1">
+    <form class="navbar-form navbar-center" role="search" style="display: inline;">
+      <input
+        type="search"
+        id="search-criteria"
+        class="form-control"
+        placeholder="Search by names..."
+        onkeyup="searchDataset(event)"
+      >
+      <button type="button" class="btn btn-default" id="sort" onclick="sortDataset()">
+        Sort
+      </button>
+      <button type="button" class="btn btn-default" id="shuffle" onclick="shuffleDataset()">
+        Shuffle
+      </button>
+      <button type="button" id="cd-tour-trigger" class="btn btn-default">
+        Intructions
+      </button>
+
+    </form>
+  </div> -->
+
+  <!-- <button id="submit" class="cd-btn cd-modal-trigger list middle">RANK!</button> -->
 
     <div class="scrollingDragInner viewBackround">
       <div id="top" class="pool">

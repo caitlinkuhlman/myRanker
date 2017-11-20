@@ -42,8 +42,7 @@
   .object {
     /*background-color: #4ABDAC;*/
     background-color: #23A6D5;
-
-    padding: 16px;
+    padding: 12px;
     margin: 8px;
     color: #ffffff;
     text-align: center;
@@ -68,7 +67,7 @@
 
   .viewBackround {
     font-size: 120%;
-    margin-top: 80px;
+    margin-top: 35px;
     margin-bottom: 20px;
     margin-right: 50px;
     margin-left: 50px;
