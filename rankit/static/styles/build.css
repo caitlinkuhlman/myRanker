@@ -1,0 +1,83 @@
+.pool {
+    display: grid;
+    /* grid-area: pool; */
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 4px;
+    margin: 24px;
+  }
+
+  .list-wrapper {
+    /* grid-area: list; */
+    display: grid;
+    grid-template-areas: "left center right";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #left {
+    grid-area: left;
+    /* background-color: red; */
+  }
+  #right {
+    grid-area: right;
+    /* background-color: blue; */
+  }
+  #center {
+    grid-area: center;
+    /* background-color: yellow; */
+  }
+  .list {
+    /* grid-area: list; */
+    margin: 8px;
+    padding: 8px;
+    /*border: 2px solid #696f9b;*/
+  }
+
+  #bot {
+    padding: 32px;
+    border: 10px solid #6E7376;
+    border-style: solid double solid double;
+
+  }
+
+  .object {
+    /*background-color: #f58780;*/
+    background-color: #4ABDAC;
+    padding: 16px;
+    margin: 8px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 120%;
+    font-weight: bold;
+    font-family:serif;
+  }
+
+  .noSelect {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .scrollingDragInner {
+    max-height: 400px;
+    font-size: 120%;
+    overflow-y: auto;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+    /*background-color: #696f9b;*/
+    background-color: #99CED4;
+    font-family: sans-serif;
+
+    text-align: center;
+	  color: #ffffff;
+	  font-weight: bold;
+	  padding: 10px;
+	  -moz-border-radius: 5px;
+	  -webkit-border-radius: 5px;
+    border-width: 6px;
+    border-color: #6E7376;
+    border-style: solid;
+  }

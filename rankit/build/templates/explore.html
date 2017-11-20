@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore</title>
+  <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+<body>
+  
+  <table id="example" class="display" cellspacing="0" width="100%">
+    <thead>
+        <tr id="head">
+            <!-- <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th> -->
+        </tr>
+    </thead>
+    <!-- <tfoot>
+        <tr id="foot">
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+        </tr>
+    </tfoot> -->
+    <tbody id="data">
+      
+    </tbody>
+  </table>
+
+</body>
+
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery-1.12.4.js') }}" ></script>
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery-dataTables.min.js') }}" ></script>
+
+<script>
+
+  function renderTable(data) {
+    renderHead(data[0])
+    renderData(data)
+    $('#example').DataTable()
+  }
+
+  function renderHead(datum) {
+    const thead = Object.keys(datum)
+      .map(k => `<th>${k}</th>`)
+      .join('\n')
+    
+    document.querySelector('#head').innerHTML = thead
+  }
+
+  function renderData(data) {
+    const html = data.map(x => {
+      const props = Object.keys(x)
+        .map(k => x[k])
+        .map(prop => `<td>${prop}</td>`)
+        .join('\n')
+      return `<tr>${props}</tr>`
+    })
+    .join('\n')
+    document.querySelector('#data').innerHTML = html
+  }
+  
+  function parseData(raw) {
+    const data = JSON.parse(raw.substring(1, raw.length-1)).Prediction
+    const result = Object.keys(data).map(x => ({ rank: data[x], id: x }))
+    return result
+  }
+
+  const raw = '{{data|tojson}}'
+  const data = parseData(raw)
+  renderTable(data)
+  
+</script>
+</html>

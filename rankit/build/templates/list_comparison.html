@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+
+{% extends 'base_build.html' %}
+{% block content %}
+
+{% set name = 'it worked' %}
+<div class="list-wrapper">
+  <div class="list middle"> <h2><b>High</b></h2>
+  <div id="bot" class="list middle">
+    <div id="center" class="list">
+    </div>
+  </div>
+  <h2><b>Low</b></h2>
+  <button id="submit" class="cd-btn cd-modal-trigger list middle" disabled="disabled">RANK!</button>
+</div>
+</div>
+
+
+
+<script>
+
+    var min_num_of_objects = 2
+
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            const list_length = document.querySelector('#center').children.length
+            if (list_length < min_num_of_objects){
+                $('#submit').attr('disabled', 'disabled');
+            }
+            else {
+                $('#submit').removeAttr('disabled');
+            }
+        });
+    });
+
+    // Node, config
+    var observerConfig = {
+        childList: true,
+    };
+
+    var center_node = document.getElementById('center');
+    observer.observe(center_node, observerConfig);
+
+    function getRankedObjects(){
+        return Array.from(document.querySelector('#center').children).map(x => x.innerText)
+    }
+
+    function handleSubmit() {
+        const pwl = generatePairwise()
+        sendPostRequest(pwl)
+    }
+    function generatePairwise() {
+        const list = Array.from(document.querySelectorAll('.list .object'))
+        const ids = list.map(x => x.id)
+        // pairwise list to send back to server
+        let pwl = []
+        for (let i = 0; i < ids.length - 1; i++) {
+            for (let j = i + 1; j < ids.length; j++) {
+                pwl.push({ 'high': ids[i], 'low': ids[j] })
+            }
+        }
+        console.log(pwl)
+        return pwl
+    }
+    function sendPostRequest(pwl) {
+        const dataset_name = '{{dataset_name}}'
+        const url = '/build/submit/'
+        const xhr = new XMLHttpRequest()
+        xhr.open('POST', url, true)
+        xhr.setRequestHeader('Content-type', 'application/json')
+        // xhr.onload()
+        xhr.send(JSON.stringify({
+            dataset_name: dataset_name,
+            pairs: pwl
+        }))
+        xhr.onload = function() {
+            document.write(this.response)
+        }
+    }
+    document.querySelector('#submit').addEventListener('click', handleSubmit)
+</script>
+{% endblock %}
