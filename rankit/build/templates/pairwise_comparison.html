@@ -2,26 +2,114 @@
 
 {% extends 'base_build.html' %}
 {% block content %}
-          <div class="list-wrapper">
-            <div class="list middle"> <h2><b> Pairs </b></h2>
+<style>
+  .pairwise {
+    display: grid;
+    grid-template-areas: "_ high low";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .high {
+    grid-area: high;
+    /* border: 5px solid #E74C3C; */
+    padding: 24px;
+    display:inline;
+  }
+  .low {
+    grid-area: low;
+    /* border: 5px solid #E74C3C; */
+    padding: 24px;
+    display:inline;
+  }
+</style>
 
-            <div id="bot" class="list">
-              <div class="scrollingDragInner">
+<div class="pw-wrapper">
 
-              <div id="1" class="object noSelect">Enter Object Here</div>
-            </div>
-          </div>
-            <!-- <button id="submit" class="cd-btn cd-modal-trigger list middle">RANK!</button> -->
-
-          </div>
-          </div>
-        </div>
-
-
+  <div class="pairwise">
+    <div class="list high">
+      <h2><b> High </b></h2>
+      <div id="bot"  class="list">
+        <div id="high" class="list"></div>
       </div>
     </div>
-    <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
-  </div>
+    <div class="list low">
+      <h2><b> Low </b></h2>
+      <div id="bot"  class="list">
+        <div id="low" class="list"></div>
+      </div>
+    </div>
 
+    <!-- <div id="low"  class=" list low"></div> -->
+  </div>
+  <!-- <button id="submit" class="cd-btn cd-modal-trigger list middle" disabled="disabled">RANK!</button> -->
+</div>
+
+<script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/pwc.js') }}" ></script>
+
+<script>
+
+
+
+var min_num_of_objects = 2
+
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            const high_length = document.querySelector('#high').children.length
+            const low_length = document.querySelector('#low').children.length
+            const list_num = (high_length > 0 ? 1 : 0) + (low_length > 0 ? 1 : 0)
+
+            if ((high_length != low_length) ||  (
+                    list_num < min_num_of_objects)){
+                $('#submit').attr('disabled', 'disabled');
+            }
+            else {
+                $('#submit').removeAttr('disabled');
+            }
+        });
+    });
+
+    // Node, config
+    var observerConfig = {
+        childList: true,
+    };
+
+    var high_node = document.getElementById('high');
+    var low_node = document.getElementById('low');
+    observer.observe(high_node, observerConfig);
+    observer.observe(low_node, observerConfig);
+
+
+  function handleSubmit() {
+    const pwl = generatePairwise()
+    sendPostRequest(pwl)
+  }
+  function generatePairwise() {
+    const highs = Array.from(document.querySelectorAll('.high .object')).map(x => x.id)
+    const lows = Array.from(document.querySelectorAll('.low .object')).map(x => x.id)
+
+    let pwl = []
+    for (let i = 0; i < highs.length; i++) {
+      pwl.push({ 'high': highs[i], 'low': lows[i] })
+    }
+    console.log(pwl)
+    return pwl
+  }
+  function sendPostRequest(pwl) {
+    const dataset_name = '{{dataset_name}}'
+    const url = '/build/submit/'
+    const xhr = new XMLHttpRequest()
+    xhr.open('POST', url, true)
+    xhr.setRequestHeader('Content-type', 'application/json')
+    // xhr.onload()
+    xhr.send(JSON.stringify({
+      dataset_name: dataset_name,
+      pairs: pwl
+    }))
+    xhr.onload = function () {
+      document.write(this.response)
+    }
+  }
+  document.querySelector('#submit').addEventListener('click', handleSubmit)
+</script>
 
 {% endblock %}
