@@ -34,14 +34,14 @@
 
   #bot {
     padding: 32px;
-    border: 5px solid #4e477c;
+    border: 5px solid #E74C3C;
     /* border-style: solid double solid double; */
 
   }
 
   .object {
     /*background-color: #4ABDAC;*/
-    background-color: #732F6E;
+    background-color: #2980B9;
     padding: 12px;
     margin: 8px;
     color: #ffffff;
