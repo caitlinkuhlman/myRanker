@@ -32,15 +32,7 @@
 
 
     #submit {
-        /*background-color: #23527c;
-        color: #ffffff;
-        margin: 24px;
-        vertical-align:baseline;
-        padding:20px 200px 20px 200px;
-        font-family: sans-serif;
-        font-weight: bold;
-        font-size: 100%;*/
-        /*margin: 0px 60px;*/
+        width: 15%;
         -webkit-appearance: none;
         -moz-appearance: none;
         -ms-appearance: none;
@@ -49,8 +41,30 @@
         border: none;
         border-radius: 4px;
         background: rgba(78, 71, 124, 1);
-        padding: 1em 10em;
         color: #fefffb;
+        font-weight: bold;
+        font-size: 120%;
+
+    }
+
+    #submit[disabled] {
+        background-color: #a1a1a1;
+        color: #ffffff;
+        width: 15%;
+        vertical-align:baseline;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 120%;
+
+    }
+
+    #submit1 {
+        background-color: #23527c;
+        color: #ffffff;
+        /*margin: 18px;*/
+        vertical-align:baseline;
+        /*padding:20px 200px 20px 200px;*/
+        font-family: sans-serif;
         font-weight: bold;
         font-size: 1.4rem;
         cursor: pointer;
@@ -162,7 +176,7 @@
 
     </form>
 
-    <button id="submit" class="cd-btn cd-modal-trigger list">RANK!</button>
+    <button id="submit" class="cd-btn cd-modal-trigger list" disabled="disabled">RANK!</button>
 
   </div>
 
@@ -246,8 +260,9 @@
   <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
 
   <script>
+
     function getDataset() {
-      return Array.from(document.querySelectorAll('.pool .object')).map(x => x.innerText)
+      return Array.from(document.querySelector('#top').children).map(x => x.innerText)
     }
 
     function sortDataset() {
@@ -267,9 +282,10 @@
 
     const dataset = getDataset()
     function searchDataset(e) {
+      let difference = dataset.filter(x => getRankedObjects().indexOf(x) == -1)
       const value = e.target.value
       const re = new RegExp(value, 'i')
-      const newDataset = dataset.filter(x => re.test(x))
+      const newDataset = difference.filter(x => re.test(x))
       render(newDataset)
     }
 

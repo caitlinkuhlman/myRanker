@@ -14,12 +14,38 @@
   </div>
   </div>
   <h2><b>Low</b></h2>
-  <!-- <button id="submit" class="cd-btn cd-modal-trigger list middle">RANK!</button> -->
 </div>
 </div>
 
 
 <script>
+
+    var min_num_of_objects = 2
+
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            const list_length = document.querySelector('#center').children.length
+            if (list_length < min_num_of_objects){
+                $('#submit').attr('disabled', 'disabled');
+            }
+            else {
+                $('#submit').removeAttr('disabled');
+            }
+        });
+    });
+
+    // Node, config
+    var observerConfig = {
+        childList: true,
+    };
+
+    var center_node = document.getElementById('center');
+    observer.observe(center_node, observerConfig);
+
+    function getRankedObjects(){
+        return Array.from(document.querySelector('#center').children).map(x => x.innerText)
+    }
+
     function handleSubmit() {
         const pwl = generatePairwise()
         sendPostRequest(pwl)
