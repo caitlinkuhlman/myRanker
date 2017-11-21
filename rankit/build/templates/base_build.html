@@ -26,17 +26,55 @@
     }
 
 
+    .navbar-right {
+      padding: 0px 100px 0px;
+    }
+
     #submit {
+        width: 15%;
         -webkit-appearance: none;
         -moz-appearance: none;
         -ms-appearance: none;
         -o-appearance: none;
         appearance: none;
         border: none;
-        border-radius: 50em;
-        background: #ff962c;
-        padding: 1em 10em;
+        border-radius: 4px;
+        background: rgba(78, 71, 124, 1);
         color: #fefffb;
+        font-weight: bold;
+        font-size: 120%;
+        margin: -65px 30px;
+        float: right;
+
+    }
+
+    #submit[disabled] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+        background-color: #a1a1a1;
+        color: #ffffff;
+        width: 15%;
+        vertical-align:baseline;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 120%;
+        margin: -65px 30px;
+        float: right;
+
+    }
+
+
+    #submit1 {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+        background-color: #23527c;
+        color: #ffffff;
+        vertical-align:baseline;
+        font-family: sans-serif;
         font-weight: bold;
         font-size: 1.4rem;
         cursor: pointer;
@@ -46,7 +84,8 @@
         float: right;
         margin: -65px 30px;
     }
-
+    
+/*
     #submit[disabled] {
       margin: -65px 30px;
       -webkit-appearance: none;
@@ -66,7 +105,7 @@
       background-color: #808080;
       color: #ffffff;
       float: right;
-    }
+    }*/
 
     .middle {
       grid-area: center;
@@ -174,6 +213,7 @@
       </button>
 
     </form>
+
     <button id="submit" class="cd-btn cd-modal-trigger list middle" disabled="disabled">RANK!</button>
 
   </div>
