@@ -26,10 +26,6 @@
     }
 
 
-    .navbar-right {
-      padding: 0px 100px 0px;
-    }
-
     #submit {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -47,9 +43,12 @@
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
         text-align: center;
         display: inline-block;
+        float: right;
+        margin: -62px 30px;
     }
 
     #submit[disabled] {
+      margin: -62px 30px;
       -webkit-appearance: none;
       -moz-appearance: none;
       -ms-appearance: none;
@@ -66,6 +65,7 @@
       display: inline-block;
       background-color: #808080;
       color: #ffffff;
+      float: right;
     }
 
     .middle {
@@ -84,11 +84,21 @@
 
 
     .page-header h1 {
-      padding: 0px 60px 0px;
+      padding: 0px 50px 0px;
       color: #333;
       font-size: 40px;
       margin: 0;
       display: inline-block;
+      float: left;
+    }
+
+    .middleNav {
+      margin: -60px 0px;
+      padding-right: 405px;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      right: 0;
     }
 
     </style>
@@ -142,7 +152,10 @@
       {{ view_name }}
     </b></h1>
 
-    <form class="navbar-form navbar-center" role="search" style="display: inline;">
+  </br></br>
+</br></br>
+
+    <form class="navbar-form navbar-center middleNav" role="search" style="display: inline;">
       <input
         type="search"
         id="search-criteria"
@@ -161,7 +174,6 @@
       </button>
 
     </form>
-
     <button id="submit" class="cd-btn cd-modal-trigger list middle" disabled="disabled">RANK!</button>
 
   </div>

@@ -293,21 +293,17 @@ Main Components
     top: 100%;
     right: 50%;
     }
-  /*.cd-single-step:nth-of-type(3) {
-    top: 18%;
-    right: 60%;
-  }*/
   .cd-single-step:nth-of-type(3) {
-    top: 18%;
-    right: 53%;
+    top: 17%;
+    right: 44%;
   }
   .cd-single-step:nth-of-type(4) {
-    top: 18%;
-    right: 48%;
+    top: 17%;
+    right: 39%;
   }
   .cd-single-step:nth-of-type(5) {
     top: 18%;
-    right: 24%;
+    right: 15%;
   }
   .cd-single-step > span, .cd-single-step::after {
     display: block;
