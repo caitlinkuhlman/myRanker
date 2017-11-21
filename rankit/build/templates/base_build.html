@@ -25,27 +25,12 @@
       color:#E3F2F4;
     }
 
-    /*.navbar-center {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    }*/
 
     .navbar-right {
       padding: 0px 100px 0px;
     }
 
     #submit {
-        /*background-color: #23527c;
-        color: #ffffff;
-        margin: 24px;
-        vertical-align:baseline;
-        padding:20px 200px 20px 200px;
-        font-family: sans-serif;
-        font-weight: bold;
-        font-size: 100%;*/
-        /*margin: 0px 60px;*/
         -webkit-appearance: none;
         -moz-appearance: none;
         -ms-appearance: none;
@@ -60,15 +45,8 @@
         font-size: 1.4rem;
         cursor: pointer;
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        /*float: right;*/
         text-align: center;
         display: inline-block;
-
-        /*margin-right: 100px
-        display: inline-block;
-        float: right;
-        */
-        /*float: right;*/
     }
 
 
@@ -83,7 +61,6 @@
     }
 
     body {
-      /*background-color: #3f435f;*/
       background-color: #f9f9f9;
     }
 
@@ -174,30 +151,6 @@
 
   <div class="wrapper">
 
-    <!-- <div class="inner1">
-    <form class="navbar-form navbar-center" role="search" style="display: inline;">
-      <input
-        type="search"
-        id="search-criteria"
-        class="form-control"
-        placeholder="Search by names..."
-        onkeyup="searchDataset(event)"
-      >
-      <button type="button" class="btn btn-default" id="sort" onclick="sortDataset()">
-        Sort
-      </button>
-      <button type="button" class="btn btn-default" id="shuffle" onclick="shuffleDataset()">
-        Shuffle
-      </button>
-      <button type="button" id="cd-tour-trigger" class="btn btn-default">
-        Intructions
-      </button>
-
-    </form>
-  </div> -->
-
-  <!-- <button id="submit" class="cd-btn cd-modal-trigger list middle">RANK!</button> -->
-
     <div class="scrollingDragInner viewBackround">
       <div id="top" class="pool">
         <!-- objects from dataset inserted here -->
@@ -231,16 +184,6 @@
         <img src="{{ url_for('static',filename='images/img.png') }}">
       </div>
     </li> <!-- .cd-single-step -->
-
-    <!-- <li class="cd-single-step">
-      <span>Step 3</span>
-
-      <div class="cd-more-info top">
-        <h2>Step Number 3</h2>
-        <p>You can search a specific object in the dataset </p>
-        <img src="{{ url_for('static',filename='images/img.png') }}">
-      </div>
-    </li>  -->
 
     <li class="cd-single-step">
       <span>Step 3</span>
