@@ -302,8 +302,8 @@ Main Components
     right: 39%;
   }
   .cd-single-step:nth-of-type(5) {
-    top: 18%;
-    right: 15%;
+    top: 16%;
+    right: 9%;
   }
   .cd-single-step > span, .cd-single-step::after {
     display: block;
