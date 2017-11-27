@@ -226,23 +226,45 @@
             transition: all 0.3s ease-out;
             border: 1px solid rgba(200, 200, 200, 0.3);
             text-decoration-color: white;
-         
+
         }
 
 
         #get-started.semi-transparent-button:hover, #see-full-list.semi-transparent-button:hover, .semi-transparent-button:hover{
-            
+
             border: 1px solid;
             border-color: white;
             text-decoration-color: white;
             text-decoration-color: white;
         }
 
-   
+
         .white{
             background-color: #FfFfFf
         }
 
+        .image {
+          position: relative;
+          width: 100%; /* for IE 6 */
+        }
+
+        h4 {
+          position: absolute;
+          top: 200px;
+          left: 0;
+          width: 100%;
+        }
+
+        h4 span {
+          color: white;
+          font: bold 24px/45px Helvetica, Sans-Serif;
+          /*font: bold 36px/55px Helvetica, Sans-Serif;*/
+          letter-spacing: -1px;
+          background: rgb(0, 0, 0); /* fallback color */
+          background: rgba(0, 0, 0, 0.7);
+          padding: 10px;
+          float:right;
+        }
 
 
     </style>
@@ -328,7 +350,7 @@
 
                     <h2 class="titles">Sample Datasets</h2>
 
-                    <a href={{ url_for('build.buildList') }} id="see-full-list" class="semi-transparent-button" 
+                    <a href={{ url_for('build.buildList') }} id="see-full-list" class="semi-transparent-button"
                     role="button">See Full List</a>
                     <!-- <div class="bootstrap-iso margin">
                         <a href={{ url_for('build.buildList') }} id="semi-transparent-button" class="btn btn-primary btn-lg btn-block"
@@ -337,9 +359,10 @@
 
                     <li>
                         <figure>
-                            <div>
-                                <!-- <img src="{{ url_for('static',filename='images/states.jpg') }}"> -->
-                                <img src="{{ url_for('static',filename='images/states.png') }}">
+                            <div class = "image">
+                                <img src="{{ url_for('static',filename='images/states.jpg') }}">
+                                <!-- <img src="{{ url_for('static',filename='images/states.png') }}"> -->
+                                <h4><span>States</span></h4>
                             </div>
                             <figcaption>
                                 <h3>Tools</h3>
@@ -354,10 +377,10 @@
                     <li>
                         <figure>
                             <div class="image">
-                                
-                                    <!-- <img src="{{ url_for('static',filename='images/colleges.jpg') }}"> -->
-                                    
-                                <img src="{{ url_for('static',filename='images/colleges.png') }}">
+
+                                <img src="{{ url_for('static',filename='images/colleges.jpg') }}">
+                                <!--<img src="{{ url_for('static',filename='images/colleges.png') }}"> -->
+                                <h4><span>Colleges</span></h4>
 
                             </div>
                             <figcaption>
@@ -373,10 +396,11 @@
                     </li>
                     <li>
                         <figure>
-                            <div>
-                                    <!-- <img src="{{ url_for('static',filename='images/movies.jpg') }}"> -->
-                                    
-                                <img src="{{ url_for('static',filename='images/movies.png') }}">
+                            <div = "image">
+
+                                <img src="{{ url_for('static',filename='images/movies.jpg') }}">
+                                <!-- <img src="{{ url_for('static',filename='images/movies.png') }}"> -->
+                                <h4><span>Movies</span></h4>
                             </div>
                             <figcaption>
                                 <h3>Tools</h3>
@@ -395,6 +419,7 @@
 
 
         <div class="col-xxs-12 col-lg-10 m-x-auto">
+          <div id="about"></div>
 
             <div class="white">
                 <ul class="grid cs-style-4">
