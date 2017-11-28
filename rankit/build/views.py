@@ -57,6 +57,33 @@ def categorical(dataset_name):
     return render_template('categorical_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "Categorical Comparison")
 
 
+@build_blueprint.route('/build/submit/')
+def cry():
+    dataset_name = 'cry'
+    datasets_dir = os.path.dirname(os.path.abspath(os.path.dirname(__name__)) + "/rankit/datasets/")
+    abs_file_path = os.path.join(datasets_dir, dataset_name + ".json")
+
+    # load the json file contents into json object
+    with open(abs_file_path, 'r') as data_file:
+        dataset_list = json.load(data_file)
+
+    abs_file_path = os.path.join(datasets_dir, 'sample' + ".json")
+
+    # load the json file contents into json object
+    with open(abs_file_path, 'r') as data_file:
+        primaryKeyPairs = json.load(data_file)
+
+    pairs_json = json.dumps(primaryKeyPairs)
+    pairs = pd.read_json(pairs_json)
+
+    dataset = pd.read_json(json.dumps(dataset_list))
+
+    rank = build_rank.build(dataset=dataset, pairs=pairs)
+
+    return render_template('explore.html', data=rank.to_json())
+
+
+
 @build_blueprint.route('/build/submit/', methods=["POST"])
 def build():
     # get the dataset name from the request
@@ -78,7 +105,7 @@ def build():
 
     rank = build_rank.build(dataset=dataset, pairs=pairs)
 
-    return render_template('explore.html', data = rank.to_json())
+    return render_template('explore.html', data = rank.to_json(orient='records'))
 
 
 def primaryKeyToIndex(dataset_list, primaryKeyPairs):

@@ -24,8 +24,16 @@ def normalize(df):
 def scale(df):
     return(100 * (df - df.min()) / (df.max() - df.min()))
 
+def clean_dataset(dataset):
+    cleaned_dataset = dataset.select_dtypes([np.number]).copy()
+    cleaned_dataset['primaryKey'] = dataset['primaryKey']
+    return cleaned_dataset
+
+
 def build(dataset, pairs) :
     pair_indices = pairs["high"].append(pairs["low"]).drop_duplicates().values
+    # dataset = clean_dataset(dataset)
+
     data_train = dataset.iloc[pair_indices]
 
     data = np.nan_to_num(dataset.drop('primaryKey', axis=1))
@@ -46,12 +54,13 @@ def build(dataset, pairs) :
     y_pred = learner.predict(data)
     weights = learner.predictor.W
     res = pd.DataFrame()
-    res['State'] = dataset['primaryKey']
+
     res['Prediction'] = y_pred
-    res.set_index('State', inplace=True)
     res = res.rank()
 
-    return res
+    dataset['Prediction'] = res['Prediction']
+
+    return dataset
 
 
 

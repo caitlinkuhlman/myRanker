@@ -26,12 +26,6 @@
       color:#E3F2F4;
     }
 
-
-    .navbar-right {
-      padding: 0px 100px 0px;
-    }
-
-
     #submit {
         width: 15%;
         -webkit-appearance: none;
@@ -43,24 +37,29 @@
         border-radius: 4px;
         background: rgba(231,76,60, 1);
         color: #fefffb;
-        font-weight: bold;
-        font-size: 120%;
-        margin: -2px 50px;
+        font-weight: normal;
+        font-size: 100%;
+{#        margin: -2px 50px;#}
         position: absolute;
         right: 0;
+        vertical-align:baseline;
+        float: right;
+        margin: 0px 50px;
 
     }
 
     #submit[disabled] {
-        background-color: #a1a1a1;
+      background-color:  rgba(200, 200, 200, 0.6);
+{#        background-color: rgba(161,161,161, 0.8);#}
+{#        background-color: #a1a1a1;#}
         color: #ffffff;
         width: 15%;
         vertical-align:baseline;
         font-family: sans-serif;
-        font-weight: bold;
-        font-size: 120%;
+        font-weight: normal;
+        font-size: 100%;
         float: right;
-        margin: -2px 50px;
+        margin: 0px 50px;
 
     }
 
@@ -99,10 +98,16 @@
 
     .page-header h1 {
       padding: 0px 60px 0px;
-      color: #333;
+      color: white;
       font-size: 40px;
       margin: 0;
       display: inline-block;
+
+    }
+
+    .page-header{
+                background-color: #2980B9;
+
     }
 
      .middleNav {
@@ -114,7 +119,27 @@
       right: 0;
      }
 
-     @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+    .semi-transparent-button{
+      background-color:  rgba(200, 200, 200, 0.6);
+
+{#            background-color: rgba(161,161,161, 0.8);#}
+            border-radius: 2px;
+            border-color: rgba(200, 200, 200, 0.6);
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease-out;
+            border: 1px solid rgba(200, 200, 200, 0.6);
+            text-decoration-color: white;
+
+        }
+
+
+        .semi-transparent-button:hover{
+            color: #fff;
+            border: 1px solid;
+            border-color: white;
+        }
 
 
     </style>
@@ -176,13 +201,13 @@
         placeholder="Search by names..."
         onkeyup="searchDataset(event)"
       >
-      <button type="button" class="btn btn-default" id="sort" onclick="sortDataset()">
+      <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">
         Sort
       </button>
-      <button type="button" class="btn btn-default" id="shuffle" onclick="shuffleDataset()">
+      <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
         Shuffle
       </button>
-      <button type="button" id="cd-tour-trigger" class="btn btn-default">
+      <button type="button" id="cd-tour-trigger"  class="semi-transparent-button btn" >
     <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
         <!-- <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> -->
         <!-- Intructions -->
@@ -191,7 +216,7 @@
 
     </form>
 
-    <button id="submit" class="cd-btn cd-modal-trigger list" disabled="disabled">RANK!</button>
+    <button type="button" id="submit" class="btn" disabled="disabled">RANK!</button>
 
   </div>
 
