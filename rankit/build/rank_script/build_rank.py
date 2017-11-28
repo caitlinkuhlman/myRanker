@@ -24,8 +24,16 @@ def normalize(df):
 def scale(df):
     return(100 * (df - df.min()) / (df.max() - df.min()))
 
+def clean_dataset(dataset):
+    cleaned_dataset = dataset.select_dtypes([np.number]).copy()
+    cleaned_dataset['primaryKey'] = dataset['primaryKey']
+    return cleaned_dataset
+
+
 def build(dataset, pairs) :
     pair_indices = pairs["high"].append(pairs["low"]).drop_duplicates().values
+    # dataset = clean_dataset(dataset)
+
     data_train = dataset.iloc[pair_indices]
 
     data = np.nan_to_num(dataset.drop('primaryKey', axis=1))
