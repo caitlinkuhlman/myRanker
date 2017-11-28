@@ -9,6 +9,8 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}"/>
   	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/glyphicons-halflings-regular.eot') }}"/>
+
 
     <title>RANKit Build</title>
 
@@ -205,9 +207,12 @@
       <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
         Shuffle
       </button>
-      <button type="button" id="cd-tour-trigger" class="btn btn-default ">
-        Intructions
+      <button type="button" id="cd-tour-trigger"  class="semi-transparent-button btn" >
+    <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        <!-- <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> -->
+        <!-- Intructions -->
       </button>
+
 
     </form>
 
