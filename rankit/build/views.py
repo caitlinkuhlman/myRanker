@@ -78,7 +78,7 @@ def build():
 
     rank = build_rank.build(dataset=dataset, pairs=pairs)
 
-    return render_template('explore.html', data = rank.to_json())
+    return render_template('explore.html', data = rank.to_json(orient='records'))
 
 
 def primaryKeyToIndex(dataset_list, primaryKeyPairs):
