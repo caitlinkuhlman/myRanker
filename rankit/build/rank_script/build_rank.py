@@ -46,12 +46,13 @@ def build(dataset, pairs) :
     y_pred = learner.predict(data)
     weights = learner.predictor.W
     res = pd.DataFrame()
-    res['State'] = dataset['primaryKey']
+
     res['Prediction'] = y_pred
-    res.set_index('State', inplace=True)
     res = res.rank()
 
-    return res
+    dataset['Prediction'] = res['Prediction']
+
+    return dataset
 
 
 
