@@ -9,6 +9,8 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}"/>
   	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/glyphicons-halflings-regular.eot') }}"/>
+
 
     <title>RANKit Build</title>
 
@@ -112,7 +114,7 @@
       right: 0;
      }
 
-
+     @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
 
     </style>
@@ -181,8 +183,11 @@
         Shuffle
       </button>
       <button type="button" id="cd-tour-trigger" class="btn btn-default">
-        Intructions
+    <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        <!-- <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> -->
+        <!-- Intructions -->
       </button>
+
 
     </form>
 
