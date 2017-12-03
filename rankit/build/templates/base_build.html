@@ -165,7 +165,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
           <ul class="dropdown-menu">
             <li>
-              <a href={{ url_for('build.categorical', dataset_name= dataset_name) }}>Categories Comparison</a>
+              <a href={{ url_for('build.categorical', dataset_name= dataset_name) }}>Categorical Comparison</a>
             </li>
             <li class="divider">
             </li>
@@ -210,6 +210,7 @@
       <button type="button" id="cd-tour-trigger"  class="semi-transparent-button btn" >
     <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
         <!-- <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> -->
+
         <!-- Intructions -->
       </button>
 
@@ -243,7 +244,7 @@
       <div class="cd-more-info right">
         <h2>Step Number 1</h2>
         <p>Select and drag an object from the dataset.</p>
-        <img src="{{ url_for('static',filename='images/img.png') }}">
+        <img src="{{ url_for('static',filename='images/step1.png') }}">
       </div>
     </li> <!-- .cd-single-step -->
 
@@ -253,7 +254,7 @@
       <div class="cd-more-info top">
         <h2>Step Number 2</h2>
         <p>Drag the object to the desired ranking order or panel.</p>
-        <img src="{{ url_for('static',filename='images/img.png') }}">
+        <img src="{{ url_for('static',filename='images/step2.png') }}">
       </div>
     </li> <!-- .cd-single-step -->
 
@@ -263,7 +264,7 @@
       <div class="cd-more-info bottom">
         <h2>Step Number 3</h2>
         <p>You can sort the Dataset objects in Alphabetical Order by clicking the Sort button to help your ranking picks</p>
-        <img src="{{ url_for('static',filename='images/img.png') }}">
+        <img src="{{ url_for('static',filename='images/step3.png') }}">
       </div>
     </li>
 
@@ -273,7 +274,7 @@
       <div class="cd-more-info bottom">
         <h2>Step Number 4</h2>
         <p>You can also Randomize the dataset objects by clicking the shuffle button.</p>
-        <img src="{{ url_for('static',filename='images/img.png') }}">
+        <img src="{{ url_for('static',filename='images/step4.png') }}">
       </div>
     </li>
 
@@ -283,7 +284,7 @@
       <div class="cd-more-info left">
         <h2>Step Number 5</h2>
         <p>One your finished with the ranking, click the Rank button to see your results!</p>
-        <img src="{{ url_for('static',filename='images/img.png') }}">
+        <img src="{{ url_for('static',filename='images/step5.png') }}">
       </div>
     </li>
 
