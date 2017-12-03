@@ -94,7 +94,6 @@ def getRanking(dataset_name, primaryKeyPairs):
 
     # get the dataset from json file in list format
     dataset_list = getDataset(dataset_name)
-    print(primaryKeyPairs)
     # convert each primary key into index in pairs sent from client
     primaryKeyToIndex(dataset_list, primaryKeyPairs)
 
