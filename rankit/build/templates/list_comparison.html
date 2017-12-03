@@ -108,6 +108,11 @@
     function handleSubmit() {
         const pwl = generatePairwise()
         sendPostRequest(pwl)
+        var pairwiseURL = "/explore?"
+        for (let i=0; i<pwl.length; i++) {
+            pairwiseURL = pairwiseURL+i+"="+pwl[i].high+","+pwl[i].low+"&"
+        }
+        history.pushState({},'Explore', pairwiseURL)
     }
     function generatePairwise() {
         const list = Array.from(document.querySelectorAll('.list .object'))
