@@ -5,6 +5,7 @@
 {% block content %}
 
 {% set name = 'it worked' %}
+
 <div class="list-wrapper">
   <div class="list middle"> <h2><b>High</b></h2>
   <div id="bot" class="list middle">
@@ -26,6 +27,10 @@
 
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
+            var list = Array.from(document.querySelectorAll('.list .object')).map(x => x.id)
+            var url = window.location.pathname+"?objects="
+            history.pushState({},'List Comparison', url+list.toString())
+
             const list_length = document.querySelector('#center').children.length
             if (list_length < min_num_of_objects){
                 $('#submit').attr('disabled', 'disabled');
@@ -80,6 +85,7 @@
             document.write(this.response)
         }
     }
+
     document.querySelector('#submit').addEventListener('click', handleSubmit)
 </script>
 {% endblock %}
