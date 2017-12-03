@@ -69,6 +69,30 @@
     color:#E3F2F4;
   }
 
+  .image {
+    position: relative;
+    width: 100%; /* for IE 6 */
+  }
+
+  h4 {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+  }
+
+  h4 span {
+    color: white;
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    /*font: bold 36px/55px Helvetica, Sans-Serif;*/
+    letter-spacing: -1px;
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    float:right;
+  }
+
+
 </style>
 
 
@@ -108,6 +132,7 @@
                 <figure>
                   <div>
                     <img src="{{ url_for('static',filename='images/states.jpg') }}">
+                    <h4><span>States</span></h4>
                   </div>
                   <figcaption>
                     <h3>States</h3>
@@ -122,6 +147,7 @@
                 <figure>
                   <div class="image">
                     <img src="{{ url_for('static',filename='images/colleges.jpg') }}">
+                    <h4><span>Colleges</span></h4>
                   </div>
                   <figcaption>
                     <h3>Colleges</h3>
@@ -137,6 +163,7 @@
                 <figure>
                   <div>
                     <img src="{{ url_for('static',filename='images/movies.jpg') }}">
+                    <h4><span>Movies</span></h4>
                   </div>
                   <figcaption>
                     <h3>Movies</h3>
@@ -151,6 +178,7 @@
                 <figure>
                   <div>
                     <img src="{{ url_for('static',filename='images/fifa.jpg') }}">
+                    <h4><span>FIFA</span></h4>
                   </div>
                   <figcaption>
                     <h3>FIFA</h3>
@@ -165,6 +193,7 @@
                 <figure>
                   <div>
                     <img src="{{ url_for('static',filename='images/board_games.jpg') }}">
+                    <h4><span>Board Games</span></h4>
                   </div>
                   <figcaption>
                     <h3>Board Games</h3>
@@ -179,6 +208,7 @@
                 <figure>
                   <div>
                     <img src="{{ url_for('static',filename='images/video_games.jpg') }}">
+                    <h4><span>Video Games</span></h4>
                   </div>
                   <figcaption>
                     <h3>Video Games</h3>

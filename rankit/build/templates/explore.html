@@ -7,7 +7,7 @@
 </head>
 <body>
   
-  <table id="example" class="display" cellspacing="0" width="100%">
+  <table id="table" class="display" cellspacing="0" width="100%">
     <thead>
         <tr id="head">
             <!-- <th>Name</th>
@@ -43,7 +43,11 @@
   function renderTable(data) {
     renderHead(data[0])
     renderData(data)
-    $('#example').DataTable()
+    $('#table').DataTable({
+      scrollY: '100vh',
+      scrollCollapse: true,
+      pageLength: 25,
+    })
   }
 
   function renderHead(datum) {
@@ -67,8 +71,24 @@
   }
   
   function parseData(raw) {
-    const data = JSON.parse(raw.substring(1, raw.length-1)).Prediction
-    const result = Object.keys(data).map(x => ({ rank: data[x], id: x }))
+    const data = JSON.parse(raw.substring(1, raw.length-1))
+    const result = data.map(x => {
+      const rank = x.Prediction
+      const title = x.primaryKey
+      delete x.Prediction
+      delete x.primaryKey
+      if (rank == null){
+        return {
+        Title: title,
+        ...x
+      }
+      }
+      return {
+        Rank: rank,
+        Title: title,
+        ...x
+      }
+    })
     return result
   }
 
