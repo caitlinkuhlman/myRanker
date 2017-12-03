@@ -1,6 +1,7 @@
 from flask import Blueprint, request, render_template, url_for
 from rankit.build.views import getRanking, getDataset
 import json
+import re
 
 explore_blueprint = Blueprint(
     'explore', __name__,
@@ -13,14 +14,22 @@ def explore(dataset_name):
 
     data = json.dumps(getDataset(dataset_name))
 
-    print(data)
     return render_template('explore.html', data=data)
 
 
-@explore_blueprint.route('/explore/<dataset_name>/<primaryKeyPairs>')
-def exploreJson(dataset_name, primaryKeyPairs):
+@explore_blueprint.route('/explore/<dataset_name>/<pairs>')
+def exploreJson(dataset_name, pairs):
+
+    primaryKeyPairs = []
+
+    parsed_pairs = re.findall("\d+=(\w*[,]{1}\w*)&", pairs)
+
+    for pair in parsed_pairs:
+        high, low = pair.split(',')
+        primaryKeyPairs.append({'high': high, 'low' : low})
 
     data = getRanking(dataset_name, primaryKeyPairs)
+
 
     return render_template('explore.html', data=data)
 
