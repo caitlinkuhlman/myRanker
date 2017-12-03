@@ -67,7 +67,7 @@
     }
     function sendPostRequest(pwl) {
         const dataset_name = '{{dataset_name}}'
-        const url = '/build/submit/'
+        const url = '{{url_for('explore.explore', dataset_name = dataset_name) }}'
         const xhr = new XMLHttpRequest()
         xhr.open('POST', url, true)
         xhr.setRequestHeader('Content-type', 'application/json')
@@ -78,6 +78,7 @@
         }))
         xhr.onload = function() {
             document.write(this.response)
+            window.history.pushState('', '', url);
         }
     }
     document.querySelector('#submit').addEventListener('click', handleSubmit)

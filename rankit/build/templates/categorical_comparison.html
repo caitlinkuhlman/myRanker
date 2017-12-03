@@ -103,24 +103,47 @@ function generatePairwise() {
       pwl.push({ 'high': med[i], 'low': low[j] })
     }
   }
-  console.log(pwl)
   return pwl
 }
+
+
+
+
+
+
+
 function sendPostRequest(pwl) {
+
+{#      const urlr = '{{url_for('explore.explore', pairs = pwl) }}'#}
   const dataset_name = '{{dataset_name}}'
-  const url = '/build/submit/'
+  const url = '{{url_for('explore.explore', dataset_name = dataset_name) }}'
   const xhr = new XMLHttpRequest()
+    console.log(pwl)
+      console.log('{{url_for('build.test', pairs = pwl) }}')
+
   xhr.open('POST', url, true)
   xhr.setRequestHeader('Content-type', 'application/json')
+
+
   // xhr.onload()
+
   xhr.send(JSON.stringify({
     dataset_name: dataset_name,
     pairs: pwl
   }))
+
   xhr.onload = function () {
+      console.log(pwl)
+      console.log('{{url_for('build.test', pairs = pwl) }}')
+
     document.write(this.response)
+
+{#    window.history.pushState('', '', url);#}
   }
 }
+
+
+
 document.querySelector('#submit').addEventListener('click', handleSubmit)
 </script>
 {% endblock %}

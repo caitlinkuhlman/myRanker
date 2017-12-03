@@ -78,8 +78,33 @@ def build():
 
     rank = build_rank.build(dataset=dataset, pairs=pairs)
 
-    return render_template('explore.html', data = rank.to_json(orient='records'))
+    return redirect(url_for('explore.explore', data=rank.to_json(orient='records')))
+    # return redirect(url_for('explore.explore', data = rank.to_json(orient='records')), code=307)
 
+    # return render_template('explore.html', data = rank.to_json(orient='records'))
+
+
+def getRanking(dataset_name, primaryKeyPairs):
+    # # get the dataset name from the request
+    # dataset_name = request.get_json().get("dataset_name")
+    #
+    # # get the pairs from client in json format
+    # primaryKeyPairs = request.get_json().get("pairs")
+
+    # get the dataset from json file in list format
+    dataset_list = getDataset(dataset_name)
+
+    # convert each primary key into index in pairs sent from client
+    primaryKeyToIndex(dataset_list, primaryKeyPairs)
+
+    pairs_json = json.dumps(primaryKeyPairs)
+    pairs = pd.read_json(pairs_json)
+
+    dataset = pd.read_json(json.dumps(dataset_list))
+
+    rank = build_rank.build(dataset=dataset, pairs=pairs)
+
+    return rank.to_json(orient='records')
 
 def primaryKeyToIndex(dataset_list, primaryKeyPairs):
     for obj in primaryKeyPairs:
