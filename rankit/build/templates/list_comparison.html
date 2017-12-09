@@ -5,6 +5,7 @@
 {% block content %}
 
 {% set name = 'it worked' %}
+
 <div class="list-wrapper">
   <div class="list middle"> <h2><b>High</b></h2>
   <div id="bot" class="list middle">
@@ -19,6 +20,11 @@
 
 <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
 <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+{#<script type="text/javascript" src="./javascript.js"></script>#}
+<script
+    src="http://maps.googleapis.com/maps/api/js?key=YOUR_APIKEY&sensor=false">
+</script>
 
 <script>
 
@@ -26,6 +32,10 @@
 
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
+            var list = Array.from(document.querySelectorAll('.list .object')).map(x => x.id)
+            var url = window.location.pathname+"?objects="
+            history.pushState({},'List Comparison', url+list.toString())
+
             const list_length = document.querySelector('#center').children.length
             if (list_length < min_num_of_objects){
                 $('#submit').attr('disabled', 'disabled');
@@ -44,13 +54,66 @@
     var center_node = document.getElementById('center');
     observer.observe(center_node, observerConfig);
 
+    var QueryString = function() {
+	    var query_string = {};
+	    var query = window.location.search.substring(1);
+        var pair = query.split("=");
+        // If first entry with this name
+        if (typeof query_string[pair[0]] === "undefined") {
+            query_string[pair[0]] = decodeURIComponent(pair[1]);
+            // If second entry with this name
+        } else if (typeof query_string[pair[0]] === "string") {
+            var arr = [ query_string[pair[0]], decodeURIComponent(pair[1]) ];
+            query_string[pair[0]] = arr;
+            // If third or later entry with this name
+        } else {
+            query_string[pair[0]].push(decodeURIComponent(pair[1]));
+        }
+	    return query_string;
+    }();
+
+    function getParametersFromURL() {
+	    var selectedObjects = QueryString.objects;
+
+	    if (selectedObjects !== undefined && selectedObjects != "") {
+	        var objects = selectedObjects.split(',');
+        }
+        return objects;
+    }
+
+    var objectsFromURL = {}
+    objectsFromURL = getParametersFromURL()
+
+    if (objectsFromURL !== undefined) {
+        populateBox()
+    }
+
+    function populateBox() {
+        console.log(objectsFromURL)
+        // id="${x}" class="object noSelect"
+        for (let i=0; i <objectsFromURL.length; i++) {
+            var node = document.createElement("DIV");
+            var textnode = document.createTextNode(objectsFromURL[i]);
+            node.appendChild(textnode);
+            node.setAttribute("id", objectsFromURL[i]);
+            node.setAttribute("class", "object noSelect");
+            document.querySelector('#center').appendChild(node);
+        }
+    }
+
     function getRankedObjects(){
         return Array.from(document.querySelector('#center').children).map(x => x.innerText)
     }
 
     function handleSubmit() {
         const pwl = generatePairwise()
-        sendPostRequest(pwl)
+        var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"
+        for (let i=0; i<pwl.length; i++) {
+            pairwiseURL = pairwiseURL+i+"="+pwl[i].high+","+pwl[i].low+"&"
+        }
+
+        window.location=pairwiseURL
+
     }
     function generatePairwise() {
         const list = Array.from(document.querySelectorAll('.list .object'))
@@ -62,12 +125,12 @@
                 pwl.push({ 'high': ids[i], 'low': ids[j] })
             }
         }
-        console.log(pwl)
         return pwl
     }
     function sendPostRequest(pwl) {
+
         const dataset_name = '{{dataset_name}}'
-        const url = '/build/submit/'
+        const url = '{{url_for('explore.explore', dataset_name = dataset_name) }}'
         const xhr = new XMLHttpRequest()
         xhr.open('POST', url, true)
         xhr.setRequestHeader('Content-type', 'application/json')
@@ -78,8 +141,10 @@
         }))
         xhr.onload = function() {
             document.write(this.response)
+            window.history.pushState('', '', url);
         }
     }
+
     document.querySelector('#submit').addEventListener('click', handleSubmit)
 </script>
 {% endblock %}

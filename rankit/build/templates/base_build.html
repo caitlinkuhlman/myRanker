@@ -180,7 +180,7 @@
           </ul>
         </li>
         <li>
-          <a href="#">Explore</a>
+          <a href="{{ url_for('explore.explore', dataset_name= dataset_name) }}">Explore</a>
         </li>
       </ul>
 
@@ -209,6 +209,8 @@
       </button>
       <button type="button" id="cd-tour-trigger"  class="semi-transparent-button btn" >
     <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        <!-- <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> -->
+
         <!-- Intructions -->
       </button>
 
