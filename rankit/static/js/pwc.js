@@ -8,23 +8,31 @@ const source_sortable = Sortable.create(source, {
     pull: 'clone',
     revertClone: 'true',
   },
+  onAdd: function(evt){
+    evt.item.parentNode.removeChild(evt.item)
+  },
   animation: 100,
   sort: false,
 })
 
+
 function add_to_sortable(className) {
   const all = document.querySelectorAll(className)
-  const last = all[all.length-1]
-  Sortable.create(last, {
+
+  all.forEach(t => Sortable.create(t, {
     group: {
       name: 'list',
       put: (to) => to.el.children.length < 1,
     },
     animation: 100,
-  })
+
+  }))
+
 }
+
 add_to_sortable('.high')
 add_to_sortable('.low')
+
 // const high_sortable = Sortable.create(high, {
 //   group: {
 //     name: 'list',

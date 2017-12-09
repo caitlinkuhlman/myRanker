@@ -79,16 +79,16 @@
 
 
 
-var min_num_of_objects = 2
+    var min_num_of_objects = 2
 
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
-            const high_length = document.querySelector('#high').children.length
-            const low_length = document.querySelector('#low').children.length
+            const high_length = document.querySelectorAll('.high > div').length
+            const low_length = document.querySelectorAll('.low > div').length
+
             const list_num = (high_length > 0 ? 1 : 0) + (low_length > 0 ? 1 : 0)
 
-            if ((high_length != low_length) ||  (
-                    list_num < min_num_of_objects)){
+            if ((high_length != low_length) ||  ( list_num < min_num_of_objects)){
                 $('#submit').attr('disabled', 'disabled');
             }
             else {
@@ -100,14 +100,15 @@ var min_num_of_objects = 2
     // Node, config
     var observerConfig = {
         childList: true,
+        subtree: true,
     };
 
-    var high_node = document.getElementById('high');
-    var low_node = document.getElementById('low');
-    observer.observe(high_node, observerConfig);
-    observer.observe(low_node, observerConfig);
+    var node = document.getElementById('pwl');
+    observer.observe(node, observerConfig);
 
-
+    function getRankedObjects(){
+        return []
+    }
   function handleSubmit() {
     const pwl = generatePairwise()
     sendPostRequest(pwl)
