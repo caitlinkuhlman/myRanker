@@ -56,7 +56,7 @@ def build(dataset, pairs) :
     res = pd.DataFrame()
 
     res['Prediction'] = y_pred
-    res = res.rank()
+    res = res.rank(ascending=False)
 
     dataset['Prediction'] = res['Prediction']
 
