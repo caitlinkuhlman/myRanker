@@ -74,6 +74,11 @@
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
 <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/pwc.js') }}" ></script>
 <!-- <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+{#<script type="text/javascript" src="./javascript.js"></script>#}
+<script
+    src="http://maps.googleapis.com/maps/api/js?key=YOUR_APIKEY&sensor=false">
+</script>
 
 <script>
 
@@ -83,6 +88,11 @@
 
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
+            const high = Array.from(document.querySelectorAll('.high > div')).map(x => x.id)
+            const low = Array.from(document.querySelectorAll('.low > div')).map(x => x.id)
+            var url = window.location.pathname+"?high="+high.toString()+"&"+"low="+low.toString()
+            history.pushState({},'Pairwise Comparison', url)
+
             const high_length = document.querySelectorAll('.high > div').length
             const low_length = document.querySelectorAll('.low > div').length
 
@@ -106,12 +116,80 @@
     var node = document.getElementById('pwl');
     observer.observe(node, observerConfig);
 
+    var QueryString = function() {
+	    var query_string = {};
+	    var query = window.location.search.substring(1);
+	    var vars = query.split("&");
+	    for (var i = 0; i < vars.length; i++) {
+		    var pair = vars[i].split("=");
+		    // If first entry with this name
+		    if (typeof query_string[pair[0]] === "undefined") {
+			    query_string[pair[0]] = decodeURIComponent(pair[1]);
+			    // If second entry with this name
+		    } else if (typeof query_string[pair[0]] === "string") {
+			    var arr = [ query_string[pair[0]], decodeURIComponent(pair[1]) ];
+			    query_string[pair[0]] = arr;
+			    // If third or later entry with this name
+		    } else {
+			    query_string[pair[0]].push(decodeURIComponent(pair[1]));
+		    }
+	    }
+	    return query_string;
+    }();
+    function getHighFromURL() {
+	    var selectedHigh = QueryString.high;
+
+	    if (selectedHigh !== undefined && selectedHigh != "") {
+	        var high = selectedHigh.split(',');
+        }
+        return high;
+    }
+    function getLowFromURL() {
+	    var selectedLow = QueryString.low;
+
+	    if (selectedLow !== undefined && selectedLow != "") {
+	        var low = selectedLow.split(',');
+        }
+        return low;
+    }
+    var highFromURL = {}
+    var lowFromURL = {}
+    highFromURL = getHighFromURL()
+    lowFromURL = getLowFromURL()
+
+    if (highFromURL !== undefined) {
+        populateBox(".high", highFromURL)
+    }
+    if (lowFromURL !== undefined) {
+        populateBox(".low", lowFromURL)
+    }
+    function populateBox(box, objectsFromURL) {
+        // console.log(objectsFromURL)
+        for (let i=0; i <objectsFromURL.length; i++) {
+            var node = document.createElement("DIV");
+            var textnode = document.createTextNode(objectsFromURL[i]);
+            node.appendChild(textnode);
+            node.setAttribute("id", objectsFromURL[i]);
+            node.setAttribute("class", "object noSelect");
+            document.querySelector(box).appendChild(node);
+        }
+    }
+
+
+
+
     function getRankedObjects(){
         return []
     }
   function handleSubmit() {
-    const pwl = generatePairwise()
-    sendPostRequest(pwl)
+      const pwl = generatePairwise()
+      sendPostRequest(pwl)
+{#      const pwl = generatePairwise()#}
+{#      var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"#}
+{#      for (let i=0; i<pwl.length; i++) {#}
+{#          pairwiseURL = pairwiseURL+i+"="+pwl[i].high+","+pwl[i].low+"&"#}
+{#      }#}
+{#      window.location=pairwiseURL#}
   }
   function generatePairwise() {
     const highs = Array.from(document.querySelectorAll('.high .object')).map(x => x.id)
