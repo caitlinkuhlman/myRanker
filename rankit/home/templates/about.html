@@ -13,7 +13,7 @@
 
 
     <style>
-        .barHover:hover {
+        /*.barHover:hover {
             background-color: beige;
             color: white;
         }
@@ -48,7 +48,65 @@
         .layout-prospect {
             color: #FFFFFF;
             background-color: #4CAF50;
+        }*/
+
+        h4 {
+          position: absolute;
+          top: 200px;
+          left: 0;
+          width: 100%;
         }
+
+        h4 span {
+          color: white;
+          font: bold 24px/45px Helvetica, Sans-Serif;
+          /*font: bold 36px/55px Helvetica, Sans-Serif;*/
+          letter-spacing: -1px;
+          background: rgb(0, 0, 0); /* fallback color */
+          background: rgba(0, 0, 0, 0.7);
+          padding: 10px;
+          float:right;
+        }
+
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+         }
+
+         li {
+           color: #777777;
+         }
+         body {
+           background-color: #efefef
+         }
+
+         .white {
+           background-color: #FfFfFf
+         }
+         .titles {
+           font-size: 50px;
+           margin-bottom: 0;
+           font-weight: 800;
+           line-height: 72px;
+           text-align: center;
+           text-transform: uppercase;
+           color: #ffffff
+
+         }
+
+         .titles-purple{
+           font-size: 50px;
+           margin-bottom: 0;
+           font-weight: 800;
+           line-height: 72px;
+           text-align: center;
+           text-transform: uppercase;
+           color: #2980B9
+
+         }
+
 
     </style>
 
@@ -59,17 +117,62 @@
 
     <div class="container">
 
+      <div class="col-xxs-12 col-lg-10 m-x-auto purple">
+      <br>
+      <h2 id="x" class="titles-purple">About the Project</h2>
+      <section class="card card-lg text-xxs-center">
+      <div id="band" class="container text-center">
 
-        <body class="layout-prospect">
-        <main id="content">
+        <p>Rankings are a fundamental tool used to help people understand the relative merit of
+            objects or choices. They are employed
+            to simplify decision making when the number of factors impacting choice is large.
+            Our mission is to provide a user-driven ranking system to allow non-expert users to
+            better understand the explanatory
+            power of ranking models for socioeconomic outcomes.
+        </p>
+        <p>We accomplish this in two ways. By incorporating ranking algorithms in highly usable
+            interfaces to provide a non biased visualization, to understand
+            existing rankings and to create ranking models which reflect user’s personal
+            intuition and evaluation. By utilizing
+            machine learning, we develop a tool to automatically rank objects in the context of
+            information retrieval.
+        </p>
+
+      </div>
+      </section>
+
+
+      <h2 id="x" class="titles-purple">Team</h2>
+      <section class="card card-lg text-xxs-center">
+      <div id="band" class="container text-center">
+
+        <p>Comming Soon
+        </p>
+
+
+      </div>
+      </section>
+
+
+      <h2 id="x" class="titles-purple">Contact Us</h2>
+      <section class="card card-lg text-xxs-center">
+      <div id="band" class="container text-center">
+
+        <p>Coming Soon
+        </p>
+
+      </div>
+      </section>
+
+
+        <!-- <body class="layout-prospect"> -->
+        <!-- <main id="content">
             <div class="content-body">
                 <div class="container">
                     <div class="col-xxs-12 col-lg-10 m-x-auto">
                         <section class="card card-lg text-xxs-center">
-
-                            <!-- Container (The Band Section) -->
                             <div id="band" class="container text-center">
-                                <h2 class="text-xxl m-b-xl"><a href="index.html"></a>About Us</h2>
+                              <h2 id="x" class="titles">Pick a Dataset</h2>
                                 <p>Rankings are a fundamental tool used to help people understand the relative merit of
                                     objects or choices. They are employed
                                     to simplify decision making when the number of factors impacting choice is large.
@@ -89,10 +192,10 @@
                     </div>
                 </div>
             </div>
-        </main>
+        </main> -->
 
-        </body>
-
+        <!-- </body> -->
+      </div>
     </div>
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/classie.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}"></script>

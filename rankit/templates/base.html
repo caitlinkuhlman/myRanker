@@ -16,7 +16,6 @@
     color:#E3F2F4;
   }
 
-
   </style>
 
 
@@ -36,22 +35,13 @@
           </button> <a class="navbar-brand" href={{ url_for('home.index') }}>RANKIT</a>
         </div>
         <div>
-          <ul class="nav navbar-nav" id="main-menu">
+          <ul class="nav navbar-nav navbar-right" id="main-menu">
             <li>
-              <a href="#home">Home</a>
+              <a href={{ url_for('build.buildList') }} >Start Ranking</a>
             </li>
             <li>
-              <a href="#comp">Components</a>
+              <a href={{ url_for('home.about') }}>About</a>
             </li>
-            <li>
-              <a href="#dataset">Datasets</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <!-- <li>
-              <a href="#contact">Contact Our Team</a>
-            </li> -->
           </ul>
         </div>
       </nav>
@@ -76,9 +66,7 @@ event.preventDefault();
 });
 });
 
-
 </script> -->
-
 <script type="text/javascript">
 $(function() {
   $('#main-menu li a').bind('click',function(event){
@@ -92,6 +80,5 @@ $(function() {
   });
 });
 
-</script>
 
 </html>
