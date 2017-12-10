@@ -95,3 +95,7 @@
     /* border-color: #732F6E; */
     /* border-style: solid; */
   }
+
+  .ghost {
+    opacity: .5;
+  }

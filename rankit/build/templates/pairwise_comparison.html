@@ -11,20 +11,49 @@
   .high {
     grid-area: high;
     /* border: 5px solid #E74C3C; */
-    padding: 24px;
-    display:inline;
+    padding: 8px;
+    /* display:inline; */
   }
   .low {
     grid-area: low;
     /* border: 5px solid #E74C3C; */
-    padding: 24px;
-    display:inline;
+    padding: 8px;
+    /* display:inline; */
   }
+  .pw-wrapper {
+    display: grid;
+    grid-template-areas: "_ pwl  pwl"
+                         "_ more more";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  #pwl {
+    grid-area: pwl;
+  }
+  .pw {
+    display: grid;
+    grid-template-areas: "high low";
+    grid-template-columns: 1fr 1fr;
+    border: 5px solid #E74C3C;
+    margin: 16px;
+  }
+  #more {
+    grid-area: more;
+    padding: 12px;
+    margin-bottom: 48px;
+  }
+
 </style>
 
 <div class="pw-wrapper">
-
-  <div class="pairwise">
+  <div id="pwl">
+    <div class="pw">
+      <div class="high"></div>
+      <div class="low"></div>
+    </div>
+  </div>
+  <button type="button" class="btn " id="more" onclick="handleMore()">Add New Pairwise</button>
+  
+  <!-- <div class="pairwise">
     <div class="list high">
       <h2><b> High </b></h2>
       <div id="bot"  class="list">
@@ -37,29 +66,39 @@
         <div id="low" class="list"></div>
       </div>
     </div>
-
-    <!-- <div id="low"  class=" list low"></div> -->
-  </div>
-  <!-- <button id="submit" class="cd-btn cd-modal-trigger list middle" disabled="disabled">RANK!</button> -->
+    
+  </div> -->
 </div>
+<!-- <button type="button" class="semi-transparent-button btn " id="sort" onclick="">+</button> -->
 
-<script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
 <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/pwc.js') }}" ></script>
+<!-- <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+{#<script type="text/javascript" src="./javascript.js"></script>#}
+<script
+    src="http://maps.googleapis.com/maps/api/js?key=YOUR_APIKEY&sensor=false">
+</script>
 
 <script>
 
 
 
-var min_num_of_objects = 2
+    var min_num_of_objects = 2
 
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
-            const high_length = document.querySelector('#high').children.length
-            const low_length = document.querySelector('#low').children.length
+            const high = Array.from(document.querySelectorAll('.high > div')).map(x => x.id)
+            const low = Array.from(document.querySelectorAll('.low > div')).map(x => x.id)
+            var url = window.location.pathname+"?high="+high.toString()+"&"+"low="+low.toString()
+            history.pushState({},'Pairwise Comparison', url)
+
+            const high_length = document.querySelectorAll('.high > div').length
+            const low_length = document.querySelectorAll('.low > div').length
+
             const list_num = (high_length > 0 ? 1 : 0) + (low_length > 0 ? 1 : 0)
 
-            if ((high_length != low_length) ||  (
-                    list_num < min_num_of_objects)){
+            if ((high_length != low_length) ||  ( list_num < min_num_of_objects)){
                 $('#submit').attr('disabled', 'disabled');
             }
             else {
@@ -71,17 +110,86 @@ var min_num_of_objects = 2
     // Node, config
     var observerConfig = {
         childList: true,
+        subtree: true,
     };
 
-    var high_node = document.getElementById('high');
-    var low_node = document.getElementById('low');
-    observer.observe(high_node, observerConfig);
-    observer.observe(low_node, observerConfig);
+    var node = document.getElementById('pwl');
+    observer.observe(node, observerConfig);
+
+    var QueryString = function() {
+	    var query_string = {};
+	    var query = window.location.search.substring(1);
+	    var vars = query.split("&");
+	    for (var i = 0; i < vars.length; i++) {
+		    var pair = vars[i].split("=");
+		    // If first entry with this name
+		    if (typeof query_string[pair[0]] === "undefined") {
+			    query_string[pair[0]] = decodeURIComponent(pair[1]);
+			    // If second entry with this name
+		    } else if (typeof query_string[pair[0]] === "string") {
+			    var arr = [ query_string[pair[0]], decodeURIComponent(pair[1]) ];
+			    query_string[pair[0]] = arr;
+			    // If third or later entry with this name
+		    } else {
+			    query_string[pair[0]].push(decodeURIComponent(pair[1]));
+		    }
+	    }
+	    return query_string;
+    }();
+    function getHighFromURL() {
+	    var selectedHigh = QueryString.high;
+
+	    if (selectedHigh !== undefined && selectedHigh != "") {
+	        var high = selectedHigh.split(',');
+        }
+        return high;
+    }
+    function getLowFromURL() {
+	    var selectedLow = QueryString.low;
+
+	    if (selectedLow !== undefined && selectedLow != "") {
+	        var low = selectedLow.split(',');
+        }
+        return low;
+    }
+    var highFromURL = {}
+    var lowFromURL = {}
+    highFromURL = getHighFromURL()
+    lowFromURL = getLowFromURL()
+
+    if (highFromURL !== undefined) {
+        populateBox(".high", highFromURL)
+    }
+    if (lowFromURL !== undefined) {
+        populateBox(".low", lowFromURL)
+    }
+    function populateBox(box, objectsFromURL) {
+        // console.log(objectsFromURL)
+        for (let i=0; i <objectsFromURL.length; i++) {
+            var node = document.createElement("DIV");
+            var textnode = document.createTextNode(objectsFromURL[i]);
+            node.appendChild(textnode);
+            node.setAttribute("id", objectsFromURL[i]);
+            node.setAttribute("class", "object noSelect");
+            document.querySelector(box).appendChild(node);
+        }
+    }
 
 
+
+
+    function getRankedObjects(){
+        return []
+    }
   function handleSubmit() {
-    const pwl = generatePairwise()
-    sendPostRequest(pwl)
+      const pwl = generatePairwise()
+      sendPostRequest(pwl)
+{#      const pwl = generatePairwise()#}
+{#      var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"#}
+{#      for (let i=0; i<pwl.length; i++) {#}
+{#          pairwiseURL = pairwiseURL+i+"="+pwl[i].high+","+pwl[i].low+"&"#}
+{#      }#}
+{#      window.location=pairwiseURL#}
   }
   function generatePairwise() {
     const highs = Array.from(document.querySelectorAll('.high .object')).map(x => x.id)
