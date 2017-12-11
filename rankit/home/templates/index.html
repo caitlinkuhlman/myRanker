@@ -52,7 +52,6 @@
     color: #fff;
     padding: 50px 10px 195px 10px;
     background: linear-gradient(-45deg,  #2C3E50,  #E74C3C,  #3498DB, #2980B9);
-    /* background: linear-gradient(-45deg,  #F2637E,  #732F6E,  #4e477c, #23d5ab); */
     background-size: 400% 400%;
     -webkit-animation: Gradient 15s ease infinite;
     -moz-animation: Gradient 15s ease infinite;
@@ -237,10 +236,10 @@
     text-decoration-color: white;
   }
 
-
+/*
   body {
     background-color: #efefef
-  }
+  }*/
 
   .white {
     background-color: #FfFfFf
@@ -301,7 +300,10 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  background-color: #FfFfFf
+  background-color: #FfFfFf;
+  margin-left: 70px;
+  margin-right: 70px;
+
 }
 
 .wrapper:after {
@@ -344,7 +346,7 @@ img {
     <!-- <canvas class="constellation" width="718" height="662"></canvas> -->
     <div class="title">
       <h1>RANKIT</h1>
-      <h2>An easy, step by step, ranking tool to vizualize data!</h2>
+      <h2>An easy, step by step, tool to research existing rankings!</h2>
     </div>
     <div id="main-menu">
       <a href="#start"id = "get-started" class="semi-transparent-button" role="button">Get Started</a>
@@ -367,10 +369,10 @@ img {
 </div>
 </section>
 
-<h2 id="x" class="titles-purple">Step 2</h2>
 </div>
 
-
+<div class="col-xxs-12 col-lg-10 m-x-auto">
+  <h2 id="x" class="titles-purple">Step 2: Choose a Component</h2>
 <div class="wrapper">
   <div class="col-item">
     <h2 id="x" class="titles-purple">Building your Ranking</h2>
@@ -390,7 +392,7 @@ img {
       <li><b>List Comparison:</b> Rank all your entities in one list by preference.</li>
       <li><b>Pairwise Comparison:</b> Compare your entities in pairs to judge which of each entity is preferred, has a greater amount, or whether or not the two entities are identical.</li>
     </ul>
-      <p>Drag and drop each enitity in the dataset. Once you're done click “Rank!”</p>
+      <!-- <p>Drag and drop each enitity in the dataset. Once you're done click “Rank!”</p> -->
     </p>
     </div>
     </section>
@@ -415,7 +417,8 @@ img {
     </div>
     </section>
   </div>
-</div>
+</div></div>
+
 
 <div class="col-xxs-12 col-lg-10 m-x-auto purple">
 <br>
@@ -425,7 +428,6 @@ img {
 </div>
 <br>
 
-</div>
 </div>
 
 
