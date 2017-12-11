@@ -351,86 +351,32 @@ img {
     </div>
   </header>
 
-  <!-- Top Navigation -->
-  <!-- <div id="comp"></div> -->
 
-  <!-- <div class="col-xxs-12 col-lg-10 m-x-auto">
-    <h2 id="x" class="titles-purple">Quick steps to use this tool</h2>
-    <section class="card card-lg text-xxs-center">
-      <div id="band" class="container text-center">
-        <div class="news">
-          <img src="https://websitesetup.org/wp-content/uploads/2017/11/WSU-home-page-STEPs-05.png" width="128" height="128"></a> <br>
-          <h3 class="subtitles">Choose</h3>
-          <p>Choose a Sample dataset or import</p>
-        </div>
-        <div class="news">
-          <img src="https://websitesetup.org/wp-content/uploads/2017/11/WSU-home-page-STEPs-05.png" width="128" height="128"></a> <br>
-          <h3 class="subtitles">Build</h3>
-          <p>Build your ranking</p>
-        </div>
-        <div class="news">
-          <img src="https://websitesetup.org/wp-content/uploads/2017/11/WSU-home-page-STEPs-05.png" width="128" height="128"></a> <br>
-          <h3 class="subtitles">Explore</h3>
-          <p>Customize your Data Visualization</p>
-        </div>
-      </div>
-    </section>
-  </div> -->
-
-
-
-<!-- <div class="col-xxs-12 col-lg-10 m-x-auto"> -->
-<div class="col-xxs-12 col-lg-10 m-x-auto purple">
+<div class="col-xxs-12 col-lg-10 m-x-auto">
 <br>
 
 <div id="start"></div>
 
-<h2 id="x" class="titles">Step 1: Pick a Dataset</h2>
+<div class="white">
+<h2 id="x" class="titles-purple">Step 1: Pick a Dataset</h2>
 <section class="card card-lg text-xxs-center">
   <br>
   <img src="{{ url_for('static',filename='images/importMed.png') }}">
 <div id="band" class="container text-center">
-<p class="inverse">Pick a dataset or start importing your dataset by clicking “”Start Ranking” and navigating to import. File must be of JSON type.</p>
+<p>Pick a dataset or start importing your dataset by clicking “”Start Ranking” and navigating to import. File must be of JSON type.</p>
 </div>
 </section>
 
-
-<!-- <div class="white">
-
-  <h2 id="x" class="titles-purple">Building your Ranking</h2>
-  <section class="card card-lg text-xxs-center">
-  <div id="band" class="container text-center">
-    <img src="{{ url_for('static',filename='images/build.png') }}">
-  <p>
-    Now you can rank your data into three different types of rankings. </br>
-  <ul >
-    <li><b>Categorical Comparison:</b> Rank your entities using three Categories. Each Object in the category is considered the same ranking.</li>
-    <li><b>List Comparison:</b> Rank all your entities in one list by preference.</li>
-    <li><b>Pairwise Comparison:</b> Compare your entities in pairs to judge which of each entity is preferred, has a greater amount, or whether or not the two entities are identical.</li>
-  </ul>
-    <p>Drag and drop your data objects to the respective ranking. Once you're done click “Rank!”</p>
-  </p>
-  </div>
-  </section>
-
-
-<h2 id="x" class="titles-purple">Explore your Ranking</h2>
-<section class="card card-lg text-xxs-center">
-<div id="band" class="container text-center">
-  <img src="{{ url_for('static',filename='images/explore.png') }}">
-<p>
-  Now you can customize your Ranked data with different visualizations based on the options presented. When you're finished save results and export.
-</p>
+<h2 id="x" class="titles-purple">Step 2</h2>
 </div>
-</section>
-</div> -->
+
 
 <div class="wrapper">
   <div class="col-item">
-    <h2 id="x" class="titles-purple">Step 2: Building your Ranking</h2>
+    <h2 id="x" class="titles-purple">Building your Ranking</h2>
   </div>
   <div class="col-item">
-    <h2 id="x" class="titles-purple">Step 2: Explore your Ranking</h2>
+    <h2 id="x" class="titles-purple">Explore your Ranking</h2>
   </div>
   <div class="col-item">
 
@@ -438,13 +384,13 @@ img {
     <div id="band" class="container text-center">
       <img src="{{ url_for('static',filename='images/build.png') }}">
     <p>
-      Now you can rank your data into three different types of rankings. </br>
+      Now you can rank your data into three different types. </br>
     <ul>
       <li><b>Categorical Comparison:</b> Rank your entities using three Categories. Each Object in the category is considered the same ranking.</li>
       <li><b>List Comparison:</b> Rank all your entities in one list by preference.</li>
       <li><b>Pairwise Comparison:</b> Compare your entities in pairs to judge which of each entity is preferred, has a greater amount, or whether or not the two entities are identical.</li>
     </ul>
-      <p>Drag and drop your data objects to the respective ranking. Once you're done click “Rank!”</p>
+      <p>Drag and drop each enitity in the dataset. Once you're done click “Rank!”</p>
     </p>
     </div>
     </section>
@@ -454,25 +400,25 @@ img {
     <section class="card card-lg text-xxs-center">
     <div id="band" class="container text-center">
       <img src="{{ url_for('static',filename='images/explore.png') }}">
-    <p>
-      Now you can customize your Ranked data with different visualizations based on the options presented.
-
+    <p>Now you can customize your Ranked data with different visualizations based on the options presented.
+      <br>
       <br>
       <br>
       Visualizes the rank and allows users to change the priority of one attribute over the other by interacting with the interface.
+      <br>
+      <br>
+      <br>
       The Explore tool reacts instantly to any changes giving an opportunity to visualize and observe how the ranking was affected
       <br>
-
       <br>
-       When you're finished save results and export.
-    </p>
+       When you're finished save results and export.</p>
     </div>
     </section>
   </div>
 </div>
 
-<!-- add purple backround -->
-
+<div class="col-xxs-12 col-lg-10 m-x-auto purple">
+<br>
 <h2 id="x" class="titles">You're Ready to RankIt!</h2>
 <div>
   <a href={{ url_for('build.buildList') }}  id = "get-started" class="semi-transparent-button" role="button">Start Ranking</a>
@@ -480,97 +426,9 @@ img {
 <br>
 
 </div>
-
-
-
-
-<!-- <div id="dataset"></div> -->
-
-<!-- <div class="col-xxs-12 col-lg-10 m-x-auto purple">
-<ul class="grid cs-style-4">
-<div>
-<h2 class="titles">Sample Datasets</h2>
-<a href={{ url_for('build.buildList') }} id="see-full-list" class="semi-transparent-button"
-role="button">See Full List</a>
-<li>
-<figure>
-<div class = "image">
-<img src="{{ url_for('static',filename='images/states.jpg') }}">
-<h4><span>States</span></h4>
-</div>
-<figcaption>
-<h3>Tools</h3>
-<span>Select a Build View!</span>
-<a class="one" href={{ url_for('build.listComparison', dataset_name='states') }}>List
-Comparison</a>
-<a class="two" href={{ url_for('build.categorical', dataset_name='states') }}>Categorical</a>
-<a href={{ url_for('build.pairwise', dataset_name='states') }}>Pairwise</a>
-</figcaption>
-</figure>
-</li>
-<li>
-<figure>
-<div class="image">
-<img src="{{ url_for('static',filename='images/colleges.jpg') }}">
-<h4><span>Colleges</span></h4>
-</div>
-<figcaption>
-<h3>Tools</h3>
-<span>Select a Build View!</span>
-<a class="one" href={{ url_for('build.listComparison', dataset_name='colleges') }}>List
-Comparison</a>
-<a class="two" href={{ url_for('build.categorical', dataset_name='colleges') }}>Categorical</a>
-<a href={{ url_for('build.pairwise', dataset_name='colleges') }}>Pairwise</a>
-</figcaption>
-</figure>
-</li>
-<li>
-<figure>
-<div = "image">
-<img src="{{ url_for('static',filename='images/movies.jpg') }}">
-<h4><span>Movies</span></h4>
-</div>
-<figcaption>
-<h3>Tools</h3>
-<span>Select a Build View!</span>
-<a class="one" href={{ url_for('build.listComparison', dataset_name='movies') }}>List
-Comparison</a>
-<a class="two" href={{ url_for('build.categorical', dataset_name='movies') }}>Categorical</a>
-<a href={{ url_for('build.pairwise', dataset_name='movies') }}>Pairwise</a>
-</figcaption>
-</figure>
-</li>
-<div>
-</ul>
 </div>
 
-<div class="col-xxs-12 col-lg-10 m-x-auto">
-<div id="about"></div>
-<div class="white">
-<ul class="grid cs-style-4">
-<h2 class="titles-purple">About Us</h2>
-<section class="card card-lg text-xxs-center">
-<div id="band">
-<p>
-RANKIT is a project designed and created by the WPI IQP team.
-RANKit is an online ranking tool that allows users to manipulate rankings through
-personalized data visualization and rank building.
-When interpreting multi-attribute data-sets, a slight change of weight between
-attributes can heavily impact ranking results.
-Most publicly available rankings do not expose the attributes used to compose the
-ranking.
-This lack of disclosure results in possible exploitation of data because rankings can
-imply a conclusion that is not necessarily true.
-RANKit helps assist in mitigating this issue by allowing for unbiased extrapolation of
-data using tools such as Build and Explain.
-</p>
-</div>
-</section>
-</ul>
-</div>
-</div>
-</div>
-</div> -->
+
 
 <script type="text/javascript">
 $(function() {
