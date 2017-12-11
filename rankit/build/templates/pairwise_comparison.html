@@ -158,25 +158,33 @@
     lowFromURL = getLowFromURL()
 
     if (highFromURL !== undefined) {
-        populateBox(".high", highFromURL)
+        var numOfElemInHighBox = 0;
+        var index_high = 0;
+        populateBox(".high", highFromURL, index_high, numOfElemInHighBox)
     }
     if (lowFromURL !== undefined) {
-        populateBox(".low", lowFromURL)
+        var numOfElemInLowBox = 0;
+        var index_low = 0;
+        populateBox(".low", lowFromURL, index_low, numOfElemInLowBox)
     }
-    function populateBox(box, objectsFromURL) {
-        // console.log(objectsFromURL)
+    function populateBox(box, objectsFromURL, index, numOfElem) {
         for (let i=0; i <objectsFromURL.length; i++) {
+            if (numOfElem > 0) {
+                if (document.querySelectorAll(box)[index+1] === undefined) {
+                    handleMore()
+                }
+                index = index+1
+                numOfElem = 0
+            }
             var node = document.createElement("DIV");
             var textnode = document.createTextNode(objectsFromURL[i]);
             node.appendChild(textnode);
             node.setAttribute("id", objectsFromURL[i]);
             node.setAttribute("class", "object noSelect");
-            document.querySelector(box).appendChild(node);
+            document.querySelectorAll(box)[index].appendChild(node);
+            numOfElem = numOfElem + 1
         }
     }
-
-
-
 
     function getRankedObjects(){
         return []
