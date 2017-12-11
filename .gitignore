@@ -11,12 +11,14 @@ docker_script.sh
 forEach
 forEach.cmd
 .idea
-lineup.js
 node_modules
-package-lock.json
+.DS_Store
 requirements_dev.txt
-requirements.txt
 withinEnv
 withinEnv.cmd
 .yo-rc-workspace.json
 *~
+*.pyc
+venv/*
+rankit/explore/Lineup/requirements.txt
+rankit/static/images/wood_pattern.png

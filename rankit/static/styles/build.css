@@ -1,0 +1,101 @@
+.pool {
+    display: grid;
+    /* grid-area: pool; */
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 4px;
+    margin: 24px;
+  }
+
+  .list-wrapper {
+    /* grid-area: list; */
+    display: grid;
+    grid-template-areas: "left center right";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #left {
+    grid-area: left;
+    /* background-color: red; */
+  }
+  #right {
+    grid-area: right;
+    /* background-color: blue; */
+  }
+  #center {
+    grid-area: center;
+    /* background-color: yellow; */
+  }
+  .list {
+    /* grid-area: list; */
+    margin: 8px;
+    padding: 8px;
+    /*border: 2px solid #696f9b;*/
+  }
+
+  #bot {
+    padding: 32px;
+    border: 5px solid #E74C3C;
+    /* border-style: solid double solid double; */
+
+  }
+
+  .object {
+    /*background-color: #4ABDAC;*/
+    background-color: #2980B9;
+    padding: 12px;
+    margin: 8px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 100%;
+    font-weight: normal;
+    font-family:sans-serif;
+    box-shadow: 5px 10px 10px #a1a1a1;
+    border: 1px solid;
+    border-color: #2980B9;
+  }
+
+  .object:hover {
+    border: 1px solid;
+    border-color: white;
+
+  }
+
+  .noSelect {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .scrollingDragInner {
+    max-height: 400px;
+    /*max-width: 200px;    */
+    overflow-y: auto;
+  }
+
+  .viewBackround {
+    font-size: 120%;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+    /*background-color: #696f9b;*/
+    /*background-color: #99CED4;*/
+    background-color: #e1e1e1;
+    font-family: sans-serif;
+
+    text-align: center;
+	  color: #ffffff;
+	  font-weight: bold;
+	  padding: 10px;
+	  -moz-border-radius: 5px;
+	  -webkit-border-radius: 5px;
+    border-width: 6px;
+    /* border-color: #732F6E; */
+    /* border-style: solid; */
+  }
+
+  .ghost {
+    opacity: .5;
+  }
