@@ -57,32 +57,6 @@ def categorical(dataset_name):
     return render_template('categorical_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "Categorical Comparison")
 
 
-@build_blueprint.route('/build/submit/')
-def cry():
-    dataset_name = 'cry'
-    datasets_dir = os.path.dirname(os.path.abspath(os.path.dirname(__name__)) + "/rankit/datasets/")
-    abs_file_path = os.path.join(datasets_dir, dataset_name + ".json")
-
-    # load the json file contents into json object
-    with open(abs_file_path, 'r') as data_file:
-        dataset_list = json.load(data_file)
-
-    abs_file_path = os.path.join(datasets_dir, 'sample' + ".json")
-
-    # load the json file contents into json object
-    with open(abs_file_path, 'r') as data_file:
-        primaryKeyPairs = json.load(data_file)
-
-    pairs_json = json.dumps(primaryKeyPairs)
-    pairs = pd.read_json(pairs_json)
-
-    dataset = pd.read_json(json.dumps(dataset_list))
-
-    rank = build_rank.build(dataset=dataset, pairs=pairs)
-
-    return render_template('explore.html', data=rank.to_json())
-
-
 
 @build_blueprint.route('/build/submit/', methods=["POST"])
 def build():
@@ -105,8 +79,32 @@ def build():
 
     rank = build_rank.build(dataset=dataset, pairs=pairs)
 
-    return render_template('explore.html', data = rank.to_json(orient='records'))
+    return redirect(url_for('explore.explore', data=rank.to_json(orient='records')))
+    # return redirect(url_for('explore.explore', data = rank.to_json(orient='records')), code=307)
 
+    # return render_template('explore.html', data = rank.to_json(orient='records'))
+
+
+def getRanking(dataset_name, primaryKeyPairs):
+    # # get the dataset name from the request
+    # dataset_name = request.get_json().get("dataset_name")
+    #
+    # # get the pairs from client in json format
+    # primaryKeyPairs = request.get_json().get("pairs")
+
+    # get the dataset from json file in list format
+    dataset_list = getDataset(dataset_name)
+    # convert each primary key into index in pairs sent from client
+    primaryKeyToIndex(dataset_list, primaryKeyPairs)
+
+    pairs_json = json.dumps(primaryKeyPairs)
+    pairs = pd.read_json(pairs_json)
+
+    dataset = pd.read_json(json.dumps(dataset_list))
+
+    rank = build_rank.build(dataset=dataset, pairs=pairs)
+
+    return rank.to_json(orient='records')
 
 def primaryKeyToIndex(dataset_list, primaryKeyPairs):
     for obj in primaryKeyPairs:
