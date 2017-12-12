@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}"/>
-  	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/glyphicons-halflings-regular.eot') }}"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/glyphicons-halflings-regular.eot') }}"/>
 
+  <title>RANKit Build</title>
 
-    <title>RANKit Build</title>
-
-    <style>
+  <style>
     .inner1 {
         display: inline-block;
     }
@@ -25,7 +25,7 @@
       color:#E3F2F4;
     }
 
-    #submit {
+    .submit {
         width: 15%;
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -38,7 +38,7 @@
         color: #fefffb;
         font-weight: normal;
         font-size: 100%;
-{#        margin: -2px 50px;#}
+  {#        margin: -2px 50px;#}
         position: absolute;
         right: 0;
         vertical-align:baseline;
@@ -47,10 +47,10 @@
 
     }
 
-    #submit[disabled] {
+    .submit[disabled] {
       background-color:  rgba(200, 200, 200, 0.6);
-{#        background-color: rgba(161,161,161, 0.8);#}
-{#        background-color: #a1a1a1;#}
+  {#        background-color: rgba(161,161,161, 0.8);#}
+  {#        background-color: #a1a1a1;#}
         color: #ffffff;
         width: 15%;
         vertical-align:baseline;
@@ -105,23 +105,23 @@
     }
 
     .page-header{
-                background-color: #2980B9;
+      background-color: #2980B9;
 
     }
 
-     .middleNav {
+    .middleNav {
       margin: 2px 0px;
       padding-right: 405px;
       position: absolute;
       margin-left: auto;
       margin-right: auto;
       right: 0;
-     }
+    }
 
     .semi-transparent-button{
       background-color:  rgba(200, 200, 200, 0.6);
 
-{#            background-color: rgba(161,161,161, 0.8);#}
+  {#            background-color: rgba(161,161,161, 0.8);#}
             border-radius: 2px;
             border-color: rgba(200, 200, 200, 0.6);
             color: #fff;
@@ -134,15 +134,41 @@
         }
 
 
-        .semi-transparent-button:hover{
-            color: #fff;
-            border: 1px solid;
-            border-color: white;
-        }
+    .semi-transparent-button:hover{
+        color: #fff;
+        border: 1px solid;
+        border-color: white;
+    }
 
 
-    </style>
+    #build-container {
+      display: grid;
+      height: 100vh;
+      grid-template-areas: "build-left build-right";
+      grid-template-columns: 3fr 2fr;
+    }
 
+    #build-left {
+      grid-area: build-left;
+    }
+    #build-right {
+      grid-area: build-right;
+      /* background-color: green; */
+    }
+
+    .build-pool-header {
+      background-color:#2980B9;
+      min-height: 82px;
+      padding: 16px;
+    }
+    .build-list-header {
+      /* background-color:#fff; */
+      min-height: 82px;
+      padding: 16px;
+    }
+
+
+  </style>
 
 </head>
 
@@ -186,6 +212,79 @@
     </div>
 
   </nav>
+
+  <div id="build-container">
+    <!-- this is the left side of the build view -->
+    <div id="build-left">
+
+      <!-- this is the header -->
+      <div class="build-pool-header">
+        <div class="navbar-form navbar-center" role="search">
+          <!-- search -->
+          <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
+          <!-- sort -->
+          <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">
+            Sort
+          </button>
+          <!-- shuffle -->
+          <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
+            Shuffle
+          </button>
+          <!-- help -->
+          <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn">
+            <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- this is the pool -->
+      <div class="scrollingDragInner viewBackround">
+        <div id="top" class="pool">
+          <!-- objects from dataset inserted here -->
+          {% for x in dataset %}
+          <div id="{{x}}" class="object noSelect">{{x}}</div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- ****************************************************************************** -->
+    <!-- this is the right side of the build view -->
+    <div id="build-right">
+      <!-- this is the header -->
+      <div class="build-list-header">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#lc" aria-controls="lc" role="tab" data-toggle="tab">List</a>
+          </li>
+          <li role="presentation">
+            <a href="#cc" aria-controls="cc" role="tab" data-toggle="tab">Categorical</a>
+          </li>
+          <li role="presentation">
+            <a href="#pwc" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- this is the lists -->
+      <div class="tab-content">
+        <!-- this is List Comparison tab -->
+        <div role="tabpanel" class="tab-pane fade in active" id="lc">
+          
+          <div>
+            <div class="scrollingDragInner box">
+              <div id="center" class="list"></div>
+            </div>
+            <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
+          </div>
+
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="cc">Categorical Comparison</div>
+        <div role="tabpanel" class="tab-pane fade" id="pwc">Pairwise Comparison</div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="page-header">
     <h1> <b>
@@ -294,8 +393,9 @@
   {% block content %}
   {% endblock %}
 
-  <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div>
+  <!-- <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div> -->
 
+  <!-- this is script for the pool -->
   <script>
 
     function getDataset() {
@@ -341,5 +441,130 @@
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/main.js') }}" ></script>
   <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/modernizr.custom.js') }}" ></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/lc.js') }}" ></script>
+
+  <!-- List Comparison Related Script -->
+  <script>
+
+    var min_num_of_objects = 2
+
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        var list = Array.from(document.querySelectorAll('.list .object')).map(x => x.id)
+        var url = window.location.pathname + "?objects="
+        history.pushState({}, 'List Comparison', url + list.toString())
+
+        const list_length = document.querySelector('#center').children.length
+        if (list_length < min_num_of_objects) {
+          $('#lc-submit').attr('disabled', 'disabled');
+        }
+        else {
+          $('#lc-submit').removeAttr('disabled');
+        }
+      });
+    });
+
+    // Node, config
+    var observerConfig = {
+      childList: true,
+    };
+
+    var center_node = document.getElementById('center');
+    observer.observe(center_node, observerConfig);
+
+    var QueryString = function () {
+      var query_string = {};
+      var query = window.location.search.substring(1);
+      var pair = query.split("=");
+      // If first entry with this name
+      if (typeof query_string[pair[0]] === "undefined") {
+        query_string[pair[0]] = decodeURIComponent(pair[1]);
+        // If second entry with this name
+      } else if (typeof query_string[pair[0]] === "string") {
+        var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+        query_string[pair[0]] = arr;
+        // If third or later entry with this name
+      } else {
+        query_string[pair[0]].push(decodeURIComponent(pair[1]));
+      }
+      return query_string;
+    }();
+
+    function getParametersFromURL() {
+      var selectedObjects = QueryString.objects;
+
+      if (selectedObjects !== undefined && selectedObjects != "") {
+        var objects = selectedObjects.split(',');
+      }
+      return objects;
+    }
+
+    var objectsFromURL = {}
+    objectsFromURL = getParametersFromURL()
+
+    if (objectsFromURL !== undefined) {
+      populateBox()
+    }
+
+    function populateBox() {
+      console.log(objectsFromURL)
+      // id="${x}" class="object noSelect"
+      for (let i = 0; i < objectsFromURL.length; i++) {
+        var node = document.createElement("DIV");
+        var textnode = document.createTextNode(objectsFromURL[i]);
+        node.appendChild(textnode);
+        node.setAttribute("id", objectsFromURL[i]);
+        node.setAttribute("class", "object noSelect");
+        document.querySelector('#center').appendChild(node);
+      }
+    }
+
+    function getRankedObjects() {
+      return Array.from(document.querySelector('#center').children).map(x => x.innerText)
+    }
+
+    function handleLCSubmit() {
+      const pwl = generatePairwise()
+      var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"
+      for (let i = 0; i < pwl.length; i++) {
+        pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + "," + pwl[i].low + "&"
+      }
+
+      window.location = pairwiseURL
+
+    }
+    function generatePairwise() {
+      const list = Array.from(document.querySelectorAll('.list .object'))
+      const ids = list.map(x => x.id)
+      // pairwise list to send back to server
+      let pwl = []
+      for (let i = 0; i < ids.length - 1; i++) {
+        for (let j = i + 1; j < ids.length; j++) {
+          pwl.push({ 'high': ids[i], 'low': ids[j] })
+        }
+      }
+      return pwl
+    }
+    function sendPostRequest(pwl) {
+
+      const dataset_name = '{{dataset_name}}'
+      const url = '{{url_for('explore.explore', dataset_name = dataset_name) }}'
+      const xhr = new XMLHttpRequest()
+      xhr.open('POST', url, true)
+      xhr.setRequestHeader('Content-type', 'application/json')
+      // xhr.onload()
+      xhr.send(JSON.stringify({
+        dataset_name: dataset_name,
+        pairs: pwl
+      }))
+      xhr.onload = function () {
+        document.write(this.response)
+        window.history.pushState('', '', url);
+      }
+    }
+
+    document.querySelector('#lc-submit').addEventListener('click', handleLCSubmit)
+  </script>
 </body>
 </html>
