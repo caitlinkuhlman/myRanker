@@ -10,6 +10,7 @@
   <meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll"/>
   <meta name="author" content="Codrops"/>
   <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style1.css') }}"/>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
   <style>
@@ -332,6 +333,13 @@ img {
      line-height: 1.5;
  }
 
+ /*.cd-fixed-bg.cd-bg-2 {
+   background-image: url("static/image/cd-background-2.jpg");
+ }*/
+
+
+
+
   </style>
 
 </head>
@@ -354,6 +362,33 @@ img {
   </header>
 
 
+
+  <div class="cd-fixed-bg cd-bg-2">
+    <h2>Features</h2>
+  </div> <!-- cd-fixed-bg -->
+
+  <div class="cd-scrolling-bg cd-color-2">
+    <div class="cd-container">
+      <p>
+        Choose any data-set.
+        <br>
+        <br>
+        Construct a partial rankings of your preference, or from what you know.
+        Learn a full ranking over all the items in the dataset based on your choice in the previous step.
+        <br>
+        <br>
+        Inspect how the attributes in the dataset impact the ranking.
+        Display your rankings to better understand your preferences.
+      </p>
+    </div> <!-- cd-container -->
+  </div> <!-- cd-scrolling-bg -->
+
+<!-- 
+  <div class="cd-fixed-bg cd-bg-2">
+    <h2>Instructions</h2>
+  </div> -->
+
+
 <div class="col-xxs-12 col-lg-10 m-x-auto">
 <br>
 
@@ -365,14 +400,14 @@ img {
   <br>
   <img src="{{ url_for('static',filename='images/importMed.png') }}">
 <div id="band" class="container text-center">
-<p>Pick a dataset or start importing your dataset by clicking “”Start Ranking” and navigating to import. File must be of JSON type.</p>
+<p>Pick a dataset from the available datasets.</p>
 </div>
 </section>
 
 </div>
 
 <div class="col-xxs-12 col-lg-10 m-x-auto">
-  <h2 id="x" class="titles-purple">Step 2: Choose a Component</h2>
+  <h2 id="x" class="titles-purple">Step 2: Choose a Tool</h2>
 <div class="wrapper">
   <div class="col-item">
     <h2 id="x" class="titles-purple">Building your Ranking</h2>
@@ -386,11 +421,11 @@ img {
     <div id="band" class="container text-center">
       <img src="{{ url_for('static',filename='images/build.png') }}">
     <p>
-      Now you can rank your data into three different types. </br>
+      Build your ranking with your prefered method. </br>
     <ul>
-      <li><b>Categorical Comparison:</b> Rank your entities using three Categories. Each Object in the category is considered the same ranking.</li>
-      <li><b>List Comparison:</b> Rank all your entities in one list by preference.</li>
-      <li><b>Pairwise Comparison:</b> Compare your entities in pairs to judge which of each entity is preferred, has a greater amount, or whether or not the two entities are identical.</li>
+      <li><b>Categorical Comparison:</b> Rank your items by organizing them into three categories. There is no order within each category.</li>
+      <li><b>List Comparison:</b> Rank all of your items in an ordered list.</li>
+      <li><b>Pairwise Comparison:</b> Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</li>
     </ul>
       <!-- <p>Drag and drop each enitity in the dataset. Once you're done click “Rank!”</p> -->
     </p>
@@ -402,18 +437,19 @@ img {
     <section class="card card-lg text-xxs-center">
     <div id="band" class="container text-center">
       <img src="{{ url_for('static',filename='images/explore.png') }}">
-    <p>Now you can customize your Ranked data with different visualizations based on the options presented.
+    <p>
+      Visualizes the ranking and get a deeper look at your chosen dataset and its attributes.
       <br>
       <br>
       <br>
-      Visualizes the rank and allows users to change the priority of one attribute over the other by interacting with the interface.
+      <br>
+      Rearrange your ranked data based on the attributes presented.
       <br>
       <br>
       <br>
-      The Explore tool reacts instantly to any changes giving an opportunity to visualize and observe how the ranking was affected
       <br>
-      <br>
-       When you're finished save results and export.</p>
+      If you wish to change the result of your ranking, you can return to previous page and change your preferences instantly.
+     </p>
     </div>
     </section>
   </div>
