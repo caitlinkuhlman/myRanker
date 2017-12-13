@@ -13,7 +13,7 @@ def explore(dataset_name):
 
     data = json.dumps(getDataset(dataset_name))
 
-    return render_template('explore.html', data=data)
+    return render_template('explore.html', data=data, dataset_name=dataset_name)
 
 
 @explore_blueprint.route('/explore/<dataset_name>/<pairs>')
@@ -30,7 +30,7 @@ def exploreJson(dataset_name, pairs):
     data = getRanking(dataset_name, primaryKeyPairs)
 
 
-    return render_template('explore.html', data=data)
+    return render_template('explore.html', data=data, dataset_name=dataset_name)
 
 
 
@@ -38,12 +38,12 @@ def exploreJson(dataset_name, pairs):
 def explorePost(dataset_name):
 
     # get the dataset name from the request
-    dataset_name = request.get_json().get("dataset_name")
+    # dataset_name = request.get_json().get("dataset_name")
 
     # get the pairs from client in json format
     primaryKeyPairs = request.get_json().get("pairs")
 
     data = getRanking(dataset_name, primaryKeyPairs)
 
-    return render_template('explore.html', data=data)
+    return render_template('explore.html', data=data, dataset_name=dataset_name)
 
