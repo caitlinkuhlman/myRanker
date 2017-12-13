@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RanKit Explore</title>
+  <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap-iso.css') }}"/>
+
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
+  <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+
+  <style>
+  body {
+    background-color: #f9f9f9;
+  }
+
+  .inner1 {
+    display: inline-block;
+  }
+
+  .footer {
+    background:#181818;
+    text-align: center;
+    font-size: 120%;
+    color:#E3F2F4;
+  }
+
+  .page-header h1 {
+    padding: 0px 60px 0px;
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    display: inline-block;
+  }
+
+  .page-header{
+    background-color: #2980B9;
+    margin-bottom: 20px;
+  }
+
+  .dataTables_wrapper {
+    margin-left: 20px;
+    margin-right: 20px;
+    right: 0;
+  }
+
+tr {
+  background-color: #2980B9;
+}
+
+#head{
+  color: white;
+}
+
+.middleNav {
+ margin: 2px 0px;
+ padding-right: 405px;
+ position: absolute;
+ margin-left: auto;
+ margin-right: auto;
+ right: 0;
+}
+
+.dataTables_filter {
+   width: 50%;
+   float: right;
+   text-align: right;
+   padding-bottom: 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button> <a class="navbar-brand" href={{ url_for('home.index') }}>RANKIT</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href={{ url_for('build.buildList')}}> Dataset</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href={{ url_for('build.categorical', dataset_name= dataset_name) }}>Categorical Comparison</a>
+            </li>
+            <li class="divider">
+            </li>
+            <li>
+              <a href={{ url_for('build.listComparison', dataset_name= dataset_name) }}>List Comparison</a>
+            </li>
+            <li class="divider">
+            </li>
+            <li>
+              <a href={{ url_for('build.pairwise', dataset_name= dataset_name) }}>Pairwise Comparison</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Explore</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </nav>
+
+  <div class="page-header">
+    <h1> <b>
+      Explore Results
+    </b></h1>
+</div>
+
+
+  <table id="table" class="display" cellspacing="0" width="0%">
+    <thead>
+        <tr id="head">
+        </tr>
+    </thead>
+    <tbody id="data">
+
+    </tbody>
+  </table>
+
+</body>
+
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery-1.12.4.js') }}" ></script>
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery-dataTables.min.js') }}" ></script>
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+
+
+<script>
+
+  function renderTable(data) {
+    renderHead(data[0])
+    renderData(data)
+    $('#table').DataTable({
+      scrollY: '100vh',
+      scrollCollapse: true,
+      pageLength: 25,
+    })
+  }
+
+  function renderHead(datum) {
+    const thead = Object.keys(datum)
+      .map(k => `<th>${k}</th>`)
+      .join('\n')
+
+    document.querySelector('#head').innerHTML = thead
+  }
+
+  function renderData(data) {
+    const html = data.map(x => {
+      const props = Object.keys(x)
+        .map(k => x[k])
+        .map(prop => `<td>${prop}</td>`)
+        .join('\n')
+      return `<tr>${props}</tr>`
+    })
+    .join('\n')
+    document.querySelector('#data').innerHTML = html
+  }
+
+  function parseData(raw) {
+    const data = JSON.parse(raw.substring(1, raw.length-1))
+    const result = data.map(x => {
+      const rank = x.Prediction
+      const title = x.primaryKey
+      delete x.Prediction
+      delete x.primaryKey
+      if (rank == null){
+        return {
+        Title: title,
+        ...x
+      }
+      }
+      return {
+        Rank: rank,
+        Title: title,
+        ...x
+      }
+    })
+    return result
+  }
+
+  const raw = '{{data|tojson}}'
+  const data = parseData(raw)
+  renderTable(data)
+
+</script>
+</html>
