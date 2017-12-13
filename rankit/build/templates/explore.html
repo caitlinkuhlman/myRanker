@@ -34,7 +34,7 @@
   }
 
   .page-header h1 {
-    padding: 0px 60px 0px;
+    padding: 0px 20px 0px;
     color: white;
     font-size: 40px;
     margin: 0;
@@ -95,27 +95,31 @@ tr {
         <li>
           <a href={{ url_for('build.buildList')}}> Dataset</a>
         </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href={{ url_for('build.categorical', dataset_name= dataset_name) }}>Categorical Comparison</a>
-            </li>
-            <li class="divider">
-            </li>
-            <li>
-              <a href={{ url_for('build.listComparison', dataset_name= dataset_name) }}>List Comparison</a>
-            </li>
-            <li class="divider">
-            </li>
-            <li>
-              <a href={{ url_for('build.pairwise', dataset_name= dataset_name) }}>Pairwise Comparison</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Explore</a>
-        </li>
+          <li>
+              <a href={{ url_for('build.buildStart', dataset_name=dataset_name) }}>Build</a>
+          </li>
+
+{#        <li class="dropdown">#}
+{#          <a class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>#}
+{#          <ul class="dropdown-menu">#}
+{#            <li>#}
+{#              <a href={{ url_for('build.categorical', dataset_name= dataset_name) }}>Categorical Comparison</a>#}
+{#            </li>#}
+{#            <li class="divider">#}
+{#            </li>#}
+{#            <li>#}
+{#              <a href={{ url_for('build.listComparison', dataset_name= dataset_name) }}>List Comparison</a>#}
+{#            </li>#}
+{#            <li class="divider">#}
+{#            </li>#}
+{#            <li>#}
+{#              <a href={{ url_for('build.pairwise', dataset_name= dataset_name) }}>Pairwise Comparison</a>#}
+{#            </li>#}
+{#          </ul>#}
+{#        </li>#}
+{#        <li>#}
+{#          <a href="#">Explore</a>#}
+{#        </li>#}
       </ul>
 
     </div>
