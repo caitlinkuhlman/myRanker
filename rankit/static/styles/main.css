@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+*{
+	margin:0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+body{
+	background: white;
+}
+.tm-container{
+	margin: 0 auto;
+	height: 0;
+}
+.tm-header{
+	background: #3A760E;
+}
+
+footer{
+  position:absolute;
+  bottom:0;
+  width:100%;
+
+}
+
+.bm-container{
+	margin: 0 auto;
+	height: 0;
+}
+.bm-footer{
+	background: black;
+}
+
+.surv-logo{
+	float: left;
+}
+
+.wpi-logo{
+	float: left;
+	height: auto;
+	width: 100px;
+
+}
+
+.nsf-logo{
+	float: right;
+
+}
+
+img{
+  border-radius: 50%;
+  width: 70px;
+  margin: 50px;
+
+.tm-header::after{
+	content: " ";
+	clear: both;
+	display: block;
+}
+
+.tm-nav{
+	float: right;
+}
+.tm-nav ul li{
+	display: inline-block;
+}
+.tm-nav ul a{
+	padding: 10px 20px;
+	text-decoration: none;
+	color: white;
+	line-height: 60px;
+	font: 400 58px/60px 'Bree Serif', Georgia, serif
+}
+.tm-nav ul li a:hover{
+	color: #3e99ff;
+}
+li a, .dropbtn {
+	  font: 400 58px/60px 'Bree Serif', Georgia, serif
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #070202;
+    min-width: 185.5px;
+    box-shadow: 0px 8px 16px 0px;
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {background-color: #070202}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.intro{
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	display: table;
+	top: 0;
+}
+
+.intro .inner{
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	max-width: none;
+}
+.content{
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+.content h1{
+	font-family: 'Raleway', sans-serif;
+	color: black;
+	text-shadow: 0px 0px 300px #000;
+	font-size: 500%;
+}
+.btn{
+	border-radius: 12px;
+	font-family: 'Oswald', sans-serif;
+	color: #036A81;
+	font-size: 100%;
+	padding: 5px 10px;
+	border: solid #036A81 3px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.btn:hover {
+    color: #fff;
+    border: solid #fff 3px;
+}
