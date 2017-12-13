@@ -90,6 +90,9 @@
     body {
       /*background-color: #3f435f;*/
       background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
     }
 
 
@@ -138,7 +141,7 @@
 
     #build-container {
       display: grid;
-      height: 100vh;
+      /* height: 100vh; */
       grid-template-areas: "build-left build-right";
       grid-template-columns: 3fr 2fr;
     }
@@ -186,6 +189,13 @@
     .low {
       grid-area: low;
       padding: 8px;
+    }
+
+    .lcb {
+      height: 70vh;
+    }
+    .ccb {
+      height: 19vh;
     }
   </style>
 
@@ -296,7 +306,7 @@
         <div role="tabpanel" class="tab-pane fade in active" id="lc">
 
           <div class="scrollingDragInner box">
-            <div id="lc-center" class="list"></div>
+            <div id="lc-center" class="list lcb"></div>
           </div>
           <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
 
@@ -305,13 +315,13 @@
         <div role="tabpanel" class="tab-pane fade" id="cc">
 
           <div class="scrollingDragInner box">
-            <div id="left" class="list"></div>
+            <div id="left" class="list ccb"></div>
           </div>
           <div class="scrollingDragInner box">
-            <div id="center" class="list"></div>
+            <div id="center" class="list ccb"></div>
           </div>
           <div class="scrollingDragInner box">
-            <div id="right" class="list"></div>
+            <div id="right" class="list ccb"></div>
           </div>
           <button type="button" id="cc-submit" class="btn submit" disabled="disabled">RANK!</button>
 
