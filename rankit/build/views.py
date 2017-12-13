@@ -29,6 +29,15 @@ def filterByPrimaryKey(datastore):
 
     return datastore_ids
 
+@build_blueprint.route('/build/<dataset_name>')
+def buildStart(dataset_name):
+
+    # retrieve dataset
+    datastore_ids = filterByPrimaryKey(getDataset(dataset_name))
+
+    return render_template('build.html', dataset_name = dataset_name, dataset=datastore_ids)
+
+
 @build_blueprint.route('/build/list/<dataset_name>')
 def listComparison(dataset_name):
 
