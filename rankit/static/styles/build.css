@@ -69,7 +69,7 @@
   }
 
   .scrollingDragInner {
-    max-height: 80vh;
+    max-height: 89vh;
     /*max-width: 200px;    */
     overflow-y: auto;
   }

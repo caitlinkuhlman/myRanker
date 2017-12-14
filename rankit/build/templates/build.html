@@ -202,6 +202,13 @@
       text-align: center;
     }
 
+    .build-description {
+      color: #777;
+      min-height: 82px;
+      padding: 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);;
+    }
+
   </style>
 
 </head>
@@ -282,8 +289,12 @@
 
           <div class="cd-more-info right">
             <h2>Step Number 1</h2>
-            <p>Select and drag an object from the dataset.</p>
-            <img src="{{ url_for('static',filename='images/step1.png') }}">
+            <p>Select and click a method you wish to rank with.</p>
+            List Comparison: Rank all of your items in an ordered list.<br>
+            <br>Categorical Comparison: Rank your items by organizing them into three categories. There is no order within each category.<br>
+            <br>Pairwise Comparison: Compare your items in pairs to judge which of the two item in a pair is preferred over the other.<br>
+          </p>
+            <img src="{{ url_for('static',filename='images/Step11.png') }}">
           </div>
         </li> <!-- .cd-single-step -->
 
@@ -292,8 +303,8 @@
 
           <div class="cd-more-info top">
             <h2>Step Number 2</h2>
-            <p>Drag the object to the desired ranking order or panel.</p>
-            <img src="{{ url_for('static',filename='images/step2.png') }}">
+            <p>Select and drag each item to the desired ranking panel.</p>
+            <img src="{{ url_for('static',filename='images/step22.png') }}">
           </div>
         </li> <!-- .cd-single-step -->
 
@@ -302,8 +313,8 @@
 
           <div class="cd-more-info bottom">
             <h2>Step Number 3</h2>
-            <p>You can sort the Dataset objects in Alphabetical Order by clicking the Sort button to help your ranking picks</p>
-            <img src="{{ url_for('static',filename='images/step3.png') }}">
+            <p>You can randomize the dataset items by clicking the shuffle button.</p>
+            <img src="{{ url_for('static',filename='images/step44.png') }}">
           </div>
         </li>
 
@@ -312,8 +323,8 @@
 
           <div class="cd-more-info bottom">
             <h2>Step Number 4</h2>
-            <p>You can also Randomize the dataset objects by clicking the shuffle button.</p>
-            <img src="{{ url_for('static',filename='images/step4.png') }}">
+            <p>After you use shuffle, you can sort the data set objects in Alphabetical Order by clicking the Sort button to help your ranking picks.</p>
+            <img src="{{ url_for('static',filename='images/step33.png') }}">
           </div>
         </li>
 
@@ -323,7 +334,7 @@
           <div class="cd-more-info left">
             <h2>Step Number 5</h2>
             <p>One your finished with the ranking, click the Rank button to see your results!</p>
-            <img src="{{ url_for('static',filename='images/step5.png') }}">
+            <img src="{{ url_for('static',filename='images/step55.png') }}">
           </div>
         </li>
 
@@ -347,6 +358,17 @@
     <!-- ****************************************************************************** -->
     <!-- this is the right side of the build view -->
     <div id="build-right">
+
+
+      <div class="build-description">
+        <p>
+          Choose how you want to rank between List, Categorical, and Pairwise.
+          Drag and drop each item in the data set.
+          Once you're done with your ranking, click “Rank!” Button Below.
+        </p>
+      </div>
+
+
       <!-- this is the header -->
       <ul class="nav nav-pills build-list-header" role="tablist">
         <li role="presentation" class="active">
