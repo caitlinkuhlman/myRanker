@@ -528,6 +528,7 @@
 
     var lc_observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
+
         lc_urlUpdate()
 
         const list_length = document.querySelector('#lc-center').children.length
@@ -542,7 +543,7 @@
 
     function lc_urlUpdate() {
         var list = Array.from(document.querySelectorAll('#lc-center .object')).map(x => x.id)
-        var url = window.location.pathname + "?objects="
+        var url = window.location.pathname + "?method="+"lc"+"&"+"objects="
         history.pushState({}, 'List Comparison', url + list.toString())
     }
 
@@ -572,6 +573,28 @@
       }
       return query_string;
     }();
+
+{#    function getMethodFromURL() {#}
+{#        var selectedMethod = lc_QueryString.method;#}
+{#        if (selectedMethod !== undefined && selectedMethod != "") {#}
+{#            var method = selectedMethod.split('&');#}
+{#        }#}
+{#        return method[0];#}
+{#    }#}
+{##}
+{#    var methodFromURL = getMethodFromURL()#}
+{##}
+{#    if (methodFromURL !== undefined) {#}
+{#        activateMethodTab(methodFromURL)#}
+{#    }#}
+{##}
+{#    function activateMethodTab(methodFromURL) {#}
+{#        document.getElementById("lc_tab").classList.remove("active");#}
+{#        document.getElementById("cc_tab").classList.remove("active");#}
+{#        document.getElementById("pwc_tab").classList.remove("active");#}
+{#        #}
+{#        document.getElementById(methodFromURL+"_tab").setAttribute("class", "active");#}
+{#    }#}
 
     function lc_getParametersFromURL() {
       var selectedObjects = lc_QueryString.objects;
@@ -665,7 +688,7 @@
         const high = Array.from(document.querySelectorAll('#left .object')).map(x => x.id)
         const med = Array.from(document.querySelectorAll('#center .object')).map(x => x.id)
         const low = Array.from(document.querySelectorAll('#right .object')).map(x => x.id)
-        var url = window.location.pathname + "?high=" + high.toString() + "&" + "medium=" + med.toString() + "&" + "low=" + low.toString()
+        var url = window.location.pathname + "?method="+"cc"+"&"+"high=" + high.toString() + "&" + "medium=" + med.toString() + "&" + "low=" + low.toString()
         history.pushState({}, 'Categorical Comparison', url)
     }
 
@@ -820,7 +843,7 @@
     function pwc_urlUpdate() {
         const high = Array.from(document.querySelectorAll('.high > div')).map(x => x.id)
         const low = Array.from(document.querySelectorAll('.low > div')).map(x => x.id)
-        var url = window.location.pathname + "?left=" + high.toString() + "&" + "right=" + low.toString()
+        var url = window.location.pathname + "?method="+"pwc"+"&"+"left=" + high.toString() + "&" + "right=" + low.toString()
         history.pushState({}, 'Pairwise Comparison', url)
     }
 
