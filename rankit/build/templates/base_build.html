@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/glyphicons-halflings-regular.eot') }}"/>
+
+  <title>RANKit Build</title>
+
+  <style>
+    .inner1 {
+        display: inline-block;
+    }
+
+    .footer {
+      background:#181818;
+      text-align: center;
+      font-size: 120%;
+      color:#E3F2F4;
+    }
+
+    .submit {
+        width: 15%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        border: none;
+        border-radius: 4px;
+        background: rgba(231,76,60, 1);
+        color: #fefffb;
+        font-weight: normal;
+        font-size: 100%;
+  {#        margin: -2px 50px;#}
+        position: absolute;
+        right: 0;
+        vertical-align:baseline;
+        float: right;
+        margin: 0px 50px;
+
+    }
+
+    .submit[disabled] {
+      background-color:  rgba(200, 200, 200, 0.6);
+  {#        background-color: rgba(161,161,161, 0.8);#}
+  {#        background-color: #a1a1a1;#}
+        color: #ffffff;
+        width: 15%;
+        vertical-align:baseline;
+        font-family: sans-serif;
+        font-weight: normal;
+        font-size: 100%;
+        float: right;
+        margin: 0px 50px;
+
+    }
+
+    #submit1 {
+        background-color: #23527c;
+        color: #ffffff;
+        vertical-align:baseline;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 1.4rem;
+        cursor: pointer;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        text-align: center;
+        display: inline-block;
+        float: right;
+        margin: -2px 50px;
+
+    }
+
+
+    .middle {
+      grid-area: center;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      font-size: 30px;
+    }
+
+    body {
+      /*background-color: #3f435f;*/
+      background-color: #f9f9f9;
+    }
+
+
+    .page-header h1 {
+      padding: 0px 60px 0px;
+      color: white;
+      font-size: 40px;
+      margin: 0;
+      display: inline-block;
+
+    }
+
+    .page-header{
+      background-color: #2980B9;
+
+    }
+
+    .middleNav {
+      margin: 2px 0px;
+      padding-right: 405px;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      right: 0;
+    }
+
+    .semi-transparent-button{
+      background-color:  rgba(200, 200, 200, 0.6);
+
+  {#            background-color: rgba(161,161,161, 0.8);#}
+            border-radius: 2px;
+            border-color: rgba(200, 200, 200, 0.6);
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease-out;
+            border: 1px solid rgba(200, 200, 200, 0.6);
+            text-decoration-color: white;
+
+        }
+
+
+    .semi-transparent-button:hover{
+        color: #fff;
+        border: 1px solid;
+        border-color: white;
+    }
+
+
+    #build-container {
+      display: grid;
+      height: 100vh;
+      grid-template-areas: "build-left build-right";
+      grid-template-columns: 3fr 2fr;
+    }
+
+    #build-left {
+      grid-area: build-left;
+    }
+    #build-right {
+      grid-area: build-right;
+      /* background-color: green; */
+    }
+
+    .build-pool-header {
+      background-color:#2980B9;
+      min-height: 82px;
+      padding: 16px;
+    }
+    .build-list-header {
+      /* background-color:#fff; */
+      min-height: 82px;
+      padding: 16px;
+    }
+
+
+  </style>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button> <a class="navbar-brand" href={{ url_for('home.index') }}>RANKIT</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href={{ url_for('build.buildList')}}> Dataset</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">Build<strong class="caret"></strong></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href={{ url_for('build.categorical', dataset_name= dataset_name) }}>Categorical Comparison</a>
+            </li>
+            <li class="divider">
+            </li>
+            <li>
+              <a href={{ url_for('build.listComparison', dataset_name= dataset_name) }}>List Comparison</a>
+            </li>
+            <li class="divider">
+            </li>
+            <li>
+              <a href={{ url_for('build.pairwise', dataset_name= dataset_name) }}>Pairwise Comparison</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="{{ url_for('explore.explore', dataset_name= dataset_name) }}">Explore</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </nav>
+
+  <div id="build-container">
+    <!-- this is the left side of the build view -->
+    <div id="build-left">
+
+      <!-- this is the header -->
+      <div class="build-pool-header">
+        <div class="navbar-form navbar-center" role="search">
+          <!-- search -->
+          <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
+          <!-- sort -->
+          <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">
+            Sort
+          </button>
+          <!-- shuffle -->
+          <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
+            Shuffle
+          </button>
+          <!-- help -->
+          <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn">
+            <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- this is the pool -->
+      <div class="scrollingDragInner viewBackround">
+        <div id="top" class="pool">
+          <!-- objects from dataset inserted here -->
+          {% for x in dataset %}
+          <div id="{{x}}" class="object noSelect">{{x}}</div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- ****************************************************************************** -->
+    <!-- this is the right side of the build view -->
+    <div id="build-right">
+      <!-- this is the header -->
+      <div class="build-list-header">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#lc" aria-controls="lc" role="tab" data-toggle="tab">List</a>
+          </li>
+          <li role="presentation">
+            <a href="#cc" aria-controls="cc" role="tab" data-toggle="tab">Categorical</a>
+          </li>
+          <li role="presentation">
+            <a href="#pwc" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- this is the lists -->
+      <div class="tab-content">
+        <!-- this is List Comparison tab -->
+        <div role="tabpanel" class="tab-pane fade in active" id="lc">
+          
+          <div>
+            <div class="scrollingDragInner box">
+              <div id="center" class="list"></div>
+            </div>
+            <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
+          </div>
+
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="cc">Categorical Comparison</div>
+        <div role="tabpanel" class="tab-pane fade" id="pwc">Pairwise Comparison</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="page-header">
+    <h1> <b>
+      {{ view_name }}
+    </b></h1>
+
+    <form class="navbar-form navbar-center middleNav" role="search" style="display: inline;">
+      <input
+        type="search"
+        id="search-criteria"
+        class="form-control"
+        placeholder="Search by names..."
+        onkeyup="searchDataset(event)"
+      >
+      <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">
+        Sort
+      </button>
+      <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
+        Shuffle
+      </button>
+      <button type="button" id="cd-tour-trigger"  class="semi-transparent-button btn" >
+    <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        <!-- <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> -->
+
+        <!-- Intructions -->
+      </button>
+
+
+    </form>
+
+    <button type="button" id="submit" class="btn" disabled="disabled">RANK!</button>
+
+  </div>
+
+
+  <div class="wrapper">
+
+    <div class="scrollingDragInner viewBackround">
+      <div id="top" class="pool">
+        <!-- objects from dataset inserted here -->
+        {% for x in dataset %}
+        <div id="{{x}}" class="object noSelect">{{x}}</div>
+        {% endfor %}
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <ul class="cd-tour-wrapper">
+    <li class="cd-single-step">
+      <span>Step 1</span>
+
+      <div class="cd-more-info right">
+        <h2>Step Number 1</h2>
+        <p>Select and drag an object from the dataset.</p>
+        <img src="{{ url_for('static',filename='images/step1.png') }}">
+      </div>
+    </li> <!-- .cd-single-step -->
+
+    <li class="cd-single-step">
+      <span>Step 2</span>
+
+      <div class="cd-more-info top">
+        <h2>Step Number 2</h2>
+        <p>Drag the object to the desired ranking order or panel.</p>
+        <img src="{{ url_for('static',filename='images/step2.png') }}">
+      </div>
+    </li> <!-- .cd-single-step -->
+
+    <li class="cd-single-step">
+      <span>Step 3</span>
+
+      <div class="cd-more-info bottom">
+        <h2>Step Number 3</h2>
+        <p>You can sort the Dataset objects in Alphabetical Order by clicking the Sort button to help your ranking picks</p>
+        <img src="{{ url_for('static',filename='images/step3.png') }}">
+      </div>
+    </li>
+
+    <li class="cd-single-step">
+      <span>Step 4</span>
+
+      <div class="cd-more-info bottom">
+        <h2>Step Number 4</h2>
+        <p>You can also Randomize the dataset objects by clicking the shuffle button.</p>
+        <img src="{{ url_for('static',filename='images/step4.png') }}">
+      </div>
+    </li>
+
+    <li class="cd-single-step">
+      <span>Step 5</span>
+
+      <div class="cd-more-info left">
+        <h2>Step Number 5</h2>
+        <p>One your finished with the ranking, click the Rank button to see your results!</p>
+        <img src="{{ url_for('static',filename='images/step5.png') }}">
+      </div>
+    </li>
+
+  </ul>
+  <div class="cd-cover-layer"></div>
+
+
+  {% block content %}
+  {% endblock %}
+
+  <!-- <div class="footer navbar-fixed-bottom"> © 2017 Worcester Polytechnic Institute All Rights Reserved. </div> -->
+
+  <!-- this is script for the pool -->
+  <script>
+
+    function getDataset() {
+      return Array.from(document.querySelector('#top').children).map(x => x.innerText)
+    }
+
+    function sortDataset() {
+      const dataset = getDataset()
+      dataset.sort()
+      render(dataset)
+    }
+
+    function shuffleDataset() {
+      const dataset = getDataset()
+      for (let i = dataset.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [dataset[i], dataset[j]] = [dataset[j], dataset[i]];
+      }
+      render(dataset)
+    }
+
+    const dataset = getDataset()
+    function searchDataset(e) {
+      let difference = dataset.filter(x => getRankedObjects().indexOf(x) == -1)
+      const value = e.target.value
+      const re = new RegExp(value, 'i')
+      const newDataset = difference.filter(x => re.test(x))
+      render(newDataset)
+    }
+
+    function render(dataset) {
+      const pool = document.querySelector('#top')
+      const html = dataset.map(x => `<div id="${x}" class="object noSelect">${x}</div>`).join('\n')
+      pool.innerHTML = html
+    }
+  </script>
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/main.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/modernizr.custom.js') }}" ></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/lc.js') }}" ></script>
+
+  <!-- List Comparison Related Script -->
+  <script>
+
+    var min_num_of_objects = 2
+
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        var list = Array.from(document.querySelectorAll('.list .object')).map(x => x.id)
+        var url = window.location.pathname + "?objects="
+        history.pushState({}, 'List Comparison', url + list.toString())
+
+        const list_length = document.querySelector('#center').children.length
+        if (list_length < min_num_of_objects) {
+          $('#lc-submit').attr('disabled', 'disabled');
+        }
+        else {
+          $('#lc-submit').removeAttr('disabled');
+        }
+      });
+    });
+
+    // Node, config
+    var observerConfig = {
+      childList: true,
+    };
+
+    var center_node = document.getElementById('center');
+    observer.observe(center_node, observerConfig);
+
+    var QueryString = function () {
+      var query_string = {};
+      var query = window.location.search.substring(1);
+      var pair = query.split("=");
+      // If first entry with this name
+      if (typeof query_string[pair[0]] === "undefined") {
+        query_string[pair[0]] = decodeURIComponent(pair[1]);
+        // If second entry with this name
+      } else if (typeof query_string[pair[0]] === "string") {
+        var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+        query_string[pair[0]] = arr;
+        // If third or later entry with this name
+      } else {
+        query_string[pair[0]].push(decodeURIComponent(pair[1]));
+      }
+      return query_string;
+    }();
+
+    function getParametersFromURL() {
+      var selectedObjects = QueryString.objects;
+
+      if (selectedObjects !== undefined && selectedObjects != "") {
+        var objects = selectedObjects.split(',');
+      }
+      return objects;
+    }
+
+    var objectsFromURL = {}
+    objectsFromURL = getParametersFromURL()
+
+    if (objectsFromURL !== undefined) {
+      populateBox()
+    }
+
+    function populateBox() {
+      console.log(objectsFromURL)
+      // id="${x}" class="object noSelect"
+      for (let i = 0; i < objectsFromURL.length; i++) {
+        var node = document.createElement("DIV");
+        var textnode = document.createTextNode(objectsFromURL[i]);
+        node.appendChild(textnode);
+        node.setAttribute("id", objectsFromURL[i]);
+        node.setAttribute("class", "object noSelect");
+        document.querySelector('#center').appendChild(node);
+      }
+    }
+
+    function getRankedObjects() {
+      return Array.from(document.querySelector('#center').children).map(x => x.innerText)
+    }
+
+    function handleLCSubmit() {
+      const pwl = generatePairwise()
+      var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"
+      for (let i = 0; i < pwl.length; i++) {
+        pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + "," + pwl[i].low + "&"
+      }
+
+      window.location = pairwiseURL
+
+    }
+    function generatePairwise() {
+      const list = Array.from(document.querySelectorAll('.list .object'))
+      const ids = list.map(x => x.id)
+      // pairwise list to send back to server
+      let pwl = []
+      for (let i = 0; i < ids.length - 1; i++) {
+        for (let j = i + 1; j < ids.length; j++) {
+          pwl.push({ 'high': ids[i], 'low': ids[j] })
+        }
+      }
+      return pwl
+    }
+    function sendPostRequest(pwl) {
+
+      const dataset_name = '{{dataset_name}}'
+      const url = '{{url_for('explore.explore', dataset_name = dataset_name) }}'
+      const xhr = new XMLHttpRequest()
+      xhr.open('POST', url, true)
+      xhr.setRequestHeader('Content-type', 'application/json')
+      // xhr.onload()
+      xhr.send(JSON.stringify({
+        dataset_name: dataset_name,
+        pairs: pwl
+      }))
+      xhr.onload = function () {
+        document.write(this.response)
+        window.history.pushState('', '', url);
+      }
+    }
+
+    document.querySelector('#lc-submit').addEventListener('click', handleLCSubmit)
+  </script>
+</body>
+</html>

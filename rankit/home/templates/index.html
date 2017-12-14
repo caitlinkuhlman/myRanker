@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RANKIT</title>
+  <meta name="description" content="Blueprint: On-Scroll Animated Header"/>
+  <meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll"/>
+  <meta name="author" content="Codrops"/>
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style1.css') }}"/>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+  <style>
+
+  .barHover:hover {
+    background-color: beige;
+    color: white;
+  }
+
+  .dataset-container {
+    padding: 12px;
+  }
+
+  .dataset {
+    background: white;
+    border: 1px solid #23d5ab;
+    margin: 12px;
+    padding: 12px;
+    text-align: center;
+    font-size: 20px;
+    width: 30%;
+    height: 200px;
+  }
+
+  .dataset a {
+    text-decoration: none;
+  }
+
+  span {
+    color: #23d5ab;
+  }
+
+  .buttonHover:hover {
+    background-color: beige;
+  }
+
+  header {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding: 50px 10px 195px 10px;
+    background: linear-gradient(-45deg,  #2C3E50,  #E74C3C,  #3498DB, #2980B9);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+
+  }
+
+  @media (min-width: 1025px) {
+    header {
+      padding: 100px 10px 100px 10px;
+    }
+  }
+
+  .constellation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    / / z-index: - 1;
+  }
+
+  h1 {
+    font-size: 142px;
+    font-weight: 800;
+    line-height: 72px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .titles {
+    font-size: 50px;
+    margin-bottom: 0;
+    font-weight: 800;
+    line-height: 72px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff
+
+  }
+
+  .titles-purple{
+    font-size: 45px;
+    margin-bottom: 0;
+    font-weight: 800;
+    line-height: 72px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #2980B9
+
+  }
+
+  #x{
+
+    text-decoration-color: #23A6D5;
+
+  }
+
+  .subtitles {
+    font-size: 30px;
+    margin-bottom: 0;
+    font-weight: 800;
+    line-height: 72px;
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+
+  }
+
+  @-webkit-keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  @-moz-keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  .container text-center {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    color: #777777;
+
+  }
+
+  .left {
+    float: left;
+    display: inline-block;
+    padding: 10px 30px 10px 30px;
+
+  }
+
+  .right {
+    float: right;
+    display: inline-block;
+    padding: 10px 30px 10px 30px;
+
+  }
+
+  .news {
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+  }
+
+  #submit {
+    background-color: #23527c;
+    color: #ffffff;
+    margin: 24px;
+    vertical-align: baseline;
+    padding: 20px 200px 20px 200px;
+    font-family: sans-serif;
+
+  }
+
+  .margin {
+
+    padding: 20px 200px 20px 200px;
+  }
+
+  .purple {
+    background-color:#2980B9
+  }
+
+  #about {
+    background-color: #FfFfFf
+  }
+
+  #get-started.semi-transparent-button, #see-full-list.semi-transparent-button, .semi-transparent-button{
+    display: block;
+    box-sizing: border-box;
+    margin: 5% auto;
+    padding: 8px;
+    width: 30%;
+    background-color: rgba(200, 200, 200, 0.3);
+    border-radius: 2px;
+    border-color: rgba(200, 200, 200, 0.3);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-out;
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    text-decoration-color: white;
+  }
+
+
+  #get-started.semi-transparent-button:hover, #see-full-list.semi-transparent-button:hover, .semi-transparent-button:hover{
+
+    border: 1px solid;
+    border-color: white;
+    text-decoration-color: white;
+    text-decoration-color: white;
+  }
+
+/*
+  body {
+    background-color: #efefef
+  }*/
+
+  .white {
+    background-color: #FfFfFf
+  }
+
+  .image {
+    position: relative;
+    width: 100%; /* for IE 6 */
+  }
+
+  h4 {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+  }
+
+  h4 span {
+    color: white;
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    float:right;
+  }
+
+
+.inverse {
+  margin: 0;
+  padding: 1em 0;
+  font-size: 1.3em;
+  line-height: 1.5;
+    text-align: center;
+    color: #FfFfFf;
+}
+
+
+.col-item {
+  width: 49%;
+  margin-right: 2%;
+  margin-bottom: 15px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.col-item:nth-child(2n) {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.col-item:nth-last-child(2),
+.col-item:last-child {
+  margin-bottom: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: #FfFfFf;
+  margin-left: 70px;
+  margin-right: 70px;
+
+}
+
+.wrapper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  height: 100%;
+  border-right: 4px solid grey;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ li {
+   color: #777777;
+ }
+
+ .main section li {
+     margin: 0;
+     padding: 1em 0;
+     font-size: 1.3em;
+     line-height: 1.5;
+ }
+
+ /*.cd-fixed-bg.cd-bg-2 {
+   background-image: url("static/image/cd-background-2.jpg");
+ }*/
+
+ hr.style-four { height: 12px; border: 0; box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5); }
+
+
+
+  </style>
+
+</head>
+
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="main">
+
+  <header>
+    <!-- <canvas class="constellation" width="718" height="662"></canvas> -->
+    <div class="title">
+      <h1>RANKIT</h1>
+      <h2>An easy, step by step, tool to research existing rankings!</h2>
+    </div>
+    <div id="main-menu">
+      <a href="#start"id = "get-started" class="semi-transparent-button" role="button">Get Started</a>
+    </div>
+  </header>
+
+  <div class="cd-scrolling-bg cd-color-2">
+    <div class="cd-container">
+      <p>
+        Choose any data-set.
+        <br>
+        <br>
+        Construct a partial rankings of your preference, or from what you know.
+        Learn a full ranking over all the items in the dataset based on your choice in the previous step.
+        <br>
+        <br>
+        Inspect how the attributes in the dataset impact the ranking.
+        Display your rankings to better understand your preferences.
+      </p>
+    </div> <!-- cd-container -->
+  </div> <!-- cd-scrolling-bg -->
+  <hr class="style-four">
+
+<!--
+  <div class="cd-fixed-bg cd-bg-2">
+    <h2>Instructions</h2>
+  </div> -->
+
+
+<div class="col-xxs-12 col-lg-10 m-x-auto">
+<br>
+
+<div id="start"></div>
+
+<div class="white">
+<h2 id="x" class="titles-purple">Step 1: Pick a Dataset</h2>
+<section class="card card-lg text-xxs-center">
+  <br>
+  <img src="{{ url_for('static',filename='images/importMed.png') }}">
+<div id="band" class="container text-center">
+<p>Pick a dataset from the available datasets.</p>
+</div>
+</section>
+
+<br>
+<br>
+
+</div>
+
+<hr class="style-four">
+
+
+<div class="col-xxs-12 col-lg-10 m-x-auto">
+  <h2 id="x" class="titles-purple">Step 2: Choose a Tool</h2>
+  <br>
+  <br>
+<div class="wrapper">
+  <div class="col-item">
+    <h2 id="x" class="titles-purple">Building your Ranking</h2>
+  </div>
+  <div class="col-item">
+    <h2 id="x" class="titles-purple">Explore your Ranking</h2>
+  </div>
+  <div class="col-item">
+
+    <section class="card card-lg text-xxs-center">
+    <div id="band" class="container text-center">
+      <img src="{{ url_for('static',filename='images/build.png') }}">
+    <p>
+      Build your ranking with your prefered method. </br>
+    <ul>
+      <li><b>Categorical Comparison:</b> Rank your items by organizing them into three categories. There is no order within each category.</li>
+      <li><b>List Comparison:</b> Rank all of your items in an ordered list.</li>
+      <li><b>Pairwise Comparison:</b> Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</li>
+    </ul>
+      <!-- <p>Drag and drop each enitity in the dataset. Once you're done click “Rank!”</p> -->
+    </p>
+    </div>
+    </section>
+
+  </div>
+  <div class="col-item">
+    <section class="card card-lg text-xxs-center">
+    <div id="band" class="container text-center">
+      <img src="{{ url_for('static',filename='images/explore.png') }}">
+    <p>
+      Visualizes the ranking and get a deeper look at your chosen dataset and its attributes.
+      <br>
+      <br>
+      <br>
+      <br>
+      Rearrange your ranked data based on the attributes presented.
+      <br>
+      <br>
+      <br>
+      <br>
+      If you wish to change the result of your ranking, you can return to previous page and change your preferences instantly.
+     </p>
+    </div>
+    </section>
+  </div>
+</div>
+</div>
+
+
+<div class="cd-scrolling-bg cd-color-2">
+<div class="col-xxs-12 col-lg-10 m-x-auto purple">
+<br>
+<h2 id="x" class="titles">You're Ready to RankIt!</h2>
+<div>
+  <a href={{ url_for('build.buildList') }}  id = "get-started" class="semi-transparent-button" role="button">Start Ranking</a>
+</div>
+<br>
+
+</div>
+</div>
+
+
+<script type="text/javascript">
+$(function() {
+  $('#main-menu a').bind('click',function(event){
+    var $anchor = $(this);
+
+    $('html, body').stop().animate({
+      scrollTop: $($anchor.attr('href')).offset().top
+    }, 1500,'easeInOutExpo');
+
+    event.preventDefault();
+  });
+});
+
+</script>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.easing.1.3.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/constellation.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/classie.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/toucheffects.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
+<!-- <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/main.js') }}" ></script> -->
+
+</div>
+
+{% endblock %}
+
+
+</html>
