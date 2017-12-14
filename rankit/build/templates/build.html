@@ -349,14 +349,14 @@
     <div id="build-right">
       <!-- this is the header -->
       <ul class="nav nav-pills build-list-header" role="tablist">
-        <li role="presentation" class="active">
-          <a href="#lc" aria-controls="lc" role="tab" data-toggle="tab">List</a>
+        <li id="lc_tab" role="presentation" class="active">
+          <a href="#lc" onclick="lc_urlUpdate()" aria-controls="lc" role="tab" data-toggle="tab">List</a>
         </li>
-        <li role="presentation">
-          <a href="#cc" aria-controls="cc" role="tab" data-toggle="tab">Categorical</a>
+        <li id="cc_tab" role="presentation">
+          <a href="#cc" onclick="cc_urlUpdate()" aria-controls="cc" role="tab" data-toggle="tab">Categorical</a>
         </li>
-        <li role="presentation">
-          <a href="#pwc" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise</a>
+        <li id="pwc_tab" role="presentation">
+          <a href="#pwc" onclick="pwc_urlUpdate()" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise</a>
         </li>
         <!-- <li role="presentation">
         <br>
@@ -528,9 +528,7 @@
 
     var lc_observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
-        var list = Array.from(document.querySelectorAll('.list .object')).map(x => x.id)
-        var url = window.location.pathname + "?objects="
-        history.pushState({}, 'List Comparison', url + list.toString())
+        lc_urlUpdate()
 
         const list_length = document.querySelector('#lc-center').children.length
         if (list_length < min_num_of_objects) {
@@ -541,6 +539,13 @@
         }
       });
     });
+
+    function lc_urlUpdate() {
+        var list = Array.from(document.querySelectorAll('#lc-center .object')).map(x => x.id)
+        var url = window.location.pathname + "?objects="
+        history.pushState({}, 'List Comparison', url + list.toString())
+    }
+
 
     // Node, config
     var lc_observerConfig = {
@@ -641,11 +646,7 @@
 
     var cc_observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
-        const high = Array.from(document.querySelectorAll('#left .object')).map(x => x.id)
-        const med = Array.from(document.querySelectorAll('#center .object')).map(x => x.id)
-        const low = Array.from(document.querySelectorAll('#right .object')).map(x => x.id)
-        var url = window.location.pathname + "?high=" + high.toString() + "&" + "medium=" + med.toString() + "&" + "low=" + low.toString()
-        history.pushState({}, 'Categorical Comparison', url)
+        cc_urlUpdate()
 
         var num_of_non_empty_list = document.querySelector('#center').children.length > 0 ? 1 : 0
         num_of_non_empty_list += document.querySelector('#left').children.length > 0 ? 1 : 0
@@ -659,6 +660,14 @@
         }
       });
     });
+
+    function cc_urlUpdate() {
+        const high = Array.from(document.querySelectorAll('#left .object')).map(x => x.id)
+        const med = Array.from(document.querySelectorAll('#center .object')).map(x => x.id)
+        const low = Array.from(document.querySelectorAll('#right .object')).map(x => x.id)
+        var url = window.location.pathname + "?high=" + high.toString() + "&" + "medium=" + med.toString() + "&" + "low=" + low.toString()
+        history.pushState({}, 'Categorical Comparison', url)
+    }
 
     // Node, config
     var cc_observerConfig = {
@@ -792,10 +801,7 @@
 
     var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
-        const high = Array.from(document.querySelectorAll('.high > div')).map(x => x.id)
-        const low = Array.from(document.querySelectorAll('.low > div')).map(x => x.id)
-        var url = window.location.pathname + "?high=" + high.toString() + "&" + "low=" + low.toString()
-        history.pushState({}, 'Pairwise Comparison', url)
+        pwc_urlUpdate()
 
         const high_length = document.querySelectorAll('.high > div').length
         const low_length = document.querySelectorAll('.low > div').length
@@ -810,6 +816,14 @@
         }
       });
     });
+
+    function pwc_urlUpdate() {
+        const high = Array.from(document.querySelectorAll('.high > div')).map(x => x.id)
+        const low = Array.from(document.querySelectorAll('.low > div')).map(x => x.id)
+        var url = window.location.pathname + "?left=" + high.toString() + "&" + "right=" + low.toString()
+        history.pushState({}, 'Pairwise Comparison', url)
+    }
+
 
     // Node, config
     var observerConfig = {
@@ -841,7 +855,7 @@
       return query_string;
     }();
     function getHighFromURL() {
-      var selectedHigh = QueryString.high;
+      var selectedHigh = QueryString.left;
 
       if (selectedHigh !== undefined && selectedHigh != "") {
         var high = selectedHigh.split(',');
@@ -849,7 +863,7 @@
       return high;
     }
     function getLowFromURL() {
-      var selectedLow = QueryString.low;
+      var selectedLow = QueryString.right;
 
       if (selectedLow !== undefined && selectedLow != "") {
         var low = selectedLow.split(',');
