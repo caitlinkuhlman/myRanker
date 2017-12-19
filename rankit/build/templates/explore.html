@@ -76,6 +76,20 @@ tr {
    padding-bottom: 20px;
 }
 
+
+      .dataTables_scroll{
+              overflow:auto;
+
+      }
+      .dataTables_scrollHead{
+              overflow:visible !important;
+
+      }
+   .dataTables_scrollBody{
+              overflow:visible !important;
+
+      }
+
 </style>
 
 </head>
@@ -155,60 +169,114 @@ tr {
 <script>
 
   function renderTable(data) {
-    renderHead(data[0])
-    renderData(data)
-    $('#table').DataTable({
+    console.time('table');
+    var keys = renderHead(data[0])
+
+      $('#table').DataTable({
       scrollY: '100vh',
       scrollCollapse: true,
       pageLength: 25,
     })
+
+    renderData(data, keys)
+{#    $('#table').DataTable({#}
+{#      scrollY: '100vh',#}
+{#      scrollCollapse: true,#}
+{#      pageLength: 25,#}
+{#    })#}
+    console.timeEnd('table');
+
   }
 
   function renderHead(datum) {
-    const thead = Object.keys(datum)
+    const title = 'Title'
+    const rank = 'Rank'
+      var data = Object.keys(datum)
+
+     if (data.indexOf(title) > 0) {
+        data.splice(data.indexOf(title), 1);
+        data.unshift(title);
+    }
+    if (data.indexOf(rank) > 0) {
+        data.splice(data.indexOf(rank), 1);
+        data.unshift(rank);
+    }
+      const thead = data
       .map(k => `<th>${k}</th>`)
       .join('\n')
 
     document.querySelector('#head').innerHTML = thead
+     return data
   }
 
-  function renderData(data) {
-    const html = data.map(x => {
-      const props = Object.keys(x)
-        .map(k => x[k])
-        .map(prop => `<td>${prop}</td>`)
-        .join('\n')
-      return `<tr>${props}</tr>`
-    })
-    .join('\n')
-    document.querySelector('#data').innerHTML = html
+  function renderData(data, keys) {
+    console.time('populate');
+    var t = $('#table').dataTable();
+
+{#    for (var irow = 0; irow < data.length; irow++)#}
+{#    {#}
+{#        var cells = new Array();#}
+{#    	var r = jQuery('<tr id=' + irow + '>');#}
+{#        for (var icol = 0; icol < keys.length; icol ++)#}
+{#            cells[icol] = data[irow][keys[icol]]#}
+{##}
+{#    	var ai = t.fnAddData(cells,false);#}
+{#    }#}
+{#    t.fnDraw();#}
+
+
+{#      const html = data.map( x => {#}
+{#               var cells = new Array();#}
+{#               const props = keys#}
+{#                  .map(k => x[k])#}
+{#                  .map(prop => cells.push(prop))#}
+{#               var ai = t.fnAddData(cells,false);#}
+{#              }#}
+{#      )#}
+
+      const html = data.map( x => {
+               const props = keys
+                  .map(k => x[k])
+               t.fnAddData(props,false);
+              }
+      )
+
+      t.fnDraw();
+{#        const html = data.map(x => {#}
+{#      const props = keys#}
+{#        .map(k => x[k])#}
+{#        .map(prop => `<td>${prop}</td>`)#}
+{#        .join('\n')#}
+{##}
+{#      var ai = t.fnAddData(`${props}`,false);#}
+{#      return console.log(`<tr>${props}</tr>`)#}
+{#    })#}
+{#      t.fnDraw();#}
+
+
+{#    const html = data.map(x => {#}
+{#      const props = keys#}
+{#        .map(k => x[k])#}
+{#        .map(prop => `<td>${prop}</td>`)#}
+{#        .join('\n')#}
+{#      return `<tr>${props}</tr>`#}
+{#    })#}
+{#    .join('\n')#}
+{#    document.querySelector('#data').innerHTML = html#}
+
+
+      console.timeEnd('populate');
   }
 
   function parseData(raw) {
-    const data = JSON.parse(raw.substring(1, raw.length-1))
-    const result = data.map(x => {
-      const rank = x.Prediction
-      const title = x.primaryKey
-      delete x.Prediction
-      delete x.primaryKey
-      if (rank == null){
-        return {
-        Title: title,
-        ...x
-      }
-      }
-      return {
-        Rank: rank,
-        Title: title,
-        ...x
-      }
-    })
-    return result
+    return JSON.parse(raw.substring(1, raw.length-1))
   }
 
   const raw = '{{data|tojson}}'
   const data = parseData(raw)
   renderTable(data)
 
+
+{#document.body.appendChild(buildHtmlTable(data))#}
 </script>
 </html>

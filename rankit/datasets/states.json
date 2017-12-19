@@ -1,349 +1,349 @@
 [
   {
-    "primaryKey": "Michigan",
+    "Title": "Michigan",
     "MATTERS Talent Index": -8.9,
     "MATTERS Tax/Financial Climate Index": 23.31,
     "MATTERS Quality of Life Index": 0.74,
     "MATTERS Cost of Doing Business Index": -16.3
   },
   {
-    "primaryKey": "Pennsylvania",
+    "Title": "Pennsylvania",
     "MATTERS Talent Index": 25.94,
     "MATTERS Tax/Financial Climate Index": -35.04,
     "MATTERS Quality of Life Index": -27.87,
     "MATTERS Cost of Doing Business Index": -31.66
   },
   {
-    "primaryKey": "Georgia",
+    "Title": "Georgia",
     "MATTERS Talent Index": 15.93,
     "MATTERS Tax/Financial Climate Index": -0.29,
     "MATTERS Quality of Life Index": -59.23,
     "MATTERS Cost of Doing Business Index": 8.97
   },
   {
-    "primaryKey": "Tennessee",
+    "Title": "Tennessee",
     "MATTERS Talent Index": -61.04,
     "MATTERS Tax/Financial Climate Index": -3.75,
     "MATTERS Quality of Life Index": -24.99,
     "MATTERS Cost of Doing Business Index": 19.85
   },
   {
-    "primaryKey": "Alabama",
+    "Title": "Alabama",
     "MATTERS Talent Index": -50.32,
     "MATTERS Tax/Financial Climate Index": 5.02,
     "MATTERS Quality of Life Index": -41.54,
     "MATTERS Cost of Doing Business Index": 11.73
   },
   {
-    "primaryKey": "Indiana",
+    "Title": "Indiana",
     "MATTERS Talent Index": -56.11,
     "MATTERS Tax/Financial Climate Index": 36.94,
     "MATTERS Quality of Life Index": -6,
     "MATTERS Cost of Doing Business Index": -13.92
   },
   {
-    "primaryKey": "Colorado",
+    "Title": "Colorado",
     "MATTERS Talent Index": 160.8,
     "MATTERS Tax/Financial Climate Index": 43.2,
     "MATTERS Quality of Life Index": 59.63,
     "MATTERS Cost of Doing Business Index": 32.9
   },
   {
-    "primaryKey": "Wisconsin",
+    "Title": "Wisconsin",
     "MATTERS Talent Index": -28.54,
     "MATTERS Tax/Financial Climate Index": -74.74,
     "MATTERS Quality of Life Index": 58.26,
     "MATTERS Cost of Doing Business Index": -28.03
   },
   {
-    "primaryKey": "United States",
+    "Title": "United States",
     "MATTERS Talent Index": -134.77,
     "MATTERS Tax/Financial Climate Index": 207.31,
     "MATTERS Quality of Life Index": 129.68,
     "MATTERS Cost of Doing Business Index": 200.38
   },
   {
-    "primaryKey": "Washington",
+    "Title": "Washington",
     "MATTERS Talent Index": 93.41,
     "MATTERS Tax/Financial Climate Index": 97.04,
     "MATTERS Quality of Life Index": -17.96,
     "MATTERS Cost of Doing Business Index": -1.64
   },
   {
-    "primaryKey": "Idaho",
+    "Title": "Idaho",
     "MATTERS Talent Index": -14.33,
     "MATTERS Tax/Financial Climate Index": 23.56,
     "MATTERS Quality of Life Index": -12.08,
     "MATTERS Cost of Doing Business Index": 28.86
   },
   {
-    "primaryKey": "Virginia",
+    "Title": "Virginia",
     "MATTERS Talent Index": 159.27,
     "MATTERS Tax/Financial Climate Index": -8.06,
     "MATTERS Quality of Life Index": 1.61,
     "MATTERS Cost of Doing Business Index": 74.35
   },
   {
-    "primaryKey": "New Hampshire",
+    "Title": "New Hampshire",
     "MATTERS Talent Index": 58.69,
     "MATTERS Tax/Financial Climate Index": -4.88,
     "MATTERS Quality of Life Index": 9.63,
     "MATTERS Cost of Doing Business Index": 32.77
   },
   {
-    "primaryKey": "Nebraska",
+    "Title": "Nebraska",
     "MATTERS Talent Index": -51.81,
     "MATTERS Tax/Financial Climate Index": -61.69,
     "MATTERS Quality of Life Index": 83.27,
     "MATTERS Cost of Doing Business Index": 52.2
   },
   {
-    "primaryKey": "South Carolina",
+    "Title": "South Carolina",
     "MATTERS Talent Index": -13.45,
     "MATTERS Tax/Financial Climate Index": -18.37,
     "MATTERS Quality of Life Index": -68.49,
     "MATTERS Cost of Doing Business Index": -15.27
   },
   {
-    "primaryKey": "Wyoming",
+    "Title": "Wyoming",
     "MATTERS Talent Index": -42.4,
     "MATTERS Tax/Financial Climate Index": 68.32,
     "MATTERS Quality of Life Index": 67.45,
     "MATTERS Cost of Doing Business Index": -9.55
   },
   {
-    "primaryKey": "Missouri",
+    "Title": "Missouri",
     "MATTERS Talent Index": -22.95,
     "MATTERS Tax/Financial Climate Index": 13.06,
     "MATTERS Quality of Life Index": 8.89,
     "MATTERS Cost of Doing Business Index": 33.78
   },
   {
-    "primaryKey": "New Jersey",
+    "Title": "New Jersey",
     "MATTERS Talent Index": 80.69,
     "MATTERS Tax/Financial Climate Index": -100.11,
     "MATTERS Quality of Life Index": -22.85,
     "MATTERS Cost of Doing Business Index": -65.83
   },
   {
-    "primaryKey": "Minnesota",
+    "Title": "Minnesota",
     "MATTERS Talent Index": 35.19,
     "MATTERS Tax/Financial Climate Index": -68.52,
     "MATTERS Quality of Life Index": 76.38,
     "MATTERS Cost of Doing Business Index": 28.81
   },
   {
-    "primaryKey": "Florida",
+    "Title": "Florida",
     "MATTERS Talent Index": -46.26,
     "MATTERS Tax/Financial Climate Index": 93.71,
     "MATTERS Quality of Life Index": -57.93,
     "MATTERS Cost of Doing Business Index": 12.71
   },
   {
-    "primaryKey": "Illinois",
+    "Title": "Illinois",
     "MATTERS Talent Index": 34.71,
     "MATTERS Tax/Financial Climate Index": -49.34,
     "MATTERS Quality of Life Index": 5.44,
     "MATTERS Cost of Doing Business Index": -12.72
   },
   {
-    "primaryKey": "Arkansas",
+    "Title": "Arkansas",
     "MATTERS Talent Index": -97.52,
     "MATTERS Tax/Financial Climate Index": -31.4,
     "MATTERS Quality of Life Index": 4.36,
     "MATTERS Cost of Doing Business Index": 4.56
   },
   {
-    "primaryKey": "Mississippi",
+    "Title": "Mississippi",
     "MATTERS Talent Index": -124.58,
     "MATTERS Tax/Financial Climate Index": 17.93,
     "MATTERS Quality of Life Index": -59.13,
     "MATTERS Cost of Doing Business Index": -6.62
   },
   {
-    "primaryKey": "Montana",
+    "Title": "Montana",
     "MATTERS Talent Index": -42.33,
     "MATTERS Tax/Financial Climate Index": 30.76,
     "MATTERS Quality of Life Index": 37.71,
     "MATTERS Cost of Doing Business Index": -2.26
   },
   {
-    "primaryKey": "New Mexico",
+    "Title": "New Mexico",
     "MATTERS Talent Index": -20.08,
     "MATTERS Tax/Financial Climate Index": 20.51,
     "MATTERS Quality of Life Index": -35.24,
     "MATTERS Cost of Doing Business Index": -5.84
   },
   {
-    "primaryKey": "North Dakota",
+    "Title": "North Dakota",
     "MATTERS Talent Index": -17.84,
     "MATTERS Tax/Financial Climate Index": 16.75,
     "MATTERS Quality of Life Index": 133.67,
     "MATTERS Cost of Doing Business Index": 46.12
   },
   {
-    "primaryKey": "Nevada",
+    "Title": "Nevada",
     "MATTERS Talent Index": -106.51,
     "MATTERS Tax/Financial Climate Index": 131.34,
     "MATTERS Quality of Life Index": -71.64,
     "MATTERS Cost of Doing Business Index": -18.54
   },
   {
-    "primaryKey": "West Virginia",
+    "Title": "West Virginia",
     "MATTERS Talent Index": -113.61,
     "MATTERS Tax/Financial Climate Index": -24.45,
     "MATTERS Quality of Life Index": -47.29,
     "MATTERS Cost of Doing Business Index": -41.62
   },
   {
-    "primaryKey": "Arizona",
+    "Title": "Arizona",
     "MATTERS Talent Index": 26.92,
     "MATTERS Tax/Financial Climate Index": 66.3,
     "MATTERS Quality of Life Index": -43.53,
     "MATTERS Cost of Doing Business Index": 27.39
   },
   {
-    "primaryKey": "Delaware",
+    "Title": "Delaware",
     "MATTERS Talent Index": 36.22,
     "MATTERS Tax/Financial Climate Index": -19.17,
     "MATTERS Quality of Life Index": -61.61,
     "MATTERS Cost of Doing Business Index": -9.54
   },
   {
-    "primaryKey": "North Carolina",
+    "Title": "North Carolina",
     "MATTERS Talent Index": 10.09,
     "MATTERS Tax/Financial Climate Index": -17.95,
     "MATTERS Quality of Life Index": -20.31,
     "MATTERS Cost of Doing Business Index": -14.59
   },
   {
-    "primaryKey": "Connecticut",
+    "Title": "Connecticut",
     "MATTERS Talent Index": 85.37,
     "MATTERS Tax/Financial Climate Index": -96.88,
     "MATTERS Quality of Life Index": 24.85,
     "MATTERS Cost of Doing Business Index": -34.72
   },
   {
-    "primaryKey": "South Dakota",
+    "Title": "South Dakota",
     "MATTERS Talent Index": -60.95,
     "MATTERS Tax/Financial Climate Index": 110.24,
     "MATTERS Quality of Life Index": 74.62,
     "MATTERS Cost of Doing Business Index": 44.17
   },
   {
-    "primaryKey": "Alaska",
+    "Title": "Alaska",
     "MATTERS Talent Index": 20.69,
     "MATTERS Tax/Financial Climate Index": 53.6,
     "MATTERS Quality of Life Index": -16.99,
     "MATTERS Cost of Doing Business Index": -115.6
   },
   {
-    "primaryKey": "Kansas",
+    "Title": "Kansas",
     "MATTERS Talent Index": 16.94,
     "MATTERS Tax/Financial Climate Index": -21.1,
     "MATTERS Quality of Life Index": 58.92,
     "MATTERS Cost of Doing Business Index": 14.7
   },
   {
-    "primaryKey": "Maryland",
+    "Title": "Maryland",
     "MATTERS Talent Index": 172.47,
     "MATTERS Tax/Financial Climate Index": -73.65,
     "MATTERS Quality of Life Index": -31,
     "MATTERS Cost of Doing Business Index": 69.49
   },
   {
-    "primaryKey": "Iowa",
+    "Title": "Iowa",
     "MATTERS Talent Index": -51.69,
     "MATTERS Tax/Financial Climate Index": -110.85,
     "MATTERS Quality of Life Index": 81.34,
     "MATTERS Cost of Doing Business Index": 27.12
   },
   {
-    "primaryKey": "Oregon",
+    "Title": "Oregon",
     "MATTERS Talent Index": 36.25,
     "MATTERS Tax/Financial Climate Index": 1.25,
     "MATTERS Quality of Life Index": -18.33,
     "MATTERS Cost of Doing Business Index": -30.34
   },
   {
-    "primaryKey": "Massachusetts",
+    "Title": "Massachusetts",
     "MATTERS Talent Index": 191.65,
     "MATTERS Tax/Financial Climate Index": -41.73,
     "MATTERS Quality of Life Index": 27.79,
     "MATTERS Cost of Doing Business Index": -41.83
   },
   {
-    "primaryKey": "Utah",
+    "Title": "Utah",
     "MATTERS Talent Index": 34.96,
     "MATTERS Tax/Financial Climate Index": 81.62,
     "MATTERS Quality of Life Index": 61.23,
     "MATTERS Cost of Doing Business Index": 54.23
   },
   {
-    "primaryKey": "Ohio",
+    "Title": "Ohio",
     "MATTERS Talent Index": -40.11,
     "MATTERS Tax/Financial Climate Index": 26.07,
     "MATTERS Quality of Life Index": 1.23,
     "MATTERS Cost of Doing Business Index": 0.04
   },
   {
-    "primaryKey": "Hawaii",
+    "Title": "Hawaii",
     "MATTERS Talent Index": -9.54,
     "MATTERS Tax/Financial Climate Index": -30.84,
     "MATTERS Quality of Life Index": -43.09,
     "MATTERS Cost of Doing Business Index": -122.47
   },
   {
-    "primaryKey": "Maine",
+    "Title": "Maine",
     "MATTERS Talent Index": -60.14,
     "MATTERS Tax/Financial Climate Index": -60.25,
     "MATTERS Quality of Life Index": -8.88,
     "MATTERS Cost of Doing Business Index": -24.87
   },
   {
-    "primaryKey": "California",
+    "Title": "California",
     "MATTERS Talent Index": 26,
     "MATTERS Tax/Financial Climate Index": -47.06,
     "MATTERS Quality of Life Index": -66.85,
     "MATTERS Cost of Doing Business Index": -26.72
   },
   {
-    "primaryKey": "Oklahoma",
+    "Title": "Oklahoma",
     "MATTERS Talent Index": -57.35,
     "MATTERS Tax/Financial Climate Index": -5.53,
     "MATTERS Quality of Life Index": -9.85,
     "MATTERS Cost of Doing Business Index": 16.42
   },
   {
-    "primaryKey": "Kentucky",
+    "Title": "Kentucky",
     "MATTERS Talent Index": -95.49,
     "MATTERS Tax/Financial Climate Index": -9.66,
     "MATTERS Quality of Life Index": 17.54,
     "MATTERS Cost of Doing Business Index": -28.68
   },
   {
-    "primaryKey": "New York",
+    "Title": "New York",
     "MATTERS Talent Index": 47.43,
     "MATTERS Tax/Financial Climate Index": -81.67,
     "MATTERS Quality of Life Index": -66.51,
     "MATTERS Cost of Doing Business Index": -59.22
   },
   {
-    "primaryKey": "Louisiana",
+    "Title": "Louisiana",
     "MATTERS Talent Index": -82.1,
     "MATTERS Tax/Financial Climate Index": -21.28,
     "MATTERS Quality of Life Index": -54.27,
     "MATTERS Cost of Doing Business Index": 22.07
   },
   {
-    "primaryKey": "Texas",
+    "Title": "Texas",
     "MATTERS Talent Index": -7.79,
     "MATTERS Tax/Financial Climate Index": 105.4,
     "MATTERS Quality of Life Index": -29.69,
     "MATTERS Cost of Doing Business Index": 37.12
   },
   {
-    "primaryKey": "Vermont",
+    "Title": "Vermont",
     "MATTERS Talent Index": 70.91,
     "MATTERS Tax/Financial Climate Index": -89.47,
     "MATTERS Quality of Life Index": 39.04,

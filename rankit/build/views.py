@@ -24,7 +24,7 @@ def getDataset(dataset_name):
 
 def filterByPrimaryKey(datastore):
     #filter only object names
-    datastore_ids = list(map(lambda data: data["primaryKey"], datastore))
+    datastore_ids = list(map(lambda data: data["Title"], datastore))
     datastore_ids.sort()
 
     return datastore_ids
@@ -127,7 +127,7 @@ def primaryKeyToIndex(dataset_list, primaryKeyPairs):
 def findIndex(primKey, dataset_list):
     index = 0
     for list_entry in dataset_list:
-        if list_entry["primaryKey"] == primKey:
+        if list_entry["Title"] == primKey:
             return index
         else:
             index = index + 1

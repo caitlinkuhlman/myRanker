@@ -36,8 +36,8 @@ def build(dataset, pairs) :
 
     data_train = dataset.iloc[pair_indices]
 
-    data = np.nan_to_num(dataset.drop('primaryKey', axis=1))
-    X = np.nan_to_num(data_train.drop('primaryKey', axis=1))
+    data = np.nan_to_num(dataset.drop('Title', axis=1))
+    X = np.nan_to_num(data_train.drop('Title', axis=1))
     # print X
     pairs_start = []
     pairs_end = []
@@ -58,7 +58,18 @@ def build(dataset, pairs) :
     res['Prediction'] = y_pred
     res = res.rank(ascending=False)
 
-    dataset['Prediction'] = res['Prediction']
+    # cols = dataset.columns.tolist()
+    # cols.insert(0, cols.pop(cols.index('Title')))
+    # dataset = dataset.reindex(columns=cols)
+    # dataset.insert(0, 'Rank',  res['Prediction'])
+
+    # dataset.reindex(columns=['Rank', 'Title'])
+    # dataset.insert(1, 'Title', dataset['primaryKey'])
+    # dataset['primaryKey'] = res['primaryKey']
+    # dataset.rename(columns={'primaryKey': 'Title'}, inplace=True)
+
+
+    dataset['Rank'] = res['Prediction']
 
     return dataset
 
