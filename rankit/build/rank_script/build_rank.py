@@ -24,20 +24,20 @@ def normalize(df):
 def scale(df):
     return(100 * (df - df.min()) / (df.max() - df.min()))
 
-def clean_dataset(dataset):
+def clean_dataset(dataset, primary_key):
     cleaned_dataset = dataset.select_dtypes([np.number]).copy()
-    cleaned_dataset['primaryKey'] = dataset['primaryKey']
+    cleaned_dataset[primary_key] = dataset[primary_key]
     return cleaned_dataset
 
 
-def build(dataset, pairs) :
+def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
     pair_indices = pairs["high"].append(pairs["low"]).drop_duplicates().values
-    # dataset = clean_dataset(dataset)
+    # dataset = clean_dataset(dataset, primary_key)
 
     data_train = dataset.iloc[pair_indices]
 
-    data = np.nan_to_num(dataset.drop('Title', axis=1))
-    X = np.nan_to_num(data_train.drop('Title', axis=1))
+    data = np.nan_to_num(dataset.drop(primary_key, axis=1))
+    X = np.nan_to_num(data_train.drop(primary_key, axis=1))
     # print X
     pairs_start = []
     pairs_end = []
@@ -58,18 +58,7 @@ def build(dataset, pairs) :
     res['Prediction'] = y_pred
     res = res.rank(ascending=False)
 
-    # cols = dataset.columns.tolist()
-    # cols.insert(0, cols.pop(cols.index('Title')))
-    # dataset = dataset.reindex(columns=cols)
-    # dataset.insert(0, 'Rank',  res['Prediction'])
-
-    # dataset.reindex(columns=['Rank', 'Title'])
-    # dataset.insert(1, 'Title', dataset['primaryKey'])
-    # dataset['primaryKey'] = res['primaryKey']
-    # dataset.rename(columns={'primaryKey': 'Title'}, inplace=True)
-
-
-    dataset['Rank'] = res['Prediction']
+    dataset[rank] = res['Prediction']
 
     return dataset
 
