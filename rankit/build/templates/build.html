@@ -564,9 +564,21 @@
     });
 
     function lc_urlUpdate() {
-        var list = Array.from(document.querySelectorAll('#lc-center .object')).map(x => x.id)
+        var list = Array.from(document.querySelectorAll('#lc-center .object')).map(x => nameToId(x.id))
         var url = window.location.pathname + "?method="+"lc"+"&"+"objects="
         history.pushState({}, 'List Comparison', url + list.toString())
+    }
+    function nameToId(name) {
+        if (name !== undefined) {
+            var i=0
+            {% for x in dataset %}
+                if ('{{ x }}' == name) {
+                    return i
+                }
+                i++
+            {% endfor %}
+        }
+        return -1
     }
 
 
@@ -605,8 +617,22 @@
       if (selectedObjects !== undefined && selectedObjects != "") {
         var objects = selectedObjects.split(',');
       }
-      console.log(objects)
-      return objects;
+      if (objects !== undefined) {
+            // Convert ids back to names
+            var objectsNames = Array.from(objects.map(x => idToName(x)))
+            return objectsNames;
+        }
+        return objects;
+    }
+     function idToName(id) {
+        var i = 0
+        {% for x in dataset %}
+            if (id == i) {
+                return '{{ x }}'
+            }
+            i++
+        {% endfor %}
+        return id
     }
 
     var lc_objectsFromURL = {}
@@ -689,9 +715,9 @@
     });
 
     function cc_urlUpdate() {
-        const high = Array.from(document.querySelectorAll('#left .object')).map(x => x.id)
-        const med = Array.from(document.querySelectorAll('#center .object')).map(x => x.id)
-        const low = Array.from(document.querySelectorAll('#right .object')).map(x => x.id)
+        const high = Array.from(document.querySelectorAll('#left .object')).map(x => nameToId(x.id))
+        const med = Array.from(document.querySelectorAll('#center .object')).map(x => nameToId(x.id))
+        const low = Array.from(document.querySelectorAll('#right .object')).map(x => nameToId(x.id))
         var url = window.location.pathname + "?method="+"cc"+"&"+"high=" + high.toString() + "&" + "medium=" + med.toString() + "&" + "low=" + low.toString()
         history.pushState({}, 'Categorical Comparison', url)
     }
@@ -731,30 +757,57 @@
     }();
 
     function cc_getHighFromURL() {
-      var selectedHigh = cc_QueryString.high;
+        var selectedHigh = cc_QueryString.high;
 
-      if (selectedHigh !== undefined && selectedHigh != "") {
-        var high = selectedHigh.split(',');
-      }
-      return high;
+	    if (selectedHigh !== undefined && selectedHigh != "") {
+	        var highIds = selectedHigh.split(',');
+        }
+        // Convert ids back to names
+        if (highIds !== undefined) {
+	        var highNames = Array.from(highIds.map(x => idToName(x)))
+            return highNames;
+        }
+        return highIds;
     }
 
     function cc_getMediumFromURL() {
-      var selectedMedium = cc_QueryString.medium;
+        var selectedMedium = cc_QueryString.medium;
 
-      if (selectedMedium !== undefined && selectedMedium != "") {
-        var medium = selectedMedium.split(',');
-      }
-      return medium;
+	    if (selectedMedium !== undefined && selectedMedium != "") {
+	        var mediumIds = selectedMedium.split(',');
+        }
+        // Convert ids back to names
+        if (mediumIds !== undefined) {
+	        var mediumNames = Array.from(mediumIds.map(x => idToName(x)))
+            return mediumNames;
+        }
+        return mediumIds;
     }
 
     function cc_getLowFromURL() {
-      var selectedLow = cc_QueryString.low;
+        var selectedLow = cc_QueryString.low;
 
-      if (selectedLow !== undefined && selectedLow != "") {
-        var low = selectedLow.split(',');
-      }
-      return low;
+	    if (selectedLow !== undefined && selectedLow != "") {
+	        var lowIds = selectedLow.split(',');
+        }
+        // Convert ids back to names
+        if (lowIds !== undefined) {
+	        var lowNames = Array.from(lowIds.map(x => idToName(x)))
+            return lowNames;
+        }
+        return lowIds;
+    }
+     function idToName(id) {
+        var i = 0
+        {% for x in dataset %}
+            console.log(id)
+            console.log(i)
+            if (id == i) {
+                return '{{ x }}'
+            }
+            i++
+        {% endfor %}
+        return id
     }
 
     var cc_highFromURL = {}
@@ -845,10 +898,23 @@
     });
 
     function pwc_urlUpdate() {
-        const high = Array.from(document.querySelectorAll('.high > div')).map(x => x.id)
-        const low = Array.from(document.querySelectorAll('.low > div')).map(x => x.id)
+        const high = Array.from(document.querySelectorAll('.high > div')).map(x => nameToId(x.id))
+        const low = Array.from(document.querySelectorAll('.low > div')).map(x => nameToId(x.id))
         var url = window.location.pathname + "?method="+"pwc"+"&"+"left=" + high.toString() + "&" + "right=" + low.toString()
         history.pushState({}, 'Pairwise Comparison', url)
+    }
+
+    function nameToId(name) {
+        if (name !== undefined) {
+            var i=0
+            {% for x in dataset %}
+                if ('{{ x }}' == name) {
+                    return i
+                }
+                i++
+            {% endfor %}
+        }
+        return -1
     }
 
 
@@ -882,20 +948,42 @@
       return query_string;
     }();
     function getHighFromURL() {
-      var selectedHigh = QueryString.left;
+        var selectedHigh = QueryString.left;
 
-      if (selectedHigh !== undefined && selectedHigh != "") {
-        var high = selectedHigh.split(',');
-      }
-      return high;
+	    if (selectedHigh !== undefined && selectedHigh != "") {
+	        var highIds = selectedHigh.split(',');
+        }
+        // Convert ids back to names
+        if (highIds !== undefined) {
+	        var highNames = Array.from(highIds.map(x => idToName(x)))
+            return highNames;
+        }
+        return highIds;
     }
     function getLowFromURL() {
       var selectedLow = QueryString.right;
 
-      if (selectedLow !== undefined && selectedLow != "") {
-        var low = selectedLow.split(',');
-      }
-      return low;
+	    if (selectedLow !== undefined && selectedLow != "") {
+	        var lowIds = selectedLow.split(',');
+        }
+        // Convert ids back to names
+        if (lowIds !== undefined) {
+	        var lowNames = Array.from(lowIds.map(x => idToName(x)))
+            return lowNames;
+        }
+        return lowIds;
+    }
+    function idToName(id) {
+        var i = 0
+        {% for x in dataset %}
+            console.log(id)
+            console.log(i)
+            if (id == i) {
+                return '{{ x }}'
+            }
+            i++
+        {% endfor %}
+        return id
     }
     var highFromURL = {}
     var lowFromURL = {}
