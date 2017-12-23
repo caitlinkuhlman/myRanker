@@ -14,200 +14,114 @@
   <title>RANKit Build</title>
 
   <style>
-    .inner1 {
-      display: inline-block;
-    }
 
-    .footer {
-      background: #181818;
-      text-align: center;
-      font-size: 120%;
-      color: #E3F2F4;
-    }
+  .add_pairwise {
+    width: 15%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 4px;
+    background: rgba(231, 76, 60, 1);
+    color: #fefffb;
+    font-weight: normal;
+    font-size: 100%;
+    position: absolute;
+    right: 0;
+    vertical-align: baseline;
+    float: right;
+    margin: 0px 50px;
+  }
 
-    .add_pairwise {
-      width: 15%;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
-      appearance: none;
-      border: none;
-      border-radius: 4px;
-      background: rgba(231, 76, 60, 1);
-      color: #fefffb;
-      font-weight: normal;
-      font-size: 100%;
-      position: absolute;
-      right: 0;
-      vertical-align: baseline;
-      float: right;
-      margin: 0px 50px;
-    }
+  h2 {
+    text-align: center;
+    color: #333;
+    font-size: 30px;
+  }
 
-    .submit {
-      width: 15%;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
-      appearance: none;
-      border: none;
-      border-radius: 4px;
-      background: rgba(231, 76, 60, 1);
-      color: #fefffb;
-      font-weight: normal;
-      font-size: 100%;
-      position: absolute;
-      right: 0;
-      vertical-align: baseline;
-      float: right;
-      margin: 0px 50px;
-    }
+  body {
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
 
-    .submit[disabled] {
-      background-color: rgba(200, 200, 200, 0.6);
-      color: #ffffff;
-      width: 15%;
-      vertical-align: baseline;
-      font-family: sans-serif;
-      font-weight: normal;
-      font-size: 100%;
-      float: right;
-      margin: 0px 50px;
-    }
+  .semi-transparent-button:hover {
+    color: #fff;
+    border: 1px solid;
+    border-color: white;
+  }
 
-    .middle {
-      grid-area: center;
-    }
+  p {
+    text-align: center;
+  }
 
-    h2 {
-      text-align: center;
-      color: #333;
-      font-size: 30px;
-    }
-
-    body {
-      /*background-color: #3f435f;*/
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-    }
+  .build-description {
+    color: #777;
+    min-height: 82px;
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);;
+  }
 
 
-    .page-header h1 {
-      padding: 0px 20px 0px;
-      color: white;
-      font-size: 40px;
-      margin: 0;
-      display: inline-block;
+  .submit {
+    width: 15%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 4px;
+    background: rgba(231,76,60, 1);
+    color: #fefffb;
+    font-weight: normal;
+    font-size: 100%;
+    {#        margin: -2px 50px;#}
+    position: absolute;
+    right: 0;
+    vertical-align:baseline;
+    float: right;
+    margin: 0px 50px;
 
-    }
+  }
 
-    .page-header {
-      background-color: #2980B9;
+  .submit[disabled] {
+    background-color:  rgba(200, 200, 200, 0.6);
+    {#        background-color: rgba(161,161,161, 0.8);#}
+    {#        background-color: #a1a1a1;#}
+    color: #ffffff;
+    width: 15%;
+    vertical-align:baseline;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 100%;
+    float: right;
+    margin: 0px 50px;
+  }
 
-    }
+  .semi-transparent-button{
+    background-color:  rgba(200, 200, 200, 0.6);
 
-    .middleNav {
-      margin: 2px 0px;
-      padding-right: 405px;
-      position: absolute;
-      margin-left: auto;
-      margin-right: auto;
-      right: 0;
-    }
+    {#            background-color: rgba(161,161,161, 0.8);#}
+    border-radius: 2px;
+    border-color: rgba(200, 200, 200, 0.6);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    border: 1px solid rgba(200, 200, 200, 0.6);
+    text-decoration-color: white;
 
-    .semi-transparent-button {
-      background-color: rgba(200, 200, 200, 0.6);
-      border-radius: 2px;
-      border-color: rgba(200, 200, 200, 0.6);
-      color: #fff;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.3s ease-out;
-      border: 1px solid rgba(200, 200, 200, 0.6);
-      text-decoration-color: white;
-    }
+  }
 
-
-    .semi-transparent-button:hover {
-      color: #fff;
-      border: 1px solid;
-      border-color: white;
-    }
-
-
-    #build-container {
-      display: grid;
-      /* height: 100vh; */
-      grid-template-areas: "build-left build-right";
-      grid-template-columns: 3fr 2fr;
-    }
-
-    #build-left {
-      grid-area: build-left;
-    }
-
-    #build-right {
-      grid-area: build-right;
-      /* background-color: green; */
-    }
-
-    .build-pool-header {
-      background-color: #2980B9;
-      min-height: 82px;
-      padding: 16px;
-    }
-
-    .build-list-header {
-      /* background-color:#fff; */
-      min-height: 82px;
-      padding: 16px;
-    }
-
-    .pw {
-      display: grid;
-      grid-template-areas: "high low";
-      grid-template-columns: 1fr 1fr;
-      border: 4px solid #E74C3C;
-      margin: 16px;
-    }
-
-    #more {
-      grid-area: more;
-      padding: 12px;
-      margin-bottom: 48px;
-    }
-
-    .high {
-      grid-area: high;
-      padding: 8px;
-    }
-
-    .low {
-      grid-area: low;
-      padding: 8px;
-    }
-
-    .lcb {
-      height: 70vh;
-    }
-    .ccb {
-      height: 19vh;
-    }
-
-    p {
-      text-align: center;
-    }
-
-    .build-description {
-      color: #777;
-      min-height: 82px;
-      padding: 16px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);;
-    }
+  .semi-transparent-button:hover{
+    color: #fff;
+    border: 1px solid;
+    border-color: white;
+  }
 
   </style>
 
@@ -231,840 +145,840 @@
         <li>
           <a href={{ url_for( 'build.buildList')}}> Dataset</a>
         </li>
-{#        <li class="dropdown">#}
-{#          <a class="dropdown-toggle" data-toggle="dropdown">Build#}
-{#            <strong class="caret"></strong>#}
-{#          </a>#}
-{#          <ul class="dropdown-menu">#}
-{#            <li>#}
-{#              <a href={{ url_for( 'build.categorical', dataset_name=dataset_name) }}>Categorical Comparison</a>#}
-{#            </li>#}
-{#            <li class="divider">#}
-{#            </li>#}
-{#            <li>#}
-{#              <a href={{ url_for( 'build.listComparison', dataset_name=dataset_name) }}>List Comparison</a>#}
-{#            </li>#}
-{#            <li class="divider">#}
-{#            </li>#}
-{#            <li>#}
-{#              <a href={{ url_for( 'build.pairwise', dataset_name=dataset_name) }}>Pairwise Comparison</a>#}
-{#            </li>#}
-{#          </ul>#}
-{#        </li>#}
-        <li>
-          <a href="{{ url_for('explore.explore', dataset_name= dataset_name) }}">Explore</a>
-        </li>
-      </ul>
+        {#        <li class="dropdown">#}
+          {#          <a class="dropdown-toggle" data-toggle="dropdown">Build#}
+            {#            <strong class="caret"></strong>#}
+            {#          </a>#}
+            {#          <ul class="dropdown-menu">#}
+              {#            <li>#}
+                {#              <a href={{ url_for( 'build.categorical', dataset_name=dataset_name) }}>Categorical Comparison</a>#}
+                {#            </li>#}
+                {#            <li class="divider">#}
+                  {#            </li>#}
+                  {#            <li>#}
+                    {#              <a href={{ url_for( 'build.listComparison', dataset_name=dataset_name) }}>List Comparison</a>#}
+                    {#            </li>#}
+                    {#            <li class="divider">#}
+                      {#            </li>#}
+                      {#            <li>#}
+                        {#              <a href={{ url_for( 'build.pairwise', dataset_name=dataset_name) }}>Pairwise Comparison</a>#}
+                        {#            </li>#}
+                        {#          </ul>#}
+                        {#        </li>#}
+                        <li>
+                          <a href="{{ url_for('explore.explore', dataset_name= dataset_name) }}">Explore</a>
+                        </li>
+                      </ul>
 
-    </div>
+                    </div>
 
-  </nav>
-  <div id="build-container">
-    <!-- this is the left side of the build view -->
-    <div id="build-left">
+                  </nav>
+                  <div id="build-container">
+                    <!-- this is the left side of the build view -->
+                    <div id="build-left">
 
-      <!-- this is the header -->
-      <div class="build-pool-header">
-        <div class="navbar-form navbar-center" role="search">
-          <!-- search -->
-          <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
-          <!-- sort -->
-          <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">
-            Sort
-          </button>
-          <!-- shuffle -->
-          <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
-            Shuffle
-          </button>
-          <!-- help -->
-          <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn">
-            <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-          </button>
-        </div>
-
-
-      <ul class="cd-tour-wrapper">
-        <li class="cd-single-step">
-          <span>Step 1</span>
-
-          <div class="cd-more-info right">
-            <h2>Step Number 1</h2>
-            <p>Select and click a method you wish to rank with.</p>
-            List Comparison: Rank all of your items in an ordered list.<br>
-            <br>Categorical Comparison: Rank your items by organizing them into three categories. There is no order within each category.<br>
-            <br>Pairwise Comparison: Compare your items in pairs to judge which of the two item in a pair is preferred over the other.<br>
-          </p>
-            <img src="{{ url_for('static',filename='images/Step11.png') }}">
-          </div>
-        </li> <!-- .cd-single-step -->
-
-        <li class="cd-single-step">
-          <span>Step 2</span>
-
-          <div class="cd-more-info top">
-            <h2>Step Number 2</h2>
-            <p>Select and drag each item to the desired ranking panel.</p>
-            <img src="{{ url_for('static',filename='images/step22.png') }}">
-          </div>
-        </li> <!-- .cd-single-step -->
-
-        <li class="cd-single-step">
-          <span>Step 3</span>
-
-          <div class="cd-more-info bottom">
-            <h2>Step Number 3</h2>
-            <p>You can randomize the dataset items by clicking the shuffle button.</p>
-            <img src="{{ url_for('static',filename='images/step44.png') }}">
-          </div>
-        </li>
-
-        <li class="cd-single-step">
-          <span>Step 4</span>
-
-          <div class="cd-more-info bottom">
-            <h2>Step Number 4</h2>
-            <p>After you use shuffle, you can sort the data set objects in Alphabetical Order by clicking the Sort button to help your ranking picks.</p>
-            <img src="{{ url_for('static',filename='images/step33.png') }}">
-          </div>
-        </li>
-
-        <li class="cd-single-step">
-          <span>Step 5</span>
-
-          <div class="cd-more-info left">
-            <h2>Step Number 5</h2>
-            <p>One your finished with the ranking, click the Rank button to see your results!</p>
-            <img src="{{ url_for('static',filename='images/step55.png') }}">
-          </div>
-        </li>
-
-      </ul>
-    <div class="cd-cover-layer"></div>
+                      <!-- this is the header -->
+                      <div class="build-pool-header">
+                        <div class="navbar-form navbar-center" role="search">
+                          <!-- search -->
+                          <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
+                          <!-- sort -->
+                          <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">
+                            Sort
+                          </button>
+                          <!-- shuffle -->
+                          <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
+                            Shuffle
+                          </button>
+                          <!-- help -->
+                          <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn">
+                            <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                          </button>
+                        </div>
 
 
-      </div>
+                        <ul class="cd-tour-wrapper">
+                          <li class="cd-single-step">
+                            <span>Step 1</span>
 
-      <!-- this is the pool -->
-      <div class="scrollingDragInner viewBackround">
-        <div id="top" class="pool">
-          <!-- objects from dataset inserted here -->
-          {% for x in dataset %}
-          <div id="{{x}}" class="object noSelect">{{x}}</div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
+                            <div class="cd-more-info right">
+                              <h2>Step Number 1</h2>
+                              <p>Select and click a method you wish to rank with.</p>
+                              List Comparison: Rank all of your items in an ordered list.<br>
+                              <br>Categorical Comparison: Rank your items by organizing them into three categories. There is no order within each category.<br>
+                              <br>Pairwise Comparison: Compare your items in pairs to judge which of the two item in a pair is preferred over the other.<br>
+                            </p>
+                            <img src="{{ url_for('static',filename='images/Step11.png') }}">
+                          </div>
+                        </li> <!-- .cd-single-step -->
 
-    <!-- ****************************************************************************** -->
-    <!-- this is the right side of the build view -->
-    <div id="build-right">
+                        <li class="cd-single-step">
+                          <span>Step 2</span>
+
+                          <div class="cd-more-info top">
+                            <h2>Step Number 2</h2>
+                            <p>Select and drag each item to the desired ranking panel.</p>
+                            <img src="{{ url_for('static',filename='images/step22.png') }}">
+                          </div>
+                        </li> <!-- .cd-single-step -->
+
+                        <li class="cd-single-step">
+                          <span>Step 3</span>
+
+                          <div class="cd-more-info bottom">
+                            <h2>Step Number 3</h2>
+                            <p>You can randomize the dataset items by clicking the shuffle button.</p>
+                            <img src="{{ url_for('static',filename='images/step44.png') }}">
+                          </div>
+                        </li>
+
+                        <li class="cd-single-step">
+                          <span>Step 4</span>
+
+                          <div class="cd-more-info bottom">
+                            <h2>Step Number 4</h2>
+                            <p>After you use shuffle, you can sort the data set objects in Alphabetical Order by clicking the Sort button to help your ranking picks.</p>
+                            <img src="{{ url_for('static',filename='images/step33.png') }}">
+                          </div>
+                        </li>
+
+                        <li class="cd-single-step">
+                          <span>Step 5</span>
+
+                          <div class="cd-more-info left">
+                            <h2>Step Number 5</h2>
+                            <p>One your finished with the ranking, click the Rank button to see your results!</p>
+                            <img src="{{ url_for('static',filename='images/step55.png') }}">
+                          </div>
+                        </li>
+
+                      </ul>
+                      <div class="cd-cover-layer"></div>
 
 
-      <div class="build-description">
-        <p>
-          Choose how you want to rank between List, Categorical, and Pairwise.
-          Drag and drop each item in the data set.
-          Once you're done with your ranking, click “Rank!” Button Below.
-        </p>
-      </div>
+                    </div>
+
+                    <!-- this is the pool -->
+                    <div class="scrollingDragInner viewBackround">
+                      <div id="top" class="pool">
+                        <!-- objects from dataset inserted here -->
+                        {% for x in dataset %}
+                        <div id="{{x}}" class="object noSelect">{{x}}</div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ****************************************************************************** -->
+                  <!-- this is the right side of the build view -->
+                  <div id="build-right">
 
 
-      <!-- this is the header -->
-      <ul class="nav nav-pills build-list-header" role="tablist">
-        <li id="lc_tab" role="presentation" class="active">
-          <a href="#lc" onclick="lc_urlUpdate()" aria-controls="lc" role="tab" data-toggle="tab">List</a>
-        </li>
-        <li id="cc_tab" role="presentation">
-          <a href="#cc" onclick="cc_urlUpdate()" aria-controls="cc" role="tab" data-toggle="tab">Categorical</a>
-        </li>
-        <li id="pwc_tab" role="presentation">
-          <a href="#pwc" onclick="pwc_urlUpdate()" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise</a>
-        </li>
-        <!-- <li role="presentation">
-        <br>
-        <p>Drag and drop each item in the dataset to your ranking highlighted in red. Once you're done click the “Rank!” button at the buttom of your ranking</p>
-      </li> -->
+                    <div class="build-description">
+                      <p>
+                        Choose how you want to rank between List, Categorical, and Pairwise.
+                        Drag and drop each item in the data set.
+                        Once you're done with your ranking, click “Rank!” Button Below.
+                      </p>
+                    </div>
 
 
-      </ul>
+                    <!-- this is the header -->
+                    <ul class="nav nav-pills build-list-header" role="tablist">
+                      <li id="lc_tab" role="presentation" class="active">
+                        <a href="#lc" onclick="lc_urlUpdate()" aria-controls="lc" role="tab" data-toggle="tab">List</a>
+                      </li>
+                      <li id="cc_tab" role="presentation">
+                        <a href="#cc" onclick="cc_urlUpdate()" aria-controls="cc" role="tab" data-toggle="tab">Categorical</a>
+                      </li>
+                      <li id="pwc_tab" role="presentation">
+                        <a href="#pwc" onclick="pwc_urlUpdate()" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise</a>
+                      </li>
+                      <!-- <li role="presentation">
+                      <br>
+                      <p>Drag and drop each item in the dataset to your ranking highlighted in red. Once you're done click the “Rank!” button at the buttom of your ranking</p>
+                    </li> -->
 
-      <!-- this is the lists -->
-      <div class="tab-content">
-        <!-- this is List Comparison tab -->
-        <div role="tabpanel" class="tab-pane fade in active" id="lc">
 
-          <div class="scrollingDragInner box">
-            <div id="lc-center" class="list lcb"></div>
-          </div>
-          <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
+                  </ul>
 
-        </div>
-        <!-- this is Categorical Comparison tab -->
-        <div role="tabpanel" class="tab-pane fade" id="cc">
+                  <!-- this is the lists -->
+                  <div class="tab-content">
+                    <!-- this is List Comparison tab -->
+                    <div role="tabpanel" class="tab-pane fade in active" id="lc">
 
-          <div class="scrollingDragInner box">
-            <div id="left" class="list ccb"></div>
-          </div>
-          <div class="scrollingDragInner box">
-            <div id="center" class="list ccb"></div>
-          </div>
-          <div class="scrollingDragInner box">
-            <div id="right" class="list ccb"></div>
-          </div>
-          <button type="button" id="cc-submit" class="btn submit" disabled="disabled">RANK!</button>
+                      <div class="scrollingDragInner box">
+                        <div id="lc-center" class="list lcb"></div>
+                      </div>
+                      <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
 
-        </div>
-        <!-- this is Pairwise Comparison tab -->
-        <div role="tabpanel" class="tab-pane fade" id="pwc">
+                    </div>
+                    <!-- this is Categorical Comparison tab -->
+                    <div role="tabpanel" class="tab-pane fade" id="cc">
 
-          <div id="pwl">
-            <div class="pw">
-              <div class="high list"></div>
-              <div class="low list"></div>
-            </div>
-          </div>
-          <button type="button" class="btn " id="more" onclick="handleMore()">Add New Pairwise</button>
-          <button type="button" id="submit" class="btn submit" disabled="disabled">RANK!</button>
-        </div>
-      </div>
-    </div>
-  </div>
+                      <div class="scrollingDragInner box">
+                        <div id="left" class="list ccb"></div>
+                      </div>
+                      <div class="scrollingDragInner box">
+                        <div id="center" class="list ccb"></div>
+                      </div>
+                      <div class="scrollingDragInner box">
+                        <div id="right" class="list ccb"></div>
+                      </div>
+                      <button type="button" id="cc-submit" class="btn submit" disabled="disabled">RANK!</button>
 
-  <!-- this is script for the pool -->
-  <script>
+                    </div>
+                    <!-- this is Pairwise Comparison tab -->
+                    <div role="tabpanel" class="tab-pane fade" id="pwc">
 
-    function getDataset() {
-      return Array.from(document.querySelector('#top').children).map(x => x.innerText)
-    }
+                      <div id="pwl">
+                        <div class="pw">
+                          <div class="high list"></div>
+                          <div class="low list"></div>
+                        </div>
+                      </div>
+                      <button type="button" class="btn " id="more" onclick="handleMore()">Add New Pairwise</button>
+                      <button type="button" id="submit" class="btn submit" disabled="disabled">RANK!</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-    function sortDataset() {
-      const dataset = getDataset()
-      dataset.sort()
-      render(dataset)
-    }
+              <!-- this is script for the pool -->
+              <script>
 
-    function shuffleDataset() {
-      const dataset = getDataset()
-      for (let i = dataset.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [dataset[i], dataset[j]] = [dataset[j], dataset[i]];
-      }
-      render(dataset)
-    }
+              function getDataset() {
+                return Array.from(document.querySelector('#top').children).map(x => x.innerText)
+              }
 
-    const dataset = getDataset()
-    function searchDataset(e) {
-      let difference = dataset.filter(x => getRankedObjects().indexOf(x) == -1)
-      const value = e.target.value
-      const re = new RegExp(value, 'i')
-      const newDataset = difference.filter(x => re.test(x))
-      render(newDataset)
-    }
+              function sortDataset() {
+                const dataset = getDataset()
+                dataset.sort()
+                render(dataset)
+              }
 
-    function render(dataset) {
-      const pool = document.querySelector('#top')
-      const html = dataset.map(x => `<div id="${x}" class="object noSelect">${x}</div>`).join('\n')
-      pool.innerHTML = html
-    }
-  </script>
+              function shuffleDataset() {
+                const dataset = getDataset()
+                for (let i = dataset.length - 1; i > 0; i--) {
+                  const j = Math.floor(Math.random() * (i + 1));
+                  [dataset[i], dataset[j]] = [dataset[j], dataset[i]];
+                }
+                render(dataset)
+              }
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
+              const dataset = getDataset()
+              function searchDataset(e) {
+                let difference = dataset.filter(x => getRankedObjects().indexOf(x) == -1)
+                const value = e.target.value
+                const re = new RegExp(value, 'i')
+                const newDataset = difference.filter(x => re.test(x))
+                render(newDataset)
+              }
 
-  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
-  <script>
-    const source = document.querySelector('#top')
-    const target = document.querySelector('#lc-center')
+              function render(dataset) {
+                const pool = document.querySelector('#top')
+                const html = dataset.map(x => `<div id="${x}" class="object noSelect">${x}</div>`).join('\n')
+                pool.innerHTML = html
+              }
+              </script>
 
-    const source_sortable = Sortable.create(source, {
-      group: 'list',
-      animation: 300,
-      sort: false,
-      ghostClass: 'ghost',
-    })
+              <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+              <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}"></script>
+              <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+              <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}"></script>
+              <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+              <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
 
-    const target_sortable = Sortable.create(target, {
-      group: 'list',
-      animation: 300,
-      ghostClass: 'ghost',
-    })
+              <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
+              <script>
+              const source = document.querySelector('#top')
+              const target = document.querySelector('#lc-center')
 
-    const med = document.querySelector('#center')
-    const high = document.querySelector('#left')
-    const low = document.querySelector('#right')
+              const source_sortable = Sortable.create(source, {
+                group: 'list',
+                animation: 300,
+                sort: false,
+                ghostClass: 'ghost',
+              })
 
-    const high_sortable = Sortable.create(high, {
-      group: 'list',
-      animation: 300,
-      ghostClass: 'ghost',
-    })
-    const med_sortable = Sortable.create(med, {
-      group: 'list',
-      animation: 300,
-      ghostClass: 'ghost',
-    })
-    const low_sortable = Sortable.create(low, {
-      group: 'list',
-      animation: 300,
-      ghostClass: 'ghost',
-    })
+              const target_sortable = Sortable.create(target, {
+                group: 'list',
+                animation: 300,
+                ghostClass: 'ghost',
+              })
 
-    // const high = document.querySelector('.high')
-    // const low = document.querySelector('.low')
+              const med = document.querySelector('#center')
+              const high = document.querySelector('#left')
+              const low = document.querySelector('#right')
 
-    function add_to_sortable(className) {
-      const all = document.querySelectorAll(className)
+              const high_sortable = Sortable.create(high, {
+                group: 'list',
+                animation: 300,
+                ghostClass: 'ghost',
+              })
+              const med_sortable = Sortable.create(med, {
+                group: 'list',
+                animation: 300,
+                ghostClass: 'ghost',
+              })
+              const low_sortable = Sortable.create(low, {
+                group: 'list',
+                animation: 300,
+                ghostClass: 'ghost',
+              })
 
-      all.forEach(t => Sortable.create(t, {
-        group: {
-          name: 'list',
-          put: (to) => to.el.children.length < 1,
-        },
-        animation: 100,
+              // const high = document.querySelector('.high')
+              // const low = document.querySelector('.low')
 
-      }))
+              function add_to_sortable(className) {
+                const all = document.querySelectorAll(className)
 
-    }
-    add_to_sortable('.high')
-    add_to_sortable('.low')
+                all.forEach(t => Sortable.create(t, {
+                  group: {
+                    name: 'list',
+                    put: (to) => to.el.children.length < 1,
+                  },
+                  animation: 100,
 
-    function handleMore() {
-      const pwl = document.querySelector('#pwl')
-      const html = `<div class="pw"><div class="high list"></div><div class="low list"></div></div>`
-      pwl.innerHTML += html
-      // const highs = document.querySelectorAll('.high')
-      // const high = highs[highs.length-1]
-      add_to_sortable('.high')
-      add_to_sortable('.low')
-    }
+                }))
 
-  </script>
-  <!-- List Comparison Related Scripts -->
-  <script>
+              }
+              add_to_sortable('.high')
+              add_to_sortable('.low')
 
-    var min_num_of_objects = 2
+              function handleMore() {
+                const pwl = document.querySelector('#pwl')
+                const html = `<div class="pw"><div class="high list"></div><div class="low list"></div></div>`
+                pwl.innerHTML += html
+                // const highs = document.querySelectorAll('.high')
+                // const high = highs[highs.length-1]
+                add_to_sortable('.high')
+                add_to_sortable('.low')
+              }
 
-    var lc_observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
+              </script>
+              <!-- List Comparison Related Scripts -->
+              <script>
 
-        lc_urlUpdate()
+              var min_num_of_objects = 2
 
-        const list_length = document.querySelector('#lc-center').children.length
-        if (list_length < min_num_of_objects) {
-          $('#lc-submit').attr('disabled', 'disabled');
-        }
-        else {
-          $('#lc-submit').removeAttr('disabled');
-        }
-      });
-    });
+              var lc_observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
 
-    function lc_urlUpdate() {
-        var list = Array.from(document.querySelectorAll('#lc-center .object')).map(x => nameToId(x.id))
-        var url = window.location.pathname + "?method="+"lc"+"&"+"objects="
-        history.pushState({}, 'List Comparison', url + list.toString())
-    }
-    function nameToId(name) {
-        if (name !== undefined) {
-            var i=0
-            {% for x in dataset %}
-                if ('{{ x }}' == name) {
+                  lc_urlUpdate()
+
+                  const list_length = document.querySelector('#lc-center').children.length
+                  if (list_length < min_num_of_objects) {
+                    $('#lc-submit').attr('disabled', 'disabled');
+                  }
+                  else {
+                    $('#lc-submit').removeAttr('disabled');
+                  }
+                });
+              });
+
+              function lc_urlUpdate() {
+                var list = Array.from(document.querySelectorAll('#lc-center .object')).map(x => nameToId(x.id))
+                var url = window.location.pathname + "?method="+"lc"+"&"+"objects="
+                history.pushState({}, 'List Comparison', url + list.toString())
+              }
+              function nameToId(name) {
+                if (name !== undefined) {
+                  var i=0
+                  {% for x in dataset %}
+                  if ('{{ x }}' == name) {
                     return i
+                  }
+                  i++
+                  {% endfor %}
+                }
+                return -1
+              }
+
+
+              // Node, config
+              var lc_observerConfig = {
+                childList: true,
+              };
+
+              var lc_center_node = document.getElementById('lc-center');
+              lc_observer.observe(lc_center_node, lc_observerConfig);
+
+              var lc_QueryString = function () {
+                var query_string = {};
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i = 0; i < vars.length; i++) {
+                  var pair = vars[i].split("=");
+                  // If first entry with this name
+                  if (typeof query_string[pair[0]] === "undefined") {
+                    query_string[pair[0]] = decodeURIComponent(pair[1]);
+                    // If second entry with this name
+                  } else if (typeof query_string[pair[0]] === "string") {
+                    var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+                    query_string[pair[0]] = arr;
+                    // If third or later entry with this name
+                  } else {
+                    query_string[pair[0]].push(decodeURIComponent(pair[1]));
+                  }
+                }
+                return query_string;
+              }();
+
+              function lc_getParametersFromURL() {
+                var selectedObjects = lc_QueryString.objects;
+
+                if (selectedObjects !== undefined && selectedObjects != "") {
+                  var objects = selectedObjects.split(',');
+                }
+                if (objects !== undefined) {
+                  // Convert ids back to names
+                  var objectsNames = Array.from(objects.map(x => idToName(x)))
+                  return objectsNames;
+                }
+                return objects;
+              }
+              function idToName(id) {
+                var i = 0
+                {% for x in dataset %}
+                if (id == i) {
+                  return '{{ x }}'
                 }
                 i++
-            {% endfor %}
-        }
-        return -1
-    }
+                {% endfor %}
+                return id
+              }
 
+              var lc_objectsFromURL = {}
+              lc_objectsFromURL = lc_getParametersFromURL()
 
-    // Node, config
-    var lc_observerConfig = {
-      childList: true,
-    };
+              if (lc_objectsFromURL !== undefined) {
+                lc_populateBox()
+              }
 
-    var lc_center_node = document.getElementById('lc-center');
-    lc_observer.observe(lc_center_node, lc_observerConfig);
+              function lc_populateBox() {
+                console.log(lc_objectsFromURL)
+                // id="${x}" class="object noSelect"
+                for (let i = 0; i < lc_objectsFromURL.length; i++) {
+                  var node = document.createElement("DIV");
+                  var textnode = document.createTextNode(lc_objectsFromURL[i]);
+                  node.appendChild(textnode);
+                  node.setAttribute("id", lc_objectsFromURL[i]);
+                  node.setAttribute("class", "object noSelect");
+                  document.querySelector('#lc-center').appendChild(node);
+                }
+              }
 
-    var lc_QueryString = function () {
-      var query_string = {};
-      var query = window.location.search.substring(1);
-      var vars = query.split("&");
-      for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        // If first entry with this name
-        if (typeof query_string[pair[0]] === "undefined") {
-          query_string[pair[0]] = decodeURIComponent(pair[1]);
-          // If second entry with this name
-        } else if (typeof query_string[pair[0]] === "string") {
-          var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
-          query_string[pair[0]] = arr;
-          // If third or later entry with this name
-        } else {
-          query_string[pair[0]].push(decodeURIComponent(pair[1]));
-        }
-      }
-      return query_string;
-    }();
+              function getRankedObjects() {
+                return Array.from(document.querySelector('#lc-center').children).map(x => x.innerText)
+              }
 
-    function lc_getParametersFromURL() {
-      var selectedObjects = lc_QueryString.objects;
+              function handleLCSubmit() {
+                const pwl = lc_generatePairwise()
+                var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"
+                for (let i = 0; i < pwl.length; i++) {
+                  pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + "," + pwl[i].low + "&"
+                }
 
-      if (selectedObjects !== undefined && selectedObjects != "") {
-        var objects = selectedObjects.split(',');
-      }
-      if (objects !== undefined) {
-            // Convert ids back to names
-            var objectsNames = Array.from(objects.map(x => idToName(x)))
-            return objectsNames;
-        }
-        return objects;
-    }
-     function idToName(id) {
-        var i = 0
-        {% for x in dataset %}
-            if (id == i) {
-                return '{{ x }}'
-            }
-            i++
-        {% endfor %}
-        return id
-    }
+                window.location = pairwiseURL
 
-    var lc_objectsFromURL = {}
-    lc_objectsFromURL = lc_getParametersFromURL()
+              }
+              function lc_generatePairwise() {
+                const list = Array.from(document.querySelectorAll('#lc-center .object'))
+                const ids = list.map(x => x.id)
+                // pairwise list to send back to server
+                let pwl = []
+                for (let i = 0; i < ids.length - 1; i++) {
+                  for (let j = i + 1; j < ids.length; j++) {
+                    pwl.push({ 'high': ids[i], 'low': ids[j] })
+                  }
+                }
+                return pwl
+              }
 
-    if (lc_objectsFromURL !== undefined) {
-      lc_populateBox()
-    }
+              document.querySelector('#lc-submit').addEventListener('click', handleLCSubmit)
+              </script>
 
-    function lc_populateBox() {
-      console.log(lc_objectsFromURL)
-      // id="${x}" class="object noSelect"
-      for (let i = 0; i < lc_objectsFromURL.length; i++) {
-        var node = document.createElement("DIV");
-        var textnode = document.createTextNode(lc_objectsFromURL[i]);
-        node.appendChild(textnode);
-        node.setAttribute("id", lc_objectsFromURL[i]);
-        node.setAttribute("class", "object noSelect");
-        document.querySelector('#lc-center').appendChild(node);
-      }
-    }
+              <!-- Categorical Comparison Related Scripts -->
+              <script>
 
-    function getRankedObjects() {
-      return Array.from(document.querySelector('#lc-center').children).map(x => x.innerText)
-    }
+              function getRankedObjects() {
+                var left = Array.from(document.querySelector('#left').children).map(x => x.innerText)
+                var center = Array.from(document.querySelector('#center').children).map(x => x.innerText)
+                var right = Array.from(document.querySelector('#right').children).map(x => x.innerText)
+                return left.concat(center).concat(right)
+              }
 
-    function handleLCSubmit() {
-      const pwl = lc_generatePairwise()
-      var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"
-      for (let i = 0; i < pwl.length; i++) {
-        pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + "," + pwl[i].low + "&"
-      }
+              var min_num_of_non_empty_lists = 2
 
-      window.location = pairwiseURL
+              var cc_observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                  cc_urlUpdate()
 
-    }
-    function lc_generatePairwise() {
-      const list = Array.from(document.querySelectorAll('#lc-center .object'))
-      const ids = list.map(x => x.id)
-      // pairwise list to send back to server
-      let pwl = []
-      for (let i = 0; i < ids.length - 1; i++) {
-        for (let j = i + 1; j < ids.length; j++) {
-          pwl.push({ 'high': ids[i], 'low': ids[j] })
-        }
-      }
-      return pwl
-    }
+                  var num_of_non_empty_list = document.querySelector('#center').children.length > 0 ? 1 : 0
+                  num_of_non_empty_list += document.querySelector('#left').children.length > 0 ? 1 : 0
+                  num_of_non_empty_list += document.querySelector('#right').children.length > 0 ? 1 : 0
 
-    document.querySelector('#lc-submit').addEventListener('click', handleLCSubmit)
-  </script>
+                  if (num_of_non_empty_list < min_num_of_non_empty_lists) {
+                    $('#cc-submit').attr('disabled', 'disabled');
+                  }
+                  else {
+                    $('#cc-submit').removeAttr('disabled');
+                  }
+                });
+              });
 
-  <!-- Categorical Comparison Related Scripts -->
-  <script>
+              function cc_urlUpdate() {
+                const high = Array.from(document.querySelectorAll('#left .object')).map(x => nameToId(x.id))
+                const med = Array.from(document.querySelectorAll('#center .object')).map(x => nameToId(x.id))
+                const low = Array.from(document.querySelectorAll('#right .object')).map(x => nameToId(x.id))
+                var url = window.location.pathname + "?method="+"cc"+"&"+"high=" + high.toString() + "&" + "medium=" + med.toString() + "&" + "low=" + low.toString()
+                history.pushState({}, 'Categorical Comparison', url)
+              }
 
-    function getRankedObjects() {
-      var left = Array.from(document.querySelector('#left').children).map(x => x.innerText)
-      var center = Array.from(document.querySelector('#center').children).map(x => x.innerText)
-      var right = Array.from(document.querySelector('#right').children).map(x => x.innerText)
-      return left.concat(center).concat(right)
-    }
+              // Node, config
+              var cc_observerConfig = {
+                childList: true,
+              };
 
-    var min_num_of_non_empty_lists = 2
+              var center_node = document.getElementById('center');
+              var left_node = document.getElementById('left');
+              var right_node = document.getElementById('right');
 
-    var cc_observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        cc_urlUpdate()
+              cc_observer.observe(center_node, cc_observerConfig);
+              cc_observer.observe(left_node, cc_observerConfig);
+              cc_observer.observe(right_node, cc_observerConfig);
 
-        var num_of_non_empty_list = document.querySelector('#center').children.length > 0 ? 1 : 0
-        num_of_non_empty_list += document.querySelector('#left').children.length > 0 ? 1 : 0
-        num_of_non_empty_list += document.querySelector('#right').children.length > 0 ? 1 : 0
+              var cc_QueryString = function () {
+                var query_string = {};
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i = 0; i < vars.length; i++) {
+                  var pair = vars[i].split("=");
+                  // If first entry with this name
+                  if (typeof query_string[pair[0]] === "undefined") {
+                    query_string[pair[0]] = decodeURIComponent(pair[1]);
+                    // If second entry with this name
+                  } else if (typeof query_string[pair[0]] === "string") {
+                    var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+                    query_string[pair[0]] = arr;
+                    // If third or later entry with this name
+                  } else {
+                    query_string[pair[0]].push(decodeURIComponent(pair[1]));
+                  }
+                }
+                return query_string;
+              }();
 
-        if (num_of_non_empty_list < min_num_of_non_empty_lists) {
-          $('#cc-submit').attr('disabled', 'disabled');
-        }
-        else {
-          $('#cc-submit').removeAttr('disabled');
-        }
-      });
-    });
+              function cc_getHighFromURL() {
+                var selectedHigh = cc_QueryString.high;
 
-    function cc_urlUpdate() {
-        const high = Array.from(document.querySelectorAll('#left .object')).map(x => nameToId(x.id))
-        const med = Array.from(document.querySelectorAll('#center .object')).map(x => nameToId(x.id))
-        const low = Array.from(document.querySelectorAll('#right .object')).map(x => nameToId(x.id))
-        var url = window.location.pathname + "?method="+"cc"+"&"+"high=" + high.toString() + "&" + "medium=" + med.toString() + "&" + "low=" + low.toString()
-        history.pushState({}, 'Categorical Comparison', url)
-    }
+                if (selectedHigh !== undefined && selectedHigh != "") {
+                  var highIds = selectedHigh.split(',');
+                }
+                // Convert ids back to names
+                if (highIds !== undefined) {
+                  var highNames = Array.from(highIds.map(x => idToName(x)))
+                  return highNames;
+                }
+                return highIds;
+              }
 
-    // Node, config
-    var cc_observerConfig = {
-      childList: true,
-    };
+              function cc_getMediumFromURL() {
+                var selectedMedium = cc_QueryString.medium;
 
-    var center_node = document.getElementById('center');
-    var left_node = document.getElementById('left');
-    var right_node = document.getElementById('right');
+                if (selectedMedium !== undefined && selectedMedium != "") {
+                  var mediumIds = selectedMedium.split(',');
+                }
+                // Convert ids back to names
+                if (mediumIds !== undefined) {
+                  var mediumNames = Array.from(mediumIds.map(x => idToName(x)))
+                  return mediumNames;
+                }
+                return mediumIds;
+              }
 
-    cc_observer.observe(center_node, cc_observerConfig);
-    cc_observer.observe(left_node, cc_observerConfig);
-    cc_observer.observe(right_node, cc_observerConfig);
+              function cc_getLowFromURL() {
+                var selectedLow = cc_QueryString.low;
 
-    var cc_QueryString = function () {
-      var query_string = {};
-      var query = window.location.search.substring(1);
-      var vars = query.split("&");
-      for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        // If first entry with this name
-        if (typeof query_string[pair[0]] === "undefined") {
-          query_string[pair[0]] = decodeURIComponent(pair[1]);
-          // If second entry with this name
-        } else if (typeof query_string[pair[0]] === "string") {
-          var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
-          query_string[pair[0]] = arr;
-          // If third or later entry with this name
-        } else {
-          query_string[pair[0]].push(decodeURIComponent(pair[1]));
-        }
-      }
-      return query_string;
-    }();
-
-    function cc_getHighFromURL() {
-        var selectedHigh = cc_QueryString.high;
-
-	    if (selectedHigh !== undefined && selectedHigh != "") {
-	        var highIds = selectedHigh.split(',');
-        }
-        // Convert ids back to names
-        if (highIds !== undefined) {
-	        var highNames = Array.from(highIds.map(x => idToName(x)))
-            return highNames;
-        }
-        return highIds;
-    }
-
-    function cc_getMediumFromURL() {
-        var selectedMedium = cc_QueryString.medium;
-
-	    if (selectedMedium !== undefined && selectedMedium != "") {
-	        var mediumIds = selectedMedium.split(',');
-        }
-        // Convert ids back to names
-        if (mediumIds !== undefined) {
-	        var mediumNames = Array.from(mediumIds.map(x => idToName(x)))
-            return mediumNames;
-        }
-        return mediumIds;
-    }
-
-    function cc_getLowFromURL() {
-        var selectedLow = cc_QueryString.low;
-
-	    if (selectedLow !== undefined && selectedLow != "") {
-	        var lowIds = selectedLow.split(',');
-        }
-        // Convert ids back to names
-        if (lowIds !== undefined) {
-	        var lowNames = Array.from(lowIds.map(x => idToName(x)))
-            return lowNames;
-        }
-        return lowIds;
-    }
-     function idToName(id) {
-        var i = 0
-        {% for x in dataset %}
-            console.log(id)
-            console.log(i)
-            if (id == i) {
-                return '{{ x }}'
-            }
-            i++
-        {% endfor %}
-        return id
-    }
-
-    var cc_highFromURL = {}
-    var cc_mediumFromURL = {}
-    var cc_lowFromURL = {}
-    cc_highFromURL = cc_getHighFromURL()
-    cc_mediumFromURL = cc_getMediumFromURL()
-    cc_lowFromURL = cc_getLowFromURL()
-
-
-    if (cc_highFromURL !== undefined) {
-      cc_populateBox("#left", cc_highFromURL)
-    }
-    if (cc_mediumFromURL !== undefined) {
-      cc_populateBox("#center", cc_mediumFromURL)
-    }
-    if (cc_lowFromURL !== undefined) {
-      cc_populateBox("#right", cc_lowFromURL)
-    }
-
-    function cc_populateBox(box, objectsFromURL) {
-      // console.log(objectsFromURL)
-      for (let i = 0; i < objectsFromURL.length; i++) {
-        var node = document.createElement("DIV");
-        var textnode = document.createTextNode(objectsFromURL[i]);
-        node.appendChild(textnode);
-        node.setAttribute("id", objectsFromURL[i]);
-        node.setAttribute("class", "object noSelect");
-        document.querySelector(box).appendChild(node);
-      }
-    }
-
-    function handleCCSubmit() {
-      const pwl = cc_generatePairwise()
-      // sendPostRequest(pwl)
-      var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"
-      for (let i = 0; i < pwl.length; i++) {
-        pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + "," + pwl[i].low + "&"
-      }
-
-      window.location = pairwiseURL
-      // history.pushState({}, 'Explore', pairwiseURL)
-    }
-    function cc_generatePairwise() {
-      const high = Array.from(document.querySelectorAll('#left .object')).map(x => x.id)
-      const med = Array.from(document.querySelectorAll('#center .object')).map(x => x.id)
-      const low = Array.from(document.querySelectorAll('#right .object')).map(x => x.id)
-      // pairwise list to send back to server
-      let pwl = []
-      for (let i = 0; i < high.length; i++) {
-        for (let j = 0; j < med.length; j++) {
-          pwl.push({ 'high': high[i], 'low': med[j] })
-        }
-        for (let j = 0; j < low.length; j++) {
-          pwl.push({ 'high': high[i], 'low': low[j] })
-        }
-      }
-      for (let i = 0; i < med.length; i++) {
-        for (let j = 0; j < low.length; j++) {
-          pwl.push({ 'high': med[i], 'low': low[j] })
-        }
-      }
-      return pwl
-    }
-
-    document.querySelector('#cc-submit').addEventListener('click', handleCCSubmit)
-  </script>
-
-  <!-- Pairwise Comparison Related Scripts -->
-  <script>
-
-    var observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        pwc_urlUpdate()
-
-        const high_length = document.querySelectorAll('.high > div').length
-        const low_length = document.querySelectorAll('.low > div').length
-
-        const list_num = (high_length > 0 ? 1 : 0) + (low_length > 0 ? 1 : 0)
-
-        if ((high_length != low_length) || (list_num < min_num_of_objects)) {
-          $('#submit').attr('disabled', 'disabled');
-        }
-        else {
-          $('#submit').removeAttr('disabled');
-        }
-      });
-    });
-
-    function pwc_urlUpdate() {
-        const high = Array.from(document.querySelectorAll('.high > div')).map(x => nameToId(x.id))
-        const low = Array.from(document.querySelectorAll('.low > div')).map(x => nameToId(x.id))
-        var url = window.location.pathname + "?method="+"pwc"+"&"+"left=" + high.toString() + "&" + "right=" + low.toString()
-        history.pushState({}, 'Pairwise Comparison', url)
-    }
-
-    function nameToId(name) {
-        if (name !== undefined) {
-            var i=0
-            {% for x in dataset %}
-                if ('{{ x }}' == name) {
-                    return i
+                if (selectedLow !== undefined && selectedLow != "") {
+                  var lowIds = selectedLow.split(',');
+                }
+                // Convert ids back to names
+                if (lowIds !== undefined) {
+                  var lowNames = Array.from(lowIds.map(x => idToName(x)))
+                  return lowNames;
+                }
+                return lowIds;
+              }
+              function idToName(id) {
+                var i = 0
+                {% for x in dataset %}
+                console.log(id)
+                console.log(i)
+                if (id == i) {
+                  return '{{ x }}'
                 }
                 i++
-            {% endfor %}
-        }
-        return -1
-    }
+                {% endfor %}
+                return id
+              }
+
+              var cc_highFromURL = {}
+              var cc_mediumFromURL = {}
+              var cc_lowFromURL = {}
+              cc_highFromURL = cc_getHighFromURL()
+              cc_mediumFromURL = cc_getMediumFromURL()
+              cc_lowFromURL = cc_getLowFromURL()
 
 
-    // Node, config
-    var observerConfig = {
-      childList: true,
-      subtree: true,
-    };
+              if (cc_highFromURL !== undefined) {
+                cc_populateBox("#left", cc_highFromURL)
+              }
+              if (cc_mediumFromURL !== undefined) {
+                cc_populateBox("#center", cc_mediumFromURL)
+              }
+              if (cc_lowFromURL !== undefined) {
+                cc_populateBox("#right", cc_lowFromURL)
+              }
 
-    var node = document.getElementById('pwl');
-    observer.observe(node, observerConfig);
+              function cc_populateBox(box, objectsFromURL) {
+                // console.log(objectsFromURL)
+                for (let i = 0; i < objectsFromURL.length; i++) {
+                  var node = document.createElement("DIV");
+                  var textnode = document.createTextNode(objectsFromURL[i]);
+                  node.appendChild(textnode);
+                  node.setAttribute("id", objectsFromURL[i]);
+                  node.setAttribute("class", "object noSelect");
+                  document.querySelector(box).appendChild(node);
+                }
+              }
 
-    var QueryString = function () {
-      var query_string = {};
-      var query = window.location.search.substring(1);
-      var vars = query.split("&");
-      for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        // If first entry with this name
-        if (typeof query_string[pair[0]] === "undefined") {
-          query_string[pair[0]] = decodeURIComponent(pair[1]);
-          // If second entry with this name
-        } else if (typeof query_string[pair[0]] === "string") {
-          var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
-          query_string[pair[0]] = arr;
-          // If third or later entry with this name
-        } else {
-          query_string[pair[0]].push(decodeURIComponent(pair[1]));
-        }
-      }
-      return query_string;
-    }();
-    function getHighFromURL() {
-        var selectedHigh = QueryString.left;
+              function handleCCSubmit() {
+                const pwl = cc_generatePairwise()
+                // sendPostRequest(pwl)
+                var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"
+                for (let i = 0; i < pwl.length; i++) {
+                  pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + "," + pwl[i].low + "&"
+                }
 
-	    if (selectedHigh !== undefined && selectedHigh != "") {
-	        var highIds = selectedHigh.split(',');
-        }
-        // Convert ids back to names
-        if (highIds !== undefined) {
-	        var highNames = Array.from(highIds.map(x => idToName(x)))
-            return highNames;
-        }
-        return highIds;
-    }
-    function getLowFromURL() {
-      var selectedLow = QueryString.right;
+                window.location = pairwiseURL
+                // history.pushState({}, 'Explore', pairwiseURL)
+              }
+              function cc_generatePairwise() {
+                const high = Array.from(document.querySelectorAll('#left .object')).map(x => x.id)
+                const med = Array.from(document.querySelectorAll('#center .object')).map(x => x.id)
+                const low = Array.from(document.querySelectorAll('#right .object')).map(x => x.id)
+                // pairwise list to send back to server
+                let pwl = []
+                for (let i = 0; i < high.length; i++) {
+                  for (let j = 0; j < med.length; j++) {
+                    pwl.push({ 'high': high[i], 'low': med[j] })
+                  }
+                  for (let j = 0; j < low.length; j++) {
+                    pwl.push({ 'high': high[i], 'low': low[j] })
+                  }
+                }
+                for (let i = 0; i < med.length; i++) {
+                  for (let j = 0; j < low.length; j++) {
+                    pwl.push({ 'high': med[i], 'low': low[j] })
+                  }
+                }
+                return pwl
+              }
 
-	    if (selectedLow !== undefined && selectedLow != "") {
-	        var lowIds = selectedLow.split(',');
-        }
-        // Convert ids back to names
-        if (lowIds !== undefined) {
-	        var lowNames = Array.from(lowIds.map(x => idToName(x)))
-            return lowNames;
-        }
-        return lowIds;
-    }
-    function idToName(id) {
-        var i = 0
-        {% for x in dataset %}
-            console.log(id)
-            console.log(i)
-            if (id == i) {
-                return '{{ x }}'
-            }
-            i++
-        {% endfor %}
-        return id
-    }
-    var highFromURL = {}
-    var lowFromURL = {}
-    highFromURL = getHighFromURL()
-    lowFromURL = getLowFromURL()
+              document.querySelector('#cc-submit').addEventListener('click', handleCCSubmit)
+              </script>
 
-    if (highFromURL !== undefined) {
-      var numOfElemInHighBox = 0;
-      var index_high = 0;
-      populateBox(".high", highFromURL, index_high, numOfElemInHighBox)
-    }
-    if (lowFromURL !== undefined) {
-      var numOfElemInLowBox = 0;
-      var index_low = 0;
-      populateBox(".low", lowFromURL, index_low, numOfElemInLowBox)
-    }
+              <!-- Pairwise Comparison Related Scripts -->
+              <script>
 
-    function populateBox(box, objectsFromURL, index, numOfElem) {
-      for (let i = 0; i < objectsFromURL.length; i++) {
-        if (numOfElem > 0) {
-          if (document.querySelectorAll(box)[index + 1] === undefined) {
-            handleMore()
-          }
-          index = index + 1
-          numOfElem = 0
-        }
-        var node = document.createElement("DIV");
-        var textnode = document.createTextNode(objectsFromURL[i]);
-        node.appendChild(textnode);
-        node.setAttribute("id", objectsFromURL[i]);
-        node.setAttribute("class", "object noSelect");
-        document.querySelectorAll(box)[index].appendChild(node);
-        numOfElem = numOfElem + 1
-      }
-    }
+              var observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                  pwc_urlUpdate()
 
-    function getRankedObjects() {
-      return []
-    }
-    function handleSubmit() {
+                  const high_length = document.querySelectorAll('.high > div').length
+                  const low_length = document.querySelectorAll('.low > div').length
 
-      const pwl = generatePairwise()
-      var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"
-      for (let i = 0; i < pwl.length; i++) {
-        pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + "," + pwl[i].low + "&"
-      }
-      window.location = pairwiseURL
-    }
-    function generatePairwise() {
-      const highs = Array.from(document.querySelectorAll('.high .object')).map(x => x.id)
-      const lows = Array.from(document.querySelectorAll('.low .object')).map(x => x.id)
+                  const list_num = (high_length > 0 ? 1 : 0) + (low_length > 0 ? 1 : 0)
 
-      let pwl = []
-      for (let i = 0; i < highs.length; i++) {
-        pwl.push({ 'high': highs[i], 'low': lows[i] })
-      }
-      console.log(pwl)
-      return pwl
-    }
-    document.querySelector('#submit').addEventListener('click', handleSubmit)
+                  if ((high_length != low_length) || (list_num < min_num_of_objects)) {
+                    $('#submit').attr('disabled', 'disabled');
+                  }
+                  else {
+                    $('#submit').removeAttr('disabled');
+                  }
+                });
+              });
+
+              function pwc_urlUpdate() {
+                const high = Array.from(document.querySelectorAll('.high > div')).map(x => nameToId(x.id))
+                const low = Array.from(document.querySelectorAll('.low > div')).map(x => nameToId(x.id))
+                var url = window.location.pathname + "?method="+"pwc"+"&"+"left=" + high.toString() + "&" + "right=" + low.toString()
+                history.pushState({}, 'Pairwise Comparison', url)
+              }
+
+              function nameToId(name) {
+                if (name !== undefined) {
+                  var i=0
+                  {% for x in dataset %}
+                  if ('{{ x }}' == name) {
+                    return i
+                  }
+                  i++
+                  {% endfor %}
+                }
+                return -1
+              }
 
 
-    function getMethodFromURL() {
-        var selectedMethod = cc_QueryString.method;
-        console.log(selectedMethod)
-        return selectedMethod;
-    }
-    var methodFromURL = getMethodFromURL()
+              // Node, config
+              var observerConfig = {
+                childList: true,
+                subtree: true,
+              };
 
-    if (methodFromURL !== undefined) {
-        activateMethodTab(methodFromURL)
-    }
+              var node = document.getElementById('pwl');
+              observer.observe(node, observerConfig);
 
-    function activateMethodTab(methodFromURL) {
-        document.getElementById("lc_tab").classList.remove("active");
-        document.getElementById("cc_tab").classList.remove("active");
-        document.getElementById("pwc_tab").classList.remove("active");
+              var QueryString = function () {
+                var query_string = {};
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i = 0; i < vars.length; i++) {
+                  var pair = vars[i].split("=");
+                  // If first entry with this name
+                  if (typeof query_string[pair[0]] === "undefined") {
+                    query_string[pair[0]] = decodeURIComponent(pair[1]);
+                    // If second entry with this name
+                  } else if (typeof query_string[pair[0]] === "string") {
+                    var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+                    query_string[pair[0]] = arr;
+                    // If third or later entry with this name
+                  } else {
+                    query_string[pair[0]].push(decodeURIComponent(pair[1]));
+                  }
+                }
+                return query_string;
+              }();
+              function getHighFromURL() {
+                var selectedHigh = QueryString.left;
 
-        document.getElementById(methodFromURL+"_tab").setAttribute("class", "active");
-    }
-  </script>
-</body>
+                if (selectedHigh !== undefined && selectedHigh != "") {
+                  var highIds = selectedHigh.split(',');
+                }
+                // Convert ids back to names
+                if (highIds !== undefined) {
+                  var highNames = Array.from(highIds.map(x => idToName(x)))
+                  return highNames;
+                }
+                return highIds;
+              }
+              function getLowFromURL() {
+                var selectedLow = QueryString.right;
 
-</html>
+                if (selectedLow !== undefined && selectedLow != "") {
+                  var lowIds = selectedLow.split(',');
+                }
+                // Convert ids back to names
+                if (lowIds !== undefined) {
+                  var lowNames = Array.from(lowIds.map(x => idToName(x)))
+                  return lowNames;
+                }
+                return lowIds;
+              }
+              function idToName(id) {
+                var i = 0
+                {% for x in dataset %}
+                console.log(id)
+                console.log(i)
+                if (id == i) {
+                  return '{{ x }}'
+                }
+                i++
+                {% endfor %}
+                return id
+              }
+              var highFromURL = {}
+              var lowFromURL = {}
+              highFromURL = getHighFromURL()
+              lowFromURL = getLowFromURL()
+
+              if (highFromURL !== undefined) {
+                var numOfElemInHighBox = 0;
+                var index_high = 0;
+                populateBox(".high", highFromURL, index_high, numOfElemInHighBox)
+              }
+              if (lowFromURL !== undefined) {
+                var numOfElemInLowBox = 0;
+                var index_low = 0;
+                populateBox(".low", lowFromURL, index_low, numOfElemInLowBox)
+              }
+
+              function populateBox(box, objectsFromURL, index, numOfElem) {
+                for (let i = 0; i < objectsFromURL.length; i++) {
+                  if (numOfElem > 0) {
+                    if (document.querySelectorAll(box)[index + 1] === undefined) {
+                      handleMore()
+                    }
+                    index = index + 1
+                    numOfElem = 0
+                  }
+                  var node = document.createElement("DIV");
+                  var textnode = document.createTextNode(objectsFromURL[i]);
+                  node.appendChild(textnode);
+                  node.setAttribute("id", objectsFromURL[i]);
+                  node.setAttribute("class", "object noSelect");
+                  document.querySelectorAll(box)[index].appendChild(node);
+                  numOfElem = numOfElem + 1
+                }
+              }
+
+              function getRankedObjects() {
+                return []
+              }
+              function handleSubmit() {
+
+                const pwl = generatePairwise()
+                var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"
+                for (let i = 0; i < pwl.length; i++) {
+                  pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + "," + pwl[i].low + "&"
+                }
+                window.location = pairwiseURL
+              }
+              function generatePairwise() {
+                const highs = Array.from(document.querySelectorAll('.high .object')).map(x => x.id)
+                const lows = Array.from(document.querySelectorAll('.low .object')).map(x => x.id)
+
+                let pwl = []
+                for (let i = 0; i < highs.length; i++) {
+                  pwl.push({ 'high': highs[i], 'low': lows[i] })
+                }
+                console.log(pwl)
+                return pwl
+              }
+              document.querySelector('#submit').addEventListener('click', handleSubmit)
+
+
+              function getMethodFromURL() {
+                var selectedMethod = cc_QueryString.method;
+                console.log(selectedMethod)
+                return selectedMethod;
+              }
+              var methodFromURL = getMethodFromURL()
+
+              if (methodFromURL !== undefined) {
+                activateMethodTab(methodFromURL)
+              }
+
+              function activateMethodTab(methodFromURL) {
+                document.getElementById("lc_tab").classList.remove("active");
+                document.getElementById("cc_tab").classList.remove("active");
+                document.getElementById("pwc_tab").classList.remove("active");
+
+                document.getElementById(methodFromURL+"_tab").setAttribute("class", "active");
+              }
+              </script>
+            </body>
+
+            </html>

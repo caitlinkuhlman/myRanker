@@ -3,44 +3,6 @@
 {% extends 'base_build.html' %}
 {% block content %}
 <style>
-  .pairwise {
-    display: grid;
-    grid-template-areas: "_ high low";
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  .high {
-    grid-area: high;
-    /* border: 5px solid #E74C3C; */
-    padding: 8px;
-    /* display:inline; */
-  }
-  .low {
-    grid-area: low;
-    /* border: 5px solid #E74C3C; */
-    padding: 8px;
-    /* display:inline; */
-  }
-  .pw-wrapper {
-    display: grid;
-    grid-template-areas: "_ pwl  pwl"
-                         "_ more more";
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  #pwl {
-    grid-area: pwl;
-  }
-  .pw {
-    display: grid;
-    grid-template-areas: "high low";
-    grid-template-columns: 1fr 1fr;
-    border: 5px solid #E74C3C;
-    margin: 16px;
-  }
-  #more {
-    grid-area: more;
-    padding: 12px;
-    margin-bottom: 48px;
-  }
 
 </style>
 
@@ -52,7 +14,7 @@
     </div>
   </div>
   <button type="button" class="btn " id="more" onclick="handleMore()">Add New Pairwise</button>
-  
+
   <!-- <div class="pairwise">
     <div class="list high">
       <h2><b> High </b></h2>
@@ -66,7 +28,7 @@
         <div id="low" class="list"></div>
       </div>
     </div>
-    
+
   </div> -->
 </div>
 <!-- <button type="button" class="semi-transparent-button btn " id="sort" onclick="">+</button> -->
