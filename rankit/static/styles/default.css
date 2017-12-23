@@ -26,7 +26,6 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 
 body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
-    /*color: #4CAF50;*/
 }
 
 a {
@@ -212,4 +211,41 @@ a:hover {
 		padding: 2em 5%;
 		font-size: 1.4em;
 	}
+}
+
+.footer {
+	background:#181818;
+	text-align: center;
+	font-size: 120%;
+	color:#E3F2F4;
+}
+
+
+
+
+/* --------------------------------
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-scrolling-bg {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 2;
+    font-weight: 300;
+  }
 }
