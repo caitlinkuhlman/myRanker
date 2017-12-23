@@ -526,7 +526,7 @@
 
     }
     function lc_generatePairwise() {
-      const list = Array.from(document.querySelectorAll('.list .object'))
+      const list = Array.from(document.querySelectorAll('#lc-center .object'))
       const ids = list.map(x => x.id)
       // pairwise list to send back to server
       let pwl = []
@@ -856,6 +856,7 @@
       var index_low = 0;
       populateBox(".low", lowFromURL, index_low, numOfElemInLowBox)
     }
+
     function populateBox(box, objectsFromURL, index, numOfElem) {
       for (let i = 0; i < objectsFromURL.length; i++) {
         if (numOfElem > 0) {
