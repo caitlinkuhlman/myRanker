@@ -85,9 +85,6 @@
   .viewBackround {
     margin: 16px;
     background-color: #e1e1e1;
-    /* font-family: sans-serif;
-    text-align: center;
-	  color: #ffffff; */
 	  font-weight: bold;
 	  padding: 8px;
 	  -moz-border-radius: 5px;
@@ -97,3 +94,101 @@
   .ghost {
     opacity: .5;
   }
+
+    .footer {
+      background:#181818;
+      text-align: center;
+      font-size: 120%;
+      color:#E3F2F4;
+    }
+
+
+    .page-header h1 {
+      padding: 0px 60px 0px;
+      color: white;
+      font-size: 40px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    .page-header{
+      background-color: #2980B9;
+    }
+
+    .middleNav {
+      margin: 2px 0px;
+      padding-right: 405px;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      right: 0;
+    }
+
+    #build-container {
+      display: grid;
+      height: 100vh;
+      grid-template-areas: "build-left build-right";
+      grid-template-columns: 3fr 2fr;
+    }
+
+    #build-left {
+      grid-area: build-left;
+    }
+
+    #build-right {
+      grid-area: build-right;
+    }
+
+    .build-pool-header {
+      background-color:#2980B9;
+      min-height: 82px;
+      padding: 16px;
+    }
+
+    .build-list-header {
+      min-height: 82px;
+      padding: 16px;
+    }
+
+    /* Pairwise content */
+    .pairwise {
+      display: grid;
+      grid-template-areas: "_ high low";
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .high {
+      grid-area: high;
+      padding: 8px;
+    }
+    .low {
+      grid-area: low;
+      padding: 8px;
+    }
+    .pw-wrapper {
+      display: grid;
+      grid-template-areas: "_ pwl  pwl"
+                           "_ more more";
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    #pwl {
+      grid-area: pwl;
+    }
+    .pw {
+      display: grid;
+      grid-template-areas: "high low";
+      grid-template-columns: 1fr 1fr;
+      border: 5px solid #E74C3C;
+      margin: 16px;
+    }
+    #more {
+      grid-area: more;
+      padding: 12px;
+      margin-bottom: 48px;
+    }
+
+    .lcb {
+      height: 70vh;
+    }
+    .ccb {
+      height: 19vh;
+    }

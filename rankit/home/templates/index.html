@@ -10,42 +10,9 @@
   <meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll"/>
   <meta name="author" content="Codrops"/>
   <link rel="shortcut icon" href="../favicon.ico">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style1.css') }}"/>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
   <style>
-
-  .barHover:hover {
-    background-color: beige;
-    color: white;
-  }
-
-  .dataset-container {
-    padding: 12px;
-  }
-
-  .dataset {
-    background: white;
-    border: 1px solid #23d5ab;
-    margin: 12px;
-    padding: 12px;
-    text-align: center;
-    font-size: 20px;
-    width: 30%;
-    height: 200px;
-  }
-
-  .dataset a {
-    text-decoration: none;
-  }
-
-  span {
-    color: #23d5ab;
-  }
-
-  .buttonHover:hover {
-    background-color: beige;
-  }
 
   header {
     position: relative;
@@ -66,15 +33,6 @@
     }
   }
 
-  .constellation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    / / z-index: - 1;
-  }
-
   h1 {
     font-size: 142px;
     font-weight: 800;
@@ -83,238 +41,10 @@
     text-transform: uppercase;
   }
 
-  .titles {
-    font-size: 50px;
-    margin-bottom: 0;
-    font-weight: 800;
-    line-height: 72px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #ffffff
-
-  }
-
-  .titles-purple{
-    font-size: 45px;
-    margin-bottom: 0;
-    font-weight: 800;
-    line-height: 72px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #2980B9
-
-  }
-
-  #x{
-
-    text-decoration-color: #23A6D5;
-
-  }
-
-  .subtitles {
-    font-size: 30px;
-    margin-bottom: 0;
-    font-weight: 800;
-    line-height: 72px;
-    text-align: center;
-    display: inline-block;
-    text-transform: uppercase;
-
-  }
-
-  @-webkit-keyframes Gradient {
-    0% {
-      background-position: 0% 50%
-    }
-    50% {
-      background-position: 100% 50%
-    }
-    100% {
-      background-position: 0% 50%
-    }
-  }
-
-  @-moz-keyframes Gradient {
-    0% {
-      background-position: 0% 50%
-    }
-    50% {
-      background-position: 100% 50%
-    }
-    100% {
-      background-position: 0% 50%
-    }
-  }
-
-  @keyframes Gradient {
-    0% {
-      background-position: 0% 50%
-    }
-    50% {
-      background-position: 100% 50%
-    }
-    100% {
-      background-position: 0% 50%
-    }
-  }
-
-  .container text-center {
-    text-align: center;
-  }
-
   p {
     text-align: center;
     color: #777777;
-
   }
-
-  .left {
-    float: left;
-    display: inline-block;
-    padding: 10px 30px 10px 30px;
-
-  }
-
-  .right {
-    float: right;
-    display: inline-block;
-    padding: 10px 30px 10px 30px;
-
-  }
-
-  .news {
-    text-align: center;
-    padding: 20px 20px 20px 20px;
-  }
-
-  #submit {
-    background-color: #23527c;
-    color: #ffffff;
-    margin: 24px;
-    vertical-align: baseline;
-    padding: 20px 200px 20px 200px;
-    font-family: sans-serif;
-
-  }
-
-  .margin {
-
-    padding: 20px 200px 20px 200px;
-  }
-
-  .purple {
-    background-color:#2980B9
-  }
-
-  #about {
-    background-color: #FfFfFf
-  }
-
-  #get-started.semi-transparent-button, #see-full-list.semi-transparent-button, .semi-transparent-button{
-    display: block;
-    box-sizing: border-box;
-    margin: 5% auto;
-    padding: 8px;
-    width: 30%;
-    background-color: rgba(200, 200, 200, 0.3);
-    border-radius: 2px;
-    border-color: rgba(200, 200, 200, 0.3);
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: all 0.3s ease-out;
-    border: 1px solid rgba(200, 200, 200, 0.3);
-    text-decoration-color: white;
-  }
-
-
-  #get-started.semi-transparent-button:hover, #see-full-list.semi-transparent-button:hover, .semi-transparent-button:hover{
-
-    border: 1px solid;
-    border-color: white;
-    text-decoration-color: white;
-    text-decoration-color: white;
-  }
-
-/*
-  body {
-    background-color: #efefef
-  }*/
-
-  .white {
-    background-color: #FfFfFf
-  }
-
-  .image {
-    position: relative;
-    width: 100%; /* for IE 6 */
-  }
-
-  h4 {
-    position: absolute;
-    top: 200px;
-    left: 0;
-    width: 100%;
-  }
-
-  h4 span {
-    color: white;
-    font: bold 24px/45px Helvetica, Sans-Serif;
-    letter-spacing: -1px;
-    background: rgb(0, 0, 0); /* fallback color */
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    float:right;
-  }
-
-
-.inverse {
-  margin: 0;
-  padding: 1em 0;
-  font-size: 1.3em;
-  line-height: 1.5;
-    text-align: center;
-    color: #FfFfFf;
-}
-
-
-.col-item {
-  width: 49%;
-  margin-right: 2%;
-  margin-bottom: 15px;
-  padding: 5px;
-  box-sizing: border-box;
-}
-
-.col-item:nth-child(2n) {
-  margin-right: 0;
-  padding-right: 0;
-}
-
-.col-item:nth-last-child(2),
-.col-item:last-child {
-  margin-bottom: 0;
-}
-
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  background-color: #FfFfFf;
-  margin-left: 70px;
-  margin-right: 70px;
-
-}
-
-.wrapper:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: calc(50% - 1px);
-  height: 100%;
-  border-right: 4px solid grey;
-}
 
 img {
     display: block;
@@ -332,13 +62,6 @@ img {
      font-size: 1.3em;
      line-height: 1.5;
  }
-
- /*.cd-fixed-bg.cd-bg-2 {
-   background-image: url("static/image/cd-background-2.jpg");
- }*/
-
- hr.style-four { height: 12px; border: 0; box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5); }
-
 
 
   </style>
@@ -378,11 +101,6 @@ img {
     </div> <!-- cd-container -->
   </div> <!-- cd-scrolling-bg -->
   <hr class="style-four">
-
-<!--
-  <div class="cd-fixed-bg cd-bg-2">
-    <h2>Instructions</h2>
-  </div> -->
 
 
 <div class="col-xxs-12 col-lg-10 m-x-auto">
@@ -431,7 +149,6 @@ img {
       <li><b>List Comparison:</b> Rank all of your items in an ordered list.</li>
       <li><b>Pairwise Comparison:</b> Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</li>
     </ul>
-      <!-- <p>Drag and drop each enitity in the dataset. Once you're done click “Rank!”</p> -->
     </p>
     </div>
     </section>
@@ -457,8 +174,13 @@ img {
 </div>
 </div>
 
+<br>
+<br>
+<br>
+
 
 <div class="col-xxs-12 col-lg-10 m-x-auto purple">
+<hr class="style-four">
 <br>
 <h2 id="x" class="titles">You're Ready to RankIt!</h2>
 <div>
@@ -490,7 +212,6 @@ $(function() {
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/toucheffects.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
-<!-- <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/main.js') }}" ></script> -->
 
 </div>
 
