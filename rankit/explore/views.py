@@ -8,7 +8,7 @@ explore_blueprint = Blueprint(
 )
 
 
-@explore_blueprint.route('/explore/<dataset_name>')
+@explore_blueprint.route('/explore/<dataset_name>/')
 def explore(dataset_name):
 
     data = json.dumps(getDataset(dataset_name))
@@ -20,9 +20,7 @@ def explore(dataset_name):
 def exploreJson(dataset_name, pairs):
 
     primaryKeyPairs = []
-
-    parsed_pairs = re.findall("\d+=([\w\s'-]*[,]{1}[\w\s'-]*)&", pairs)
-
+    parsed_pairs = re.findall("\d+=([\w\s'-:]*[,]{1}[\w\s'-]*)&", pairs)
     for pair in parsed_pairs:
         high, low = pair.split(',')
         primaryKeyPairs.append({'high': high, 'low' : low})

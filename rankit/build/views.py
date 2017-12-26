@@ -1,4 +1,4 @@
-from flask import Blueprint, request, url_for, make_response, jsonify, render_template, send_from_directory, redirect
+from flask import Blueprint, render_template
 import os, json
 
 import  rankit.build.rank_script.build_rank as build_rank
@@ -9,9 +9,11 @@ build_blueprint = Blueprint(
     template_folder='templates'
 )
 
+primary_key = 'Title'
+rank = 'Rank'
+
 def getDataset(dataset_name):
     # get the absolute path of the dataset
-    # datasets_dir = os.path.dirname(os.path.dirname(os.getcwd() + "/rankit/datasets/"))
 
     datasets_dir = os.path.dirname(os.path.abspath(os.path.dirname(__name__)) + "/rankit/datasets/")
     print(datasets_dir)
@@ -24,7 +26,7 @@ def getDataset(dataset_name):
 
 def filterByPrimaryKey(datastore):
     #filter only object names
-    datastore_ids = list(map(lambda data: data["primaryKey"], datastore))
+    datastore_ids = list(map(lambda data: data[primary_key], datastore))
     datastore_ids.sort()
 
     return datastore_ids
@@ -66,40 +68,7 @@ def categorical(dataset_name):
     return render_template('categorical_comparison.html', dataset_name = dataset_name, dataset=datastore_ids, view_name = "Categorical Comparison")
 
 
-
-@build_blueprint.route('/build/submit/', methods=["POST"])
-def build():
-    # get the dataset name from the request
-    dataset_name = request.get_json().get("dataset_name")
-
-    # get the pairs from client in json format
-    primaryKeyPairs = request.get_json().get("pairs")
-
-    # get the dataset from json file in list format
-    dataset_list = getDataset(dataset_name)
-
-    # convert each primary key into index in pairs sent from client
-    primaryKeyToIndex(dataset_list, primaryKeyPairs)
-
-    pairs_json = json.dumps(primaryKeyPairs)
-    pairs = pd.read_json(pairs_json)
-
-    dataset = pd.read_json(json.dumps(dataset_list))
-
-    rank = build_rank.build(dataset=dataset, pairs=pairs)
-
-    return redirect(url_for('explore.explore', data=rank.to_json(orient='records')))
-    # return redirect(url_for('explore.explore', data = rank.to_json(orient='records')), code=307)
-
-    # return render_template('explore.html', data = rank.to_json(orient='records'))
-
-
 def getRanking(dataset_name, primaryKeyPairs):
-    # # get the dataset name from the request
-    # dataset_name = request.get_json().get("dataset_name")
-    #
-    # # get the pairs from client in json format
-    # primaryKeyPairs = request.get_json().get("pairs")
 
     # get the dataset from json file in list format
     dataset_list = getDataset(dataset_name)
@@ -127,7 +96,7 @@ def primaryKeyToIndex(dataset_list, primaryKeyPairs):
 def findIndex(primKey, dataset_list):
     index = 0
     for list_entry in dataset_list:
-        if list_entry["primaryKey"] == primKey:
+        if list_entry[primary_key] == primKey:
             return index
         else:
             index = index + 1
