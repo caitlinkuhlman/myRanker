@@ -8,7 +8,7 @@ explore_blueprint = Blueprint(
 )
 
 
-@explore_blueprint.route('/explore/<dataset_name>')
+@explore_blueprint.route('/explore/<dataset_name>/')
 def explore(dataset_name):
 
     data = json.dumps(getDataset(dataset_name))
