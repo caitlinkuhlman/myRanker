@@ -286,13 +286,13 @@
                     <!-- this is the header -->
                     <ul class="nav nav-pills build-list-header" role="tablist">
                       <li id="lc_tab" role="presentation" class="active">
-                        <a href="#lc" onclick="lc_urlUpdate()" aria-controls="lc" role="tab" data-toggle="tab">List</a>
+                        <a href="#lc" id="lc_click" onclick="lc_urlUpdate()" aria-controls="lc" role="tab" data-toggle="tab">List</a>
                       </li>
                       <li id="cc_tab" role="presentation">
-                        <a href="#cc" onclick="cc_urlUpdate()" aria-controls="cc" role="tab" data-toggle="tab">Categorical</a>
+                        <a href="#cc" id="cc_click" onclick="cc_urlUpdate()" aria-controls="cc" role="tab" data-toggle="tab">Categorical</a>
                       </li>
                       <li id="pwc_tab" role="presentation">
-                        <a href="#pwc" onclick="pwc_urlUpdate()" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise</a>
+                        <a href="#pwc" id="pwc_click" onclick="pwc_urlUpdate()" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise</a>
                       </li>
                       <!-- <li role="presentation">
                       <br>
@@ -976,8 +976,28 @@
                 document.getElementById("cc_tab").classList.remove("active");
                 document.getElementById("pwc_tab").classList.remove("active");
 
+                console.log(methodFromURL)
+
+                if (document.getElementById("lc").classList.contains("in")) {
+                    document.getElementById("lc").classList.remove("in");
+                    document.getElementById("lc").classList.remove("active");
+                }
+                if (document.getElementById("cc").classList.contains("in")) {
+                    document.getElementById("cc").classList.remove("in");
+                    document.getElementById("cc").classList.remove("active");
+                }
+                if (document.getElementById("pwc").classList.contains("in")) {
+                    document.getElementById("pwc").classList.remove("in");
+                    document.getElementById("pwc").classList.remove("active");
+                }
+
                 document.getElementById(methodFromURL+"_tab").setAttribute("class", "active");
+                document.getElementById(methodFromURL).setAttribute("class", "tab-pane fade in active");
               }
+
+              document.querySelector('#lc_click').addEventListener('click', activateMethodTab)
+              document.querySelector('#cc_click').addEventListener('click', activateMethodTab)
+              document.querySelector('#pwc_click').addEventListener('click', activateMethodTab)
               </script>
             </body>
 
