@@ -126,8 +126,9 @@
 
     #build-container {
       display: grid;
-      height: 100vh;
-      grid-template-areas: "build-left build-right";
+      grid-template-areas: 
+        "build-top build-top"
+        "build-left build-right";
       grid-template-columns: 3fr 2fr;
     }
 
@@ -140,6 +141,7 @@
     }
 
     .build-pool-header {
+      grid-area: build-top;
       background-color:#2980B9;
       min-height: 82px;
       padding: 16px;
