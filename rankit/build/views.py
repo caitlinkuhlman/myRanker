@@ -104,9 +104,8 @@ def getRanking(dataset_name, primaryKeyPairs):
 
     dataset = pd.read_json(json.dumps(dataset_list))
 
-    rank = build_rank.build(dataset=dataset, pairs=pairs)
-
-    return rank.to_json(orient='records')
+    rank, weights = build_rank.build(dataset=dataset, pairs=pairs)
+    return rank.to_json(orient='records'), weights
 
 def primaryKeyToIndex(dataset_list, primaryKeyPairs):
     for obj in primaryKeyPairs:
