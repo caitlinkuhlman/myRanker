@@ -1,4 +1,4 @@
-primaryKey,genre,popularity,year,revenue,runtime,vote_average,vote_count
+Title,genre,popularity,year,revenue,runtime,vote_average,vote_count
 Minions,Family,875.581305,15,1156730962,91,6.4,4571
 Interstellar,Adventure,724.247784,14,675120017,169,8.1,10867
 Deadpool,Action,514.569956,16,783112979,108,7.4,10995
