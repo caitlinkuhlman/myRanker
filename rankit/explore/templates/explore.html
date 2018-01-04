@@ -36,6 +36,15 @@
       margin-bottom: 20px;
     }
 
+    p {
+      background-color: #2980B9;
+      padding: 7px 20px 0px;
+      color: white;
+      font-size: 16px;
+      margin: 0;
+      display: inline-block;
+    }
+
 {#    .dataTables_wrapper {#}
 {#      margin-left: 20px;#}
 {#      margin-right: 20px;#}
@@ -135,9 +144,9 @@
         Explore: {{ dataset_name |replace("_", " ") }}
       </b>
     </h1>
+     <hr border-color="white">
+    <p>Explore your rankings results with the table below!</p>
   </div>
-
-  <p>Explore your rankings results with the table below!</p>
 
 
   <table id="table" class="display" cellspacing="0" width="0%">
@@ -176,6 +185,7 @@
   function renderHead(datum) {
     const title = 'Title'
     const rank = 'Rank'
+    var w = 'Weights = '
     var data = Object.keys(datum)
 
     if (data.indexOf(title) > 0) {
@@ -187,8 +197,10 @@
       data.unshift(rank);
     }
     const thead = data
-      .map(k => `<th>${k}</th>`)
+      // .map(k => `<th>${k}  + '\n w' + </th>`)
+      .map(k => `<th>${k}:` + '\n' + `Weight = </th>`)
       .join('\n')
+
 
     document.querySelector('#head').innerHTML = thead
     return data
