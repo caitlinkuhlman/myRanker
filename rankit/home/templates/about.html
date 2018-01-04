@@ -1,171 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>About RanKit</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blueprint: On-Scroll Animated Header"/>
-    <meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll"/>
-    <meta name="author" content="Codrops"/>
-
-    <style>
-
-      p {
-        text-align: center;
-        color: #777777;
-        margin: 0;
-        padding: 1em 0;
-        font-size: 1.3em;
-        line-height: 1.5;
-      }
-        h4 {
-          position: absolute;
-          top: 200px;
-          left: 0;
-          width: 100%;
-        }
-
-        h4 span {
-          color: white;
-          font: bold 24px/45px Helvetica, Sans-Serif;
-          letter-spacing: -1px;
-          background: rgb(0, 0, 0); /* fallback color */
-          background: rgba(0, 0, 0, 0.7);
-          padding: 10px;
-          float:right;
-        }
-
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-         }
-
-         li {
-           color: #777777;
-         }
-         body {
-           background-color: #FfFfFf
-         }
-
-         .white {
-           background-color: #FfFfFf
-         }
-         .titles {
-           font-size: 50px;
-           margin-bottom: 0;
-           font-weight: 800;
-           line-height: 72px;
-           text-align: center;
-           text-transform: uppercase;
-           color: #ffffff
-
-         }
-
-         .titles-purple{
-           font-size: 50px;
-           margin-bottom: 0;
-           font-weight: 800;
-           line-height: 72px;
-           text-align: center;
-           text-transform: uppercase;
-           color: #2980B9
-
-         }
-
-
-    </style>
+  <title>About RanKit</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blueprint: On-Scroll Animated Header"/>
+  <meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll"/>
+  <meta name="author" content="Codrops"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/about.css') }}"/>
 
 </head>
 
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="container">
+<div>
 
-      <div class="col-xxs-12 col-lg-10 m-x-auto purple">
-      <br>
-      <h2 id="x" class="titles-purple">About the Project</h2>
-      <section class="card card-lg text-xxs-center">
-      <div id="band" class="container text-center">
-
-        <p>Rankings are a fundamental tool used to help people understand the relative merit of
-            objects or choices. They are employed
-            to simplify decision making when the number of factors impacting choice is large.
-            Our mission is to provide a user-driven ranking system to allow non-expert users to
-            better understand the explanatory
-            power of ranking models for socioeconomic outcomes.
+  <div class="card">
+    <br>
+    <h2 class="topic">-About the Project-</h2>
+    <section class="card card-lg text-xxs-center">
+      <div id="band" class="text-center">
+        <p>
+          RANKIT is an online ranking application that provides solutions for analyzing
+          and exploring rankings. The system uses machine learning to automatically construct
+          rankings based on partial input from users. Intuitive interfaces allow for the effective
+          building, exploring, and explaining of rankings.
         </p>
-        <p>We accomplish this in two ways. By incorporating ranking algorithms in highly usable
-            interfaces to provide a non biased visualization, to understand
-            existing rankings and to create ranking models which reflect user’s personal
-            intuition and evaluation. By utilizing
-            machine learning, we develop a tool to automatically rank objects in the context of
-            information retrieval.
+        <p>
+          Rankings are a fundamental tool used to help people understand the relative merit of
+          objects or choices. They are employed to simplify decision making when the number of
+          factors impacting choice is large. Our mission is to provide a user-driven ranking
+          system to allow non-expert users to better understand the explanatory power of ranking
+          models for socioeconomic outcomes.
         </p>
-
+        <br>
       </div>
-      </section>
+    </section>
+  </div>
 
+  <div class="card">
+    <h2 class="topic">-Meet the Team-</h2>
+    <section class="card card-lg text-xxs-center">
 
-      <h2 id="x" class="titles-purple">Team</h2>
-      <section class="card card-lg text-xxs-center">
-      <div id="band" class="container text-center">
-
-        <p>Comming Soon
-        </p>
-
-
-      </div>
-      </section>
-
-
-      <h2 id="x" class="titles-purple">Contact Us</h2>
-      <section class="card card-lg text-xxs-center">
-      <div id="band" class="container text-center">
-
-        <p>Coming Soon
-        </p>
-
-      </div>
-      </section>
-
-
-        <!-- <body class="layout-prospect"> -->
-        <!-- <main id="content">
-            <div class="content-body">
-                <div class="container">
-                    <div class="col-xxs-12 col-lg-10 m-x-auto">
-                        <section class="card card-lg text-xxs-center">
-                            <div id="band" class="container text-center">
-                              <h2 id="x" class="titles">Pick a Dataset</h2>
-                                <p>Rankings are a fundamental tool used to help people understand the relative merit of
-                                    objects or choices. They are employed
-                                    to simplify decision making when the number of factors impacting choice is large.
-                                    Our mission is to provide a user-driven ranking system to allow non-expert users to
-                                    better understand the explanatory
-                                    power of ranking models for socioeconomic outcomes.
-                                </p>
-                                <p>We accomplish this in two ways. By incorporating ranking algorithms in highly usable
-                                    interfaces to provide a non biased visualization, to understand
-                                    existing rankings and to create ranking models which reflect user’s personal
-                                    intuition and evaluation. By utilizing
-                                    machine learning, we develop a tool to automatically rank objects in the context of
-                                    information retrieval.
-                                </p>
-                            </div>
-                        </section>
-                    </div>
-                </div>
+      <div class="row">
+        <div class="column">
+          <div class="cardInner">
+            <!-- <img src="img1.jpg" alt="Diana Doherty" style="width:100%"> -->
+            <br>
+            <div class="container">
+              <h2>Diana Doherty</h2>
+              <p class="title">Developer</p>
+              <!-- <p>Some text that describes me lorem ipsum ipsum lorem.</p> -->
             </div>
-        </main> -->
+            <br>
+          </div>
+        </div>
 
-        <!-- </body> -->
+        <div class="column">
+          <div class="cardInner">
+            <!-- <img src="img2.jpg" alt="Goutham Deva" style="width:100%"> -->
+            <br>
+            <div class="container">
+              <h2>Goutham Deva</h2>
+              <p class="title">Developer</p>
+              <!-- <p>Some text that describes me lorem ipsum ipsum lorem.</p> -->
+            </div>
+            <br>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="cardInner">
+            <!-- <img src="img3.jpg" alt="Malika Nurbekova" style="width:100%"> -->
+            <br>
+            <div class="container">
+              <h2>Malika Nurbekova</h2>
+              <p class="title">Developer</p>
+              <!-- <p>Some text that describes me lorem ipsum ipsum lorem.</p> -->
+            </div>
+            <br>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="cardInner">
+            <!-- <img src="img3.jpg" alt="Zarni Phyo" style="width:100%"> -->
+            <br>
+            <div class="container">
+              <h2>Zarni Phyo</h2>
+              <p class="title">Developer</p>
+              <!-- <p>Some text that describes me lorem ipsum ipsum lorem.</p> -->
+            </div>
+            <br>
+          </div>
+        </div>
+
+
       </div>
-    </div>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/classie.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}"></script>
+    </section>
+  </div>
+
+  <div class="card">
+    <!-- <br> -->
+    <h2 class="topic">-Evaluation-</h2>
+    <section class="card card-lg text-xxs-center">
+      <div id="band" class="container text-center">
+        <p>We actively use feedback to constantly improve our project delivery
+          and to help us provide you with the best possible service.
+        </p>
+        <p>
+          Our evaluation will be composed of an some tasks and answering survey questions as follows.
+        </p>
+        <p>
+          Link to the evaluation will be provided soon!
+        </p>
+        <br>
+      </div>
+    </section>
+  </div>
+
+
+  <div class="card">
+    <!-- <br> -->
+    <h2 class="topic">-Contact Us-</h2>
+    <section class="card card-lg text-xxs-center">
+      <div id="band" class="container text-center">
+        <p>More details coming soon!</p>
+        <br>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/classie.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}"></script>
 
 {% endblock %}
 </html>

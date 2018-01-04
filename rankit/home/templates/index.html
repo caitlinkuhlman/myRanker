@@ -11,6 +11,7 @@
   <meta name="author" content="Codrops"/>
   <link rel="shortcut icon" href="../favicon.ico">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/default.css') }}"/>
 
   <style>
 
@@ -36,7 +37,7 @@
   h1 {
     font-size: 142px;
     font-weight: 800;
-    line-height: 72px;
+    line-height: 95px;
     text-align: center;
     text-transform: uppercase;
   }
@@ -75,14 +76,25 @@ img {
 <div class="main">
 
   <header>
+  <div>
+    <div class="cd-intro-content mask">
+      <h1 data-content="RANKIT"><span></span></h1>
+      <h2>An easy, step by step, tool to research existing rankings!</h2>
+      <!-- <div id="main-menu" class="action-wrapper"> -->
+    </div>
+      <div id="main-menu">
+          <a href="#start"id = "get-started" class="cd-btn semi-transparent-button" role="button">Get Started</a>
+      </div>
+    </div>
+
     <!-- <canvas class="constellation" width="718" height="662"></canvas> -->
-    <div class="title">
+    <!-- <div>
       <h1>RANKIT</h1>
       <h2>An easy, step by step, tool to research existing rankings!</h2>
     </div>
     <div id="main-menu">
       <a href="#start"id = "get-started" class="semi-transparent-button" role="button">Get Started</a>
-    </div>
+    </div> -->
   </header>
 
   <div class="cd-scrolling-bg cd-color-2">
