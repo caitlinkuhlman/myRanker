@@ -53,14 +53,18 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
     learner = PPRankRLS(X, pairs_start, pairs_end)
     y_pred = learner.predict(data)
     weights = learner.predictor.W
+
+    headers = list(dataset)
+    headers.remove(primary_key)
+    weights = dict(zip(headers, weights))
+
     res = pd.DataFrame()
 
     res['Prediction'] = y_pred
     res = res.rank(ascending=False)
 
     dataset[rank] = res['Prediction']
-
-    return dataset
+    return dataset, weights
 
 
 
