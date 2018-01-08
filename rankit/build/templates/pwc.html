@@ -103,6 +103,24 @@
       border-color: white;
     }
   
+    #build-method {
+      display: flex;
+      width: 100%;
+      margin: 18px 0 0 0;
+      justify-content: space-around;
+    }
+
+    #build-method a:link, #build-method a:visited {
+      text-decoration: none;
+      display: block;
+      padding: 0.8em;
+    }
+
+    #build-method .active {
+      background: #2980B9;
+      color: #fff;
+    }
+
   </style>
 </head>
 <body>
@@ -253,7 +271,13 @@
   
     <!-- ****************************************************************************** -->
     <!-- this is the right side of the build view -->
-    <div id="build-right">  
+    <div id="build-right">
+      <!-- this is the header -->
+      <ul id="build-method">
+        <li><a id="lc">List</a></li>
+        <li><a id="cc">Categorical</a></li>
+        <li><a id="pwc" class="active">Pairwise</a></li>
+      </ul>
       <!-- this is the lists -->
       <div id="pwl">
         <div class="pw">
@@ -546,6 +570,12 @@
 
     //   document.getElementById(methodFromURL + "_tab").setAttribute("class", "active");
     // }
+  </script>
+
+  <script>
+    $('#lc').attr('href', 'lc')
+    $('#cc').attr('href', 'cc')
+    $('#pwc').attr('href', 'pwc')
   </script>
 </body>
 </html>
