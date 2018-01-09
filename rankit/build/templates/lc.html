@@ -102,6 +102,24 @@
       border: 1px solid;
       border-color: white;
     }
+
+    #build-method {
+      display: flex;
+      width: 100%;
+      margin: 18px 0 0 0;
+      justify-content: space-around;
+    }
+
+    #build-method a:link, #build-method a:visited {
+      text-decoration: none;
+      display: block;
+      padding: 0.8em;
+    }
+
+    #build-method .active {
+      background: #2980B9;
+      color: #fff;
+    }
   
   </style>
 </head>
@@ -253,7 +271,13 @@
   
     <!-- ****************************************************************************** -->
     <!-- this is the right side of the build view -->
-    <div id="build-right">  
+    <div id="build-right">
+      <!-- this is the header -->
+      <ul id="build-method">
+        <li><a id="lc" class="active">List</a></li>
+        <li><a id="cc">Categorical</a></li>
+        <li><a id="pwc">Pairwise</a></li>
+      </ul>
       <!-- this is the lists -->
       <div class="scrollingDragInner box">
         <div id="lc-center" class="list lcb"></div>
@@ -518,6 +542,12 @@
     }
 
     document.querySelector('#lc-submit').addEventListener('click', handleLCSubmit)
+  </script>
+
+  <script>
+    $('#lc').attr('href', 'lc')
+    $('#cc').attr('href', 'cc')
+    $('#pwc').attr('href', 'pwc')
   </script>
 </body>
 </html>

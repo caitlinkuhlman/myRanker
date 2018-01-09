@@ -2,7 +2,7 @@
 
 RANKit allows users to manipulate rankings through personalized data visualization and rank building. When interpreting multi-attribute datasets, a slight change of weight between attributes can heavily impact ranking results. Most publically available rankings do not expose the attributes used to compose the ranking. This lack of disclosure results in possible exploitation of data because rankings can imply a conclusion that is not necessarily true. 
 
-To allow for unbiased extrapolation of data, RANKit is composed of two tools: Explore and Visualize.
+To allow for unbiased extrapolation of data, RANKit is composed of two tools: Explore and Build.
 
 To learn more about each tool, read our [guide](https://github.com/RankerToolWebsite/myRanker/wiki). 
 
@@ -34,6 +34,7 @@ Build is a machine learning tool that is trained through user selected preferenc
 - [Python 3](https://www.python.org)
 - [Pip](https://pypi.python.org/pypi/pip)
 - [Flask](http://flask.pocoo.org/)
+	- `$ pip install Flask`
 
 
 ### Run: *CURRENTLY IN DEVELOPMENT*
