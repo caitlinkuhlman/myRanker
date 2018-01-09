@@ -1,0 +1,571 @@
+/* General Blueprint Style */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@font-face {
+	font-family: 'bpicons';
+	src:url('../fonts/bpicons/bpicons.eot');
+	src:url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/bpicons/bpicons.woff') format('woff'),
+		url('../fonts/bpicons/bpicons.ttf') format('truetype'),
+		url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+} /* Made with http://icomoon.io/ */
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+.clearfix:after { clear: both; }
+
+body {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+}
+
+a {
+	color: #f0f0f0;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000;
+}
+
+.container {
+	position: relative;
+}
+
+.container > header,
+.main section > div {
+	width: 90%;
+	max-width: 69em;
+	margin: 0 auto;
+}
+
+.container > header h1 {
+	font-size: 2.125em;
+	line-height: 1.3;
+	margin: 0 0 0.6em 0;
+	float: left;
+	font-weight: 400;
+}
+
+.container > header > span {
+	display: block;
+	position: relative;
+	z-index: 9999;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5em;
+	padding: 0 0 0.6em 0.1em;
+}
+
+.container > header > span span:after {
+	width: 30px;
+	height: 30px;
+	left: -12px;
+	font-size: 50%;
+	top: -8px;
+	font-size: 75%;
+	position: relative;
+}
+
+.container > header > span span:hover:before {
+	content: attr(data-content);
+	text-transform: none;
+	text-indent: 0;
+	letter-spacing: 0;
+	font-weight: 300;
+	font-size: 110%;
+	padding: 0.8em 1em;
+	line-height: 1.2;
+	text-align: left;
+	left: auto;
+	margin-left: 4px;
+	position: absolute;
+	color: #fff;
+	/*background: #4CAF50;*/
+}
+
+.container > header nav {
+	float: right;
+	text-align: center;
+}
+
+.container > header nav a {
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	width: 2.5em;
+	height: 2.5em;
+	background: #fff;
+	border-radius: 50%;
+	margin: 0 0.1em;
+	/*border: 4px solid #4CAF50;*/
+}
+
+.container > header nav a > span {
+	display: none;
+}
+
+.container > header nav a:hover:before {
+	content: attr(data-info);
+	/*color: #4CAF50;*/
+	position: absolute;
+	width: 600%;
+	top: 120%;
+	text-align: right;
+	right: 0;
+	pointer-events: none;
+}
+
+.container > header nav a:hover {
+	/*background: #4CAF50;*/
+}
+
+.bp-icon:after {
+	font-family: 'bpicons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-align: center;
+	color: #4CAF50;
+	-webkit-font-smoothing: antialiased;
+}
+
+.container > header nav .bp-icon:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	line-height: 2;
+	text-indent: 0;
+}
+
+.container > header nav a:hover:after {
+	color: #fff;
+}
+
+.bp-icon-next:after {
+	content: "\e000";
+}
+.bp-icon-drop:after {
+	content: "\e001";
+}
+.bp-icon-archive:after {
+	content: "\e002";
+}
+.bp-icon-about:after {
+	content: "\e003";
+}
+.bp-icon-prev:after {
+	content: "\e004";
+}
+
+.main > section:nth-child(even) {
+	background: #4CAF50;
+	color: #fff;
+}
+
+.main section:first-child > div {
+	padding-top: 0em;
+}
+
+.main section p {
+	margin: 0;
+	padding: 1em 0;
+	font-size: 1.3em;
+	line-height: 1.5;
+}
+
+@media screen and (max-width: 55em) {
+
+	.container > header h1,
+	.container > header nav {
+		float: none;
+	}
+
+	.container > header > span,
+	.container > header h1 {
+		text-align: center;
+	}
+
+	.container > header nav {
+		margin: 0 auto;
+	}
+
+	.container > header > span {
+		text-indent: 30px;
+	}
+
+	.main section p {
+		padding: 2em 5%;
+		font-size: 1.4em;
+	}
+}
+
+.footer {
+	background:#181818;
+	text-align: center;
+	font-size: 120%;
+	color:#E3F2F4;
+}
+
+.cd-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-scrolling-bg {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 2;
+    font-weight: 300;
+  }
+}
+
+.titles {
+	font-size: 50px;
+	margin-bottom: 0;
+	font-weight: 800;
+	line-height: 72px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffffff
+}
+
+.titles-purple{
+	font-size: 45px;
+	margin-bottom: 0;
+	font-weight: 800;
+	line-height: 72px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #2980B9
+}
+
+#x{
+	text-decoration-color: #23A6D5;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+.container text-center {
+	text-align: center;
+}
+
+.purple {
+	background-color:#2980B9
+}
+
+#get-started.semi-transparent-button, #see-full-list.semi-transparent-button, .semi-transparent-button{
+	display: block;
+	box-sizing: border-box;
+	margin: 5% auto;
+	padding: 8px;
+	width: 30%;
+	background-color: rgba(200, 200, 200, 0.3);
+	border-radius: 2px;
+	border-color: rgba(200, 200, 200, 0.3);
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	letter-spacing: 1px;
+	transition: all 0.3s ease-out;
+	border: 1px solid rgba(200, 200, 200, 0.3);
+	text-decoration-color: white;
+}
+
+#get-started.semi-transparent-button:hover, #see-full-list.semi-transparent-button:hover, .semi-transparent-button:hover{
+	border: 1px solid;
+	border-color: white;
+	text-decoration-color: white;
+	text-decoration-color: white;
+}
+
+.white {
+	background-color: #FfFfFf
+}
+
+.col-item {
+width: 49%;
+margin-right: 2%;
+margin-bottom: 15px;
+padding: 5px;
+box-sizing: border-box;
+}
+
+.col-item:nth-child(2n) {
+margin-right: 0;
+padding-right: 0;
+}
+
+.col-item:nth-last-child(2),
+.col-item:last-child {
+margin-bottom: 0;
+}
+
+.wrapper {
+display: flex;
+flex-wrap: wrap;
+position: relative;
+background-color: #FfFfFf;
+margin-left: 70px;
+margin-right: 70px;
+
+}
+
+.wrapper:after {
+content: "";
+position: absolute;
+top: 0;
+left: calc(50% - 1px);
+height: 100%;
+border-right: 4px solid grey;
+}
+
+hr.style-four {
+	height: 12px;
+	border: 0;
+	box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+.page-header h1 {
+	text-align: center;
+	color: #333;
+	font-size: 80px;
+}
+
+.dataset {
+	background: white;
+	border: 1px solid #4CAF50;
+	margin: 12px;
+	padding: 12px;
+	text-align: center;
+	font-size: 20px;
+	width: 30%;
+	height: 200px;
+}
+
+.dataset a {
+	text-decoration: none;
+}
+
+.image {
+	position: relative;
+	width: 100%;
+}
+
+.inverse {
+	margin: 0;
+	padding: 1em 0;
+	font-size: 1.3em;
+	line-height: 1.5;
+	text-align: center;
+	color: #777777;
+}
+
+.grid {
+		padding: 80px 20px 120px 20px;
+		max-width: 1300px;
+		margin: 0 auto;
+		list-style: none;
+		text-align: center;
+	}
+
+	.grid li {
+		display: inline-block;
+		width: 440px;
+		margin: 0;
+		padding: 20px;
+		text-align: left;
+		position: relative;
+	}
+
+	.grid figure {
+		margin: 0;
+		position: relative;
+	}
+
+	.grid figure img {
+		max-width: 100%;
+		display: block;
+		position: relative;
+	}
+
+	.grid figcaption {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 20px;
+		background: #2c3f52;
+		color: #ed4e6e;
+	}
+
+	.grid figcaption h3 {
+		margin: 0;
+		padding: 0;
+		color: #fff;
+	}
+
+	.grid figcaption span:before {
+		/*content: 'by ';*/
+	}
+
+	.grid figcaption a {
+		text-align: center;
+		padding: 5px 10px;
+		border-radius: 2px;
+		display: inline-block;
+		background: #ed4e6e;
+		color: #fff;
+	}
+
+	/* Caption Style for Dataset boxes */
+	.cs-style-4 li {
+		-webkit-perspective: 1700px;
+		-moz-perspective: 1700px;
+		perspective: 1700px;
+		-webkit-perspective-origin: 0 50%;
+		-moz-perspective-origin: 0 50%;
+		perspective-origin: 0 50%;
+	}
+
+	.cs-style-4 figure {
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+	}
+
+	.cs-style-4 figure > div {
+		overflow: hidden;
+	}
+
+	.cs-style-4 figure img {
+		-webkit-transition: -webkit-transform 0.4s;
+		-moz-transition: -moz-transform 0.4s;
+		transition: transform 0.4s;
+	}
+
+	.no-touch .cs-style-4 figure:hover img,
+	.cs-style-4 figure.cs-hover img {
+		-webkit-transform: translateX(25%);
+		-moz-transform: translateX(25%);
+		-ms-transform: translateX(25%);
+		transform: translateX(25%);
+	}
+
+	.cs-style-4 figcaption {
+		height: 100%;
+		width: 50%;
+		opacity: 0;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-webkit-transform-origin: 0 0;
+		-moz-transform-origin: 0 0;
+		transform-origin: 0 0;
+		-webkit-transform: rotateY(-90deg);
+		-moz-transform: rotateY(-90deg);
+		transform: rotateY(-90deg);
+		-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+		-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+		transition: transform 0.4s, opacity 0.1s 0.3s;
+	}
+
+	.no-touch .cs-style-4 figure:hover figcaption,
+	.cs-style-4 figure.cs-hover figcaption {
+		opacity: 1;
+		-webkit-transform: rotateY(0deg);
+		-moz-transform: rotateY(0deg);
+		transform: rotateY(0deg);
+		-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+		-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+		transition: transform 0.4s, opacity 0.1s;
+	}
+
+	.cs-style-4 figcaption a {
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+	}
+
+	.cs-style-4 figcaption a.one {
+		position: absolute;
+		bottom: 100px;
+		right: 20px;
+	}
+
+	.cs-style-4 figcaption a.two {
+		position: absolute;
+		bottom: 60px;
+		right: 20px;
+	}
+
+	.cs-style-4 figcaption a.lineup {
+		position: absolute;
+		bottom: 60px;
+		right: 20px;
+	}
+
+	@media screen and (max-width: 31.5em) {
+		.grid {
+			padding: 10px 10px 100px 10px;
+		}
+		.grid li {
+			width: 100%;
+			min-width: 300px;
+		}
+	}

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/glyphicons-halflings-regular.eot') }}" />
+  <title>List Comparison</title>
+  <style>
+
+    .add_pairwise {
+      width: 15%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      border: none;
+      border-radius: 4px;
+      background: rgba(231, 76, 60, 1);
+      color: #fefffb;
+      font-weight: normal;
+      font-size: 100%;
+      position: absolute;
+      right: 0;
+      vertical-align: baseline;
+      float: right;
+      margin: 0px 50px;
+    }
+  
+    h2 {
+      text-align: center;
+      color: #333;
+      font-size: 30px;
+    }
+  
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      height: 100vh;
+    }
+  
+    p {
+      text-align: center;
+    }
+  
+    .submit {
+      width: 15%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      border: none;
+      border-radius: 4px;
+      background: rgba(231,76,60, 1);
+      color: #fefffb;
+      font-weight: normal;
+      font-size: 100%;
+      position: absolute;
+      right: 0;
+      vertical-align:baseline;
+      float: right;
+      margin: 0px 50px;
+  
+    }
+  
+    .submit[disabled] {
+      background-color:  rgba(200, 200, 200, 0.6);
+      color: #ffffff;
+      width: 15%;
+      vertical-align:baseline;
+      font-family: sans-serif;
+      font-weight: normal;
+      font-size: 100%;
+      float: right;
+      margin: 0px 50px;
+    }
+  
+    .semi-transparent-button{
+      background-color:  rgba(200, 200, 200, 0.6);
+      border-radius: 2px;
+      border-color: rgba(200, 200, 200, 0.6);
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease-out;
+      border: 1px solid rgba(200, 200, 200, 0.6);
+      text-decoration-color: white;
+  
+    }
+  
+    .semi-transparent-button:hover {
+      color: #fff;
+      border: 1px solid;
+      border-color: white;
+    }
+
+    #build-method {
+      display: flex;
+      width: 100%;
+      margin: 18px 0 0 0;
+      justify-content: space-around;
+    }
+
+    #build-method a:link, #build-method a:visited {
+      text-decoration: none;
+      display: block;
+      padding: 0.8em;
+    }
+
+    #build-method .active {
+      background: #2980B9;
+      color: #fff;
+    }
+  
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+  
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
+    </div>
+  
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href={{ url_for( 'build.buildList')}}> Dataset</a>
+        </li>
+        <!-- <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">Build
+            <strong class="caret"></strong>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href={{ url_for( 'build.categorical', dataset_name=dataset_name) }}>Categorical Comparison</a>
+            </li>
+            <li class="divider"> </li>
+            <li>
+              <a href={{ url_for( 'build.listComparison', dataset_name=dataset_name) }}>List Comparison</a>
+            </li>
+            <li class="divider"> </li>
+            <li>
+              <a href={{ url_for( 'build.pairwise', dataset_name=dataset_name) }}>Pairwise Comparison</a>
+            </li>
+          </ul>
+        </li> -->
+        <li>
+          <a href="{{ url_for('explore.explore', dataset_name= dataset_name) }}">Explore</a>
+        </li>
+      </ul>
+  
+    </div>
+  
+  </nav>
+  <div id="build-container">
+    <!-- this is the header -->
+    <div class="build-pool-header">
+      <div class="navbar-form navbar-center" role="search">
+        <!-- search -->
+        <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
+        <!-- sort -->
+        <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">
+          Sort
+        </button>
+        <!-- shuffle -->
+        <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
+          Shuffle
+        </button>
+        <!-- help -->
+        <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn">
+          <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        </button>
+      </div>
+
+
+      <ul class="cd-tour-wrapper">
+        <li class="cd-single-step">
+          <span>Step 1</span>
+
+          <div class="cd-more-info right">
+            <h2>Step Number 1</h2>
+            <p>Select and click a method you wish to rank with.</p>
+            List Comparison: Rank all of your items in an ordered list.
+            <br>
+            <br>Categorical Comparison: Rank your items by organizing them into three categories. There is no order within each
+            category.
+            <br>
+            <br>Pairwise Comparison: Compare your items in pairs to judge which of the two item in a pair is preferred over the
+            other.
+            <br>
+            </p>
+            <img src="{{ url_for('static',filename='images/Step11.png') }}">
+          </div>
+        </li>
+        <!-- .cd-single-step -->
+
+        <li class="cd-single-step">
+          <span>Step 2</span>
+
+          <div class="cd-more-info top">
+            <h2>Step Number 2</h2>
+            <p>Select and drag each item to the desired ranking panel.</p>
+            <img src="{{ url_for('static',filename='images/step22.png') }}">
+          </div>
+        </li>
+        <!-- .cd-single-step -->
+
+        <li class="cd-single-step">
+          <span>Step 3</span>
+
+          <div class="cd-more-info bottom">
+            <h2>Step Number 3</h2>
+            <p>You can randomize the dataset items by clicking the shuffle button.</p>
+            <img src="{{ url_for('static',filename='images/step44.png') }}">
+          </div>
+        </li>
+
+        <li class="cd-single-step">
+          <span>Step 4</span>
+
+          <div class="cd-more-info bottom">
+            <h2>Step Number 4</h2>
+            <p>After you use shuffle, you can sort the data set objects in Alphabetical Order by clicking the Sort button to
+              help your ranking picks.</p>
+            <img src="{{ url_for('static',filename='images/step33.png') }}">
+          </div>
+        </li>
+
+        <li class="cd-single-step">
+          <span>Step 5</span>
+
+          <div class="cd-more-info left">
+            <h2>Step Number 5</h2>
+            <p>One your finished with the ranking, click the Rank button to see your results!</p>
+            <img src="{{ url_for('static',filename='images/step55.png') }}">
+          </div>
+        </li>
+
+      </ul>
+      <div class="cd-cover-layer"></div>
+
+    </div>
+
+    <!-- this is the left side of the build view -->
+    <div id="build-left">
+        <!-- this is the pool -->
+      <div class="scrollingDragInner viewBackround">
+        <div id="top" class="pool">
+          <!-- objects from dataset inserted here -->
+          {% for x in dataset %}
+          <div id="{{x}}" class="object noSelect">{{x}}</div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  
+    <!-- ****************************************************************************** -->
+    <!-- this is the right side of the build view -->
+    <div id="build-right">
+      <!-- this is the header -->
+      <ul id="build-method">
+        <li><a id="lc" class="active">List</a></li>
+        <li><a id="cc">Categorical</a></li>
+        <li><a id="pwc">Pairwise</a></li>
+      </ul>
+      <!-- this is the lists -->
+      <div class="scrollingDragInner box">
+        <div id="lc-center" class="list lcb"></div>
+      </div>
+      <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
+    </div>
+  </div>
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
+
+  <!-- this is script for the pool -->
+  <script>
+
+    function getDataset() {
+      return Array.from(document.querySelector('#top').children).map(x => x.innerText)
+    }
+
+    function sortDataset() {
+      const dataset = getDataset()
+      dataset.sort()
+      render(dataset)
+    }
+
+    function shuffleDataset() {
+      const dataset = getDataset()
+      for (let i = dataset.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [dataset[i], dataset[j]] = [dataset[j], dataset[i]];
+      }
+      render(dataset)
+    }
+
+    const dataset = getDataset()
+    function searchDataset(e) {
+      let difference = dataset.filter(x => getRankedObjects().indexOf(x) == -1)
+      const value = e.target.value
+      const re = new RegExp(value, 'i')
+      const newDataset = difference.filter(x => re.test(x))
+      render(newDataset)
+    }
+
+    function render(dataset) {
+      const pool = document.querySelector('#top')
+      const html = dataset.map(x => `<div id="${x}" class="object noSelect">${x}</div>`).join('\n')
+      pool.innerHTML = html
+    }
+  </script>
+
+  <script>
+    const source = document.querySelector('#top')
+    const target = document.querySelector('#lc-center')
+
+    const source_sortable = Sortable.create(source, {
+      group: 'list',
+      animation: 300,
+      sort: false,
+      ghostClass: 'ghost',
+    })
+
+    const target_sortable = Sortable.create(target, {
+      group: 'list',
+      animation: 300,
+      ghostClass: 'ghost',
+    })
+
+    const med = document.querySelector('#center')
+    const high = document.querySelector('#left')
+    const low = document.querySelector('#right')
+
+    const high_sortable = Sortable.create(high, {
+      group: 'list',
+      animation: 300,
+      ghostClass: 'ghost',
+    })
+    const med_sortable = Sortable.create(med, {
+      group: 'list',
+      animation: 300,
+      ghostClass: 'ghost',
+    })
+    const low_sortable = Sortable.create(low, {
+      group: 'list',
+      animation: 300,
+      ghostClass: 'ghost',
+    })
+
+    // const high = document.querySelector('.high')
+    // const low = document.querySelector('.low')
+
+    function add_to_sortable(className) {
+      const all = document.querySelectorAll(className)
+
+      all.forEach(t => Sortable.create(t, {
+        group: {
+          name: 'list',
+          put: (to) => to.el.children.length < 1,
+        },
+        animation: 100,
+
+      }))
+
+    }
+    add_to_sortable('.high')
+    add_to_sortable('.low')
+
+    function handleMore() {
+      const pwl = document.querySelector('#pwl')
+      const html = `<div class="pw"><div class="high list"></div><div class="low list"></div></div>`
+      pwl.innerHTML += html
+      // const highs = document.querySelectorAll('.high')
+      // const high = highs[highs.length-1]
+      add_to_sortable('.high')
+      add_to_sortable('.low')
+    }
+
+  </script>
+
+  <!-- List Comparison Related Scripts -->
+  <script>
+
+    var min_num_of_objects = 2
+
+    var lc_observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+
+        lc_urlUpdate()
+
+        const list_length = document.querySelector('#lc-center').children.length
+        if (list_length < min_num_of_objects) {
+          $('#lc-submit').attr('disabled', 'disabled');
+        }
+        else {
+          $('#lc-submit').removeAttr('disabled');
+        }
+      });
+    });
+
+    function lc_urlUpdate() {
+      var list = Array.from(document.querySelectorAll('#lc-center .object')).map(x => nameToId(x.id))
+      var url = window.location.pathname + "?method=" + "lc" + "&" + "objects="
+      history.pushState({}, 'List Comparison', url + list.toString())
+    }
+    function nameToId(name) {
+      if (name !== undefined) {
+        var i = 0
+        {% for x in dataset %}
+        if ('{{ x }}' == name) {
+          return i
+        }
+        i++
+        {% endfor %}
+      }
+      return -1
+    }
+
+
+    // Node, config
+    var lc_observerConfig = {
+      childList: true,
+    };
+
+    var lc_center_node = document.getElementById('lc-center');
+    lc_observer.observe(lc_center_node, lc_observerConfig);
+
+    var lc_QueryString = function () {
+      var query_string = {};
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        // If first entry with this name
+        if (typeof query_string[pair[0]] === "undefined") {
+          query_string[pair[0]] = decodeURIComponent(pair[1]);
+          // If second entry with this name
+        } else if (typeof query_string[pair[0]] === "string") {
+          var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+          query_string[pair[0]] = arr;
+          // If third or later entry with this name
+        } else {
+          query_string[pair[0]].push(decodeURIComponent(pair[1]));
+        }
+      }
+      return query_string;
+    }();
+
+    function lc_getParametersFromURL() {
+      var selectedObjects = lc_QueryString.objects;
+
+      if (selectedObjects !== undefined && selectedObjects != "") {
+        var objects = selectedObjects.split(',');
+      }
+      if (objects !== undefined) {
+        // Convert ids back to names
+        var objectsNames = Array.from(objects.map(x => idToName(x)))
+        return objectsNames;
+      }
+      return objects;
+    }
+    function idToName(id) {
+      var i = 0
+      {% for x in dataset %}
+      if (id == i) {
+        return '{{ x }}'
+      }
+      i++
+      {% endfor %}
+      return id
+    }
+
+    var lc_objectsFromURL = {}
+    lc_objectsFromURL = lc_getParametersFromURL()
+
+    if (lc_objectsFromURL !== undefined) {
+      lc_populateBox()
+    }
+
+    function lc_populateBox() {
+      console.log(lc_objectsFromURL)
+      // id="${x}" class="object noSelect"
+      for (let i = 0; i < lc_objectsFromURL.length; i++) {
+        var node = document.createElement("DIV");
+        var textnode = document.createTextNode(lc_objectsFromURL[i]);
+        node.appendChild(textnode);
+        node.setAttribute("id", lc_objectsFromURL[i]);
+        node.setAttribute("class", "object noSelect");
+        document.querySelector('#lc-center').appendChild(node);
+      }
+    }
+
+    function getRankedObjects() {
+      return Array.from(document.querySelector('#lc-center').children).map(x => x.innerText)
+    }
+
+    function handleLCSubmit() {
+      const pwl = lc_generatePairwise()
+      var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}"
+      for (let i = 0; i < pwl.length; i++) {
+        pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + "," + pwl[i].low + "&"
+      }
+
+      window.location = pairwiseURL
+
+    }
+    function lc_generatePairwise() {
+      const list = Array.from(document.querySelectorAll('#lc-center .object'))
+      const ids = list.map(x => x.id)
+      // pairwise list to send back to server
+      let pwl = []
+      for (let i = 0; i < ids.length - 1; i++) {
+        for (let j = i + 1; j < ids.length; j++) {
+          pwl.push({ 'high': ids[i], 'low': ids[j] })
+        }
+      }
+      return pwl
+    }
+
+    document.querySelector('#lc-submit').addEventListener('click', handleLCSubmit)
+  </script>
+
+  <script>
+    $('#lc').attr('href', 'lc')
+    $('#cc').attr('href', 'cc')
+    $('#pwc').attr('href', 'pwc')
+  </script>
+</body>
+</html>

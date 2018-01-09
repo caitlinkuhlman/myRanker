@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+{% extends 'base_build.html' %}
+{% block content %}
+<style>
+
+</style>
+
+<div class="pw-wrapper">
+  <div id="pwl">
+    <div class="pw">
+      <div class="high"></div>
+      <div class="low"></div>
+    </div>
+  </div>
+  <button type="button" class="btn " id="more" onclick="handleMore()">Add New Pairwise</button>
+
+  <!-- <div class="pairwise">
+    <div class="list high">
+      <h2><b> High </b></h2>
+      <div id="bot"  class="list">
+        <div id="high" class="list"></div>
+      </div>
+    </div>
+    <div class="list low">
+      <h2><b> Low </b></h2>
+      <div id="bot"  class="list">
+        <div id="low" class="list"></div>
+      </div>
+    </div>
+
+  </div> -->
+</div>
+<!-- <button type="button" class="semi-transparent-button btn " id="sort" onclick="">+</button> -->
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/pwc.js') }}" ></script>
+<!-- <script type = "text/javascript" src="{{ url_for('static', filename = 'js/dragula.min.js') }}"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+{#<script type="text/javascript" src="./javascript.js"></script>#}
+<script
+    src="http://maps.googleapis.com/maps/api/js?key=YOUR_APIKEY&sensor=false">
+</script>
+
+<script>
+
+
+
+    var min_num_of_objects = 2
+
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            const high = Array.from(document.querySelectorAll('.high > div')).map(x => x.id)
+            const low = Array.from(document.querySelectorAll('.low > div')).map(x => x.id)
+            var url = window.location.pathname+"?high="+high.toString()+"&"+"low="+low.toString()
+            history.pushState({},'Pairwise Comparison', url)
+
+            const high_length = document.querySelectorAll('.high > div').length
+            const low_length = document.querySelectorAll('.low > div').length
+
+            const list_num = (high_length > 0 ? 1 : 0) + (low_length > 0 ? 1 : 0)
+
+            if ((high_length != low_length) ||  ( list_num < min_num_of_objects)){
+                $('#submit').attr('disabled', 'disabled');
+            }
+            else {
+                $('#submit').removeAttr('disabled');
+            }
+        });
+    });
+
+    // Node, config
+    var observerConfig = {
+        childList: true,
+        subtree: true,
+    };
+
+    var node = document.getElementById('pwl');
+    observer.observe(node, observerConfig);
+
+    var QueryString = function() {
+	    var query_string = {};
+	    var query = window.location.search.substring(1);
+	    var vars = query.split("&");
+	    for (var i = 0; i < vars.length; i++) {
+		    var pair = vars[i].split("=");
+		    // If first entry with this name
+		    if (typeof query_string[pair[0]] === "undefined") {
+			    query_string[pair[0]] = decodeURIComponent(pair[1]);
+			    // If second entry with this name
+		    } else if (typeof query_string[pair[0]] === "string") {
+			    var arr = [ query_string[pair[0]], decodeURIComponent(pair[1]) ];
+			    query_string[pair[0]] = arr;
+			    // If third or later entry with this name
+		    } else {
+			    query_string[pair[0]].push(decodeURIComponent(pair[1]));
+		    }
+	    }
+	    return query_string;
+    }();
+    function getHighFromURL() {
+	    var selectedHigh = QueryString.high;
+
+	    if (selectedHigh !== undefined && selectedHigh != "") {
+	        var high = selectedHigh.split(',');
+        }
+        return high;
+    }
+    function getLowFromURL() {
+	    var selectedLow = QueryString.low;
+
+	    if (selectedLow !== undefined && selectedLow != "") {
+	        var low = selectedLow.split(',');
+        }
+        return low;
+    }
+    var highFromURL = {}
+    var lowFromURL = {}
+    highFromURL = getHighFromURL()
+    lowFromURL = getLowFromURL()
+
+    if (highFromURL !== undefined) {
+        var numOfElemInHighBox = 0;
+        var index_high = 0;
+        populateBox(".high", highFromURL, index_high, numOfElemInHighBox)
+    }
+    if (lowFromURL !== undefined) {
+        var numOfElemInLowBox = 0;
+        var index_low = 0;
+        populateBox(".low", lowFromURL, index_low, numOfElemInLowBox)
+    }
+    function populateBox(box, objectsFromURL, index, numOfElem) {
+        for (let i=0; i <objectsFromURL.length; i++) {
+            if (numOfElem > 0) {
+                if (document.querySelectorAll(box)[index+1] === undefined) {
+                    handleMore()
+                }
+                index = index+1
+                numOfElem = 0
+            }
+            var node = document.createElement("DIV");
+            var textnode = document.createTextNode(objectsFromURL[i]);
+            node.appendChild(textnode);
+            node.setAttribute("id", objectsFromURL[i]);
+            node.setAttribute("class", "object noSelect");
+            document.querySelectorAll(box)[index].appendChild(node);
+            numOfElem = numOfElem + 1
+        }
+    }
+
+    function getRankedObjects(){
+        return []
+    }
+  function handleSubmit() {
+
+      const pwl = generatePairwise()
+      var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}" + "/"
+      for (let i=0; i<pwl.length; i++) {
+          pairwiseURL = pairwiseURL+i+"="+pwl[i].high+","+pwl[i].low+"&"
+      }
+      window.location=pairwiseURL
+  }
+  function generatePairwise() {
+    const highs = Array.from(document.querySelectorAll('.high .object')).map(x => x.id)
+    const lows = Array.from(document.querySelectorAll('.low .object')).map(x => x.id)
+
+    let pwl = []
+    for (let i = 0; i < highs.length; i++) {
+      pwl.push({ 'high': highs[i], 'low': lows[i] })
+    }
+    console.log(pwl)
+    return pwl
+  }
+  function sendPostRequest(pwl) {
+    const dataset_name = '{{dataset_name}}'
+    const url = '{{url_for('explore.explore', dataset_name = dataset_name) }}'
+    const xhr = new XMLHttpRequest()
+    xhr.open('POST', url, true)
+    xhr.setRequestHeader('Content-type', 'application/json')
+    // xhr.onload()
+    xhr.send(JSON.stringify({
+      dataset_name: dataset_name,
+      pairs: pwl
+    }))
+    xhr.onload = function () {
+{#      document.write(this.response)#}
+        window.document = this.response
+      window.history.pushState('', '', url);
+    }
+  }
+  document.querySelector('#submit').addEventListener('click', handleSubmit)
+</script>
+
+{% endblock %}
