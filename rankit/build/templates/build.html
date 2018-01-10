@@ -123,6 +123,121 @@
     border-color: white;
   }
 
+  h1.title {
+  text-transform: capitalize;
+  display: block;
+  color: white;
+  font-size: 40px;
+  display: inline-block;
+  padding: 0px 20px 0px;
+  }
+
+  h1.title:first-letter {
+  text-transform: uppercase;
+  }
+
+  .page-header h1 {
+    padding: 0px 20px 0px;
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    display: inline-block;
+  }
+
+  #ac-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .6);
+    z-index: 1001;
+}
+#popup {
+    width: 555px;
+    height: 375px;
+    background: #FFFFFF;
+    border: 5px solid #000;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    box-shadow: #64686e 0px 0px 3px 3px;
+    -moz-box-shadow: #64686e 0px 0px 3px 3px;
+    -webkit-box-shadow: #64686e 0px 0px 3px 3px;
+    position: relative;
+    top: 150px;
+    left: 375px;
+}
+
+.radioSelect {
+}
+
+
+.Submit{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background-color: #df4f71;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 1em 1.8em;
+  border-radius: 50em;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+ .cl-effect-1 a {
+  color: #95ac5f;
+  /* color: rgba(0,0,0,0.2); */
+	font-weight: 700;
+	text-shadow: none;
+}
+
+/* Effect 1: Brackets */
+.cl-effect-1 a::before,
+.cl-effect-1 a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1 a::before {
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.cl-effect-1 a::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.cl-effect-1 a:hover::before,
+.cl-effect-1 a:hover::after,
+.cl-effect-1 a:focus::before,
+.cl-effect-1 a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
+.adjust {
+  padding: 0px 10px;
+}
+
   </style>
 
 </head>
@@ -130,7 +245,7 @@
 <body>
   <nav class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
-  
+
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -139,212 +254,272 @@
       </button>
       <a class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
     </div>
-  
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
           <a href={{ url_for( 'build.buildList')}}> Dataset</a>
         </li>
-        <!-- {#
-        <li class="dropdown">#} {#
-          <a class="dropdown-toggle" data-toggle="dropdown">Build#} {#
-            <strong class="caret"></strong>#} {# </a>#} {#
-          <ul class="dropdown-menu">#} {#
-            <li>#} {#
-              <a href={{ url_for( 'build.categorical', dataset_name=dataset_name) }}>Categorical Comparison</a>#} {# </li>#} {#
-            <li class="divider">#} {# </li>#} {#
-            <li>#} {#
-              <a href={{ url_for( 'build.listComparison', dataset_name=dataset_name) }}>List Comparison</a>#} {# </li>#} {#
-            <li class="divider">#} {# </li>#} {#
-            <li>#} {#
-              <a href={{ url_for( 'build.pairwise', dataset_name=dataset_name) }}>Pairwise Comparison</a>#} {# </li>#} {# </ul>#} {# </li>#} -->
-        <li>
-          <a href="{{ url_for('explore.explore', dataset_name= dataset_name) }}">Explore</a>
-        </li>
-      </ul>
-  
-    </div>
-  
-  </nav>
-  <div id="build-container">
-    <!-- this is the left side of the build view -->
-    <div id="build-left">
-  
-      <!-- this is the header -->
-      <div class="build-pool-header">
-        <div class="navbar-form navbar-center" role="search">
-          <!-- search -->
-          <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
-          <!-- sort -->
-          <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">
-            Sort
-          </button>
-          <!-- shuffle -->
-          <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
-            Shuffle
-          </button>
-          <!-- help -->
-          <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn">
-            <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-          </button>
-        </div>
-  
-  
-        <ul class="cd-tour-wrapper">
-          <li class="cd-single-step">
-            <span>Step 1</span>
-  
-            <div class="cd-more-info right">
-              <h2>Step Number 1</h2>
-              <p>Select and click a method you wish to rank with.</p>
-              List Comparison: Rank all of your items in an ordered list.
-              <br>
-              <br>Categorical Comparison: Rank your items by organizing them into three categories. There is no order within each
-              category.
-              <br>
-              <br>Pairwise Comparison: Compare your items in pairs to judge which of the two item in a pair is preferred over the
-              other.
-              <br>
-              </p>
-              <img src="{{ url_for('static',filename='images/Step11.png') }}">
-            </div>
-          </li>
-          <!-- .cd-single-step -->
-  
-          <li class="cd-single-step">
-            <span>Step 2</span>
-  
-            <div class="cd-more-info top">
-              <h2>Step Number 2</h2>
-              <p>Select and drag each item to the desired ranking panel.</p>
-              <img src="{{ url_for('static',filename='images/step22.png') }}">
-            </div>
-          </li>
-          <!-- .cd-single-step -->
-  
-          <li class="cd-single-step">
-            <span>Step 3</span>
-  
-            <div class="cd-more-info bottom">
-              <h2>Step Number 3</h2>
-              <p>You can randomize the dataset items by clicking the shuffle button.</p>
-              <img src="{{ url_for('static',filename='images/step44.png') }}">
-            </div>
-          </li>
-  
-          <li class="cd-single-step">
-            <span>Step 4</span>
-  
-            <div class="cd-more-info bottom">
-              <h2>Step Number 4</h2>
-              <p>After you use shuffle, you can sort the data set objects in Alphabetical Order by clicking the Sort button to
-                help your ranking picks.</p>
-              <img src="{{ url_for('static',filename='images/step33.png') }}">
-            </div>
-          </li>
-  
-          <li class="cd-single-step">
-            <span>Step 5</span>
-  
-            <div class="cd-more-info left">
-              <h2>Step Number 5</h2>
-              <p>One your finished with the ranking, click the Rank button to see your results!</p>
-              <img src="{{ url_for('static',filename='images/step55.png') }}">
-            </div>
-          </li>
-  
-        </ul>
-        <div class="cd-cover-layer"></div>
-  
-      </div>
-  
-      <!-- this is the pool -->
-      <div class="scrollingDragInner viewBackround">
-        <div id="top" class="pool">
-          <!-- objects from dataset inserted here -->
-          {% for x in dataset %}
-          <div id="{{x}}" class="object noSelect">{{x}}</div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  
-    <!-- ****************************************************************************** -->
-    <!-- this is the right side of the build view -->
-    <div id="build-right">
-  
-  
-      <div class="build-description">
-        <p>
-          Choose how you want to rank between List, Categorical, and Pairwise. Drag and drop each item in the data set. Once you're
-          done with your ranking, click “Rank!” Button Below.
-        </p>
-      </div>
-  
-  
-      <!-- this is the header -->
-      <ul class="nav nav-pills build-list-header" role="tablist">
-        <li id="lc_tab" role="presentation" class="active">
-          <a href="#lc" onclick="lc_urlUpdate()" aria-controls="lc" role="tab" data-toggle="tab">List</a>
-        </li>
-        <li id="cc_tab" role="presentation">
-          <a href="#cc" onclick="cc_urlUpdate()" aria-controls="cc" role="tab" data-toggle="tab">Categorical</a>
-        </li>
-        <li id="pwc_tab" role="presentation">
-          <a href="#pwc" onclick="pwc_urlUpdate()" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise</a>
-        </li>
-        <!-- <li role="presentation">
-                          <br>
-                          <p>Drag and drop each item in the dataset to your ranking highlighted in red. Once you're done click the “Rank!” button at the buttom of your ranking</p>
-                        </li> -->
-  
-  
-      </ul>
-  
-      <!-- this is the lists -->
-      <div class="tab-content">
-        <!-- this is List Comparison tab -->
-        <div role="tabpanel" class="tab-pane fade in active" id="lc">
-  
-          <div class="scrollingDragInner box">
-            <div id="lc-center" class="list lcb"></div>
-          </div>
-          <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
-  
-        </div>
-        <!-- this is Categorical Comparison tab -->
-        <div role="tabpanel" class="tab-pane fade" id="cc">
-  
-          <div class="scrollingDragInner box">
-            <div id="left" class="list ccb"></div>
-          </div>
-          <div class="scrollingDragInner box">
-            <div id="center" class="list ccb"></div>
-          </div>
-          <div class="scrollingDragInner box">
-            <div id="right" class="list ccb"></div>
-          </div>
-          <button type="button" id="cc-submit" class="btn submit" disabled="disabled">RANK!</button>
-  
-        </div>
-        <!-- this is Pairwise Comparison tab -->
-        <div role="tabpanel" class="tab-pane fade" id="pwc">
-  
-          <div id="pwl">
-            <div class="pw">
-              <div class="high list"></div>
-              <div class="low list"></div>
-            </div>
-          </div>
-          <button type="button" class="btn " id="more" onclick="handleMore()">Add New Pairwise</button>
-          <button type="button" id="submit" class="btn submit" disabled="disabled">RANK!</button>
-        </div>
-      </div>
-    </div>
-  </div>
+        {#        <li class="dropdown">#}
+          {#          <a class="dropdown-toggle" data-toggle="dropdown">Build#}
+            {#            <strong class="caret"></strong>#}
+            {#          </a>#}
+            {#          <ul class="dropdown-menu">#}
+              {#            <li>#}
+                {#              <a href={{ url_for( 'build.categorical', dataset_name=dataset_name) }}>Categorical Comparison</a>#}
+                {#            </li>#}
+                {#            <li class="divider">#}
+                  {#            </li>#}
+                  {#            <li>#}
+                    {#              <a href={{ url_for( 'build.listComparison', dataset_name=dataset_name) }}>List Comparison</a>#}
+                    {#            </li>#}
+                    {#            <li class="divider">#}
+                      {#            </li>#}
+                      {#            <li>#}
+                        {#              <a href={{ url_for( 'build.pairwise', dataset_name=dataset_name) }}>Pairwise Comparison</a>#}
+                        {#            </li>#}
+                        {#          </ul>#}
+                        {#        </li>#}
+                        <li>
+                          <a href="{{ url_for('explore.explore', dataset_name= dataset_name) }}">Explore</a>
+                        </li>
+                      </ul>
+
+                    </div>
+
+                  </nav>
+
+                  <div class="page-header">
+                    <h1 class="title">
+                      <b>
+                        Build: {{ dataset_name |replace("_", " ") }}
+
+                      </b>
+                    </h1>
+                  </div>
+
+                  <div id="ac-wrapper" style='display:none'>
+                      <div id="popup">
+                          <center>
+                               <br>
+                               <h2>Select and Click a Ranking Method</h2>
+                               <br>
+                               <div class="adjust">
+                                 <ul>
+                                   <li class="cl-effect-1" role="presentation">
+                                     <a href="#lc" onclick="lc_urlUpdate()" aria-controls="lc" role="tab" data-toggle="tab">List Comparison</a>
+                                     <p>Rank all of your items in an ordered list.</p>
+                                   </li>
+                                   <br>
+                                   <br>
+                                   <li class="cl-effect-1" role="presentation">
+                                     <a href="#cc" onclick="cc_urlUpdate()" aria-controls="cc" role="tab" data-toggle="tab">Categorical Comparison</a>
+                                     <p>Rank your items by organizing them into three categories. There is no order within each category.</p>
+                                   </li>
+                                   <br>
+                                   <br>
+                                   <li class="cl-effect-1" role="presentation">
+                                     <a href="#pwc" onclick="pwc_urlUpdate()" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise Comparison</a>
+                                     <p>Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</p>
+                                   </li>
+                               </ul>
+                               </div>
+                            <br>
+                            <br>
+                              <input class="Submit" type="submit" name="submit" value="Get Started" onClick="PopUp('hide')" />
+                          </center>
+                      </div>
+                  </div>
+
+                  <div id="build-container">
+
+                    <!-- this is the left side of the build view -->
+                    <div id="build-left">
+
+                      <!-- this is the header -->
+                      <div class="build-pool-header">
+                        <div class="navbar-form navbar-center" role="search">
+                          <!-- Dataset Name -->
+                          <!-- search -->
+                          <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
+                          <!-- sort -->
+                          <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">
+                            Sort
+                          </button>
+                          <!-- shuffle -->
+                          <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
+                            Shuffle
+                          </button>
+                          <!-- help -->
+                          <!-- <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn">
+                            <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                          </button> -->
+                        </div>
+
+
+                        <ul class="cd-tour-wrapper">
+                          <li class="cd-single-step">
+                            <span>Step 1</span>
+
+                            <div class="cd-more-info right">
+                              <h2>Step Number 1</h2>
+                              <p>Select and click a method you wish to rank with.</p>
+                              List Comparison: Rank all of your items in an ordered list.<br>
+                              <br>Categorical Comparison: Rank your items by organizing them into three categories. There is no order within each category.<br>
+                              <br>Pairwise Comparison: Compare your items in pairs to judge which of the two item in a pair is preferred over the other.<br>
+                            </p>
+                            <img src="{{ url_for('static',filename='images/Step11.png') }}">
+                          </div>
+                        </li> <!-- .cd-single-step -->
+
+                        <li class="cd-single-step">
+                          <span>Step 2</span>
+
+                          <div class="cd-more-info top">
+                            <h2>Step Number 2</h2>
+                            <p>Select and drag each item to the desired ranking panel.</p>
+                            <img src="{{ url_for('static',filename='images/step22.png') }}">
+                          </div>
+                        </li> <!-- .cd-single-step -->
+
+                        <li class="cd-single-step">
+                          <span>Step 3</span>
+
+                          <div class="cd-more-info bottom">
+                            <h2>Step Number 3</h2>
+                            <p>You can randomize the dataset items by clicking the shuffle button.</p>
+                            <img src="{{ url_for('static',filename='images/step44.png') }}">
+                          </div>
+                        </li>
+
+                        <li class="cd-single-step">
+                          <span>Step 4</span>
+
+                          <div class="cd-more-info bottom">
+                            <h2>Step Number 4</h2>
+                            <p>After you use shuffle, you can sort the data set objects in Alphabetical Order by clicking the Sort button to help your ranking picks.</p>
+                            <img src="{{ url_for('static',filename='images/step33.png') }}">
+                          </div>
+                        </li>
+
+                        <li class="cd-single-step">
+                          <span>Step 5</span>
+
+                          <div class="cd-more-info left">
+                            <h2>Step Number 5</h2>
+                            <p>One your finished with the ranking, click the Rank button to see your results!</p>
+                            <img src="{{ url_for('static',filename='images/step55.png') }}">
+                          </div>
+                        </li>
+
+                      </ul>
+                      <div class="cd-cover-layer"></div>
+
+
+                    </div>
+
+                    <!-- this is the pool -->
+                    <div class="scrollingDragInner viewBackround">
+                      <div id="top" class="pool">
+                        <!-- objects from dataset inserted here -->
+                        {% for x in dataset %}
+                        <div id="{{x}}" class="object noSelect">{{x}}</div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ****************************************************************************** -->
+                  <!-- this is the right side of the build view -->
+                  <div id="build-right">
+
+
+                    <!-- <div class="build-description">
+                      <p>
+                        Choose how you want to rank between List, Categorical, and Pairwise.
+                        Drag and drop each item in the data set.
+                        Once you're done with your ranking, click “Rank!” Button Below.
+                      </p>
+                    </div> -->
+
+                    <div class="build-pool-header">
+                      <div class="navbar-form navbar-right" role="search">
+                        <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn">
+                          <p>Instructions</p>
+                          <!-- <p>Get Started</p> -->
+                        </button>
+                      </div>
+                    </div>
+
+
+                    <!-- this is the header -->
+                    <ul class="nav nav-pills build-list-header" role="tablist">
+                      <li id="lc_tab" role="presentation" class="active">
+                        <a href="#lc" onclick="lc_urlUpdate()" aria-controls="lc" role="tab" data-toggle="tab">List</a>
+                      </li>
+                      <li id="cc_tab" role="presentation">
+                        <a href="#cc" onclick="cc_urlUpdate()" aria-controls="cc" role="tab" data-toggle="tab">Categorical</a>
+                      </li>
+                      <li id="pwc_tab" role="presentation">
+                        <a href="#pwc" onclick="pwc_urlUpdate()" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise</a>
+                      </li>
+                  </ul>
+
+                  <!-- this is the lists -->
+                  <div class="tab-content">
+                    <!-- this is List Comparison tab -->
+                    <div role="tabpanel" class="tab-pane fade in active" id="lc">
+
+                      <div class="scrollingDragInner box">
+                        <div id="lc-center" class="list lcb"></div>
+                      </div>
+                      <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
+
+                    </div>
+                    <!-- this is Categorical Comparison tab -->
+                    <div role="tabpanel" class="tab-pane fade" id="cc">
+
+                      <div class="scrollingDragInner box">
+                        <div id="left" class="list ccb"></div>
+                      </div>
+                      <div class="scrollingDragInner box">
+                        <div id="center" class="list ccb"></div>
+                      </div>
+                      <div class="scrollingDragInner box">
+                        <div id="right" class="list ccb"></div>
+                      </div>
+                      <button type="button" id="cc-submit" class="btn submit" disabled="disabled">RANK!</button>
+
+                    </div>
+                    <!-- this is Pairwise Comparison tab -->
+                    <div role="tabpanel" class="tab-pane fade" id="pwc">
+
+                      <div id="pwl">
+                        <div class="pw">
+                          <div class="high list"></div>
+                          <div class="low list"></div>
+                        </div>
+                      </div>
+                      <button type="button" class="btn " id="more" onclick="handleMore()">Add New Pairwise</button>
+                      <button type="button" id="submit" class="btn submit" disabled="disabled">RANK!</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <!-- this is script for the pool -->
               <script>
+
+              function PopUp(hideOrshow) {
+                  if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
+                  else document.getElementById('ac-wrapper').removeAttribute('style');
+              }
+              window.onload = function () {
+                  setTimeout(function () {
+                      PopUp('show');
+                  }, 0000);
+              }
+
 
               function getDataset() {
                 return Array.from(document.querySelector('#top').children).map(x => x.innerText)
@@ -977,6 +1152,8 @@
 
                 document.getElementById(methodFromURL+"_tab").setAttribute("class", "active");
               }
+
+
               </script>
             </body>
 
