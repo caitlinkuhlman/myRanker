@@ -144,6 +144,99 @@
     display: inline-block;
   }
 
+  #ac-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .6);
+    z-index: 1001;
+}
+#popup {
+    width: 555px;
+    height: 375px;
+    background: #FFFFFF;
+    border: 5px solid #000;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    box-shadow: #64686e 0px 0px 3px 3px;
+    -moz-box-shadow: #64686e 0px 0px 3px 3px;
+    -webkit-box-shadow: #64686e 0px 0px 3px 3px;
+    position: relative;
+    top: 150px;
+    left: 375px;
+}
+
+.radioSelect {
+}
+
+
+.Submit{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background-color: #df4f71;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 1em 1.8em;
+  border-radius: 50em;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+ .cl-effect-1 a {
+  color: #95ac5f;
+  /* color: rgba(0,0,0,0.2); */
+	font-weight: 700;
+	text-shadow: none;
+}
+
+/* Effect 1: Brackets */
+.cl-effect-1 a::before,
+.cl-effect-1 a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1 a::before {
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.cl-effect-1 a::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.cl-effect-1 a:hover::before,
+.cl-effect-1 a:hover::after,
+.cl-effect-1 a:focus::before,
+.cl-effect-1 a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
+.adjust {
+  padding: 0px 10px;
+}
 
   </style>
 
@@ -205,7 +298,38 @@
                     </h1>
                   </div>
 
-
+                  <div id="ac-wrapper" style='display:none'>
+                      <div id="popup">
+                          <center>
+                               <br>
+                               <h2>Select and Click a Ranking Method</h2>
+                               <br>
+                               <div class="adjust">
+                                 <ul>
+                                   <li class="cl-effect-1" role="presentation">
+                                     <a href="#lc" onclick="lc_urlUpdate()" aria-controls="lc" role="tab" data-toggle="tab">List Comparison</a>
+                                     <p>Rank all of your items in an ordered list.</p>
+                                   </li>
+                                   <br>
+                                   <br>
+                                   <li class="cl-effect-1" role="presentation">
+                                     <a href="#cc" onclick="cc_urlUpdate()" aria-controls="cc" role="tab" data-toggle="tab">Categorical Comparison</a>
+                                     <p>Rank your items by organizing them into three categories. There is no order within each category.</p>
+                                   </li>
+                                   <br>
+                                   <br>
+                                   <li class="cl-effect-1" role="presentation">
+                                     <a href="#pwc" onclick="pwc_urlUpdate()" aria-controls="pwc" role="tab" data-toggle="tab">Pairwise Comparison</a>
+                                     <p>Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</p>
+                                   </li>
+                               </ul>
+                               </div>
+                            <br>
+                            <br>
+                              <input class="Submit" type="submit" name="submit" value="Get Started" onClick="PopUp('hide')" />
+                          </center>
+                      </div>
+                  </div>
 
                   <div id="build-container">
 
@@ -385,6 +509,17 @@
 
               <!-- this is script for the pool -->
               <script>
+
+              function PopUp(hideOrshow) {
+                  if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
+                  else document.getElementById('ac-wrapper').removeAttribute('style');
+              }
+              window.onload = function () {
+                  setTimeout(function () {
+                      PopUp('show');
+                  }, 0000);
+              }
+
 
               function getDataset() {
                 return Array.from(document.querySelector('#top').children).map(x => x.innerText)
