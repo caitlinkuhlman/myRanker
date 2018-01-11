@@ -142,7 +142,11 @@
       display: inline-block;
     }
 
-
+    .legend-label {
+      display: flex;
+      justify-content: space-around;
+      margin: 16px;
+    }
   </style>
 </head>
 <body>
@@ -311,6 +315,10 @@
         <li><a id="pwc" class="active">Pairwise</a></li>
       </ul>
       <!-- this is the lists -->
+      <ul class="legend-label">
+        <li>HIGH</li>
+        <li>LOW</li>
+      </ul>
       <div id="pwl">
         <div class="pw">
           <div class="high list"></div>

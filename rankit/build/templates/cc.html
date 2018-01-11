@@ -142,7 +142,16 @@
       display: inline-block;
     }
 
+    .legend-label {
+      display: box;
+      margin: 28px 16px 0px 16px;
+      text-align: center;
+    }
 
+    .cc-list {
+      margin: 0 auto;
+      max-width: 65%;
+    }
   </style>
 </head>
 <body>
@@ -314,17 +323,22 @@
         <li><a id="cc" class="active">Categorical</a></li>
         <li><a id="pwc">Pairwise</a></li>
       </ul>
-      <!-- this is the lists -->
-      <div class="scrollingDragInner box">
-        <div id="left" class="list ccb"></div>
+      <div class="cc-list">
+        <!-- this is the lists -->
+        <div class="legend-label">HIGH</div>
+        <div class="scrollingDragInner box">
+          <div id="left" class="list ccb"></div>
+        </div>
+        <div class="legend-label">MEDIUM</div>
+        <div class="scrollingDragInner box">
+          <div id="center" class="list ccb"></div>
+        </div>
+        <div class="legend-label">LOW</div>
+        <div class="scrollingDragInner box">
+          <div id="right" class="list ccb"></div>
+        </div>
+        <button type="button" id="cc-submit" class="btn submit" disabled="disabled">RANK!</button>
       </div>
-      <div class="scrollingDragInner box">
-        <div id="center" class="list ccb"></div>
-      </div>
-      <div class="scrollingDragInner box">
-        <div id="right" class="list ccb"></div>
-      </div>
-      <button type="button" id="cc-submit" class="btn submit" disabled="disabled">RANK!</button>
     </div>
   </div>
 
