@@ -113,6 +113,11 @@
       visibility: hidden;
     }
 
+    #table_length {
+      display: none;
+      visibility: hidden;
+    }
+
     h1.title {
     text-transform: capitalize;
     display: block;
@@ -171,10 +176,11 @@
       </b>
     </h1>
     <br>
-    <div class="navbar-form navbar-center" role="search">
+    <div style="display:inline-block" class="navbar-form navbar-center" role="search">
       <!-- search -->
       <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." aria-controls="table" onkeyup="searchTable(event)">
     </div>
+    <label style="display:inline-block;float:right;color:white">Show <select style="color:black" name="table_length" aria-controls="table" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
   </div>
 
 
