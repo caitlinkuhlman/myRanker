@@ -108,6 +108,32 @@
       margin: 1em auto;
     }
 
+    #table_filter {
+      display: none;
+      visibility: hidden;
+    }
+
+    h1.title {
+    text-transform: capitalize;
+    display: block;
+    color: white;
+    font-size: 40px;
+    display: inline-block;
+    padding: 0px 20px 0px;
+    }
+
+    h1.title:first-letter {
+    text-transform: uppercase;
+    }
+
+    .page-header h1 {
+      padding: 0px 20px 0px;
+      color: white;
+      font-size: 40px;
+      margin: 0;
+      display: inline-block;
+    }
+
   </style>
 
 </head>
@@ -138,14 +164,17 @@
 
   </nav>
 
-  <div class="page-header">
+  <div class="build-pool-header">
     <h1 class="title">
       <b>
         Explore: {{ dataset_name |replace("_", " ") }}
       </b>
     </h1>
-     <hr border-color="white">
-    <p>Explore your rankings results with the table below!</p>
+    <br>
+    <div class="navbar-form navbar-center" role="search">
+      <!-- search -->
+      <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." aria-controls="table" onkeyup="searchTable(event)">
+    </div>
   </div>
 
 
@@ -222,6 +251,12 @@
     t.fnDraw();
 
     console.timeEnd('populate');
+  }
+
+  function searchTable(e) {
+    var value = e.target.value;
+    var table = $('#table').DataTable();
+    table.search( value ).draw();
   }
 
   function parseData(raw) {
