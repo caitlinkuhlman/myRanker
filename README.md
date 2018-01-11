@@ -52,6 +52,10 @@ Build is a machine learning tool that is trained through user selected preferenc
 `$ pip install -r requirements.txt`
 
 `$ export CFLAGS=-I$VIRTUAL_ENV/include`
+
+*[optional] you may need to also set the path to numpy:* 
+
+`$ export CFLAGS=-I$VIRTUAL_ENV/lib/python2.7/site-packages/numpy/core/include/
 		
 `$ deactivate`
 
