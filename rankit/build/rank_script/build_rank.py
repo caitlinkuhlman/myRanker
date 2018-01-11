@@ -54,9 +54,10 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
     y_pred = learner.predict(data)
     weights = learner.predictor.W
 
+
     headers = list(dataset)
-    headers.remove(primary_key)
-    weights = dict(zip(headers, weights))
+    new_headers = list((header + "\n" + "-- Weight: " + str(round(weight, 4)) for header, weight in zip(headers, weights) ))
+    dataset = dataset.rename(columns=dict(zip(headers, new_headers)))
 
     res = pd.DataFrame()
 
@@ -64,7 +65,7 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
     res = res.rank(ascending=False)
 
     dataset[rank] = res['Prediction']
-    return dataset, weights
+    return dataset
 
 
 
