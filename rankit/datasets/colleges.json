@@ -1,0 +1,1801 @@
+[
+  {
+    "Title": "Princeton University",
+    "in_state_tuition": 47140,
+    "out_state_tuition": 47140,
+    "enrollment": 5400
+  },
+  {
+    "Title": "Harvard University",
+    "in_state_tuition": 48949,
+    "out_state_tuition": 48949,
+    "enrollment": 6710
+  },
+  {
+    "Title": "University of Chicago",
+    "in_state_tuition": 54825,
+    "out_state_tuition": 54825,
+    "enrollment": 5941
+  },
+  {
+    "Title": "Yale University",
+    "in_state_tuition": 51400,
+    "out_state_tuition": 51400,
+    "enrollment": 5472
+  },
+  {
+    "Title": "Columbia University",
+    "in_state_tuition": 57208,
+    "out_state_tuition": 57208,
+    "enrollment": 6113
+  },
+  {
+    "Title": "Massachusetts Institute of Technology",
+    "in_state_tuition": 49892,
+    "out_state_tuition": 49892,
+    "enrollment": 4524
+  },
+  {
+    "Title": "Stanford University",
+    "in_state_tuition": 49617,
+    "out_state_tuition": 49617,
+    "enrollment": 7034
+  },
+  {
+    "Title": "University of Pennsylvania",
+    "in_state_tuition": 53534,
+    "out_state_tuition": 53534,
+    "enrollment": 10019
+  },
+  {
+    "Title": "Duke University",
+    "in_state_tuition": 53744,
+    "out_state_tuition": 53744,
+    "enrollment": 6609
+  },
+  {
+    "Title": "California Institute of Technology",
+    "in_state_tuition": 49908,
+    "out_state_tuition": 49908,
+    "enrollment": 979
+  },
+  {
+    "Title": "Dartmouth College",
+    "in_state_tuition": 52950,
+    "out_state_tuition": 52950,
+    "enrollment": 4310
+  },
+  {
+    "Title": "Johns Hopkins University",
+    "in_state_tuition": 52170,
+    "out_state_tuition": 52170,
+    "enrollment": 6117
+  },
+  {
+    "Title": "Northwestern University",
+    "in_state_tuition": 52678,
+    "out_state_tuition": 52678,
+    "enrollment": 8353
+  },
+  {
+    "Title": "Brown University",
+    "in_state_tuition": 53419,
+    "out_state_tuition": 53419,
+    "enrollment": 6926
+  },
+  {
+    "Title": "Cornell University",
+    "in_state_tuition": 52853,
+    "out_state_tuition": 52853,
+    "enrollment": 14566
+  },
+  {
+    "Title": "Rice University",
+    "in_state_tuition": 45608,
+    "out_state_tuition": 45608,
+    "enrollment": 3893
+  },
+  {
+    "Title": "Vanderbilt University",
+    "in_state_tuition": 47664,
+    "out_state_tuition": 47664,
+    "enrollment": 6871
+  },
+  {
+    "Title": "University of Notre Dame",
+    "in_state_tuition": 51505,
+    "out_state_tuition": 51505,
+    "enrollment": 8530
+  },
+  {
+    "Title": "Washington University in St. Louis",
+    "in_state_tuition": 51533,
+    "out_state_tuition": 51533,
+    "enrollment": 7540
+  },
+  {
+    "Title": "Georgetown University",
+    "in_state_tuition": 52300,
+    "out_state_tuition": 52300,
+    "enrollment": 7453
+  },
+  {
+    "Title": "Emory University",
+    "in_state_tuition": 49392,
+    "out_state_tuition": 49392,
+    "enrollment": 6861
+  },
+  {
+    "Title": "University of Southern California",
+    "in_state_tuition": 54259,
+    "out_state_tuition": 54259,
+    "enrollment": 18794
+  },
+  {
+    "Title": "Carnegie Mellon University",
+    "in_state_tuition": 53910,
+    "out_state_tuition": 53910,
+    "enrollment": 6673
+  },
+  {
+    "Title": "Wake Forest University",
+    "in_state_tuition": 51400,
+    "out_state_tuition": 51400,
+    "enrollment": 4955
+  },
+  {
+    "Title": "Tufts University",
+    "in_state_tuition": 54318,
+    "out_state_tuition": 54318,
+    "enrollment": 5508
+  },
+  {
+    "Title": "New York University",
+    "in_state_tuition": 50464,
+    "out_state_tuition": 50464,
+    "enrollment": 26135
+  },
+  {
+    "Title": "Boston College",
+    "in_state_tuition": 53346,
+    "out_state_tuition": 53346,
+    "enrollment": 9309
+  },
+  {
+    "Title": "Brandeis University",
+    "in_state_tuition": 53582,
+    "out_state_tuition": 53582,
+    "enrollment": 3608
+  },
+  {
+    "Title": "University of Rochester",
+    "in_state_tuition": 52020,
+    "out_state_tuition": 52020,
+    "enrollment": 6386
+  },
+  {
+    "Title": "Boston University",
+    "in_state_tuition": 52082,
+    "out_state_tuition": 52082,
+    "enrollment": 17944
+  },
+  {
+    "Title": "Case Western Reserve University",
+    "in_state_tuition": 47500,
+    "out_state_tuition": 47500,
+    "enrollment": 5152
+  },
+  {
+    "Title": "Northeastern University",
+    "in_state_tuition": 49497,
+    "out_state_tuition": 49497,
+    "enrollment": 13473
+  },
+  {
+    "Title": "Tulane University",
+    "in_state_tuition": 52960,
+    "out_state_tuition": 52960,
+    "enrollment": 6377
+  },
+  {
+    "Title": "Rensselaer Polytechnic Institute",
+    "in_state_tuition": 52305,
+    "out_state_tuition": 52305,
+    "enrollment": 6265
+  },
+  {
+    "Title": "Lehigh University",
+    "in_state_tuition": 50740,
+    "out_state_tuition": 50740,
+    "enrollment": 5080
+  },
+  {
+    "Title": "Pepperdine University",
+    "in_state_tuition": 51992,
+    "out_state_tuition": 51992,
+    "enrollment": 3542
+  },
+  {
+    "Title": "University of Miami",
+    "in_state_tuition": 48484,
+    "out_state_tuition": 48484,
+    "enrollment": 10849
+  },
+  {
+    "Title": "Villanova University",
+    "in_state_tuition": 51434,
+    "out_state_tuition": 51434,
+    "enrollment": 6999
+  },
+  {
+    "Title": "George Washington University",
+    "in_state_tuition": 53518,
+    "out_state_tuition": 53518,
+    "enrollment": 11504
+  },
+  {
+    "Title": "Brigham Young University--Provo",
+    "in_state_tuition": 5460,
+    "out_state_tuition": 5460,
+    "enrollment": 30979
+  },
+  {
+    "Title": "Fordham University",
+    "in_state_tuition": 50601,
+    "out_state_tuition": 50601,
+    "enrollment": 9258
+  },
+  {
+    "Title": "Southern Methodist University",
+    "in_state_tuition": 52498,
+    "out_state_tuition": 52498,
+    "enrollment": 6521
+  },
+  {
+    "Title": "Syracuse University",
+    "in_state_tuition": 46755,
+    "out_state_tuition": 46755,
+    "enrollment": 15218
+  },
+  {
+    "Title": "Worcester Polytechnic Institute",
+    "in_state_tuition": 48628,
+    "out_state_tuition": 48628,
+    "enrollment": 4432
+  },
+  {
+    "Title": "American University",
+    "in_state_tuition": 46615,
+    "out_state_tuition": 46615,
+    "enrollment": 7901
+  },
+  {
+    "Title": "Stevens Institute of Technology",
+    "in_state_tuition": 50554,
+    "out_state_tuition": 50554,
+    "enrollment": 3021
+  },
+  {
+    "Title": "Baylor University",
+    "in_state_tuition": 43790,
+    "out_state_tuition": 43790,
+    "enrollment": 14348
+  },
+  {
+    "Title": "Texas Christian University",
+    "in_state_tuition": 44760,
+    "out_state_tuition": 44760,
+    "enrollment": 8891
+  },
+  {
+    "Title": "Clark University",
+    "in_state_tuition": 44400,
+    "out_state_tuition": 44400,
+    "enrollment": 2289
+  },
+  {
+    "Title": "University of Denver",
+    "in_state_tuition": 48669,
+    "out_state_tuition": 48669,
+    "enrollment": 5754
+  },
+  {
+    "Title": "University of Tulsa",
+    "in_state_tuition": 39502,
+    "out_state_tuition": 39502,
+    "enrollment": 3406
+  },
+  {
+    "Title": "Marquette University",
+    "in_state_tuition": 39900,
+    "out_state_tuition": 39900,
+    "enrollment": 8238
+  },
+  {
+    "Title": "University of San Diego",
+    "in_state_tuition": 47708,
+    "out_state_tuition": 47708,
+    "enrollment": 5711
+  },
+  {
+    "Title": "Drexel University",
+    "in_state_tuition": 52002,
+    "out_state_tuition": 52002,
+    "enrollment": 13251
+  },
+  {
+    "Title": "Saint Louis University",
+    "in_state_tuition": 42166,
+    "out_state_tuition": 42166,
+    "enrollment": 7454
+  },
+  {
+    "Title": "Yeshiva University",
+    "in_state_tuition": 42000,
+    "out_state_tuition": 42000,
+    "enrollment": 2714
+  },
+  {
+    "Title": "Rochester Institute of Technology",
+    "in_state_tuition": 40068,
+    "out_state_tuition": 40068,
+    "enrollment": 12410
+  },
+  {
+    "Title": "Illinois Institute of Technology",
+    "in_state_tuition": 45864,
+    "out_state_tuition": 45864,
+    "enrollment": 2944
+  },
+  {
+    "Title": "Loyola University Chicago",
+    "in_state_tuition": 42828,
+    "out_state_tuition": 42828,
+    "enrollment": 11129
+  },
+  {
+    "Title": "Howard University",
+    "in_state_tuition": 25697,
+    "out_state_tuition": 25697,
+    "enrollment": 5899
+  },
+  {
+    "Title": "University of San Francisco",
+    "in_state_tuition": 46250,
+    "out_state_tuition": 46250,
+    "enrollment": 6745
+  },
+  {
+    "Title": "University of the Pacific",
+    "in_state_tuition": 46346,
+    "out_state_tuition": 46346,
+    "enrollment": 3483
+  },
+  {
+    "Title": "University of St. Thomas",
+    "in_state_tuition": 41133,
+    "out_state_tuition": 41133,
+    "enrollment": 6111
+  },
+  {
+    "Title": "The Catholic University of America",
+    "in_state_tuition": 44060,
+    "out_state_tuition": 44060,
+    "enrollment": 3241
+  },
+  {
+    "Title": "DePaul University",
+    "in_state_tuition": 39010,
+    "out_state_tuition": 39010,
+    "enrollment": 15407
+  },
+  {
+    "Title": "Duquesne University",
+    "in_state_tuition": 36394,
+    "out_state_tuition": 36394,
+    "enrollment": 6039
+  },
+  {
+    "Title": "Clarkson University",
+    "in_state_tuition": 47950,
+    "out_state_tuition": 47950,
+    "enrollment": 3268
+  },
+  {
+    "Title": "Seton Hall University",
+    "in_state_tuition": 40588,
+    "out_state_tuition": 40588,
+    "enrollment": 5956
+  },
+  {
+    "Title": "University of Dayton",
+    "in_state_tuition": 41750,
+    "out_state_tuition": 41750,
+    "enrollment": 8330
+  },
+  {
+    "Title": "Hofstra University",
+    "in_state_tuition": 43960,
+    "out_state_tuition": 43960,
+    "enrollment": 6899
+  },
+  {
+    "Title": "Mercer University",
+    "in_state_tuition": 36000,
+    "out_state_tuition": 36000,
+    "enrollment": 4706
+  },
+  {
+    "Title": "The New School",
+    "in_state_tuition": 47330,
+    "out_state_tuition": 47330,
+    "enrollment": 7014
+  },
+  {
+    "Title": "St. John Fisher College",
+    "in_state_tuition": 33120,
+    "out_state_tuition": 33120,
+    "enrollment": 2786
+  },
+  {
+    "Title": "Adelphi University",
+    "in_state_tuition": 37170,
+    "out_state_tuition": 37170,
+    "enrollment": 5205
+  },
+  {
+    "Title": "Florida Institute of Technology",
+    "in_state_tuition": 41240,
+    "out_state_tuition": 41240,
+    "enrollment": 3629
+  },
+  {
+    "Title": "Seattle Pacific University",
+    "in_state_tuition": 40893,
+    "out_state_tuition": 40893,
+    "enrollment": 3095
+  },
+  {
+    "Title": "Biola University",
+    "in_state_tuition": 38448,
+    "out_state_tuition": 38448,
+    "enrollment": 4091
+  },
+  {
+    "Title": "University of La Verne",
+    "in_state_tuition": 41450,
+    "out_state_tuition": 41450,
+    "enrollment": 2809
+  },
+  {
+    "Title": "Immaculata University",
+    "in_state_tuition": 27350,
+    "out_state_tuition": 27350,
+    "enrollment": 1555
+  },
+  {
+    "Title": "Maryville University of St. Louis",
+    "in_state_tuition": 28470,
+    "out_state_tuition": 28470,
+    "enrollment": 2967
+  },
+  {
+    "Title": "St. John's University",
+    "in_state_tuition": 40790,
+    "out_state_tuition": 40790,
+    "enrollment": 16440
+  },
+  {
+    "Title": "Robert Morris University",
+    "in_state_tuition": 29420,
+    "out_state_tuition": 29420,
+    "enrollment": 4384
+  },
+  {
+    "Title": "Union University",
+    "in_state_tuition": 31580,
+    "out_state_tuition": 31580,
+    "enrollment": 2214
+  },
+  {
+    "Title": "University of Hartford",
+    "in_state_tuition": 38910,
+    "out_state_tuition": 38910,
+    "enrollment": 5150
+  },
+  {
+    "Title": "Edgewood College",
+    "in_state_tuition": 28500,
+    "out_state_tuition": 28500,
+    "enrollment": 1661
+  },
+  {
+    "Title": "Lesley University",
+    "in_state_tuition": 26550,
+    "out_state_tuition": 26550,
+    "enrollment": 1929
+  },
+  {
+    "Title": "Lipscomb University",
+    "in_state_tuition": 30932,
+    "out_state_tuition": 30932,
+    "enrollment": 2986
+  },
+  {
+    "Title": "Suffolk University",
+    "in_state_tuition": 37270,
+    "out_state_tuition": 37270,
+    "enrollment": 5290
+  },
+  {
+    "Title": "Azusa Pacific University",
+    "in_state_tuition": 36120,
+    "out_state_tuition": 36120,
+    "enrollment": 5770
+  },
+  {
+    "Title": "Pace University",
+    "in_state_tuition": 44036,
+    "out_state_tuition": 44036,
+    "enrollment": 8914
+  },
+  {
+    "Title": "Andrews University",
+    "in_state_tuition": 28436,
+    "out_state_tuition": 28436,
+    "enrollment": 1688
+  },
+  {
+    "Title": "Widener University",
+    "in_state_tuition": 44166,
+    "out_state_tuition": 44166,
+    "enrollment": 3591
+  },
+  {
+    "Title": "Nova Southeastern University",
+    "in_state_tuition": 29940,
+    "out_state_tuition": 29940,
+    "enrollment": 4295
+  },
+  {
+    "Title": "Dallas Baptist University",
+    "in_state_tuition": 27480,
+    "out_state_tuition": 27480,
+    "enrollment": 3223
+  },
+  {
+    "Title": "Ashland University",
+    "in_state_tuition": 20700,
+    "out_state_tuition": 20700,
+    "enrollment": 4536
+  },
+  {
+    "Title": "Benedictine University",
+    "in_state_tuition": 33900,
+    "out_state_tuition": 33900,
+    "enrollment": 3171
+  },
+  {
+    "Title": "Gardner-Webb University",
+    "in_state_tuition": 30740,
+    "out_state_tuition": 30740,
+    "enrollment": 2362
+  },
+  {
+    "Title": "Shenandoah University",
+    "in_state_tuition": 31920,
+    "out_state_tuition": 31920,
+    "enrollment": 2099
+  },
+  {
+    "Title": "American International College",
+    "in_state_tuition": 33140,
+    "out_state_tuition": 33140,
+    "enrollment": 1424
+  },
+  {
+    "Title": "Barry University",
+    "in_state_tuition": 29700,
+    "out_state_tuition": 29700,
+    "enrollment": 3541
+  },
+  {
+    "Title": "Cardinal Stritch University",
+    "in_state_tuition": 28844,
+    "out_state_tuition": 28844,
+    "enrollment": 1534
+  },
+  {
+    "Title": "Clark Atlanta University",
+    "in_state_tuition": 23082,
+    "out_state_tuition": 23082,
+    "enrollment": 3093
+  },
+  {
+    "Title": "Liberty University",
+    "in_state_tuition": 24304,
+    "out_state_tuition": 24304,
+    "enrollment": 47050
+  },
+  {
+    "Title": "Lindenwood University",
+    "in_state_tuition": 16960,
+    "out_state_tuition": 16960,
+    "enrollment": 7549
+  },
+
+  {
+    "Title": "Regent University",
+    "in_state_tuition": 17450,
+    "out_state_tuition": 17450,
+    "enrollment": 3806
+  },
+
+  {
+    "Title": "Trevecca Nazarene University",
+    "in_state_tuition": 25100,
+    "out_state_tuition": 25100,
+    "enrollment": 2092
+  },
+  {
+    "Title": "Trinity International University",
+    "in_state_tuition": 30750,
+    "out_state_tuition": 30750,
+    "enrollment": 1076
+  },
+  {
+    "Title": "University of the Cumberlands",
+    "in_state_tuition": 23000,
+    "out_state_tuition": 23000,
+    "enrollment": 3082
+  },
+  {
+    "Title": "Alliant International University",
+    "in_state_tuition": 17510,
+    "out_state_tuition": 17510,
+    "enrollment": 1264
+  },
+
+  {
+    "Title": "Northcentral University",
+    "in_state_tuition": 10368,
+    "out_state_tuition": 10368,
+    "enrollment": 133
+  },
+
+  {
+    "Title": "Wilmington University",
+    "in_state_tuition": 10940,
+    "out_state_tuition": 10940,
+    "enrollment": 8873
+  },
+  {
+    "Title": "University of California--Berkeley",
+    "in_state_tuition": 42112,
+    "out_state_tuition": 14098,
+    "enrollment": 29311
+  },
+  {
+    "Title": "University of California--Los Angeles",
+    "in_state_tuition": 41270,
+    "out_state_tuition": 13256,
+    "enrollment": 30873
+  },
+  {
+    "Title": "University of Virginia",
+    "in_state_tuition": 46975,
+    "out_state_tuition": 16146,
+    "enrollment": 16331
+  },
+  {
+    "Title": "University of Michigan--Ann Arbor",
+    "in_state_tuition": 47476,
+    "out_state_tuition": 14826,
+    "enrollment": 28983
+  },
+  {
+    "Title": "University of North Carolina--Chapel Hill",
+    "in_state_tuition": 34588,
+    "out_state_tuition": 9005,
+    "enrollment": 18523
+  },
+  {
+    "Title": "College of William & Mary",
+    "in_state_tuition": 43099,
+    "out_state_tuition": 20287,
+    "enrollment": 6276
+  },
+  {
+    "Title": "Georgia Institute of Technology",
+    "in_state_tuition": 33014,
+    "out_state_tuition": 12418,
+    "enrollment": 15489
+  },
+  {
+    "Title": "University of California--Santa Barbara",
+    "in_state_tuition": 42423,
+    "out_state_tuition": 14409,
+    "enrollment": 21574
+  },
+  {
+    "Title": "University of California--Irvine",
+    "in_state_tuition": 43530,
+    "out_state_tuition": 15516,
+    "enrollment": 27331
+  },
+  {
+    "Title": "University of California--San Diego",
+    "in_state_tuition": 44197,
+    "out_state_tuition": 16183,
+    "enrollment": 28127
+  },
+  {
+    "Title": "University of Florida",
+    "in_state_tuition": 28658,
+    "out_state_tuition": 6381,
+    "enrollment": 34554
+  },
+  {
+    "Title": "University of California--Davis",
+    "in_state_tuition": 42396,
+    "out_state_tuition": 14382,
+    "enrollment": 29546
+  },
+  {
+    "Title": "University of Wisconsin--Madison",
+    "in_state_tuition": 34782,
+    "out_state_tuition": 10533,
+    "enrollment": 31710
+  },
+  {
+    "Title": "Pennsylvania State University--University Park",
+    "in_state_tuition": 33664,
+    "out_state_tuition": 18436,
+    "enrollment": 41359
+  },
+  {
+    "Title": "University of Illinois--Urbana-Champaign",
+    "in_state_tuition": 31988,
+    "out_state_tuition": 15868,
+    "enrollment": 33932
+  },
+  {
+    "Title": "Ohio State University--Columbus",
+    "in_state_tuition": 29659,
+    "out_state_tuition": 10591,
+    "enrollment": 45831
+  },
+  {
+    "Title": "University of Georgia",
+    "in_state_tuition": 30392,
+    "out_state_tuition": 11818,
+    "enrollment": 27951
+  },
+  {
+    "Title": "Purdue University--West Lafayette",
+    "in_state_tuition": 28804,
+    "out_state_tuition": 10002,
+    "enrollment": 30043
+  },
+  {
+    "Title": "University of Connecticut",
+    "in_state_tuition": 36948,
+    "out_state_tuition": 14880,
+    "enrollment": 19324
+  },
+  {
+    "Title": "University of Texas--Austin",
+    "in_state_tuition": 35766,
+    "out_state_tuition": 10136,
+    "enrollment": 40168
+  },
+  {
+    "Title": "University of Washington",
+    "in_state_tuition": 35538,
+    "out_state_tuition": 10974,
+    "enrollment": 30933
+  },
+  {
+    "Title": "University of Maryland--College Park",
+    "in_state_tuition": 33606,
+    "out_state_tuition": 10399,
+    "enrollment": 28472
+  },
+  {
+    "Title": "Clemson University",
+    "in_state_tuition": 35654,
+    "out_state_tuition": 14712,
+    "enrollment": 18599
+  },
+  {
+    "Title": "University of Pittsburgh",
+    "in_state_tuition": 30642,
+    "out_state_tuition": 19080,
+    "enrollment": 19123
+  },
+  {
+    "Title": "Rutgers University--New Brunswick",
+    "in_state_tuition": 30023,
+    "out_state_tuition": 14372,
+    "enrollment": 36168
+  },
+  {
+    "Title": "Texas A&M University--College Station",
+    "in_state_tuition": 30208,
+    "out_state_tuition": 10030,
+    "enrollment": 50735
+  },
+  {
+    "Title": "University of Minnesota--Twin Cities",
+    "in_state_tuition": 26603,
+    "out_state_tuition": 14417,
+    "enrollment": 34871
+  },
+  {
+    "Title": "Virginia Tech",
+    "in_state_tuition": 29371,
+    "out_state_tuition": 12852,
+    "enrollment": 25791
+  },
+  {
+    "Title": "Colorado School of Mines",
+    "in_state_tuition": 37436,
+    "out_state_tuition": 18386,
+    "enrollment": 4612
+  },
+  {
+    "Title": "University of Massachusetts--Amherst",
+    "in_state_tuition": 33662,
+    "out_state_tuition": 15596,
+    "enrollment": 23373
+  },
+  {
+    "Title": "Miami University--Oxford",
+    "in_state_tuition": 32768,
+    "out_state_tuition": 14578,
+    "enrollment": 16981
+  },
+  {
+    "Title": "University of Iowa",
+    "in_state_tuition": 28813,
+    "out_state_tuition": 8575,
+    "enrollment": 24476
+  },
+  {
+    "Title": "Florida State University",
+    "in_state_tuition": 21673,
+    "out_state_tuition": 6507,
+    "enrollment": 32929
+  },
+  {
+    "Title": "Michigan State University",
+    "in_state_tuition": 39405,
+    "out_state_tuition": 14460,
+    "enrollment": 39090
+  },
+  {
+    "Title": "North Carolina State University--Raleigh",
+    "in_state_tuition": 27406,
+    "out_state_tuition": 9058,
+    "enrollment": 23847
+  },
+  {
+    "Title": "University of California--Santa Cruz",
+    "in_state_tuition": 42042,
+    "out_state_tuition": 14028,
+    "enrollment": 16962
+  },
+  {
+    "Title": "University of Delaware",
+    "in_state_tuition": 32250,
+    "out_state_tuition": 12830,
+    "enrollment": 18374
+  },
+  {
+    "Title": "Binghamton University--SUNY",
+    "in_state_tuition": 24403,
+    "out_state_tuition": 9523,
+    "enrollment": 13632
+  },
+  {
+    "Title": "Indiana University--Bloomington",
+    "in_state_tuition": 34845,
+    "out_state_tuition": 10533,
+    "enrollment": 39184
+  },
+  {
+    "Title": "University of Colorado--Boulder",
+    "in_state_tuition": 35079,
+    "out_state_tuition": 11531,
+    "enrollment": 27846
+  },
+  {
+    "Title": "Stony Brook University--SUNY",
+    "in_state_tuition": 26297,
+    "out_state_tuition": 9257,
+    "enrollment": 17026
+  },
+  {
+    "Title": "SUNY College of Environmental Science and Forestry",
+    "in_state_tuition": 18090,
+    "out_state_tuition": 8240,
+    "enrollment": 1755
+  },
+  {
+    "Title": "University at Buffalo--SUNY",
+    "in_state_tuition": 26270,
+    "out_state_tuition": 9770,
+    "enrollment": 20411
+  },
+  {
+    "Title": "University of Oklahoma",
+    "in_state_tuition": 24443,
+    "out_state_tuition": 9062,
+    "enrollment": 22436
+  },
+  {
+    "Title": "University of Vermont",
+    "in_state_tuition": 41356,
+    "out_state_tuition": 17740,
+    "enrollment": 11159
+  },
+  {
+    "Title": "Auburn University",
+    "in_state_tuition": 29640,
+    "out_state_tuition": 10968,
+    "enrollment": 22658
+  },
+  {
+    "Title": "University of New Hampshire",
+    "in_state_tuition": 32637,
+    "out_state_tuition": 18067,
+    "enrollment": 12871
+  },
+  {
+    "Title": "University of Oregon",
+    "in_state_tuition": 34611,
+    "out_state_tuition": 11571,
+    "enrollment": 20049
+  },
+  {
+    "Title": "University of South Carolina",
+    "in_state_tuition": 32362,
+    "out_state_tuition": 12262,
+    "enrollment": 25556
+  },
+  {
+    "Title": "University of Tennessee",
+    "in_state_tuition": 31160,
+    "out_state_tuition": 12970,
+    "enrollment": 22139
+  },
+  {
+    "Title": "University of Alabama",
+    "in_state_tuition": 28100,
+    "out_state_tuition": 10780,
+    "enrollment": 32563
+  },
+  {
+    "Title": "University of Utah",
+    "in_state_tuition": 26408,
+    "out_state_tuition": 9166,
+    "enrollment": 23789
+  },
+  {
+    "Title": "Arizona State University--Tempe",
+    "in_state_tuition": 27372,
+    "out_state_tuition": 10792,
+    "enrollment": 42477
+  },
+  {
+    "Title": "Iowa State University",
+    "in_state_tuition": 22256,
+    "out_state_tuition": 8420,
+    "enrollment": 30671
+  },
+  {
+    "Title": "Temple University",
+    "in_state_tuition": 27266,
+    "out_state_tuition": 16274,
+    "enrollment": 29275
+  },
+  {
+    "Title": "University of Kansas",
+    "in_state_tuition": 26592,
+    "out_state_tuition": 10824,
+    "enrollment": 19262
+  },
+  {
+    "Title": "University of Missouri",
+    "in_state_tuition": 26506,
+    "out_state_tuition": 9817,
+    "enrollment": 25898
+  },
+  {
+    "Title": "Colorado State University",
+    "in_state_tuition": 29140,
+    "out_state_tuition": 11632,
+    "enrollment": 25177
+  },
+  {
+    "Title": "Michigan Technological University",
+    "in_state_tuition": 32318,
+    "out_state_tuition": 15074,
+    "enrollment": 5829
+  },
+  {
+    "Title": "University of Arizona",
+    "in_state_tuition": 32449,
+    "out_state_tuition": 11644,
+    "enrollment": 34072
+  },
+  {
+    "Title": "University of California--Riverside",
+    "in_state_tuition": 41931,
+    "out_state_tuition": 13917,
+    "enrollment": 19799
+  },
+  {
+    "Title": "University of Nebraska--Lincoln",
+    "in_state_tuition": 23256,
+    "out_state_tuition": 8690,
+    "enrollment": 20833
+  },
+  {
+    "Title": "Louisiana State University--Baton Rouge",
+    "in_state_tuition": 28051,
+    "out_state_tuition": 11374,
+    "enrollment": 26118
+  },
+  {
+    "Title": "Rutgers University--Newark",
+    "in_state_tuition": 29480,
+    "out_state_tuition": 13829,
+    "enrollment": 8170
+  },
+  {
+    "Title": "University of Arkansas",
+    "in_state_tuition": 24308,
+    "out_state_tuition": 9062,
+    "enrollment": 22548
+  },
+  {
+    "Title": "University of Cincinnati",
+    "in_state_tuition": 26334,
+    "out_state_tuition": 11000,
+    "enrollment": 25860
+  },
+  {
+    "Title": "University of Kentucky",
+    "in_state_tuition": 28046,
+    "out_state_tuition": 11922,
+    "enrollment": 22621
+  },
+  {
+    "Title": "George Mason University",
+    "in_state_tuition": 34370,
+    "out_state_tuition": 11924,
+    "enrollment": 23812
+  },
+  {
+    "Title": "New Jersey Institute of Technology",
+    "in_state_tuition": 31034,
+    "out_state_tuition": 16430,
+    "enrollment": 8211
+  },
+  {
+    "Title": "San Diego State University",
+    "in_state_tuition": 19340,
+    "out_state_tuition": 7460,
+    "enrollment": 29853
+  },
+  {
+    "Title": "University of South Florida",
+    "in_state_tuition": 17324,
+    "out_state_tuition": 6410,
+    "enrollment": 31461
+  },
+  {
+    "Title": "Washington State University",
+    "in_state_tuition": 25817,
+    "out_state_tuition": 11391,
+    "enrollment": 24904
+  },
+  {
+    "Title": "Kansas State University",
+    "in_state_tuition": 24775,
+    "out_state_tuition": 9874,
+    "enrollment": 19472
+  },
+  {
+    "Title": "Oregon State University",
+    "in_state_tuition": 29457,
+    "out_state_tuition": 10797,
+    "enrollment": 25327
+  },
+  {
+    "Title": "University of Illinois--Chicago",
+    "in_state_tuition": 27672,
+    "out_state_tuition": 14816,
+    "enrollment": 17959
+  },
+  {
+    "Title": "University of Mississippi",
+    "in_state_tuition": 23554,
+    "out_state_tuition": 8290,
+    "enrollment": 19213
+  },
+  {
+    "Title": "University of Texas--Dallas",
+    "in_state_tuition": 33654,
+    "out_state_tuition": 12162,
+    "enrollment": 17350
+  },
+  {
+    "Title": "Ohio University",
+    "in_state_tuition": 21360,
+    "out_state_tuition": 11896,
+    "enrollment": 23788
+  },
+  {
+    "Title": "University at Albany--SUNY",
+    "in_state_tuition": 24358,
+    "out_state_tuition": 9278,
+    "enrollment": 13139
+  },
+  {
+    "Title": "Oklahoma State University",
+    "in_state_tuition": 23776,
+    "out_state_tuition": 8738,
+    "enrollment": 21093
+  },
+  {
+    "Title": "University of Massachusetts--Lowell",
+    "in_state_tuition": 31865,
+    "out_state_tuition": 14800,
+    "enrollment": 13639
+  },
+  {
+    "Title": "University of Rhode Island",
+    "in_state_tuition": 28874,
+    "out_state_tuition": 12884,
+    "enrollment": 14801
+  },
+  {
+    "Title": "Illinois State University",
+    "in_state_tuition": 25168,
+    "out_state_tuition": 14061,
+    "enrollment": 18643
+  },
+  {
+    "Title": "University of Alabama--Birmingham",
+    "in_state_tuition": 23790,
+    "out_state_tuition": 10410,
+    "enrollment": 12369
+  },
+  {
+    "Title": "University of Hawaii--Manoa",
+    "in_state_tuition": 33764,
+    "out_state_tuition": 11732,
+    "enrollment": 13132
+  },
+  {
+    "Title": "University of Maryland--Baltimore County",
+    "in_state_tuition": 25654,
+    "out_state_tuition": 11518,
+    "enrollment": 11142
+  },
+  {
+    "Title": "Missouri University of Science & Technology",
+    "in_state_tuition": 27701,
+    "out_state_tuition": 9628,
+    "enrollment": 6909
+  },
+  {
+    "Title": "University of California--Merced",
+    "in_state_tuition": 41612,
+    "out_state_tuition": 13598,
+    "enrollment": 6815
+  },
+  {
+    "Title": "University of Louisville",
+    "in_state_tuition": 26286,
+    "out_state_tuition": 11264,
+    "enrollment": 15827
+  },
+  {
+    "Title": "Mississippi State University",
+    "in_state_tuition": 22358,
+    "out_state_tuition": 8138,
+    "enrollment": 18090
+  },
+  {
+    "Title": "Rowan University",
+    "in_state_tuition": 21378,
+    "out_state_tuition": 13108,
+    "enrollment": 14344
+  },
+  {
+    "Title": "University of Central Florida",
+    "in_state_tuition": 22467,
+    "out_state_tuition": 6368,
+    "enrollment": 55776
+  },
+  {
+    "Title": "University of Idaho",
+    "in_state_tuition": 23812,
+    "out_state_tuition": 7488,
+    "enrollment": 9586
+  },
+  {
+    "Title": "Virginia Commonwealth University",
+    "in_state_tuition": 32942,
+    "out_state_tuition": 13570,
+    "enrollment": 24212
+  },
+  {
+    "Title": "Kent State University",
+    "in_state_tuition": 18376,
+    "out_state_tuition": 10012,
+    "enrollment": 23684
+  },
+  {
+    "Title": "Texas Tech University",
+    "in_state_tuition": 23011,
+    "out_state_tuition": 10771,
+    "enrollment": 29963
+  },
+  {
+    "Title": "University of Maine",
+    "in_state_tuition": 30282,
+    "out_state_tuition": 10902,
+    "enrollment": 9323
+  },
+  {
+    "Title": "University of Wyoming",
+    "in_state_tuition": 16827,
+    "out_state_tuition": 5217,
+    "enrollment": 9788
+  },
+  {
+    "Title": "Ball State University",
+    "in_state_tuition": 25938,
+    "out_state_tuition": 9848,
+    "enrollment": 17011
+  },
+  {
+    "Title": "Montclair State University",
+    "in_state_tuition": 20566,
+    "out_state_tuition": 12454,
+    "enrollment": 16810
+  },
+  {
+    "Title": "West Virginia University",
+    "in_state_tuition": 23616,
+    "out_state_tuition": 8376,
+    "enrollment": 22350
+  },
+  {
+    "Title": "Indiana University-Purdue University--Indianapolis",
+    "in_state_tuition": 29806,
+    "out_state_tuition": 9334,
+    "enrollment": 21748
+  },
+  {
+    "Title": "University of Houston",
+    "in_state_tuition": 27337,
+    "out_state_tuition": 11887,
+    "enrollment": 35871
+  },
+  {
+    "Title": "University of New Mexico",
+    "in_state_tuition": 22412,
+    "out_state_tuition": 7150,
+    "enrollment": 20215
+  },
+  {
+    "Title": "University of North Dakota",
+    "in_state_tuition": 21462,
+    "out_state_tuition": 9862,
+    "enrollment": 11255
+  },
+  {
+    "Title": "New Mexico State University",
+    "in_state_tuition": 22701,
+    "out_state_tuition": 7122,
+    "enrollment": 12027
+  },
+  {
+    "Title": "North Dakota State University",
+    "in_state_tuition": 20571,
+    "out_state_tuition": 9409,
+    "enrollment": 12010
+  },
+  {
+    "Title": "University of North Carolina--Charlotte",
+    "in_state_tuition": 20268,
+    "out_state_tuition": 6834,
+    "enrollment": 23404
+  },
+  {
+    "Title": "Bowling Green State University",
+    "in_state_tuition": 18593,
+    "out_state_tuition": 11057,
+    "enrollment": 14852
+  },
+  {
+    "Title": "California State University--Fullerton",
+    "in_state_tuition": 17460,
+    "out_state_tuition": 6850,
+    "enrollment": 34576
+  },
+  {
+    "Title": "University of Massachusetts--Boston",
+    "in_state_tuition": 32985,
+    "out_state_tuition": 13828,
+    "enrollment": 12847
+  },
+  {
+    "Title": "University of Nevada--Reno",
+    "in_state_tuition": 21787,
+    "out_state_tuition": 7599,
+    "enrollment": 18191
+  },
+  {
+    "Title": "Central Michigan University",
+    "in_state_tuition": 23670,
+    "out_state_tuition": 12510,
+    "enrollment": 19923
+  },
+  {
+    "Title": "East Carolina University",
+    "in_state_tuition": 23420,
+    "out_state_tuition": 7143,
+    "enrollment": 22969
+  },
+  {
+    "Title": "Florida A&M University",
+    "in_state_tuition": 17725,
+    "out_state_tuition": 5785,
+    "enrollment": 7769
+  },
+  {
+    "Title": "Montana State University",
+    "in_state_tuition": 23042,
+    "out_state_tuition": 7031,
+    "enrollment": 14400
+  },
+  {
+    "Title": "University of Alaska--Fairbanks",
+    "in_state_tuition": 23534,
+    "out_state_tuition": 8144,
+    "enrollment": 7239
+  },
+  {
+    "Title": "University of Colorado--Denver",
+    "in_state_tuition": 31209,
+    "out_state_tuition": 11019,
+    "enrollment": 14622
+  },
+  {
+    "Title": "University of Massachusetts--Dartmouth",
+    "in_state_tuition": 28285,
+    "out_state_tuition": 13571,
+    "enrollment": 6999
+  },
+  {
+    "Title": "University of Montana",
+    "in_state_tuition": 24943,
+    "out_state_tuition": 7063,
+    "enrollment": 10077
+  },
+  {
+    "Title": "Western Michigan University",
+    "in_state_tuition": 14699,
+    "out_state_tuition": 11943,
+    "enrollment": 18313
+  },
+  {
+    "Title": "Florida International University",
+    "in_state_tuition": 18956,
+    "out_state_tuition": 6558,
+    "enrollment": 45813
+  },
+  {
+    "Title": "Louisiana Tech University",
+    "in_state_tuition": 18438,
+    "out_state_tuition": 9525,
+    "enrollment": 11281
+  },
+  {
+    "Title": "South Dakota State University",
+    "in_state_tuition": 11403,
+    "out_state_tuition": 8172,
+    "enrollment": 10959
+  },
+  {
+    "Title": "Southern Illinois University--Carbondale",
+    "in_state_tuition": 13936,
+    "out_state_tuition": 13936,
+    "enrollment": 12182
+  },
+  {
+    "Title": "University of Alabama--Huntsville",
+    "in_state_tuition": 21480,
+    "out_state_tuition": 10280,
+    "enrollment": 6507
+  },
+  {
+    "Title": "University of Missouri--Kansas City",
+    "in_state_tuition": 25999,
+    "out_state_tuition": 9734,
+    "enrollment": 11708
+  },
+  {
+    "Title": "Utah State University",
+    "in_state_tuition": 20726,
+    "out_state_tuition": 7174,
+    "enrollment": 24838
+  },
+  {
+    "Title": "California State University--Fresno",
+    "in_state_tuition": 17929,
+    "out_state_tuition": 6583,
+    "enrollment": 21528
+  },
+  {
+    "Title": "Georgia State University",
+    "in_state_tuition": 29432,
+    "out_state_tuition": 10858,
+    "enrollment": 25455
+  },
+  {
+    "Title": "University of South Dakota",
+    "in_state_tuition": 11688,
+    "out_state_tuition": 8457,
+    "enrollment": 7500
+  },
+  {
+    "Title": "Wayne State University",
+    "in_state_tuition": 28590,
+    "out_state_tuition": 13278,
+    "enrollment": 17280
+  },
+  {
+    "Title": "Augusta University",
+    "in_state_tuition": 23606,
+    "out_state_tuition": 8634,
+    "enrollment": 5133
+  },
+  {
+    "Title": "Boise State University",
+    "in_state_tuition": 22642,
+    "out_state_tuition": 7326,
+    "enrollment": 20209
+  },
+  {
+    "Title": "Cleveland State University",
+    "in_state_tuition": 13848,
+    "out_state_tuition": 9796,
+    "enrollment": 12433
+  },
+  {
+    "Title": "Eastern Michigan University",
+    "in_state_tuition": 11530,
+    "out_state_tuition": 11530,
+    "enrollment": 17541
+  },
+  {
+    "Title": "East Tennessee State University",
+    "in_state_tuition": 26463,
+    "out_state_tuition": 8679,
+    "enrollment": 11065
+  },
+  {
+    "Title": "Florida Atlantic University",
+    "in_state_tuition": 21595,
+    "out_state_tuition": 6039,
+    "enrollment": 25402
+  },
+  {
+    "Title": "Georgia Southern University",
+    "in_state_tuition": 18692,
+    "out_state_tuition": 6796,
+    "enrollment": 18005
+  },
+  {
+    "Title": "Indiana State University",
+    "in_state_tuition": 19454,
+    "out_state_tuition": 8916,
+    "enrollment": 11202
+  },
+  {
+    "Title": "Indiana University of Pennsylvania",
+    "in_state_tuition": 15882,
+    "out_state_tuition": 12146,
+    "enrollment": 10618
+  },
+  {
+    "Title": "Jackson State University",
+    "in_state_tuition": 17614,
+    "out_state_tuition": 7261,
+    "enrollment": 7492
+  },
+  {
+    "Title": "Kennesaw State University",
+    "in_state_tuition": 21158,
+    "out_state_tuition": 7432,
+    "enrollment": 32166
+  },
+  {
+    "Title": "Lamar University",
+    "in_state_tuition": 22561,
+    "out_state_tuition": 10111,
+    "enrollment": 9326
+  },
+  {
+    "Title": "Middle Tennessee State University",
+    "in_state_tuition": 27578,
+    "out_state_tuition": 8948,
+    "enrollment": 19693
+  },
+  {
+    "Title": "Morgan State University",
+    "in_state_tuition": 17833,
+    "out_state_tuition": 7767,
+    "enrollment": 6362
+  },
+  {
+    "Title": "North Carolina A&T State University",
+    "in_state_tuition": 19416,
+    "out_state_tuition": 6526,
+    "enrollment": 9668
+  },
+  {
+    "Title": "Northern Arizona University",
+    "in_state_tuition": 24841,
+    "out_state_tuition": 11059,
+    "enrollment": 26506
+  },
+  {
+    "Title": "Northern Illinois University",
+    "in_state_tuition": 23817,
+    "out_state_tuition": 14352,
+    "enrollment": 14079
+  },
+  {
+    "Title": "Oakland University",
+    "in_state_tuition": 24735,
+    "out_state_tuition": 13406,
+    "enrollment": 16568
+  },
+  {
+    "Title": "Old Dominion University",
+    "in_state_tuition": 28200,
+    "out_state_tuition": 10350,
+    "enrollment": 19793
+  },
+  {
+    "Title": "Portland State University",
+    "in_state_tuition": 21180,
+    "out_state_tuition": 7302,
+    "enrollment": 21633
+  },
+  {
+    "Title": "Prairie View A&M University",
+    "in_state_tuition": 10059,
+    "out_state_tuition": 10059,
+    "enrollment": 7455
+  },
+  {
+    "Title": "Sam Houston State University",
+    "in_state_tuition": 22340,
+    "out_state_tuition": 9890,
+    "enrollment": 17902
+  },
+  {
+    "Title": "San Francisco State University",
+    "in_state_tuition": 19134,
+    "out_state_tuition": 7254,
+    "enrollment": 25945
+  },
+  {
+    "Title": "Tennessee State University",
+    "in_state_tuition": 20178,
+    "out_state_tuition": 7458,
+    "enrollment": 7007
+  },
+
+  {
+    "Title": "Texas A&M University--Commerce",
+    "in_state_tuition": 20884,
+    "out_state_tuition": 8434,
+    "enrollment": 7605
+  },
+  {
+    "Title": "Texas A&M University--Corpus Christi",
+    "in_state_tuition": 26061,
+    "out_state_tuition": 12944,
+    "enrollment": 10212
+  },
+  {
+    "Title": "Texas A&M University--Kingsville",
+    "in_state_tuition": 20912,
+    "out_state_tuition": 8462,
+    "enrollment": 6811
+  },
+  {
+    "Title": "Texas Southern University",
+    "in_state_tuition": 21240,
+    "out_state_tuition": 9000,
+    "enrollment": 6562
+  },
+  {
+    "Title": "Texas State University",
+    "in_state_tuition": 23071,
+    "out_state_tuition": 10621,
+    "enrollment": 34244
+  },
+  {
+    "Title": "Texas Woman's University",
+    "in_state_tuition": 21816,
+    "out_state_tuition": 9366,
+    "enrollment": 10408
+  },
+  {
+    "Title": "University of Akron",
+    "in_state_tuition": 21863,
+    "out_state_tuition": 13332,
+    "enrollment": 17416
+  },
+  {
+    "Title": "University of Arkansas--Little Rock",
+    "in_state_tuition": 19797,
+    "out_state_tuition": 8401,
+    "enrollment": 9374
+  },
+  {
+    "Title": "University of Louisiana--Lafayette",
+    "in_state_tuition": 23074,
+    "out_state_tuition": 9346,
+    "enrollment": 15998
+  },
+  {
+    "Title": "University of Louisiana--Monroe",
+    "in_state_tuition": 20381,
+    "out_state_tuition": 8281,
+    "enrollment": 7778
+  },
+  {
+    "Title": "University of Maryland--Eastern Shore",
+    "in_state_tuition": 18048,
+    "out_state_tuition": 8042,
+    "enrollment": 3278
+  },
+  {
+    "Title": "University of Memphis",
+    "in_state_tuition": 21413,
+    "out_state_tuition": 9701,
+    "enrollment": 17176
+  },
+  {
+    "Title": "University of Missouri--St. Louis",
+    "in_state_tuition": 27327,
+    "out_state_tuition": 10275,
+    "enrollment": 13923
+  },
+  {
+    "Title": "University of Nebraska--Omaha",
+    "in_state_tuition": 22035,
+    "out_state_tuition": 8205,
+    "enrollment": 12536
+  },
+  {
+    "Title": "University of Nevada--Las Vegas",
+    "in_state_tuition": 21498,
+    "out_state_tuition": 7310,
+    "enrollment": 24714
+  },
+  {
+    "Title": "University of New Orleans",
+    "in_state_tuition": 13530,
+    "out_state_tuition": 8694,
+    "enrollment": 6442
+  },
+  {
+    "Title": "University of North Carolina--Greensboro",
+    "in_state_tuition": 22410,
+    "out_state_tuition": 7164,
+    "enrollment": 16281
+  },
+  {
+    "Title": "University of Northern Colorado",
+    "in_state_tuition": 20474,
+    "out_state_tuition": 8888,
+    "enrollment": 9503
+  },
+  {
+    "Title": "University of North Texas",
+    "in_state_tuition": 23716,
+    "out_state_tuition": 10906,
+    "enrollment": 31209
+  },
+  {
+    "Title": "University of South Alabama",
+    "in_state_tuition": 19586,
+    "out_state_tuition": 10005,
+    "enrollment": 11761
+  },
+  {
+    "Title": "University of Southern Mississippi",
+    "in_state_tuition": 9854,
+    "out_state_tuition": 7854,
+    "enrollment": 11779
+  },
+  {
+    "Title": "University of Texas--Arlington",
+    "in_state_tuition": 25152,
+    "out_state_tuition": 9952,
+    "enrollment": 32775
+  },
+  {
+    "Title": "University of Texas--El Paso",
+    "in_state_tuition": 21396,
+    "out_state_tuition": 7651,
+    "enrollment": 20521
+  },
+  {
+    "Title": "University of Texas--Rio Grande Valley",
+    "in_state_tuition": 17230,
+    "out_state_tuition": 7438,
+    "enrollment": 24433
+  },
+  {
+    "Title": "University of Texas--San Antonio",
+    "in_state_tuition": 23379,
+    "out_state_tuition": 9380,
+    "enrollment": 24724
+  },
+  {
+    "Title": "University of Toledo",
+    "in_state_tuition": 18578,
+    "out_state_tuition": 9240,
+    "enrollment": 16247
+  },
+  {
+    "Title": "University of West Florida",
+    "in_state_tuition": 18628,
+    "out_state_tuition": 6360,
+    "enrollment": 10082
+  },
+  {
+    "Title": "University of West Georgia",
+    "in_state_tuition": 20406,
+    "out_state_tuition": 7188,
+    "enrollment": 11155
+  },
+  {
+    "Title": "University of Wisconsin--Milwaukee",
+    "in_state_tuition": 19851,
+    "out_state_tuition": 9493,
+    "enrollment": 21375
+  },
+  {
+    "Title": "Valdosta State University",
+    "in_state_tuition": 17196,
+    "out_state_tuition": 6410,
+    "enrollment": 8780
+  },
+  {
+    "Title": "Wichita State University",
+    "in_state_tuition": 17270,
+    "out_state_tuition": 8312,
+    "enrollment": 11823
+  },
+  {
+    "Title": "Wright State University",
+    "in_state_tuition": 17350,
+    "out_state_tuition": 8730,
+    "enrollment": 12504
+  }
+]

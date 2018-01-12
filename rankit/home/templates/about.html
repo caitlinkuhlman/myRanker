@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About RanKit</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blueprint: On-Scroll Animated Header"/>
+  <meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll"/>
+  <meta name="author" content="Codrops"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/about.css') }}"/>
+
+</head>
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div>
+
+  <div class="card">
+    <br>
+    <h2 class="topic">-About the Project-</h2>
+    <section class="card card-lg text-xxs-center">
+      <div id="band" class="text-center">
+        <p>
+          RANKIT is an online ranking application that provides solutions for analyzing
+          and exploring rankings. The system uses machine learning to automatically construct
+          rankings based on partial input from users. Intuitive interfaces allow for the effective
+          building, exploring, and explaining of rankings.
+        </p>
+        <p>
+          Rankings are a fundamental tool used to help people understand the relative merit of
+          objects or choices. They are employed to simplify decision making when the number of
+          factors impacting choice is large. Our mission is to provide a user-driven ranking
+          system to allow non-expert users to better understand the explanatory power of ranking
+          models for socioeconomic outcomes.
+        </p>
+        <br>
+      </div>
+    </section>
+  </div>
+
+  <div class="card">
+    <h2 class="topic">-Meet the Team-</h2>
+    <section class="card card-lg text-xxs-center">
+
+      <div class="row">
+        <div class="column">
+          <div class="cardInner">
+            <!-- <img src="img1.jpg" alt="Diana Doherty" style="width:100%"> -->
+            <br>
+            <div class="container">
+              <h2>Diana Doherty</h2>
+              <p class="title">Developer</p>
+              <!-- <p>Some text that describes me lorem ipsum ipsum lorem.</p> -->
+            </div>
+            <br>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="cardInner">
+            <!-- <img src="img2.jpg" alt="Goutham Deva" style="width:100%"> -->
+            <br>
+            <div class="container">
+              <h2>Goutham Deva</h2>
+              <p class="title">Developer</p>
+              <!-- <p>Some text that describes me lorem ipsum ipsum lorem.</p> -->
+            </div>
+            <br>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="cardInner">
+            <!-- <img src="img3.jpg" alt="Malika Nurbekova" style="width:100%"> -->
+            <br>
+            <div class="container">
+              <h2>Malika Nurbekova</h2>
+              <p class="title">Developer</p>
+              <!-- <p>Some text that describes me lorem ipsum ipsum lorem.</p> -->
+            </div>
+            <br>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="cardInner">
+            <!-- <img src="img3.jpg" alt="Zarni Phyo" style="width:100%"> -->
+            <br>
+            <div class="container">
+              <h2>Zarni Phyo</h2>
+              <p class="title">Developer</p>
+              <!-- <p>Some text that describes me lorem ipsum ipsum lorem.</p> -->
+            </div>
+            <br>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+  </div>
+
+  <div class="card">
+    <!-- <br> -->
+    <h2 class="topic">-Evaluation-</h2>
+    <section class="card card-lg text-xxs-center">
+      <div id="band" class="container text-center">
+        <p>We actively use feedback to constantly improve our project delivery
+          and to help us provide you with the best possible service.
+        </p>
+        <p>
+          Our evaluation will be composed of an some tasks and answering survey questions as follows.
+        </p>
+        <p>
+          Link to the evaluation will be provided soon!
+        </p>
+        <br>
+      </div>
+    </section>
+  </div>
+
+
+  <div class="card">
+    <!-- <br> -->
+    <h2 class="topic">-Contact Us-</h2>
+    <section class="card card-lg text-xxs-center">
+      <div id="band" class="container text-center">
+        <p>More details coming soon!</p>
+        <br>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/classie.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}"></script>
+
+{% endblock %}
+</html>
