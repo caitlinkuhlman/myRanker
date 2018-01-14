@@ -8,8 +8,8 @@
   <title>RANKit Datasets</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap-iso.css') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/default.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/popUp.css') }}"/>
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
-  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}"/> -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
   <style>
@@ -18,6 +18,7 @@
     text-align: center;
     color: #333;
     font-size: 50px;
+    font-family: Helvetica, sans-serif;
   }
 
   body {
@@ -44,6 +45,7 @@
     padding: 10px;
     float:right;
   }
+
 
 </style>
 
@@ -72,9 +74,99 @@
             <h1>
               <b>Datasets</b>
             </h1>
-
             <p class="inverse"> Pick a dataset you would like to Rank! </p>
           </div>
+
+        	<ul class="cd-tour-wrapper">
+        		<li class="cd-single-step">
+        			<div class="cd-more-info">
+        				<h2>Select a Ranking Method</h2>
+                <br>
+                <a class ="three" href={{ url_for('build.lc', dataset_name='states') }}>List Comparison</a>
+                <p>Rank all of your items in an ordered list.</p>
+                <a class ="three" href={{ url_for('build.cc', dataset_name='states') }}>Categorical Comparison</a>
+                <p>Rank your items by organizing them into three categories. There is no order within each category.</p>
+                <a class ="three" href={{ url_for('build.pwc', dataset_name='states') }}>Pairwise Comparison</a>
+                <p>Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</p>
+        			</div>
+        		</li>
+        	</ul>
+        	<div class="cd-cover-layer"></div>
+
+          <ul class="cd-tour-wrapper1">
+        		<li class="cd-single-step">
+        			<div class="cd-more-info">
+        				<h2>Select a Ranking Method</h2>
+                <br>
+                <a class ="three" href={{ url_for('build.lc', dataset_name='colleges') }}>List Comparison</a>
+                <p>Rank all of your items in an ordered list.</p>
+                <a class ="three" href={{ url_for('build.cc', dataset_name='colleges') }}>Categorical Comparison</a>
+                <p>Rank your items by organizing them into three categories. There is no order within each category.</p>
+                <a class ="three" href={{ url_for('build.pwc', dataset_name='colleges') }}>Pairwise Comparison</a>
+                <p>Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</p>
+        			</div>
+        		</li>
+        	</ul>
+
+          <ul class="cd-tour-wrapper2">
+        		<li class="cd-single-step">
+        			<div class="cd-more-info">
+        				<h2>Select a Ranking Method</h2>
+                <br>
+                <a class ="three" href={{ url_for('build.lc', dataset_name='movies') }}>List Comparison</a>
+                <p>Rank all of your items in an ordered list.</p>
+                <a class ="three" href={{ url_for('build.cc', dataset_name='movies') }}>Categorical Comparison</a>
+                <p>Rank your items by organizing them into three categories. There is no order within each category.</p>
+                <a class ="three" href={{ url_for('build.pwc', dataset_name='movies') }}>Pairwise Comparison</a>
+                <p>Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</p>
+        			</div>
+        		</li>
+        	</ul>
+
+          <ul class="cd-tour-wrapper3">
+        		<li class="cd-single-step">
+        			<div class="cd-more-info">
+        				<h2>Select a Ranking Method</h2>
+                <br>
+                <a class ="three" href={{ url_for('build.lc', dataset_name='fifa') }}>List Comparison</a>
+                <p>Rank all of your items in an ordered list.</p>
+                <a class ="three" href={{ url_for('build.cc', dataset_name='fifa') }}>Categorical Comparison</a>
+                <p>Rank your items by organizing them into three categories. There is no order within each category.</p>
+                <a class ="three" href={{ url_for('build.pwc', dataset_name='fifa') }}>Pairwise Comparison</a>
+                <p>Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</p>
+        			</div>
+        		</li>
+        	</ul>
+
+          <ul class="cd-tour-wrapper4">
+        		<li class="cd-single-step">
+        			<div class="cd-more-info">
+        				<h2>Select a Ranking Method</h2>
+                <br>
+                <a class ="three" href={{ url_for('build.lc', dataset_name='board_games') }}>List Comparison</a>
+                <p>Rank all of your items in an ordered list.</p>
+                <a class ="three" href={{ url_for('build.cc', dataset_name='board_games') }}>Categorical Comparison</a>
+                <p>Rank your items by organizing them into three categories. There is no order within each category.</p>
+                <a class ="three" href={{ url_for('build.pwc', dataset_name='board_games') }}>Pairwise Comparison</a>
+                <p>Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</p>
+        			</div>
+        		</li>
+        	</ul>
+
+          <ul class="cd-tour-wrapper5">
+        		<li class="cd-single-step">
+        			<div class="cd-more-info">
+        				<h2>Select a Ranking Method</h2>
+                <br>
+                <a class ="three" href={{ url_for('build.lc', dataset_name='video_games') }}>List Comparison</a>
+                <p>Rank all of your items in an ordered list.</p>
+                <a class ="three" href={{ url_for('build.cc', dataset_name='video_games') }}>Categorical Comparison</a>
+                <p>Rank your items by organizing them into three categories. There is no order within each category.</p>
+                <a class ="three" href={{ url_for('build.pwc', dataset_name='video_games') }}>Pairwise Comparison</a>
+                <p>Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</p>
+        			</div>
+        		</li>
+        	</ul>
 
           <div id="dataset">
             <ul class="grid cs-style-4">
@@ -87,8 +179,8 @@
                   <figcaption>
                     <h3>States</h3>
                     <span>Dataset for States</span>
-                    <a class ="one" href={{ url_for('build.buildStart', dataset_name='states') }}>Build</a>
-                    <a class ="two" href={{ url_for('explore.explore', dataset_name='states') }}>Explore</a>
+                    <a class="one" id="cd-tour-trigger">Build</a>
+                    <a class="two" href={{ url_for('explore.explore', dataset_name='states') }}>Explore</a>
                   </figcaption>
                 </figure>
               </li>
@@ -102,7 +194,8 @@
                     <h3>Colleges</h3>
                     <span>Dataset for Colleges!</span>
                     <!-- Build is myRanker -->
-                    <a class ="one" href={{ url_for('build.buildStart', dataset_name='colleges') }}>Build</a>
+                    <a class="one" id="cd-tour-trigger1">Build</a>
+                    <!-- <a class ="one" href={{ url_for('build.buildStart', dataset_name='colleges') }}>Build</a> -->
                     <a class ="two" href={{ url_for('explore.explore', dataset_name='colleges') }}>Explore</a>
                   </figcaption>
                 </figure>
@@ -116,8 +209,9 @@
                   <figcaption>
                     <h3>Movies</h3>
                     <span>Dataset for Movies</span>
-                    <a class ="one" href={{ url_for('build.buildStart', dataset_name='categorical_movies') }}>Build</a>
-                    <a class ="two" href={{ url_for('explore.explore', dataset_name='categorical_movies') }}>Explore</a>
+                    <a class="one" id="cd-tour-trigger2">Build</a>
+                    <!-- <a class ="one" href={{ url_for('build.buildStart', dataset_name='movies') }}>Build</a> -->
+                    <a class ="two" href={{ url_for('explore.explore', dataset_name='movies') }}>Explore</a>
                   </figcaption>
                 </figure>
               </li>
@@ -130,7 +224,8 @@
                   <figcaption>
                     <h3>FIFA</h3>
                     <span>Dataset for FIFA!</span>
-                    <a class ="one" href={{ url_for('build.buildStart', dataset_name='fifa') }}>Build</a>
+                    <a class="one" id="cd-tour-trigger3">Build</a>
+                    <!-- <a class ="one" href={{ url_for('build.buildStart', dataset_name='fifa') }}>Build</a> -->
                     <a class ="two" href={{ url_for('explore.explore', dataset_name='fifa') }}>Explore</a>
                   </figcaption>
                 </figure>
@@ -144,7 +239,8 @@
                   <figcaption>
                     <h3>Board Games</h3>
                     <span>Dataset for Board Games</span>
-                    <a class ="one" href={{ url_for('build.buildStart', dataset_name='board_games') }}>Build</a>
+                    <a class="one" id="cd-tour-trigger4">Build</a>
+                    <!-- <a class ="one" href={{ url_for('build.buildStart', dataset_name='board_games') }}>Build</a> -->
                     <a class ="two" href={{ url_for('explore.explore', dataset_name='board_games') }}>Explore</a>
                   </figcaption>
                 </figure>
@@ -158,7 +254,8 @@
                   <figcaption>
                     <h3>Video Games</h3>
                     <span>Dataset for video Games</span>
-                    <a class ="one" href={{ url_for('build.buildStart', dataset_name='video_games') }}>Build</a>
+                    <a class="one" id="cd-tour-trigger5">Build</a>
+                    <!-- <a class ="one" href={{ url_for('build.buildStart', dataset_name='video_games') }}>Build</a> -->
                     <a class ="two" href={{ url_for('explore.explore', dataset_name='video_games') }}>Explore</a>
                   </figcaption>
                 </figure>
@@ -177,6 +274,10 @@
     <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}" ></script>
     <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
     <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/popUp.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery-2.1.4.js') }}" ></script>
 
   </body>
   </html>

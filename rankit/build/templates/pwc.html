@@ -33,24 +33,24 @@
       float: right;
       margin: 0px 50px;
     }
-  
+
     h2 {
       text-align: center;
       color: #333;
       font-size: 30px;
     }
-  
+
     html, body {
       margin: 0;
       padding: 0;
       background-color: #f9f9f9;
       height: 100vh;
     }
-  
+
     p {
       text-align: center;
     }
-  
+
     .submit {
       width: 15%;
       -webkit-appearance: none;
@@ -69,9 +69,9 @@
       vertical-align:baseline;
       float: right;
       margin: 0px 50px;
-  
+
     }
-  
+
     .submit[disabled] {
       background-color:  rgba(200, 200, 200, 0.6);
       color: #ffffff;
@@ -83,7 +83,7 @@
       float: right;
       margin: 0px 50px;
     }
-  
+
     .semi-transparent-button{
       background-color:  rgba(200, 200, 200, 0.6);
       border-radius: 2px;
@@ -94,21 +94,70 @@
       transition: all 0.3s ease-out;
       border: 1px solid rgba(200, 200, 200, 0.6);
       text-decoration-color: white;
-  
+
     }
-  
+
     .semi-transparent-button:hover {
       color: #fff;
       border: 1px solid;
       border-color: white;
     }
-  
+
+    #build-method {
+      display: flex;
+      width: 100%;
+      margin: 18px 0 0 0;
+      justify-content: space-around;
+    }
+
+    #build-method a:link, #build-method a:visited {
+      text-decoration: none;
+      display: block;
+      padding: 0.8em;
+    }
+
+    #build-method .active {
+      background: #2980B9;
+      color: #fff;
+    }
+
+    h1.title {
+    text-transform: capitalize;
+    display: block;
+    color: white;
+    font-size: 40px;
+    display: inline-block;
+    padding: 0px 20px 0px;
+    }
+
+    h1.title:first-letter {
+    text-transform: uppercase;
+    }
+
+    .page-header h1 {
+      padding: 0px 20px 0px;
+      color: white;
+      font-size: 40px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    .legend-label {
+      display: flex;
+      justify-content: space-around;
+      margin: 16px;
+    }
+
+    .right{
+      float: right;
+    }
+
   </style>
 </head>
 <body>
   <nav class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
-  
+
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -117,7 +166,7 @@
       </button>
       <a class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
     </div>
-  
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
@@ -145,13 +194,22 @@
           <a href="{{ url_for('explore.explore', dataset_name= dataset_name) }}">Explore</a>
         </li>
       </ul>
-  
+
     </div>
-  
+
   </nav>
+
   <div id="build-container">
     <!-- this is the header -->
     <div class="build-pool-header">
+
+      <h1 class="title">
+        <b>
+          Build: {{ dataset_name |replace("_", " ") }}
+        </b>
+        <br>
+      </h1>
+
       <div class="navbar-form navbar-center" role="search">
         <!-- search -->
         <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
@@ -164,8 +222,9 @@
           Shuffle
         </button>
         <!-- help -->
-        <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn">
-          <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn right">
+          <!-- <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span> -->
+          <p>Instructions</p>
         </button>
       </div>
 
@@ -250,11 +309,21 @@
         </div>
       </div>
     </div>
-  
+
     <!-- ****************************************************************************** -->
     <!-- this is the right side of the build view -->
-    <div id="build-right">  
+    <div id="build-right">
+      <!-- this is the header -->
+      <ul id="build-method">
+        <li><a id="lc">List</a></li>
+        <li><a id="cc">Categorical</a></li>
+        <li><a id="pwc" class="active">Pairwise</a></li>
+      </ul>
       <!-- this is the lists -->
+      <ul class="legend-label">
+        <li>HIGH</li>
+        <li>LOW</li>
+      </ul>
       <div id="pwl">
         <div class="pw">
           <div class="high list"></div>
@@ -546,6 +615,12 @@
 
     //   document.getElementById(methodFromURL + "_tab").setAttribute("class", "active");
     // }
+  </script>
+
+  <script>
+    $('#lc').attr('href', 'lc')
+    $('#cc').attr('href', 'cc')
+    $('#pwc').attr('href', 'pwc')
   </script>
 </body>
 </html>

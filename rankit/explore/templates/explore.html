@@ -36,6 +36,15 @@
       margin-bottom: 20px;
     }
 
+    p {
+      background-color: #2980B9;
+      padding: 7px 20px 0px;
+      color: white;
+      font-size: 16px;
+      margin: 0;
+      display: inline-block;
+    }
+
 {#    .dataTables_wrapper {#}
 {#      margin-left: 20px;#}
 {#      margin-right: 20px;#}
@@ -82,6 +91,54 @@
       overflow: visible !important;
 
     }
+
+    h1.title {
+    text-transform: capitalize;
+    }
+
+    h1.title {
+    display: block;
+    }
+
+    h1.title:first-letter {
+    text-transform: uppercase;
+    }
+
+    .dataTables_wrapper {
+      margin: 1em auto;
+    }
+
+    #table_filter {
+      display: none;
+      visibility: hidden;
+    }
+
+    #table_length {
+      display: none;
+      visibility: hidden;
+    }
+
+    h1.title {
+    text-transform: capitalize;
+    display: block;
+    color: white;
+    font-size: 40px;
+    display: inline-block;
+    padding: 0px 20px 0px;
+    }
+
+    h1.title:first-letter {
+    text-transform: uppercase;
+    }
+
+    .page-header h1 {
+      padding: 0px 20px 0px;
+      color: white;
+      font-size: 40px;
+      margin: 0;
+      display: inline-block;
+    }
+
   </style>
 
 </head>
@@ -90,7 +147,6 @@
 
   <nav class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
-
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -105,21 +161,46 @@
         <li>
           <a href={{ url_for( 'build.buildList')}}> Dataset</a>
         </li>
-        <li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Build
+                        <strong class="caret"></strong>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li>
+                            <a href={{ url_for( 'build.lc', dataset_name=dataset_name) }}>List Comparison</a>
+                            </li>
+                            <li class="divider">
+                              </li>
+                              <li>
+                                <a href={{ url_for( 'build.cc', dataset_name=dataset_name) }}>Categorical Comparison</a>
+                                </li>
+                                <li class="divider">
+                                  </li>
+                                  <li>
+                                      <a href={{ url_for( 'build.pwc', dataset_name=dataset_name) }}>Pairwise Comparison</a>
+                                    </li>
+                                  </ul>
+                                </li>
+        <!-- <li>
           <a href={{ url_for( 'build.buildStart', dataset_name=dataset_name) }}>Build</a>
-        </li>
+        </li> -->
       </ul>
-
     </div>
 
   </nav>
 
-  <div class="page-header">
-    <h1>
+  <div class="build-pool-header">
+    <h1 class="title">
       <b>
-        Explore Results
+        Explore: {{ dataset_name |replace("_", " ") }}
       </b>
     </h1>
+    <br>
+    <div style="display:inline-block" class="navbar-form navbar-center" role="search">
+      <!-- search -->
+      <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." aria-controls="table" onkeyup="searchTable(event)">
+    </div>
+    <label style="display:inline-block;float:right;color:white">Show <select style="color:black" name="table_length" aria-controls="table" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
   </div>
 
 
@@ -159,6 +240,7 @@
   function renderHead(datum) {
     const title = 'Title'
     const rank = 'Rank'
+    var w = 'Weights = '
     var data = Object.keys(datum)
 
     if (data.indexOf(title) > 0) {
@@ -170,12 +252,16 @@
       data.unshift(rank);
     }
     const thead = data
+      // .map(k => `<th>${k}  + '\n w' + </th>`)
       .map(k => `<th>${k}</th>`)
+      // .map(k => `<th>${k}:` + '\n' + `Weight = </th>`)
       .join('\n')
+
 
     document.querySelector('#head').innerHTML = thead
     return data
   }
+
 
   function renderData(data, keys) {
     var t = $('#table').dataTable();
@@ -191,6 +277,12 @@
     t.fnDraw();
 
     console.timeEnd('populate');
+  }
+
+  function searchTable(e) {
+    var value = e.target.value;
+    var table = $('#table').DataTable();
+    table.search( value ).draw();
   }
 
   function parseData(raw) {
