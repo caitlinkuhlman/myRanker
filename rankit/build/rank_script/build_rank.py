@@ -32,7 +32,7 @@ def clean_dataset(dataset, primary_key):
 
 def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
     pair_indices = pairs["high"].append(pairs["low"]).drop_duplicates().values
-    # dataset = clean_dataset(dataset, primary_key)
+    dataset = clean_dataset(dataset, primary_key)
 
     data_train = dataset.iloc[pair_indices]
 
