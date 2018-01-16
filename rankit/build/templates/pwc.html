@@ -393,6 +393,9 @@
         pull: 'clone',
         revertClone: 'true',
       },
+      onAdd: function(evt){
+        evt.item.parentNode.removeChild(evt.item)
+      },
       animation: 300,
       sort: false,
       ghostClass: 'ghost',
