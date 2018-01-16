@@ -4,7 +4,7 @@ import pandas as pd
 import pyximport
 pyximport.install()
 from rankit.build.rank_script.rlscore.learner import PPRankRLS
-
+from math import log10, floor
 
 
 # WE use the RLS library.
@@ -61,9 +61,11 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
     y_pred = learner.predict(data)
     weights = learner.predictor.W
 
-
     headers = list(dataset)
-    new_headers = list((header + "\n" + "[Weight: " + str(round(weight, 4)) + "]" for header, weight in zip(headers, weights) ))
+    headers.remove(primary_key)
+
+    new_headers = list((header + "\n" + "[Weight: " + str(round(weight, -int(floor(log10(abs(weight)))) + 2)) + "]" for header, weight in zip(headers, weights) ))
+
     dataset = dataset.rename(columns=dict(zip(headers, new_headers)))
 
     res = pd.DataFrame()

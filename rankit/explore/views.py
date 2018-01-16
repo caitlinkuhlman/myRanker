@@ -20,7 +20,8 @@ def explore(dataset_name):
 def exploreJson(dataset_name, pairs):
 
     primaryKeyPairs = []
-    parsed_pairs = re.findall("\d+=([\w\s'-:]*[,]{1}[\w\s'-]*)&", pairs)
+    parsed_pairs = re.findall("\d+=([\w\s'-:]*[,]{1}[\w\s'-:]*)&", pairs)
+    print(parsed_pairs)
     for pair in parsed_pairs:
         high, low = pair.split(',')
         primaryKeyPairs.append({'high': high, 'low' : low})
