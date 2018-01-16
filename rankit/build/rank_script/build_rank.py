@@ -56,7 +56,7 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
 
 
     headers = list(dataset)
-    new_headers = list((header + "\n" + "-- Weight: " + str(round(weight, 4)) for header, weight in zip(headers, weights) ))
+    new_headers = list((header + "\n" + "[Weight: " + str(round(weight, 4)) + "]" for header, weight in zip(headers, weights) ))
     dataset = dataset.rename(columns=dict(zip(headers, new_headers)))
 
     res = pd.DataFrame()
