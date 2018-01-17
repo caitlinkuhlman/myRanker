@@ -37,16 +37,6 @@ jQuery(document).ready(function($){
 			closeTour(tourSteps, tourWrapper, coverLayer);
 		});
 
-		//detect swipe event on mobile - change visible step
-		tourStepInfo.on('swiperight', function(event){
-			//go to prev step - if available
-			if( !$(this).find('.cd-prev').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'prev');
-		});
-		tourStepInfo.on('swipeleft', function(event){
-			//go to next step - if available
-			if( !$(this).find('.cd-next').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'next');
-		});
-
 		//keyboard navigation
 		$(document).keyup(function(event){
 			if( event.which=='27' ) {
@@ -153,16 +143,6 @@ jQuery(document).ready(function($){
 		//close tour
 		tourStepInfo.on('click', '.cd-close', function(event){
 			closeTour(tourSteps, tourWrapper, coverLayer);
-		});
-
-		//detect swipe event on mobile - change visible step
-		tourStepInfo.on('swiperight', function(event){
-			//go to prev step - if available
-			if( !$(this).find('.cd-prev').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'prev');
-		});
-		tourStepInfo.on('swipeleft', function(event){
-			//go to next step - if available
-			if( !$(this).find('.cd-next').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'next');
 		});
 
 		//keyboard navigation
@@ -272,16 +252,6 @@ jQuery(document).ready(function($){
 			closeTour(tourSteps, tourWrapper, coverLayer);
 		});
 
-		//detect swipe event on mobile - change visible step
-		tourStepInfo.on('swiperight', function(event){
-			//go to prev step - if available
-			if( !$(this).find('.cd-prev').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'prev');
-		});
-		tourStepInfo.on('swipeleft', function(event){
-			//go to next step - if available
-			if( !$(this).find('.cd-next').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'next');
-		});
-
 		//keyboard navigation
 		$(document).keyup(function(event){
 			if( event.which=='27' ) {
@@ -386,16 +356,6 @@ jQuery(document).ready(function($){
 		//close tour
 		tourStepInfo.on('click', '.cd-close', function(event){
 			closeTour(tourSteps, tourWrapper, coverLayer);
-		});
-
-		//detect swipe event on mobile - change visible step
-		tourStepInfo.on('swiperight', function(event){
-			//go to prev step - if available
-			if( !$(this).find('.cd-prev').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'prev');
-		});
-		tourStepInfo.on('swipeleft', function(event){
-			//go to next step - if available
-			if( !$(this).find('.cd-next').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'next');
 		});
 
 		//keyboard navigation
@@ -503,16 +463,6 @@ jQuery(document).ready(function($){
 			closeTour(tourSteps, tourWrapper, coverLayer);
 		});
 
-		//detect swipe event on mobile - change visible step
-		tourStepInfo.on('swiperight', function(event){
-			//go to prev step - if available
-			if( !$(this).find('.cd-prev').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'prev');
-		});
-		tourStepInfo.on('swipeleft', function(event){
-			//go to next step - if available
-			if( !$(this).find('.cd-next').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'next');
-		});
-
 		//keyboard navigation
 		$(document).keyup(function(event){
 			if( event.which=='27' ) {
@@ -617,16 +567,6 @@ jQuery(document).ready(function($){
 		//close tour
 		tourStepInfo.on('click', '.cd-close', function(event){
 			closeTour(tourSteps, tourWrapper, coverLayer);
-		});
-
-		//detect swipe event on mobile - change visible step
-		tourStepInfo.on('swiperight', function(event){
-			//go to prev step - if available
-			if( !$(this).find('.cd-prev').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'prev');
-		});
-		tourStepInfo.on('swipeleft', function(event){
-			//go to next step - if available
-			if( !$(this).find('.cd-next').hasClass('inactive') && viewportSize() == 'mobile' ) changeStep(tourSteps, coverLayer, 'next');
 		});
 
 		//keyboard navigation

@@ -65,6 +65,56 @@ img {
  }
 
 
+ * {
+     box-sizing: border-box;
+ }
+
+ /* body {
+     margin: 0;
+ } */
+
+ /* Create three equal columns that floats next to each other */
+ .column {
+   text-align: center;
+     float: left;
+     width: 33.33%;
+     padding: 10px 20px;
+ }
+
+ .column2 {
+   text-align: center;
+     float: left;
+     width: 66.66%;
+     padding: 10px;
+ }
+
+ .row:after {
+     content: "";
+     display: table;
+     clear: both;
+ }
+
+ .divider {
+   border-right: 4px solid grey;
+ }
+
+ .content {
+   padding: 0px 80px;
+ }
+
+ #y{
+   font-size: 20px;
+   color: #333333;
+ }
+
+ .datasetimage{
+  padding: 8px 0px;
+ }
+
+ .datasetlabel{
+  padding-right: 20px;
+ }
+
   </style>
 
 </head>
@@ -79,125 +129,60 @@ img {
   <div>
     <div class="cd-intro-content mask">
       <h1 data-content="RANKIT"><span></span></h1>
-      <h2>An easy, step by step, tool to research existing rankings!</h2>
-      <!-- <div id="main-menu" class="action-wrapper"> -->
+      <h2>An easy, step by step, tool to research rankings!</h2>
     </div>
       <div id="main-menu">
-          <a href="#start"id = "get-started" class="cd-btn semi-transparent-button" role="button">Get Started</a>
+          <a href="#start"id = "get-started" class="cd-btn semi-transparent-button" role="button">Learn More</a>
       </div>
     </div>
-
-    <!-- <canvas class="constellation" width="718" height="662"></canvas> -->
-    <!-- <div>
-      <h1>RANKIT</h1>
-      <h2>An easy, step by step, tool to research existing rankings!</h2>
-    </div>
-    <div id="main-menu">
-      <a href="#start"id = "get-started" class="semi-transparent-button" role="button">Get Started</a>
-    </div> -->
   </header>
-
-  <div class="cd-scrolling-bg cd-color-2">
-    <div class="cd-container">
-      <p>
-        Choose any data-set.
-        <br>
-        <br>
-        Construct a partial rankings of your preference, or from what you know.
-        Learn a full ranking over all the items in the dataset based on your choice in the previous step.
-        <br>
-        <br>
-        Inspect how the attributes in the dataset impact the ranking.
-        Display your rankings to better understand your preferences.
-      </p>
-    </div> <!-- cd-container -->
-  </div> <!-- cd-scrolling-bg -->
-  <hr class="style-four">
-
-
-<div class="col-xxs-12 col-lg-10 m-x-auto">
-<br>
+</div>
 
 <div id="start"></div>
 
-<div class="white">
-<h2 id="x" class="titles-purple">Step 1: Pick a Dataset</h2>
-<section class="card card-lg text-xxs-center">
-  <br>
-  <img src="{{ url_for('static',filename='images/importMed.png') }}">
-<div id="band" class="container text-center">
-<p>Pick a dataset from the available datasets.</p>
+<div class="content">
+
+<div class="row">
+  <div class="column">
+  <h2 id="x" class="titles-purple">Step 1: Pick a Dataset</h2>
 </div>
-</section>
-
-<br>
-<br>
-
+<div class="column2">
+<h2 id="x" class="titles-purple">Step 2: Choose a Tool</h2>
+</div>
 </div>
 
-<hr class="style-four">
-
-
-<div class="col-xxs-12 col-lg-10 m-x-auto">
-  <h2 id="x" class="titles-purple">Step 2: Choose a Tool</h2>
-  <br>
-  <br>
-<div class="wrapper">
-  <div class="col-item">
-    <h2 id="x" class="titles-purple">Building your Ranking</h2>
-  </div>
-  <div class="col-item">
-    <h2 id="x" class="titles-purple">Explore your Ranking</h2>
-  </div>
-  <div class="col-item">
-
-    <section class="card card-lg text-xxs-center">
-    <div id="band" class="container text-center">
+  <div class="row">
+    <div class="column divider">
+      <h2 class = "datasetlabel">Dataset</h2>
+      <img class="datasetimage" src="{{ url_for('static',filename='images/importmed2.png') }}">
+      <h2 id="y">Pick a dataset of your choice from the available options</h2>
+    </div>
+    <div class="column">
+      <h2>Build</h2>
       <img src="{{ url_for('static',filename='images/build.png') }}">
-    <p>
-      Build your ranking with your prefered method. </br>
-    <ul>
-      <li><b>Categorical Comparison:</b> Rank your items by organizing them into three categories. There is no order within each category.</li>
-      <li><b>List Comparison:</b> Rank all of your items in an ordered list.</li>
-      <li><b>Pairwise Comparison:</b> Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</li>
-    </ul>
-    </p>
+      <h2 id="y">Build your ranking with one of three available methods</h2>
     </div>
-    </section>
-
-  </div>
-  <div class="col-item">
-    <section class="card card-lg text-xxs-center">
-    <div id="band" class="container text-center">
+    <div class="column">
+      <h2>Explore</h2>
       <img src="{{ url_for('static',filename='images/explore.png') }}">
-    <p>
-      Visualizes your ranking with your prefered method.
-      <br>
-      <ul>
-      <li>Get a deeper look at your chosen dataset and its attributes.</li>
-      <br>
-      <li>Rearrange your ranked data based on the attributes presented.</li>
-      <li>If you wish to change the result of your ranking, you can return to previous page and change your preferences instantly.</li>
-      <ul>
-     </p>
+      <h2 id="y">Explore your ranking results and your chosen dataset attributes</h2>
     </div>
-    </section>
   </div>
+
 </div>
-</div>
 
 <br>
 <br>
 <br>
 
 
-<div class="col-xxs-12 col-lg-10 m-x-auto purple">
+<div class="purple">
 <hr class="style-four">
-<br>
 <h2 id="x" class="titles">You're Ready to RankIt!</h2>
 <div>
   <a href={{ url_for('build.buildList') }}  id = "get-started" class="semi-transparent-button" role="button">Start Ranking</a>
 </div>
+<br>
 <br>
 
 </div>

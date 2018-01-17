@@ -243,7 +243,8 @@ a:hover {
 }
 
 .titles {
-	font-size: 50px;
+	font-size: 40px;
+	/* font-size: 50px; */
 	margin-bottom: 0;
 	font-weight: 800;
 	line-height: 72px;
@@ -253,12 +254,11 @@ a:hover {
 }
 
 .titles-purple{
-	font-size: 45px;
+	font-size: 30px;
 	margin-bottom: 0;
 	font-weight: 800;
 	line-height: 72px;
 	text-align: center;
-	text-transform: uppercase;
 	color: #2980B9
 }
 
@@ -313,7 +313,10 @@ a:hover {
 #get-started.semi-transparent-button, #see-full-list.semi-transparent-button, .semi-transparent-button{
 	display: block;
 	box-sizing: border-box;
-	margin: 5% auto;
+	/* margin: 5% auto; */
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 8px;
 	width: 30%;
 	background-color: rgba(200, 200, 200, 0.3);
@@ -418,7 +421,7 @@ hr.style-four {
 }
 
 .grid {
-		padding: 80px 20px 120px 20px;
+		padding: 10px 20px 80px 20px;
 		max-width: 1300px;
 		margin: 0 auto;
 		list-style: none;
