@@ -313,12 +313,9 @@ a:hover {
 #get-started.semi-transparent-button, #see-full-list.semi-transparent-button, .semi-transparent-button{
 	display: block;
 	box-sizing: border-box;
-	/* margin: 5% auto; */
-	margin-top: 25px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 25px auto;
 	padding: 8px;
-	width: 30%;
+	width: 12em;
 	background-color: rgba(200, 200, 200, 0.3);
 	border-radius: 2px;
 	border-color: rgba(200, 200, 200, 0.3);
@@ -329,13 +326,11 @@ a:hover {
 	transition: all 0.3s ease-out;
 	border: 1px solid rgba(200, 200, 200, 0.3);
 	text-decoration-color: white;
+	text-transform: uppercase;
 }
 
 #get-started.semi-transparent-button:hover, #see-full-list.semi-transparent-button:hover, .semi-transparent-button:hover{
-	border: 1px solid;
-	border-color: white;
-	text-decoration-color: white;
-	text-decoration-color: white;
+	border: 1px solid white;
 }
 
 .white {
@@ -541,18 +536,28 @@ hr.style-four {
 		position: absolute;
 		bottom: 20px;
 		right: 20px;
+		border: 1px solid rgba(231,76,60, 1);
+		width: 76px;
+	}
+
+	.cs-style-4 figcaption a:hover {
+		text-decoration: none;
+		text-transform: capitalize;
+		color: #fff;
+		cursor: pointer;
+		border: 1px solid white;
 	}
 
 	.cs-style-4 figcaption a.one {
 		position: absolute;
 		bottom: 100px;
-		right: 20px;
+		right: 30px;
 	}
 
 	.cs-style-4 figcaption a.two {
 		position: absolute;
 		bottom: 60px;
-		right: 20px;
+		right: 30px;
 	}
 
 	.cs-style-4 figcaption a.lineup {
