@@ -259,7 +259,6 @@ a:hover {
 	font-weight: 800;
 	line-height: 72px;
 	text-align: center;
-	text-transform: uppercase;
 	color: #2980B9
 }
 
@@ -314,7 +313,10 @@ a:hover {
 #get-started.semi-transparent-button, #see-full-list.semi-transparent-button, .semi-transparent-button{
 	display: block;
 	box-sizing: border-box;
-	margin: 5% auto;
+	/* margin: 5% auto; */
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 8px;
 	width: 30%;
 	background-color: rgba(200, 200, 200, 0.3);
