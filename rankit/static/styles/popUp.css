@@ -256,7 +256,7 @@ Main Components
   }
 }
 .cd-single-step .cd-more-info {
-  background: #2980B9;
+  background: #2c3f52;
   color: #ffffff;
   /* border: 5px solid #000; */
   z-index: 1;
@@ -308,7 +308,7 @@ cursor: pointer;
 display: inline-block;
 padding: 0.5em 1.8em;
 border-radius: 2px;
-text-transform: uppercase;
+/* text-transform: uppercase; */
 letter-spacing: 0.05em;
 width: 20em;
 text-decoration: none;
