@@ -65,7 +65,7 @@
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    cursor: pointer;
+    cursor: move;
   }
 
   .scrollingDragInner {

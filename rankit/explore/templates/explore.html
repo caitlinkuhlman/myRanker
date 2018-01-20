@@ -13,134 +13,131 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap-iso.css') }}" />
-
-
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
   <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
 
   <style>
-    body {
-      background-color: #f9f9f9;
-    }
+  body {
+    background-color: #f9f9f9;
+  }
 
-    .page-header h1 {
-      padding: 0px 20px 0px;
-      color: white;
-      font-size: 40px;
-      margin: 0;
-      display: inline-block;
-    }
+  .page-header h1 {
+    padding: 0px 20px 0px;
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    display: inline-block;
+  }
 
-    .page-header {
-      background-color: #2980B9;
-      margin-bottom: 20px;
-    }
+  .page-header {
+    background-color: #2980B9;
+    margin-bottom: 20px;
+  }
 
-    p {
-      background-color: #2980B9;
-      padding: 7px 20px 0px;
-      color: white;
-      font-size: 16px;
-      margin: 0;
-      display: inline-block;
-    }
+  p {
+    background-color: #2980B9;
+    padding: 7px 20px 0px;
+    color: white;
+    font-size: 16px;
+    margin: 0;
+    display: inline-block;
+  }
 
-{#    .dataTables_wrapper {#}
-{#      margin-left: 20px;#}
-{#      margin-right: 20px;#}
-{#      right: 0;#}
-{#    }#}
+  {#    .dataTables_wrapper {#}
+  {#      margin-left: 20px;#}
+  {#      margin-right: 20px;#}
+  {#      right: 0;#}
+  {#    }#}
 
-    tr {
-      background-color: #2980B9;
-    }
+  tr {
+    background-color: #2980B9;
+  }
 
-    #head {
-      color: white;
-    }
+  #head {
+    color: white;
+  }
 
-{#    .middleNav {#}
-{#      margin: 2px 0px;#}
-{#      padding-right: 405px;#}
-{#      position: absolute;#}
-{#      margin-left: auto;#}
-{#      margin-right: auto;#}
-{#      right: 0;#}
-{#    }#}
-{##}
-{#    .dataTables_filter {#}
-{#      width: 50%;#}
-{#      float: right;#}
-{#      text-align: right;#}
-{#      padding-bottom: 20px;#}
-{#    }#}
+  {#    .middleNav {#}
+  {#      margin: 2px 0px;#}
+  {#      padding-right: 405px;#}
+  {#      position: absolute;#}
+  {#      margin-left: auto;#}
+  {#      margin-right: auto;#}
+  {#      right: 0;#}
+  {#    }#}
+  {##}
+  {#    .dataTables_filter {#}
+  {#      width: 50%;#}
+  {#      float: right;#}
+  {#      text-align: right;#}
+  {#      padding-bottom: 20px;#}
+  {#    }#}
 
 
-    /*IMPORTANT: Leave for scrolling left to right when lots of attributes */
-    .dataTables_scroll {
-      overflow: auto;
+  /*IMPORTANT: Leave for scrolling left to right when lots of attributes */
+  .dataTables_scroll {
+    overflow: auto;
 
-    }
+  }
 
-    .dataTables_scrollHead {
-      overflow: visible !important;
+  .dataTables_scrollHead {
+    overflow: visible !important;
 
-    }
+  }
 
-    .dataTables_scrollBody {
-      overflow: visible !important;
+  .dataTables_scrollBody {
+    overflow: visible !important;
 
-    }
+  }
 
-    h1.title {
+  h1.title {
     text-transform: capitalize;
-    }
+  }
 
-    h1.title {
+  h1.title {
     display: block;
-    }
+  }
 
-    h1.title:first-letter {
+  h1.title:first-letter {
     text-transform: uppercase;
-    }
+  }
 
-    .dataTables_wrapper {
-      margin: 1em auto;
-    }
+  .dataTables_wrapper {
+    margin: 1em auto;
+  }
 
-    #table_filter {
-      display: none;
-      visibility: hidden;
-    }
+  #table_filter {
+    display: none;
+    visibility: hidden;
+  }
 
-    #table_length {
-      display: none;
-      visibility: hidden;
-    }
+  #table_length {
+    display: none;
+    visibility: hidden;
+  }
 
-    h1.title {
+  h1.title {
     text-transform: capitalize;
     display: block;
     color: white;
     font-size: 40px;
     display: inline-block;
     padding: 0px 20px 0px;
-    }
+  }
 
-    h1.title:first-letter {
+  h1.title:first-letter {
     text-transform: uppercase;
-    }
+  }
 
-    .page-header h1 {
-      padding: 0px 20px 0px;
-      color: white;
-      font-size: 40px;
-      margin: 0;
-      display: inline-block;
-    }
+  .page-header h1 {
+    padding: 0px 20px 0px;
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    display: inline-block;
+  }
 
   </style>
-
 </head>
 
 <body>
@@ -161,137 +158,136 @@
         <li>
           <a href={{ url_for( 'build.buildList')}}> Dataset</a>
         </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Build
-                        <strong class="caret"></strong>
-                      </a>
-                      <ul class="dropdown-menu">
-                          <li>
-                            <a href={{ url_for( 'build.lc', dataset_name=dataset_name) }}>List Comparison</a>
-                            </li>
-                            <li class="divider">
-                              </li>
-                              <li>
-                                <a href={{ url_for( 'build.cc', dataset_name=dataset_name) }}>Categorical Comparison</a>
-                                </li>
-                                <li class="divider">
-                                  </li>
-                                  <li>
-                                      <a href={{ url_for( 'build.pwc', dataset_name=dataset_name) }}>Pairwise Comparison</a>
-                                    </li>
-                                  </ul>
-                                </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">Build
+            <strong class="caret"></strong>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href={{ url_for( 'build.lc', dataset_name=dataset_name) }}>List Comparison</a>
+            </li>
+            <li class="divider">
+            </li>
+            <li>
+              <a href={{ url_for( 'build.cc', dataset_name=dataset_name) }}>Categorical Comparison</a>
+            </li>
+            <li class="divider">
+            </li>
+            <li>
+              <a href={{ url_for( 'build.pwc', dataset_name=dataset_name) }}>Pairwise Comparison</a>
+            </li>
+          </ul>
+        </li>
         <!-- <li>
-          <a href={{ url_for( 'build.buildStart', dataset_name=dataset_name) }}>Build</a>
-        </li> -->
-      </ul>
-    </div>
-
-  </nav>
-
-  <div class="build-pool-header">
-    <h1 class="title">
-      <b>
-        Explore: {{ dataset_name |replace("_", " ") }}
-      </b>
-    </h1>
-    <br>
-    <div style="display:inline-block" class="navbar-form navbar-center" role="search">
-      <!-- search -->
-      <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." aria-controls="table" onkeyup="searchTable(event)">
-    </div>
-    <label style="display:inline-block;float:right;color:white">Show <select style="color:black" name="table_length" aria-controls="table" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
+        <a href={{ url_for( 'build.buildStart', dataset_name=dataset_name) }}>Build</a>
+      </li> -->
+    </ul>
   </div>
 
+</nav>
 
-  <table id="table" class="display" cellspacing="0" width="0%">
-    <thead>
-      <tr id="head">
-      </tr>
-    </thead>
-    <tbody id="data">
+<div class="build-pool-header">
+  <h1 class="title">
+    <b>
+      Explore: {{ dataset_name |replace("_", " ") }}
+    </b>
+  </h1>
+  <br>
+  <div style="display:inline-block" class="navbar-form navbar-center" role="search">
+    <!-- search -->
+    <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." aria-controls="table" onkeyup="searchTable(event)">
+  </div>
+  <label style="display:inline-block;float:right;color:white">Show <select style="color:black" name="table_length" aria-controls="table" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
+</div>
 
-    </tbody>
-  </table>
+
+<table id="table" class="display" cellspacing="0" width="0%">
+  <thead>
+    <tr id="head">
+    </tr>
+  </thead>
+  <tbody id="data">
+
+  </tbody>
+</table>
 
 </body>
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-1.12.4.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-dataTables.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
-
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
 
 
 <script>
 
-  function renderTable(data) {
-    var keys = renderHead(data[0])
+function renderTable(data) {
+  var keys = renderHead(data[0])
 
-    $('#table').DataTable({
-      scrollY: '100vh',
-      scrollCollapse: true,
-      pageLength: 25,
-    })
+  $('#table').DataTable({
+    scrollY: '100vh',
+    scrollCollapse: true,
+    pageLength: 25,
+  })
 
-    renderData(data, keys)
+  renderData(data, keys)
+}
+
+function renderHead(datum) {
+  const title = 'Title'
+  const rank = 'Rank'
+  var w = 'Weights = '
+  var data = Object.keys(datum)
+
+  if (data.indexOf(title) > 0) {
+    data.splice(data.indexOf(title), 1);
+    data.unshift(title);
   }
-
-  function renderHead(datum) {
-    const title = 'Title'
-    const rank = 'Rank'
-    var w = 'Weights = '
-    var data = Object.keys(datum)
-
-    if (data.indexOf(title) > 0) {
-      data.splice(data.indexOf(title), 1);
-      data.unshift(title);
-    }
-    if (data.indexOf(rank) > 0) {
-      data.splice(data.indexOf(rank), 1);
-      data.unshift(rank);
-    }
-    const thead = data
-      // .map(k => `<th>${k}  + '\n w' + </th>`)
-      .map(k => `<th>${k}</th>`)
-      // .map(k => `<th>${k}:` + '\n' + `Weight = </th>`)
-      .join('\n')
-
-
-    document.querySelector('#head').innerHTML = thead
-    return data
+  if (data.indexOf(rank) > 0) {
+    data.splice(data.indexOf(rank), 1);
+    data.unshift(rank);
   }
+  const thead = data
+  // .map(k => `<th>${k}  + '\n w' + </th>`)
+  .map(k => `<th>${k}</th>`)
+  // .map(k => `<th>${k}:` + '\n' + `Weight = </th>`)
+  .join('\n')
 
 
-  function renderData(data, keys) {
-    var t = $('#table').dataTable();
+  document.querySelector('#head').innerHTML = thead
+  return data
+}
 
 
-    const html = data.map(x => {
-      const props = keys
-        .map(k => x[k])
-      t.fnAddData(props, false);
-    }
-    )
+function renderData(data, keys) {
+  var t = $('#table').dataTable();
 
-    t.fnDraw();
 
-    console.timeEnd('populate');
+  const html = data.map(x => {
+    const props = keys
+    .map(k => x[k])
+    t.fnAddData(props, false);
   }
+)
 
-  function searchTable(e) {
-    var value = e.target.value;
-    var table = $('#table').DataTable();
-    table.search( value ).draw();
-  }
+t.fnDraw();
 
-  function parseData(raw) {
-    return JSON.parse(raw.substring(1, raw.length - 1))
-  }
+console.timeEnd('populate');
+}
 
-  const raw = '{{data|tojson}}'
-  const data = parseData(raw)
-  renderTable(data)
+function searchTable(e) {
+  var value = e.target.value;
+  var table = $('#table').DataTable();
+  table.search( value ).draw();
+}
+
+function parseData(raw) {
+  return JSON.parse(raw.substring(1, raw.length - 1))
+}
+
+const raw = '{{data|tojson}}'
+const data = parseData(raw)
+renderTable(data)
 
 
 </script>
