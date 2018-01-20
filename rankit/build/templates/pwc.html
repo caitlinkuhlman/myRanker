@@ -166,7 +166,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a style="color:#" class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
+      <a class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -205,7 +205,7 @@
     <!-- this is the header -->
     <div style="background-color:#439AD3" class="build-pool-header">
 
-      <h1 class="title">
+      <h1 style="position:relative; right:5px" class="title">
         <b>
           Build: {{ dataset_name |replace("_", " ") }}
         </b>
