@@ -45,11 +45,11 @@
       display: inline-block;
     }
 
-{#    .dataTables_wrapper {#}
+/* {#    .dataTables_wrapper {#}
 {#      margin-left: 20px;#}
 {#      margin-right: 20px;#}
 {#      right: 0;#}
-{#    }#}
+{#    }#} */
 
     tr {
       background-color: #2980B9;
@@ -59,7 +59,7 @@
       color: white;
     }
 
-{#    .middleNav {#}
+/* {#    .middleNav {#}
 {#      margin: 2px 0px;#}
 {#      padding-right: 405px;#}
 {#      position: absolute;#}
@@ -73,7 +73,7 @@
 {#      float: right;#}
 {#      text-align: right;#}
 {#      padding-bottom: 20px;#}
-{#    }#}
+{#    }#} */
 
 
     /*IMPORTANT: Leave for scrolling left to right when lots of attributes */
@@ -113,11 +113,6 @@
       visibility: hidden;
     }
 
-    #table_length {
-      display: none;
-      visibility: hidden;
-    }
-
     h1.title {
     text-transform: capitalize;
     display: block;
@@ -139,6 +134,13 @@
       display: inline-block;
     }
 
+    #table_length {
+      position:relative;
+      top: -6px;
+      float: right;
+      right: 1%;
+    }
+
   </style>
 
 </head>
@@ -153,7 +155,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
+      <a style="font-weight:bold" class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -189,8 +191,8 @@
 
   </nav>
 
-  <div class="build-pool-header">
-    <h1 class="title">
+  <div style="background-color:#439AD3" class="build-pool-header">
+    <h1 style="position:relative; right:5px" class="title">
       <b>
         Explore: {{ dataset_name |replace("_", " ") }}
       </b>
@@ -200,7 +202,9 @@
       <!-- search -->
       <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." aria-controls="table" onkeyup="searchTable(event)">
     </div>
-    <label style="display:inline-block;float:right;color:white">Show <select style="color:black" name="table_length" aria-controls="table" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
+    <!-- <div style="float:right;color:white">
+      <label>Show <select style="color:black" name="table_length" aria-controls="table"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
+    </div> -->
   </div>
 
 

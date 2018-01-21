@@ -123,8 +123,10 @@
     }
 
     #build-method .active {
-      background: #2980B9;
+      background: #E74C3C;
       color: #fff;
+      text-align: center;
+      width: 200%;
     }
 
     h1.title {
@@ -187,7 +189,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
+      <a style="font-weight:bold" class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -224,9 +226,9 @@
 
   <div id="build-container">
     <!-- this is the header -->
-    <div class="build-pool-header">
+    <div style="background-color:#439AD3" class="build-pool-header">
 
-      <h1 class="title">
+      <h1 style="position:relative; right:5px" class="title">
         <b>
           Build: {{ dataset_name |replace("_", " ") }}
         </b>
@@ -323,7 +325,7 @@
     <!-- this is the left side of the build view -->
     <div id="build-left">
         <!-- this is the pool -->
-      <div class="scrollingDragInner viewBackround">
+      <div style="position:relative; top:8%" class="scrollingDragInner viewBackround">
         <div id="top" class="pool">
           <!-- objects from dataset inserted here -->
           {% for x in dataset %}
@@ -341,8 +343,8 @@
         <!-- this is the header -->
         <ul id="build-method">
           <li><a id="lc" class="active">List</a></li>
-          <li><a id="cc">Categorical</a></li>
-          <li><a id="pwc">Pairwise</a></li>
+          <li><a style="color: #439AD3;" id="cc">Categorical</a></li>
+          <li><a style="color: #439AD3;" id="pwc">Pairwise</a></li>
         </ul>
 
         <div class="legend-label">
