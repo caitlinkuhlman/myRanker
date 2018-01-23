@@ -615,13 +615,13 @@ var svg = d3.select("#graphDiv").append("svg")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-var options = d3.keys(dataset[0]).filter(function(key) { return key !== "Title"; });
+var options = d3.keys(dataset[0]).filter(function(key) { return key !== "attribute"; });
 
 dataset.forEach(function(d) {
     d.valores = options.map(function(name) { return {name: name, value: +d[name]}; });
 });
 
-y0.domain(dataset.map(function(d) { return d.Title; }));
+y0.domain(dataset.map(function(d) { return d.attribute; }));
 y1.domain(options).rangeRoundBands([0, y0.rangeBand()]);
 x.domain([0, d3.max(dataset, function(d) { return d3.max(d.valores, function(d) { return d.value; }); })]);
 
@@ -642,7 +642,7 @@ var bar = svg.selectAll(".bar")
         .data(dataset)
         .enter().append("g")
         .attr("class", "rect")
-        .attr("transform", function(d) { return "translate( 0,"+ y0(d.Title) +")"; });
+        .attr("transform", function(d) { return "translate( 0,"+ y0(d.attribute) +")"; });
 
 var bar_enter = bar.selectAll("rect")
         .data(function(d) { return d.valores; })
@@ -673,7 +673,7 @@ bar
             l = elements.length
             l = l-1
             elementData = elements[l].__data__
-            divTooltip.html((d.Title)+"<br>"+elementData.name+"<br>"+elementData.value);
+            divTooltip.html((d.attribute)+"<br>"+elementData.name+"<br>"+elementData.value);
         });
 bar
         .on("mouseout", function(d){
