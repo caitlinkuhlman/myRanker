@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/glyphicons-halflings-regular.eot') }}" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
   <title>List Comparison</title>
   <style>
 
@@ -327,9 +328,13 @@
         <li>LOW</li>
       </ul>
       <div id="pwl">
-        <div class="pw">
-          <div class="high list"></div>
-          <div class="low list"></div>
+        <div class="pwx">
+          <div class="pw">
+            <div class="high list"></div>
+            <div class="low list"></div>
+          </div>
+          <div class="x" onclick="clearPW(event)"><i class="fas fa-times"></i></div>
+          
         </div>
       </div>
       <button type="button" class="btn " id="more" onclick="handleMore()">Add New Pairwise</button>
@@ -421,12 +426,19 @@
 
     function handleMore() {
       const pwl = document.querySelector('#pwl')
-      const html = `<div class="pw"><div class="high list"></div><div class="low list"></div></div>`
+      // const html = `<div class="pw"><div class="high list"></div><div class="low list"></div></div>`
+      const html = `<div class="pwx"><div class="pw"><div class="high list"></div><div class="low list"></div></div><div class="x" onclick="clearPW(event)"><i class="fas fa-times"></i></div></div>`
       pwl.innerHTML += html
       // const highs = document.querySelectorAll('.high')
       // const high = highs[highs.length-1]
       add_to_sortable('.high')
       add_to_sortable('.low')
+    }
+
+    function clearPW(e) {
+      const pw = e.target.closest('.pwx').children[0];
+      pw.children[0].innerHTML = "";
+      pw.children[1].innerHTML = "";
     }
 
   </script>
