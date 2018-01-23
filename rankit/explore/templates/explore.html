@@ -362,6 +362,95 @@ function tabSwitch(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+///////////////////////
+
+function findMin(weights) {
+    var current_min = weights[0].weight
+    for (i=0; i<weights.length; i++){
+      if (current_min > weights[i].weight) {
+        current_min = weights[i].weight
+      }
+    }
+    return current_min
+  }
+
+
+  function findMax(weights) {
+    var current_max = weights[0].weight
+    for (i=0; i<weights.length; i++){
+      if (current_max < weights[i].weight) {
+        current_max = weights[i].weight
+      }
+    }
+    return current_max
+  }
+
+
+  function normalize(val, min, max) {
+    return (val-min)/(max-min)
+  }
+
+
+  function normalizeWeights(data) {
+    var dict = []
+    min = findMin(data)
+    max = findMax(data)
+    for (i=0; i<data.length; i++){
+      current_normalized = normalize(data[i].weight, min, max);
+      dict.push({
+        "attribute": data[i].attribute,
+        "weight": current_normalized
+      });
+    }
+    return dict
+  }
+
+
+
+  function sumToOne(data) {
+    var dict = []
+    var sum = 0
+    for (i=0; i<data.length; i++){
+      if (data[i].weight < 0) {
+        sum = sum + (-1)*data[i].weight
+      } else {
+        sum = sum + data[i].weight
+      }
+    }
+
+    for (j=0; j<data.length; j++) {
+      if (data[j].weight < 0) {
+        dict.push({
+          "attribute": data[j].attribute,
+          "weight": (-1)*(data[j].weight/sum)
+        });
+
+      } else {
+        dict.push({
+          "attribute": data[j].attribute,
+          "weight": data[j].weight/sum
+        });
+      }
+    }
+    return dict
+  }
+
+  // dict has a format:
+  // [
+  //  {
+  //    attribute: <attribute1>,
+  //    weight: <weight1>
+  //  }
+  //  {
+  //    attribute: <attribute2>,
+  //    weight: <weight2>
+  //  }
+  // ]
+  // To access: dict[0].attribute -> attribute1
+  //            dict[1].weight -> weight2
+
+
+///////////////////////////
 function renderTable(data) {
   var keys = renderHead(data[0])
 
@@ -426,6 +515,8 @@ function parseData(raw) {
   return JSON.parse(raw.substring(1, raw.length - 1))
 }
 
+
+
 const raw = '{{data|tojson}}'
 const data = parseData(raw)
 
@@ -438,13 +529,24 @@ renderTable(data)
 
 <script>
 
-// raw2 = '{{data|tojson}}'
-//
-// function parseData(raw) {
-//   return JSON.parse(raw.substring(1, raw.length - 1))
-// }
+// weightsData has the following format
+  // [
+  //  {
+  //    attribute: <attribute_name1>,
+  //    weight: <weight1>
+  //  },
+  //  {
+  //    attribute: <attribute_name2>,
+  //    weight: <weight2>
+  //  }
+  //  ...
+  // ]
+  const weightsRaw = '{{weights|tojson}}'
+  // const weightsData = parseData(weightsRaw)
+  // The function to use for changing weights of attributes to sum up to 1
+  console.log(sumToOne(dataset))
 
-dataset = parseData(raw)
+dataset = parseData(weightsRaw)
 
 function verticalWrap(text, width) {
     text.each(function() {
