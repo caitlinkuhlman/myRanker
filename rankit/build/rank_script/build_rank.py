@@ -61,13 +61,6 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
     y_pred = learner.predict(data)
     weights = learner.predictor.W
 
-    headers = list(dataset)
-    headers.remove(primary_key)
-
-    new_headers = list((header + "\n" + "[Weight: " + str(round(weight, -int(floor(log10(abs(weight)))) + 2)) + "]" for header, weight in zip(headers, weights) ))
-
-    dataset = dataset.rename(columns=dict(zip(headers, new_headers)))
-
     res = pd.DataFrame()
 
     res['Prediction'] = y_pred
