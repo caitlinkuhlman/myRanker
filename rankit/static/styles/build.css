@@ -69,7 +69,7 @@
   }
 
   .scrollingDragInner {
-    max-height: 89vh;
+    max-height: 80vh;
     /*max-width: 200px;    */
     overflow-y: auto;
   }
@@ -83,7 +83,7 @@
   }
 
   .viewBackround {
-    margin: 16px;
+    margin: 72px 16px 16px;
     background-color: #e1e1e1;
 	  font-weight: bold;
 	  padding: 8px;
