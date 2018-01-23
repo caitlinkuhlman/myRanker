@@ -13,7 +13,7 @@ def explore(dataset_name):
 
     data = json.dumps(getDataset(dataset_name))
 
-    return render_template('explore.html', data=data, dataset_name=dataset_name)
+    return render_template('explore.html', weights=None, data=data, dataset_name=dataset_name)
 
 
 @explore_blueprint.route('/explore/<dataset_name>/<pairs>')
