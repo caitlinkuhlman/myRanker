@@ -166,21 +166,35 @@
       grid-area: low;
       padding: 8px;
     }
-    .pw-wrapper {
+    /* .pw-wrapper {
       display: grid;
       grid-template-areas: "_ pwl  pwl"
                            "_ more more";
       grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    #pwl {
-      grid-area: pwl;
+    } */
+    .pwx {
+      display: grid;
+      grid-template-areas: "pw x";
+      grid-template-columns: 1fr 56px;
+      grid-gap: 0 16px;
+      margin: 16px;
     }
     .pw {
+      grid-area: pw;
       display: grid;
       grid-template-areas: "high low";
       grid-template-columns: 1fr 1fr;
       border: 5px solid #E74C3C;
-      margin: 16px;
+      /* margin: 16px; */
+    }
+    .x {
+      grid-area: x;
+      display: none;
+      margin: auto;
+    }
+    .pwx:hover .x {
+      /* background-color: blue; */
+      display: inline-block;
     }
     #more {
       grid-area: more;

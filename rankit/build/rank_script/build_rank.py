@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import json
 
 import pyximport
 pyximport.install()
@@ -63,10 +64,16 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
 
     headers = list(dataset)
     headers.remove(primary_key)
+    
+    weights_list = []
 
-    new_headers = list((header + "\n" + "[Weight: " + str(round(weight, -int(floor(log10(abs(weight)))) + 2)) + "]" for header, weight in zip(headers, weights) ))
+    for weight, header in zip(weights, headers):
+        new_dict = {}
+        new_dict['attribute'] = header
+        new_dict['weight'] = weight
+        weights_list.append(new_dict)
 
-    dataset = dataset.rename(columns=dict(zip(headers, new_headers)))
+    weights_json = json.dumps(weights_list)
 
     res = pd.DataFrame()
 
@@ -74,7 +81,7 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
     res = res.rank(ascending=False)
 
     dataset[rank] = res['Prediction']
-    return dataset
+    return dataset, weights_json
 
 
 

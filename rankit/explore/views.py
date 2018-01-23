@@ -26,10 +26,9 @@ def exploreJson(dataset_name, pairs):
         high, low = pair.split(',')
         primaryKeyPairs.append({'high': high, 'low' : low})
 
-    data = getRanking(dataset_name, primaryKeyPairs)
+    data, weights = getRanking(dataset_name, primaryKeyPairs)
 
-
-    return render_template('explore.html', data=data, dataset_name=dataset_name)
+    return render_template('explore.html', weights=weights, data=data, dataset_name=dataset_name)
 
 
 
@@ -42,7 +41,7 @@ def explorePost(dataset_name):
     # get the pairs from client in json format
     primaryKeyPairs = request.get_json().get("pairs")
 
-    data = getRanking(dataset_name, primaryKeyPairs)
+    data, weights = getRanking(dataset_name, primaryKeyPairs)
 
-    return render_template('explore.html', data=data, dataset_name=dataset_name)
+    return render_template('explore.html', weights=weights, data=data, dataset_name=dataset_name)
 
