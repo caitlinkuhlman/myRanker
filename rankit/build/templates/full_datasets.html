@@ -46,6 +46,18 @@
     float:right;
   }
 
+  /* .option_wrapper {
+    display: grid;
+    grid-template-areas: "buttons";
+    grid-template-columns: 1fr;
+  } */
+
+  /* .option_wrapper .option_buttons {
+    grid-area: buttons;
+  }
+  .option_wrapper .option_desc {
+    grid-area: desc;
+  } */
 
 </style>
 
@@ -82,12 +94,11 @@
         			<div class="cd-more-info">
         				<h2>Select a Ranking Method</h2>
                 <br>
-                <a class ="three" href={{ url_for('build.lc', dataset_name='states') }}>List</a>
-                <p>Rank all of your items in an ordered list.</p>
-                <a class ="three" href={{ url_for('build.cc', dataset_name='states') }}>Categorical</a>
-                <p>Rank your items by organizing them into three categories. There is no order within each category.</p>
-                <a class ="three" href={{ url_for('build.pwc', dataset_name='states') }}>Pairwise</a>
-                <p>Compare your items in pairs to judge which of the two item in a pair is preferred over the other.</p>
+                <ul style="list-style:none">
+                  <li><a class ="three" href={{ url_for('build.lc', dataset_name='states') }} title="Rank all of your items in an ordered list">List</a></li>
+                  <li><a class ="three" href={{ url_for('build.cc', dataset_name='states') }} title="Rank your items into three categories (high, medium, low)">Categorical</a></li>
+                  <li><a class ="three" href={{ url_for('build.pwc', dataset_name='states') }} title="Compare your items in pairs">Pairwise</a></li>
+                </ul>
         			</div>
         		</li>
         	</ul>
