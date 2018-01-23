@@ -303,7 +303,7 @@
     <!-- this is the left side of the build view -->
     <div id="build-left">
         <!-- this is the pool -->
-      <div style="position:relative; top:8%" class="scrollingDragInner viewBackround">
+      <div class="scrollingDragInner viewBackround">
         <div id="top" class="pool">
           <!-- objects from dataset inserted here -->
           {% for x in dataset %}
@@ -337,7 +337,7 @@
           
         </div>
       </div>
-      <button type="button" class="btn " id="more" onclick="handleMore()">Add New Pairwise</button>
+      <button type="button" class="btn" id="more" onclick="handleMore()">Add New Pairwise</button>
       <button type="button" id="submit" class="btn submit" disabled="disabled">RANK!</button>
     </div>
   </div>
