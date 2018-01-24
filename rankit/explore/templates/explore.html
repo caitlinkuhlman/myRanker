@@ -13,136 +13,244 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap-iso.css') }}" />
-
-
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
   <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
 
   <style>
-    body {
-      background-color: #f9f9f9;
-    }
+  body {
+    background-color: #f9f9f9;
+  }
 
-    .page-header h1 {
-      padding: 0px 20px 0px;
-      color: white;
-      font-size: 40px;
-      margin: 0;
-      display: inline-block;
-    }
+  .page-header h1 {
+    padding: 0px 20px 0px;
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    display: inline-block;
+  }
 
-    .page-header {
-      background-color: #2980B9;
-      margin-bottom: 20px;
-    }
+  .page-header {
+    background-color: #2980B9;
+    margin-bottom: 20px;
+  }
 
-    p {
-      background-color: #2980B9;
-      padding: 7px 20px 0px;
-      color: white;
-      font-size: 16px;
-      margin: 0;
-      display: inline-block;
-    }
+  p {
+    background-color: #2980B9;
+    padding: 7px 20px 0px;
+    color: white;
+    font-size: 16px;
+    margin: 0;
+    display: inline-block;
+  }
 
-/* {#    .dataTables_wrapper {#}
-{#      margin-left: 20px;#}
-{#      margin-right: 20px;#}
-{#      right: 0;#}
-{#    }#} */
+  {#    .dataTables_wrapper {#}
+  {#      margin-left: 20px;#}
+  {#      margin-right: 20px;#}
+  {#      right: 0;#}
+  {#    }#}
 
-    tr {
-      background-color: #2980B9;
-    }
+  tr {
+    background-color: #2980B9;
+  }
 
-    #head {
-      color: white;
-    }
+  #head {
+    color: white;
+  }
 
-/* {#    .middleNav {#}
-{#      margin: 2px 0px;#}
-{#      padding-right: 405px;#}
-{#      position: absolute;#}
-{#      margin-left: auto;#}
-{#      margin-right: auto;#}
-{#      right: 0;#}
-{#    }#}
-{##}
-{#    .dataTables_filter {#}
-{#      width: 50%;#}
-{#      float: right;#}
-{#      text-align: right;#}
-{#      padding-bottom: 20px;#}
-{#    }#} */
+  {#    .middleNav {#}
+  {#      margin: 2px 0px;#}
+  {#      padding-right: 405px;#}
+  {#      position: absolute;#}
+  {#      margin-left: auto;#}
+  {#      margin-right: auto;#}
+  {#      right: 0;#}
+  {#    }#}
+  {##}
+  {#    .dataTables_filter {#}
+  {#      width: 50%;#}
+  {#      float: right;#}
+  {#      text-align: right;#}
+  {#      padding-bottom: 20px;#}
+  {#    }#}
 
 
-    /*IMPORTANT: Leave for scrolling left to right when lots of attributes */
-    .dataTables_scroll {
-      overflow: auto;
+  /*IMPORTANT: Leave for scrolling left to right when lots of attributes */
+  .dataTables_scroll {
+    overflow: auto;
 
-    }
+  }
 
-    .dataTables_scrollHead {
-      overflow: visible !important;
+  .dataTables_scrollHead {
+    overflow: visible !important;
 
-    }
+  }
 
-    .dataTables_scrollBody {
-      overflow: visible !important;
+  .dataTables_scrollBody {
+    overflow: visible !important;
 
-    }
+  }
 
-    h1.title {
+  h1.title {
     text-transform: capitalize;
-    }
+  }
 
-    h1.title {
+  h1.title {
     display: block;
-    }
+  }
 
-    h1.title:first-letter {
+  h1.title:first-letter {
     text-transform: uppercase;
-    }
+  }
 
-    .dataTables_wrapper {
-      margin: 1em auto;
-    }
+  .dataTables_wrapper {
+    margin: 1em auto;
+  }
 
-    #table_filter {
-      display: none;
-      visibility: hidden;
-    }
+  #table_filter {
+    display: none;
+    visibility: hidden;
+  }
 
-    h1.title {
+  #table_length {
+    display: none;
+    visibility: hidden;
+  }
+
+  h1.title {
     text-transform: capitalize;
     display: block;
     color: white;
     font-size: 40px;
     display: inline-block;
     padding: 0px 20px 0px;
-    }
+  }
 
-    h1.title:first-letter {
+  h1.title:first-letter {
     text-transform: uppercase;
-    }
+  }
 
-    .page-header h1 {
-      padding: 0px 20px 0px;
-      color: white;
-      font-size: 40px;
-      margin: 0;
-      display: inline-block;
-    }
+  .page-header h1 {
+    padding: 0px 20px 0px;
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    display: inline-block;
+  }
 
-    #table_length {
-      position:relative;
-      top: -6px;
-      float: right;
-      right: 1%;
-    }
+
+  /* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+path {
+  stroke-width: 2;
+  fill: none;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: grey;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.area {
+  fill: #F0F8FF;
+  stroke-width: 0;
+}
+
+/* /////// */
+svg {
+    width: 100%;
+    height: 100%;
+    position: center;
+}
+.toolTip {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: absolute;
+    display: none;
+    width: auto;
+    height: auto;
+    background: none repeat scroll 0 0 white;
+    border: 0 none;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: -3px 3px 15px #888888;
+    color: black;
+    font: 12px sans-serif;
+    padding: 5px;
+    text-align: center;
+}
+.legend {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 60%;
+}
+text {
+    font: 14px sans-serif;
+}
+.axis text {
+    font: 14px sans-serif;
+}
+.axis path{
+    fill: none;
+    stroke: #000;
+}
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+.axis .tick line {
+    stroke-width: 1;
+    stroke: rgba(0, 0, 0, 0.2);
+}
+.x.axis path {
+    display: none;
+}
+
+#graphDiv{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 960px;
+  height: 500px;
+  position: relative;
+
+  }
+/* /////// */
+
 
   </style>
-
 </head>
 
 <body>
@@ -155,7 +263,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a style="font-weight:bold" class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
+      <a class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -163,71 +271,97 @@
         <li>
           <a href={{ url_for( 'build.buildList')}}> Dataset</a>
         </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Build
-                        <strong class="caret"></strong>
-                      </a>
-                      <ul class="dropdown-menu">
-                          <li>
-                            <a href={{ url_for( 'build.lc', dataset_name=dataset_name) }}>List Comparison</a>
-                            </li>
-                            <li class="divider">
-                              </li>
-                              <li>
-                                <a href={{ url_for( 'build.cc', dataset_name=dataset_name) }}>Categorical Comparison</a>
-                                </li>
-                                <li class="divider">
-                                  </li>
-                                  <li>
-                                      <a href={{ url_for( 'build.pwc', dataset_name=dataset_name) }}>Pairwise Comparison</a>
-                                    </li>
-                                  </ul>
-                                </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">Build
+            <strong class="caret"></strong>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href={{ url_for( 'build.lc', dataset_name=dataset_name) }}>List Comparison</a>
+            </li>
+            <li class="divider">
+            </li>
+            <li>
+              <a href={{ url_for( 'build.cc', dataset_name=dataset_name) }}>Categorical Comparison</a>
+            </li>
+            <li class="divider">
+            </li>
+            <li>
+              <a href={{ url_for( 'build.pwc', dataset_name=dataset_name) }}>Pairwise Comparison</a>
+            </li>
+          </ul>
+        </li>
         <!-- <li>
-          <a href={{ url_for( 'build.buildStart', dataset_name=dataset_name) }}>Build</a>
-        </li> -->
-      </ul>
-    </div>
-
-  </nav>
-
-  <div style="background-color:#439AD3" class="build-pool-header">
-    <h1 style="position:relative; right:5px" class="title">
-      <b>
-        Explore: {{ dataset_name |replace("_", " ") }}
-      </b>
-    </h1>
-    <br>
-    <div style="display:inline-block" class="navbar-form navbar-center" role="search">
-      <!-- search -->
-      <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." aria-controls="table" onkeyup="searchTable(event)">
-    </div>
-    <!-- <div style="float:right;color:white">
-      <label>Show <select style="color:black" name="table_length" aria-controls="table"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
-    </div> -->
+        <a href={{ url_for( 'build.buildStart', dataset_name=dataset_name) }}>Build</a>
+      </li> -->
+    </ul>
   </div>
 
+</nav>
 
-  <table id="table" class="display" cellspacing="0" width="0%">
-    <thead>
-      <tr id="head">
-      </tr>
-    </thead>
-    <tbody id="data">
+<div class="build-pool-header">
+  <h1 class="title">
+    <b>
+      Explore: {{ dataset_name |replace("_", " ") }}
+    </b>
+  </h1>
+  <br>
+  <div style="display:inline-block" class="navbar-form navbar-center" role="search">
+    <!-- search -->
+    <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." aria-controls="table" onkeyup="searchTable(event)">
+  </div>
+  <label style="display:inline-block;float:right;color:white">Show <select style="color:black" name="table_length" aria-controls="table" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label>
+</div>
 
-    </tbody>
-  </table>
+<div class="tab">
+  <button class="tablinks active" onclick="tabSwitch(event, 'TableData')">Table Data</button>
+  <button class="tablinks" onclick="tabSwitch(event, 'Graph')">Attribute Weights</button>
+</div>
+
+
+<div id="TableData" class="tabcontent" style="display:block">
+<table id="table" class="display" cellspacing="0" width="0%">
+  <thead>
+    <tr id="head">
+    </tr>
+  </thead>
+  <tbody id="data">
+  </tbody>
+</table>
+</div>
+
+<div id="Graph" class="tabcontent" style="display:none">
+    <div id="graphDiv"></div>
+</div>
+
 
 </body>
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-1.12.4.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-dataTables.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
-
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+<!-- <script type="text/javascript" src="{{ url_for('static', filename = 'js/d3.js') }}"></script> -->
+<script src="http://d3js.org/d3.v3.min.js"></script>
 
 
 <script>
+
+function tabSwitch(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+///////////////////////
 
 function findMin(weights) {
     var current_min = weights[0].weight
@@ -239,6 +373,7 @@ function findMin(weights) {
     return current_min
   }
 
+
   function findMax(weights) {
     var current_max = weights[0].weight
     for (i=0; i<weights.length; i++){
@@ -249,9 +384,11 @@ function findMin(weights) {
     return current_max
   }
 
+
   function normalize(val, min, max) {
     return (val-min)/(max-min)
   }
+
 
   function normalizeWeights(data) {
     var dict = []
@@ -266,6 +403,8 @@ function findMin(weights) {
     }
     return dict
   }
+
+
 
   function sumToOne(data) {
     var dict = []
@@ -284,6 +423,7 @@ function findMin(weights) {
           "attribute": data[j].attribute,
           "weight": (-1)*(data[j].weight/sum)
         });
+
       } else {
         dict.push({
           "attribute": data[j].attribute,
@@ -291,91 +431,104 @@ function findMin(weights) {
         });
       }
     }
-    // dict has a format:
-    // [
-    //  {
-    //    attribute: <attribute1>,
-    //    weight: <weight1>
-    //  }
-    //  {
-    //    attribute: <attribute2>,
-    //    weight: <weight2>
-    //  }
-    // ]
-    // To access: dict[0].attribute -> attribute1
-    //            dict[1].weight -> weight2
     return dict
   }
 
-  function renderTable(data) {
-    var keys = renderHead(data[0])
+  // dict has a format:
+  // [
+  //  {
+  //    attribute: <attribute1>,
+  //    weight: <weight1>
+  //  }
+  //  {
+  //    attribute: <attribute2>,
+  //    weight: <weight2>
+  //  }
+  // ]
+  // To access: dict[0].attribute -> attribute1
+  //            dict[1].weight -> weight2
 
-    $('#table').DataTable({
-      scrollY: '100vh',
-      scrollCollapse: true,
-      pageLength: 25,
-    })
 
-    renderData(data, keys)
+///////////////////////////
+function renderTable(data) {
+  var keys = renderHead(data[0])
+
+  $('#table').DataTable({
+    scrollY: '100vh',
+    scrollCollapse: true,
+    pageLength: 25,
+  })
+
+  renderData(data, keys)
+}
+
+function renderHead(datum) {
+  const title = 'Title'
+  const rank = 'Rank'
+  var w = 'Weights = '
+  var data = Object.keys(datum)
+
+  if (data.indexOf(title) > 0) {
+    data.splice(data.indexOf(title), 1);
+    data.unshift(title);
   }
-
-  function renderHead(datum) {
-    const title = 'Title'
-    const rank = 'Rank'
-    var w = 'Weights = '
-    var data = Object.keys(datum)
-
-    if (data.indexOf(title) > 0) {
-      data.splice(data.indexOf(title), 1);
-      data.unshift(title);
-    }
-    if (data.indexOf(rank) > 0) {
-      data.splice(data.indexOf(rank), 1);
-      data.unshift(rank);
-    }
-    const thead = data
-      // .map(k => `<th>${k}  + '\n w' + </th>`)
-      .map(k => `<th>${k}</th>`)
-      // .map(k => `<th>${k}:` + '\n' + `Weight = </th>`)
-      .join('\n')
-
-
-    document.querySelector('#head').innerHTML = thead
-    return data
+  if (data.indexOf(rank) > 0) {
+    data.splice(data.indexOf(rank), 1);
+    data.unshift(rank);
   }
+  const thead = data
+  // .map(k => `<th>${k}  + '\n w' + </th>`)
+  .map(k => `<th>${k}</th>`)
+  // .map(k => `<th>${k}:` + '\n' + `Weight = </th>`)
+  .join('\n')
 
 
-  function renderData(data, keys) {
-    var t = $('#table').dataTable();
+  document.querySelector('#head').innerHTML = thead
+  return data
+}
 
 
-    const html = data.map(x => {
-      const props = keys
-        .map(k => x[k])
-      t.fnAddData(props, false);
-    }
-    )
+function renderData(data, keys) {
+  var t = $('#table').dataTable();
 
-    t.fnDraw();
 
-    console.timeEnd('populate');
+  const html = data.map(x => {
+    const props = keys
+    .map(k => x[k])
+    t.fnAddData(props, false);
   }
+)
 
-  function searchTable(e) {
-    var value = e.target.value;
-    var table = $('#table').DataTable();
-    table.search( value ).draw();
-  }
+t.fnDraw();
 
-  function parseData(raw) {
-    return JSON.parse(raw.substring(1, raw.length - 1))
-  }
+console.timeEnd('populate');
+}
 
-  const raw = '{{data|tojson}}'
-  const data = parseData(raw)
-  renderTable(data)
+function searchTable(e) {
+  var value = e.target.value;
+  var table = $('#table').DataTable();
+  table.search( value ).draw();
+}
 
-  // weightsData has the following format
+function parseData(raw) {
+  return JSON.parse(raw.substring(1, raw.length - 1))
+}
+
+
+
+const raw = '{{data|tojson}}'
+const data = parseData(raw)
+
+renderTable(data)
+
+// console.log(raw)
+// console.log(data)
+////////////////////////////////////////////
+</script>
+
+<script>
+
+// weightsData has the following format
   // [
   //  {
   //    attribute: <attribute_name1>,
@@ -388,10 +541,145 @@ function findMin(weights) {
   //  ...
   // ]
   const weightsRaw = '{{weights|tojson}}'
-  const weightsData = parseData(weightsRaw)
+  // const weightsData = parseData(weightsRaw)
   // The function to use for changing weights of attributes to sum up to 1
-  console.log(sumToOne(weightsData))
+ 
+//D3.js graph
+ dataset = sumToOne(parseData(weightsRaw))
+
+function verticalWrap(text, width) {
+    text.each(function() {
+        var text = d3.select(this),
+                words = text.text().split(/\s+/).reverse(),
+                word,
+                line = [],
+                lineNumber = 0,
+                lineHeight = 1.1, // ems
+                y = text.attr("y"),
+                x = text.attr("x"),
+                dy = parseFloat(text.attr("dy")),
+                tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
+        while (word = words.pop()) {
+            line.push(word);
+            tspan.text(line.join(" "));
+            if (tspan.node().getComputedTextLength() > width) {
+                line.pop();
+                tspan.text(line.join(" "));
+                line = [word];
+                tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+            }
+        }
+    });
+}
+
+
+// var margin = {top: (parseInt(d3.select('body').style('height'), 10)/20), right: (parseInt(d3.select('body').style('width'), 10)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/20), left: (parseInt(d3.select('body').style('width'), 10)/10)},
+//         width = parseInt(d3.select('body').style('width'), 10) - margin.left - margin.right,
+//         height = parseInt(d3.select('body').style('height'), 10) - margin.top - margin.bottom;
+
+var margin = {top: (parseInt(d3.select('body').style('height'), 10)/20), right: (parseInt(d3.select('body').style('width'), 10)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/20), left: (parseInt(d3.select('body').style('width'), 10)/10)},
+         width = parseInt(d3.select('#graphDiv').style('width'), 10) - margin.left - margin.right,
+         height = parseInt(d3.select('#graphDiv').style('height'), 10) - margin.top - margin.bottom;
+        //width = parseInt(d3.select('#graphDiv').style('width'), 10),
+        //height = parseInt(d3.select('#graphDiv').style('height'), 10);
+
+
+var y0 = d3.scale.ordinal()
+        .rangeRoundBands([height, 0], .2, 0.5);
+
+var y1 = d3.scale.ordinal();
+
+var x = d3.scale.linear()
+        .range([0, width]);
+
+var colorRange = d3.scale.category20();
+var color = d3.scale.ordinal()
+        .range(colorRange.range());
+
+var xAxis = d3.svg.axis()
+        .scale(x)
+        .tickSize(-height)
+        .orient("bottom");
+
+var yAxis = d3.svg.axis()
+        .scale(y0)
+        .orient("left");
+
+var divTooltip = d3.select("#graphDiv").append("div").attr("class", "toolTip");
+
+var svg = d3.select("#graphDiv").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left*2 + "," + margin.top + ")");
+
+
+var options = d3.keys(dataset[0]).filter(function(key) { return key !== "attribute"; });
+
+dataset.forEach(function(d) {
+    d.valores = options.map(function(name) { return {name: name, value: +d[name]}; });
+});
+
+y0.domain(dataset.map(function(d) { return d.attribute; }));
+y1.domain(options).rangeRoundBands([0, y0.rangeBand()]);
+x.domain([0, d3.max(dataset, function(d) { return d3.max(d.valores, function(d) { return d.value; }); })]);
+
+
+svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+
+svg.selectAll(".y.axis .tick text")
+        .call(verticalWrap, y0.rangeBand());
+
+var bar = svg.selectAll(".bar")
+        .data(dataset)
+        .enter().append("g")
+        .attr("class", "rect")
+        .attr("transform", function(d) { return "translate( 0,"+ y0(d.attribute) +")"; });
+
+var bar_enter = bar.selectAll("rect")
+        .data(function(d) { return d.valores; })
+        .enter()
+
+
+bar_enter.append("rect")
+        .attr("height", y1.rangeBand())
+        .attr("y", function(d) { return y1(d.name); })
+        .attr("x", function(d) { return 0; })
+        .attr("value", function(d){return d.name;})
+        .attr("width", function(d) { return x(d.value); })
+        .style("fill", function(d) { return color(d.value); });
+
+bar_enter.append("text")
+        .attr("x", function(d) { return x(d.value) +5;  })
+        .attr("y", function(d) { return y1(d.name) +(y1.rangeBand()/2); })
+        .attr("dy", ".35em")
+        .text(function(d) { return d.value; });
+
+bar
+        .on("mousemove", function(d){
+            divTooltip.style("left", d3.event.pageX+10+"px");
+            divTooltip.style("top", d3.event.pageY-200+"px");
+            divTooltip.style("display", "inline-block");
+            var x = d3.event.pageX, y = d3.event.pageY
+            var elements = document.querySelectorAll(':hover');
+            l = elements.length
+            l = l-1
+            elementData = elements[l].__data__
+            divTooltip.html((d.attribute)+"<br>"+elementData.name+"<br>"+elementData.value);
+        });
+bar
+        .on("mouseout", function(d){
+            divTooltip.style("display", "none");
+        });
 
 </script>
+
 
 </html>
