@@ -40,11 +40,13 @@ def clean_dataset(dataset, primary_key):
 
 def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
     pair_indices = pairs["high"].append(pairs["low"]).drop_duplicates().values
-    dataset = clean_dataset(dataset, primary_key)
 
-    data_train = dataset.iloc[pair_indices]
+    dataset_copy = dataset.copy(deep = True)
+    dataset_copy = clean_dataset(dataset_copy, primary_key)
 
-    data = np.nan_to_num(dataset.drop(primary_key, axis=1))
+    data_train = dataset_copy.iloc[pair_indices]
+
+    data = np.nan_to_num(dataset_copy.drop(primary_key, axis=1))
     X = np.nan_to_num(data_train.drop(primary_key, axis=1))
     # print X
     pairs_start = []
@@ -62,12 +64,12 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
     y_pred = learner.predict(data)
     weights = learner.predictor.W
 
-    headers = list(dataset)
+    headers = list(dataset_copy)
     headers.remove(primary_key)
-    
+
     weights_list = []
 
-    for weight, header in zip(weights, headers):
+    for header, weight in [(header, weight) for header, weight in zip(headers, weights) if weight != 0]:
         new_dict = {}
         new_dict['attribute'] = header
         new_dict['weight'] = weight

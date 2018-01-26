@@ -18,12 +18,13 @@ def explore(dataset_name):
 
 @explore_blueprint.route('/explore/<dataset_name>/<pairs>')
 def exploreJson(dataset_name, pairs):
-
+    print(pairs)
     primaryKeyPairs = []
-    parsed_pairs = re.findall("\d+=([\w\s'-:]*[,]{1}[\w\s'-:]*)&", pairs)
+    parsed_pairs = re.findall("\d+=([\w\s'-:!\.,()]*[\>]{1}[\w\s'-:!\.,()]*)&", pairs)
     print(parsed_pairs)
+
     for pair in parsed_pairs:
-        high, low = pair.split(',')
+        high, low = pair.split('>')
         primaryKeyPairs.append({'high': high, 'low' : low})
 
     data, weights = getRanking(dataset_name, primaryKeyPairs)
