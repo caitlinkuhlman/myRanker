@@ -242,12 +242,11 @@ text {
 
 #graphDiv{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
+  width: 1200px;
   height: 500px;
   position: relative;
 
   }
-/* /////// */
 
 
   </style>
@@ -315,7 +314,8 @@ text {
 
 <div class="tab">
   <button class="tablinks active" onclick="tabSwitch(event, 'TableData')">Table Data</button>
-  <button class="tablinks" onclick="tabSwitch(event, 'Graph')">Attribute Weights</button>
+  <button id=example class="tablinks" onclick="tabSwitch(event, 'Graph')">Attribute Weights</button>
+
 </div>
 
 
@@ -347,6 +347,8 @@ text {
 
 <script>
 
+
+// Enables tab switching
 function tabSwitch(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -360,8 +362,6 @@ function tabSwitch(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
 }
-
-///////////////////////
 
 function findMin(weights) {
     var current_min = weights[0].weight
@@ -403,8 +403,6 @@ function findMin(weights) {
     }
     return dict
   }
-
-
 
   function sumToOne(data) {
     var dict = []
@@ -515,7 +513,6 @@ function parseData(raw) {
 }
 
 
-
 const raw = '{{data|tojson}}'
 const data = parseData(raw)
 
@@ -524,6 +521,8 @@ renderTable(data)
 // console.log(raw)
 // console.log(data)
 ////////////////////////////////////////////
+
+
 </script>
 
 <script>
@@ -540,12 +539,68 @@ renderTable(data)
   //  }
   //  ...
   // ]
+
   const weightsRaw = '{{weights|tojson}}'
-  // const weightsData = parseData(weightsRaw)
   // The function to use for changing weights of attributes to sum up to 1
- 
-//D3.js graph
- dataset = sumToOne(parseData(weightsRaw))
+
+//  dataset = [
+//   {
+//     attribute: '121',
+//     weight: 0.02232
+//   },
+//   {
+//     attribute: 'aqwesa',
+//     weight: 0.1
+//   },
+//   {
+//     attribute: 'asa',
+//     weight: 0.2
+//   },
+//   {
+//     attribute: 'sasa',
+//     weight: 0.3
+//   },
+//   {
+//     attribute: 'assa',
+//     weight: 0.53243243242
+//   },
+//   {
+//     attribute: 'xasa',
+//     weight: 0.87034
+//   },
+//   {
+//     attribute: 'sd',
+//     weight: 1
+//   }
+// ]
+
+
+dataset = sumToOne(parseData(weightsRaw))
+console.log(dataset)
+// dataset = []
+
+//disabled tab if dataset is = [] or [{},{},{}] ;
+function isArrayEmpty(array) {
+    return array.filter(function(el) {
+        return Object.keys(el).length !== 0
+    }).length === 0;
+}
+
+function disabled(dataset) {
+  console.log(dataset);
+if (isArrayEmpty(dataset) == true) {
+  document.getElementById("example").disabled = true;
+  $('#example').popover({
+      placement: "left",
+      trigger: "manual",
+      content: $("#popover-content").parent().html()
+  }).popover("show");
+
+}
+}
+
+disabled(dataset)
+
 
 function verticalWrap(text, width) {
     text.each(function() {
@@ -573,11 +628,7 @@ function verticalWrap(text, width) {
 }
 
 
-// var margin = {top: (parseInt(d3.select('body').style('height'), 10)/20), right: (parseInt(d3.select('body').style('width'), 10)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/20), left: (parseInt(d3.select('body').style('width'), 10)/10)},
-//         width = parseInt(d3.select('body').style('width'), 10) - margin.left - margin.right,
-//         height = parseInt(d3.select('body').style('height'), 10) - margin.top - margin.bottom;
-
-var margin = {top: (parseInt(d3.select('body').style('height'), 10)/20), right: (parseInt(d3.select('body').style('width'), 10)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/20), left: (parseInt(d3.select('body').style('width'), 10)/10)},
+var margin = {top: (parseInt(d3.select('body').style('height'), 10)/20), right: (parseInt(d3.select('body').style('width'), 5)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/20), left: (parseInt(d3.select('body').style('width'), 10)/10)},
          width = parseInt(d3.select('#graphDiv').style('width'), 10) - margin.left - margin.right,
          height = parseInt(d3.select('#graphDiv').style('height'), 10) - margin.top - margin.bottom;
         //width = parseInt(d3.select('#graphDiv').style('width'), 10),
@@ -611,7 +662,7 @@ var svg = d3.select("#graphDiv").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("transform", "translate(" + margin.left*2 + "," + margin.top + ")");
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
 var options = d3.keys(dataset[0]).filter(function(key) { return key !== "attribute"; });
@@ -622,7 +673,7 @@ dataset.forEach(function(d) {
 
 y0.domain(dataset.map(function(d) { return d.attribute; }));
 y1.domain(options).rangeRoundBands([0, y0.rangeBand()]);
-x.domain([0, d3.max(dataset, function(d) { return d3.max(d.valores, function(d) { return d.value; }); })]);
+x.domain([0, 1.1]);
 
 
 svg.append("g")
