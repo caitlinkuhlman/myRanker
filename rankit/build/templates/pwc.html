@@ -148,7 +148,7 @@
     .legend-label {
       display: flex;
       justify-content: space-around;
-      margin: 16px;
+      margin: 16px 96px 16px 16px;
     }
 
     .right{
@@ -436,9 +436,17 @@
     }
 
     function clearPW(e) {
-      const pw = e.target.closest('.pwx').children[0];
-      pw.children[0].innerHTML = "";
-      pw.children[1].innerHTML = "";
+      const pwl = e.target.closest('#pwl')
+      console.log();
+      if (pwl.children.length > 1) {
+        const pwx = e.target.closest('.pwx');
+        // console.log(pwx)
+        pwx.remove()
+      } else {
+        const pw = e.target.closest('.pwx').children[0];
+        pw.children[0].innerHTML = "";
+        pw.children[1].innerHTML = "";
+      }
     }
 
   </script>
@@ -596,7 +604,7 @@
       const pwl = generatePairwise()
       var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}"
       for (let i = 0; i < pwl.length; i++) {
-        pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + "," + pwl[i].low + "&"
+        pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + ">" + pwl[i].low + "&"
       }
       window.location = pairwiseURL
     }

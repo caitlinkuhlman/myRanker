@@ -927,7 +927,7 @@
     "enrollment": 18523
   },
   {
-    "Title": "College of William & Mary",
+    "Title": "College of William and Mary",
     "city": "Williamsburg",
     "state": "VA",
     "usnews_rank": 32,
@@ -1107,7 +1107,7 @@
     "enrollment": 36168
   },
   {
-    "Title": "Texas A&M University--College Station",
+    "Title": "Texas A and M University--College Station",
     "city": "College Station",
     "state": "TX",
     "usnews_rank": 69,
@@ -1656,7 +1656,7 @@
     "enrollment": 11142
   },
   {
-    "Title": "Missouri University of Science & Technology",
+    "Title": "Missouri University of Science and Technology",
     "city": "Rolla",
     "state": "MO",
     "usnews_rank": 165,
@@ -1908,7 +1908,7 @@
     "enrollment": 22969
   },
   {
-    "Title": "Florida A&M University",
+    "Title": "Florida A and M University",
     "city": "Tallahassee",
     "state": "FL",
     "usnews_rank": 207,

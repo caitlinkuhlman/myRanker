@@ -109,12 +109,11 @@
         			<div class="cd-more-info">
         				<h2>Select a Ranking Method</h2>
                 <br>
-                <a class ="three" href={{ url_for('build.lc', dataset_name='colleges') }}>List Comparison</a>
-                <p>Rank your items in an ordered list.</p>
-                <a class ="three" href={{ url_for('build.cc', dataset_name='colleges') }}>Categorical Comparison</a>
-                <p>Rank your items by organizing them into three categories (High, Medium, or Low).</p>
-                <a class ="three" href={{ url_for('build.pwc', dataset_name='colleges') }}>Pairwise Comparison</a>
-                <p>Compare your items in pairs to judge which of the two items in a pair is preferred over the other.</p>
+                <ul style="list-style:none">
+                  <li><a class ="three" href={{ url_for('build.lc', dataset_name='colleges') }} title="Rank all of your items in an ordered list">List</a></li>
+                  <li><a class ="three" href={{ url_for('build.cc', dataset_name='colleges') }} title="Rank your items into three categories (high, medium, low)">Categorical</a></li>
+                  <li><a class ="three" href={{ url_for('build.pwc', dataset_name='colleges') }} title="Compare your items in pairs">Pairwise</a></li>
+                </ul>
         			</div>
         		</li>
         	</ul>
@@ -124,12 +123,11 @@
         			<div class="cd-more-info">
         				<h2>Select a Ranking Method</h2>
                 <br>
-                <a class ="three" href={{ url_for('build.lc', dataset_name='movies') }}>List Comparison</a>
-                <p>Rank your items in an ordered list.</p>
-                <a class ="three" href={{ url_for('build.cc', dataset_name='movies') }}>Categorical Comparison</a>
-                <p>Rank your items by organizing them into three categories (High, Medium, or Low).</p>
-                <a class ="three" href={{ url_for('build.pwc', dataset_name='movies') }}>Pairwise Comparison</a>
-                <p>Compare your items in pairs to judge which of the two items in a pair is preferred over the other.</p>
+                             <ul style="list-style:none">
+                  <li><a class ="three" href={{ url_for('build.lc', dataset_name='movies') }} title="Rank all of your items in an ordered list">List</a></li>
+                  <li><a class ="three" href={{ url_for('build.cc', dataset_name='movies') }} title="Rank your items into three categories (high, medium, low)">Categorical</a></li>
+                  <li><a class ="three" href={{ url_for('build.pwc', dataset_name='movies') }} title="Compare your items in pairs">Pairwise</a></li>
+                </ul>
         			</div>
         		</li>
         	</ul>
@@ -139,12 +137,11 @@
         			<div class="cd-more-info">
         				<h2>Select a Ranking Method</h2>
                 <br>
-                <a class ="three" href={{ url_for('build.lc', dataset_name='fifa') }}>List Comparison</a>
-                <p>Rank your items in an ordered list.</p>
-                <a class ="three" href={{ url_for('build.cc', dataset_name='fifa') }}>Categorical Comparison</a>
-                <p>Rank your items by organizing them into three categories (High, Medium, or Low).</p>
-                <a class ="three" href={{ url_for('build.pwc', dataset_name='fifa') }}>Pairwise Comparison</a>
-                <p>Compare your items in pairs to judge which of the two items in a pair is preferred over the other.</p>
+                <ul style="list-style:none">
+                  <li><a class ="three" href={{ url_for('build.lc', dataset_name='fifa') }} title="Rank all of your items in an ordered list">List</a></li>
+                  <li><a class ="three" href={{ url_for('build.cc', dataset_name='fifa') }} title="Rank your items into three categories (high, medium, low)">Categorical</a></li>
+                  <li><a class ="three" href={{ url_for('build.pwc', dataset_name='fifa') }} title="Compare your items in pairs">Pairwise</a></li>
+                </ul>
         			</div>
         		</li>
         	</ul>
@@ -154,12 +151,11 @@
         			<div class="cd-more-info">
         				<h2>Select a Ranking Method</h2>
                 <br>
-                <a class ="three" href={{ url_for('build.lc', dataset_name='board_games') }}>List Comparison</a>
-                <p>Rank your items in an ordered list.</p>
-                <a class ="three" href={{ url_for('build.cc', dataset_name='board_games') }}>Categorical Comparison</a>
-                <p>Rank your items by organizing them into three categories (High, Medium, or Low).</p>
-                <a class ="three" href={{ url_for('build.pwc', dataset_name='board_games') }}>Pairwise Comparison</a>
-                <p>Compare your items in pairs to judge which of the two items in a pair is preferred over the other.</p>
+                <ul style="list-style:none">
+                  <li><a class ="three" href={{ url_for('build.lc', dataset_name='board_games') }} title="Rank all of your items in an ordered list">List</a></li>
+                  <li><a class ="three" href={{ url_for('build.cc', dataset_name='board_games') }} title="Rank your items into three categories (high, medium, low)">Categorical</a></li>
+                  <li><a class ="three" href={{ url_for('build.pwc', dataset_name='board_games') }} title="Compare your items in pairs">Pairwise</a></li>
+                </ul>
         			</div>
         		</li>
         	</ul>
@@ -169,12 +165,12 @@
         			<div class="cd-more-info">
         				<h2>Select a Ranking Method</h2>
                 <br>
-                <a class ="three" href={{ url_for('build.lc', dataset_name='video_games') }}>List Comparison</a>
-                <p>Rank your items in an ordered list.</p>
-                <a class ="three" href={{ url_for('build.cc', dataset_name='video_games') }}>Categorical Comparison</a>
-                <p>Rank your items by organizing them into three categories (High, Medium, or Low).</p>
-                <a class ="three" href={{ url_for('build.pwc', dataset_name='video_games') }}>Pairwise Comparison</a>
-                <p>Compare your items in pairs to judge which of the two items in a pair is preferred over the other.</p>
+
+                 <ul style="list-style:none">
+                  <li><a class ="three" href={{ url_for('build.lc', dataset_name='video_games') }} title="Rank all of your items in an ordered list">List</a></li>
+                  <li><a class ="three" href={{ url_for('build.cc', dataset_name='video_games') }} title="Rank your items into three categories (high, medium, low)">Categorical</a></li>
+                  <li><a class ="three" href={{ url_for('build.pwc', dataset_name='video_games') }} title="Compare your items in pairs">Pairwise</a></li>
+                </ul>
         			</div>
         		</li>
         	</ul>
