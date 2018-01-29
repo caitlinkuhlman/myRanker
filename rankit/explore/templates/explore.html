@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RanKit Explore</title>
+  <title>RANKIT Explore</title>
   <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}" />
@@ -141,14 +141,14 @@
 
 
   /* Style the tab */
-.tab {
+  .tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
-}
+  }
 
-/* Style the buttons inside the tab */
-.tab button {
+  /* Style the buttons inside the tab */
+  .tab button {
     background-color: inherit;
     float: left;
     border: none;
@@ -157,50 +157,50 @@
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
-}
+  }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
+  /* Change background color of buttons on hover */
+  .tab button:hover {
     background-color: #ddd;
-}
+  }
 
-/* Create an active/current tablink class */
-.tab button.active {
+  /* Create an active/current tablink class */
+  .tab button.active {
     background-color: #ccc;
-}
+  }
 
-/* Style the tab content */
-.tabcontent {
+  /* Style the tab content */
+  .tabcontent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
-}
+  }
 
-path {
-  stroke-width: 2;
-  fill: none;
-}
+  path {
+    stroke-width: 2;
+    fill: none;
+  }
 
-.axis path, .axis line {
-  fill: none;
-  stroke: grey;
-  stroke-width: 1;
-  shape-rendering: crispEdges;
-}
+  .axis path, .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+  }
 
-.area {
-  fill: #F0F8FF;
-  stroke-width: 0;
-}
+  .area {
+    fill: #F0F8FF;
+    stroke-width: 0;
+  }
 
-/* /////// */
-svg {
+  /* /////// */
+  svg {
     width: 100%;
     height: 100%;
     position: center;
-}
-.toolTip {
+  }
+  .toolTip {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: absolute;
     display: none;
@@ -214,42 +214,41 @@ svg {
     font: 12px sans-serif;
     padding: 5px;
     text-align: center;
-}
-.legend {
+  }
+  .legend {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 60%;
-}
-text {
+  }
+  text {
     font: 14px sans-serif;
-}
-.axis text {
+  }
+  .axis text {
     font: 14px sans-serif;
-}
-.axis path{
+  }
+  .axis path{
     fill: none;
     stroke: #000;
-}
-.axis line {
+  }
+  .axis line {
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
-}
-.axis .tick line {
+  }
+  .axis .tick line {
     stroke-width: 1;
     stroke: rgba(0, 0, 0, 0.2);
-}
-.x.axis path {
+  }
+  .x.axis path {
     display: none;
-}
+  }
 
-#graphDiv{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
-  height: 500px;
-  position: relative;
+  #graphDiv{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 1200px;
+    height: 500px;
+    position: relative;
 
   }
-/* /////// */
 
 
   </style>
@@ -317,23 +316,23 @@ text {
 
 <div class="tab">
   <button class="tablinks active" onclick="tabSwitch(event, 'TableData')">Table Data</button>
-  <button class="tablinks" onclick="tabSwitch(event, 'Graph')">Attribute Weights</button>
+  <button id=example class="tablinks" onclick="tabSwitch(event, 'Graph')">Attribute Weights</button>
 </div>
 
 
 <div id="TableData" class="tabcontent" style="display:block">
-<table id="table" class="display" cellspacing="0" width="0%">
-  <thead>
-    <tr id="head">
-    </tr>
-  </thead>
-  <tbody id="data">
-  </tbody>
-</table>
+  <table id="table" class="display" cellspacing="0" width="0%">
+    <thead>
+      <tr id="head">
+      </tr>
+    </thead>
+    <tbody id="data">
+    </tbody>
+  </table>
 </div>
 
 <div id="Graph" class="tabcontent" style="display:none">
-    <div id="graphDiv"></div>
+  <div id="graphDiv"></div>
 </div>
 
 
@@ -343,112 +342,108 @@ text {
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-dataTables.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
-<!-- <script type="text/javascript" src="{{ url_for('static', filename = 'js/d3.js') }}"></script> -->
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
 
 <script>
 
+// Enables tab switching
 function tabSwitch(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
 }
 
-///////////////////////
-
 function findMin(weights) {
-    var current_min = weights[0].weight
-    for (i=0; i<weights.length; i++){
-      if (current_min > weights[i].weight) {
-        current_min = weights[i].weight
-      }
+  var current_min = weights[0].weight
+  for (i=0; i<weights.length; i++){
+    if (current_min > weights[i].weight) {
+      current_min = weights[i].weight
     }
-    return current_min
   }
+  return current_min
+}
 
 
-  function findMax(weights) {
-    var current_max = weights[0].weight
-    for (i=0; i<weights.length; i++){
-      if (current_max < weights[i].weight) {
-        current_max = weights[i].weight
-      }
+function findMax(weights) {
+  var current_max = weights[0].weight
+  for (i=0; i<weights.length; i++){
+    if (current_max < weights[i].weight) {
+      current_max = weights[i].weight
     }
-    return current_max
+  }
+  return current_max
+}
+
+
+function normalize(val, min, max) {
+  return (val-min)/(max-min)
+}
+
+
+function normalizeWeights(data) {
+  var dict = []
+  min = findMin(data)
+  max = findMax(data)
+  for (i=0; i<data.length; i++){
+    current_normalized = normalize(data[i].weight, min, max);
+    dict.push({
+      "attribute": data[i].attribute,
+      "weight": current_normalized
+    });
+  }
+  return dict
+}
+
+function sumToOne(data) {
+  var dict = []
+  var sum = 0
+  for (i=0; i<data.length; i++){
+    if (data[i].weight < 0) {
+      sum = sum + (-1)*data[i].weight
+    } else {
+      sum = sum + data[i].weight
+    }
   }
 
-
-  function normalize(val, min, max) {
-    return (val-min)/(max-min)
-  }
-
-
-  function normalizeWeights(data) {
-    var dict = []
-    min = findMin(data)
-    max = findMax(data)
-    for (i=0; i<data.length; i++){
-      current_normalized = normalize(data[i].weight, min, max);
+  for (j=0; j<data.length; j++) {
+    if (data[j].weight < 0) {
       dict.push({
-        "attribute": data[i].attribute,
-        "weight": current_normalized
+        "attribute": data[j].attribute,
+        "weight": (-1)*(data[j].weight/sum)
+      });
+
+    } else {
+      dict.push({
+        "attribute": data[j].attribute,
+        "weight": data[j].weight/sum
       });
     }
-    return dict
   }
+  return dict
+}
 
-
-
-  function sumToOne(data) {
-    var dict = []
-    var sum = 0
-    for (i=0; i<data.length; i++){
-      if (data[i].weight < 0) {
-        sum = sum + (-1)*data[i].weight
-      } else {
-        sum = sum + data[i].weight
-      }
-    }
-
-    for (j=0; j<data.length; j++) {
-      if (data[j].weight < 0) {
-        dict.push({
-          "attribute": data[j].attribute,
-          "weight": (-1)*(data[j].weight/sum)
-        });
-
-      } else {
-        dict.push({
-          "attribute": data[j].attribute,
-          "weight": data[j].weight/sum
-        });
-      }
-    }
-    return dict
-  }
-
-  // dict has a format:
-  // [
-  //  {
-  //    attribute: <attribute1>,
-  //    weight: <weight1>
-  //  }
-  //  {
-  //    attribute: <attribute2>,
-  //    weight: <weight2>
-  //  }
-  // ]
-  // To access: dict[0].attribute -> attribute1
-  //            dict[1].weight -> weight2
+// dict has a format:
+// [
+//  {
+//    attribute: <attribute1>,
+//    weight: <weight1>
+//  }
+//  {
+//    attribute: <attribute2>,
+//    weight: <weight2>
+//  }
+// ]
+// To access: dict[0].attribute -> attribute1
+//            dict[1].weight -> weight2
 
 
 ///////////////////////////
@@ -517,169 +512,154 @@ function parseData(raw) {
 }
 
 
-
 const raw = '{{data|tojson}}'
 const data = parseData(raw)
 
 renderTable(data)
 
-// console.log(raw)
-// console.log(data)
-////////////////////////////////////////////
 </script>
 
 <script>
 
-// weightsData has the following format
-  // [
-  //  {
-  //    attribute: <attribute_name1>,
-  //    weight: <weight1>
-  //  },
-  //  {
-  //    attribute: <attribute_name2>,
-  //    weight: <weight2>
-  //  }
-  //  ...
-  // ]
-  const weightsRaw = '{{weights|tojson}}'
-  // const weightsData = parseData(weightsRaw)
-  // The function to use for changing weights of attributes to sum up to 1
- 
-//D3.js graph
- dataset = sumToOne(parseData(weightsRaw))
+const weightsRaw = '{{weights|tojson}}'
+// The function to use for changing weights of attributes to sum up to 1
+
+function disabled(emptyDataset) {
+  console.log(emptyDataset);
+  if (emptyDataset == 'None') {
+    document.getElementById("example").disabled = true;
+  }
+}
+
+disabled('{{weights}}')
+
+dataset = sumToOne(parseData(weightsRaw))
 
 function verticalWrap(text, width) {
-    text.each(function() {
-        var text = d3.select(this),
-                words = text.text().split(/\s+/).reverse(),
-                word,
-                line = [],
-                lineNumber = 0,
-                lineHeight = 1.1, // ems
-                y = text.attr("y"),
-                x = text.attr("x"),
-                dy = parseFloat(text.attr("dy")),
-                tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
-        while (word = words.pop()) {
-            line.push(word);
-            tspan.text(line.join(" "));
-            if (tspan.node().getComputedTextLength() > width) {
-                line.pop();
-                tspan.text(line.join(" "));
-                line = [word];
-                tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
-            }
-        }
-    });
+  text.each(function() {
+    var text = d3.select(this),
+    words = text.text().split(/\s+/).reverse(),
+    word,
+    line = [],
+    lineNumber = 0,
+    lineHeight = 1.1, // ems
+    y = text.attr("y"),
+    x = text.attr("x"),
+    dy = parseFloat(text.attr("dy")),
+    tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
+    while (word = words.pop()) {
+      line.push(word);
+      tspan.text(line.join(" "));
+      if (tspan.node().getComputedTextLength() > width) {
+        line.pop();
+        tspan.text(line.join(" "));
+        line = [word];
+        tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+      }
+    }
+  });
 }
 
 
-// var margin = {top: (parseInt(d3.select('body').style('height'), 10)/20), right: (parseInt(d3.select('body').style('width'), 10)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/20), left: (parseInt(d3.select('body').style('width'), 10)/10)},
-//         width = parseInt(d3.select('body').style('width'), 10) - margin.left - margin.right,
-//         height = parseInt(d3.select('body').style('height'), 10) - margin.top - margin.bottom;
-
-var margin = {top: (parseInt(d3.select('body').style('height'), 10)/20), right: (parseInt(d3.select('body').style('width'), 10)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/20), left: (parseInt(d3.select('body').style('width'), 10)/10)},
-         width = parseInt(d3.select('#graphDiv').style('width'), 10) - margin.left - margin.right,
-         height = parseInt(d3.select('#graphDiv').style('height'), 10) - margin.top - margin.bottom;
-        //width = parseInt(d3.select('#graphDiv').style('width'), 10),
-        //height = parseInt(d3.select('#graphDiv').style('height'), 10);
+var margin = {top: (parseInt(d3.select('body').style('height'), 10)/20), right: (parseInt(d3.select('body').style('width'), 5)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/20), left: (parseInt(d3.select('body').style('width'), 10)/10)},
+width = parseInt(d3.select('#graphDiv').style('width'), 10) - margin.left - margin.right,
+height = parseInt(d3.select('#graphDiv').style('height'), 10) - margin.top - margin.bottom;
 
 
 var y0 = d3.scale.ordinal()
-        .rangeRoundBands([height, 0], .2, 0.5);
+.rangeRoundBands([height, 0], .2, 0.5);
 
 var y1 = d3.scale.ordinal();
 
 var x = d3.scale.linear()
-        .range([0, width]);
+.range([0, width]);
 
 var colorRange = d3.scale.category20();
 var color = d3.scale.ordinal()
-        .range(colorRange.range());
+.range(colorRange.range());
 
 var xAxis = d3.svg.axis()
-        .scale(x)
-        .tickSize(-height)
-        .orient("bottom");
+.scale(x)
+.tickSize(-height)
+.orient("bottom");
 
 var yAxis = d3.svg.axis()
-        .scale(y0)
-        .orient("left");
+.scale(y0)
+.orient("left");
 
 var divTooltip = d3.select("#graphDiv").append("div").attr("class", "toolTip");
 
 var svg = d3.select("#graphDiv").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left*2 + "," + margin.top + ")");
+.attr("width", width + margin.left + margin.right)
+.attr("height", height + margin.top + margin.bottom)
+.append("g")
+.attr("transform", "translate(" + margin.left*2.5 + "," + margin.top + ")");
 
 
 var options = d3.keys(dataset[0]).filter(function(key) { return key !== "attribute"; });
 
 dataset.forEach(function(d) {
-    d.valores = options.map(function(name) { return {name: name, value: +d[name]}; });
+  d.valores = options.map(function(name) { return {name: name, value: +d[name]}; });
 });
 
 y0.domain(dataset.map(function(d) { return d.attribute; }));
 y1.domain(options).rangeRoundBands([0, y0.rangeBand()]);
-x.domain([0, d3.max(dataset, function(d) { return d3.max(d.valores, function(d) { return d.value; }); })]);
+x.domain([0, 1.1]);
 
 
 svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+.attr("class", "x axis")
+.attr("transform", "translate(0," + height + ")")
+.call(xAxis);
 
 svg.append("g")
-        .attr("class", "y axis")
-        .call(yAxis);
+.attr("class", "y axis")
+.call(yAxis);
 
 svg.selectAll(".y.axis .tick text")
-        .call(verticalWrap, y0.rangeBand());
+.call(verticalWrap, y0.rangeBand());
 
 var bar = svg.selectAll(".bar")
-        .data(dataset)
-        .enter().append("g")
-        .attr("class", "rect")
-        .attr("transform", function(d) { return "translate( 0,"+ y0(d.attribute) +")"; });
+.data(dataset)
+.enter().append("g")
+.attr("class", "rect")
+.attr("transform", function(d) { return "translate( 0,"+ y0(d.attribute) +")"; });
 
 var bar_enter = bar.selectAll("rect")
-        .data(function(d) { return d.valores; })
-        .enter()
+.data(function(d) { return d.valores; })
+.enter()
 
 
 bar_enter.append("rect")
-        .attr("height", y1.rangeBand())
-        .attr("y", function(d) { return y1(d.name); })
-        .attr("x", function(d) { return 0; })
-        .attr("value", function(d){return d.name;})
-        .attr("width", function(d) { return x(d.value); })
-        .style("fill", function(d) { return color(d.value); });
+.attr("height", y1.rangeBand())
+.attr("y", function(d) { return y1(d.name); })
+.attr("x", function(d) { return 0; })
+.attr("value", function(d){return d.name;})
+.attr("width", function(d) { return x(d.value); })
+.style("fill", function(d) { return color(d.value); });
 
 bar_enter.append("text")
-        .attr("x", function(d) { return x(d.value) +5;  })
-        .attr("y", function(d) { return y1(d.name) +(y1.rangeBand()/2); })
-        .attr("dy", ".35em")
-        .text(function(d) { return d.value; });
+.attr("x", function(d) { return x(d.value) +5;  })
+.attr("y", function(d) { return y1(d.name) +(y1.rangeBand()/2); })
+.attr("dy", ".35em")
+.text(function(d) { return d.value; });
 
 bar
-        .on("mousemove", function(d){
-            divTooltip.style("left", d3.event.pageX+10+"px");
-            divTooltip.style("top", d3.event.pageY-200+"px");
-            divTooltip.style("display", "inline-block");
-            var x = d3.event.pageX, y = d3.event.pageY
-            var elements = document.querySelectorAll(':hover');
-            l = elements.length
-            l = l-1
-            elementData = elements[l].__data__
-            divTooltip.html((d.attribute)+"<br>"+elementData.name+"<br>"+elementData.value);
-        });
+.on("mousemove", function(d){
+  divTooltip.style("left", d3.event.pageX+10+"px");
+  divTooltip.style("top", d3.event.pageY-200+"px");
+  divTooltip.style("display", "inline-block");
+  var x = d3.event.pageX, y = d3.event.pageY
+  var elements = document.querySelectorAll(':hover');
+  l = elements.length
+  l = l-1
+  elementData = elements[l].__data__
+  divTooltip.html((d.attribute)+"<br>"+elementData.name+"<br>"+elementData.value);
+});
 bar
-        .on("mouseout", function(d){
-            divTooltip.style("display", "none");
-        });
+.on("mouseout", function(d){
+  divTooltip.style("display", "none");
+});
 
 </script>
 
