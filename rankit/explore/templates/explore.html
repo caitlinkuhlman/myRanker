@@ -593,7 +593,7 @@ var svg = d3.select("#graphDiv").append("svg")
 .attr("width", width + margin.left + margin.right)
 .attr("height", height + margin.top + margin.bottom)
 .append("g")
-.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+.attr("transform", "translate(" + margin.left*2.5 + "," + margin.top + ")");
 
 
 var options = d3.keys(dataset[0]).filter(function(key) { return key !== "attribute"; });
