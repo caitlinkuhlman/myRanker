@@ -198,7 +198,7 @@
     }
     #more {
       grid-area: more;
-      padding: 12px;
+      /* padding: 12px; */
       margin-bottom: 48px;
     }
 

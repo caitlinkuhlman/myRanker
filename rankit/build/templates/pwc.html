@@ -155,6 +155,35 @@
       float: right;
     }
 
+    #sort {
+      width: 6em;
+    }
+    #shuffle {
+      width: 6em;
+    }
+    #cd-tour-trigger {
+      width: 6em;
+    }
+
+    #more {
+      width: 12em;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      border: none;
+      border-radius: 4px;
+      background: rgba(231,76,60, 1);
+      color: #fefffb;
+      font-weight: normal;
+      font-size: 100%;
+      /* position: absolute; */
+      /* left: 0; */
+      vertical-align:baseline;
+      /* float: left; */
+      margin: 0px 16px;
+    }
+
   </style>
 </head>
 <body>
@@ -227,7 +256,7 @@
         <!-- help -->
         <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn right">
           <!-- <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span> -->
-          <p>Instructions</p>
+          <p>Help</p>
         </button>
       </div>
 
@@ -337,7 +366,7 @@
           
         </div>
       </div>
-      <button type="button" class="btn" id="more" onclick="handleMore()">Add New Pairwise</button>
+      <button type="button" id="more" class="btn" onclick="handleMore()">Add New Pairwise</button>
       <button type="button" id="submit" class="btn submit" disabled="disabled">RANK!</button>
     </div>
   </div>
