@@ -431,7 +431,7 @@
 
 // Enables tab switching
 function tabSwitch(evt, tabName) {
-  if ('{{weights}}' == 'None') {
+  if ('{{weights}}' == 'None' && tabName == "Graph") {
      alert("Build your ranking first to view 'Attribute Weights'");
   } else {
   var i, tabcontent, tablinks;
