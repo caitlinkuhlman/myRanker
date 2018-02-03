@@ -35,7 +35,7 @@
   }
 
   p {
-    background-color: #2980B9;
+    /* background-color: #2980B9; */
     padding: 7px 20px 0px;
     color: white;
     font-size: 16px;
@@ -257,6 +257,39 @@
     text-align: center;
   }
 
+  .semi-transparent-button{
+    background-color:  rgba(200, 200, 200, 0.6);
+    border-radius: 2px;
+    border-color: rgba(200, 200, 200, 0.6);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    border: 1px solid rgba(200, 200, 200, 0.6);
+    text-decoration-color: white;
+    padding-bottom: 10px;
+    padding-top: 2px;
+  }
+
+  .semi-transparent-button:hover {
+    color: #fff;
+    border: 1px solid;
+    border-color: white;
+  }
+
+  .right{
+    float: right;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+    font-size: 30px;
+  }
+
+  p {
+    text-align: center;
+  }
 
   </style>
 </head>
@@ -317,8 +350,48 @@
   <div style="display:inline-block" class="navbar-form navbar-center" role="search">
     <!-- search -->
     <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." aria-controls="table" onkeyup="searchTable(event)">
+
   </div>
   <!-- <label style="display:inline-block;float:right;color:white">Show <select style="color:black" name="table_length" aria-controls="table" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label> -->
+  <button type="button" id="cd-tour-trigger" class="semi-transparent-button right">
+    <p>Help</p>
+  </button>
+
+  <ul class="cd-tour-wrapper">
+    <li class="cd-single-step">
+      <span>Step 1</span>
+
+      <div class="cd-more-info right">
+        <h2>Step Number 1</h2>
+        <p>Review your personalized ranking constructed from your partial ranking in Build</p>
+        <img src="{{ url_for('static',filename='images/Step1Explore.png') }}">
+      </div>
+    </li>
+    <!-- .cd-single-step -->
+
+    <li class="cd-single-step">
+      <span>Step 2</span>
+
+      <div class="cd-more-info top">
+        <h2>Step Number 2</h2>
+        <p>Search for specific titles.</p>
+        <img src="{{ url_for('static',filename='images/Step2Explore.png') }}">
+      </div>
+    </li>
+    <!-- .cd-single-step -->
+
+    <li class="cd-single-step">
+      <span>Step 3</span>
+
+      <div class="cd-more-info bottom">
+        <h2>Step Number 3</h2>
+        <p>Learn the relative impact the attributes had on your ranking.</p>
+        <img src="{{ url_for('static',filename='images/Step3Explore.png') }}">
+      </div>
+    </li>
+  </ul>
+  <div class="cd-cover-layer"></div>
+
 </div>
 
 <div class="tab">
@@ -350,6 +423,7 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-dataTables.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
 
