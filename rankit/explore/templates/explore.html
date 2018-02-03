@@ -431,6 +431,9 @@
 
 // Enables tab switching
 function tabSwitch(evt, tabName) {
+  if ('{{weights}}' == 'None') {
+     alert("Build your ranking first to view 'Attribute Weights'");
+  } else {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -442,6 +445,7 @@ function tabSwitch(evt, tabName) {
   }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
+}
 }
 
 function findMin(weights) {
@@ -606,14 +610,13 @@ renderTable(data)
 const weightsRaw = '{{weights|tojson}}'
 // The function to use for changing weights of attributes to sum up to 1
 
-function disabled(emptyDataset) {
-  console.log(emptyDataset);
-  if (emptyDataset == 'None') {
-    document.getElementById("example").disabled = true;
-  }
-}
-
-disabled('{{weights}}')
+// function disabled(emptyDataset) {
+//   if (emptyDataset == 'None') {
+//     document.getElementById("example").disabled = true;
+//   }
+// }
+//
+// disabled('{{weights}}')
 
 dataset = sumToOne(parseData(weightsRaw))
 
