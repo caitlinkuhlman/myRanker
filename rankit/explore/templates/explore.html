@@ -495,6 +495,17 @@ function normalizeWeights(data) {
   return dict
 }
 
+function roundTo(n, digits) {
+     if (digits === undefined) {
+       digits = 0;
+     }
+
+     var multiplicator = Math.pow(10, digits);
+     n = parseFloat((n * multiplicator).toFixed(11));
+     var test =(Math.round(n) / multiplicator);
+     return +(test.toFixed(digits));
+}
+
 function sumToOne(data) {
   var dict = []
   var sum = 0
@@ -510,13 +521,13 @@ function sumToOne(data) {
     if (data[j].weight < 0) {
       dict.push({
         "attribute": data[j].attribute,
-        "weight": (-1)*(data[j].weight/sum)
+        "weight": roundTo((-1)*(data[j].weight/sum), 2)
       });
 
     } else {
       dict.push({
         "attribute": data[j].attribute,
-        "weight": data[j].weight/sum
+        "weight": roundTo(data[j].weight/sum, 2)
       });
     }
   }
