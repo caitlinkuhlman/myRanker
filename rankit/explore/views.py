@@ -1,5 +1,7 @@
 from flask import Blueprint, request, render_template
-from rankit.build.utils import getRanking, getDataset
+from rankit.build.utils import getRanking
+from  rankit.datasets.utils import getDataset
+
 import json, re
 
 explore_blueprint = Blueprint(
@@ -18,10 +20,8 @@ def explore(dataset_name):
 
 @explore_blueprint.route('/explore/<dataset_name>/<pairs>')
 def exploreJson(dataset_name, pairs):
-    print(pairs)
     primaryKeyPairs = []
     parsed_pairs = re.findall("\d+=([\w\s'-:!\.,()]*[\>]{1}[\w\s'-:!\.,()]*)&", pairs)
-    print(parsed_pairs)
 
     for pair in parsed_pairs:
         high, low = pair.split('>')
@@ -30,19 +30,3 @@ def exploreJson(dataset_name, pairs):
     data, weights = getRanking(dataset_name, primaryKeyPairs)
 
     return render_template('explore.html', weights=weights, data=data, dataset_name=dataset_name)
-
-
-
-@explore_blueprint.route('/explore/<dataset_name>', methods=["POST"])
-def explorePost(dataset_name):
-
-    # get the dataset name from the request
-    # dataset_name = request.get_json().get("dataset_name")
-
-    # get the pairs from client in json format
-    primaryKeyPairs = request.get_json().get("pairs")
-
-    data, weights = getRanking(dataset_name, primaryKeyPairs)
-
-    return render_template('explore.html', weights=weights, data=data, dataset_name=dataset_name)
-

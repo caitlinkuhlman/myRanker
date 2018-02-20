@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template
-from rankit.build.utils import filterByPrimaryKey, getDataset
+from rankit.build.utils import filterByPrimaryKey
+from  rankit.datasets.utils import getDataset
+
 
 build_blueprint = Blueprint(
     'build', __name__,
@@ -41,8 +43,4 @@ def pwc(dataset_name):
     datastore_ids = filterByPrimaryKey(getDataset(dataset_name))
 
     return render_template('pwc.html', dataset_name = dataset_name, dataset=datastore_ids)
-
-@build_blueprint.route('/dataset')
-def buildList():
-    return render_template('full_datasets.html')
 

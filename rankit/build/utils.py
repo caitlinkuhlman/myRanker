@@ -1,25 +1,14 @@
 import os, json
 
 import  rankit.build.rank_script.build_rank as build_rank
+
+from  rankit.datasets.utils import getDataset
+
 import  pandas as pd
 
 
 primary_key = 'Title'
 rank = 'Rank'
-
-
-# Return the full dataset
-def getDataset(dataset_name):
-    # get the absolute path of the dataset
-
-    datasets_dir = os.path.dirname(os.path.abspath(os.path.dirname(__name__)) + "/rankit/datasets/")
-    print(datasets_dir)
-    abs_file_path = os.path.join(datasets_dir, dataset_name+".json")
-
-    # load the json file contents into json object
-    with open(abs_file_path, 'r') as data_file:
-        datastore = json.load(data_file)
-    return datastore
 
 def filterByPrimaryKey(datastore):
     #filter only object names
