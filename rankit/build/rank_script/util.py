@@ -53,8 +53,7 @@ def clean_data(data):
         data[col] = data[col].str.replace(r'%', '')
     data.set_index('States', inplace=True)
     data.sort_index(inplace=True)
-#     data = normalize(data)
-#     data.fillna(value = 0, inplace=True)
+
 
 
 # In[3]:

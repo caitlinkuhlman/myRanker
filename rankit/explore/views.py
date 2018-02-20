@@ -1,5 +1,5 @@
 from flask import Blueprint, request, render_template
-from rankit.build.views import getRanking, getDataset
+from rankit.build.utils import getRanking, getDataset
 import json, re
 
 explore_blueprint = Blueprint(
