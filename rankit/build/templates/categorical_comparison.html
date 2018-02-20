@@ -219,7 +219,7 @@ function sendPostRequest(pwl) {
   const url = '{{url_for('explore.explore', dataset_name = dataset_name) }}'
   const xhr = new XMLHttpRequest()
     console.log(pwl)
-      console.log('{{url_for('build.buildList', pairs = pwl) }}')
+      console.log('{{url_for('datasets.datasets', pairs = pwl) }}')
 
   xhr.open('POST', url, true)
   xhr.setRequestHeader('Content-type', 'application/json')
@@ -234,7 +234,7 @@ function sendPostRequest(pwl) {
 
   xhr.onload = function () {
       console.log(pwl)
-      console.log('{{url_for('build.buildList', pairs = pwl) }}')
+      console.log('{{url_for('datasets.datasets', pairs = pwl) }}')
 
     document.write(this.response)
 

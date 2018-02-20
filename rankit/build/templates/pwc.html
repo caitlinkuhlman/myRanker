@@ -202,7 +202,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
-          <a href={{ url_for( 'build.buildList')}}> Dataset</a>
+          <a href={{ url_for( 'datasets.datasets')}}> Dataset</a>
         </li>
         <!-- <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown">Build
@@ -210,15 +210,15 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href={{ url_for( 'build.categorical', dataset_name=dataset_name) }}>Categorical Comparison</a>
+              <a href={{ url_for( 'build.cc', dataset_name=dataset_name) }}>Categorical Comparison</a>
             </li>
             <li class="divider"> </li>
             <li>
-              <a href={{ url_for( 'build.listComparison', dataset_name=dataset_name) }}>List Comparison</a>
+              <a href={{ url_for( 'build.lc', dataset_name=dataset_name) }}>List Comparison</a>
             </li>
             <li class="divider"> </li>
             <li>
-              <a href={{ url_for( 'build.pairwise', dataset_name=dataset_name) }}>Pairwise Comparison</a>
+              <a href={{ url_for( 'build.pwc', dataset_name=dataset_name) }}>Pairwise Comparison</a>
             </li>
           </ul>
         </li> -->

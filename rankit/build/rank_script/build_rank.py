@@ -25,18 +25,12 @@ def normalize(df):
 def scale(df):
     return(100 * (df - df.min()) / (df.max() - df.min()))
 
-# def clean_dataset(dataset, primary_key):
-#     cleaned_dataset = dataset.select_dtypes([np.number]).copy()
-#     cleaned_dataset[primary_key] = dataset[primary_key]
-#     return cleaned_dataset
-
 def clean_dataset(dataset, primary_key):
     #   temp make primary key index so it doesn't get converted
     dataset.set_index(primary_key, inplace=True)
     cleaned_dataset = pd.get_dummies(dataset)
     cleaned_dataset.reset_index(inplace=True)
     return cleaned_dataset
-
 
 def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
     pair_indices = pairs["high"].append(pairs["low"]).drop_duplicates().values
@@ -48,7 +42,7 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
 
     data = np.nan_to_num(dataset_copy.drop(primary_key, axis=1))
     X = np.nan_to_num(data_train.drop(primary_key, axis=1))
-    # print X
+
     pairs_start = []
     pairs_end = []
     # put pair data into format for RLS learner
