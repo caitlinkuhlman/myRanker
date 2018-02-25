@@ -1,10 +1,10 @@
-# RANKit
+# RANKIT
 
-RANKit allows users to manipulate rankings through personalized data visualization and rank building. When interpreting multi-attribute datasets, a slight change of weight between attributes can heavily impact ranking results. Most publically available rankings do not expose the attributes used to compose the ranking. This lack of disclosure results in possible exploitation of data because rankings can imply a conclusion that is not necessarily true. 
+RANKIT allows users to manipulate rankings through personalized data visualization and rank building. When interpreting multi-attribute datasets, a slight change of weight between attributes can heavily impact ranking results. Most publically available rankings do not expose the attributes used to compose the ranking. This lack of disclosure results in possible exploitation of data because rankings can imply a conclusion that is not necessarily true.
 
-To allow for unbiased extrapolation of data, RANKit is composed of two tools: Explore and Build.
+To allow for unbiased extrapolation of data, RANKIT is composed of two tools: Explore and Build.
 
-To learn more about each tool, read our [guide](https://github.com/RankerToolWebsite/myRanker/wiki). 
+To learn more about each tool, read our [guide](https://github.com/RankerToolWebsite/myRanker/wiki).
 
 ## Tool: Explore
 
@@ -12,12 +12,12 @@ Based on [Caleydo LineUp](https://github.com/Caleydo/lineupjs), Explore is an in
 
 - Combine multiple attributes into a single, combined column to create a ranking
 - Immediate responsive visual change of the rank with the modification of:
-	- Weights of specified attribute 
+	- Weights of specified attribute
 	- Values of specified attribute
 
-## Tool: Build 
+## Tool: Build
 
-Build is a machine learning tool that is trained through user selected preferences of rank object instances. The Build tool collects data from pairwise comparisons of sample objects completed by the user. The tool applies a regression analysis to this data and determines a pattern and ranks all object within a dataset according to that pattern. 
+Build is a machine learning tool that is trained through user selected preferences of rank object instances. The Build tool collects data from pairwise comparisons of sample objects completed by the user. The tool applies a regression analysis to this data and determines a pattern and ranks all object within a dataset according to that pattern.
 
 ## Getting Started
 
@@ -39,31 +39,31 @@ Build is a machine learning tool that is trained through user selected preferenc
 
 ### Run: *CURRENTLY IN DEVELOPMENT*
 
-#### To download dependiencies: 
+#### To download dependiencies:
 
 `$ pip install virtualenv`
-	
+
 *in myRanker directory:*
-	
+
 `$ virtualenv venv`
-		
+
 `$ source venv/bin/activate`
-		
+
 `$ pip install -r requirements.txt`
 
 `$ export CFLAGS=-I$VIRTUAL_ENV/include`
 
-*[optional] you may need to also set the path to numpy:* 
+*[optional] you may need to also set the path to numpy:*
 
 `$ export CFLAGS=-I$VIRTUAL_ENV/lib/python2.7/site-packages/numpy/core/include/
-		
+
 `$ deactivate`
 
-	
-#### To startup the server: 
+
+#### To startup the server:
 
 *activate virtual environment:* `$ source venv/bin/activate`
-	
+
 *run project:* `$ python3 run.py`
-	
-*exit virual environemnt:* `$ deactivate` 
+
+*exit virual environemnt:* `$ deactivate`
