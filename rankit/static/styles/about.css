@@ -1,6 +1,7 @@
 body {
   background-color: #f5f7fa;
   font-family: 'Lato', Calibri, Arial, sans-serif;
+  margin: 0;
 }
 
 p {
@@ -18,7 +19,7 @@ p {
   line-height: 1.25;
   text-align: center;
   text-transform: uppercase;
-  color: #23A6D5;
+  color: #2980B9;
   padding: 20px 0px;
 }
 

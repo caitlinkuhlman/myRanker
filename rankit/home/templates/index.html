@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RANKIT Home</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/default.css') }}"/>
-  <style>
 
+  <style>
+  
+  /* Title size and gradient color selection */
   header {
     position: relative;
     text-align: center;
@@ -20,7 +20,6 @@
     -webkit-animation: Gradient 15s ease infinite;
     -moz-animation: Gradient 15s ease infinite;
     animation: Gradient 15s ease infinite;
-
   }
 
   @media (min-width: 1025px) {
@@ -34,7 +33,6 @@
     font-weight: 800;
     line-height: 95px;
     text-align: center;
-    /* text-transform: uppercase; */
   }
 
   p {
@@ -42,174 +40,102 @@
     color: #777777;
   }
 
-img {
+  img {
     display: block;
     margin-left: auto;
     margin-right: auto;
- }
+  }
 
- li {
-   color: #777777;
- }
-
- .main section li {
-     margin: 0;
-     padding: 1em 0;
-     font-size: 1.3em;
-     line-height: 1.5;
- }
-
-
- * {
-     box-sizing: border-box;
- }
-
- /* body {
-     margin: 0;
- } */
-
- /* Create three equal columns that floats next to each other */
- .column {
-   text-align: center;
-     float: left;
-     width: 33.33%;
-     padding: 10px 20px;
- }
-
- .column2 {
-   text-align: center;
-     float: left;
-     width: 66.66%;
-     padding: 10px;
- }
-
- .row:after {
-     content: "";
-     display: table;
-     clear: both;
- }
-
- .divider {
-   border-right: 4px solid grey;
- }
-
- .content {
-   padding: 0px 80px;
- }
-
- #y{
-   font-size: 20px;
-   color: #333333;
- }
-
- .datasetimage{
-  padding: 8px 0px;
- }
-
- .datasetlabel{
-  padding-right: 20px;
- }
+  * {
+    box-sizing: border-box;
+  }
 
   </style>
-
 </head>
 
-
+<!-- home page inside of base.html code -->
 {% extends 'base.html' %}
 {% block content %}
 
 <div class="main">
 
+  <!-- Project title with gradient and get started button. NavBar in Base.html -->
   <header>
-  <div>
-    <div class="cd-intro-content mask">
-      <h1 data-content="RANKIT"><span></span></h1>
-      <h2>An easy, step by step, tool to research rankings!</h2>
-    </div>
+    <div>
+      <div class="cd-intro-content mask">
+        <h1 data-content="RANKIT"><span></span></h1>
+        <h2>An easy, step by step, tool to research rankings!</h2>
+      </div>
       <div id="main-menu">
-          <a href="#start"id = "get-started" class="cd-btn semi-transparent-button" role="button">Learn More</a>
+        <a href="#start"id = "learn-more" class="cd-btn semi-transparent-button" role="button">Learn More</a>
       </div>
     </div>
   </header>
 </div>
 
+<!-- When user clicks the learn more button, webpage moves to this start div -->
 <div id="start"></div>
 
 <div class="content">
+  <h1 class="titles" style="color:#2980B9">Here's how it works!</h2>
 
-<h1 class="titles" style="color:#2980B9">Here's how it works!</h2>
-
-<div class="row">
-  <div class="column">
-  <h2 id="x" class="titles-purple">Step 1: Pick a Dataset</h2>
-</div>
-<div class="column2">
-<h2 id="x" class="titles-purple">Step 2: Choose a Tool</h2>
-</div>
-</div>
-
-  <div class="row">
-    <div class="column divider">
-      <h2 class = "datasetlabel">Dataset</h2>
-      <img class="datasetimage" src="{{ url_for('static',filename='images/import.png') }}">
-      <p id="y">Pick a dataset of your choice from the available options</h2>
+    <div class="row">
+      <div class="threeColumns">
+        <h2 class="titles-blue">Step 1: Pick a Dataset</h2>
+      </div>
+      <div class="column">
+        <h2 class="titles-blue">Step 2: Choose a Tool</h2>
+      </div>
     </div>
-    <div class="column">
-      <h2>Build</h2>
-      <img src="{{ url_for('static',filename='images/build.png') }}">
-      <p id="y">Build your ranking with one of three available methods</h2>
-    </div>
-    <div class="column">
-      <h2>Explore</h2>
-      <img src="{{ url_for('static',filename='images/explore.png') }}">
-      <p id="y">Explore your ranking results and your chosen dataset attributes</h2>
-    </div>
-  </div>
 
-</div>
+    <div class="row">
+      <div class="threeColumns divider">
+        <h2 class = "datasetlabel">Dataset</h2>
+        <img class="datasetimage" src="{{ url_for('static',filename='images/import.png') }}">
+        <p id="description">Pick a dataset of your choice from the available options</h2>
+        </div>
+        <div class="threeColumns">
+          <h2>Build</h2>
+          <img src="{{ url_for('static',filename='images/build.png') }}">
+          <p id="description">Build your ranking with one of three available methods</h2>
+          </div>
+          <div class="threeColumns">
+            <h2>Explore</h2>
+            <img src="{{ url_for('static',filename='images/explore.png') }}">
+            <p id="description">Explore your ranking results and your chosen dataset attributes</h2>
+            </div>
+          </div>
+        </div>
 
-<br>
-<br>
-<br>
+        <br>
+        <br>
+        <br>
 
+        <div style="background-color:#2980B9">
+          <hr class="horizontalLine">
+          <h1 class="titles">You're ready to RANKIT!</h2>
+            <div>
+              <a href={{ url_for('datasets.datasets') }}  id = "learn-more" class="semi-transparent-button" role="button">Start RANKIT</a>
+            </div>
+            <br>
+            <br>
+          </div>
 
-<div class="purple">
-<hr class="style-four">
-<h1 id="x" class="titles">You're ready to RANKIT!</h2>
-<div>
-  <a href={{ url_for('datasets.datasets') }}  id = "get-started" class="semi-transparent-button" role="button">Start RANKIT</a>
-</div>
-<br>
-<br>
+          <!-- Used to animate Learn More button to scroll down to the bottom of the webpage -->
+          <script type="text/javascript">
+          $(function() {
+            $('#main-menu a').bind('click',function(event){
+              var $anchor = $(this);
+              $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+              }, 1500,'easeInOutExpo');
+              event.preventDefault();
+            });
+          });
+          </script>
+          <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.easing.1.3.js') }}"></script>
+        </div>
 
-</div>
+        {% endblock %}
 
-
-<script type="text/javascript">
-$(function() {
-  $('#main-menu a').bind('click',function(event){
-    var $anchor = $(this);
-
-    $('html, body').stop().animate({
-      scrollTop: $($anchor.attr('href')).offset().top
-    }, 1500,'easeInOutExpo');
-
-    event.preventDefault();
-  });
-});
-
-</script>
-
-<script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.easing.1.3.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename = 'js/constellation.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename = 'js/classie.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename = 'js/cbpAnimatedHeader.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename = 'js/toucheffects.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
-
-</div>
-
-{% endblock %}
-
-
-</html>
+        </html>

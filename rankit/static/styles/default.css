@@ -14,7 +14,48 @@
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 body, html { font-size: 100%; padding: 0; margin: 0;}
 
-/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+/* Create three equal columns that floats next to each other */
+.threeColumns {
+	text-align: center;
+	float: left;
+	width: 33.33%;
+	padding: 10px 20px;
+}
+
+.column {
+	text-align: center;
+	float: left;
+	width: 66.66%;
+	padding: 10px;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.divider {
+	border-right: 4px solid grey;
+}
+
+.content {
+	padding: 0px 80px;
+}
+
+#description {
+	font-size: 20px;
+	color: #333333;
+}
+
+.datasetimage {
+	padding: 8px 0px;
+}
+
+.datasetlabel {
+	padding-right: 20px;
+}
+
 .clearfix:before, .clearfix:after {
 	content: " ";
 	display: table;
@@ -253,17 +294,13 @@ a:hover {
 	color: #ffffff
 }
 
-.titles-purple{
+.titles-blue{
 	font-size: 30px;
 	margin-bottom: 0;
 	font-weight: 800;
 	line-height: 72px;
 	text-align: center;
 	color: #2980B9
-}
-
-#x{
-	text-decoration-color: #23A6D5;
 }
 
 @-webkit-keyframes Gradient {
@@ -306,11 +343,7 @@ a:hover {
 	text-align: center;
 }
 
-.purple {
-	background-color:#2980B9
-}
-
-#get-started.semi-transparent-button, #see-full-list.semi-transparent-button, .semi-transparent-button{
+#learn-more.semi-transparent-button, #see-full-list.semi-transparent-button, .semi-transparent-button{
 	display: block;
 	box-sizing: border-box;
 	margin: 25px auto;
@@ -328,7 +361,7 @@ a:hover {
 	text-decoration-color: white;
 }
 
-#get-started.semi-transparent-button:hover, #see-full-list.semi-transparent-button:hover, .semi-transparent-button:hover{
+#learn-more.semi-transparent-button:hover, #see-full-list.semi-transparent-button:hover, .semi-transparent-button:hover{
 	border: 1px solid white;
 }
 
@@ -373,7 +406,7 @@ height: 100%;
 border-right: 4px solid grey;
 }
 
-hr.style-four {
+hr.horizontalLine {
 	height: 12px;
 	border: 0;
 	box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
