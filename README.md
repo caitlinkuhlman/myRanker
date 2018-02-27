@@ -6,18 +6,17 @@ To allow for unbiased extrapolation of data, RANKIT is composed of two tools: Ex
 
 To learn more about each tool, read our [guide](https://github.com/RankerToolWebsite/myRanker/wiki).
 
-## Tool: Explore
-
-Based on [Caleydo LineUp](https://github.com/Caleydo/lineupjs), Explore is an interactive tool that allows you to visualize your desired ranking:
-
-- Combine multiple attributes into a single, combined column to create a ranking
-- Immediate responsive visual change of the rank with the modification of:
-	- Weights of specified attribute
-	- Values of specified attribute
-
 ## Tool: Build
 
 Build is a machine learning tool that is trained through user selected preferences of rank object instances. The Build tool collects data from pairwise comparisons of sample objects completed by the user. The tool applies a regression analysis to this data and determines a pattern and ranks all object within a dataset according to that pattern.
+
+## Tool: Explore
+
+Explore is an interactive tool that allows you to view and query through dataset information:
+
+- Visualize a dataset and its attribute independent of the Build Tool
+- Observe a personalized ranking of the entire dataset from partial rankings formulated in Build 
+	- Displays attributes by their relative importance on the dataset’s ranking
 
 ## Getting Started
 
@@ -37,33 +36,21 @@ Build is a machine learning tool that is trained through user selected preferenc
 	- `$ pip install Flask`
 
 
-### Run: *CURRENTLY IN DEVELOPMENT*
+### Run: 
 
 #### To download dependiencies:
 
-`$ pip install virtualenv`
-
 *in myRanker directory:*
 
-`$ virtualenv venv`
+`$ pip3 install -r requirements.txt`
 
-`$ source venv/bin/activate`
+*[optional] you may need to also set the path to numpy if you get a cython error:*
 
-`$ pip install -r requirements.txt`
+`$ export CFLAGS=-I$<location of Python>/lib/python<version>/site-packages/numpy/core/include`
 
-`$ export CFLAGS=-I$VIRTUAL_ENV/include`
-
-*[optional] you may need to also set the path to numpy:*
-
-`$ export CFLAGS=-I$VIRTUAL_ENV/lib/python2.7/site-packages/numpy/core/include/
-
-`$ deactivate`
-
+Example: `export CFLAGS=-I/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/numpy/core/include/`
 
 #### To startup the server:
 
-*activate virtual environment:* `$ source venv/bin/activate`
-
 *run project:* `$ python3 run.py`
 
-*exit virual environemnt:* `$ deactivate`
