@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/pace.min.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/loadingScreen.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}" />
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
@@ -202,42 +203,23 @@
       <a style="font-weight:bold" class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
     </div>
 
+<!-- Nav bar for dataset and explore -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
           <a href={{ url_for( 'datasets.datasets')}}> Dataset</a>
         </li>
-        <!-- <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown">Build
-            <strong class="caret"></strong>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href={{ url_for( 'build.cc', dataset_name=dataset_name) }}>Categorical Comparison</a>
-            </li>
-            <li class="divider"> </li>
-            <li>
-              <a href={{ url_for( 'build.lc', dataset_name=dataset_name) }}>List Comparison</a>
-            </li>
-            <li class="divider"> </li>
-            <li>
-              <a href={{ url_for( 'build.pwc', dataset_name=dataset_name) }}>Pairwise Comparison</a>
-            </li>
-          </ul>
-        </li> -->
         <li>
           <a href="{{ url_for('explore.explore', dataset_name= dataset_name) }}">Explore</a>
         </li>
       </ul>
-
     </div>
-
   </nav>
 
   <div id="build-container">
-    <!-- this is the header -->
     <div style="background-color:#439AD3" class="build-pool-header">
 
+      <!-- Dataset name header -->
       <h1 style="position:relative; right:5px" class="title">
         <b>
           Build: {{ dataset_name |replace("_", " ") }}
@@ -263,11 +245,11 @@
         </button>
       </div>
 
-
+<!-- Help Button step instructions: Listed by each step -->
       <ul class="cd-tour-wrapper">
+
         <li class="cd-single-step">
           <span>Step 1</span>
-
           <div class="cd-more-info right">
             <h2>Step Number 1</h2>
             <p>Select and click a method you wish to rank with.</p>
@@ -283,22 +265,18 @@
             <img src="{{ url_for('static',filename='images/Step1Build.png') }}">
           </div>
         </li>
-        <!-- .cd-single-step -->
 
         <li class="cd-single-step">
           <span>Step 2</span>
-
           <div class="cd-more-info top">
             <h2>Step Number 2</h2>
             <p>Select and drag each item to the desired ranking panel.</p>
             <img src="{{ url_for('static',filename='images/Step2Build.png') }}">
           </div>
         </li>
-        <!-- .cd-single-step -->
 
         <li class="cd-single-step">
           <span>Step 3</span>
-
           <div class="cd-more-info bottom">
             <h2>Step Number 3</h2>
             <p>You can randomize the dataset items by clicking the shuffle button.</p>
@@ -308,7 +286,6 @@
 
         <li class="cd-single-step">
           <span>Step 4</span>
-
           <div class="cd-more-info bottom">
             <h2>Step Number 4</h2>
             <p>After you use shuffle, you can sort the data set objects in Alphabetical Order by clicking the Sort button to
@@ -319,7 +296,6 @@
 
         <li class="cd-single-step">
           <span>Step 5</span>
-
           <div class="cd-more-info left">
             <h2>Step Number 5</h2>
             <p>One your finished with the ranking, click the Rank button to see your results!</p>
@@ -328,8 +304,9 @@
         </li>
 
       </ul>
-      <div class="cd-cover-layer"></div>
 
+<!-- Backround layer when help button is active -->
+      <div class="cd-cover-layer"></div>
     </div>
 
     <!-- this is the left side of the build view -->
@@ -366,6 +343,12 @@
           <div class="scrollingDragInner box">
             <div id="lc-center" class="list lcb"></div>
           </div>
+
+          <div class="progress" style="width:100%; background-color:#bbc2cc; margin-bottom:30px;">
+            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <!-- <p>Progress: 0%</p> -->
+          </div>
+
           <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
         </div>
 
@@ -380,7 +363,7 @@
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
-
+  <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
 
   <!-- this is script for the pool -->
@@ -458,9 +441,6 @@
       ghostClass: 'ghost',
     })
 
-    // const high = document.querySelector('.high')
-    // const low = document.querySelector('.low')
-
     function add_to_sortable(className) {
       const all = document.querySelectorAll(className)
 
@@ -470,9 +450,7 @@
           put: (to) => to.el.children.length < 1,
         },
         animation: 100,
-
       }))
-
     }
     add_to_sortable('.high')
     add_to_sortable('.low')

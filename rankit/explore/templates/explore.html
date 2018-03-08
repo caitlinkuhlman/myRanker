@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RANKIT Explore</title>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/pace.min.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/loadingScreen.css') }}" />
   <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}" />
@@ -447,7 +449,7 @@ function tabSwitch(evt, tabName) {
   evt.currentTarget.className += " active";
   if (tabName == "Graph") {
     document.getElementById("search-criteria").disabled = true;
-  } 
+  }
   if (tabName == "TableData") {
     document.getElementById("search-criteria").disabled = false;
   }
