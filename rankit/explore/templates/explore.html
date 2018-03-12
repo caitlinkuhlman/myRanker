@@ -426,6 +426,26 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
+<script>
+
+    function highlightRows(){
+      trs = $('#data > tr')
+      for (j=0; j<highlighted.length; j++) {
+        for (i=0; i<trs.length; i++) {
+          if (trs[i].cells[1].textContent === highlighted[j]){
+            trs[i].style.backgroundColor = "#87CEFA"
+            trs[i].cells[0].style.backgroundColor = "#87CEFA"
+          }
+        }
+      }
+    }
+    
+    const raw_highlighted = '{{list|tojson}}'
+    highlighted = JSON.parse(raw_highlighted)
+    highlightRows()
+  
+</script>
+
 
 <script>
 
@@ -560,6 +580,7 @@ function renderTable(data) {
   })
 
   renderData(data, keys)
+  highlightRows()
 }
 
 function renderHead(datum) {
@@ -608,6 +629,7 @@ function searchTable(e) {
   var value = e.target.value;
   var table = $('#table').DataTable();
   table.search( value ).draw();
+  highlightRows()
 }
 
 function parseData(raw) {
