@@ -433,7 +433,6 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.dataTables.min.js') }}"></script> -->
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
-
 <script>
 
 // Enables tab switching
@@ -801,5 +800,44 @@ bar
 
 </script>
 
+<style>
+  .bar1 {
+    background-color: green;
+  }
+  .bar {
+    float: left; 
+    height: 100%; 
+  }
+  .bar-chart-bar {
+    background-color: #e8e8e8; 
+    display: block; 
+    position:relative; 
+    width: 100%; 
+    height: 20px; 
+  }
+
+</style>
+
+<script>
+    trs = $('#data > tr')
+
+    for (i=0; i<trs.length; i++) {
+      var newDiv = document.createElement('div');
+      newDiv.className = "bar-chart-bar"
+      var bars = [];
+      bars.push($("<div></div>",{
+            "class": "bar " + "bar1"
+            }).css({
+              "width": 10 +"%"
+              }))
+      bars[0].prop("outerHTML")
+      console.log(bars[0])
+      newDiv.append(bars[0])
+      trs[i].cells[6].appendChild(newDiv)
+    }
+
+    
+</script>
+  
 
 </html>
