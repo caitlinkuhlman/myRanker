@@ -558,8 +558,11 @@ function sumToOne(data) {
 
 ///////////////////////////
 function renderTable(data) {
-  var keys = renderHead(data[0])
-
+  var tempData = data[0];
+  data[0].barData = "asdf";
+  var keys = renderHead(data[0]);
+  // var keys = renderHead(data[0].push("barData"));
+console.log(data[0]);
   var table =  $('#table').DataTable({
     scrollY: '100vh',
     scrollCollapse: true,
@@ -599,13 +602,18 @@ function renderHead(datum) {
 function renderData(data, keys) {
   var t = $('#table').dataTable();
 
+  data.forEach(function(row) {
+    row.barData = "BarChart"; //input value of computation here
+  });
 
+  keys.push("barData");
+  // console.log(keys);
   const html = data.map(x => {
-    const props = keys
+    var props = keys
     .map(k => x[k])
     t.fnAddData(props, false);
-    // .map(k => x[k])
     // t.fnAddData(props, false);
+    // console.log(props);
     // console.log(keys);
 // html row
 
