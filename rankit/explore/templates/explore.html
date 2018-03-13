@@ -15,6 +15,9 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap-iso.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bar.css') }}" />
+  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dataTables.bootstrap.css') }}" /> -->
+
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
   <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
 
@@ -426,6 +429,8 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+<!-- <script type="text/javascript" src="{{ url_for('static', filename = 'js/dataTables.bootstrap.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.dataTables.min.js') }}"></script> -->
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
 
@@ -555,13 +560,14 @@ function sumToOne(data) {
 function renderTable(data) {
   var keys = renderHead(data[0])
 
-  $('#table').DataTable({
+  var table =  $('#table').DataTable({
     scrollY: '100vh',
     scrollCollapse: true,
     pageLength: 25,
   })
 
   renderData(data, keys)
+
 }
 
 function renderHead(datum) {
@@ -598,12 +604,32 @@ function renderData(data, keys) {
     const props = keys
     .map(k => x[k])
     t.fnAddData(props, false);
+    // .map(k => x[k])
+    // t.fnAddData(props, false);
+    // console.log(keys);
+// html row
+
+    // "render": function(data, type, row, meta){
+    //     return $("<div></div>", {
+    //         "class": "bar-chart-bar"
+    //     }).append(function(){
+    //         var bars = [];
+    //         for(var i = 1; i < row.length; i++){
+    //             bars.push($("<div></div>",{
+    //                 "class": "bar " + "bar" + i
+    //             }).css({
+    //                 "width": row[i] + "%"
+    //             }))
+    //         }
+    //         return bars;
+    //     }).prop("outerHTML")
+    // }
+
   }
 )
 
 t.fnDraw();
 
-console.timeEnd('populate');
 }
 
 function searchTable(e) {
