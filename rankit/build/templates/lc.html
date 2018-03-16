@@ -186,6 +186,7 @@
     }
     #cd-tour-trigger {
       width: 6em;
+      cursor: pointer;
     }
 
   </style>
@@ -211,6 +212,9 @@
         </li>
         <li>
           <a href="{{ url_for('explore.explore', dataset_name= dataset_name) }}">Explore</a>
+        </li>
+        <li>
+          <a id="cd-tour-trigger">Help</a>
         </li>
       </ul>
     </div>
@@ -239,10 +243,9 @@
           Shuffle
         </button>
         <!-- help -->
-        <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn right">
-          <!-- <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span> -->
+        <!-- <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn right">
           <p>Help</p>
-        </button>
+        </button> -->
       </div>
 
 <!-- Help Button step instructions: Listed by each step -->

@@ -168,6 +168,7 @@
     }
     #cd-tour-trigger {
       width: 6em;
+      cursor: pointer;
     }
 
   </style>
@@ -190,26 +191,11 @@
         <li>
           <a href={{ url_for( 'datasets.datasets')}}> Dataset</a>
         </li>
-        <!-- <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown">Build
-            <strong class="caret"></strong>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href={{ url_for( 'build.cc', dataset_name=dataset_name) }}>Categorical Comparison</a>
-            </li>
-            <li class="divider"> </li>
-            <li>
-              <a href={{ url_for( 'build.lc', dataset_name=dataset_name) }}>List Comparison</a>
-            </li>
-            <li class="divider"> </li>
-            <li>
-              <a href={{ url_for( 'build.pwc', dataset_name=dataset_name) }}>Pairwise Comparison</a>
-            </li>
-          </ul>
-        </li> -->
         <li>
           <a href="{{ url_for('explore.explore', dataset_name= dataset_name) }}">Explore</a>
+        </li>
+        <li>
+          <a id="cd-tour-trigger">Help</a>
         </li>
       </ul>
 
@@ -242,12 +228,6 @@
         <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
           Shuffle
         </button>
-        <!-- help -->
-        <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn right">
-          <!-- <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span> -->
-          <p>Help</p>
-        </button>
-
       </div>
 
 
