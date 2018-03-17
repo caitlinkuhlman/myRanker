@@ -554,9 +554,8 @@ function sumToOne(data) {
 ///////////////////////////
 function renderTable(data) {
   var tempData = data[0];
-  data[0].barData = "asdf";
+  data[0].Score = 5; // This is necessary to show the column *shrug*
   var keys = renderHead(data[0]);
-  // var keys = renderHead(data[0].push("barData"));
 console.log(data[0]);
   var table =  $('#table').DataTable({
     scrollY: '100vh',
@@ -597,15 +596,25 @@ function renderHead(datum) {
 function renderData(data, keys) {
   var t = $('#table').dataTable();
 
+  let maxScore = -1; // Is this true?? can a score be negative
   data.forEach(function(row) {
-    row.barData = "BarChart"; //input value of computation here
+    row.Score = row.Rank; //input value of computation here CHANGE THIS --- TODO
+    if (row.Rank > maxScore) {
+      maxScore = row.Rank;
+    }
   });
 
-  keys.push("barData");
-  // console.log(keys);
   const html = data.map(x => {
+    const dataScore = x.Score;
+    console.log(maxScore)
+    x.Score = `
+    <div class="bar-chart-bar">
+      <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;"></div>
+    </div>
+    `
     var props = keys
     .map(k => x[k])
+    console.log(props)
     t.fnAddData(props, false);
     // t.fnAddData(props, false);
     // console.log(props);
@@ -797,10 +806,8 @@ bar
 </script>
 
 <style>
-  .bar1 {
+  .inTableBar {
     background-color: green;
-  }
-  .bar {
     float: left;
     height: 100%;
   }
