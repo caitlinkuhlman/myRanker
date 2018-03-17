@@ -9,7 +9,6 @@
   <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap-iso.css') }}" />
@@ -428,20 +427,25 @@
 
 <script>
 
+    function highlightColor(percent){
+      color = d3.scale.linear().domain([0, 1]).interpolate(d3.interpolateHcl).range([d3.rgb("#dedede"), d3.rgb("#95eef8")])
+      return color(percent)
+    }
     function highlightRows(){
+
+      const raw_highlighted = '{{list|tojson}}'
+      highlighted = JSON.parse(raw_highlighted)
       trs = $('#data > tr')
       for (j=0; j<highlighted.length; j++) {
         for (i=0; i<trs.length; i++) {
           if (trs[i].cells[1].textContent === highlighted[j]){
-            trs[i].style.backgroundColor = "#87CEFA"
-            trs[i].cells[0].style.backgroundColor = "#87CEFA"
+            trs[i].style.backgroundColor = highlightColor(0.5) // INSERT REAL PERCENT CONFIDENCE HERE
+            trs[i].cells[0].style.backgroundColor = highlightColor(0.5) // INSERT REAL PERCENT CONFIDENCE HERE
           }
         }
       }
     }
-    
-    const raw_highlighted = '{{list|tojson}}'
-    highlighted = JSON.parse(raw_highlighted)
+
     highlightRows()
   
 </script>
@@ -579,6 +583,10 @@ function renderTable(data) {
     pageLength: 25,
   })
 
+  $('#table').on('draw.dt', function(e) {
+    highlightRows()
+  })
+
   renderData(data, keys)
   highlightRows()
 }
@@ -622,7 +630,6 @@ function renderData(data, keys) {
 
 t.fnDraw();
 
-console.timeEnd('populate');
 }
 
 function searchTable(e) {
