@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
 from rankit.build.utils import filterByPrimaryKey
 from  rankit.datasets.utils import getDataset
+import json
 
 
 build_blueprint = Blueprint(
@@ -14,8 +15,9 @@ def buildStart(dataset_name):
 
     # retrieve dataset
     datastore_ids = filterByPrimaryKey(getDataset(dataset_name))
+    data = json.dumps(getDataset(dataset_name))
 
-    return render_template('build.html', dataset_name = dataset_name, dataset=datastore_ids)
+    return render_template('build.html', dataset_name = dataset_name, dataset=datastore_ids, data=data)
 
 # List Comparison
 @build_blueprint.route('/build/<dataset_name>/lc')
@@ -23,8 +25,9 @@ def lc(dataset_name):
 
     # retrieve dataset
     datastore_ids = filterByPrimaryKey(getDataset(dataset_name))
+    data = json.dumps(getDataset(dataset_name))
 
-    return render_template('lc.html', dataset_name = dataset_name, dataset=datastore_ids)
+    return render_template('lc.html', dataset_name = dataset_name, dataset=datastore_ids, data=data)
 
 # Categorical Comparison
 @build_blueprint.route('/build/<dataset_name>/cc')
@@ -32,8 +35,9 @@ def cc(dataset_name):
 
     # retrieve dataset
     datastore_ids = filterByPrimaryKey(getDataset(dataset_name))
+    data = json.dumps(getDataset(dataset_name))
 
-    return render_template('cc.html', dataset_name = dataset_name, dataset=datastore_ids)
+    return render_template('cc.html', dataset_name = dataset_name, dataset=datastore_ids, data=data)
 
 # Pairwise Comparison
 @build_blueprint.route('/build/<dataset_name>/pwc')
@@ -41,6 +45,7 @@ def pwc(dataset_name):
 
     # retrieve dataset
     datastore_ids = filterByPrimaryKey(getDataset(dataset_name))
+    data = json.dumps(getDataset(dataset_name))
 
-    return render_template('pwc.html', dataset_name = dataset_name, dataset=datastore_ids)
+    return render_template('pwc.html', dataset_name = dataset_name, dataset=datastore_ids, data=data)
 
