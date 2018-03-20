@@ -632,7 +632,6 @@
     }
 
     function lc_populateBox() {
-      console.log(lc_objectsFromURL)
       // id="${x}" class="object noSelect"
       for (let i = 0; i < lc_objectsFromURL.length; i++) {
         document.querySelector('#top').removeChild(document.getElementById(lc_objectsFromURL[i]))
@@ -641,7 +640,6 @@
         node.appendChild(textnode);
         node.setAttribute("id", lc_objectsFromURL[i]);
         node.setAttribute("class", "object noSelect"); 
-        node.setAttribute("onclick", "displayAttributes('lc_objectsFromURL[i]')");
         node.setAttribute("tabindex", "0");
         node.setAttribute("data-toggle", "popover");
         node.setAttribute("data-trigger", "focus");
