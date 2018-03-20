@@ -394,15 +394,21 @@
         <!-- this is the lists -->
         <div class="legend-label">HIGH</div>
         <div class="scrollingDragInner box">
-          <div id="left" class="list ccb"></div>
+          <div id="left" class="list ccb" style="height: 16vh"></div>
         </div>
         <div class="legend-label">MEDIUM</div>
         <div class="scrollingDragInner box">
-          <div id="center" class="list ccb"></div>
+          <div id="center" class="list ccb" style="height: 16vh"></div>
         </div>
         <div class="legend-label">LOW</div>
         <div class="scrollingDragInner box">
-          <div id="right" class="list ccb"></div>
+          <div id="right" class="list ccb" style="height: 16vh"></div>
+        </div>
+        <div class="progress">
+          <div id="bar" class="progress-bar progress-bar-striped active" role="progressbar"
+          aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            0%
+          </div>
         </div>
         <button type="button" id="cc-submit" class="btn submit" disabled="disabled">RANK!</button>
       </div>
@@ -505,8 +511,16 @@
         else {
           $('#cc-submit').removeAttr('disabled');
         }
+
+        barUpdate(num_of_non_empty_list)
       });
     });
+
+    function barUpdate(list_length) {
+      document.getElementById("bar").setAttribute("aria-valuenow", list_length.toString())
+      document.getElementById("bar").setAttribute("style", "width:"+list_length+"%")
+      document.getElementById("bar").textContent = list_length+"%"+" Confidence"
+    }
 
     function cc_urlUpdate() {
       const high = Array.from(document.querySelectorAll('#left .object')).map(x => nameToId(x.id))
