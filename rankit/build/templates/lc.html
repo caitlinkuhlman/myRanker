@@ -198,40 +198,6 @@
       width: 6em;
     }
 
-    .noSelect {
-      position: relative;
-    }
-
-    .noSelect .tooltiptext {
-      visibility: hidden;
-      width: 200px;
-      background-color: #555;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px 0;
-      position: absolute;
-      z-index: 1;
-      top: -5px;
-      left: 110%;
-    }
-
-    .noSelect .tooltiptext::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 100%;
-      margin-top: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: #555 transparent transparent transparent;
-    }
-
-    .noSelect:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-
   </style>
 </head>
 <script>
@@ -669,6 +635,7 @@
       console.log(lc_objectsFromURL)
       // id="${x}" class="object noSelect"
       for (let i = 0; i < lc_objectsFromURL.length; i++) {
+        document.querySelector('#top').removeChild(document.getElementById(lc_objectsFromURL[i]))
         var node = document.createElement("DIV");
         var textnode = document.createTextNode(lc_objectsFromURL[i]);
         node.appendChild(textnode);
