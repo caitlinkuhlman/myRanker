@@ -26,6 +26,18 @@ def clean_dataset(dataset, primary_key):
     return cleaned_dataset
 
 
+def get_training(dataset,pairs):
+    X = []
+    y = []
+    for i in range(len(pairs["high"])):
+        
+        X.append(np.array(dataset.iloc[pairs["high"][0]]-dataset.iloc[pairs["low"][i]]))
+        y.append(1)
+        X.append(np.array(dataset.iloc[pairs["low"][0]]-dataset.iloc[pairs["high"][i]]))
+        y.append(-1)
+    return X,y
+
+
 def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score', confd = 'Confidence') :
 
 #     make normalized copy of dataset
@@ -59,11 +71,11 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
 #     format output
     weights_list = []
     for i,w in enumerate(weights):
-        if w != 0.:
-            d={}
-            d['attribute']=dataset_copy.columns.values[i]
-            d['weight']=w
-            weights_list.append(d)
+        #if w != 0.:
+        d={}
+        d['attribute']=dataset_copy.columns.values[i]
+        d['weight']=w
+        weights_list.append(d)
 
     weights_json = json.dumps(weights_list)
     res = pd.DataFrame()
