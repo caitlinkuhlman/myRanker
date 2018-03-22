@@ -94,19 +94,24 @@
       background-color:  rgba(200, 200, 200, 0.6);
       border-radius: 2px;
       border-color: rgba(200, 200, 200, 0.6);
-      color: #fff;
+      color: black;
       text-align: center;
       text-decoration: none;
       transition: all 0.3s ease-out;
-      border: 1px solid rgba(200, 200, 200, 0.6);
+      /* border: 1px solid rgba(200, 200, 200, 0.6); */
       text-decoration-color: white;
-
+      border: 2px solid black;
     }
 
     .semi-transparent-button:hover {
-      color: #fff;
+      color: black;
       border: 1px solid;
-      border-color: white;
+      border-color: black;
+    }
+
+    .searchborder{
+      color: black;
+      border: 2px black;
     }
 
     #build-method {
@@ -115,6 +120,8 @@
       width: 100%;
       margin: 18px 0 0 0;
       justify-content: space-around;
+      background-color: #f3f3f3ff
+      /* background-color: #d9d9d9ff; */
     }
 
     #build-method a:link, #build-method a:visited {
@@ -134,9 +141,9 @@
     text-transform: capitalize;
     display: block;
     color: white;
-    font-size: 40px;
+    font-size: 70px;
     display: inline-block;
-    padding: 0px 20px 0px;
+    padding: 20px 20px 0px;
     }
 
     h1.title:first-letter {
@@ -146,7 +153,7 @@
     .page-header h1 {
       padding: 0px 20px 0px;
       color: white;
-      font-size: 40px;
+      font-size: 80px;
       margin: 0;
       display: inline-block;
     }
@@ -157,6 +164,9 @@
         "header header"
         "legend list";
       grid-template-columns: 120px 1fr;
+      /* background-color: #f3f3f3ff; */
+      border: 2px solid black;
+      border-radius: 8px;
     }
 
     .legend-label {
@@ -188,6 +198,32 @@
       width: 6em;
       cursor: pointer;
     }
+
+    #build-right {
+      padding: 0px 16px 16px;
+    }
+
+    .navbar-form {
+    padding: 25px 16px 16px;
+    margin-left: 10%;
+  }
+
+    .navbar-form .form-control {
+        display: inline-block;
+        width: 60%;
+        vertical-align: middle;
+        border: 2px solid black;
+        color: black;
+    }
+
+    input::placeholder {
+      color: black;
+    }
+
+    .border{
+      background-color: #d9d9d9ff;
+    }
+
 
   </style>
 </head>
@@ -231,22 +267,6 @@
         <br>
       </h1>
 
-      <div class="navbar-form navbar-center" role="search">
-        <!-- search -->
-        <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
-        <!-- sort -->
-        <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">
-          Sort
-        </button>
-        <!-- shuffle -->
-        <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
-          Shuffle
-        </button>
-        <!-- help -->
-        <!-- <button type="button" id="cd-tour-trigger" class="semi-transparent-button btn right">
-          <p>Help</p>
-        </button> -->
-      </div>
 
 <!-- Help Button step instructions: Listed by each step -->
       <ul class="cd-tour-wrapper">
@@ -314,6 +334,15 @@
 
     <!-- this is the left side of the build view -->
     <div id="build-left">
+
+      <div id="border">
+      <div class="navbar-form navbar-center" role="search">
+        <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
+        <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">Sort</button>
+        <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">Shuffle</button>
+      </div>
+
+
         <!-- this is the pool -->
       <div class="scrollingDragInner viewBackround">
         <div id="top" class="pool">
@@ -324,10 +353,12 @@
         </div>
       </div>
     </div>
+  </div>
 
     <!-- ****************************************************************************** -->
     <!-- this is the right side of the build view -->
     <div id="build-right">
+      <br><br>
       <div id="lc-wrapper-grid">
 
         <!-- this is the header -->
@@ -347,11 +378,10 @@
             <div id="lc-center" class="list lcb"></div>
           </div>
 
+
           <div class="progress" style="width:100%; background-color:#bbc2cc; margin-bottom:30px;">
             <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            <!-- <p>Progress: 0%</p> -->
           </div>
-
           <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
         </div>
 
