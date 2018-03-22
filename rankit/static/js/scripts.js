@@ -9,10 +9,3 @@ const containers = [
   left,
   right,
 ]
-dragula(containers, {
-  // copy: (el, source) => source === pool,
-  // accepts: (el, target) => target !== pool,
-  // removeOnSpill: true,
-  revertOnSpill: true,
-  accepts: () => true,
-})

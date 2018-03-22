@@ -4,8 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- <script type="text/javascript" src="{{ url_for('static', filename = 'js/pace.min.js') }}"></script>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/loadingScreen.css') }}" /> -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  <script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
+  <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}" />
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
@@ -172,7 +183,7 @@
     .legend-label {
       grid-area: legend;
       margin: 16px;
-      padding: 32px 8px;
+      padding: 50px 10px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -227,6 +238,44 @@
 
   </style>
 </head>
+<script>
+
+    $(document).ready(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+
+    function parseData(raw) {
+      return JSON.parse(raw.substring(1, raw.length - 1))
+    }
+
+    function findObject (objectTitle) {
+      const raw = '{{data|tojson}}'
+      const data = parseData(raw)
+      for (var i=0; i<data.length; i++) {
+        obj = data[i]
+        if (obj.Title === objectTitle) {
+          return obj
+        }
+      }
+    }
+
+    function displayAttributes(objectTitle) {
+      var object = findObject(objectTitle)
+      var text = ""
+      for (var propt in object) {
+        text = text + propt + ':' + object[propt] + '\n'
+      }
+      // htmlstring = text.replace(/(\r\n|\n|\r)/gm, "<br>");
+      document.getElementById(objectTitle).setAttribute("data-content", text)
+      console.log(objectTitle)
+    }
+
+    $('.popover-dismiss').popover({
+      trigger: 'focus'
+    })
+</script>
+
+
 <body>
   <nav class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
@@ -348,7 +397,10 @@
         <div id="top" class="pool">
           <!-- objects from dataset inserted here -->
           {% for x in dataset %}
-          <div id="{{x}}" class="object noSelect">{{x}}</div>
+          <div tabindex="0" id="{{x}}" class="object noSelect" data-toggle="popover" data-trigger="focus">{{x}}</div>
+          <script>
+            displayAttributes('{{x}}')
+          </script>
           {% endfor %}
         </div>
       </div>
@@ -375,12 +427,13 @@
         <!-- this is the lists -->
         <div id="lc-list">
           <div class="scrollingDragInner box">
-            <div id="lc-center" class="list lcb"></div>
+            <div id="lc-center" class="list lcb" style="height: 60vh"></div>
           </div>
-
-
-          <div class="progress" style="width:100%; background-color:#bbc2cc; margin-bottom:30px;">
-            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress">
+            <div id="bar" class="progress-bar progress-bar-striped active" role="progressbar"
+            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%; background-color:#bbc2cc; margin-bottom:30px;">
+              0%
+            </div>
           </div>
           <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
         </div>
@@ -388,16 +441,6 @@
       </div>
     </div>
   </div>
-
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
 
   <!-- this is script for the pool -->
   <script>
@@ -432,7 +475,8 @@
 
     function render(dataset) {
       const pool = document.querySelector('#top')
-      const html = dataset.map(x => `<div id="${x}" class="object noSelect">${x}</div>`).join('\n')
+      const html = dataset.map(x => `<div tabindex="0" id="${x}" class="object noSelect" data-toggle="popover" data-trigger="focus">${x}</div>`).join('\n')
+      displayAttributes('${x}')
       pool.innerHTML = html
     }
   </script>
@@ -517,9 +561,16 @@
         else {
           $('#lc-submit').removeAttr('disabled');
         }
+
+        barUpdate(list_length)
       });
     });
 
+    function barUpdate(list_length) {
+      document.getElementById("bar").setAttribute("aria-valuenow", list_length.toString())
+      document.getElementById("bar").setAttribute("style", "width:"+list_length+"%")
+      document.getElementById("bar").textContent = list_length+"%"+" Confidence"
+    }
     function lc_urlUpdate() {
       var list = Array.from(document.querySelectorAll('#lc-center .object')).map(x => nameToId(x.id))
       var url = window.location.pathname + "?method=" + "lc" + "&" + "objects="
@@ -600,15 +651,19 @@
     }
 
     function lc_populateBox() {
-      console.log(lc_objectsFromURL)
       // id="${x}" class="object noSelect"
       for (let i = 0; i < lc_objectsFromURL.length; i++) {
+        document.querySelector('#top').removeChild(document.getElementById(lc_objectsFromURL[i]))
         var node = document.createElement("DIV");
         var textnode = document.createTextNode(lc_objectsFromURL[i]);
         node.appendChild(textnode);
         node.setAttribute("id", lc_objectsFromURL[i]);
         node.setAttribute("class", "object noSelect");
+        node.setAttribute("tabindex", "0");
+        node.setAttribute("data-toggle", "popover");
+        node.setAttribute("data-trigger", "focus");
         document.querySelector('#lc-center').appendChild(node);
+        displayAttributes(lc_objectsFromURL[i])
       }
     }
 
@@ -647,5 +702,6 @@
     $('#cc').attr('href', 'cc')
     $('#pwc').attr('href', 'pwc')
   </script>
+
 </body>
 </html>

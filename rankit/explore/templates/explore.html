@@ -11,7 +11,6 @@
   <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/component.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap-iso.css') }}" />
@@ -420,6 +419,56 @@
 
 <script>
 
+    function highlightColor(percent){
+      color = d3.scale.linear().domain([0, 1]).interpolate(d3.interpolateHcl).range([d3.rgb("#dedede"), d3.rgb("#95eef8")])
+      return color(percent)
+    }
+    function highlightRows(){
+
+      const raw_highlighted = '{{list|tojson}}'
+      highlighted = JSON.parse(raw_highlighted)
+      trs = $('#data > tr')
+      for (j=0; j<highlighted.length; j++) {
+        for (i=0; i<trs.length; i++) {
+          if (trs[i].cells[1].textContent === highlighted[j]){
+            trs[i].style.backgroundColor = highlightColor(0.5) // INSERT REAL PERCENT CONFIDENCE HERE
+            trs[i].cells[0].style.backgroundColor = highlightColor(0.5) // INSERT REAL PERCENT CONFIDENCE HERE
+          }
+        }
+      }
+    }
+
+    highlightRows()
+
+</script>
+
+
+<script>
+
+// Enables tab switching
+// function tabSwitch(evt, tabName) {
+//   if ('{{weights}}' == 'None' && tabName == "Graph") {
+//      alert("Build your ranking first to view 'Attribute Weights'");
+//   } else {
+//   var i, tabcontent, tablinks;
+//   tabcontent = document.getElementsByClassName("tabcontent");
+//   for (i = 0; i < tabcontent.length; i++) {
+//     tabcontent[i].style.display = "none";
+//   }
+//   tablinks = document.getElementsByClassName("tablinks");
+//   for (i = 0; i < tablinks.length; i++) {
+//     tablinks[i].className = tablinks[i].className.replace(" active", "");
+//   }
+//   document.getElementById(tabName).style.display = "block";
+//   evt.currentTarget.className += " active";
+//   if (tabName == "Graph") {
+//     document.getElementById("search-criteria").disabled = true;
+//   }
+//   if (tabName == "TableData") {
+//     document.getElementById("search-criteria").disabled = false;
+//   }
+// }
+// }
 
 function findMin(weights) {
   var current_min = weights[0].weight
@@ -528,6 +577,10 @@ console.log(data[0]);
     scrollCollapse: true,
     pageLength: 25,
     searching: true,
+  })
+
+  $('#table').on('draw.dt', function(e) {
+    highlightRows()
   })
 
   renderData(data, keys)
