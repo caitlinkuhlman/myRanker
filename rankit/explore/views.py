@@ -23,10 +23,18 @@ def exploreJson(dataset_name, pairs):
     primaryKeyPairs = []
     parsed_pairs = re.findall("\d+=([\w\s'-:!\.,()]*[\>]{1}[\w\s'-:!\.,()]*)&", pairs)
 
+    # for pair in parsed_pairs:
+    #     high, low = pair.split('>')
+    #     primaryKeyPairs.append({'high': high, 'low' : low})
+    list = []
+
+
     for pair in parsed_pairs:
         high, low = pair.split('>')
+        if (high not in list): list.append(high)
+        if (low not in list): list.append(low)
         primaryKeyPairs.append({'high': high, 'low' : low})
 
     data, weights = getRanking(dataset_name, primaryKeyPairs)
 
-    return render_template('explore.html', weights=weights, data=data, dataset_name=dataset_name)
+    return render_template('explore.html', weights=weights, data=data, dataset_name=dataset_name, list=list)

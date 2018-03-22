@@ -4,7 +4,7 @@ import logging, sys
 
 app = Flask(__name__)
 logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
-app.config.from_object('config.ProductionConfig')
+app.config.from_object('config.DevelopmentConfig')
 
 
 from rankit.home.views import home_blueprint

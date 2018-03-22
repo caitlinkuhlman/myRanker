@@ -96,17 +96,21 @@
       margin: 0px 50px;
     }
 
+    .submit:hover {
+      color: #fff;
+    }
+
     .semi-transparent-button{
       background-color:  rgba(200, 200, 200, 0.6);
       border-radius: 2px;
       border-color: rgba(200, 200, 200, 0.6);
-      color: #fff;
+      color: black;
       text-align: center;
       text-decoration: none;
       transition: all 0.3s ease-out;
-      border: 1px solid rgba(200, 200, 200, 0.6);
+      /* border: 1px solid rgba(200, 200, 200, 0.6); */
       text-decoration-color: white;
-
+      border: 2px solid black;
     }
 
     .semi-transparent-button:hover {
@@ -115,11 +119,17 @@
       border-color: white;
     }
 
+    .searchborder{
+      color: black;
+      border: 2px black;
+    }
+
     #build-method {
       display: flex;
       width: 100%;
       margin: 18px 0 0 0;
       justify-content: space-around;
+      background-color: #f3f3f3ff
     }
 
     #build-method a:link, #build-method a:visited {
@@ -139,9 +149,9 @@
     text-transform: capitalize;
     display: block;
     color: white;
-    font-size: 40px;
+    font-size: 70px;
     display: inline-block;
-    padding: 0px 20px 0px;
+    padding: 20px 20px 0px;
     }
 
     h1.title:first-letter {
@@ -151,7 +161,7 @@
     .page-header h1 {
       padding: 0px 20px 0px;
       color: white;
-      font-size: 40px;
+      font-size: 80px;
       margin: 0;
       display: inline-block;
     }
@@ -181,6 +191,33 @@
       width: 6em;
       cursor: pointer;
     }
+
+    .navbar-form {
+    padding: 25px 16px 16px;
+    margin-left: 10%;
+  }
+
+    .navbar-form .form-control {
+        display: inline-block;
+        width: 60%;
+        vertical-align: middle;
+        border: 2px solid black;
+        color: black;
+    }
+
+    input::placeholder {
+      color: black;
+    }
+
+    .border{
+      background-color: #d9d9d9ff;
+    }
+
+    #wrappercc {
+      border: 2px solid black;
+      border-radius: 8px;
+    }
+
 
   </style>
 </head>
@@ -245,16 +282,12 @@
           <a id="cd-tour-trigger">Help</a>
         </li>
       </ul>
-
     </div>
-
   </nav>
 
 
-
+  <!-- this is the header -->
   <div id="build-container">
-
-    <!-- this is the header -->
     <div style="background-color:#439AD3" class="build-pool-header">
 
       <h1 style="position:relative; right:5px" class="title">
@@ -263,20 +296,6 @@
         </b>
         <br>
       </h1>
-      <div class="navbar-form navbar-center" role="search">
-
-        <!-- search -->
-        <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
-        <!-- sort -->
-        <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">
-          Sort
-        </button>
-        <!-- shuffle -->
-        <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">
-          Shuffle
-        </button>
-      </div>
-
 
       <ul class="cd-tour-wrapper">
         <li class="cd-single-step">
@@ -340,14 +359,21 @@
             <img src="{{ url_for('static',filename='images/Step5Build.png') }}">
           </div>
         </li>
-
       </ul>
       <div class="cd-cover-layer"></div>
-
     </div>
 
     <!-- this is the left side of the build view -->
     <div id="build-left">
+
+
+      <div id="border">
+      <div class="navbar-form navbar-center" role="search">
+        <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
+        <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">Sort</button>
+        <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">Shuffle</button>
+      </div>
+
         <!-- this is the pool -->
       <div class="scrollingDragInner viewBackround">
         <div id="top" class="pool">
@@ -361,10 +387,13 @@
         </div>
       </div>
     </div>
+  </div>
 
     <!-- ****************************************************************************** -->
     <!-- this is the right side of the build view -->
     <div id="build-right">
+      <br><br>
+      <div id="wrappercc">
       <!-- this is the header -->
       <ul id="build-method">
         <li><a style="color: #439AD3;" id="lc">List</a></li>
@@ -395,6 +424,7 @@
       </div>
     </div>
   </div>
+</div>
 
   <!-- this is script for the pool -->
   <script>
