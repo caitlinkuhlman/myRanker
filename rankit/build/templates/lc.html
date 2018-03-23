@@ -104,19 +104,15 @@
       transition: all 0.3s ease-out;
       /* border: 1px solid rgba(200, 200, 200, 0.6); */
       text-decoration-color: white;
-      border: 2px solid black;
+      /* border: 2px solid black; */
     }
 
     .semi-transparent-button:hover {
-      color: black;
+      color: #fff;
       border: 1px solid;
-      border-color: black;
+      border-color: white;
     }
 
-    .searchborder{
-      color: black;
-      border: 2px black;
-    }
 
     #build-method {
       grid-area: header;
@@ -216,8 +212,6 @@
         display: inline-block;
         width: 60%;
         vertical-align: middle;
-        border: 2px solid black;
-        color: black;
     }
 
     input::placeholder {
@@ -226,6 +220,19 @@
 
     .border{
       background-color: #d9d9d9ff;
+    }
+
+    .graphArea {
+        width: 50%;
+        float: right;
+        grid-area: build-top;
+        /* background-color:#2980B9; */
+        min-height: 115px;
+    }
+
+    .graphArea svg {
+        display:block;
+        margin:0 auto;
     }
 
   </style>
@@ -299,7 +306,7 @@
 
   <div id="build-container">
     <div style="background-color:#439AD3" class="build-pool-header">
-
+      <div style="float: left; width: 60%;">
       <!-- Dataset name header -->
       <h1 style="position:relative; right:5px" class="title">
         <b>
@@ -307,6 +314,10 @@
         </b>
         <br>
       </h1>
+    </div>
+      <div class = "graphArea" style="float: left; width: 40%;">
+      <div id="chart" style="display: block; float: right; height: 25%; width: 75%"></div>
+    </div>
 
 
 <!-- Help Button step instructions: Listed by each step -->
@@ -428,6 +439,8 @@
             </div>
           </div>
           <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
+
+<br><br><br>
         </div>
 
       </div>
@@ -668,23 +681,33 @@
 
 
     // weightsData has the following format
-     // [
-     //  {
-     //    attribute: <attribute_name1>,
-     //    weight: <weight1>
-     //  },
-     //  {
-     //    attribute: <attribute_name2>,
-     //    weight: <weight2>
-     //  }
-     //  ...
-     // ]
-
-
-
+    //  [
+    //   {
+    //     attribute: <attribute_name1>,
+    //     weight: <weight1>
+    //   },
+    //   {
+    //     attribute: <attribute_name2>,
+    //     weight: <weight2>
+    //   }
+    //   ...
+    //  ]
+    //
+    //  const weightsRaw = [
+    //   {
+    //     attribute: "test",
+    //     weight: 0.2
+    //   },
+    //   {
+    //     attribute: "test2arewr",
+    //     weight: 0.9
+    //   }
+    //  ]
+    //
+    //
     // inputData = sumToOne(parseData(weightsRaw))
     // var colorScheme = d3.scale.category20();
-
+    //
     // renderBarChart(inputData,"#chart", colorScheme);
 
     function renderBarChart(inputData,dom_element_to_append_to, colorScheme){
@@ -781,7 +804,6 @@
 
         window.addEventListener('resize', Chart.render);
     }
-
 
 
 
