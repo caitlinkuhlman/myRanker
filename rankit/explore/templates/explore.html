@@ -571,7 +571,7 @@ function renderTable(data) {
   var tempData = data[0];
   data[0].Score = 5; // This is necessary to show the column *shrug*
   var keys = renderHead(data[0]);
-console.log(data[0]);
+// console.log(data[0]);
   var table =  $('#table').DataTable({
     scrollY: '100vh',
     scrollCollapse: true,
@@ -623,7 +623,7 @@ function renderData(data, keys) {
 
   const html = data.map(x => {
     const dataScore = x.Score;
-    console.log(maxScore)
+    // console.log(maxScore)
     x.Score = `
     <div class="bar-chart-bar">
       <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;"></div>
@@ -631,7 +631,7 @@ function renderData(data, keys) {
     `
     var props = keys
     .map(k => x[k])
-    console.log(props)
+    // console.log(props)
     t.fnAddData(props, false);
     // t.fnAddData(props, false);
     // console.log(props);
@@ -722,6 +722,7 @@ font-size:16px;
 
 const weightsRaw = '{{weights|tojson}}'
 
+console.log(weightsRaw);
 // weightsData has the following format
  // [
  //  {
