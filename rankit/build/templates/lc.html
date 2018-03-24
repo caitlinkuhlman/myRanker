@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  <script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
+  <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}" />
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
@@ -287,7 +293,7 @@
       var object = findObject(objectTitle)
       var text = ""
       for (var propt in object) {
-        text = text + propt + ':' + object[propt] + '\n'
+        text = text + propt + ':' + object[propt]
       }
       // htmlstring = text.replace(/(\r\n|\n|\r)/gm, "<br>");
       document.getElementById(objectTitle).setAttribute("data-content", text)
@@ -471,10 +477,6 @@
     </div>
   </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-  <script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
-  <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}"></script>
@@ -516,7 +518,6 @@
     function render(dataset) {
       const pool = document.querySelector('#top')
       const html = dataset.map(x => `<div tabindex="0" id="${x}" class="object noSelect" data-toggle="popover" data-trigger="focus">${x}</div>`).join('\n')
-      displayAttributes('${x}')
       pool.innerHTML = html
     }
   </script>
