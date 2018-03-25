@@ -568,9 +568,8 @@ function sumToOne(data) {
 
 function renderTable(data) {
   var tempData = data[0];
-  data[0].Score = 5; // This is necessary to show the column *shrug*
   var keys = renderHead(data[0]);
-  // console.log(data[0]);
+
   var table =  $('#table').DataTable({
     scrollY: '100vh',
     scrollCollapse: true,
@@ -588,9 +587,14 @@ function renderTable(data) {
 function renderHead(datum) {
   const title = 'Title'
   const rank = 'Rank'
+  const score = 'Score'
   var w = 'Weights = '
   var data = Object.keys(datum)
 
+  if (data.indexOf(score) > 0) {
+    data.splice(data.indexOf(score), 1);
+    data.unshift(score);
+  }
   if (data.indexOf(title) > 0) {
     data.splice(data.indexOf(title), 1);
     data.unshift(title);
@@ -599,6 +603,7 @@ function renderHead(datum) {
     data.splice(data.indexOf(rank), 1);
     data.unshift(rank);
   }
+  
   const thead = data
   .map(k => `<th>${k}</th>`)
   .join('\n')
@@ -613,17 +618,18 @@ function renderHead(datum) {
 function renderData(data, keys) {
   var t = $('#table').dataTable();
 
+
   let maxScore = -1; // Is this true?? can a score be negative
   data.forEach(function(row) {
-    row.Score = row.Rank; //input value of computation here CHANGE THIS --- TODO
-    if (row.Rank > maxScore) {
-      maxScore = row.Rank;
+    if (row.Score > maxScore) {
+      maxScore = row.Score;
     }
+    
   });
+  
 
   const html = data.map(x => {
     const dataScore = x.Score;
-    // console.log(maxScore)
     x.Score = `
     <div class="bar-chart-bar">
     <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;"></div>
@@ -631,7 +637,6 @@ function renderData(data, keys) {
     `
     var props = keys
     .map(k => x[k])
-    // console.log(props)
     t.fnAddData(props, false);
     // t.fnAddData(props, false);
     // console.log(props);
