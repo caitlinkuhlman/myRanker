@@ -429,6 +429,12 @@
     </div>
   </div>
 
+  <!-- this are the global variables -->
+  <script>
+    var confidence = 0
+    var weights = 0
+  </script>
+    
   <!-- this is script for the pool -->
   <script>
 
@@ -547,9 +553,10 @@
         }
         else {
           $('#submit').removeAttr('disabled');
+          handleBuildSubmit()
         }
 
-        barUpdate(Math.ceil((high_length+low_length)/2))
+        barUpdate(confidence)
       });
     });
 
@@ -656,11 +663,13 @@
       var numOfElemInHighBox = 0;
       var index_high = 0;
       populateBox(".high", highFromURL, index_high, numOfElemInHighBox)
+      barUpdate(confidence)
     }
     if (lowFromURL !== undefined) {
       var numOfElemInLowBox = 0;
       var index_low = 0;
       populateBox(".low", lowFromURL, index_low, numOfElemInLowBox)
+      barUpdate(confidence)
     }
 
     function populateBox(box, objectsFromURL, index, numOfElem) {
@@ -698,6 +707,27 @@
       }
       window.location = pairwiseURL
     }
+
+    function handleBuildSubmit() {
+      const pwl = generatePairwise()
+      var pairs = ""
+      for (let i = 0; i < pwl.length; i++) {
+        pairs = pairs + i + "=" + pwl[i].high + ">" + pwl[i].low + "&"
+      }
+      if (pairs !== ""){
+        const url = "confidence/"+pairs
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', url, true)
+        xhr.setRequestHeader('Content-type', 'application/json')
+      
+        xhr.send()
+        xhr.onload = function () {
+          weights = JSON.parse(JSON.parse(this.response).weights)
+          confidence = JSON.parse(this.response).confidence
+        }
+      }
+    }
+
     function generatePairwise() {
       const highs = Array.from(document.querySelectorAll('.high .object')).map(x => x.id)
       const lows = Array.from(document.querySelectorAll('.low .object')).map(x => x.id)
