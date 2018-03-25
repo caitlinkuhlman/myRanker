@@ -52,9 +52,6 @@
   {#      right: 0;#}
   {#    }#}
 
-  tr {
-    background-color: #2980B9;
-  }
 
   #head {
     color: white;
@@ -267,19 +264,49 @@
   .toolbar {
     float: left;
     font-size: 20px;
-}
-.graphArea {
+  }
+  .graphArea {
     width: 50%;
     float: right;
     grid-area: build-top;
     /* background-color:#2980B9; */
     min-height: 115px;
-}
+  }
 
-.graphArea svg {
+  .graphArea svg {
     display:block;
     margin:0 auto;
-}
+  }
+
+  tr#head th:nth-child(1) {background-color: #2980B9;}
+  tr#head th:nth-child(2) {background-color: #2980B9;}
+  tr#head th:nth-child(3){background-color: #1f77b4;}
+  tr#head th:nth-child(4){background-color: #aec7e8;}
+  tr#head th:nth-child(5){background-color: #ff7f0e;}
+  tr#head th:nth-child(6){background-color: #ffbb78;}
+  tr#head th:nth-child(7){background-color: #2ca02c;}
+  tr#head th:nth-child(8){background-color: #98df8a;}
+  tr#head th:nth-child(9){background-color: #d62728;}
+  tr#head th:nth-child(10){background-color: #ff9896;}
+  tr#head th:nth-child(11){background-color: #9467bd;}
+  tr#head th:nth-child(12){background-color: #c5b0d5;}
+  tr#head th:nth-child(13){background-color: #8c564b;}
+  tr#head th:nth-child(14){background-color: #c49c94;}
+  tr#head th:nth-child(15){background-color: #e377c2;}
+  tr#head th:nth-child(16){background-color: #f7b6d2;}
+  tr#head th:nth-child(17){background-color: #7f7f7f;}
+  tr#head th:nth-child(18){background-color: #c7c7c7;}
+  tr#head th:nth-child(19){background-color: #bcbd22;}
+  tr#head th:nth-child(20){background-color: #dbdb8d;}
+  tr#head th:nth-child(21){background-color: #17becf;}
+  tr#head th:nth-child(22){background-color: #9edae5;}
+  tr#head th:nth-child(23){background-color: #1f77b4;}
+  tr#head th:nth-child(24){background-color: #aec7e8;}
+  tr#head th:nth-child(25){background-color: #ff7f0e;}
+
+  tr#head th:nth-last-child(1) {background-color: #2980B9;}
+  tr#head th:nth-last-child(2) {background-color: #2980B9;}
+
 
   </style>
 </head>
@@ -325,26 +352,26 @@
         <li>
           <a id="cd-tour-trigger" class="pointer">Help</a>
         </li>
-    </ul>
-  </div>
+      </ul>
+    </div>
 
-</nav>
+  </nav>
 
 
-<div style="background-color:#439AD3" class="build-pool-header">
-  <div style="float: left; width: 60%;">
-  <h1 style="position:relative; right:5px" class="title">
-    <b>
-      Explore: {{ dataset_name |replace("_", " ") }}
-    </b>
-  </h1>
-  <div class="navbar-form searchBar" role="search">
-    <input type="search" id="search-criteria" class="form-control" placeholder="Search by Title..." aria-controls="table" onkeyup="searchTable(event)">
-  </div>
-  </div>
-  <div class = "graphArea" style="float: left; width: 40%;">
-  <div id="chart" style="display: block; float: right; height: 25%; width: 75%"></div>
-</div>
+  <div style="background-color:#439AD3" class="build-pool-header">
+    <div style="float: left; width: 60%;">
+      <h1 style="position:relative; right:5px" class="title">
+        <b>
+          Explore: {{ dataset_name |replace("_", " ") }}
+        </b>
+      </h1>
+      <div class="navbar-form searchBar" role="search">
+        <input type="search" id="search-criteria" class="form-control" placeholder="Search by Title..." aria-controls="table" onkeyup="searchTable(event)">
+      </div>
+    </div>
+    <div class = "graphArea" style="float: left; width: 40%;">
+      <div id="chart" style="display: block; float: right; height: 25%; width: 75%"></div>
+    </div>
 
   </div>
 
@@ -384,8 +411,8 @@
   <div class="cd-cover-layer"></div>
 
   <!-- <div class="navbar-form searchBar" role="search">
-    <input type="search" id="search-criteria" class="form-control" placeholder="Search by Title..." aria-controls="table" onkeyup="searchTable(event)">
-  </div> -->
+  <input type="search" id="search-criteria" class="form-control" placeholder="Search by Title..." aria-controls="table" onkeyup="searchTable(event)">
+</div> -->
 
 
 <div id="TableData" style="display:block">
@@ -400,9 +427,9 @@
 </div>
 
 <!-- <div id="Graph" class="tabcontent" style="display:none">
-  <h1 class = "attributeTitle">Impact of Attributes on Dataset Ranking</h1>
-  <div id="graphDiv"></div>
-  <div id="chart"></div>
+<h1 class = "attributeTitle">Impact of Attributes on Dataset Ranking</h1>
+<div id="graphDiv"></div>
+<div id="chart"></div>
 </div> -->
 
 
@@ -413,62 +440,34 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
-<!-- <script type="text/javascript" src="{{ url_for('static', filename = 'js/dataTables.bootstrap.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.dataTables.min.js') }}"></script> -->
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
 <script>
 
-    function highlightColor(percent){
-      color = d3.scale.linear().domain([0, 1]).interpolate(d3.interpolateHcl).range([d3.rgb("#dedede"), d3.rgb("#95eef8")])
-      return color(percent)
-    }
-    function highlightRows(){
+function highlightColor(percent){
+  color = d3.scale.linear().domain([0, 1]).interpolate(d3.interpolateHcl).range([d3.rgb("#dedede"), d3.rgb("#95eef8")])
+  return color(percent)
+}
+function highlightRows(){
 
-      const raw_highlighted = '{{list|tojson}}'
-      highlighted = JSON.parse(raw_highlighted)
-      trs = $('#data > tr')
-      for (j=0; j<highlighted.length; j++) {
-        for (i=0; i<trs.length; i++) {
-          if (trs[i].cells[1].textContent === highlighted[j]){
-            trs[i].style.backgroundColor = highlightColor(0.5) // INSERT REAL PERCENT CONFIDENCE HERE
-            trs[i].cells[0].style.backgroundColor = highlightColor(0.5) // INSERT REAL PERCENT CONFIDENCE HERE
-          }
-        }
+  const raw_highlighted = '{{list|tojson}}'
+  highlighted = JSON.parse(raw_highlighted)
+  trs = $('#data > tr')
+  for (j=0; j<highlighted.length; j++) {
+    for (i=0; i<trs.length; i++) {
+      if (trs[i].cells[1].textContent === highlighted[j]){
+        trs[i].style.backgroundColor = highlightColor(0.5) // INSERT REAL PERCENT CONFIDENCE HERE
+        trs[i].cells[0].style.backgroundColor = highlightColor(0.5) // INSERT REAL PERCENT CONFIDENCE HERE
       }
     }
+  }
+}
 
-    highlightRows()
+highlightRows()
 
 </script>
 
-
 <script>
-
-// Enables tab switching
-// function tabSwitch(evt, tabName) {
-//   if ('{{weights}}' == 'None' && tabName == "Graph") {
-//      alert("Build your ranking first to view 'Attribute Weights'");
-//   } else {
-//   var i, tabcontent, tablinks;
-//   tabcontent = document.getElementsByClassName("tabcontent");
-//   for (i = 0; i < tabcontent.length; i++) {
-//     tabcontent[i].style.display = "none";
-//   }
-//   tablinks = document.getElementsByClassName("tablinks");
-//   for (i = 0; i < tablinks.length; i++) {
-//     tablinks[i].className = tablinks[i].className.replace(" active", "");
-//   }
-//   document.getElementById(tabName).style.display = "block";
-//   evt.currentTarget.className += " active";
-//   if (tabName == "Graph") {
-//     document.getElementById("search-criteria").disabled = true;
-//   }
-//   if (tabName == "TableData") {
-//     document.getElementById("search-criteria").disabled = false;
-//   }
-// }
-// }
 
 function findMin(weights) {
   var current_min = weights[0].weight
@@ -512,14 +511,14 @@ function normalizeWeights(data) {
 }
 
 function roundTo(n, digits) {
-     if (digits === undefined) {
-       digits = 0;
-     }
+  if (digits === undefined) {
+    digits = 0;
+  }
 
-     var multiplicator = Math.pow(10, digits);
-     n = parseFloat((n * multiplicator).toFixed(11));
-     var test =(Math.round(n) / multiplicator);
-     return +(test.toFixed(digits));
+  var multiplicator = Math.pow(10, digits);
+  n = parseFloat((n * multiplicator).toFixed(11));
+  var test =(Math.round(n) / multiplicator);
+  return +(test.toFixed(digits));
 }
 
 function sumToOne(data) {
@@ -569,7 +568,6 @@ function sumToOne(data) {
 
 function renderTable(data) {
   var tempData = data[0];
-  //data[0].Score = 5; // This is necessary to show the column *shrug*
   var keys = renderHead(data[0]);
 
   var table =  $('#table').DataTable({
@@ -616,6 +614,7 @@ function renderHead(datum) {
 }
 
 
+
 function renderData(data, keys) {
   var t = $('#table').dataTable();
 
@@ -631,10 +630,9 @@ function renderData(data, keys) {
 
   const html = data.map(x => {
     const dataScore = x.Score;
-
     x.Score = `
     <div class="bar-chart-bar">
-      <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;"></div>
+    <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;"></div>
     </div>
     `
     var props = keys
@@ -643,7 +641,7 @@ function renderData(data, keys) {
     // t.fnAddData(props, false);
     // console.log(props);
     // console.log(keys);
-// html row
+    // html row
 
     // "render": function(data, type, row, meta){
     //     return $("<div></div>", {
@@ -678,7 +676,6 @@ function parseData(raw) {
   return JSON.parse(raw.substring(1, raw.length - 1))
 }
 
-
 const raw = '{{data|tojson}}'
 const data = parseData(raw)
 
@@ -696,33 +693,32 @@ path {
 
 .axis path,
 .axis line {
-	fill: none;
-	stroke: white;
-	stroke-width: 1;
-	shape-rendering: crispEdges;
+  fill: none;
+  stroke: white;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
 }
 
 .tooltip {
-	background: #eee;
-	box-shadow: 0 0 5px #999999;
-	color: #333;
-	font-size: 12px;
-	left: 130px;
-	padding: 10px;
-	position: absolute;
-	text-align: center;
-	top: 95px;
-	z-index: 10;
-	display: block;
-	opacity: 0;
+  background: #eee;
+  box-shadow: 0 0 5px #999999;
+  color: #333;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 95px;
+  z-index: 10;
+  display: block;
+  opacity: 0;
 }
 
 .title{
-font-size:16px;
+  font-size:16px;
 }
 
 </style>
-
 
 
 <script>
@@ -730,17 +726,17 @@ font-size:16px;
 const weightsRaw = '{{weights|tojson}}'
 
 // weightsData has the following format
- // [
- //  {
- //    attribute: <attribute_name1>,
- //    weight: <weight1>
- //  },
- //  {
- //    attribute: <attribute_name2>,
- //    weight: <weight2>
- //  }
- //  ...
- // ]
+// [
+//  {
+//    attribute: <attribute_name1>,
+//    weight: <weight1>
+//  },
+//  {
+//    attribute: <attribute_name2>,
+//    weight: <weight2>
+//  }
+//  ...
+// ]
 
 // The function to use for changing weights of attributes to sum up to 1
 
@@ -759,150 +755,129 @@ var colorScheme = d3.scale.category20();
 renderBarChart(inputData,"#chart", colorScheme);
 
 function renderBarChart(inputData,dom_element_to_append_to, colorScheme){
-    // var margin = {top: 0, right: 40, bottom: 250, left: 150},
-    // width = 650 - margin.left - margin.right,
-    // height = 300 - margin.top - margin.bottom;
-    var width = 360;
-    var height = 200;
-    // var width1 = d3.select("#chart").style("width").split("px").shift();
-    // var height1 = d3.select("#chart").style("height").split("px").shift();
+  // var margin = {top: 0, right: 40, bottom: 250, left: 150},
+  // width = 650 - margin.left - margin.right,
+  // height = 300 - margin.top - margin.bottom;
+  var width = 360;
+  var height = 200;
+  // var width1 = d3.select("#chart").style("width").split("px").shift();
+  // var height1 = d3.select("#chart").style("height").split("px").shift();
 
-    var formatPercent = d3.format(".0%");
+  var formatPercent = d3.format(".0%");
 
-    var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
+  var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
 
-    var y = d3.scale.linear().range([height, 0]);
+  var y = d3.scale.linear().range([height, 0]);
 
-    var color = d3.scale.ordinal()
-    .range(colorScheme.range());
-
-
-    var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom")
-
-    var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left")
-    .ticks(10);
-
-    var svg = d3.select(dom_element_to_append_to).append("svg")
-    // .attr("height", height1 + margin.top + margin.bottom)
-    // .attr("width", width1 + margin.left + margin.right)
-    .attr("height", height)
-    .attr("width", width)
+  var color = d3.scale.ordinal()
+  .range(colorScheme.range());
 
 
-    // .attr("title").text("Impact of Attributes on Dataset Ranking")
-    // .text("Impact of Attributes on Dataset Ranking");
+  var xAxis = d3.svg.axis()
+  .scale(x)
+  .orient("bottom")
 
-    .append("g")
-    .attr("transform","translate(" + 0 + "," + -75 + ")");
-    // .attr("transform","translate(" + margin.left + "," + margin.top + ")");
+  var yAxis = d3.svg.axis()
+  .scale(y)
+  .orient("left")
+  .ticks(10);
 
-    inputData.forEach(function(d) {
-        d.attribute = d.attribute;
-        d.weight = +d.weight;
-    });
-
-    x.domain(inputData.map(function(d) { return d.attribute; }));
-    y.domain([0, d3.max(inputData, function(d) { return +d.weight; })]);
-
-    svg.append("g")
-    .attr("class", "y axis")
-
-    svg.append("g")
-    .attr("class", "x axis")
-    .call(xAxis)
-    .attr("transform",
-        "translate(" + 0 + "," + height + ")")
-
-    svg.selectAll("bar")
-    .data(inputData)
-    .enter().append("rect")
-    .attr("class", "bar")
-    .attr("x", function(d) { return x(d.attribute); })
-    .attr("width", x.rangeBand())
-    .attr("y", function(d) { return y(d.weight); })
-    .attr("height", function(d) { return height - y(d.weight); })
-    .attr('fill', function(d, i) {
-        return color(d.attribute);
-    });
-
-    svg.append("text")
-        .attr("text-anchor", "middle")
-        .style("font-size", "12px")
-        .text("Impact of Attributes on Dataset Ranking");
+  var svg = d3.select(dom_element_to_append_to).append("svg")
+  // .attr("height", height1 + margin.top + margin.bottom)
+  // .attr("width", width1 + margin.left + margin.right)
+  .attr("height", height)
+  .attr("width", width)
 
 
-    var tooltip = d3.select(dom_element_to_append_to)
-    .append('div')
-    .attr('class', 'tooltip');
+  // .attr("title").text("Impact of Attributes on Dataset Ranking")
+  // .text("Impact of Attributes on Dataset Ranking");
 
-    tooltip.append('div')
-    .attr('class', 'attribute');
-    tooltip.append('div')
-    .attr('class', 'weight');
+  .append("g")
+  .attr("transform","translate(" + 0 + "," + -75 + ")");
+  // .attr("transform","translate(" + margin.left + "," + margin.top + ")");
 
-    svg.selectAll(".bar")
-    .on('mouseover', function(d) {
-        tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
-        tooltip.select('.weight').html("<b> Weight: " + d.weight + "</b>");
+  inputData.forEach(function(d) {
+    d.attribute = d.attribute;
+    d.weight = +d.weight;
+  });
 
-        tooltip.style('display', 'block');
-        tooltip.style('opacity',2);
-    })
-    .on('mousemove', function(d) {
+  x.domain(inputData.map(function(d) { return d.attribute; }));
+  y.domain([0, d3.max(inputData, function(d) { return +d.weight; })]);
 
-        tooltip.style('top', (d3.event.layerY + 10) + 'px')
-        .style('left', (d3.event.layerX - 25) + 'px');
-    })
-    .on('mouseout', function(d) {
-        tooltip.style('display', 'none');
-        tooltip.style('opacity',0);
-    });
+  svg.append("g")
+  .attr("class", "y axis")
 
-    window.addEventListener('resize', Chart.render);
+  svg.append("g")
+  .attr("class", "x axis")
+  .call(xAxis)
+  .attr("transform",
+  "translate(" + 0 + "," + height + ")")
+
+  svg.selectAll("bar")
+  .data(inputData)
+  .enter().append("rect")
+  .attr("class", "bar")
+  .attr("x", function(d) { return x(d.attribute); })
+  .attr("width", x.rangeBand())
+  .attr("y", function(d) { return y(d.weight); })
+  .attr("height", function(d) { return height - y(d.weight); })
+  .attr('fill', function(d, i) {
+    return color(d.attribute);
+  });
+
+  svg.append("text")
+  .attr("text-anchor", "middle")
+  .style("font-size", "12px")
+  .text("Impact of Attributes on Dataset Ranking");
+
+
+  var tooltip = d3.select(dom_element_to_append_to)
+  .append('div')
+  .attr('class', 'tooltip');
+
+  tooltip.append('div')
+  .attr('class', 'attribute');
+  tooltip.append('div')
+  .attr('class', 'weight');
+
+  svg.selectAll(".bar")
+  .on('mouseover', function(d) {
+    tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
+    tooltip.select('.weight').html("<b> Weight: " + d.weight + "</b>");
+
+    tooltip.style('display', 'block');
+    tooltip.style('opacity',2);
+  })
+  .on('mousemove', function(d) {
+
+    tooltip.style('top', (d3.event.layerY + 10) + 'px')
+    .style('left', (d3.event.layerX - 25) + 'px');
+  })
+  .on('mouseout', function(d) {
+    tooltip.style('display', 'none');
+    tooltip.style('opacity',0);
+  });
+
+  window.addEventListener('resize', Chart.render);
 }
 
 </script>
 
 <style>
-  .inTableBar {
-    background-color: green;
-    float: left;
-    height: 100%;
-  }
-  .bar-chart-bar {
-    background-color: #e8e8e8;
-    display: block;
-    position:relative;
-    width: 100%;
-    height: 20px;
-  }
+.inTableBar {
+  background-color: green;
+  float: left;
+  height: 100%;
+}
+.bar-chart-bar {
+  background-color: #e8e8e8;
+  display: block;
+  position:relative;
+  width: 100%;
+  height: 20px;
+}
 
 </style>
-
-<!-- <script>
-    trs = $('#data > tr')
-
-    for (i=0; i<trs.length; i++) {
-      var newDiv = document.createElement('div');
-      newDiv.className = "bar-chart-bar"
-      var bars = [];
-      bars.push($("<div></div>",{
-            "class": "bar " + "bar1"
-            }).css({
-              "width": 10 +"%"
-              }))
-      bars[0].prop("outerHTML")
-      console.log(bars[0])
-      newDiv.append(bars[0])
-      trs[i].cells[6].appendChild(newDiv)
-    }
-
-
-</script> -->
 
 
 </html>
