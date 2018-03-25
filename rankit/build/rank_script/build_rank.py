@@ -75,9 +75,10 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank') :
 
     res['Prediction'] = y_pred
     res = res.rank(ascending=False)
+    confidence = 20
 
     dataset[rank] = res['Prediction']
-    return dataset, weights_json
+    return dataset, weights_json, confidence
 
 
 
