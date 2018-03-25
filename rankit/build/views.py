@@ -2,7 +2,8 @@ from flask import Blueprint, render_template
 from rankit.build.utils import filterByPrimaryKey
 from  rankit.datasets.utils import getDataset
 from rankit.build.utils import getRanking
-import json
+from flask import request
+import json, re
 
 
 build_blueprint = Blueprint(
@@ -51,13 +52,8 @@ def pwc(dataset_name):
     return render_template('pwc.html', dataset_name = dataset_name, dataset=datastore_ids, data=data, ranked_data=None, weights=None, confidence=0)
 
 # Run script in build
-@build_blueprint.route('/build/<dataset_name>/<method>/<pairs>')
-def getConfidence(dataset_name, method, pairs):
-
-    # retrieve dataset
-    datastore_ids = filterByPrimaryKey(getDataset(dataset_name))
-    data = json.dumps(getDataset(dataset_name))
-
+@build_blueprint.route('/build/<dataset_name>/confidence/<pairs>')
+def getConfidence(dataset_name, pairs):
     primaryKeyPairs = []
     parsed_pairs = re.findall("\d+=([\w\s'-:!\.,()]*[\>]{1}[\w\s'-:!\.,()]*)&", pairs)
     
@@ -66,6 +62,9 @@ def getConfidence(dataset_name, method, pairs):
         primaryKeyPairs.append({'high': high, 'low' : low})
 
     ranked_data, weights, confidence = getRanking(dataset_name, primaryKeyPairs)
+    rank_update = {}
+    rank_update['confidence'] = confidence
+    rank_update['weights'] = weights
 
-    return render_template(method+'.html', dataset_name = dataset_name, dataset=datastore_ids, data=data, ranked_data=ranked_data, weights=weights, confidence=confidence)
+    return json.dumps({'weights':weights, 'confidence':confidence})
 
