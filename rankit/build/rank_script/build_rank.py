@@ -14,6 +14,23 @@ def normalize(df):
 def scale(df):
     return(100 * (df - df.min()) / (df.max() - df.min()))
 
+# p_test -> pairs labeled 1 from training data
+# y_test -> labels
+# clf -> classifier trained on pairs
+# size = number of points in dataset (not pairs)
+# this function computes a version of the kendall tau to measure the quality of the learned ranking.
+# it assumes any unlabeled pairs are predicted discordant
+def get_tau(p_test,p_y,clf,size):
+    
+    p_pred = clf.predict(p_test)
+#     get number of concordant training pairs
+    conc = np.count_nonzero(p_y==p_pred)
+    m = len(p_test)
+#     assume half of unlabeled pairs are discordant, compute kendall tau
+    tau =((2*conc)-m)/size
+#     score for the expected value of a random ordering
+#     scale tau to between 0 and 100
+    return 100*tau
 
 def clean_dataset(dataset, primary_key):
     #   temp make primary key index so it doesn't get converted
@@ -67,6 +84,10 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
 #     scale outputs for display
     y_pred=scale(y_pred)
     weights = scale(abs(weights))
+    p = int(len(X)/2)
+    p_test =X[0:p]
+    p_y = y[0:p]
+    tau = get_tau(p_test, p_y, clf, len(data))
 
 #     format output
     weights_list = []
@@ -83,8 +104,7 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
     res['Prediction'] = y_pred
     res = res.rank(ascending=False)
     # Placeholder for overall confidence score
-    confidence = 20
-
+    
     dataset[rank] = res['Prediction']
-    return dataset, weights_json, confidence
+    return dataset, weights_json, tau
 
