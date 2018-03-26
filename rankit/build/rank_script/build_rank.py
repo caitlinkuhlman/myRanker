@@ -87,6 +87,7 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
     p = int(len(X)/2)
     p_test =X[0:p]
     p_y = y[0:p]
+#     overall confidence score for model
     tau = get_tau(p_test, p_y, clf, len(data))
 
 #     format output
@@ -99,11 +100,12 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
         weights_list.append(d)
 
     weights_json = json.dumps(weights_list)
-    res = pd.DataFrame()
-
-    res['Prediction'] = y_pred
-    res = res.rank(ascending=False)
-    # Placeholder for overall confidence score
+#     predicted score for each item
+    dataset[score] = y_pred
+#     ordinal ranking for each item
+    dataset[rank] = dataset[score].rank(ascending=False)
+#     confidence in prediction for each item
+    dataset[confd] = conf
     
     dataset[rank] = res['Prediction']
     return dataset, weights_json, tau
