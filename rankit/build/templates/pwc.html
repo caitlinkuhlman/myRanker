@@ -241,6 +241,20 @@
     .progresspwc{
       margin-left: 20px;
     }
+    .progress-bar {
+      font-weight: bold;
+      background-color: #fdb462;
+    }
+    .progress {
+      background-color: #D3D3D3;
+    }
+    .progress-value {
+      position: relative;
+      float: left;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
   </style>
 </head>
@@ -458,8 +472,8 @@
       <br>
       <div class="progress progresspwc" style="width:87%">
         <div id="bar" class="progress-bar progress-bar-striped active" role="progressbar"
-        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-          0%
+        aria-valuenow="1" aria-valuemin="1" aria-valuemax="101" style="width:1%; margin-bottom:30px;">
+        <span>0% Confidence</span>
         </div>
       </div>
       <button type="button" id="submit" class="btn submit" disabled="disabled">RANK!</button>
