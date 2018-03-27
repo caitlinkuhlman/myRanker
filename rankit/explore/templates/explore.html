@@ -726,7 +726,7 @@ path {
 <script>
 
 const weightsRaw = '{{weights|tojson}}'
-
+console.log(weightsRaw);
 // weightsData has the following format
 // [
 //  {
@@ -774,7 +774,7 @@ function renderBarChart(inputData,dom_element_to_append_to, colorScheme){
   var y = d3.scale.linear().range([height, 0]);
 
   var color = d3.scale.ordinal()
-  .range(colorScheme.range());
+  .range(colorScheme);
 
 
   var xAxis = d3.svg.axis()
