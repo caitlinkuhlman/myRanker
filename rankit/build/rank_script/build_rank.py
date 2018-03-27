@@ -70,12 +70,15 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
 
 #     format output
     weights_list = []
-    for i,w in enumerate(weights):
+
+
+    for i,w in enumerate(weights) :
         #if w != 0.:
-        d={}
-        d['attribute']=dataset_copy.columns.values[i]
-        d['weight']=w
-        weights_list.append(d)
+        if w != 0:
+            d={}
+            d['attribute']=dataset_copy.columns.values[i]
+            d['weight']=w
+            weights_list.append(d)
 
     weights_json = json.dumps(weights_list)
     res = pd.DataFrame()
