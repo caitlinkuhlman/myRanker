@@ -278,6 +278,26 @@
       transform: translate(-50%, -50%);
     }
 
+/* Popover */
+.popover {
+    border: 2px dotted red;
+}
+
+/* Popover Body */
+.popover-content {
+    background-color: coral;
+    color: #FFFFFF;
+    padding: 25px;
+    font-size: 15px;
+    max-height: 100px;
+    overflow-y: auto;
+}
+/* Popover Arrow */
+.arrow {
+    border-right-color: red !important;
+}
+
+
   </style>
 </head>
 
@@ -317,6 +337,24 @@
     $('.popover-dismiss').popover({
       trigger: 'focus'
     })
+
+    $('body').on('click', function (e) {
+        //did not click a popover toggle or popover
+        if ($(e.target).data('toggle') !== 'popover'
+            && $(e.target).parents('.popover.in').length === 0) {
+            $('[data-toggle="popover"]').popover('hide');
+        }
+    });
+
+    // $('body').popover({
+    //                 selector: '[rel=popover]',
+    //                 trigger: "click"
+    //             }).on("show.bs.popover", function(e){
+    //                 // hide all other popovers
+    //                 $("[rel=popover]").not(e.target).popover("destroy");
+    //                 $(".popover").remove();
+    //             });
+
 </script>
 
 
