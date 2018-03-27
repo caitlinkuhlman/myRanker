@@ -545,7 +545,8 @@
 
   const inputData = [{attribute:"Category 1",weight:0.5},{attribute:"Category 2",weight:0.1},{attribute:"Category 3",weight:1.2},{attribute:"Category 4",weight:1.2},{attribute:"Category 5",weight:0.3}];
 
-  var colorScheme = d3.scale.category20();
+  // var colorScheme = d3.scale.category20();
+  var colorScheme = ["#8dd3c7","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
 
   function renderBarChart(inputData,dom_element_to_append_to, colorScheme){
       var width = 360;
@@ -558,8 +559,7 @@
       var y = d3.scale.linear().range([height, 0]);
 
       var color = d3.scale.ordinal()
-      .range(colorScheme.range());
-
+      .range(colorScheme);
 
       var xAxis = d3.svg.axis()
       .scale(x)
