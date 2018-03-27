@@ -280,32 +280,34 @@
 
   tr#head th:nth-child(1) {background-color: #2980B9;}
   tr#head th:nth-child(2) {background-color: #2980B9;}
-  tr#head th:nth-child(3){background-color: #1f77b4;}
-  tr#head th:nth-child(4){background-color: #aec7e8;}
-  tr#head th:nth-child(5){background-color: #ff7f0e;}
-  tr#head th:nth-child(6){background-color: #ffbb78;}
-  tr#head th:nth-child(7){background-color: #2ca02c;}
-  tr#head th:nth-child(8){background-color: #98df8a;}
-  tr#head th:nth-child(9){background-color: #d62728;}
-  tr#head th:nth-child(10){background-color: #ff9896;}
-  tr#head th:nth-child(11){background-color: #9467bd;}
-  tr#head th:nth-child(12){background-color: #c5b0d5;}
-  tr#head th:nth-child(13){background-color: #8c564b;}
-  tr#head th:nth-child(14){background-color: #c49c94;}
-  tr#head th:nth-child(15){background-color: #e377c2;}
-  tr#head th:nth-child(16){background-color: #f7b6d2;}
-  tr#head th:nth-child(17){background-color: #7f7f7f;}
-  tr#head th:nth-child(18){background-color: #c7c7c7;}
-  tr#head th:nth-child(19){background-color: #bcbd22;}
-  tr#head th:nth-child(20){background-color: #dbdb8d;}
-  tr#head th:nth-child(21){background-color: #17becf;}
-  tr#head th:nth-child(22){background-color: #9edae5;}
-  tr#head th:nth-child(23){background-color: #1f77b4;}
-  tr#head th:nth-child(24){background-color: #aec7e8;}
-  tr#head th:nth-child(25){background-color: #ff7f0e;}
+  tr#head th:nth-child(3) {background-color: #2980B9;}
+
+  tr#head th:nth-child(4){background-color: #8dd3c7;}
+  tr#head th:nth-child(5){background-color: #bebada;}
+  tr#head th:nth-child(6){background-color: #fb8072;}
+  tr#head th:nth-child(7){background-color: #80b1d3;}
+  tr#head th:nth-child(8){background-color: #fdb462;}
+  tr#head th:nth-child(9){background-color: #b3de69;}
+  tr#head th:nth-child(10){background-color: #fccde5;}
+
+  tr#head th:nth-child(11){background-color: #8dd3c7;}
+  tr#head th:nth-child(12){background-color: #bebada;}
+  tr#head th:nth-child(13){background-color: #fb8072;}
+  tr#head th:nth-child(14){background-color: #80b1d3;}
+  tr#head th:nth-child(15){background-color: #fdb462;}
+  tr#head th:nth-child(16){background-color: #b3de69;}
+  tr#head th:nth-child(17){background-color: #fccde5;}
+
+  tr#head th:nth-child(18){background-color: #8dd3c7;}
+  tr#head th:nth-child(19){background-color: #bebada;}
+  tr#head th:nth-child(20){background-color: #fb8072;}
+  tr#head th:nth-child(21){background-color: #80b1d3;}
+  tr#head th:nth-child(22){background-color: #fdb462;}
+  tr#head th:nth-child(23){background-color: #b3de69;}
+  tr#head th:nth-child(24){background-color: #fccde5;}
+  tr#head th:nth-child(25){background-color: #8dd3c7;}
 
   tr#head th:nth-last-child(1) {background-color: #2980B9;}
-  tr#head th:nth-last-child(2) {background-color: #2980B9;}
 
 
   </style>
@@ -603,7 +605,7 @@ function renderHead(datum) {
     data.splice(data.indexOf(rank), 1);
     data.unshift(rank);
   }
-  
+
   const thead = data
   .map(k => `<th>${k}</th>`)
   .join('\n')
@@ -624,9 +626,9 @@ function renderData(data, keys) {
     if (row.Score > maxScore) {
       maxScore = row.Score;
     }
-    
+
   });
-  
+
 
   const html = data.map(x => {
     const dataScore = x.Score;
@@ -750,7 +752,9 @@ const weightsRaw = '{{weights|tojson}}'
 
 
 inputData = sumToOne(parseData(weightsRaw))
-var colorScheme = d3.scale.category20();
+// var colorScheme = d3.scale.category20();
+
+var colorScheme = ["#8dd3c7","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
 
 renderBarChart(inputData,"#chart", colorScheme);
 
