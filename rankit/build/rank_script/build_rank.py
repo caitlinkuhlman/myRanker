@@ -26,6 +26,9 @@ def get_tau(p_test,p_y,clf,size):
 #     get number of concordant training pairs
     conc = np.count_nonzero(p_y==p_pred)
     m = len(p_test)
+    print("p_y",p_y)
+    print("p_pred", p_pred)
+
 #     assume half of unlabeled pairs are discordant, compute kendall tau
     tau =((2*conc)-m)/max(size,m)
 #     score for the expected value of a random ordering
@@ -48,9 +51,9 @@ def get_training(dataset,pairs):
     y = []
     for i in range(len(pairs["high"])):
 
-        X.append(np.array(dataset.iloc[pairs["high"][0]]-dataset.iloc[pairs["low"][i]]))
+        X.append(np.array(dataset.iloc[pairs["high"][i]]-dataset.iloc[pairs["low"][i]]))
         y.append(1)
-        X.append(np.array(dataset.iloc[pairs["low"][0]]-dataset.iloc[pairs["high"][i]]))
+        X.append(np.array(dataset.iloc[pairs["low"][i]]-dataset.iloc[pairs["high"][i]]))
         y.append(-1)
     return X,y
 
@@ -109,7 +112,7 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
     p_test =X[0:p]
     p_y = y[0:p]
 #     overall confidence score for model
-    tau = get_tau(p_test, p_y, clf, len(data))
+    tau = get_tau(X, y, clf, len(data))
 
 #     format output
     weights_list = []
