@@ -26,8 +26,6 @@ def get_tau(p_test,p_y,clf,size):
 #     get number of concordant training pairs
     conc = np.count_nonzero(p_y==p_pred)
     m = len(p_test)
-    print("p_y",p_y)
-    print("p_pred", p_pred)
 
 #     assume half of unlabeled pairs are discordant, compute kendall tau
     tau =((2*conc)-m)/max(size,m)
