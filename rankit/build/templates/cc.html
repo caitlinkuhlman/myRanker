@@ -467,6 +467,12 @@
   </div>
 </div>
 
+  <!-- this are the global variables -->
+  <script>
+    var confidence = 0
+    var weights = 0
+  </script>
+
   <!-- this is script for the pool -->
   <script>
 
@@ -669,9 +675,10 @@
         }
         else {
           $('#cc-submit').removeAttr('disabled');
+          handleBuildSubmit()
         }
 
-        barUpdate(num_of_non_empty_list)
+        barUpdate(confidence)
       });
     });
 
@@ -901,12 +908,15 @@
 
     if (cc_highFromURL !== undefined) {
       cc_populateBox("#left", cc_highFromURL)
+      barUpdate(confidence)
     }
     if (cc_mediumFromURL !== undefined) {
       cc_populateBox("#center", cc_mediumFromURL)
+      barUpdate(confidence)
     }
     if (cc_lowFromURL !== undefined) {
       cc_populateBox("#right", cc_lowFromURL)
+      barUpdate(confidence)
     }
 
     function cc_populateBox(box, objectsFromURL) {
@@ -923,6 +933,7 @@
         node.setAttribute("data-trigger", "focus");
         document.querySelector(box).appendChild(node);
         displayAttributes(objectsFromURL[i])
+        handleBuildSubmit()
       }
     }
 
@@ -935,8 +946,28 @@
       }
 
       window.location = pairwiseURL
-      // history.pushState({}, 'Explore', pairwiseURL)
     }
+
+    function handleBuildSubmit() {
+      const pwl = cc_generatePairwise()
+      var pairs = ""
+      for (let i = 0; i < pwl.length; i++) {
+        pairs = pairs + i + "=" + pwl[i].high + ">" + pwl[i].low + "&"
+      }
+      if (pairs !== ""){
+        const url = "confidence/"+pairs
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', url, true)
+        xhr.setRequestHeader('Content-type', 'application/json')
+      
+        xhr.send()
+        xhr.onload = function () {
+          weights = JSON.parse(JSON.parse(this.response).weights)
+          confidence = JSON.parse(this.response).confidence
+        }
+      }
+    }
+
     function cc_generatePairwise() {
       const high = Array.from(document.querySelectorAll('#left .object')).map(x => x.id)
       const med = Array.from(document.querySelectorAll('#center .object')).map(x => x.id)

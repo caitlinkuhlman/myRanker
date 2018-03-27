@@ -35,6 +35,6 @@ def exploreJson(dataset_name, pairs):
         if (low not in list): list.append(low)
         primaryKeyPairs.append({'high': high, 'low' : low})
 
-    data, weights = getRanking(dataset_name, primaryKeyPairs)
+    data, weights, confidence = getRanking(dataset_name, primaryKeyPairs)
 
     return render_template('explore.html', weights=weights, data=data, dataset_name=dataset_name, list=list)

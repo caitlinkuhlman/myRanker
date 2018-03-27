@@ -490,6 +490,13 @@
       </div>
     </div>
   </div>
+  
+  <!-- this are the global variables -->
+  <script>
+    var confidence = 0
+    var weights = 0
+  </script>
+
 
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
@@ -718,7 +725,6 @@
 
     var lc_observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
-
         lc_urlUpdate()
 
         const list_length = document.querySelector('#lc-center').children.length
@@ -727,9 +733,9 @@
         }
         else {
           $('#lc-submit').removeAttr('disabled');
+          handleBuildSubmit()
         }
-
-        barUpdate(list_length)
+        barUpdate(confidence)
       });
     });
 
@@ -815,6 +821,7 @@
 
     if (lc_objectsFromURL !== undefined) {
       lc_populateBox()
+      barUpdate(confidence)
     }
 
     function lc_populateBox() {
@@ -831,6 +838,7 @@
         node.setAttribute("data-trigger", "focus");
         document.querySelector('#lc-center').appendChild(node);
         displayAttributes(lc_objectsFromURL[i])
+        handleBuildSubmit()
       }
     }
 
@@ -849,6 +857,27 @@
       window.location = pairwiseURL
 
     }
+
+    function handleBuildSubmit() {
+      const pwl = lc_generatePairwise()
+      var pairs = ""
+      for (let i = 0; i < pwl.length; i++) {
+        pairs = pairs + i + "=" + pwl[i].high + ">" + pwl[i].low + "&"
+      }
+      if (pairs !== ""){
+        const url = "confidence/"+pairs
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', url, true)
+        xhr.setRequestHeader('Content-type', 'application/json')
+      
+        xhr.send()
+        xhr.onload = function () {
+          weights = JSON.parse(JSON.parse(this.response).weights)
+          confidence = JSON.parse(this.response).confidence
+        }
+      }
+    }
+
     function lc_generatePairwise() {
       const list = Array.from(document.querySelectorAll('#lc-center .object'))
       const ids = list.map(x => x.id)
