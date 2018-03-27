@@ -372,6 +372,7 @@
       </div>
     </div>
     <div class = "graphArea" style="float: left; width: 40%;">
+      <p style="float: right; margin-right: 50px;">Impact of Attributes on Dataset Ranking</p>
       <div id="chart" style="display: block; float: right; height: 25%; width: 75%"></div>
     </div>
 
@@ -725,148 +726,390 @@ path {
 
 </style>
 
+<style>
+
+svg {
+  font: 10px sans-serif;
+}
+
+
+.bar {
+  /* fill: steelblue; */
+  clip-path: url(#clip);
+}
+
+.subBar {
+  fill: #2980B9;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.brush .extent {
+  stroke: #fff;
+  fill: steelblue;
+  fill-opacity: .25;
+  shape-rendering: crispEdges;
+}
+
+  rect.mover {
+            stroke: red;
+            stroke-opacity: .1;
+            fill: #E74C3C;
+            fill-opacity: .5;
+        }
+</style>
+
+
 
 <script>
 
 const weightsRaw = '{{weights|tojson}}'
 console.log(weightsRaw);
-// weightsData has the following format
-// [
-//  {
-//    attribute: <attribute_name1>,
-//    weight: <weight1>
-//  },
-//  {
-//    attribute: <attribute_name2>,
-//    weight: <weight2>
-//  }
-//  ...
-// ]
-
-// The function to use for changing weights of attributes to sum up to 1
-
-// function disabled(emptyDataset) {
-//   if (emptyDataset == 'None') {
-//     document.getElementById("example").disabled = true;
-//   }
-// }
-//
-// disabled('{{weights}}')
-
 
 inputData = sumToOne(parseData(weightsRaw))
+// inputData = parseData(weightsRaw)
+console.log(inputData);
 // var colorScheme = d3.scale.category20();
 
 var colorScheme = ["#8dd3c7","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
 
-renderBarChart(inputData,"#chart", colorScheme);
 
-function renderBarChart(inputData,dom_element_to_append_to, colorScheme){
-  // var margin = {top: 0, right: 40, bottom: 250, left: 150},
-  // width = 650 - margin.left - margin.right,
-  // height = 300 - margin.top - margin.bottom;
-  var width = 360;
-  var height = 200;
-  // var width1 = d3.select("#chart").style("width").split("px").shift();
-  // var height1 = d3.select("#chart").style("height").split("px").shift();
+var margin =  {top: 20, right: 10, bottom: 20, left: 40};
+var marginOverview = {top: 30, right: 10, bottom: 20, left: 40};
+var selectorHeight = 40;
+var width = 1500 - margin.left - margin.right;
+var height = 420 - margin.top - margin.bottom - selectorHeight;
+var heightOverview = 80 - marginOverview.top - marginOverview.bottom;
 
-  var formatPercent = d3.format(".0%");
-
-  var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
-
-  var y = d3.scale.linear().range([height, 0]);
-
-  var color = d3.scale.ordinal()
-  .range(colorScheme);
+var maxLength = d3.max(inputData.map(function(d){ return d.attribute.length}))
+var barWidth = maxLength * 7;
+var numBars = Math.round(width/barWidth);
+var isScrollDisplayed = barWidth * inputData.length > width;
 
 
-  var xAxis = d3.svg.axis()
-  .scale(x)
-  .orient("bottom")
+console.log(isScrollDisplayed)
 
-  var yAxis = d3.svg.axis()
-  .scale(y)
-  .orient("left")
-  .ticks(10);
+var xscale = d3.scale.ordinal()
+                .domain(inputData.slice(0,numBars).map(function (d) { return d.attribute; }))
+                .rangeBands([0, width], .2);
 
-  var svg = d3.select(dom_element_to_append_to).append("svg")
-  // .attr("height", height1 + margin.top + margin.bottom)
-  // .attr("width", width1 + margin.left + margin.right)
-  .attr("height", height)
-  .attr("width", width)
+var yscale = d3.scale.linear()
+							.domain([0, d3.max(inputData, function (d) { return d.weight; })])
+              .range([height, 0]);
 
+var color = d3.scale.ordinal()
+.range(colorScheme);
 
-  // .attr("title").text("Impact of Attributes on Dataset Ranking")
-  // .text("Impact of Attributes on Dataset Ranking");
+var xAxis  = d3.svg.axis().scale(xscale).orient("bottom");
+var yAxis  = d3.svg.axis().scale(yscale).orient("left");
 
-  .append("g")
-  .attr("transform","translate(" + 0 + "," + -75 + ")");
-  // .attr("transform","translate(" + margin.left + "," + margin.top + ")");
-
-  inputData.forEach(function(d) {
-    d.attribute = d.attribute;
-    d.weight = +d.weight;
-  });
-
-  x.domain(inputData.map(function(d) { return d.attribute; }));
-  y.domain([0, d3.max(inputData, function(d) { return +d.weight; })]);
-
-  svg.append("g")
-  .attr("class", "y axis")
-
-  svg.append("g")
-  .attr("class", "x axis")
-  .call(xAxis)
-  .attr("transform",
-  "translate(" + 0 + "," + height + ")")
-
-  svg.selectAll("bar")
-  .data(inputData)
-  .enter().append("rect")
-  .attr("class", "bar")
-  .attr("x", function(d) { return x(d.attribute); })
-  .attr("width", x.rangeBand())
-  .attr("y", function(d) { return y(d.weight); })
-  .attr("height", function(d) { return height - y(d.weight); })
-  .attr('fill', function(d, i) {
-    return color(d.attribute);
-  });
-
-  svg.append("text")
-  .attr("text-anchor", "middle")
-  .style("font-size", "12px")
-  .text("Impact of Attributes on Dataset Ranking");
+var svg = d3.select("#chart").append("svg")
+						.attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom + selectorHeight)
+            .attr("viewBox", "0 0 700 500")
+            .attr("preserveAspectRatio", "xMinYMin meet");
 
 
-  var tooltip = d3.select(dom_element_to_append_to)
-  .append('div')
-  .attr('class', 'tooltip');
+var diagram = svg.append("g")
+								 .attr("transform", "translate(" + margin.left + "," + 0 + ")");
 
-  tooltip.append('div')
-  .attr('class', 'attribute');
-  tooltip.append('div')
-  .attr('class', 'weight');
+diagram.append("g")
+  		 .attr("class", "x axis")
+       .attr("transform", "translate(0, " + height + ")")
+       .call(xAxis);
 
-  svg.selectAll(".bar")
-  .on('mouseover', function(d) {
-    tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
-    tooltip.select('.weight').html("<b> Weight: " + d.weight + "</b>");
+// diagram.append("g")
+//        .attr("class", "y axis")
+//        .call(yAxis);
 
-    tooltip.style('display', 'block');
-    tooltip.style('opacity',2);
-  })
-  .on('mousemove', function(d) {
+var bars = diagram.append("g");
 
-    tooltip.style('top', (d3.event.layerY + 10) + 'px')
-    .style('left', (d3.event.layerX - 25) + 'px');
-  })
-  .on('mouseout', function(d) {
-    tooltip.style('display', 'none');
-    tooltip.style('opacity',0);
-  });
+bars.selectAll("rect")
+            .data(inputData.slice(0, numBars), function (d) {return d.attribute; })
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", function (d) { return xscale(d.attribute); })
+            .attr("y", function (d) { return yscale(d.weight); })
+            .attr("width", xscale.rangeBand())
+            .attr("height", function (d) { return height - yscale(d.weight); })
+              .attr('fill', function(d, i) {
+                return color(d.attribute);
+              });
 
-  window.addEventListener('resize', Chart.render);
+                var tooltip = d3.select("#chart")
+                .append('div')
+                .attr('class', 'tooltip');
+
+                tooltip.append('div')
+                .attr('class', 'attribute');
+                tooltip.append('div')
+                .attr('class', 'weight');
+
+                svg.selectAll(".bar")
+                .on('mouseover', function(d) {
+                  tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
+                  tooltip.select('.weight').html("<b>Normalized Weight: " + d.weight + "</b>");
+
+                  tooltip.style('display', 'block');
+                  tooltip.style('opacity',2);
+                })
+                .on('mousemove', function(d) {
+
+                  tooltip.style('top', (d3.event.layerY + 10) + 'px')
+                  .style('left', (d3.event.layerX - 25) + 'px');
+                })
+                .on('mouseout', function(d) {
+                  tooltip.style('display', 'none');
+                  tooltip.style('opacity',0);
+                });
+
+
+
+
+if (isScrollDisplayed)
+{
+  var xOverview = d3.scale.ordinal()
+                  .domain(inputData.map(function (d) { return d.attribute; }))
+                  .rangeBands([0, width], .2);
+  yOverview = d3.scale.linear().range([heightOverview, 0]);
+  yOverview.domain(yscale.domain());
+
+  var subBars = diagram.selectAll('.subBar')
+      .data(inputData)
+
+  subBars.enter().append("rect")
+      .classed('subBar', true)
+      .attr("transform","translate(" + margin.left + "," + 80 + ")")
+      .attr({
+          height: function(d) {
+              return heightOverview - yOverview(d.weight);
+          },
+          width: function(d) {
+              return xOverview.rangeBand()
+          },
+          x: function(d) {
+
+              return xOverview(d.attribute);
+          },
+          y: function(d) {
+              return height + heightOverview + yOverview(d.weight)
+          }
+      })
+
+  var displayed = d3.scale.quantize()
+              .domain([0, width])
+              .range(d3.range(inputData.length));
+
+  diagram.append("rect")
+              // .attr("transform", "translate(0, " + (height + margin.bottom) + ")")
+              // .attr("transform","translate(" + margin.left + "," + 40 + ")")
+              .attr("transform", "translate(0, " + (height + margin.bottom + 80) + ")")
+              .attr("class", "mover")
+              .attr("x", 0)
+              .attr("y", 0)
+              .attr("height", selectorHeight)
+              .attr("width", Math.round(parseFloat(numBars * width)/inputData.length))
+              .attr("pointer-events", "all")
+              .attr("cursor", "ew-resize")
+              .call(d3.behavior.drag().on("drag", display))
+              .on('mousemove', function(d) {
+                  tooltip.style('display', 'none');
+                  tooltip.style('opacity',0);
+                })
+              .on('mouseout', function(d) {
+                  tooltip.style('display', 'none');
+                  tooltip.style('opacity',0);
+                });
+
+
+
+
 }
+function display () {
+    var x = parseInt(d3.select(this).attr("x")),
+        nx = x + d3.event.dx,
+        w = parseInt(d3.select(this).attr("width")),
+        f, nf, new_data, rects;
+
+    if ( nx < 0 || nx + w > width ) return;
+
+    d3.select(this).attr("x", nx);
+
+    f = displayed(x);
+    nf = displayed(nx);
+
+    if ( f === nf ) return;
+
+    new_data = inputData.slice(nf, nf + numBars);
+
+    xscale.domain(new_data.map(function (d) { return d.attribute; }));
+    diagram.select(".x.axis").call(xAxis);
+
+    rects = bars.selectAll("rect")
+      .data(new_data, function (d) {return d.attribute; });
+
+	 	rects.attr("x", function (d) { return xscale(d.attribute); });
+
+// 	  rects.attr("transform", function(d) { return "translate(" + xscale(d.attribute) + ",0)"; })
+
+    rects.enter().append("rect")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .attr("class", "bar")
+      .attr("x", function (d) { return xscale(d.attribute); })
+      .attr("y", function (d) { return yscale(d.weight); })
+      .attr("width", xscale.rangeBand())
+      .attr("height", function (d) { return height - yscale(d.weight); })
+      .attr('fill', function(d, i) {
+        return color(d.attribute);
+      });
+
+      var tooltip = d3.select("#chart")
+      .append('div')
+      .attr('class', 'tooltip');
+
+      tooltip.append('div')
+      .attr('class', 'attribute');
+      tooltip.append('div')
+      .attr('class', 'weight');
+
+      svg.selectAll(".bar")
+      .on('mouseover', function(d) {
+        tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
+        tooltip.select('.weight').html("<b>Normalized Weight: " + d.weight + "</b>");
+
+        tooltip.style('display', 'block');
+        tooltip.style('opacity',2);
+      })
+      .on('mousemove', function(d) {
+
+        tooltip.style('top', (d3.event.layerY + 10) + 'px')
+        .style('left', (d3.event.layerX - 25) + 'px');
+      })
+      .on('mouseout', function(d) {
+        tooltip.style('display', 'none');
+        tooltip.style('opacity',0);
+      });
+
+
+
+
+    rects.exit().remove();
+};
+
+
+// renderBarChart(inputData,"#chart", colorScheme);
+//
+// function renderBarChart(inputData,dom_element_to_append_to, colorScheme){
+//   // var margin = {top: 0, right: 40, bottom: 250, left: 150},
+//   // width = 650 - margin.left - margin.right,
+//   // height = 300 - margin.top - margin.bottom;
+//   var width = 360;
+//   var height = 200;
+//   // var width1 = d3.select("#chart").style("width").split("px").shift();
+//   // var height1 = d3.select("#chart").style("height").split("px").shift();
+//
+//   var formatPercent = d3.format(".0%");
+//
+//   var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
+//
+//   var y = d3.scale.linear().range([height, 0]);
+//
+//   var color = d3.scale.ordinal()
+//   .range(colorScheme);
+//
+//
+//   var xAxis = d3.svg.axis()
+//   .scale(x)
+//   .orient("bottom")
+//
+//   var yAxis = d3.svg.axis()
+//   .scale(y)
+//   .orient("left")
+//   .ticks(10);
+//
+//   var svg = d3.select(dom_element_to_append_to).append("svg")
+//   // .attr("height", height1 + margin.top + margin.bottom)
+//   // .attr("width", width1 + margin.left + margin.right)
+//   .attr("height", height)
+//   .attr("width", width)
+//
+//
+//   // .attr("title").text("Impact of Attributes on Dataset Ranking")
+//   // .text("Impact of Attributes on Dataset Ranking");
+//
+//   .append("g")
+//   .attr("transform","translate(" + 0 + "," + -75 + ")");
+//   // .attr("transform","translate(" + margin.left + "," + margin.top + ")");
+//
+//   inputData.forEach(function(d) {
+//     d.attribute = d.attribute;
+//     d.weight = +d.weight;
+//   });
+//
+//   x.domain(inputData.map(function(d) { return d.attribute; }));
+//   y.domain([0, d3.max(inputData, function(d) { return +d.weight; })]);
+//
+//   svg.append("g")
+//   .attr("class", "y axis")
+//
+//   svg.append("g")
+//   .attr("class", "x axis")
+//   .call(xAxis)
+//   .attr("transform",
+//   "translate(" + 0 + "," + height + ")")
+//
+//   svg.selectAll("bar")
+//   .data(inputData)
+//   .enter().append("rect")
+//   .attr("class", "bar")
+//   .attr("x", function(d) { return x(d.attribute); })
+//   .attr("width", x.rangeBand())
+//   .attr("y", function(d) { return y(d.weight); })
+//   .attr("height", function(d) { return height - y(d.weight); })
+//   .attr('fill', function(d, i) {
+//     return color(d.attribute);
+//   });
+//
+//   svg.append("text")
+//   .attr("text-anchor", "middle")
+//   .style("font-size", "12px")
+//   .text("Impact of Attributes on Dataset Ranking");
+//
+//
+//   var tooltip = d3.select(dom_element_to_append_to)
+//   .append('div')
+//   .attr('class', 'tooltip');
+//
+//   tooltip.append('div')
+//   .attr('class', 'attribute');
+//   tooltip.append('div')
+//   .attr('class', 'weight');
+//
+//   svg.selectAll(".bar")
+//   .on('mouseover', function(d) {
+//     tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
+//     tooltip.select('.weight').html("<b> Weight: " + d.weight + "</b>");
+//
+//     tooltip.style('display', 'block');
+//     tooltip.style('opacity',2);
+//   })
+//   .on('mousemove', function(d) {
+//
+//     tooltip.style('top', (d3.event.layerY + 10) + 'px')
+//     .style('left', (d3.event.layerX - 25) + 'px');
+//   })
+//   .on('mouseout', function(d) {
+//     tooltip.style('display', 'none');
+//     tooltip.style('opacity',0);
+//   });
+//
+//   window.addEventListener('resize', Chart.render);
+// }
 
 </script>
 
