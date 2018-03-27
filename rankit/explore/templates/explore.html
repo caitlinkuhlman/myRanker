@@ -444,8 +444,8 @@
 
 <script>
 
-function highlightColor(percent){
-  color = d3.scale.linear().domain([0, 1]).interpolate(d3.interpolateHcl).range([d3.rgb("#dedede"), d3.rgb("#95eef8")])
+function highlightColor(percent, color1, color2){
+  color = d3.scale.linear().domain([0, 1]).interpolate(d3.interpolateHcl).range([d3.rgb(color1), d3.rgb(color2)])
   return color(percent)
 }
 function highlightRows(){
@@ -456,8 +456,8 @@ function highlightRows(){
   for (j=0; j<highlighted.length; j++) {
     for (i=0; i<trs.length; i++) {
       if (trs[i].cells[1].textContent === highlighted[j]){
-        trs[i].style.backgroundColor = highlightColor(0.5) // INSERT REAL PERCENT CONFIDENCE HERE
-        trs[i].cells[0].style.backgroundColor = highlightColor(0.5) // INSERT REAL PERCENT CONFIDENCE HERE
+        trs[i].style.backgroundColor = highlightColor(0.5, "#dedede", "#95eef8") // INSERT REAL PERCENT CONFIDENCE HERE
+        trs[i].cells[0].style.backgroundColor = highlightColor(0.5, "#dedede", "#95eef8") // INSERT REAL PERCENT CONFIDENCE HERE
       }
     }
   }
@@ -613,7 +613,10 @@ function renderHead(datum) {
   return data
 }
 
-
+function setBarColor(dataScore, maxScore) {
+  var width = dataScore / ((maxScore !== 0) ? maxScore : 0.01)
+  return highlightColor(width, "#e5f5f9", "#238b45")
+}
 
 function renderData(data, keys) {
   var t = $('#table').dataTable();
@@ -632,7 +635,7 @@ function renderData(data, keys) {
     const dataScore = x.Score;
     x.Score = `
     <div class="bar-chart-bar">
-    <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;"></div>
+    <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;background-color:${setBarColor(dataScore, maxScore)}"></div>
     </div>
     `
     var props = keys
@@ -865,7 +868,6 @@ function renderBarChart(inputData,dom_element_to_append_to, colorScheme){
 
 <style>
 .inTableBar {
-  background-color: green;
   float: left;
   height: 100%;
 }
