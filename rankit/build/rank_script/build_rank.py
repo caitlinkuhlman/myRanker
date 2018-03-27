@@ -27,10 +27,10 @@ def get_tau(p_test,p_y,clf,size):
     conc = np.count_nonzero(p_y==p_pred)
     m = len(p_test)
 #     assume half of unlabeled pairs are discordant, compute kendall tau
-    tau =((2*conc)-m)/size
+    tau =((2*conc)-m)/max(size,m)
 #     score for the expected value of a random ordering
 #     scale tau to between 0 and 100
-    return 100*tau
+    return 99*tau
 
 def clean_dataset(dataset, primary_key):
     #   temp make primary key index so it doesn't get converted
@@ -90,8 +90,6 @@ def build_with_conf(dataset, pairs, primary_key = 'Title', rank = 'Rank', score 
                         max_iter=5000,random_state=9)
     clf.fit(X,y)
  
-    conf_scores = get_confidence(data, clf)
-    conf_scores = 100*scale(conf_scores)
     weights = clf.coef_[0]
     y_pred=[]
     y_pred=np.dot(weights,data.T)
@@ -140,11 +138,12 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
 #     for more accuratae feedback- right now outcome depends on radom state, 
 #     not just previous input
 #     clf.partial_fit(X,y,np.unique(y))
+    conf_scores = get_confidence(data, clf)
+    conf_scores = 100*scale(conf_scores)
  
     weights = clf.coef_[0]
     y_pred=[]
     y_pred=np.dot(weights,data.T)
-    conf = clf.decision_function(data)
     
 #     scale outputs for display
     y_pred=scale(y_pred)
@@ -173,8 +172,7 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
 #     ordinal ranking for each item
     dataset[rank] = dataset[score].rank(ascending=False)
 #     confidence in prediction for each item
-    dataset[confd] = conf
-    
-    dataset[rank] = res['Prediction']
+    dataset[confd] = conf_scores
+
     return dataset, weights_json, tau
 
