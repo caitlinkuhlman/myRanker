@@ -428,14 +428,26 @@ function highlightRows(){
       if (trs[i].cells[1].textContent === highlighted[j]){
         trs[i].style.fontWeight = "900";
         trs[i].style.color = "black";
-        //trs[i].style.backgroundColor = highlightColor(0.5, "#dedede", "#95eef8") // INSERT REAL PERCENT CONFIDENCE HERE
-        //trs[i].cells[0].style.backgroundColor = highlightColor(0.5, "#dedede", "#95eef8") // INSERT REAL PERCENT CONFIDENCE HERE
       }
     }
   }
 }
 
-highlightRows()
+function shadeRowsByconf(data){
+
+  trs = $('#data > tr')
+  for (i=0; i<trs.length; i++) {
+     score = data[i].Confidence
+     trs[i].cells[0].style.backgroundColor = highlightColor(score, "#e3f7f3","#337c6e");
+     trs[i].cells[1].style.backgroundColor = highlightColor(score, "#e3f7f3","#337c6e");
+     trs[i].cells[1].title="Score Confidence";
+     trs[i].cells[1].setAttribute("data-toggle", "popover");
+     trs[i].cells[1].setAttribute("data-content", score);
+     trs[i].cells[2].style.backgroundColor = highlightColor(score, "#e3f7f3","#337c6e");
+  }
+  $('[data-toggle="popover"]').popover();
+  
+}
 
 </script>
 
@@ -553,10 +565,11 @@ function renderTable(data) {
   })
 
   $('#table').on('draw.dt', function(e) {
-    highlightRows()
+    highlightRows();
   })
 
   renderData(data, keys)
+  shadeRowsByconf(data);
 }
 
 function renderHead(datum) {
@@ -589,9 +602,8 @@ function renderHead(datum) {
 }
 
 function setBarColor(dataConf) {
-  console.log("confidence score:")
-  console.log(dataConf)
-  return highlightColor(dataConf, "#FB8072", "#3F3A3C")
+  //return highlightColor(dataConf, "#FB8072", "#3F3A3C")
+  return "#3F3A3C";
 }
 
 function renderData(data, keys) {
