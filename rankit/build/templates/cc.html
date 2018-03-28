@@ -72,7 +72,6 @@
       appearance: none;
       border: none;
       border-radius: 4px;
-      background: rgba(231,76,60, 1);
       color: #fefffb;
       font-weight: normal;
       font-size: 100%;
@@ -104,7 +103,7 @@
       background-color:  rgba(200, 200, 200, 0.6);
       border-radius: 2px;
       border-color: rgba(200, 200, 200, 0.6);
-      color: black;
+      color: #777;
       text-align: center;
       text-decoration: none;
       transition: all 0.3s ease-out;
@@ -134,13 +133,7 @@
       padding: 0.8em;
     }
 
-    #build-method .active {
-      background: #E74C3C;
-      color: #fff;
-      text-align: center;
-      width: 100%;
-    }
-
+    
     h1.title {
     text-transform: capitalize;
     display: block;
@@ -208,7 +201,7 @@
     }
 
     #wrappercc {
-      border: 2px solid black;
+      border: 2px solid #777;
       border-radius: 8px;
     }
 
@@ -322,7 +315,7 @@
 
   <!-- this is the header -->
   <div id="build-container">
-    <div style="background-color:#439AD3" class="build-pool-header">
+    <div class="build-pool-header">
       <div style="float: left; width: 60%;">
 
       <h1 style="position:relative; right:5px" class="title">
@@ -436,9 +429,9 @@
       <div id="wrappercc">
       <!-- this is the header -->
       <ul id="build-method">
-        <li><a style="color: #439AD3;" id="lc">List</a></li>
+        <li><a style="color: #777;" id="lc">List</a></li>
         <li><a id="cc" class="active">Categorical</a></li>
-        <li><a style="color: #439AD3;" id="pwc">Pairwise</a></li>
+        <li><a style="color: #777;" id="pwc">Pairwise</a></li>
       </ul>
       <div class="cc-list">
         <!-- this is the lists -->

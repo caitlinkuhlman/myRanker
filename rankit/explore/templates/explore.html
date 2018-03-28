@@ -34,7 +34,6 @@
   }
 
   .page-header {
-    background-color: #2980B9;
     margin-bottom: 20px;
   }
 
@@ -269,7 +268,6 @@
     width: 50%;
     float: right;
     grid-area: build-top;
-    /* background-color:#2980B9; */
     min-height: 115px;
   }
 
@@ -277,37 +275,6 @@
     display:block;
     margin:0 auto;
   }
-
-  tr#head th:nth-child(1) {background-color: #2980B9;}
-  tr#head th:nth-child(2) {background-color: #2980B9;}
-  tr#head th:nth-child(3) {background-color: #2980B9;}
-
-  tr#head th:nth-child(4){background-color: #8dd3c7;}
-  tr#head th:nth-child(5){background-color: #bebada;}
-  tr#head th:nth-child(6){background-color: #fb8072;}
-  tr#head th:nth-child(7){background-color: #80b1d3;}
-  tr#head th:nth-child(8){background-color: #fdb462;}
-  tr#head th:nth-child(9){background-color: #b3de69;}
-  tr#head th:nth-child(10){background-color: #fccde5;}
-
-  tr#head th:nth-child(11){background-color: #8dd3c7;}
-  tr#head th:nth-child(12){background-color: #bebada;}
-  tr#head th:nth-child(13){background-color: #fb8072;}
-  tr#head th:nth-child(14){background-color: #80b1d3;}
-  tr#head th:nth-child(15){background-color: #fdb462;}
-  tr#head th:nth-child(16){background-color: #b3de69;}
-  tr#head th:nth-child(17){background-color: #fccde5;}
-
-  tr#head th:nth-child(18){background-color: #8dd3c7;}
-  tr#head th:nth-child(19){background-color: #bebada;}
-  tr#head th:nth-child(20){background-color: #fb8072;}
-  tr#head th:nth-child(21){background-color: #80b1d3;}
-  tr#head th:nth-child(22){background-color: #fdb462;}
-  tr#head th:nth-child(23){background-color: #b3de69;}
-  tr#head th:nth-child(24){background-color: #fccde5;}
-  tr#head th:nth-child(25){background-color: #8dd3c7;}
-
-  tr#head th:nth-last-child(1) {background-color: #2980B9;}
 
 
   </style>
@@ -360,7 +327,7 @@
   </nav>
 
 
-  <div style="background-color:#439AD3" class="build-pool-header">
+  <div class="build-pool-header">
     <div style="float: left; width: 60%;">
       <h1 style="position:relative; right:5px" class="title">
         <b>
@@ -610,9 +577,10 @@ function renderHead(datum) {
   return data
 }
 
-function setBarColor(dataScore, maxScore) {
-  var width = dataScore / ((maxScore !== 0) ? maxScore : 0.01)
-  return highlightColor(width, "#e5f5f9", "#238b45")
+function setBarColor(dataConf) {
+  console.log("confidence score:")
+  console.log(dataConf)
+  return highlightColor(dataConf, "#fc8d59", "#b30000")
 }
 
 function renderData(data, keys) {
@@ -630,9 +598,10 @@ function renderData(data, keys) {
 
   const html = data.map(x => {
     const dataScore = x.Score;
+    const dataConf = x.Confidence;
     x.Score = `
     <div class="bar-chart-bar">
-    <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;background-color:${setBarColor(dataScore, maxScore)}"></div>
+    <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;background-color:${setBarColor(dataConf)}"></div>
     </div>
     `
     var props = keys
