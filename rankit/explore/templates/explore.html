@@ -372,7 +372,7 @@
       </div>
     </div>
     <div class = "graphArea" style="float: left; width: 40%;">
-      <p style="float: right; margin-right: 50px;">Impact of Attributes on Dataset Ranking</p>
+      <p style="float: right; font-size: 20px; margin-right: 50px;"><b>Impact of Attributes on Dataset Ranking</b></p>
       <div id="chart" style="display: block; float: right; height: 25%; width: 75%"></div>
     </div>
 
@@ -448,6 +448,7 @@ function highlightRows(){
 
   const raw_highlighted = '{{list|tojson}}'
   highlighted = JSON.parse(raw_highlighted)
+  trs = $('#data > tr')
   trs = $('#data > tr')
   for (j=0; j<highlighted.length; j++) {
     for (i=0; i<trs.length; i++) {
@@ -762,7 +763,7 @@ svg {
 <script>
 
 const weightsRaw = '{{weights|tojson}}'
-console.log(weightsRaw);
+// console.log(weightsRaw);
 
 inputData = sumToOne(parseData(weightsRaw))
 // inputData = parseData(weightsRaw)
@@ -775,7 +776,7 @@ var colorScheme = ["#8dd3c7","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","
 var margin =  {top: 20, right: 10, bottom: 20, left: 40};
 var marginOverview = {top: 30, right: 10, bottom: 20, left: 40};
 var selectorHeight = 40;
-var width = 1500 - margin.left - margin.right;
+var width = 2000 - margin.left - margin.right;
 var height = 420 - margin.top - margin.bottom - selectorHeight;
 var heightOverview = 80 - marginOverview.top - marginOverview.bottom;
 
@@ -809,7 +810,7 @@ var svg = d3.select("#chart").append("svg")
 
 
 var diagram = svg.append("g")
-								 .attr("transform", "translate(" + margin.left + "," + 0 + ")");
+								 .attr("transform", "translate(" + margin.left + "," + 100 + ")");
 
 diagram.append("g")
   		 .attr("class", "x axis")
@@ -877,7 +878,6 @@ if (isScrollDisplayed)
 
   subBars.enter().append("rect")
       .classed('subBar', true)
-      .attr("transform","translate(" + margin.left + "," + 80 + ")")
       .attr({
           height: function(d) {
               return heightOverview - yOverview(d.weight);
@@ -901,7 +901,7 @@ if (isScrollDisplayed)
   diagram.append("rect")
               // .attr("transform", "translate(0, " + (height + margin.bottom) + ")")
               // .attr("transform","translate(" + margin.left + "," + 40 + ")")
-              .attr("transform", "translate(0, " + (height + margin.bottom + 80) + ")")
+              .attr("transform", "translate(0, " + (height + margin.bottom) + ")")
               .attr("class", "mover")
               .attr("x", 0)
               .attr("y", 0)
@@ -979,7 +979,6 @@ function display () {
         tooltip.style('opacity',2);
       })
       .on('mousemove', function(d) {
-
         tooltip.style('top', (d3.event.layerY + 10) + 'px')
         .style('left', (d3.event.layerX - 25) + 'px');
       })
@@ -987,9 +986,6 @@ function display () {
         tooltip.style('display', 'none');
         tooltip.style('opacity',0);
       });
-
-
-
 
     rects.exit().remove();
 };
