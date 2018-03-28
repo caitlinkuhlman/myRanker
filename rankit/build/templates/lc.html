@@ -279,13 +279,9 @@
     border: 2px dotted red;
 }
 
-/* Popover Body */
+/* Popover Body*/
 .popover-content {
-    background-color: coral;
-    color: #FFFFFF;
-    padding: 25px;
-    font-size: 15px;
-    max-height: 100px;
+    max-height: 500px;
     overflow-y: auto;
 }
 /* Popover Arrow */
@@ -321,7 +317,7 @@ svg {
 <script>
 
     $(document).ready(function () {
-      $('[data-toggle="popover"]').popover()
+      $('[data-toggle="popover"]').popover();
     })
 
     function parseData(raw) {
@@ -341,11 +337,11 @@ svg {
 
     function displayAttributes(objectTitle) {
       var object = findObject(objectTitle)
-      var text = ""
+      var text = "<table class='data-pool-popover'><tr><th>Attribute</th><th>Value</th></tr>";
       for (var propt in object) {
-        text = text + propt + ':' + object[propt]
+        text = text + "<tr><td>" + propt + "</td><td>" + object[propt]+"</td></tr>";
       }
-      // htmlstring = text.replace(/(\r\n|\n|\r)/gm, "<br>");
+      text = text + "</table>"
       document.getElementById(objectTitle).setAttribute("data-content", text)
     }
 
@@ -491,7 +487,7 @@ svg {
         <div id="top" class="pool">
           <!-- objects from dataset inserted here -->
           {% for x in dataset %}
-          <div tabindex="0" id="{{x}}" class="object noSelect" data-toggle="popover" data-trigger="focus">{{x}}</div>
+          <div tabindex="0" id="{{x}}" class="object noSelect" data-toggle="popover" data-trigger="focus" data-html="true">{{x}}</div>
           <script>
             displayAttributes('{{x}}')
           </script>
