@@ -576,9 +576,10 @@ function renderHead(datum) {
   return data
 }
 
-function setBarColor(dataScore, maxScore) {
-  var width = dataScore / ((maxScore !== 0) ? maxScore : 0.01)
-  return highlightColor(width, "#e5f5f9", "#238b45")
+function setBarColor(dataConf) {
+  console.log("confidence score:")
+  console.log(dataConf)
+  return highlightColor(dataConf, "#fc8d59", "#b30000")
 }
 
 function renderData(data, keys) {
@@ -596,9 +597,10 @@ function renderData(data, keys) {
 
   const html = data.map(x => {
     const dataScore = x.Score;
+    const dataConf = x.Confidence;
     x.Score = `
     <div class="bar-chart-bar">
-    <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;background-color:${setBarColor(dataScore, maxScore)}"></div>
+    <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;background-color:${setBarColor(dataConf)}"></div>
     </div>
     `
     var props = keys
