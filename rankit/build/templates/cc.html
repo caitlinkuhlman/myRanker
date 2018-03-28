@@ -365,7 +365,7 @@
       </h1>
     </div>
     <div class = "graphArea" style="float: left; width: 40%;">
-      <!-- <p style="float: right; color: white; font-size: 20px; margin-right: 50px;"><b>Impact of Attributes on Dataset Ranking</b></p> -->
+      <p id="p1" style="float: right; color: white; font-size: 20px; margin-right: 50px;"><b></b></p>
       <div id="chart" style="display: block; float: right; height: 25%; width: 75%"></div>
   </div>
 
@@ -885,6 +885,7 @@
           console.log(weights);
           renderBarChart(weights,"#chart", colorScheme);
         } else if(weights != 0){
+          document.getElementById("p1").innerHTML = "Impact of Attributes on Dataset Ranking";
           renderBarChart(weights,"#chart", colorScheme);
         }
 

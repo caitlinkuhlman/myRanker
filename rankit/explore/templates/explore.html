@@ -339,7 +339,8 @@
       </div>
     </div>
     <div class = "graphArea" style="float: left; width: 40%;">
-      <p style="float: right; font-size: 20px; margin-right: 50px;"><b>Impact of Attributes on Dataset Ranking</b></p>
+      <p id="p1" style="float: right; color: white; font-size: 20px; margin-right: 50px;"><b></b></p>
+      <!-- <p style="float: right; font-size: 20px; margin-right: 50px;"><b>Impact of Attributes on Dataset Ranking</b></p> -->
       <div id="chart" style="display: block; float: right; height: 25%; width: 75%"></div>
     </div>
 
@@ -738,6 +739,7 @@ inputData = sumToOne(parseData(weightsRaw))
 // inputData = parseData(weightsRaw)
 console.log(inputData);
 // var colorScheme = d3.scale.category20();
+document.getElementById("p1").innerHTML = "Impact of Attributes on Dataset Ranking";
 
 var colorScheme = ["#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
 
@@ -830,8 +832,6 @@ bars.selectAll("rect")
                   tooltip.style('display', 'none');
                   tooltip.style('opacity',0);
                 });
-
-
 
 
 if (isScrollDisplayed)
