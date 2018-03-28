@@ -9,6 +9,7 @@
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/pace.min.js') }}"></script>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/loadingScreen.css') }}" />
   <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/fixedcolumns/3.2.4/css/fixedColumns.dataTables.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/build.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}" />
@@ -88,7 +89,10 @@
     overflow: visible !important;
 
   }
-
+  #TableData{
+    max-width: 95%;
+    margin: auto;
+  }
   h1.title {
     text-transform: capitalize;
   }
@@ -401,6 +405,7 @@
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-1.12.4.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-dataTables.min.js') }}"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/3.2.4/js/dataTables.fixedColumns.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
@@ -421,8 +426,10 @@ function highlightRows(){
   for (j=0; j<highlighted.length; j++) {
     for (i=0; i<trs.length; i++) {
       if (trs[i].cells[1].textContent === highlighted[j]){
-        trs[i].style.backgroundColor = highlightColor(0.5, "#dedede", "#95eef8") // INSERT REAL PERCENT CONFIDENCE HERE
-        trs[i].cells[0].style.backgroundColor = highlightColor(0.5, "#dedede", "#95eef8") // INSERT REAL PERCENT CONFIDENCE HERE
+        trs[i].style.fontWeight = "900";
+        trs[i].style.color = "black";
+        //trs[i].style.backgroundColor = highlightColor(0.5, "#dedede", "#95eef8") // INSERT REAL PERCENT CONFIDENCE HERE
+        //trs[i].cells[0].style.backgroundColor = highlightColor(0.5, "#dedede", "#95eef8") // INSERT REAL PERCENT CONFIDENCE HERE
       }
     }
   }
@@ -539,7 +546,10 @@ function renderTable(data) {
     scrollY: '100vh',
     scrollCollapse: true,
     pageLength: 25,
-    searching: true,
+    searching: true
+    //fixedColumns: {
+    //    leftColumns: 3
+    //}
   })
 
   $('#table').on('draw.dt', function(e) {
@@ -581,7 +591,7 @@ function renderHead(datum) {
 function setBarColor(dataConf) {
   console.log("confidence score:")
   console.log(dataConf)
-  return highlightColor(dataConf, "#fc8d59", "#b30000")
+  return highlightColor(dataConf, "#FB8072", "#3F3A3C")
 }
 
 function renderData(data, keys) {
@@ -608,27 +618,6 @@ function renderData(data, keys) {
     var props = keys
     .map(k => x[k])
     t.fnAddData(props, false);
-    // t.fnAddData(props, false);
-    // console.log(props);
-    // console.log(keys);
-    // html row
-
-    // "render": function(data, type, row, meta){
-    //     return $("<div></div>", {
-    //         "class": "bar-chart-bar"
-    //     }).append(function(){
-    //         var bars = [];
-    //         for(var i = 1; i < row.length; i++){
-    //             bars.push($("<div></div>",{
-    //                 "class": "bar " + "bar" + i
-    //             }).css({
-    //                 "width": row[i] + "%"
-    //             }))
-    //         }
-    //         return bars;
-    //     }).prop("outerHTML")
-    // }
-
   }
 )
 
@@ -650,6 +639,7 @@ const raw = '{{data|tojson}}'
 const data = parseData(raw)
 
 renderTable(data)
+
 
 </script>
 
@@ -741,7 +731,7 @@ console.log(inputData);
 // var colorScheme = d3.scale.category20();
 document.getElementById("p1").innerHTML = "Impact of Attributes on Dataset Ranking";
 
-var colorScheme = ["#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
+var colorScheme = ["#ffed6f","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5","#d9d9d9","#bc80bd"];
 
 
 var margin =  {top: 20, right: 10, bottom: 20, left: 40};
@@ -1080,7 +1070,6 @@ function display () {
   background-color: #e8e8e8;
   display: block;
   position:relative;
-  width: 100%;
   height: 20px;
 }
 

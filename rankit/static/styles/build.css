@@ -42,7 +42,7 @@
 /*pallet from http://colorbrewer2.org/#type=qualitative&scheme=Set3&n=12 */
    :root {
      --teal:#8dd3c7;
-     --lght_yellow:#ffffb3;
+     --lght_yellow:#ffed6f;
      --violet:#bebada;
      --brick:#fb8072;
      --blue:#80b1d3;
@@ -81,24 +81,25 @@
   tr#head th:nth-child(8){background-color: var(--orange);}
   tr#head th:nth-child(9){background-color: var(--green);}
   tr#head th:nth-child(10){background-color: var(--pink);}
-  tr#head th:nth-child(11){background-color: var(--lght_yellow);}
-  tr#head th:nth-child(12){background-color: var(--violet);}
-  tr#head th:nth-child(13){background-color: var(--brick);}
-  tr#head th:nth-child(14){background-color: var(--blue);}
-  tr#head th:nth-child(15){background-color: var(--orange);}
-  tr#head th:nth-child(16){background-color: var(--green);}
-  tr#head th:nth-child(17){background-color: var(--pink);}
-  tr#head th:nth-child(18){background-color: var(--lght_yellow);}
-  tr#head th:nth-child(19){background-color: var(--violet);}
-  tr#head th:nth-child(20){background-color: var(--brick);}
-  tr#head th:nth-child(21){background-color: var(--blue);}
-  tr#head th:nth-child(22){background-color: var(--orange);}
-  tr#head th:nth-child(23){background-color: var(--green);}
-  tr#head th:nth-child(24){background-color: var(--pink);}
-  tr#head th:nth-child(25){background-color: var(--lght_yellow);}
+  tr#head th:nth-child(11){background-color: var(--gray);}
+  tr#head th:nth-child(12){background-color: var(--purple);}
+  tr#head th:nth-child(13){background-color: var(--lght_yellow);}
+  tr#head th:nth-child(14){background-color: var(--violet);}
+  tr#head th:nth-child(15){background-color: var(--brick);}
+  tr#head th:nth-child(16){background-color: var(--blue);}
+  tr#head th:nth-child(17){background-color: var(--orange);}
+  tr#head th:nth-child(18){background-color: var(--green);}
+  tr#head th:nth-child(19){background-color: var(--pink);}
+  tr#head th:nth-child(20){background-color: var(--gray);}
+  tr#head th:nth-child(21){background-color: var(--purple);}
+  tr#head th:nth-child(22){background-color: var(--lght_yellow);}
+  tr#head th:nth-child(23){background-color: var(--violet);}
+  tr#head th:nth-child(24){background-color: var(--brick);}
+  tr#head th:nth-child(25){background-color: var(--blue);}
+  tr#head th:nth-child(26){background-color: var(--orange);}
  
   .bar-chart-bar{
-      width:200px;
+      min-width:200px;
 }
   .object:hover {
     border: 1px solid;
