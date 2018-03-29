@@ -505,6 +505,7 @@
     var confidence = 0
     var weights = 0
     var counter = 0
+    var tooltipCounter = 0
   </script>
 
   <!-- this is script for the pool -->
@@ -789,6 +790,10 @@
             tooltip.append('div')
             .attr('class', 'weight');
 
+            if (tooltipCounter >= 1) {
+              tooltipCounter = 0;
+            }
+            else {
             svg.selectAll(".bar")
             .on('mouseover', function(d) {
               tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
@@ -796,6 +801,7 @@
 
               tooltip.style('display', 'block');
               tooltip.style('opacity',2);
+              tooltipCounter += 1;
             })
             .on('mousemove', function(d) {
               tooltip.style('top', (d3.event.layerY + 10) + 'px')
@@ -807,6 +813,7 @@
             });
 
           rects.exit().remove();
+        }
       };
 
 

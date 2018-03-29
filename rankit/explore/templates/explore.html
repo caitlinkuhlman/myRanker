@@ -412,6 +412,10 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
 <script>
+var tooltipCounter = 0
+</Script>
+
+<script>
 
 function highlightColor(percent, color1, color2){
   color = d3.scale.linear().domain([0, 1]).interpolate(d3.interpolateHcl).range([d3.rgb(color1), d3.rgb(color2)])
@@ -446,7 +450,7 @@ function shadeRowsByconf(data){
      trs[i].cells[2].style.backgroundColor = highlightColor(score, "#e3f7f3","#337c6e");
   }
   $('[data-toggle="popover"]').popover();
-  
+
 }
 
 </script>
@@ -941,6 +945,10 @@ function display () {
       tooltip.append('div')
       .attr('class', 'weight');
 
+      if (tooltipCounter >= 1) {
+        tooltipCounter = 0;
+      }
+      else {
       svg.selectAll(".bar")
       .on('mouseover', function(d) {
         tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
@@ -948,6 +956,7 @@ function display () {
 
         tooltip.style('display', 'block');
         tooltip.style('opacity',2);
+        tooltipCounter += 1;
       })
       .on('mousemove', function(d) {
         tooltip.style('top', (d3.event.layerY + 10) + 'px')
@@ -959,117 +968,8 @@ function display () {
       });
 
     rects.exit().remove();
+  }
 };
-
-
-// renderBarChart(inputData,"#chart", colorScheme);
-//
-// function renderBarChart(inputData,dom_element_to_append_to, colorScheme){
-//   // var margin = {top: 0, right: 40, bottom: 250, left: 150},
-//   // width = 650 - margin.left - margin.right,
-//   // height = 300 - margin.top - margin.bottom;
-//   var width = 360;
-//   var height = 200;
-//   // var width1 = d3.select("#chart").style("width").split("px").shift();
-//   // var height1 = d3.select("#chart").style("height").split("px").shift();
-//
-//   var formatPercent = d3.format(".0%");
-//
-//   var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
-//
-//   var y = d3.scale.linear().range([height, 0]);
-//
-//   var color = d3.scale.ordinal()
-//   .range(colorScheme);
-//
-//
-//   var xAxis = d3.svg.axis()
-//   .scale(x)
-//   .orient("bottom")
-//
-//   var yAxis = d3.svg.axis()
-//   .scale(y)
-//   .orient("left")
-//   .ticks(10);
-//
-//   var svg = d3.select(dom_element_to_append_to).append("svg")
-//   // .attr("height", height1 + margin.top + margin.bottom)
-//   // .attr("width", width1 + margin.left + margin.right)
-//   .attr("height", height)
-//   .attr("width", width)
-//
-//
-//   // .attr("title").text("Impact of Attributes on Dataset Ranking")
-//   // .text("Impact of Attributes on Dataset Ranking");
-//
-//   .append("g")
-//   .attr("transform","translate(" + 0 + "," + -75 + ")");
-//   // .attr("transform","translate(" + margin.left + "," + margin.top + ")");
-//
-//   inputData.forEach(function(d) {
-//     d.attribute = d.attribute;
-//     d.weight = +d.weight;
-//   });
-//
-//   x.domain(inputData.map(function(d) { return d.attribute; }));
-//   y.domain([0, d3.max(inputData, function(d) { return +d.weight; })]);
-//
-//   svg.append("g")
-//   .attr("class", "y axis")
-//
-//   svg.append("g")
-//   .attr("class", "x axis")
-//   .call(xAxis)
-//   .attr("transform",
-//   "translate(" + 0 + "," + height + ")")
-//
-//   svg.selectAll("bar")
-//   .data(inputData)
-//   .enter().append("rect")
-//   .attr("class", "bar")
-//   .attr("x", function(d) { return x(d.attribute); })
-//   .attr("width", x.rangeBand())
-//   .attr("y", function(d) { return y(d.weight); })
-//   .attr("height", function(d) { return height - y(d.weight); })
-//   .attr('fill', function(d, i) {
-//     return color(d.attribute);
-//   });
-//
-//   svg.append("text")
-//   .attr("text-anchor", "middle")
-//   .style("font-size", "12px")
-//   .text("Impact of Attributes on Dataset Ranking");
-//
-//
-//   var tooltip = d3.select(dom_element_to_append_to)
-//   .append('div')
-//   .attr('class', 'tooltip');
-//
-//   tooltip.append('div')
-//   .attr('class', 'attribute');
-//   tooltip.append('div')
-//   .attr('class', 'weight');
-//
-//   svg.selectAll(".bar")
-//   .on('mouseover', function(d) {
-//     tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
-//     tooltip.select('.weight').html("<b> Weight: " + d.weight + "</b>");
-//
-//     tooltip.style('display', 'block');
-//     tooltip.style('opacity',2);
-//   })
-//   .on('mousemove', function(d) {
-//
-//     tooltip.style('top', (d3.event.layerY + 10) + 'px')
-//     .style('left', (d3.event.layerX - 25) + 'px');
-//   })
-//   .on('mouseout', function(d) {
-//     tooltip.style('display', 'none');
-//     tooltip.style('opacity',0);
-//   });
-//
-//   window.addEventListener('resize', Chart.render);
-// }
 
 </script>
 

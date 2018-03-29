@@ -20,294 +20,294 @@
   <title>List Comparison</title>
   <style>
 
-    .add_pairwise {
-      width: 15%;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
-      appearance: none;
-      border: none;
-      border-radius: 4px;
-      background: rgba(231, 76, 60, 1);
-      color: #fefffb;
-      font-weight: normal;
-      font-size: 100%;
-      position: absolute;
-      right: 0;
-      vertical-align: baseline;
-      float: right;
-      margin: 0px 50px;
-    }
+  .add_pairwise {
+    width: 15%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 4px;
+    background: rgba(231, 76, 60, 1);
+    color: #fefffb;
+    font-weight: normal;
+    font-size: 100%;
+    position: absolute;
+    right: 0;
+    vertical-align: baseline;
+    float: right;
+    margin: 0px 50px;
+  }
 
-    h2 {
-      text-align: center;
-      color: #333;
-      font-size: 30px;
-    }
+  h2 {
+    text-align: center;
+    color: #333;
+    font-size: 30px;
+  }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      height: 100vh;
-    }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    height: 100vh;
+  }
 
-    p {
-      text-align: center;
-    }
+  p {
+    text-align: center;
+  }
 
-    .submit {
-      width: 15%;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
-      appearance: none;
-      border: none;
-      border-radius: 4px;
-      color: #fefffb;
-      font-weight: normal;
-      font-size: 100%;
-      position: absolute;
-      right: 0;
-      vertical-align:baseline;
-      float: right;
-      margin: 0px 50px;
+  .submit {
+    width: 15%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 4px;
+    color: #fefffb;
+    font-weight: normal;
+    font-size: 100%;
+    position: absolute;
+    right: 0;
+    vertical-align:baseline;
+    float: right;
+    margin: 0px 50px;
 
-    }
+  }
 
-    .submit[disabled] {
-      background-color:  rgba(200, 200, 200, 0.6);
-      color: #ffffff;
-      width: 15%;
-      vertical-align:baseline;
-      font-family: sans-serif;
-      font-weight: normal;
-      font-size: 100%;
-      float: right;
-      margin: 0px 50px;
-    }
+  .submit[disabled] {
+    background-color:  rgba(200, 200, 200, 0.6);
+    color: #ffffff;
+    width: 15%;
+    vertical-align:baseline;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 100%;
+    float: right;
+    margin: 0px 50px;
+  }
 
-    .submit:hover {
-      color: #fff;
-    }
+  .submit:hover {
+    color: #fff;
+  }
 
-    .semi-transparent-button{
-      background-color:  rgba(200, 200, 200, 0.6);
-      border-radius: 2px;
-      border-color: rgba(200, 200, 200, 0.6);
-      color: #777;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.3s ease-out;
-      /* border: 1px solid rgba(200, 200, 200, 0.6); */
-      text-decoration-color: white;
-      /* border: 2px solid black; */
-    }
+  .semi-transparent-button{
+    background-color:  rgba(200, 200, 200, 0.6);
+    border-radius: 2px;
+    border-color: rgba(200, 200, 200, 0.6);
+    color: #777;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    /* border: 1px solid rgba(200, 200, 200, 0.6); */
+    text-decoration-color: white;
+    /* border: 2px solid black; */
+  }
 
-    .semi-transparent-button:hover {
-      color: #fff;
-      border: 1px solid;
-      border-color: white;
-    }
+  .semi-transparent-button:hover {
+    color: #fff;
+    border: 1px solid;
+    border-color: white;
+  }
 
 
-    #build-method {
-      grid-area: header;
-      display: flex;
-      width: 100%;
-      margin: 18px 0 0 0;
-      justify-content: space-around;
-      background-color: #f3f3f3ff
-      /* background-color: #d9d9d9ff; */
-    }
+  #build-method {
+    grid-area: header;
+    display: flex;
+    width: 100%;
+    margin: 18px 0 0 0;
+    justify-content: space-around;
+    background-color: #f3f3f3ff
+    /* background-color: #d9d9d9ff; */
+  }
 
-    #build-method a:link, #build-method a:visited {
-      text-decoration: none;
-      display: block;
-      padding: 0.8em;
-    }
+  #build-method a:link, #build-method a:visited {
+    text-decoration: none;
+    display: block;
+    padding: 0.8em;
+  }
 
-    #build-method .active {
-      width: 200%;
-    }
+  #build-method .active {
+    width: 200%;
+  }
 
-    h1.title {
+  h1.title {
     text-transform: capitalize;
     display: block;
     color: white;
     font-size: 70px;
     display: inline-block;
     padding: 20px 20px 0px;
-    }
+  }
 
-    h1.title:first-letter {
+  h1.title:first-letter {
     text-transform: uppercase;
-    }
+  }
 
-    .page-header h1 {
-      padding: 0px 20px 0px;
-      color: white;
-      font-size: 80px;
-      margin: 0;
-      display: inline-block;
-    }
+  .page-header h1 {
+    padding: 0px 20px 0px;
+    color: white;
+    font-size: 80px;
+    margin: 0;
+    display: inline-block;
+  }
 
-    #lc-wrapper-grid {
-      display: grid;
-      grid-template-areas:
-        "header header"
-        "legend list";
-      grid-template-columns: 120px 1fr;
-      /* background-color: #f3f3f3ff; */
-      border: 2px solid #777;
-      border-radius: 8px;
-    }
+  #lc-wrapper-grid {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "legend list";
+    grid-template-columns: 120px 1fr;
+    /* background-color: #f3f3f3ff; */
+    border: 2px solid #777;
+    border-radius: 8px;
+  }
 
-    .legend-label {
-      grid-area: legend;
-      margin: 16px;
-      padding: 50px 10px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+  .legend-label {
+    grid-area: legend;
+    margin: 16px;
+    padding: 50px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-    #lc-list {
-      grid-area: list;
-      max-width: 75%;
-    }
+  #lc-list {
+    grid-area: list;
+    max-width: 75%;
+  }
 
-    .right{
-      float: right;
-    }
+  .right{
+    float: right;
+  }
 
-    #sort {
-      width: 6em;
-    }
-    #shuffle {
-      width: 6em;
-    }
-    #cd-tour-trigger {
-      width: 6em;
-      cursor: pointer;
-    }
+  #sort {
+    width: 6em;
+  }
+  #shuffle {
+    width: 6em;
+  }
+  #cd-tour-trigger {
+    width: 6em;
+    cursor: pointer;
+  }
 
-    #build-right {
-      padding: 0px 16px 16px;
-    }
+  #build-right {
+    padding: 0px 16px 16px;
+  }
 
-    .navbar-form {
+  .navbar-form {
     padding: 25px 16px 16px;
     margin-left: 10%;
   }
 
-    .navbar-form .form-control {
-        display: inline-block;
-        width: 60%;
-        vertical-align: middle;
-    }
+  .navbar-form .form-control {
+    display: inline-block;
+    width: 60%;
+    vertical-align: middle;
+  }
 
-    input::placeholder {
-      color: black;
-    }
+  input::placeholder {
+    color: black;
+  }
 
-    .border{
-      background-color: #d9d9d9ff;
-    }
+  .border{
+    background-color: #d9d9d9ff;
+  }
 
-    .graphArea {
-        width: 50%;
-        float: right;
-        grid-area: build-top;
-        /* background-color:#2980B9; */
-        min-height: 115px;
-    }
+  .graphArea {
+    width: 50%;
+    float: right;
+    grid-area: build-top;
+    /* background-color:#2980B9; */
+    min-height: 115px;
+  }
 
-    .graphArea svg {
-        display:block;
-        margin:0 auto;
-    }
+  .graphArea svg {
+    display:block;
+    margin:0 auto;
+  }
 
-    path {
-      stroke: steelblue;
-      stroke-width: 2;
-      fill: none;
-    }
+  path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+  }
 
-    .axis path,
-    .axis line {
-      fill: none;
-      stroke: grey;
-      stroke-width: 1;
-      shape-rendering: crispEdges;
-    }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+  }
 
-    .tooltip {
-      background: #eee;
-      box-shadow: 0 0 5px #999999;
-      color: #333;
-      font-size: 12px;
-      left: 130px;
-      padding: 10px;
-      position: absolute;
-      text-align: center;
-      top: 95px;
-      z-index: 10;
-      display: block;
-      opacity: 0;
-    }
-    .progress-bar {
-      font-weight: bold;
-      background-color: #fdb462;
-    }
-    .progress {
-      background-color: #D3D3D3;
-    }
-    .progress-value {
-      position: relative;
-      float: left;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+  .tooltip {
+    background: #eee;
+    box-shadow: 0 0 5px #999999;
+    color: #333;
+    font-size: 12px;
+    left: 130px;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    top: 95px;
+    z-index: 10;
+    display: block;
+    opacity: 0;
+  }
+  .progress-bar {
+    font-weight: bold;
+    background-color: #fdb462;
+  }
+  .progress {
+    background-color: #D3D3D3;
+  }
+  .progress-value {
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-/* Popover */
-.popover {
+  /* Popover */
+  .popover {
     border: 2px dotted red;
-}
+  }
 
-/* Popover Body*/
-.popover-content {
+  /* Popover Body*/
+  .popover-content {
     max-height: 500px;
     overflow-y: auto;
-}
-/* Popover Arrow */
-.arrow {
+  }
+  /* Popover Arrow */
+  .arrow {
     border-right-color: red !important;
-}
-svg {
-  width: 100%;
-  height: 100%;
-  position: center;
-}
-.toolTip {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: absolute;
-  display: none;
-  width: auto;
-  height: auto;
-  background: none repeat scroll 0 0 white;
-  border: 0 none;
-  border-radius: 8px 8px 8px 8px;
-  box-shadow: -3px 3px 15px #888888;
-  color: black;
-  font: 12px sans-serif;
-  padding: 5px;
-  text-align: center;
-}
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    position: center;
+  }
+  .toolTip {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: absolute;
+    display: none;
+    width: auto;
+    height: auto;
+    background: none repeat scroll 0 0 white;
+    border: 0 none;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: -3px 3px 15px #888888;
+    color: black;
+    font: 12px sans-serif;
+    padding: 5px;
+    text-align: center;
+  }
 
 
   </style>
@@ -316,46 +316,46 @@ svg {
 
 <script>
 
-    $(document).ready(function () {
-      $('[data-toggle="popover"]').popover();
-    })
+$(document).ready(function () {
+  $('[data-toggle="popover"]').popover();
+})
 
-    function parseData(raw) {
-      return JSON.parse(raw.substring(1, raw.length - 1))
+function parseData(raw) {
+  return JSON.parse(raw.substring(1, raw.length - 1))
+}
+
+function findObject (objectTitle) {
+  const raw = '{{data|tojson}}'
+  const data = parseData(raw)
+  for (var i=0; i<data.length; i++) {
+    obj = data[i]
+    if (obj.Title === objectTitle) {
+      return obj
     }
+  }
+}
 
-    function findObject (objectTitle) {
-      const raw = '{{data|tojson}}'
-      const data = parseData(raw)
-      for (var i=0; i<data.length; i++) {
-        obj = data[i]
-        if (obj.Title === objectTitle) {
-          return obj
-        }
-      }
-    }
+function displayAttributes(objectTitle) {
+  var object = findObject(objectTitle)
+  var text = "<table class='data-pool-popover'><tr><th>Attribute</th><th>Value</th></tr>";
+  for (var propt in object) {
+    text = text + "<tr><td>" + propt + "</td><td>" + object[propt]+"</td></tr>";
+  }
+  text = text + "</table>"
+  document.getElementById(objectTitle).setAttribute("data-content", text)
+}
 
-    function displayAttributes(objectTitle) {
-      var object = findObject(objectTitle)
-      var text = "<table class='data-pool-popover'><tr><th>Attribute</th><th>Value</th></tr>";
-      for (var propt in object) {
-        text = text + "<tr><td>" + propt + "</td><td>" + object[propt]+"</td></tr>";
-      }
-      text = text + "</table>"
-      document.getElementById(objectTitle).setAttribute("data-content", text)
-    }
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+})
 
-    $('.popover-dismiss').popover({
-      trigger: 'focus'
-    })
-
-    $('body').on('click', function (e) {
-        //did not click a popover toggle or popover
-        if ($(e.target).data('toggle') !== 'popover'
-            && $(e.target).parents('.popover.in').length === 0) {
-            $('[data-toggle="popover"]').popover('hide');
-        }
-    });
+$('body').on('click', function (e) {
+  //did not click a popover toggle or popover
+  if ($(e.target).data('toggle') !== 'popover'
+  && $(e.target).parents('.popover.in').length === 0) {
+    $('[data-toggle="popover"]').popover('hide');
+  }
+});
 
 </script>
 
@@ -373,7 +373,7 @@ svg {
       <a style="font-weight:bold" class="navbar-brand" href={{ url_for( 'home.index') }}>RANKIT</a>
     </div>
 
-<!-- Nav bar for dataset and explore -->
+    <!-- Nav bar for dataset and explore -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
@@ -392,22 +392,22 @@ svg {
   <div id="build-container">
     <div class="build-pool-header">
       <div style="float: left; width: 60%;">
-      <!-- Dataset name header -->
-      <h1 style="position:relative; right:5px" class="title">
-        <b>
-          Build: {{ dataset_name |replace("_", " ") }}
-        </b>
-        <br>
-      </h1>
-    </div>
+        <!-- Dataset name header -->
+        <h1 style="position:relative; right:5px" class="title">
+          <b>
+            Build: {{ dataset_name |replace("_", " ") }}
+          </b>
+          <br>
+        </h1>
+      </div>
       <div class = "graphArea" style="float: left; width: 40%;">
         <!-- <p style="float: right; color: white; font-size: 20px; margin-right: 50px;"><b>Impact of Attributes on Dataset Ranking</b></p> -->
         <p id="p1" style="float: right; color: white; font-size: 20px; margin-right: 50px;"><b></b></p>
         <div id="chart" style="display: block; float: right; height: 25%; width: 75%"></div>
-    </div>
+      </div>
 
 
-<!-- Help Button step instructions: Listed by each step -->
+      <!-- Help Button step instructions: Listed by each step -->
       <ul class="cd-tour-wrapper">
 
         <li class="cd-single-step">
@@ -423,35 +423,35 @@ svg {
             <br>Pairwise Comparison: Compare your items in pairs to judge which of the two item in a pair is preferred over the
             other.
             <br>
-            </p>
-            <img src="{{ url_for('static',filename='images/Step1Build.png') }}">
-          </div>
-        </li>
+          </p>
+          <img src="{{ url_for('static',filename='images/Step1Build.png') }}">
+        </div>
+      </li>
 
-        <li class="cd-single-step">
-          <span>Step 2</span>
-          <div class="cd-more-info top">
-            <h2>Step Number 2</h2>
-            <p>Select and drag each item to the desired ranking panel.</p>
-            <img src="{{ url_for('static',filename='images/Step2Build.png') }}">
-          </div>
-        </li>
+      <li class="cd-single-step">
+        <span>Step 2</span>
+        <div class="cd-more-info top">
+          <h2>Step Number 2</h2>
+          <p>Select and drag each item to the desired ranking panel.</p>
+          <img src="{{ url_for('static',filename='images/Step2Build.png') }}">
+        </div>
+      </li>
 
-        <li class="cd-single-step">
-          <span>Step 3</span>
-          <div class="cd-more-info bottom">
-            <h2>Step Number 3</h2>
-            <p>You can randomize the dataset items by clicking the shuffle button.</p>
-            <img src="{{ url_for('static',filename='images/Step3Build.png') }}">
-          </div>
-        </li>
+      <li class="cd-single-step">
+        <span>Step 3</span>
+        <div class="cd-more-info bottom">
+          <h2>Step Number 3</h2>
+          <p>You can randomize the dataset items by clicking the shuffle button.</p>
+          <img src="{{ url_for('static',filename='images/Step3Build.png') }}">
+        </div>
+      </li>
 
-        <li class="cd-single-step">
-          <span>Step 4</span>
-          <div class="cd-more-info bottom">
-            <h2>Step Number 4</h2>
-            <p>After you use shuffle, you can sort the data set objects in Alphabetical Order by clicking the Sort button to
-              help your ranking picks.</p>
+      <li class="cd-single-step">
+        <span>Step 4</span>
+        <div class="cd-more-info bottom">
+          <h2>Step Number 4</h2>
+          <p>After you use shuffle, you can sort the data set objects in Alphabetical Order by clicking the Sort button to
+            help your ranking picks.</p>
             <img src="{{ url_for('static',filename='images/Step4Build.png') }}">
           </div>
         </li>
@@ -467,7 +467,7 @@ svg {
 
       </ul>
 
-<!-- Backround layer when help button is active -->
+      <!-- Backround layer when help button is active -->
       <div class="cd-cover-layer"></div>
     </div>
 
@@ -475,27 +475,27 @@ svg {
     <div id="build-left">
 
       <div id="border">
-      <div class="navbar-form navbar-center" role="search">
-        <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
-        <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">Sort</button>
-        <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">Shuffle</button>
-      </div>
+        <div class="navbar-form navbar-center" role="search">
+          <input type="search" id="search-criteria" class="form-control" placeholder="Search by names..." onkeyup="searchDataset(event)">
+          <button type="button" class="semi-transparent-button btn " id="sort" onclick="sortDataset()">Sort</button>
+          <button type="button" class="semi-transparent-button btn " id="shuffle" onclick="shuffleDataset()">Shuffle</button>
+        </div>
 
 
         <!-- this is the pool -->
-      <div class="scrollingDragInner viewBackround">
-        <div id="top" class="pool">
-          <!-- objects from dataset inserted here -->
-          {% for x in dataset %}
-          <div tabindex="0" id="{{x}}" class="object noSelect" data-toggle="popover" data-trigger="focus" data-html="true">{{x}}</div>
-          <script>
+        <div class="scrollingDragInner viewBackround">
+          <div id="top" class="pool">
+            <!-- objects from dataset inserted here -->
+            {% for x in dataset %}
+            <div tabindex="0" id="{{x}}" class="object noSelect" data-toggle="popover" data-trigger="focus" data-html="true">{{x}}</div>
+            <script>
             displayAttributes('{{x}}')
-          </script>
-          {% endfor %}
+            </script>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
     <!-- ****************************************************************************** -->
     <!-- this is the right side of the build view -->
@@ -523,603 +523,611 @@ svg {
             <div id="bar" class="progress-bar progress-bar-striped active" role="progressbar"
             aria-valuenow="1" aria-valuemin="1" aria-valuemax="101" style="width:1%; margin-bottom:30px;">
             <span>0% Confidence</span>
-            </div>
           </div>
-          <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
-          <br><br><br>
         </div>
-
+        <button type="button" id="lc-submit" class="btn submit" disabled="disabled">RANK!</button>
+        <br><br><br>
       </div>
+
     </div>
   </div>
+</div>
 
-  <!-- this are the global variables -->
-  <script>
-    var confidence = 0
-    var weights = 0
-    var counter = 0
-    // console.log(confidence);
-    // console.log(weights);
-  </script>
+<!-- this are the global variables -->
+<script>
+var confidence = 0
+var weights = 0
+var counter = 0
+var tooltipCounter = 0
+// console.log(confidence);
+// console.log(weights);
+</script>
 
 
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <!-- this is script for the pool -->
-  <script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.sortable.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.mobile.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<!-- this is script for the pool -->
+<script>
 
-    function getDataset() {
-      return Array.from(document.querySelector('#top').children).map(x => x.innerText)
-    }
+function getDataset() {
+  return Array.from(document.querySelector('#top').children).map(x => x.innerText)
+}
 
-    function sortDataset() {
-      const dataset = getDataset()
-      dataset.sort()
-      render(dataset)
-    }
+function sortDataset() {
+  const dataset = getDataset()
+  dataset.sort()
+  render(dataset)
+}
 
-    function shuffleDataset() {
-      const dataset = getDataset()
-      for (let i = dataset.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [dataset[i], dataset[j]] = [dataset[j], dataset[i]];
+function shuffleDataset() {
+  const dataset = getDataset()
+  for (let i = dataset.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [dataset[i], dataset[j]] = [dataset[j], dataset[i]];
+  }
+  render(dataset)
+}
+
+const dataset = getDataset()
+function searchDataset(e) {
+  let difference = dataset.filter(x => getRankedObjects().indexOf(x) == -1)
+  const value = e.target.value
+  const re = new RegExp(value, 'i')
+  const newDataset = difference.filter(x => re.test(x))
+  render(newDataset)
+}
+
+function render(dataset) {
+  const pool = document.querySelector('#top')
+  const html = dataset.map(x => `<div tabindex="0" id="${x}" class="object noSelect" data-toggle="popover" data-trigger="focus">${x}</div>`).join('\n')
+  pool.innerHTML = html
+}
+</script>
+
+
+<style>
+
+svg {
+  font: 10px sans-serif;
+}
+
+
+.bar {
+  /* fill: steelblue; */
+  clip-path: url(#clip);
+}
+
+.subBar {
+  fill: #2980B9;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.brush .extent {
+  stroke: #fff;
+  fill: steelblue;
+  fill-opacity: .25;
+  shape-rendering: crispEdges;
+}
+
+rect.mover {
+  stroke: red;
+  stroke-opacity: .1;
+  fill: #E74C3C;
+  fill-opacity: .5;
+}
+</style>
+
+
+<script>
+
+// const inputData = [{attribute:"Category 1",weight:0.5},{attribute:"Category 2",weight:0.1},{attribute:"Category 3",weight:1.2},{attribute:"Category 4",weight:1.2},{attribute:"Category 5",weight:0.3}];
+// const inputData = weights
+// console.log(weights);
+// var colorScheme = d3.scale.category20();
+
+
+function renderBarChart(inputData, dom_element_to_append_to, colorScheme) {
+  counter = 1;
+
+  // var colorScheme = ["#8dd3c7","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
+
+  var margin =  {top: 20, right: 10, bottom: 20, left: 40};
+  var marginOverview = {top: 30, right: 10, bottom: 20, left: 40};
+  var selectorHeight = 40;
+  var width = 2000 - margin.left - margin.right;
+  var height = 420 - margin.top - margin.bottom - selectorHeight;
+  var heightOverview = 80 - marginOverview.top - marginOverview.bottom;
+
+  var maxLength = d3.max(inputData.map(function(d){ return d.attribute.length}))
+  var barWidth = maxLength * 7;
+  var numBars = Math.round(width/barWidth);
+  var isScrollDisplayed = barWidth * inputData.length > width;
+
+
+  console.log(isScrollDisplayed)
+
+  var xscale = d3.scale.ordinal()
+  .domain(inputData.slice(0,numBars).map(function (d) { return d.attribute; }))
+  .rangeBands([0, width], .2);
+
+  var yscale = d3.scale.linear()
+  .domain([0, d3.max(inputData, function (d) { return d.weight; })])
+  .range([height, 0]);
+
+  var color = d3.scale.ordinal()
+  .range(colorScheme);
+
+  var xAxis  = d3.svg.axis().scale(xscale).orient("bottom");
+  var yAxis  = d3.svg.axis().scale(yscale).orient("left");
+
+  var svg = d3.select("#chart").append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom + selectorHeight)
+  .attr("viewBox", "0 0 700 500")
+  .attr("preserveAspectRatio", "xMinYMin meet");
+
+
+  var diagram = svg.append("g")
+  .attr("transform", "translate(" + margin.left + "," + 100 + ")");
+
+  diagram.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0, " + height + ")")
+  .call(xAxis);
+
+  // diagram.append("g")
+  //        .attr("class", "y axis")
+  //        .call(yAxis);
+
+  var bars = diagram.append("g");
+
+  bars.selectAll("rect")
+  .data(inputData.slice(0, numBars), function (d) {return d.attribute; })
+  .enter().append("rect")
+  .attr("class", "bar")
+  .attr("x", function (d) { return xscale(d.attribute); })
+  .attr("y", function (d) { return yscale(d.weight); })
+  .attr("width", xscale.rangeBand())
+  .attr("height", function (d) { return height - yscale(d.weight); })
+  .attr('fill', function(d, i) {
+    return color(d.attribute);
+  });
+
+  var tooltip = d3.select("#chart")
+  .append('div')
+  .attr('class', 'tooltip');
+
+  tooltip.append('div')
+  .attr('class', 'attribute');
+  tooltip.append('div')
+  .attr('class', 'weight');
+
+  svg.selectAll(".bar")
+  .on('mouseover', function(d) {
+    tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
+    tooltip.select('.weight').html("<b>Weight: " + d.weight + "</b>");
+
+    tooltip.style('display', 'block');
+    tooltip.style('opacity',2);
+  })
+  .on('mousemove', function(d) {
+
+    tooltip.style('top', (d3.event.layerY + 10) + 'px')
+    .style('left', (d3.event.layerX - 25) + 'px');
+  })
+  .on('mouseout', function(d) {
+    tooltip.style('display', 'none');
+    tooltip.style('opacity',0);
+  });
+
+
+
+
+  if (isScrollDisplayed)
+  {
+    var xOverview = d3.scale.ordinal()
+    .domain(inputData.map(function (d) { return d.attribute; }))
+    .rangeBands([0, width], .2);
+    yOverview = d3.scale.linear().range([heightOverview, 0]);
+    yOverview.domain(yscale.domain());
+
+    var subBars = diagram.selectAll('.subBar')
+    .data(inputData)
+
+    subBars.enter().append("rect")
+    .classed('subBar', true)
+    .attr({
+      height: function(d) {
+        return heightOverview - yOverview(d.weight);
+      },
+      width: function(d) {
+        return xOverview.rangeBand()
+      },
+      x: function(d) {
+
+        return xOverview(d.attribute);
+      },
+      y: function(d) {
+        return height + heightOverview + yOverview(d.weight)
       }
-      render(dataset)
+    })
+
+    var displayed = d3.scale.quantize()
+    .domain([0, width])
+    .range(d3.range(inputData.length));
+
+    diagram.append("rect")
+    // .attr("transform", "translate(0, " + (height + margin.bottom) + ")")
+    // .attr("transform","translate(" + margin.left + "," + 40 + ")")
+    .attr("transform", "translate(0, " + (height + margin.bottom) + ")")
+    .attr("class", "mover")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("height", selectorHeight)
+    .attr("width", Math.round(parseFloat(numBars * width)/inputData.length))
+    .attr("pointer-events", "all")
+    .attr("cursor", "ew-resize")
+    .call(d3.behavior.drag().on("drag", display));
+
+
+  }
+  function display () {
+    var x = parseInt(d3.select(this).attr("x")),
+    nx = x + d3.event.dx,
+    w = parseInt(d3.select(this).attr("width")),
+    f, nf, new_data, rects;
+
+    if ( nx < 0 || nx + w > width ) return;
+
+    d3.select(this).attr("x", nx);
+
+    f = displayed(x);
+    nf = displayed(nx);
+
+    if ( f === nf ) return;
+
+    new_data = inputData.slice(nf, nf + numBars);
+
+    xscale.domain(new_data.map(function (d) { return d.attribute; }));
+    diagram.select(".x.axis").call(xAxis);
+
+    rects = bars.selectAll("rect")
+    .data(new_data, function (d) {return d.attribute; });
+
+    rects.attr("x", function (d) { return xscale(d.attribute); });
+
+    // 	  rects.attr("transform", function(d) { return "translate(" + xscale(d.attribute) + ",0)"; })
+
+    rects.enter().append("rect")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    .attr("class", "bar")
+    .attr("x", function (d) { return xscale(d.attribute); })
+    .attr("y", function (d) { return yscale(d.weight); })
+    .attr("width", xscale.rangeBand())
+    .attr("height", function (d) { return height - yscale(d.weight); })
+    .attr('fill', function(d, i) {
+      return color(d.attribute);
+    });
+
+    var tooltip = d3.select("#chart")
+    .append('div')
+    .attr('class', 'tooltip');
+
+    tooltip.append('div')
+    .attr('class', 'attribute');
+    tooltip.append('div')
+    .attr('class', 'weight');
+
+    if (tooltipCounter >= 1) {
+      tooltipCounter = 0;
+    }
+    else {
+      svg.selectAll(".bar")
+      .on('mouseover', function(d) {
+        tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
+        tooltip.select('.weight').html("<b>Weight: " + d.weight + "</b>");
+
+        tooltip.style('display', 'block');
+        tooltip.style('opacity',2);
+        tooltipCounter += 1;
+      })
+      .on('mousemove', function(d) {
+        tooltip.style('top', (d3.event.layerY + 10) + 'px')
+        .style('left', (d3.event.layerX - 25) + 'px');
+      })
+      .on('mouseout', function(d) {
+        tooltip.style('display', 'none');
+        tooltip.style('opacity',0);
+      });
+
+      rects.exit().remove();
     }
 
-    const dataset = getDataset()
-    function searchDataset(e) {
-      let difference = dataset.filter(x => getRankedObjects().indexOf(x) == -1)
-      const value = e.target.value
-      const re = new RegExp(value, 'i')
-      const newDataset = difference.filter(x => re.test(x))
-      render(newDataset)
-    }
-
-    function render(dataset) {
-      const pool = document.querySelector('#top')
-      const html = dataset.map(x => `<div tabindex="0" id="${x}" class="object noSelect" data-toggle="popover" data-trigger="focus">${x}</div>`).join('\n')
-      pool.innerHTML = html
-    }
-  </script>
-
-
-  <style>
-
-  svg {
-    font: 10px sans-serif;
-  }
-
-
-  .bar {
-    /* fill: steelblue; */
-    clip-path: url(#clip);
-  }
-
-  .subBar {
-    fill: #2980B9;
-  }
-
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-  }
-
-  .brush .extent {
-    stroke: #fff;
-    fill: steelblue;
-    fill-opacity: .25;
-    shape-rendering: crispEdges;
-  }
-
-    rect.mover {
-              stroke: red;
-              stroke-opacity: .1;
-              fill: #E74C3C;
-              fill-opacity: .5;
-          }
-  </style>
-
-
-  <script>
-
-  // const inputData = [{attribute:"Category 1",weight:0.5},{attribute:"Category 2",weight:0.1},{attribute:"Category 3",weight:1.2},{attribute:"Category 4",weight:1.2},{attribute:"Category 5",weight:0.3}];
-    // const inputData = weights
-    // console.log(weights);
-  // var colorScheme = d3.scale.category20();
-
-
-  function renderBarChart(inputData, dom_element_to_append_to, colorScheme) {
-      counter = 1;
-
-      // var colorScheme = ["#8dd3c7","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
-
-      var margin =  {top: 20, right: 10, bottom: 20, left: 40};
-      var marginOverview = {top: 30, right: 10, bottom: 20, left: 40};
-      var selectorHeight = 40;
-      var width = 2000 - margin.left - margin.right;
-      var height = 420 - margin.top - margin.bottom - selectorHeight;
-      var heightOverview = 80 - marginOverview.top - marginOverview.bottom;
-
-      var maxLength = d3.max(inputData.map(function(d){ return d.attribute.length}))
-      var barWidth = maxLength * 7;
-      var numBars = Math.round(width/barWidth);
-      var isScrollDisplayed = barWidth * inputData.length > width;
-
-
-      console.log(isScrollDisplayed)
-
-      var xscale = d3.scale.ordinal()
-                      .domain(inputData.slice(0,numBars).map(function (d) { return d.attribute; }))
-                      .rangeBands([0, width], .2);
-
-      var yscale = d3.scale.linear()
-      							.domain([0, d3.max(inputData, function (d) { return d.weight; })])
-                    .range([height, 0]);
-
-      var color = d3.scale.ordinal()
-      .range(colorScheme);
-
-      var xAxis  = d3.svg.axis().scale(xscale).orient("bottom");
-      var yAxis  = d3.svg.axis().scale(yscale).orient("left");
-
-      var svg = d3.select("#chart").append("svg")
-      						.attr("width", width + margin.left + margin.right)
-                  .attr("height", height + margin.top + margin.bottom + selectorHeight)
-                  .attr("viewBox", "0 0 700 500")
-                  .attr("preserveAspectRatio", "xMinYMin meet");
-
-
-      var diagram = svg.append("g")
-      								 .attr("transform", "translate(" + margin.left + "," + 100 + ")");
-
-      diagram.append("g")
-        		 .attr("class", "x axis")
-             .attr("transform", "translate(0, " + height + ")")
-             .call(xAxis);
-
-      // diagram.append("g")
-      //        .attr("class", "y axis")
-      //        .call(yAxis);
-
-      var bars = diagram.append("g");
-
-      bars.selectAll("rect")
-                  .data(inputData.slice(0, numBars), function (d) {return d.attribute; })
-                  .enter().append("rect")
-                  .attr("class", "bar")
-                  .attr("x", function (d) { return xscale(d.attribute); })
-                  .attr("y", function (d) { return yscale(d.weight); })
-                  .attr("width", xscale.rangeBand())
-                  .attr("height", function (d) { return height - yscale(d.weight); })
-                    .attr('fill', function(d, i) {
-                      return color(d.attribute);
-                    });
-
-                      var tooltip = d3.select("#chart")
-                      .append('div')
-                      .attr('class', 'tooltip');
-
-                      tooltip.append('div')
-                      .attr('class', 'attribute');
-                      tooltip.append('div')
-                      .attr('class', 'weight');
-
-                      svg.selectAll(".bar")
-                      .on('mouseover', function(d) {
-                        tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
-                        tooltip.select('.weight').html("<b>Weight: " + d.weight + "</b>");
-
-                        tooltip.style('display', 'block');
-                        tooltip.style('opacity',2);
-                      })
-                      .on('mousemove', function(d) {
-
-                        tooltip.style('top', (d3.event.layerY + 10) + 'px')
-                        .style('left', (d3.event.layerX - 25) + 'px');
-                      })
-                      .on('mouseout', function(d) {
-                        tooltip.style('display', 'none');
-                        tooltip.style('opacity',0);
-                      });
-
-
-
-
-      if (isScrollDisplayed)
-      {
-        var xOverview = d3.scale.ordinal()
-                        .domain(inputData.map(function (d) { return d.attribute; }))
-                        .rangeBands([0, width], .2);
-        yOverview = d3.scale.linear().range([heightOverview, 0]);
-        yOverview.domain(yscale.domain());
-
-        var subBars = diagram.selectAll('.subBar')
-            .data(inputData)
-
-        subBars.enter().append("rect")
-            .classed('subBar', true)
-            .attr({
-                height: function(d) {
-                    return heightOverview - yOverview(d.weight);
-                },
-                width: function(d) {
-                    return xOverview.rangeBand()
-                },
-                x: function(d) {
-
-                    return xOverview(d.attribute);
-                },
-                y: function(d) {
-                    return height + heightOverview + yOverview(d.weight)
-                }
-            })
-
-        var displayed = d3.scale.quantize()
-                    .domain([0, width])
-                    .range(d3.range(inputData.length));
-
-        diagram.append("rect")
-                    // .attr("transform", "translate(0, " + (height + margin.bottom) + ")")
-                    // .attr("transform","translate(" + margin.left + "," + 40 + ")")
-                    .attr("transform", "translate(0, " + (height + margin.bottom) + ")")
-                    .attr("class", "mover")
-                    .attr("x", 0)
-                    .attr("y", 0)
-                    .attr("height", selectorHeight)
-                    .attr("width", Math.round(parseFloat(numBars * width)/inputData.length))
-                    .attr("pointer-events", "all")
-                    .attr("cursor", "ew-resize")
-                    .call(d3.behavior.drag().on("drag", display))
-                    .on('mousemove', function(d) {
-                        tooltip.style('display', 'none');
-                        tooltip.style('opacity',0);
-                      })
-                    .on('mouseout', function(d) {
-                        tooltip.style('display', 'none');
-                        tooltip.style('opacity',0);
-                      });
-
-
-
-
-      }
-      function display () {
-          var x = parseInt(d3.select(this).attr("x")),
-              nx = x + d3.event.dx,
-              w = parseInt(d3.select(this).attr("width")),
-              f, nf, new_data, rects;
-
-          if ( nx < 0 || nx + w > width ) return;
-
-          d3.select(this).attr("x", nx);
-
-          f = displayed(x);
-          nf = displayed(nx);
-
-          if ( f === nf ) return;
-
-          new_data = inputData.slice(nf, nf + numBars);
-
-          xscale.domain(new_data.map(function (d) { return d.attribute; }));
-          diagram.select(".x.axis").call(xAxis);
-
-          rects = bars.selectAll("rect")
-            .data(new_data, function (d) {return d.attribute; });
-
-      	 	rects.attr("x", function (d) { return xscale(d.attribute); });
-
-      // 	  rects.attr("transform", function(d) { return "translate(" + xscale(d.attribute) + ",0)"; })
-
-          rects.enter().append("rect")
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-            .attr("class", "bar")
-            .attr("x", function (d) { return xscale(d.attribute); })
-            .attr("y", function (d) { return yscale(d.weight); })
-            .attr("width", xscale.rangeBand())
-            .attr("height", function (d) { return height - yscale(d.weight); })
-            .attr('fill', function(d, i) {
-              return color(d.attribute);
-            });
-
-            var tooltip = d3.select("#chart")
-            .append('div')
-            .attr('class', 'tooltip');
-
-            tooltip.append('div')
-            .attr('class', 'attribute');
-            tooltip.append('div')
-            .attr('class', 'weight');
-
-            svg.selectAll(".bar")
-            .on('mouseover', function(d) {
-              tooltip.select('.attribute').html("<b>" + d.attribute + "</b>");
-              tooltip.select('.weight').html("<b>Weight: " + d.weight + "</b>");
-
-              tooltip.style('display', 'block');
-              tooltip.style('opacity',2);
-            })
-            .on('mousemove', function(d) {
-              tooltip.style('top', (d3.event.layerY + 10) + 'px')
-              .style('left', (d3.event.layerX - 25) + 'px');
-            })
-            .on('mouseout', function(d) {
-              tooltip.style('display', 'none');
-              tooltip.style('opacity',0);
-            });
-
-          rects.exit().remove();
-      };
+  };
 
 
 }
 
-  </script>
+</script>
+
+<!-- if (counter == 1) {
+d3.select("body").selectAll("svg").remove();
+console.log(weights);
+renderBarChart(weights,"#chart", colorScheme);
+} else if(weights != 0){
+document.getElementById("p1").innerHTML = "Impact of Attributes on Dataset Ranking";
+renderBarChart(weights,"#chart", colorScheme);
+} -->
 
 
 
-  <script>
-    const source = document.querySelector('#top')
-    const target = document.querySelector('#lc-center')
 
-    const source_sortable = Sortable.create(source, {
-      group: 'list',
-      animation: 300,
-      sort: false,
-      ghostClass: 'ghost',
-    })
+<script>
+const source = document.querySelector('#top')
+const target = document.querySelector('#lc-center')
 
-    const target_sortable = Sortable.create(target, {
-      group: 'list',
-      animation: 300,
-      ghostClass: 'ghost',
-    })
+const source_sortable = Sortable.create(source, {
+  group: 'list',
+  animation: 300,
+  sort: false,
+  ghostClass: 'ghost',
+})
 
-    const med = document.querySelector('#center')
-    const high = document.querySelector('#left')
-    const low = document.querySelector('#right')
+const target_sortable = Sortable.create(target, {
+  group: 'list',
+  animation: 300,
+  ghostClass: 'ghost',
+})
 
-    const high_sortable = Sortable.create(high, {
-      group: 'list',
-      animation: 300,
-      ghostClass: 'ghost',
-    })
-    const med_sortable = Sortable.create(med, {
-      group: 'list',
-      animation: 300,
-      ghostClass: 'ghost',
-    })
-    const low_sortable = Sortable.create(low, {
-      group: 'list',
-      animation: 300,
-      ghostClass: 'ghost',
-    })
+const med = document.querySelector('#center')
+const high = document.querySelector('#left')
+const low = document.querySelector('#right')
 
-    function add_to_sortable(className) {
-      const all = document.querySelectorAll(className)
+const high_sortable = Sortable.create(high, {
+  group: 'list',
+  animation: 300,
+  ghostClass: 'ghost',
+})
+const med_sortable = Sortable.create(med, {
+  group: 'list',
+  animation: 300,
+  ghostClass: 'ghost',
+})
+const low_sortable = Sortable.create(low, {
+  group: 'list',
+  animation: 300,
+  ghostClass: 'ghost',
+})
 
-      all.forEach(t => Sortable.create(t, {
-        group: {
-          name: 'list',
-          put: (to) => to.el.children.length < 1,
-        },
-        animation: 100,
-      }))
+function add_to_sortable(className) {
+  const all = document.querySelectorAll(className)
+
+  all.forEach(t => Sortable.create(t, {
+    group: {
+      name: 'list',
+      put: (to) => to.el.children.length < 1,
+    },
+    animation: 100,
+  }))
+}
+add_to_sortable('.high')
+add_to_sortable('.low')
+
+function handleMore() {
+  const pwl = document.querySelector('#pwl')
+  const html = `<div class="pw"><div class="high list"></div><div class="low list"></div></div>`
+  pwl.innerHTML += html
+  // const highs = document.querySelectorAll('.high')
+  // const high = highs[highs.length-1]
+  add_to_sortable('.high')
+  add_to_sortable('.low')
+}
+
+</script>
+
+<!-- List Comparison Related Scripts -->
+<script>
+
+var min_num_of_objects = 2
+
+var lc_observer = new MutationObserver(function (mutations) {
+  mutations.forEach(function (mutation) {
+    lc_urlUpdate()
+
+    const list_length = document.querySelector('#lc-center').children.length
+    if (list_length < min_num_of_objects) {
+      $('#lc-submit').attr('disabled', 'disabled');
     }
-    add_to_sortable('.high')
-    add_to_sortable('.low')
-
-    function handleMore() {
-      const pwl = document.querySelector('#pwl')
-      const html = `<div class="pw"><div class="high list"></div><div class="low list"></div></div>`
-      pwl.innerHTML += html
-      // const highs = document.querySelectorAll('.high')
-      // const high = highs[highs.length-1]
-      add_to_sortable('.high')
-      add_to_sortable('.low')
+    else {
+      $('#lc-submit').removeAttr('disabled');
+      handleBuildSubmit()
     }
+    barUpdate(confidence)
 
-  </script>
-
-  <!-- List Comparison Related Scripts -->
-  <script>
-
-    var min_num_of_objects = 2
-
-    var lc_observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        lc_urlUpdate()
-
-        const list_length = document.querySelector('#lc-center').children.length
-        if (list_length < min_num_of_objects) {
-          $('#lc-submit').attr('disabled', 'disabled');
-        }
-        else {
-          $('#lc-submit').removeAttr('disabled');
-          handleBuildSubmit()
-        }
-        barUpdate(confidence)
-
-        var colorScheme = ["#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
-        console.log(counter);
-        if (counter == 1) {
-          d3.select("body").selectAll("svg").remove();
-          console.log(weights);
-          renderBarChart(weights,"#chart", colorScheme);
-        } else if(weights != 0){
-          document.getElementById("p1").innerHTML = "Impact of Attributes on Dataset Ranking";
-          renderBarChart(weights,"#chart", colorScheme);
-        }
-      });
-    });
-
-    function barUpdate(list_length) {
-      document.getElementById("bar").setAttribute("aria-valuenow", list_length.toString())
-      document.getElementById("bar").setAttribute("style", "width:"+list_length+"%")
-      document.getElementById("bar").textContent = list_length+"%"+" Confidence"
+    var colorScheme = ["#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
+    console.log(counter);
+    if (counter == 1) {
+      d3.select("body").selectAll("svg").remove();
+      console.log(weights);
+      renderBarChart(weights,"#chart", colorScheme);
+    } else if(weights != 0){
+      document.getElementById("p1").innerHTML = "Impact of Attributes on Dataset Ranking";
+      renderBarChart(weights,"#chart", colorScheme);
     }
-    function lc_urlUpdate() {
-      var list = Array.from(document.querySelectorAll('#lc-center .object')).map(x => nameToId(x.id))
-      var url = window.location.pathname + "?method=" + "lc" + "&" + "objects="
-      history.pushState({}, 'List Comparison', url + list.toString())
+  });
+});
+
+function barUpdate(list_length) {
+  document.getElementById("bar").setAttribute("aria-valuenow", list_length.toString())
+  document.getElementById("bar").setAttribute("style", "width:"+list_length+"%")
+  document.getElementById("bar").textContent = list_length+"%"+" Confidence"
+}
+function lc_urlUpdate() {
+  var list = Array.from(document.querySelectorAll('#lc-center .object')).map(x => nameToId(x.id))
+  var url = window.location.pathname + "?method=" + "lc" + "&" + "objects="
+  history.pushState({}, 'List Comparison', url + list.toString())
+}
+function nameToId(name) {
+  if (name !== undefined) {
+    var i = 0
+    {% for x in dataset %}
+    if ('{{ x }}' == name) {
+      return i
     }
-    function nameToId(name) {
-      if (name !== undefined) {
-        var i = 0
-        {% for x in dataset %}
-        if ('{{ x }}' == name) {
-          return i
-        }
-        i++
-        {% endfor %}
-      }
-      return -1
+    i++
+    {% endfor %}
+  }
+  return -1
+}
+
+
+// Node, config
+var lc_observerConfig = {
+  childList: true,
+};
+
+var lc_center_node = document.getElementById('lc-center');
+lc_observer.observe(lc_center_node, lc_observerConfig);
+
+var lc_QueryString = function () {
+  var query_string = {};
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    // If first entry with this name
+    if (typeof query_string[pair[0]] === "undefined") {
+      query_string[pair[0]] = decodeURIComponent(pair[1]);
+      // If second entry with this name
+    } else if (typeof query_string[pair[0]] === "string") {
+      var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+      query_string[pair[0]] = arr;
+      // If third or later entry with this name
+    } else {
+      query_string[pair[0]].push(decodeURIComponent(pair[1]));
     }
+  }
+  return query_string;
+}();
+
+function lc_getParametersFromURL() {
+  var selectedObjects = lc_QueryString.objects;
+
+  if (selectedObjects !== undefined && selectedObjects != "") {
+    var objects = selectedObjects.split(',');
+  }
+  if (objects !== undefined) {
+    // Convert ids back to names
+    var objectsNames = Array.from(objects.map(x => idToName(x)))
+    return objectsNames;
+  }
+  return objects;
+}
+function idToName(id) {
+  var i = 0
+  {% for x in dataset %}
+  if (id == i) {
+    return '{{ x }}'
+  }
+  i++
+  {% endfor %}
+  return id
+}
+
+var lc_objectsFromURL = {}
+lc_objectsFromURL = lc_getParametersFromURL()
+
+if (lc_objectsFromURL !== undefined) {
+  lc_populateBox()
+  barUpdate(confidence)
+}
+
+function lc_populateBox() {
+  // id="${x}" class="object noSelect"
+  for (let i = 0; i < lc_objectsFromURL.length; i++) {
+    document.querySelector('#top').removeChild(document.getElementById(lc_objectsFromURL[i]))
+    var node = document.createElement("DIV");
+    var textnode = document.createTextNode(lc_objectsFromURL[i]);
+    node.appendChild(textnode);
+    node.setAttribute("id", lc_objectsFromURL[i]);
+    node.setAttribute("class", "object noSelect");
+    node.setAttribute("tabindex", "0");
+    node.setAttribute("data-toggle", "popover");
+    node.setAttribute("data-trigger", "focus");
+    document.querySelector('#lc-center').appendChild(node);
+    displayAttributes(lc_objectsFromURL[i])
+    handleBuildSubmit()
+  }
+}
 
 
-    // Node, config
-    var lc_observerConfig = {
-      childList: true,
-    };
+function getRankedObjects() {
+  return Array.from(document.querySelector('#lc-center').children).map(x => x.innerText)
+}
 
-    var lc_center_node = document.getElementById('lc-center');
-    lc_observer.observe(lc_center_node, lc_observerConfig);
+function handleLCSubmit() {
+  const pwl = lc_generatePairwise()
+  var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}"
+  for (let i = 0; i < pwl.length; i++) {
+    pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + ">" + pwl[i].low + "&"
+  }
 
-    var lc_QueryString = function () {
-      var query_string = {};
-      var query = window.location.search.substring(1);
-      var vars = query.split("&");
-      for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        // If first entry with this name
-        if (typeof query_string[pair[0]] === "undefined") {
-          query_string[pair[0]] = decodeURIComponent(pair[1]);
-          // If second entry with this name
-        } else if (typeof query_string[pair[0]] === "string") {
-          var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
-          query_string[pair[0]] = arr;
-          // If third or later entry with this name
-        } else {
-          query_string[pair[0]].push(decodeURIComponent(pair[1]));
-        }
-      }
-      return query_string;
-    }();
+  window.location = pairwiseURL
 
-    function lc_getParametersFromURL() {
-      var selectedObjects = lc_QueryString.objects;
+}
 
-      if (selectedObjects !== undefined && selectedObjects != "") {
-        var objects = selectedObjects.split(',');
-      }
-      if (objects !== undefined) {
-        // Convert ids back to names
-        var objectsNames = Array.from(objects.map(x => idToName(x)))
-        return objectsNames;
-      }
-      return objects;
+function handleBuildSubmit() {
+  const pwl = lc_generatePairwise()
+  var pairs = ""
+  for (let i = 0; i < pwl.length; i++) {
+    pairs = pairs + i + "=" + pwl[i].high + ">" + pwl[i].low + "&"
+  }
+  if (pairs !== ""){
+    const url = "confidence/"+pairs
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', url, true)
+    xhr.setRequestHeader('Content-type', 'application/json')
+
+    xhr.send()
+    xhr.onload = function () {
+      weights = JSON.parse(JSON.parse(this.response).weights)
+      confidence = JSON.parse(this.response).confidence
     }
-    function idToName(id) {
-      var i = 0
-      {% for x in dataset %}
-      if (id == i) {
-        return '{{ x }}'
-      }
-      i++
-      {% endfor %}
-      return id
+  }
+}
+
+function lc_generatePairwise() {
+  const list = Array.from(document.querySelectorAll('#lc-center .object'))
+  const ids = list.map(x => x.id)
+  // pairwise list to send back to server
+  let pwl = []
+  for (let i = 0; i < ids.length - 1; i++) {
+    for (let j = i + 1; j < ids.length; j++) {
+      pwl.push({ 'high': ids[i], 'low': ids[j] })
     }
+  }
+  return pwl
+}
 
-    var lc_objectsFromURL = {}
-    lc_objectsFromURL = lc_getParametersFromURL()
+document.querySelector('#lc-submit').addEventListener('click', handleLCSubmit)
+</script>
 
-    if (lc_objectsFromURL !== undefined) {
-      lc_populateBox()
-      barUpdate(confidence)
-    }
-
-    function lc_populateBox() {
-      // id="${x}" class="object noSelect"
-      for (let i = 0; i < lc_objectsFromURL.length; i++) {
-        document.querySelector('#top').removeChild(document.getElementById(lc_objectsFromURL[i]))
-        var node = document.createElement("DIV");
-        var textnode = document.createTextNode(lc_objectsFromURL[i]);
-        node.appendChild(textnode);
-        node.setAttribute("id", lc_objectsFromURL[i]);
-        node.setAttribute("class", "object noSelect");
-        node.setAttribute("tabindex", "0");
-        node.setAttribute("data-toggle", "popover");
-        node.setAttribute("data-trigger", "focus");
-        document.querySelector('#lc-center').appendChild(node);
-        displayAttributes(lc_objectsFromURL[i])
-        handleBuildSubmit()
-      }
-    }
-
-
-    function getRankedObjects() {
-      return Array.from(document.querySelector('#lc-center').children).map(x => x.innerText)
-    }
-
-    function handleLCSubmit() {
-      const pwl = lc_generatePairwise()
-      var pairwiseURL = "{{url_for('explore.explore', dataset_name = dataset_name) }}"
-      for (let i = 0; i < pwl.length; i++) {
-        pairwiseURL = pairwiseURL + i + "=" + pwl[i].high + ">" + pwl[i].low + "&"
-      }
-
-      window.location = pairwiseURL
-
-    }
-
-    function handleBuildSubmit() {
-      const pwl = lc_generatePairwise()
-      var pairs = ""
-      for (let i = 0; i < pwl.length; i++) {
-        pairs = pairs + i + "=" + pwl[i].high + ">" + pwl[i].low + "&"
-      }
-      if (pairs !== ""){
-        const url = "confidence/"+pairs
-        const xhr = new XMLHttpRequest()
-        xhr.open('GET', url, true)
-        xhr.setRequestHeader('Content-type', 'application/json')
-
-        xhr.send()
-        xhr.onload = function () {
-          weights = JSON.parse(JSON.parse(this.response).weights)
-          confidence = JSON.parse(this.response).confidence
-        }
-      }
-    }
-
-    function lc_generatePairwise() {
-      const list = Array.from(document.querySelectorAll('#lc-center .object'))
-      const ids = list.map(x => x.id)
-      // pairwise list to send back to server
-      let pwl = []
-      for (let i = 0; i < ids.length - 1; i++) {
-        for (let j = i + 1; j < ids.length; j++) {
-          pwl.push({ 'high': ids[i], 'low': ids[j] })
-        }
-      }
-      return pwl
-    }
-
-    document.querySelector('#lc-submit').addEventListener('click', handleLCSubmit)
-  </script>
-
-  <script>
-    $('#lc').attr('href', 'lc')
-    $('#cc').attr('href', 'cc')
-    $('#pwc').attr('href', 'pwc')
-  </script>
+<script>
+$('#lc').attr('href', 'lc')
+$('#cc').attr('href', 'cc')
+$('#pwc').attr('href', 'pwc')
+</script>
 
 </body>
 </html>
