@@ -447,6 +447,7 @@ function shadeRowsByconf(data){
      trs[i].cells[1].title="Score Confidence";
      trs[i].cells[1].setAttribute("data-toggle", "popover");
      trs[i].cells[1].setAttribute("data-content", score);
+     trs[i].cells[1].setAttribute("data-container","body");
      trs[i].cells[2].style.backgroundColor = highlightColor(score, "#e3f7f3","#337c6e");
   }
   $('[data-toggle="popover"]').popover();
