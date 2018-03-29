@@ -452,7 +452,7 @@
         <div id="top" class="pool">
           <!-- objects from dataset inserted here -->
           {% for x in dataset %}
-          <div tabindex="0" id="{{x}}" class="object noSelect" data-toggle="popover" data-trigger="focus">{{x}}</div>
+          <div tabindex="0" id="{{x}}" class="object noSelect pop" data-toggle="popover" data-trigger="hover">{{x}}</div>
           <script>
             displayAttributes('{{x}}')
           </script>
@@ -541,7 +541,7 @@
 
     function render(dataset) {
       const pool = document.querySelector('#top')
-      const html = dataset.map(x => `<div tabindex="0" id="${x}" class="object noSelect" data-toggle="popover" data-trigger="focus">${x}</div>`).join('\n')
+      const html = dataset.map(x => `<div tabindex="0" id="${x}" class="object noSelect pop" data-toggle="popover" data-trigger="hover">${x}</div>`).join('\n')
       pool.innerHTML = html
     }
   </script>
@@ -902,6 +902,7 @@
     });
 
     function barUpdate(list_length) {
+      list_length = Math.floor(list_length)
       document.getElementById("bar").setAttribute("aria-valuenow", list_length.toString())
       document.getElementById("bar").setAttribute("style", "width:"+list_length+"%")
       document.getElementById("bar").textContent = list_length+"%"+" Confidence"
@@ -1274,10 +1275,10 @@
         var textnode = document.createTextNode(objectsFromURL[i]);
         node.appendChild(textnode);
         node.setAttribute("id", objectsFromURL[i]);
-        node.setAttribute("class", "object noSelect");
+        node.setAttribute("class", "object noSelect pop");
         node.setAttribute("tabindex", "0");
         node.setAttribute("data-toggle", "popover");
-        node.setAttribute("data-trigger", "focus");
+        node.setAttribute("data-trigger", "hover");
         document.querySelector(box).appendChild(node);
         displayAttributes(objectsFromURL[i])
         handleBuildSubmit()
@@ -1344,6 +1345,24 @@
     $('#lc').attr('href', 'lc')
     $('#cc').attr('href', 'cc')
     $('#pwc').attr('href', 'pwc')
+  </script>
+
+  <script>
+    $(".pop").popover({ trigger: "manual" , html: true, animation:false})
+      .on("mouseenter", function () {
+          var _this = this;
+          $(this).popover("show");
+          $(".popover").on("mouseleave", function () {
+              $(_this).popover('hide');
+          });
+      }).on("mouseleave", function () {
+          var _this = this;
+          setTimeout(function () {
+              if (!$(".popover:hover").length) {
+                  $(_this).popover("hide");
+              }
+          }, 300);
+  });
   </script>
 </body>
 </html>

@@ -967,6 +967,7 @@ var lc_observer = new MutationObserver(function (mutations) {
 });
 
 function barUpdate(list_length) {
+  list_length = Math.floor(list_length)
   document.getElementById("bar").setAttribute("aria-valuenow", list_length.toString())
   document.getElementById("bar").setAttribute("style", "width:"+list_length+"%")
   document.getElementById("bar").textContent = list_length+"%"+" Confidence"
