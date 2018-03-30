@@ -98,6 +98,7 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
 #     clf.partial_fit(X,y,np.unique(y))
     conf_scores = get_confidence(data, clf)
     conf_scores = scale(conf_scores)
+    conf_scores = [round(x, 2) for x in conf_scores]
 
     weights = clf.coef_[0]
     y_pred=[]
@@ -120,7 +121,7 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
         #if w != 0.:
         d={}
         d['attribute']=dataset_copy.columns.values[i]
-        d['weight']=w
+        d['weight']=round(w, 2)
         weights_list.append(d)
 
     weights_json = json.dumps(weights_list)
