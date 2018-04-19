@@ -319,31 +319,6 @@ $(document).ready(function () {
   $('[data-toggle="popover"]').popover();
 })
 
-function parseData(raw) {
-  return JSON.parse(raw.substring(1, raw.length - 1))
-}
-
-function findObject (objectTitle) {
-  const raw = '{{data|tojson}}'
-  const data = parseData(raw)
-  for (var i=0; i<data.length; i++) {
-    obj = data[i]
-    if (obj.Title === objectTitle) {
-      return obj
-    }
-  }
-}
-
-function displayAttributes(objectTitle) {
-  var object = findObject(objectTitle)
-  var text = "<table class='data-pool-popover'><tr><th>Attribute</th><th>Value</th></tr>";
-  for (var propt in object) {
-    text = text + "<tr><td>" + propt + "</td><td>" + object[propt]+"</td></tr>";
-  }
-  text = text + "</table>"
-  document.getElementById(objectTitle).setAttribute("data-content", text)
-}
-
 $('.popover-dismiss').popover({
   trigger: 'focus'
 })
@@ -485,10 +460,7 @@ $('body').on('click', function (e) {
           <div id="top" class="pool">
             <!-- objects from dataset inserted here -->
             {% for x in dataset %}
-            <div tabindex="0" id="{{x}}" class="object noSelect pop" data-toggle="popover" data-trigger="hover" data-html="true">{{x}}</div>
-            <script>
-            displayAttributes('{{x}}')
-            </script>
+            <div tabindex="0" id="{{x}}" class="object noSelect pop" data-toggle="popover" data-trigger="focus" data-html="true">{{x}}</div>
             {% endfor %}
           </div>
         </div>
@@ -537,8 +509,6 @@ var confidence = 0
 var weights = 0
 var counter = 0
 var tooltipCounter = 0
-// console.log(confidence);
-// console.log(weights);
 </script>
 
 
@@ -549,6 +519,43 @@ var tooltipCounter = 0
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/modernizr.custom.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
+
+
+<script>
+
+    function parseData(raw) {
+      return JSON.parse(raw.substring(1, raw.length - 1))
+    }
+    
+    function findObject (objectTitle) {
+      const raw = '{{data|tojson}}'
+      const data = parseData(raw)
+      for (var i=0; i<data.length; i++) {
+        obj = data[i]
+        if (obj.Title === objectTitle) {
+          return obj
+        }
+      }
+    }
+    
+    function displayAttributesAfterRender() {
+      objects = Array.from(document.querySelector('#top').children)
+    
+      for (var i=0; i<objects.length; i++) {
+        var object = findObject(objects[i].innerText)
+        var text = "<table class='data-pool-popover'><tr><th>Attribute</th><th>Value</th></tr>";
+        for (var propt in object) {
+          text = text + "<tr><td>" + propt + "</td><td>" + object[propt]+"</td></tr>";
+        }
+        text = text + "</table>"
+        document.getElementById(objects[i].innerText).setAttribute("data-content", text)
+      }
+    }
+    
+    displayAttributesAfterRender()
+</script>
+
+
 <!-- this is script for the pool -->
 <script>
 
@@ -582,11 +589,11 @@ function searchDataset(e) {
 
 function render(dataset) {
   const pool = document.querySelector('#top')
-  const html = dataset.map(x => `<div tabindex="0" id="${x}" class="object noSelect pop" data-toggle="popover" data-trigger="hover">${x}</div>`).join('\n')
+  const html = dataset.map(x => `<div tabindex="0" id="${x}" class="object noSelect pop" data-toggle="popover" data-trigger="focus" data-html="true">${x}</div>`).join('\n')
   pool.innerHTML = html
 }
-</script>
 
+</script>
 
 <style>
 
@@ -859,18 +866,6 @@ function renderBarChart(inputData, dom_element_to_append_to, colorScheme) {
 
 </script>
 
-<!-- if (counter == 1) {
-d3.select("body").selectAll("svg").remove();
-console.log(weights);
-renderBarChart(weights,"#chart", colorScheme);
-} else if(weights != 0){
-document.getElementById("p1").innerHTML = "Impact of Attributes on Dataset Ranking";
-renderBarChart(weights,"#chart", colorScheme);
-} -->
-
-
-
-
 <script>
 const source = document.querySelector('#top')
 const target = document.querySelector('#lc-center')
@@ -1063,11 +1058,11 @@ function lc_populateBox() {
     node.setAttribute("class", "object noSelect pop");
     node.setAttribute("tabindex", "0");
     node.setAttribute("data-toggle", "popover");
-    node.setAttribute("data-trigger", "hover");
+    node.setAttribute("data-trigger", "focus");
     document.querySelector('#lc-center').appendChild(node);
-    displayAttributes(lc_objectsFromURL[i])
     handleBuildSubmit()
   }
+  displayAttributesAfterRender()
 }
 
 
@@ -1126,24 +1121,6 @@ document.querySelector('#lc-submit').addEventListener('click', handleLCSubmit)
 $('#lc').attr('href', 'lc')
 $('#cc').attr('href', 'cc')
 $('#pwc').attr('href', 'pwc')
-</script>
-
-<script>
-  $(".pop").popover({ trigger: "manual" , html: true, animation:false})
-    .on("mouseenter", function () {
-        var _this = this;
-        $(this).popover("show");
-        $(".popover").on("mouseleave", function () {
-            $(_this).popover('hide');
-        });
-    }).on("mouseleave", function () {
-        var _this = this;
-        setTimeout(function () {
-            if (!$(".popover:hover").length) {
-                $(_this).popover("hide");
-            }
-        }, 300);
-});
 </script>
 
 </body>
