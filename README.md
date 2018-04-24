@@ -54,3 +54,9 @@ Example: `export CFLAGS=-I/Library/Frameworks/Python.framework/Versions/3.5/lib/
 
 *run project:* `$ python3 run.py`
 
+### Datasets
+
+Rankit includes a number of datasets by default. Sources:
+- [Video Games Dataset.] (https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings)
+
+
