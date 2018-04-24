@@ -54,9 +54,15 @@ Example: `export CFLAGS=-I/Library/Frameworks/Python.framework/Versions/3.5/lib/
 
 *run project:* `$ python3 run.py`
 
-### Datasets
+## Datasets
 
 Rankit includes a number of datasets by default. Sources:
-- [Video Games Dataset.] (https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings)
+- Video Games Dataset. https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings
+- States Dataset. http://matters.mhtc.org
+- Movies Dataset. https://www.kaggle.com/rounakbanik/the-movies-dataset
+- FIFA Dataset. https://www.kaggle.com/artimous/complete-fifa-2017-player-dataset-global
+- Board Games Dataset. https://www.kaggle.com/mrpantherson/board-game-data
+
+
 
 
