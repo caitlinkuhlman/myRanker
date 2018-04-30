@@ -571,10 +571,11 @@ function renderTable(data) {
 
   $('#table').on('draw.dt', function(e) {
     highlightRows();
+    shadeRowsByconf(data);
   })
 
   renderData(data, keys)
-  shadeRowsByconf(data);
+  
 }
 
 function renderHead(datum) {
