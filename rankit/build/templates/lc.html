@@ -18,101 +18,9 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/glyphicons-halflings-regular.eot') }}" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
   <title>List Comparison</title>
-  <style>
-
-  .add_pairwise {
-    width: 15%;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-    border: none;
-    border-radius: 4px;
-    background: rgba(231, 76, 60, 1);
-    color: #fefffb;
-    font-weight: normal;
-    font-size: 100%;
-    position: absolute;
-    right: 0;
-    vertical-align: baseline;
-    float: right;
-    margin: 0px 50px;
-  }
-
-  h2 {
-    text-align: center;
-    color: #333;
-    font-size: 30px;
-  }
-
-  html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    height: 100vh;
-  }
-
-  p {
-    text-align: center;
-  }
-
-  .submit {
-    width: 15%;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-    border: none;
-    border-radius: 4px;
-    color: #fefffb;
-    font-weight: normal;
-    font-size: 100%;
-    position: absolute;
-    right: 0;
-    vertical-align:baseline;
-    float: right;
-    margin: 0px 50px;
-
-  }
-
-  .submit[disabled] {
-    background-color:  rgba(200, 200, 200, 0.6);
-    color: #ffffff;
-    width: 15%;
-    vertical-align:baseline;
-    font-family: sans-serif;
-    font-weight: normal;
-    font-size: 100%;
-    float: right;
-    margin: 0px 50px;
-  }
-
-  .submit:hover {
-    color: #fff;
-  }
-
-  .semi-transparent-button{
-    background-color:  rgba(200, 200, 200, 0.6);
-    border-radius: 2px;
-    border-color: rgba(200, 200, 200, 0.6);
-    color: #777;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease-out;
-    /* border: 1px solid rgba(200, 200, 200, 0.6); */
-    text-decoration-color: white;
-    /* border: 2px solid black; */
-  }
-
-  .semi-transparent-button:hover {
-    color: #fff;
-    border: 1px solid;
-    border-color: white;
-  }
 
 
+<style>
   #build-method {
     grid-area: header;
     display: flex;
@@ -122,50 +30,7 @@
     background-color: #f3f3f3ff
     /* background-color: #d9d9d9ff; */
   }
-
-  #build-method a:link, #build-method a:visited {
-    text-decoration: none;
-    display: block;
-    padding: 0.8em;
-  }
-
-  #build-method .active {
-    width: 200%;
-  }
-
-  h1.title {
-    text-transform: capitalize;
-    display: block;
-    color: white;
-    font-size: 70px;
-    display: inline-block;
-    padding: 20px 20px 0px;
-  }
-
-  h1.title:first-letter {
-    text-transform: uppercase;
-  }
-
-  .page-header h1 {
-    padding: 0px 20px 0px;
-    color: white;
-    font-size: 80px;
-    margin: 0;
-    display: inline-block;
-  }
-
-  #lc-wrapper-grid {
-    display: grid;
-    grid-template-areas:
-    "header header"
-    "legend list";
-    grid-template-columns: 120px 1fr;
-    /* background-color: #f3f3f3ff; */
-    border: 2px solid #777;
-    border-radius: 8px;
-  }
-
-  .legend-label {
+    .legend-label {
     grid-area: legend;
     margin: 16px;
     padding: 50px 10px;
@@ -174,142 +39,12 @@
     flex-direction: column;
     justify-content: space-between;
   }
+  
+    #build-method .active {
+    width: 200%;
+  }
+</style>
 
-  #lc-list {
-    grid-area: list;
-    max-width: 75%;
-  }
-
-  .right{
-    float: right;
-  }
-
-  #sort {
-    width: 6em;
-  }
-  #shuffle {
-    width: 6em;
-  }
-  #cd-tour-trigger {
-    width: 6em;
-    cursor: pointer;
-  }
-
-  #build-right {
-    padding: 0px 16px 16px;
-  }
-
-  .navbar-form {
-    padding: 25px 16px 16px;
-    margin-left: 10%;
-  }
-
-  .navbar-form .form-control {
-    display: inline-block;
-    width: 60%;
-    vertical-align: middle;
-  }
-
-  input::placeholder {
-    color: black;
-  }
-
-  .border{
-    background-color: #d9d9d9ff;
-  }
-
-  .graphArea {
-    width: 50%;
-    float: right;
-    grid-area: build-top;
-    /* background-color:#2980B9; */
-    min-height: 115px;
-  }
-
-  .graphArea svg {
-    display:block;
-    margin:0 auto;
-  }
-
-  path {
-    stroke: steelblue;
-    stroke-width: 2;
-    fill: none;
-  }
-
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-  }
-
-  .tooltip {
-    background: #eee;
-    box-shadow: 0 0 5px #999999;
-    color: #333;
-    font-size: 12px;
-    left: 130px;
-    padding: 10px;
-    position: absolute;
-    text-align: center;
-    top: 95px;
-    z-index: 10;
-    display: block;
-    opacity: 0;
-  }
-  .progress-bar {
-    font-weight: bold;
-    background-color: #fdb462;
-  }
-  .progress {
-    background-color: #D3D3D3;
-  }
-  .progress-value {
-    position: relative;
-    float: left;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  /* Popover */
-  .popover {
-    border: 2px dotted red;
-  }
-
-  /* Popover Body*/
-  .popover-content {
-    max-height: 500px;
-    overflow-y: auto;
-  }
-  /* Popover Arrow */
-  .arrow {
-    border-right-color: red !important;
-  }
-  svg {
-    width: 100%;
-    height: 100%;
-    position: center;
-  }
-  .toolTip {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    position: absolute;
-    display: none;
-    width: auto;
-    height: auto;
-    background: none repeat scroll 0 0 white;
-    border: 0 none;
-    border-radius: 8px 8px 8px 8px;
-    box-shadow: -3px 3px 15px #888888;
-    color: black;
-    font: 12px sans-serif;
-    padding: 5px;
-    text-align: center;
-  }
-
-  </style>
 </head>
 
 
