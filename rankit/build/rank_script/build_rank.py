@@ -107,9 +107,6 @@ def build(dataset, pairs, primary_key = 'Title', rank = 'Rank', score = 'Score',
 #     scale outputs for display
     y_pred=scale(y_pred)
     weights = scale(abs(weights))
-    p = int(len(X)/2)
-    p_test =X[0:p]
-    p_y = y[0:p]
 #     overall confidence score for model
     tau = get_tau(X, y, clf, len(data))
 

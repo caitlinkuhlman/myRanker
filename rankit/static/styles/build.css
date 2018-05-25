@@ -248,6 +248,41 @@
     padding: 5px;
     text-align: center;
   }
+  
+  svg {
+  font: 10px sans-serif;
+}
+
+
+.bar {
+  /* fill: steelblue; */
+  clip-path: url(#clip);
+}
+
+.subBar {
+  fill: #2980B9;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.brush .extent {
+  stroke: #fff;
+  fill: steelblue;
+  fill-opacity: .25;
+  shape-rendering: crispEdges;
+}
+
+rect.mover {
+  stroke: red;
+  stroke-opacity: .1;
+  fill: #E74C3C;
+  fill-opacity: .5;
+}
 
  /*******************************************************/
   
