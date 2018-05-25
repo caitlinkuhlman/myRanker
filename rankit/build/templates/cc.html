@@ -279,21 +279,6 @@
       return Array.from(document.querySelector('#top').children).map(x => x.innerText)
     }
 
-    function sortDataset() {
-      const dataset = getDataset()
-      dataset.sort()
-      render(dataset)
-    }
-
-    function shuffleDataset() {
-      const dataset = getDataset()
-      for (let i = dataset.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [dataset[i], dataset[j]] = [dataset[j], dataset[i]];
-      }
-      render(dataset)
-    }
-
     const dataset = getDataset()
     function searchDataset(e) {
       let difference = dataset.filter(x => getRankedObjects().indexOf(x) == -1)

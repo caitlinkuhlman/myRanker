@@ -4,7 +4,7 @@ $(document).ready(function () {
   $('[data-toggle="popover"]').popover();
 
   displayAttributesAfterRender()
-  
+  shuffleDataset()
   $('#lc').attr('href', 'lc')
   $('#cc').attr('href', 'cc')
   $('#pwc').attr('href', 'pwc')
@@ -39,4 +39,19 @@ function displayAttributesAfterRender() {
       document.getElementById(objects[i].innerText).setAttribute("data-content", text)
     }
 }
+
+function sortDataset() {
+	  const dataset = getDataset()
+	  dataset.sort()
+	  render(dataset)
+	}
+
+function shuffleDataset() {
+	  const dataset = getDataset()
+	  for (let i = dataset.length - 1; i > 0; i--) {
+	    const j = Math.floor(Math.random() * (i + 1));
+	    [dataset[i], dataset[j]] = [dataset[j], dataset[i]];
+	  }
+	  render(dataset)
+	}
 
