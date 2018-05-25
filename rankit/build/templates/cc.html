@@ -219,7 +219,7 @@
         <div id="top" class="pool">
           <!-- objects from dataset inserted here -->
           {% for x in dataset %}
-          <div tabindex="0" id="{{x}}" class="object noSelect pop" data-toggle="popover" data-trigger="focus" data-html="true">{{x}}</div>
+          <div tabindex="0" id="{{x}}" class="object noSelect pop" data-toggle="popover">{{x}}</div>
           {% endfor %}
         </div>
       </div>
@@ -509,11 +509,9 @@
         node.setAttribute("class", "object noSelect pop");
         node.setAttribute("tabindex", "0");
         node.setAttribute("data-toggle", "popover");
-        node.setAttribute("data-trigger", "hover");
         document.querySelector(box).appendChild(node);
         handleBuildSubmit()
       }
-      displayAttributesAfterRender()
     }
 
     function handleCCSubmit() {

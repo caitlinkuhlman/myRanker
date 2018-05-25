@@ -8,7 +8,7 @@ $(document).ready(function () {
   $('#cc').attr('href', 'cc')
   $('#pwc').attr('href', 'pwc')
   
-  $('[data-toggle="popover"]').popover();
+  refresh_popovers()
 })
 
 
@@ -43,6 +43,8 @@ function sortDataset() {
 	  const dataset = getDataset()
 	  dataset.sort()
 	  render(dataset)
+	  displayAttributesAfterRender()
+	  refresh_popovers()
 	}
 
 function shuffleDataset() {
@@ -52,6 +54,8 @@ function shuffleDataset() {
 	    [dataset[i], dataset[j]] = [dataset[j], dataset[i]];
 	  }
 	  render(dataset)
+	  displayAttributesAfterRender()
+	  refresh_popovers()
 	}
 
 function searchDataset(e) {
@@ -60,10 +64,25 @@ function searchDataset(e) {
     const re = new RegExp(value, 'i')
     const newDataset = difference.filter(x => re.test(x))
     render(newDataset)
+    displayAttributesAfterRender()
+    refresh_popovers()
   }
+
+function refresh_popovers(){
+	$('.pop').popover({
+		  trigger: 'hover',
+		  delay: {
+			  show:"1000",
+			  hide:"0"
+		  }
+	});
+}
+
 
 function render(dataset) {
 	  const pool = document.querySelector('#top')
-	  const html = dataset.map(x => `<div tabindex="0" id="${x}" class="object noSelect pop" data-toggle="popover" data-trigger="focus" data-html="true">${x}</div>`).join('\n')
+	  const html = dataset.map(x => `<div tabindex="0" id="${x}" class="object noSelect pop"
+	   data-toggle="popover" data-html="true">${x}</div>`).join('\n')
 	  pool.innerHTML = html
+	  
 	}
