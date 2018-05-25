@@ -1,21 +1,20 @@
 
 /* load popovers */
 $(document).ready(function () {
-  $('[data-toggle="popover"]').popover();
-
-  displayAttributesAfterRender()
+  
   shuffleDataset()
+  displayAttributesAfterRender()
   $('#lc').attr('href', 'lc')
   $('#cc').attr('href', 'cc')
   $('#pwc').attr('href', 'pwc')
+  
+  $('[data-toggle="popover"]').popover();
 })
-
 
 
 $('.popover-dismiss').popover({
   trigger: 'focus'
 })
-
 
 
 $('body').on('click', function (e) {
@@ -55,3 +54,16 @@ function shuffleDataset() {
 	  render(dataset)
 	}
 
+function searchDataset(e) {
+    let difference = dataset.filter(x => getRankedObjects().indexOf(x) == -1)
+    const value = e.target.value
+    const re = new RegExp(value, 'i')
+    const newDataset = difference.filter(x => re.test(x))
+    render(newDataset)
+  }
+
+function render(dataset) {
+	  const pool = document.querySelector('#top')
+	  const html = dataset.map(x => `<div tabindex="0" id="${x}" class="object noSelect pop" data-toggle="popover" data-trigger="focus" data-html="true">${x}</div>`).join('\n')
+	  pool.innerHTML = html
+	}
