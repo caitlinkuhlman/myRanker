@@ -3,7 +3,7 @@
 $(document).ready(function () {
   $('[data-toggle="popover"]').popover();
 
-  //displayAttributesAfterRender()
+  displayAttributesAfterRender()
   
   $('#lc').attr('href', 'lc')
   $('#cc').attr('href', 'cc')
@@ -39,3 +39,4 @@ function displayAttributesAfterRender() {
       document.getElementById(objects[i].innerText).setAttribute("data-content", text)
     }
 }
+

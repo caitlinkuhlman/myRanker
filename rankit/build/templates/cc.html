@@ -74,31 +74,21 @@
 </head>
 <script>
 
-  function parseData(raw) {
-    return JSON.parse(raw.substring(1, raw.length - 1))
-  }
-
-  function findObject (objectTitle) {
-    const raw = '{{data|tojson}}'
-    const data = parseData(raw)
-    for (var i=0; i<data.length; i++) {
-      obj = data[i]
-      if (obj.Title === objectTitle) {
-        return obj
+    function parseData(raw) {
+      return JSON.parse(raw.substring(1, raw.length - 1))
+    }
+    
+    function findObject (objectTitle) {
+      const raw = '{{data|tojson}}'
+      const data = parseData(raw)
+      for (var i=0; i<data.length; i++) {
+        obj = data[i]
+        if (obj.Title === objectTitle) {
+          return obj
+        }
       }
     }
-  }
 
-  function displayAttributes(objectTitle) {
-    var object = findObject(objectTitle)
-    var text = ""
-    for (var propt in object) {
-      text = text + propt + ':' + object[propt]
-    }
-    // htmlstring = text.replace(/(\r\n|\n|\r)/gm, "<br>");
-    document.getElementById(objectTitle).setAttribute("data-content", text)
-    console.log(objectTitle)
-  }
 </script>
 <body>
   <nav class="navbar navbar-default" role="navigation">
@@ -229,10 +219,7 @@
         <div id="top" class="pool">
           <!-- objects from dataset inserted here -->
           {% for x in dataset %}
-          <div tabindex="0" id="{{x}}" class="object noSelect pop" data-toggle="popover" data-trigger="hover">{{x}}</div>
-          <script>
-            displayAttributes('{{x}}')
-          </script>
+          <div tabindex="0" id="{{x}}" class="object noSelect pop" data-toggle="popover" data-trigger="focus" data-html="true">{{x}}</div>
           {% endfor %}
         </div>
       </div>
@@ -550,9 +537,9 @@
         node.setAttribute("data-toggle", "popover");
         node.setAttribute("data-trigger", "hover");
         document.querySelector(box).appendChild(node);
-        displayAttributes(objectsFromURL[i])
         handleBuildSubmit()
       }
+      displayAttributesAfterRender()
     }
 
     function handleCCSubmit() {
@@ -611,7 +598,7 @@
     document.querySelector('#cc-submit').addEventListener('click', handleCCSubmit)
   </script>
 
-  <script>
+ <!-- <script>
     $(".pop").popover({ trigger: "manual" , html: true, animation:false})
       .on("mouseenter", function () {
           var _this = this;
@@ -627,7 +614,7 @@
               }
           }, 300);
   });
-  </script>
+  </script> -->
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/barChart.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/load.js') }}"></script>
     
