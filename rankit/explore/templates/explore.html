@@ -82,12 +82,12 @@
   }
 
   .dataTables_scrollHead {
-    overflow: visible !important;
+    overflow: hidden !important;
 
   }
 
   .dataTables_scrollBody {
-    overflow: visible !important;
+    overflow: auto !important;
 
   }
   #TableData{
@@ -404,20 +404,13 @@
 
 </body>
 
-<<<<<<< Updated upstream
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/lib/jquery-1.12.4.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/lib/jquery-dataTables.min.js') }}"></script>
-=======
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-1.12.4.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-dataTables.min.js') }}"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-<script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/3.2.4/js/dataTables.fixedColumns.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/lib/dataTables.fixedColumns.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/lib/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
@@ -467,10 +460,6 @@ function shadeRowsByconf(data){
      trs[i].cells[2].style.backgroundColor = highlightColor(score, "#e3f7f3","#337c6e");
   }
   $('[data-toggle="popover"]').popover();
-//  $('.popover-dismiss').popover({
-//    trigger: 'focus'
-//  })
-
 }
 
 </script>
@@ -581,13 +570,18 @@ function renderTable(data) {
   var table =  $('#table').DataTable({
     sScrollY: '100vh',
     sScrollX:  '100%',
-    scrollCollapse: true,
+    sScrollXInner: '100%',
+    bscrollCollapse: false,
     pageLength: 25,
     searching: true,
-  //  fixedColumns: {
-  //    leftColumns: 3,
-  //  },
+    fixedColumns: {
+      leftColumns: 3,
+      heightMatch: "auto",
+      rightColumns: 0
+    },
   });
+
+
 
   $('#table').on('draw.dt', function(e) {
     highlightRows();
@@ -634,9 +628,6 @@ function setBarColor(dataConf) {
 
 function renderData(data, keys) {
   var t = $('#table').dataTable();
-  // CODE TO DELETE IF NOT WORKING -PHS 2018
-  //t.Columns.remove("Confidence");
-
 
   let maxScore = -1; // Is this true?? can a score be negative
   data.forEach(function(row) {
