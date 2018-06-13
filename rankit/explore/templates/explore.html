@@ -406,10 +406,6 @@
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/lib/jquery-1.12.4.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/lib/jquery-dataTables.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-1.12.4.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-dataTables.min.js') }}"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/lib/dataTables.fixedColumns.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/scripts.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/lib/bootstrap.min.js') }}"></script>
@@ -621,10 +617,6 @@ function renderHead(datum) {
   return data
 }
 
-function setBarColor(dataConf) {
-  //return highlightColor(dataConf, "#FB8072", "#3F3A3C")
-  return "#6a6265";
-}
 
 function renderData(data, keys) {
   var t = $('#table').dataTable();
@@ -644,7 +636,7 @@ function renderData(data, keys) {
     const dataConf = x.Confidence;
     x.Score = `
     <div class="bar-chart-bar">
-    <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;background-color:${setBarColor(dataConf)}"></div>
+    <div class="inTableBar" style="width: ${(dataScore / ((maxScore !== 0) ? maxScore : 0.01)) * 100}%;background-color: #6a6265"></div>
     </div>
     `
     var props = keys
