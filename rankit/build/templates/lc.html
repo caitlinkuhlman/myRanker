@@ -223,6 +223,7 @@ var confidence = 0
 var weights = 0
 var counter = 0
 var tooltipCounter = 0
+var colorScheme = ["#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
 </script>
 
 
@@ -348,17 +349,6 @@ var lc_observer = new MutationObserver(function (mutations) {
     else {
       $('#lc-submit').removeAttr('disabled');
       handleBuildSubmit()
-    }
-
-    var colorScheme = ["#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
-    console.log(counter);
-    if (counter == 1) {
-      d3.select("body").selectAll("svg").remove();
-      console.log(weights);
-      renderBarChart(weights,"#chart", colorScheme);
-    } else if(weights != 0){
-      document.getElementById("p1").innerHTML = "Impact of Attributes on Dataset Ranking";
-      renderBarChart(weights,"#chart", colorScheme);
     }
   });
 });
@@ -495,8 +485,19 @@ function handleBuildSubmit() {
     xhr.onload = function () {
       weights = JSON.parse(JSON.parse(this.response).weights)
       confidence = JSON.parse(this.response).confidence
-      var clock = confidence;
+      /* Both the Confidence bar and BarChart are rendered here, ensures that it will
+         render when you put something into the box as well as if your reload the page
+       */
       barUpdate(confidence);
+      console.log(counter);
+      if (counter == 1) {
+        d3.select("body").selectAll("svg").remove();
+        console.log("WEIGHT: " + weights);
+        renderBarChart(weights,"#chart", colorScheme);
+      } else if(weights != 0){
+        document.getElementById("p1").innerHTML = "Impact of Attributes on Dataset Ranking";
+        renderBarChart(weights,"#chart", colorScheme);
+      }
     }
   }
 }
