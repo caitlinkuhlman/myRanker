@@ -39,7 +39,7 @@
     flex-direction: column;
     justify-content: space-between;
   }
-  
+
     #build-method .active {
     width: 200%;
   }
@@ -242,7 +242,7 @@ var tooltipCounter = 0
     function parseData(raw) {
       return JSON.parse(raw.substring(1, raw.length - 1))
     }
-    
+
     function findObject (objectTitle) {
       const raw = '{{data|tojson}}'
       const data = parseData(raw)
@@ -349,7 +349,6 @@ var lc_observer = new MutationObserver(function (mutations) {
       $('#lc-submit').removeAttr('disabled');
       handleBuildSubmit()
     }
-    barUpdate(confidence)
 
     var colorScheme = ["#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5"];
     console.log(counter);
@@ -446,8 +445,7 @@ var lc_objectsFromURL = {}
 lc_objectsFromURL = lc_getParametersFromURL()
 
 if (lc_objectsFromURL !== undefined) {
-  lc_populateBox()
-  barUpdate(confidence)
+  lc_populateBox();
 }
 
 function lc_populateBox() {
@@ -462,10 +460,9 @@ function lc_populateBox() {
     node.setAttribute("tabindex", "0");
     node.setAttribute("data-toggle", "popover");
     document.querySelector('#lc-center').appendChild(node);
-    handleBuildSubmit()
+    handleBuildSubmit();
   }
 }
-
 
 function getRankedObjects() {
   return Array.from(document.querySelector('#lc-center').children).map(x => x.innerText)
@@ -498,6 +495,8 @@ function handleBuildSubmit() {
     xhr.onload = function () {
       weights = JSON.parse(JSON.parse(this.response).weights)
       confidence = JSON.parse(this.response).confidence
+      var clock = confidence;
+      barUpdate(confidence);
     }
   }
 }
