@@ -401,6 +401,7 @@
 
 </body>
 
+
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/lib/jquery-1.12.4.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/lib/jquery-dataTables.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/lib/dataTables.fixedColumns.js') }}"></script>
@@ -574,8 +575,6 @@ function renderTable(data) {
     },
   });
 
-
-
   $('#table').on('draw.dt', function(e) {
     highlightRows();
     shadeRowsByconf(data);
@@ -617,6 +616,8 @@ function renderHead(datum) {
 
 function renderData(data, keys) {
   var t = $('#table').dataTable();
+  // CODE TO DELETE IF NOT WORKING -PHS 2018
+  //t.Columns.remove("Confidence");
 
   let maxScore = -1; // Is this true?? can a score be negative
   data.forEach(function(row) {
