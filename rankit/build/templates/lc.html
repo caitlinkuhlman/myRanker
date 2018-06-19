@@ -485,9 +485,7 @@ function handleBuildSubmit() {
     xhr.onload = function () {
       weights = JSON.parse(JSON.parse(this.response).weights)
       confidence = JSON.parse(this.response).confidence
-      /* Both the Confidence bar and BarChart are rendered here, ensures that it will
-         render when you put something into the box as well as if your reload the page
-       */
+      /* Both the Confidence bar and BarChart are rendered here, ensuring that it renders at all times */
       barUpdate(confidence);
       console.log(counter);
       if (counter == 1) {
