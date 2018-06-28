@@ -616,8 +616,6 @@ function renderHead(datum) {
 
 function renderData(data, keys) {
   var t = $('#table').dataTable();
-  // CODE TO DELETE IF NOT WORKING -PHS 2018
-  //t.Columns.remove("Confidence");
 
   let maxScore = -1; // Is this true?? can a score be negative
   data.forEach(function(row) {
